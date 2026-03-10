@@ -1,6 +1,5 @@
 
 
-
 header{
 
     width: 100%;
@@ -28,7 +27,8 @@ header{
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: end
+
 }
 
 
@@ -36,20 +36,51 @@ header{
 
     width: 162px;
     height:45px;
+
 }
 
 /* --------- */
 
-.main_menu{
+
+/* 메뉴 설정 */
+
+.main_menu_wrap{
 
     width: 100%;
-    max-width: 1505px;
-    height: 52px;
-
-    border-bottom: 2px rgb(247, 247, 247) ;
+    max-width: 1500px;
 
     display: flex;
 
-    align-items: center;
     justify-content: space-between;
+
+}
+
+.main_menu{
+
+    
+    position: relative;
+    height: 26px;
+    text-align: center;
+    align-items: start;
+    justify-content: center;
+
+    /* overflow: hidden; */
+
+}
+
+
+.main_menu li{
+
+    display: flex;
+    justify-content: center;
+}
+ 
+
+.sub_menu{
+
+    position: absolute;
+    flex-direction: column;
+    gap: 7px;
+    padding: 27px;
+
 }

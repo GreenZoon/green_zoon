@@ -84,6 +84,7 @@ svg{
 h2{
 
     font-weight: 500;
+    font-size: 20px;
 }
 
 /* 폰트 설정 끝 */
@@ -100,8 +101,6 @@ h2{
 }
 
 ul{
-
-    width: 100%;
 
     display: flex;
 }
