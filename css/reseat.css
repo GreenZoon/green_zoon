@@ -1,15 +1,3 @@
-
-
-*{
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    
-}
-
 html,
 body,
 div,
@@ -97,6 +85,7 @@ video {
   font-size: 100%;
   font: inherit;
 
+  box-sizing: border-box;
   vertical-align: baseline;
 }
 

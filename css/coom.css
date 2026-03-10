@@ -1,4 +1,7 @@
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+
 
 @font-face {
     font-family: 'Pretendard';
@@ -60,10 +63,26 @@
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
     font-weight: 900;
-    font-display: swap;
+    font-display: swap;}
+
+h1, h2, h3, h4, h5, h6, p,ul, ol, li,a{
+
+    font-family: "Pretendard";
+    letter-spacing: -0.04em;
+    line-height : 150% ;
+
+    transform : rotate(0.04deg); 
+
+    color: rgb(25, 25,25);
+}
+
+svg{
+
+    color: rgb(25, 25,25);
 }
 
 /* 폰트 설정 끝 */
+
 
 .wrap{
 
