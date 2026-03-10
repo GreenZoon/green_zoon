@@ -125,7 +125,6 @@ ol,ul,li {
   text-decoration: none;
 
   display: block;
-  width: 100%;
 
 }
 
@@ -153,7 +152,7 @@ a {
   text-decoration: none;
 
   color: black;
-  
+
 }
 
 img {
