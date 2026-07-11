@@ -1,52 +1,30 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+
+    
+    
+}
+
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,
 p,
-blockquote,
-pre,
-a,
-abbr,
+blockquote,pre,a,abbr,
 acronym,
 address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
+big,cite,code,del,dfn,em,img,ins,kbd,
+q,s,
+samp,small,strike,strong,sub,sup,
+tt,var,b,u,i,
 center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
+dl,dt,dd,
+ol,ul,li,
 fieldset,
 form,
 label,
@@ -56,9 +34,7 @@ caption,
 tbody,
 tfoot,
 thead,
-tr,
-th,
-td,
+tr,th,td,
 article,
 aside,
 canvas,
@@ -85,7 +61,6 @@ video {
   font-size: 100%;
   font: inherit;
 
-  box-sizing: border-box;
   vertical-align: baseline;
 }
 
@@ -112,9 +87,7 @@ ol,ul,li {
 
   list-style: none;
   text-decoration: none;
-  white-space: nowrap;      
-
-  display: block;
+  
 
 }
 
@@ -127,7 +100,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+
   content: none;
 }
 
@@ -136,19 +109,27 @@ table {
   border-spacing: 0;
 }
 
-a {
+a{
 
-  display: block;
+
   text-decoration: none;
+  fill:currentColor;
+  color:inherit;
+  
+}
 
-  color: black;
+p{
 
+  color:inherit;
+  
 }
 
 img {
   width: 100%;
   display: block;
 }
+
+
 
 /* ------------------------------------------------- */
 

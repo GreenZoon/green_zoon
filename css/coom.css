@@ -1,106 +1,227 @@
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+section{
 
+    width: 100%;
+    padding: 100px 150px;
 
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-display: swap;
 }
 
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
-    font-weight: 200;
-    font-display: swap;
+.section_g{
+
+    background-color: #009944 ;
+
 }
 
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-display: swap;
+.section_g a,.section_g a p{
+
+        color: #F8F8F8;
+
 }
 
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
-    font-weight: 900;
-    font-display: swap;}
-
-h1, h2, h3, h4, h5, h6, p,ul, ol, li,a{
-
-    font-family: "Pretendard ,sans-serif";
-    letter-spacing: -0.04em;
-    line-height : 150% ;
-
-    transform : rotate(0.04deg); 
-
-    color: rgb(25, 25,25);
-}
-
-svg{
-
-    color: rgb(25, 25,25);
-}
-
-h2{
-
-    font-weight: 500;
-    font-size: 20px;
-}
-
-/* 폰트 설정 끝 */
-
+/* ---- 슬라이드 ----- */
 
 .wrap{
 
-    display: flex;
+    width: 100%;
+    height: 600px;
 
-    margin: 0 150px;
+
+    position: relative;
+    overflow: hidden;
+
+}
+
+.img_wrap{
+
+    width: 5760px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+}
+
+.bg{
+
+    width: 1920px;
+}
+
+.main_img{
+
+    background-color:#DBDBDB;
+
+}
+
+    /* background-image: calc(); */
+
+
+
+
+/* ------가로------- */
+
+.width_100{
+
+    width: 100%;
+}
+
+.width_80{
+
+  width: 80%;   
+
+
+}
+
+.width_30{
+
+  width: 30%;   
+
+}
+
+.width_25{
+
+    width: 25%;
+}
+
+.width_20{
+
+    width: 20%;
+}
+
+.width_10{
+
+    width: 10%;
+}
+
+/* ------세로------ */
+
+.max_height_50{
+
+    max-height: 50%;
+}
+
+.max_height_80{
+
+    max-height: 80%;
+}
+
+/* ------위치------- */
+
+.flex{
+
+    display: flex;
+}
+
+.column{
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.row{
+
+    display: flex;
+    flex-direction:row;
+
+    margin: 0;
+}
+
+.justify_center{
+
+    justify-content: center;
+}
+
+.justify_between{
+
+    justify-content: space-between;
+    
+}
+
+.items_end{
+
+    align-items: end;
+}
+
+.align_center{
 
     align-items: center;
+}
+
+/* ---------글자---------- */
+
+.text-left{
+
+    text-align: left;
 
 }
 
-ul{
+.text-center{
 
-    display: flex;
+    text-align: center;
 }
+
+.text-nowrap{
+
+    white-space: nowrap;
+}
+
+/* --------position--------- */
+
+
+.relative{
+
+    position: relative;
+}
+
+.absolute{
+
+    position: absolute;
+
+}
+
+.z_20{
+
+    z-index: 20;
+}
+
+.z_10{
+
+    z-index: 10;
+}
+
+/* -------margin-------- */
+
+.margin-top_10{
+
+    margin-top: 10px;
+}
+
+.margin-left_150{
+
+    margin-left: 150px;
+
+}
+
+.margin-right_150{
+
+    margin-right: 150px;
+}
+
+/* -----아이콘------ */
+
+svg{
+
+    width: 24px;
+    height: 24px;
+    fill:currentColor
+
+}
+
+
+
+
+
