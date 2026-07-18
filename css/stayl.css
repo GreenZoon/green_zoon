@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+
+body{
+
+    font-family: 'Pretendard GOV', sans-serif;
+    letter-spacing: -0.04em; /* 현재 폰트 크기의 4%만큼 넓힘 */
+    line-height: 1.5;
+    color: #1D1D1D;
+    white-space: nowrap;
+}
+
+
+
+h2{
+
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.main_tit{
+
+    font-size: 20px;
+    letter-spacing: -0.04em;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.f8f8f8{
+
+    color: #F8F8F8;
+}
+
+p{
+    font-size: 25px;
+    color: #555555;
+}
+
+/* ------폰트규칙--------- */
+
+
+
+/* --------- 섹션 1--------- */
+
+
+    .section_1{
+
+        padding: 0;
+    }
+
+
+
+    .section_3{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0;
+
+    }
+
+    .bg_img_wrap_3 img{
+
+        width: 50%;
+
+    }
+
+    /* -----포터------ */
+
+
+    footer{
+
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+
+        background-color: #F8F8F8;
+        color: #8E8E8E;
+        
+
+        width: 100%;
+
+        padding: 50px 150px;
+
+         white-space: nowrap;
+
+    }
+
+    .footer_wrap{
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+    }
+
+    footer p{
+
+        font-size: 16px;    
+    
+    }
+
+
+    .footer_li svg{
+
+
+        width: 12px;
+        height: 12px;
+           fill: #8E8E8E;
+
+    }
+
+    .freepik{
+
+        width: 80px;
+
+        margin: 0 7px;
+
+        clear: #8E8E8E;
+      
+    }
+

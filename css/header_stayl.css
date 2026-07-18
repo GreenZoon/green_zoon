@@ -1,0 +1,86 @@
+
+
+
+header{
+
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 150px;
+    margin: 0 auto;
+    max-height: 90px;
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.header_top{
+
+   width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.logo{
+
+   max-width: 150px;
+   max-height:45px;
+}
+
+
+/* ------로그인-------- */
+
+
+.login_menu{
+
+    display: flex;
+     gap:6px;
+
+     align-items: center;
+     justify-content: space-evenly;
+
+
+}
+
+
+.login_li{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+}
+
+.login_li svg{
+
+    width: 16px;
+    height: 16px;
+
+}
+
+.login_menu >li:hover{
+
+     color: #009944;
+
+}
+
+.login_menu >li button:hover{
+
+     color: #009944;
+
+}
+
+.login_li p{
+
+    font-size: 16px;
+    font-weight:500;
+    fill:currentColor;
+}
+
+
+
+/* -------- 헤더 끝------ */
