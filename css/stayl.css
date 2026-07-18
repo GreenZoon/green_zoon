@@ -42,6 +42,7 @@ p{
 
 
 
+
 /* --------- 섹션 1--------- */
 
 
@@ -50,7 +51,17 @@ p{
         padding: 0;
     }
 
+    .section_1 .tit_wrap{
 
+        color: #F8F8F8;
+    }
+
+    .section_1 p{
+
+        color: inherit;
+    }
+
+/* --------- 섹션 3--------- */
 
     .section_3{
 

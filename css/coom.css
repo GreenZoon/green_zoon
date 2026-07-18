@@ -26,7 +26,7 @@ section{
     width: 100%;
     height: 600px;
     position: relative;
-
+   
 }
 
 .img_wrap{
@@ -43,7 +43,11 @@ section{
 
 .bg{
 
-    width: 1920px;
+    padding: 150px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+
 }
 
 .bg_img_wrap{
@@ -53,18 +57,45 @@ section{
 
 }
 
-
-
 .main_img{
 
     background-color:#DBDBDB;
 
 }
 
+.main_img_1{
+
+    background-image: url(/img/);
+}
+
     /* background-image: calc(); */
 
+    .sleid_wrap{
 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 7px;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
 
+    .slid_der_wrap{
+
+        padding: 7px;
+        display: flex;
+        background-color: #1D1D1D;
+
+        border-radius: 20px;
+    }
+
+    .slid_der{
+
+        width: 20px;
+        height: 4px;
+        background-color: #F8F8F8;
+    }
 
 /* ------가로------- */
 
@@ -229,7 +260,32 @@ svg{
 
 }
 
+.arrow{
 
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+    background-color: #000;
+
+    -webkit-mask-image: url("../img/icon/down-arrow.svg");
+    mask-image: url("../img/icon/down-arrow.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+    transition: transform 0.25s ease;
+
+}
 
 
 

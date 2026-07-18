@@ -145,27 +145,8 @@ nav{
 
     width: 16px;    
     height: 16px;
-    flex-shrink: 0;
-
-    display: inline-block;
-    flex: 0 0 14px;
-
-    background-color: #000;
-
-    -webkit-mask-image: url("../img/icon/down-arrow.svg");
-    mask-image: url("../img/icon/down-arrow.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
     transform: rotatez(180deg);
-    transition: transform 0.25s ease;
+   
 }
 
 .depth_2_tit >.menu_arrow{
