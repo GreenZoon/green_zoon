@@ -115,23 +115,30 @@ p{
     
     }
 
+    .footer_li{
 
-    .footer_li svg{
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+    }
+
+    .footer_li .arrow{
 
 
         width: 12px;
         height: 12px;
-           fill: #8E8E8E;
+        background-color: #555555;
+           transform: rotatez(-90deg);
 
     }
 
     .freepik{
 
         width: 80px;
-
         margin: 0 7px;
-
         clear: #8E8E8E;
+        
       
     }
 
