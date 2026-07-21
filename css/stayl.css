@@ -40,7 +40,11 @@ p{
 
 /* ------폰트규칙--------- */
 
+.box{
 
+    padding: 24px 16px;
+    border-radius: 20px;
+}
 
 
 /* --------- 섹션 1--------- */
@@ -61,6 +65,40 @@ p{
         color: inherit;
     }
 
+
+    .main_img_1{
+
+    background-image: url(/img/);
+    
+}
+
+    /* background-image: calc(); */
+
+    .sleid_wrap_1{
+
+        position: absolute;
+        right: 150px;
+        bottom: 20px;
+    }
+
+    .slid_der_wrap_1{
+
+          background-color: #1d1d1d50;
+            border-radius: 20px;
+    }
+
+
+
+/* --------- 섹션 2--------- */
+
+
+.box_2{
+
+   width: 50%;
+    border: solid 1px #dbdbdb;
+}
+
+
 /* --------- 섹션 3--------- */
 
     .section_3{
@@ -68,6 +106,8 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+
         text-align: center;
         padding-bottom: 0;
 
@@ -78,6 +118,89 @@ p{
         width: 50%;
 
     }
+
+/* --------- 섹션 4--------- */
+
+
+
+
+
+
+
+/* --------- 섹션5--------- */
+
+    .section_5{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .img_wrap_5{
+
+        display: flex;
+
+    }
+
+
+    .earth{
+
+        width: 30%;
+        background-color: aqua;
+    }
+
+    /* --------- 섹션6--------- */
+
+
+    /* --------- 섹션7--------- */
+
+    .section_7{
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+
+    /* --------- 섹션 END--------- */
+
+    .section_end{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 150px;
+            gap: 12px;
+
+            border-top: 1px solid #dbdbdb;
+
+    }
+
+
+    .slied_wrap_end{
+
+        display: flex;
+
+    }
+
+    .certification_wrap{
+
+        display: flex;
+        gap: 0 48px;
+        overflow: hidden;
+        
+    }
+
+    .certification{
+
+        height: 45px;
+    }
+
 
     /* -----포터------ */
 
@@ -115,12 +238,39 @@ p{
     
     }
 
+    .footer_menu{
+
+        display: flex;
+       
+        margin: 0;
+        gap: 0 50px;
+
+    }
+
+    .footer_menu_2{
+
+        gap: 0 20px;
+        align-items: center;
+
+    }
+
     .footer_li{
 
         display: flex;
         align-items: center;
-
         gap: 4px;
+         justify-content: space-between;
+
+    }
+
+
+    .footer_li_2{
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+         gap: 40px;
+
     }
 
     .footer_li .arrow{
@@ -129,7 +279,7 @@ p{
         width: 12px;
         height: 12px;
         background-color: #555555;
-           transform: rotatez(-90deg);
+        transform: rotatez(-90deg);
 
     }
 
@@ -138,7 +288,7 @@ p{
         width: 80px;
         margin: 0 7px;
         clear: #8E8E8E;
-        
+
       
     }
 
