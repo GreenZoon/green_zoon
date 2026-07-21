@@ -26,6 +26,7 @@ section{
     width: 100%;
     height: 600px;
     position: relative;
+    overflow: hidden;
    
 }
 
@@ -63,39 +64,68 @@ section{
 
 }
 
-.main_img_1{
-
-    background-image: url(/img/);
-}
-
-    /* background-image: calc(); */
-
     .sleid_wrap{
 
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        gap: 7px;
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
+        position: relative;
+        /* justify-content: space-around;
+        gap: 7px; */
+
     }
 
     .slid_der_wrap{
 
         padding: 7px;
         display: flex;
-        background-color: #1D1D1D;
-
-        border-radius: 20px;
+         gap: 7px;
+      
     }
 
     .slid_der{
 
         width: 20px;
-        height: 4px;
-        background-color: #F8F8F8;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #F8F8F850;
     }
+
+    .sleid_wrap_1 .arrow{
+
+        background-color: #F8F8F8;
+
+    }
+
+    .left_arrow{
+
+        transform: rotatez(90deg);
+
+    }
+
+    .right_arrow{
+
+        transform: rotatez(-90deg);
+
+    }
+
+    .but_bg{
+
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        background-color: #1d1d1d50;
+         
+          border-radius: 20px;
+
+    }
+
+    button{
+
+        border-radius: 7px;
+
+    }
+
 
 /* ------가로------- */
 
@@ -156,14 +186,12 @@ section{
     display: flex;
     flex-direction: column;
 
-
 }
 
 .row{
 
     display: flex;
     flex-direction:row;
-
     margin: 0;
 }
 
@@ -268,7 +296,7 @@ svg{
     flex: 0 0 14px;
     flex-shrink: 0;
 
-    background-color: #000;
+    background-color: #1d1d1d;
 
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
     mask-image: url("../img/icon/down-arrow.svg");
@@ -287,5 +315,58 @@ svg{
 
 }
 
+.search_ion{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+        -webkit-mask-image: url("../img/icon/search_157958.svg");
+    mask-image: url("../img/icon/search_157958.svg");
+
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+
+}
+
+.cancel{
+
+        width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+        -webkit-mask-image: url("../img/icon/cancel_447047.svg");
+    mask-image: url("../img/icon/cancel_447047.svg");
+
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+
+}
 
 
