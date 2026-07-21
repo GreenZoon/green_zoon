@@ -114,12 +114,17 @@ section{
         height: 16px;
         display: flex;
         align-items: center;
-          background-color: #1d1d1d50;
+        background-color: #1d1d1d50;
          
           border-radius: 20px;
 
     }
 
+    button{
+
+        border-radius: 7px;
+
+    }
 
 
 /* ------가로------- */
@@ -181,14 +186,12 @@ section{
     display: flex;
     flex-direction: column;
 
-
 }
 
 .row{
 
     display: flex;
     flex-direction:row;
-
     margin: 0;
 }
 
@@ -293,7 +296,7 @@ svg{
     flex: 0 0 14px;
     flex-shrink: 0;
 
-    background-color: #000;
+    background-color: #1d1d1d;
 
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
     mask-image: url("../img/icon/down-arrow.svg");
@@ -312,5 +315,58 @@ svg{
 
 }
 
+.search_ion{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+        -webkit-mask-image: url("../img/icon/search_157958.svg");
+    mask-image: url("../img/icon/search_157958.svg");
+
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+
+}
+
+.cancel{
+
+        width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+        -webkit-mask-image: url("../img/icon/cancel_447047.svg");
+    mask-image: url("../img/icon/cancel_447047.svg");
+
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+
+}
 
 
