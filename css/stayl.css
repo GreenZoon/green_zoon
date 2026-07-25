@@ -76,6 +76,19 @@ p{
     width: 100%;
     height: 100%;
 
+     cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+
+}
+
+.img_wrap_1:active {
+    cursor: grabbing;
+}
+
+.main_img_in_wrap img {
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .bg{

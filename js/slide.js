@@ -1,7 +1,8 @@
 
 const slider = document.querySelector(".section_1");
+
 console.log("slide.js 연결됨");
-console.log(document.querySelector(".section_1"));
+console.log(slider);
 
 if (slider) {
     const track = slider.querySelector(".img_wrap_1");
@@ -16,11 +17,16 @@ if (slider) {
     let isPlaying = true;
     let autoPlayTimer = null;
 
-    let touchStartX = 0;
-    let touchEndX = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let dragDistance = 0;
+    let hasDragged = false;
 
-    // 현재 슬라이드 표시
-    function showSlide(index) {
+    const dragThreshold = 80;
+    const autoPlayDelay = 5000;
+
+    function showSlide(index, useAnimation = true) {
         if (index < 0) {
             currentIndex = slides.length - 1;
         } else if (index >= slides.length) {
@@ -29,11 +35,13 @@ if (slider) {
             currentIndex = index;
         }
 
-        // 슬라이드 트랙 이동
+        track.style.transition = useAnimation
+            ? "transform 0.6s ease"
+            : "none";
+
         track.style.transform =
             `translateX(-${currentIndex * 100}%)`;
 
-        // 현재 슬라이드에 활성 클래스 적용
         slides.forEach((slide, slideIndex) => {
             slide.classList.toggle(
                 "is_active",
@@ -41,7 +49,6 @@ if (slider) {
             );
         });
 
-        // 현재 페이지 바에 활성 클래스 적용
         dots.forEach((dot, dotIndex) => {
             dot.classList.toggle(
                 "is_active",
@@ -50,26 +57,22 @@ if (slider) {
         });
     }
 
-    // 다음 슬라이드
     function nextSlide() {
         showSlide(currentIndex + 1);
     }
 
-    // 이전 슬라이드
     function prevSlide() {
         showSlide(currentIndex - 1);
     }
 
-    // 자동재생 시작
     function startAutoPlay() {
         stopAutoPlay();
 
         autoPlayTimer = setInterval(() => {
             nextSlide();
-        }, 5000);
+        }, autoPlayDelay);
     }
 
-    // 자동재생 정지
     function stopAutoPlay() {
         if (autoPlayTimer !== null) {
             clearInterval(autoPlayTimer);
@@ -77,7 +80,6 @@ if (slider) {
         }
     }
 
-    // 재생·정지 버튼 상태 변경
     function updateToggleButton() {
         if (!toggleButton) {
             return;
@@ -101,92 +103,230 @@ if (slider) {
         );
     }
 
-    // 다음 버튼
-    nextButton?.addEventListener("click", () => {
-        nextSlide();
-
-        if (isPlaying) {
-            startAutoPlay();
+    function getPointerX(event) {
+        if (
+            event.touches &&
+            event.touches.length > 0
+        ) {
+            return event.touches[0].clientX;
         }
-    });
 
-    // 이전 버튼
-    prevButton?.addEventListener("click", () => {
-        prevSlide();
-
-        if (isPlaying) {
-            startAutoPlay();
+        if (
+            event.changedTouches &&
+            event.changedTouches.length > 0
+        ) {
+            return event.changedTouches[0].clientX;
         }
-    });
 
-    // 페이지 바 클릭
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            showSlide(index);
+        return event.clientX;
+    }
 
-            if (isPlaying) {
-                startAutoPlay();
-            }
-        });
-    });
+    function startDrag(event) {
+        if (
+            event.target.closest(
+                ".slide_control"
+            )
+        ) {
+            return;
+        }
 
-    // 자동재생 정지·재생
-    toggleButton?.addEventListener("click", () => {
-        isPlaying = !isPlaying;
+        isDragging = true;
+        hasDragged = false;
+
+        startX = getPointerX(event);
+        currentX = startX;
+        dragDistance = 0;
+
+        track.style.transition = "none";
 
         if (isPlaying) {
-            startAutoPlay();
-        } else {
             stopAutoPlay();
         }
+    }
 
-        updateToggleButton();
-    });
+    function moveDrag(event) {
+        if (!isDragging) {
+            return;
+        }
 
-    // 모바일 터치 시작
-    track.addEventListener(
-        "touchstart",
-        (event) => {
-            touchStartX =
-                event.changedTouches[0].clientX;
-        },
-        { passive: true }
-    );
+        currentX = getPointerX(event);
+        dragDistance = currentX - startX;
 
-    // 모바일 터치 종료
-    track.addEventListener(
-        "touchend",
-        (event) => {
-            touchEndX =
-                event.changedTouches[0].clientX;
+        if (Math.abs(dragDistance) > 5) {
+            hasDragged = true;
+        }
 
-            const swipeDistance =
-                touchEndX - touchStartX;
+        const sliderWidth = slider.clientWidth;
+        const basePosition =
+            currentIndex * sliderWidth;
 
-            const minimumSwipeDistance = 50;
+        track.style.transform =
+            `translateX(${-(basePosition) + dragDistance}px)`;
 
-            if (
-                Math.abs(swipeDistance) <
-                minimumSwipeDistance
-            ) {
-                return;
-            }
+        if (event.cancelable) {
+            event.preventDefault();
+        }
+    }
 
-            if (swipeDistance < 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
+    function endDrag() {
+        if (!isDragging) {
+            return;
+        }
+
+        isDragging = false;
+
+        if (dragDistance <= -dragThreshold) {
+            nextSlide();
+        } else if (
+            dragDistance >= dragThreshold
+        ) {
+            prevSlide();
+        } else {
+            showSlide(currentIndex);
+        }
+
+        if (isPlaying) {
+            startAutoPlay();
+        }
+
+        dragDistance = 0;
+    }
+
+    nextButton?.addEventListener(
+        "click",
+        () => {
+            nextSlide();
 
             if (isPlaying) {
                 startAutoPlay();
             }
-        },
-        { passive: true }
+        }
     );
 
-    // 최초 실행
-    showSlide(0);
+    prevButton?.addEventListener(
+        "click",
+        () => {
+            prevSlide();
+
+            if (isPlaying) {
+                startAutoPlay();
+            }
+        }
+    );
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener(
+            "click",
+            () => {
+                showSlide(index);
+
+                if (isPlaying) {
+                    startAutoPlay();
+                }
+            }
+        );
+    });
+
+    toggleButton?.addEventListener(
+        "click",
+        () => {
+            isPlaying = !isPlaying;
+
+            if (isPlaying) {
+                startAutoPlay();
+            } else {
+                stopAutoPlay();
+            }
+
+            updateToggleButton();
+        }
+    );
+
+    track.addEventListener(
+        "mousedown",
+        startDrag
+    );
+
+    window.addEventListener(
+        "mousemove",
+        moveDrag
+    );
+
+    window.addEventListener(
+        "mouseup",
+        endDrag
+    );
+
+    track.addEventListener(
+        "mouseleave",
+        () => {
+            if (isDragging) {
+                endDrag();
+            }
+        }
+    );
+
+    track.addEventListener(
+        "touchstart",
+        startDrag,
+        {
+            passive: true
+        }
+    );
+
+    track.addEventListener(
+        "touchmove",
+        moveDrag,
+        {
+            passive: false
+        }
+    );
+
+    track.addEventListener(
+        "touchend",
+        endDrag,
+        {
+            passive: true
+        }
+    );
+
+    track.addEventListener(
+        "touchcancel",
+        endDrag,
+        {
+            passive: true
+        }
+    );
+
+    track.addEventListener(
+        "dragstart",
+        (event) => {
+            event.preventDefault();
+        }
+    );
+
+    slider.addEventListener(
+        "click",
+        (event) => {
+            if (hasDragged) {
+                event.preventDefault();
+                event.stopPropagation();
+                hasDragged = false;
+            }
+        }
+    );
+
+    window.addEventListener(
+        "resize",
+        () => {
+            showSlide(
+                currentIndex,
+                false
+            );
+        }
+    );
+
+    showSlide(0, false);
     updateToggleButton();
     startAutoPlay();
 }
