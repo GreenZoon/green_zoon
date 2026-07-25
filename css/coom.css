@@ -15,87 +15,33 @@ section{
 
 .section_g a,.section_g a p{
 
-        color: #F8F8F8;
+    color: #F8F8F8;
 
 }
 
-/* ---- 슬라이드 ----- */
+/* 마스크 버전 */
+.cover {
 
-.wrap{
-
-    width: 100%;
-    height: 600px;
-    position: relative;
-   
-}
-
-.img_wrap{
-
-    width: 5760px;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: flex;
-}
-
-.bg{
-
-    padding: 150px;
-    width: 100vw;
-    display: flex;
-    align-items: center;
+  mask-image: linear-gradient(#1d1d1d);
 
 }
 
-.bg_img_wrap{
+/* 가상요소 버전 */
+.cover {
 
-    width: 100%;
-    display: flex;
+  position: relative;
+
+}
+.cover::after {
+
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient( #1d1d1d20);
 
 }
 
-.main_img{
 
-    background-color:#DBDBDB;
-
-}
-
-.main_img_1{
-
-    background-image: url(/img/);
-}
-
-    /* background-image: calc(); */
-
-    .sleid_wrap{
-
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        gap: 7px;
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-    }
-
-    .slid_der_wrap{
-
-        padding: 7px;
-        display: flex;
-        background-color: #1D1D1D;
-
-        border-radius: 20px;
-    }
-
-    .slid_der{
-
-        width: 20px;
-        height: 4px;
-        background-color: #F8F8F8;
-    }
 
 /* ------가로------- */
 
@@ -156,14 +102,12 @@ section{
     display: flex;
     flex-direction: column;
 
-
 }
 
 .row{
 
     display: flex;
     flex-direction:row;
-
     margin: 0;
 }
 
@@ -260,6 +204,16 @@ svg{
 
 }
 
+.but_bg{
+
+    display: flex;
+    border-radius: 999px;
+    padding: 4px 6px;
+    background-color: #1d1d1d50;
+    align-items: center;
+    justify-content: center;
+}
+
 .arrow{
 
     width: 24px;
@@ -268,7 +222,12 @@ svg{
     flex: 0 0 14px;
     flex-shrink: 0;
 
-    background-color: #000;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
 
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
     mask-image: url("../img/icon/down-arrow.svg");
@@ -287,5 +246,106 @@ svg{
 
 }
 
+.search_ion{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+    -webkit-mask-image: url("../img/icon/search_157958.svg");
+    mask-image: url("../img/icon/search_157958.svg");
 
 
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+
+}
+
+.cancel{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+        -webkit-mask-image: url("../img/icon/cancel_447047.svg");
+    mask-image: url("../img/icon/cancel_447047.svg");
+
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+
+}
+
+.play_but{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+    -webkit-mask-image: url("../img/icon/play_8472251.svg");
+    mask-image: url("../img/icon/play_8472251.svg");
+
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #f8f8f8;
+
+
+}
+
+.stop_but{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+    -webkit-mask-image: url("../img/icon/pause_11570812.svg");
+    mask-image: url("../img/icon/pause_11570812.svg");
+
+   -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #f8f8f8ff;
+
+}
