@@ -234,8 +234,15 @@ input{
 
 }
 
+.search_but .search_ion{
 
+    background-color: #8E8E8E;
+}
 
+.search_but:hover .search_ion{
+
+    background-color: #009944;
+}
 .search_input {
     flex: 1;
     min-width: 0;

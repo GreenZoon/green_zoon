@@ -65,6 +65,8 @@ nav{
     top:100%;
     left:50%;
     transform:translateX(-50%);
+    transition: transform 0.25s ease;
+
 
     justify-content:center;
     background-color:#fff;
@@ -125,7 +127,8 @@ nav{
     align-items:center;
     justify-content:center;
     gap:6px;
-    
+     transition: transform 0.25s ease;
+
 
 
 }

@@ -14,7 +14,7 @@ h1,h2,h3,h4,p,a{
     font-family: "Pretendard", sans-serif;
     letter-spacing: -0.04em; /* 현재 폰트 크기의 4%만큼 넓힘 */
     line-height: 1.5;
-    white-space: nowrap;
+   
 
 }
 
@@ -49,6 +49,12 @@ p{
     line-height: 1.5;
     color: inherit;
 
+}
+
+body{
+
+    width: 100%;
+    max-width: 1920px;
 }
 
 /* ------폰트규칙--------- */
@@ -93,10 +99,16 @@ section{
 
 }
 
+.box_wrap{
+
+    display: flex;
+}
+
+
 .box{
 
-   width: 50%;
-    border: solid 1px #dbdbdb;
+    width: 50%;
+   
 }
 
 
@@ -138,6 +150,7 @@ svg{
     border-radius: 999px;
     padding: 4px 6px;
     background-color: #1d1d1d50;
+    color: #f2f2f2;
     align-items: center;
     justify-content: center;
 }
@@ -279,6 +292,81 @@ svg{
 
 }
 
+.cleaner{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/cleaner.svg");
+    mask-image: url("../img/icon/cleaner.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+.bird_spike{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/bird-spike.svg");
+    mask-image: url("../img/icon/bird-spike.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+.brick_wall{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/brick-wall.svg");
+    mask-image: url("../img/icon/brick-wall.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
 .search_ion{
 
     padding: 4px;
@@ -331,6 +419,107 @@ svg{
 
     background-color: #1d1d1d;
 
+
+}
+
+.opera{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/opera.svg");
+    mask-image: url("../img/icon/opera.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+.ship{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/ship.svg");
+    mask-image: url("../img/icon/ship.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.soap_ottle{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/soap-bottle.svg");
+    mask-image: url("../img/icon/soap-bottle.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+.greek{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/greek.svg");
+    mask-image: url("../img/icon/greek.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
 
 }
 

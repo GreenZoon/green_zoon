@@ -335,18 +335,18 @@
 
 .slide_control_2{
 
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
+
     position: relative;
 }
 
 .button_wrap_2{
 
     width: 100%;
-
-
     display: flex;
     gap: 13px;
-    overflow: hidden;
+
 }
 
 button .arrow{
@@ -394,13 +394,13 @@ button .arrow{
 
 .clipping_mask{
 
-    width: 1180px;
+    width: 100%;
+    max-width: 1560px;
     overflow: hidden;
 }
 
 .slide_pagination_2{
-
-
+  
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -410,17 +410,20 @@ button .arrow{
 
 }
 
+.sleid_wrap_2 .arrow{
+
+    /* display: flex; */
+    position: absolute;
+    background-color: #8E8E8E;
+    z-index: 20;
+}
+
+
 .is_active_2{
 
     background-color: #009944;
 }
 
-.left_arrow_2,.right_arrow_2{
-
-    position: absolute;
-    background-color: #8E8E8E;
-    z-index: 20;
-}
 
 .left_arrow_2{
 
@@ -437,6 +440,7 @@ button .arrow{
 .button_2 p{
 
     font-size: 16px;
+    white-space: nowrap;
 
 }
 
@@ -463,6 +467,122 @@ button .arrow{
 
     background-color: #f2f2f2;
 }
+
+.box_wrap_2{
+
+    gap: 16px;
+}
+
+.box_2{
+
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    color: #8E8E8E;
+     border: solid 2px #C6C6C6;
+
+     position: relative;
+    
+}
+
+.img_box_wrap{
+
+    width: 70%;
+
+    display: flex;
+    gap: 12px;
+    
+}
+
+
+
+.img_box{
+
+    width: 50%;
+    
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+
+}
+
+.img_box img{
+
+    width: 100%;
+    height: 100%;
+}
+
+.img_box p{
+
+    position: absolute;
+    right: 4%;
+    bottom: 4%;
+    z-index: 20;
+
+    font-size: 12px;
+
+}
+
+.tit_wrap_2 h3{
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.tit_wrap_2 p{
+
+    font-size: 16px;
+   
+}
+
+.box_li{
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    gap:7px;
+}
+
+.box_li p{
+
+    font-size: 16px;
+    
+}
+
+.box_li .arrow{
+
+    background-color: #8E8E8E;
+}
+
+
+@media (min-width: 1800px)  {
+
+
+    .sleid_wrap_2 .arrow{
+
+        display: flex;
+    }
+
+    .slide_pagination_2{
+
+        display:flex;
+    }
+
+
+
+} 
+
+/* --------- 섹션2 끝--------- */
 
 /* --------- 섹션 3--------- */
 
