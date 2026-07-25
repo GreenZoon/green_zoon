@@ -1,4 +1,58 @@
 
+html,
+body,
+button,
+input,
+textarea,
+select{
+    font-family: "Pretendard", sans-serif;
+
+}
+
+h1,h2,h3,h4,p,a{
+
+    font-family: "Pretendard", sans-serif;
+    letter-spacing: -0.04em; /* 현재 폰트 크기의 4%만큼 넓힘 */
+    line-height: 1.5;
+    white-space: nowrap;
+
+}
+
+a{
+
+  text-decoration: none;
+  fill:currentColor;
+    color: inherit;
+  
+}
+
+h2{
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.main_tit{
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.f8f8f8{
+
+    color: #F8F8F8;
+}
+
+p{
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: inherit;
+
+}
+
+/* ------폰트규칙--------- */
+
 
 section{
 
@@ -27,57 +81,26 @@ section{
 
 }
 
-   
+ /* -------임시 박스---------- */
 
+.con{
 
-/* ------가로------- */
-
-.width_100{
-
-    width: 100%;
-}
-
-.width_80{
-
-  width: 80%;   
-
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 999px;
+    background-color: #f2f2f2;
 
 }
 
-.width_30{
+.box{
 
-  width: 30%;   
-
+   width: 50%;
+    border: solid 1px #dbdbdb;
 }
 
-.width_25{
 
-    width: 25%;
-}
-
-.width_20{
-
-    width: 20%;
-}
-
-.width_10{
-
-    width: 10%;
-}
-
-/* ------세로------ */
-
-.max_height_50{
-
-    max-height: 50%;
-}
-
-.max_height_80{
-
-    max-height: 80%;
-}
-
-/* ------위치------- */
+/* --------플랙스--------- */
 
 .flex{
 
@@ -86,98 +109,9 @@ section{
 
 .column{
 
-    display: flex;
     flex-direction: column;
-
 }
 
-.row{
-
-    display: flex;
-    flex-direction:row;
-    margin: 0;
-}
-
-.justify_center{
-
-    justify-content: center;
-}
-
-.justify_between{
-
-    justify-content: space-between;
-    
-}
-
-.items_end{
-
-    align-items: end;
-}
-
-.align_center{
-
-    align-items: center;
-}
-
-/* ---------글자---------- */
-
-.text-left{
-
-    text-align: left;
-
-}
-
-.text-center{
-
-    text-align: center;
-}
-
-.text-nowrap{
-
-    white-space: nowrap;
-}
-
-/* --------position--------- */
-
-
-.relative{
-
-    position: relative;
-}
-
-.absolute{
-
-    position: absolute;
-
-}
-
-.z_20{
-
-    z-index: 20;
-}
-
-.z_10{
-
-    z-index: 10;
-}
-
-/* -------margin-------- */
-
-.margin-top_10{
-
-    margin-top: 10px;
-}
-
-.margin-left_150{
-
-    margin-left: 150px;
-
-}
-
-.margin-right_150{
-
-    margin-right: 150px;
-}
 
 /* -----아이콘------ */
 
@@ -189,6 +123,13 @@ svg{
     transition: transform 0.25s ease;
     flex-shrink: 0;
 
+}
+
+.icon{
+
+    width: 24px;
+    height: 24px;
+   
 }
 
 .but_bg{
@@ -233,17 +174,120 @@ svg{
 
 }
 
+.factory{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/factory.svg");
+    mask-image: url("../img/icon/factory.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+    transition: transform 0.25s ease;
+
+}
+
+.carpet{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/carpet.svg");
+    mask-image: url("../img/icon/carpet.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+    transition: transform 0.25s ease;
+
+}
+
+.doctor{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/doctor.svg");
+    mask-image: url("../img/icon/doctor.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+    transition: transform 0.25s ease;
+
+}
+
+.water_tower{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/water-tower.svg");
+    mask-image: url("../img/icon/water-tower.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+    transition: transform 0.25s ease;
+
+
+}
+
 .search_ion{
 
-    width: 24px;
-    height: 24px;
     padding: 4px;
     display: inline-block;
     flex: 0 0 14px;
     flex-shrink: 0;
 
-    -webkit-mask-image: url("../img/icon/search_157958.svg");
-    mask-image: url("../img/icon/search_157958.svg");
+    -webkit-mask-image: url("../img/icon/search.svg");
+    mask-image: url("../img/icon/search.svg");
 
 
     -webkit-mask-repeat: no-repeat;
@@ -257,6 +301,9 @@ svg{
 
     background-color: #1d1d1d;
 
+    transition: transform 0.25s ease;
+
+
 
 }
 
@@ -269,8 +316,8 @@ svg{
     flex: 0 0 14px;
     flex-shrink: 0;
 
-        -webkit-mask-image: url("../img/icon/cancel_447047.svg");
-    mask-image: url("../img/icon/cancel_447047.svg");
+    -webkit-mask-image: url("../img/icon/cancel.svg");
+    mask-image: url("../img/icon/cancel.svg");
 
 
     -webkit-mask-repeat: no-repeat;
@@ -296,8 +343,8 @@ svg{
     flex: 0 0 14px;
     flex-shrink: 0;
 
-    -webkit-mask-image: url("../img/icon/play_8472251.svg");
-    mask-image: url("../img/icon/play_8472251.svg");
+    -webkit-mask-image: url("../img/icon/play.svg");
+    mask-image: url("../img/icon/play.svg");
 
 
     -webkit-mask-repeat: no-repeat;
@@ -315,6 +362,8 @@ svg{
 }
 
 
+
+/* -------아이콘 끝--------- */
 
 .slide_toggle {
 

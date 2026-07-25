@@ -2,13 +2,11 @@
 
 *{
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
     
 }
 
@@ -55,6 +53,7 @@ time,
 mark,
 audio,
 video {
+  
   margin: 0;
   padding: 0;
   border: 0;
@@ -109,21 +108,6 @@ table {
   border-spacing: 0;
 }
 
-a{
-
-
-  text-decoration: none;
-  fill:currentColor;
-  color:inherit;
-  
-}
-
-p{
-
-  color:inherit;
-  
-}
-
 img {
   width: 100%;
   display: block;
@@ -132,7 +116,7 @@ img {
 button{
 
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   cursor: pointer;
 
 }
