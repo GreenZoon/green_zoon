@@ -20,79 +20,14 @@ section{
 }
 
 /* 마스크 버전 */
+
 .cover {
 
-  mask-image: linear-gradient(#1d1d1d);
+  mask-image: linear-gradient(#1d1d1d50);
 
 }
 
-.main_img{
-
-    background-color:#DBDBDB;
-
-}
-
-    .sleid_wrap{
-
-        display: flex;
-        align-items: center;
-        position: relative;
-        /* justify-content: space-around;
-        gap: 7px; */
-
-    }
-
-    .slid_der_wrap{
-
-        padding: 7px;
-        display: flex;
-         gap: 7px;
-      
-    }
-
-    .slid_der{
-
-        width: 20px;
-        height: 5px;
-        border-radius: 5px;
-        background-color: #F8F8F850;
-    }
-
-    .sleid_wrap_1 .arrow{
-
-        background-color: #F8F8F8;
-
-    }
-
-    .left_arrow{
-
-        transform: rotatez(90deg);
-
-    }
-
-    .right_arrow{
-
-        transform: rotatez(-90deg);
-
-    }
-
-    .but_bg{
-
-        width: 16px;
-        height: 16px;
-        display: flex;
-        align-items: center;
-        background-color: #1d1d1d50;
-         
-          border-radius: 20px;
-
-    }
-
-    button{
-
-        border-radius: 7px;
-
-    }
+   
 
 
 /* ------가로------- */
@@ -379,25 +314,19 @@ svg{
 
 }
 
-.stop_but{
+
+
+.slide_toggle {
+
+    position: relative;
 
     width: 24px;
     height: 24px;
-    padding: 4px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
+    padding: 0;
 
-    -webkit-mask-image: url("../img/icon/pause_11570812.svg");
-    mask-image: url("../img/icon/pause_11570812.svg");
+    border: 0;
+    border-radius: 50%;
 
-   -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    background-color: #f8f8f8ff;
-
+    background: transparent;
+    cursor: pointer;
 }

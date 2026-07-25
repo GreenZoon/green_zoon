@@ -34,7 +34,8 @@ h2{
 
 p{
     font-size: 21px;
-    color: #555555;
+    font-weight: 500;
+
 }
 
 /* ------폰트규칙--------- */
@@ -80,7 +81,6 @@ p{
 .bg{
 
     width: 100vw;
-    /* height: 600px; */
     display: flex;
     align-items: center;
 
@@ -122,11 +122,11 @@ p{
 
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 2px;
 }
 
 .slide_bar.is_active {
-    background-color: #fff;
+    background-color: #f2f2f2ff;
 }
 
 .slide_control{
@@ -144,6 +144,7 @@ p{
 }
 
 .slide_dot {
+
     width: 20px;
     height: 5px;
     padding: 0;
@@ -159,20 +160,6 @@ p{
         background-color 0.3s ease;
 }
 
-.slide_toggle {
-
-    position: relative;
-
-    width: 24px;
-    height: 24px;
-    padding: 0;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: transparent;
-    cursor: pointer;
-}
 
 /* 재생 중: 정지 아이콘 */
 .slide_toggle.is_playing::before,
@@ -186,7 +173,7 @@ p{
     height: 14px;
 
     border-radius: 2px;
-    background-color: #fff;
+    background-color: #f2f2f2ff;
 }
 
 .slide_toggle.is_playing::before {
@@ -199,6 +186,7 @@ p{
 
 /* 정지 상태: 재생 아이콘 */
 .slide_toggle.is_paused::before {
+
     content: "";
     position: absolute;
     top: 4px;
@@ -213,6 +201,7 @@ p{
 
 
 .slide_control_1 .arrow {
+
     width: 18px;
     height: 18px;
     padding: 0;
@@ -270,6 +259,7 @@ p{
 }
 
 .wrap_1 {
+
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -321,85 +311,24 @@ p{
     pointer-events: none;
 }
 
-.section_1 .tit_wrap {
-    color: #f8f8f8;
-}
+.tit_wrap_1{
 
-.section_1 p {
-    color: inherit;
-}
-.box{
-
-    padding: 24px 16px;
-    border-radius: 20px;
-}
-
-
-/* --------- 섹션 1--------- */
-
-
-    .section_1{
-
-        padding: 0;
-    }
-
-    .section_1 .tit_wrap{
-
-        color: #F8F8F8;
-    }
-
-    .section_1 p{
-
-        color: inherit;
-    }
-
-.tit_wrap_1 {
     position: absolute;
     top: 50%;
     left: 10%;
     z-index: 2;
-
+    color: #F8F8F8;
+    
     transform: translateY(-50%);
 }
+
+
 
 /* --------- 섹션 1 끝 --------- */
 
 
 /* --------- 섹션 2--------- */
 
-
-.box_2{
-
-   width: 50%;
-    border: solid 1px #dbdbdb;
-}
-
-
-
-    .main_img_1{
-
-    background-image: url(/img/);
-    
-}
-
-    /* background-image: calc(); */
-
-    .sleid_wrap_1{
-
-        position: absolute;
-        right: 150px;
-        bottom: 20px;
-    }
-
-    .slid_der_wrap_1{
-
-          background-color: #1d1d1d50;
-            border-radius: 20px;
-    }
-
-
-
-/* --------- 섹션 2--------- */
 
 
 .box_2{
@@ -416,8 +345,6 @@ p{
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-
         flex-direction: column;
 
         text-align: center;
@@ -607,8 +534,6 @@ p{
         justify-content: space-between;
          gap: 40px;
 
-         justify-content: space-between;
-
     }
 
 
@@ -628,8 +553,7 @@ p{
         height: 12px;
         background-color: #555555;
         transform: rotatez(-90deg);
-        transform: rotatez(-90deg);
-
+        
     }
 
     .freepik{
@@ -637,7 +561,6 @@ p{
         width: 80px;
         margin: 0 7px;
         clear: #8E8E8E;
-
 
       
     }
