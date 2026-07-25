@@ -26,21 +26,73 @@ section{
 
 }
 
-/* 가상요소 버전 */
-.cover {
+.main_img{
 
-  position: relative;
-
-}
-.cover::after {
-
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient( #1d1d1d20);
+    background-color:#DBDBDB;
 
 }
 
+    .sleid_wrap{
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        /* justify-content: space-around;
+        gap: 7px; */
+
+    }
+
+    .slid_der_wrap{
+
+        padding: 7px;
+        display: flex;
+         gap: 7px;
+      
+    }
+
+    .slid_der{
+
+        width: 20px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #F8F8F850;
+    }
+
+    .sleid_wrap_1 .arrow{
+
+        background-color: #F8F8F8;
+
+    }
+
+    .left_arrow{
+
+        transform: rotatez(90deg);
+
+    }
+
+    .right_arrow{
+
+        transform: rotatez(-90deg);
+
+    }
+
+    .but_bg{
+
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        background-color: #1d1d1d50;
+         
+          border-radius: 20px;
+
+    }
+
+    button{
+
+        border-radius: 7px;
+
+    }
 
 
 /* ------가로------- */

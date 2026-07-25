@@ -1,19 +1,20 @@
 
 
 
-header{
+.header{
 
     width: 100%;
     max-width: 1920px;
-    padding: 0 150px;
-    margin: 0 auto;
+    padding: 10px 150px;
+  
     max-height: 90px;
-    margin-top: 10px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+
+    position: relative;
 }
 
 .header_top{
@@ -22,7 +23,7 @@ header{
     display: flex;
     justify-content: space-between;
 
-    position: relative;
+    
 }
 
 .logo{
@@ -31,17 +32,16 @@ header{
    max-height:45px;
 }
 
-
 /* ------로그인-------- */
 
 
 .login_menu{
 
     display: flex;
-     gap:6px;
+    gap:6px;
 
-     align-items: center;
-     justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-evenly;
 
 
 }
@@ -81,6 +81,234 @@ header{
     fill:currentColor;
 }
 
+/* --------검색------- */
+
+form{
+
+    width: 100vw;
+    /* padding: 40px 150px;
+    background: #009944; */
+
+
+}
+
+fieldset{
+
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+input{
+
+    width: 100%;
+    border-radius: 9px;
+}
+
+.search_wrap{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 7px;
+
+    background-color: #fff;
+
+    overflow: hidden;
+
+}
+
+
+.search_tap{
+
+    width: 100%;
+    gap: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+    
+}
+
+.search_form{
+
+    width: 100%;
+
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+
+    /* position: absolute;
+    top: 150%;
+    left: 0;
+    z-index: 40; */
+
+    transition: transform 0.25s ease;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: #009944;
+
+}
+
+.search_area{
+
+    width: 100%;
+
+    padding: 20px 150px;
+    background: #009944;
+
+}
+
+.search_form.is_open {
+    display: flex;
+}
+
+.search_form fieldset {
+    border: 0;
+}
+.search_inner {
+    width: min(1440px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.search_ladel{
+
+    padding: 7px 12px;
+}
+
+.search_title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.search_but{
+
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 48px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+.search_but,
+.search_close_btn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search_icon{
+
+    width: 16px;
+    height: 16px;
+
+    background-color: #8E8E8E;
+}
+
+.search_cancel{
+
+
+    width: 16px;
+    height: 16x;
+    background-color: #fff;
+
+}
+
+
+
+.search_input {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0 18px;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+}
+
+
+.search_keyword_area {
+    padding: 44px 0 36px;
+    background: #fff;
+}
+
+/* ---------추천 검색어-------------- */
+
+.keyword_section{
+
+    padding: 0 150px;
+}
+
+.keyword_section + .keyword_section {
+    margin-top: 38px;
+}
+
+.keyword_title {
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.keyword_list {
+    border-top: 1px solid #eee;
+}
+
+.keyword_list li {
+    border-bottom: 1px solid #eee;
+}
+
+.keyword_button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 46px;
+    padding: 0 16px;
+    border: 0;
+    background: #fff;
+    color: #8E8E8E;
+    text-align: left;
+    cursor: pointer;
+}
+
+.keyword_button:hover {
+    background: #f8f8f8;
+    color: #009944;
+}
+
+.keyword_icon {
+
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-color: #8E8E8E;
+
+}
+
+.keyword_button:hover .keyword_icon{
+
+    background-color: #009944;
+}
 
 
 /* -------- 헤더 끝------ */
