@@ -459,8 +459,6 @@ svg{
 
     transition: transform 0.25s ease;
 
-
-
 }
 
 .cancel{
@@ -487,7 +485,6 @@ svg{
 
     background-color: #1d1d1d;
 
-
 }
 
 .opera{
@@ -510,7 +507,7 @@ svg{
 
     -webkit-mask-size: contain;
     mask-size: contain;
-
+    
     transition: transform 0.25s ease;
 
 }
@@ -577,6 +574,31 @@ svg{
 
     -webkit-mask-image: url("../img/icon/greek.svg");
     mask-image: url("../img/icon/greek.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+.user{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/user.svg");
+    mask-image: url("../img/icon/user.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;

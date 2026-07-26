@@ -54,7 +54,7 @@ if (section2) {
             // link: "#",
             images: [
                 {
-                    src: "img/mainimgs/cleaner_before.jpg",
+                    src: "img/mainimgs/dispatch_sanitation_Before.jpg",
                     alt: "미화원 파견 작업 전"
                 },
                 {
@@ -118,11 +118,11 @@ if (section2) {
             // link: "#",
             images: [
                 {
-                    src: "img/mainimgs/carpet_before.jpg",
+                    src: "img/mainimgs/carpet_cleaning_Before.jpg",
                     alt: "카펫 패브릭 청소 전"
                 },
                 {
-                    src: "img/mainimgs/carpet_ing.jpg",
+                    src: "img/mainimgs/carpet_cleaning_ing.jpg",
                     alt: "카펫 패브릭 청소 중"
                 }
             ]

@@ -570,6 +570,8 @@
 .img_box{
 
     width: 50%;
+
+    border: 2px solid  #C6C6C6;
     
     max-height: 400px;
     overflow: hidden;
