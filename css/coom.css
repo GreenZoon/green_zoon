@@ -14,14 +14,14 @@ h1,h2,h3,h4,p,a{
     font-family: "Pretendard", sans-serif;
     letter-spacing: -0.04em; /* 현재 폰트 크기의 4%만큼 넓힘 */
     line-height: 1.5;
-   
+    color: #1d1d1d;
 
 }
 
 a{
 
-  text-decoration: none;
-  fill:currentColor;
+    text-decoration: none;
+    fill:currentColor;
     color: inherit;
   
 }
@@ -32,11 +32,7 @@ h2{
     font-weight: 700;
 }
 
-.main_tit{
 
-    font-size: 20px;
-    font-weight: 500;
-}
 
 .f8f8f8{
 
@@ -44,6 +40,7 @@ h2{
 }
 
 p{
+
     font-size: 21px;
     font-weight: 500;
     line-height: 1.5;
@@ -56,6 +53,42 @@ body{
     width: 100%;
     max-width: 1920px;
 }
+
+@media (max-width: 1023px) {
+
+    h2{
+
+    font-size: 32px;
+
+    }
+
+    p{
+
+        font-size: 16px;
+    }
+
+
+
+}
+
+@media (max-width:480px){
+
+        h2{
+
+    font-size: 25px;
+
+    }
+
+    p{
+
+        font-size: 14px;
+    }
+
+
+
+
+}
+
 
 /* ------폰트규칙--------- */
 
@@ -76,6 +109,29 @@ section{
 .section_g a,.section_g a p{
 
     color: #F8F8F8;
+
+}
+
+
+
+@media (max-width: 1023px) {
+
+
+    section{
+
+        padding: 20px 40px;
+    }
+    
+}
+
+
+@media (max-width:480px){
+
+section{
+
+    padding: 0 20px;
+
+}
 
 }
 
@@ -154,6 +210,18 @@ svg{
     align-items: center;
     justify-content: center;
 }
+
+
+  @media (max-width:480px){
+
+    .but_bg_none{
+
+        display: none;
+
+    }
+
+  }
+
 
 .arrow{
 

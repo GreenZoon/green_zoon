@@ -53,6 +53,8 @@
     align-items:center;
     justify-content:center;
     gap:4px;
+
+    color: #1d1d1d;
 }
 
 .login_li svg{
@@ -168,15 +170,20 @@ input{
 }
 
 .search_form.is_open {
+
     display: flex;
 }
 
 .search_form fieldset {
+
     border: 0;
 }
+
 .search_inner {
+
     width: min(1440px, calc(100% - 80px));
     margin: 0 auto;
+
 }
 
 .search_ladel{
@@ -185,6 +192,7 @@ input{
 }
 
 .search_title {
+
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -243,7 +251,9 @@ input{
 
     background-color: #009944;
 }
+
 .search_input {
+
     flex: 1;
     min-width: 0;
     height: 48px;
@@ -255,6 +265,7 @@ input{
 
 
 .search_keyword_area {
+
     padding: 44px 0 36px;
     background: #fff;
 }
@@ -271,16 +282,13 @@ input{
 }
 
 .keyword_title {
+
     margin-bottom: 14px;
     font-size: 18px;
     font-weight: 700;
 }
 
-.keyword_list {
-    border-top: 1px solid #eee;
-}
-
-.keyword_list li {
+.keyword_list,.keyword_list li {
     border-bottom: 1px solid #eee;
 }
 
@@ -299,6 +307,7 @@ input{
 }
 
 .keyword_button:hover {
+
     background: #f8f8f8;
     color: #009944;
 }
@@ -319,3 +328,47 @@ input{
 
 
 /* -------- 헤더 끝------ */
+
+@media (max-width: 1023px) {
+
+
+    .header,.search_area{
+
+        padding: 20px 40px;
+    }
+
+    .keyword_section{
+
+        padding: 0 40px;
+    }
+
+    .search_title{
+
+        font-size: 16px;
+
+    }
+
+    .login_li p{
+
+        font-size: 14px;    
+    
+    }
+
+
+}
+
+@media (max-width:480px){
+
+    .header{
+
+        padding: 0 20px;
+        
+    }
+
+    .login_li p{
+
+        display: none;
+    }
+
+
+}

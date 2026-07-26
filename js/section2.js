@@ -1,0 +1,583 @@
+const section2 = document.querySelector(".section_2");
+
+if (section2) {
+
+    
+    /* ---------------------------------
+       HTML 요소 가져오기
+    --------------------------------- */
+
+    const clippingMask = section2.querySelector(".clipping_mask");
+    const buttonTrack = section2.querySelector(".button_wrap_2");
+
+    const serviceButtons = section2.querySelectorAll(".button_2");
+    const slideDots = section2.querySelectorAll(".slide_dot");
+
+    const prevButton = section2.querySelector(".left_arrow_2");
+    const nextButton = section2.querySelector(".right_arrow_2");
+
+    const contentTitle = section2.querySelector(".tit_wrap_2 h3");
+    const contentDescription = section2.querySelector(".tit_wrap_2 p");
+    // const contentLink = section2.querySelector(".box_li");
+
+    const contentImages = section2.querySelectorAll(".img_box img");
+
+
+    /* ---------------------------------
+       서비스별 콘텐츠 데이터
+
+       이미지 파일명과 설명은 실제 내용에 맞게
+       수정하면 됨
+    --------------------------------- */
+
+    const serviceData = [
+        {
+            title: "공장 청소",
+            description:
+                "(주)그린죤은 공장 청소를 전문으로<br>기계 설비, 도색 등 다양한 작업의 청소 용역이 가능합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/factory_cleane_Before.jpg",
+                    alt: "공장 청소 전"
+                },
+                {
+                    src: "img/mainimgs/factory_cleane_ing.jpg",
+                    alt: "공장 청소 중"
+                }
+            ]
+        },
+        {
+            title: "미화원 파견",
+            description:
+                "(주)그린죤은 현장 환경에 적합한<br>전문 미화 인력을 파견합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/cleaner_before.jpg",
+                    alt: "미화원 파견 작업 전"
+                },
+                {
+                    src: "img/mainimgs/cleaner_ing.jpg",
+                    alt: "미화원 파견 작업 중"
+                }
+            ]
+        },
+        {
+            title: "물탱크 청소",
+            description:
+                "(주)그린죤은 물탱크 내부의 오염물을 제거하고<br>위생적인 급수 환경을 관리합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/water_tower_before.jpg",
+                    alt: "물탱크 청소 전"
+                },
+                {
+                    src: "img/mainimgs/water_tower_ing.jpg",
+                    alt: "물탱크 청소 중"
+                }
+            ]
+        },
+        {
+            title: "소독·방역",
+            description:
+                "(주)그린죤은 시설 특성에 맞는<br>전문 소독 및 방역 서비스를 제공합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/doctor_before.jpg",
+                    alt: "소독 방역 전"
+                },
+                {
+                    src: "img/mainimgs/doctor_ing.jpg",
+                    alt: "소독 방역 중"
+                }
+            ]
+        },
+        {
+            title: "비둘기 퇴치",
+            description:
+                "(주)그린죤은 비둘기로 인한 오염과 시설 피해를<br>효과적으로 예방합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/bird_spike_before.jpg",
+                    alt: "비둘기 퇴치 작업 전"
+                },
+                {
+                    src: "img/mainimgs/bird_spike_ing.jpg",
+                    alt: "비둘기 퇴치 작업 중"
+                }
+            ]
+        },
+        {
+            title: "카펫·패브릭 청소",
+            description:
+                "(주)그린죤은 카펫과 패브릭의 오염을 제거하여<br>깨끗하고 쾌적한 환경을 조성합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/carpet_before.jpg",
+                    alt: "카펫 패브릭 청소 전"
+                },
+                {
+                    src: "img/mainimgs/carpet_ing.jpg",
+                    alt: "카펫 패브릭 청소 중"
+                }
+            ]
+        },
+        {
+            title: "행사장 청소",
+            description:
+                "(주)그린죤은 행사 전후에 필요한<br>행사장 정리 및 청소 서비스를 제공합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/opera_before.jpg",
+                    alt: "행사장 청소 전"
+                },
+                {
+                    src: "img/mainimgs/opera_ing.jpg",
+                    alt: "행사장 청소 중"
+                }
+            ]
+        },
+        {
+            title: "선박·유람선 청소",
+            description:
+                "(주)그린죤은 선박과 유람선의 특수 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/ship_before.jpg",
+                    alt: "선박 유람선 청소 전"
+                },
+                {
+                    src: "img/mainimgs/ship_ing.jpg",
+                    alt: "선박 유람선 청소 중"
+                }
+            ]
+        },
+        {
+            title: "건물 외벽 청소",
+            description:
+                "(주)그린죤은 건물 외벽의 오염과 묵은 때를 제거하여<br>깨끗한 외관을 유지합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/brick_wall_before.jpg",
+                    alt: "건물 외벽 청소 전"
+                },
+                {
+                    src: "img/mainimgs/brick_wall_ing.jpg",
+                    alt: "건물 외벽 청소 중"
+                }
+            ]
+        },
+        {
+            title: "왁스 코팅",
+            description:
+                "(주)그린죤은 바닥 표면을 보호하고 광택을 유지하는<br>전문 왁스 코팅 작업을 제공합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/soap_bottle_before.jpg",
+                    alt: "왁스 코팅 전"
+                },
+                {
+                    src: "img/mainimgs/soap_bottle_ing.jpg",
+                    alt: "왁스 코팅 중"
+                }
+            ]
+        },
+        {
+            title: "시설물 청소",
+            description:
+                "(주)그린죤은 다양한 시설물의 특성과 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/greek_before.jpg",
+                    alt: "시설물 청소 전"
+                },
+                {
+                    src: "img/mainimgs/greek_ing.jpg",
+                    alt: "시설물 청소 중"
+                }
+            ]
+        }
+    ];
+
+
+    /* ---------------------------------
+       현재 상태값
+    --------------------------------- */
+
+    let currentSlideIndex = 0;
+
+    let currentTranslateX = 0;
+    let dragStartTranslateX = 0;
+
+    let isDragging = false;
+    let hasDragged = false;
+
+    let startX = 0;
+    let currentX = 0;
+
+    const dragThreshold = 50;
+
+
+    /* ---------------------------------
+       버튼 한 칸의 이동 거리 계산
+    --------------------------------- */
+
+    function getButtonMoveDistance() {
+        const firstButton = serviceButtons[0];
+
+        if (!firstButton) {
+            return 0;
+        }
+
+        const buttonWidth = firstButton.getBoundingClientRect().width;
+
+        const trackStyle = window.getComputedStyle(buttonTrack);
+        const gap = parseFloat(trackStyle.gap) || 0;
+
+        return buttonWidth + gap;
+    }
+
+
+    /* ---------------------------------
+       트랙이 이동할 수 있는 최대 거리
+    --------------------------------- */
+
+    function getMaxTranslateX() {
+        const trackWidth = buttonTrack.scrollWidth;
+        const maskWidth = clippingMask.clientWidth;
+
+        return Math.max(0, trackWidth - maskWidth);
+    }
+
+
+    /* ---------------------------------
+       현재 인덱스로 이동 위치 계산
+    --------------------------------- */
+
+    function getTranslateByIndex(index) {
+        const moveDistance = getButtonMoveDistance();
+        const requestedTranslate = index * moveDistance;
+        const maxTranslate = getMaxTranslateX();
+
+        return Math.min(requestedTranslate, maxTranslate);
+    }
+
+
+    /* ---------------------------------
+       도트 활성 상태 변경
+    --------------------------------- */
+
+    function updateDots() {
+        slideDots.forEach((dot, index) => {
+            dot.classList.toggle(
+                "is_active_2",
+                index === currentSlideIndex
+            );
+        });
+    }
+
+
+    /* ---------------------------------
+       화살표 비활성 상태 변경
+    --------------------------------- */
+
+    function updateArrowState() {
+        const maxTranslate = getMaxTranslateX();
+
+        if (prevButton) {
+            prevButton.disabled = currentTranslateX <= 0;
+        }
+
+        if (nextButton) {
+            nextButton.disabled =
+                currentTranslateX >= maxTranslate - 1;
+        }
+    }
+
+
+    /* ---------------------------------
+       특정 인덱스로 버튼 목록 이동
+    --------------------------------- */
+
+    function moveToSlide(index, useAnimation = true) {
+        const lastIndex = serviceButtons.length - 1;
+
+        currentSlideIndex = Math.max(
+            0,
+            Math.min(index, lastIndex)
+        );
+
+        currentTranslateX =
+            getTranslateByIndex(currentSlideIndex);
+
+        buttonTrack.style.transition = useAnimation
+            ? "transform 0.35s ease"
+            : "none";
+
+        buttonTrack.style.transform =
+            `translateX(-${currentTranslateX}px)`;
+
+        updateDots();
+        updateArrowState();
+    }
+
+
+    /* ---------------------------------
+       아래 콘텐츠 변경
+    --------------------------------- */
+
+    function changeServiceContent(index) {
+        const selectedData = serviceData[index];
+
+        if (!selectedData) {
+            return;
+        }
+
+        if (contentTitle) {
+            contentTitle.textContent = selectedData.title;
+        }
+
+        if (contentDescription) {
+            contentDescription.innerHTML =
+                selectedData.description;
+        }
+
+        // if (contentLink) {
+        //     contentLink.href = selectedData.link;
+        // }
+
+        contentImages.forEach((image, imageIndex) => {
+            const imageData =
+                selectedData.images[imageIndex];
+
+            if (!imageData) {
+                return;
+            }
+
+            image.src = imageData.src;
+            image.alt = imageData.alt;
+        });
+    }
+
+
+    /* ---------------------------------
+       서비스 버튼 클릭
+    --------------------------------- */
+
+    serviceButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            if (hasDragged) {
+                return;
+            }
+
+            changeServiceContent(index);
+        });
+    });
+
+
+    /* ---------------------------------
+       좌우 화살표 클릭
+    --------------------------------- */
+
+    prevButton?.addEventListener("click", () => {
+        moveToSlide(currentSlideIndex - 1);
+    });
+
+    nextButton?.addEventListener("click", () => {
+        moveToSlide(currentSlideIndex + 1);
+    });
+
+
+    /* ---------------------------------
+       도트 클릭
+    --------------------------------- */
+
+    slideDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            moveToSlide(index);
+        });
+    });
+
+
+    /* ---------------------------------
+       마우스·터치 위치 가져오기
+    --------------------------------- */
+
+    function getPointerX(event) {
+        if (event.touches && event.touches.length > 0) {
+            return event.touches[0].clientX;
+        }
+
+        if (
+            event.changedTouches &&
+            event.changedTouches.length > 0
+        ) {
+            return event.changedTouches[0].clientX;
+        }
+
+        return event.clientX;
+    }
+
+
+    /* ---------------------------------
+       드래그 시작
+    --------------------------------- */
+
+    function startDrag(event) {
+        if (event.target.closest(".arrow")) {
+            return;
+        }
+
+        isDragging = true;
+        hasDragged = false;
+
+        startX = getPointerX(event);
+        currentX = startX;
+
+        dragStartTranslateX = currentTranslateX;
+
+        buttonTrack.classList.add("is_dragging");
+        buttonTrack.style.transition = "none";
+    }
+
+
+    /* ---------------------------------
+       드래그 중
+    --------------------------------- */
+
+    function moveDrag(event) {
+        if (!isDragging) {
+            return;
+        }
+
+        currentX = getPointerX(event);
+
+        const dragDistance = currentX - startX;
+
+        if (Math.abs(dragDistance) > 5) {
+            hasDragged = true;
+        }
+
+        const maxTranslate = getMaxTranslateX();
+
+        let nextTranslate =
+            dragStartTranslateX - dragDistance;
+
+        nextTranslate = Math.max(
+            0,
+            Math.min(nextTranslate, maxTranslate)
+        );
+
+        currentTranslateX = nextTranslate;
+
+        buttonTrack.style.transform =
+            `translateX(-${currentTranslateX}px)`;
+
+        if (event.cancelable) {
+            event.preventDefault();
+        }
+    }
+
+
+    /* ---------------------------------
+       드래그 종료
+    --------------------------------- */
+
+    function endDrag() {
+        if (!isDragging) {
+            return;
+        }
+
+        isDragging = false;
+
+        buttonTrack.classList.remove("is_dragging");
+
+        const dragDistance = currentX - startX;
+
+        if (dragDistance <= -dragThreshold) {
+            moveToSlide(currentSlideIndex + 1);
+        } else if (dragDistance >= dragThreshold) {
+            moveToSlide(currentSlideIndex - 1);
+        } else {
+            moveToSlide(currentSlideIndex);
+        }
+
+        window.setTimeout(() => {
+            hasDragged = false;
+        }, 0);
+    }
+
+
+    /* ---------------------------------
+       마우스 드래그 이벤트
+    --------------------------------- */
+
+    buttonTrack.addEventListener("mousedown", startDrag);
+    window.addEventListener("mousemove", moveDrag);
+    window.addEventListener("mouseup", endDrag);
+
+
+    /* ---------------------------------
+       모바일 터치 이벤트
+    --------------------------------- */
+
+    buttonTrack.addEventListener(
+        "touchstart",
+        startDrag,
+        { passive: true }
+    );
+
+    buttonTrack.addEventListener(
+        "touchmove",
+        moveDrag,
+        { passive: false }
+    );
+
+    buttonTrack.addEventListener(
+        "touchend",
+        endDrag,
+        { passive: true }
+    );
+
+    buttonTrack.addEventListener(
+        "touchcancel",
+        endDrag,
+        { passive: true }
+    );
+
+
+    /* ---------------------------------
+       브라우저 기본 이미지 드래그 방지
+    --------------------------------- */
+
+    buttonTrack.addEventListener("dragstart", event => {
+        event.preventDefault();
+    });
+
+
+    /* ---------------------------------
+       화면 크기가 바뀌면 위치 재계산
+    --------------------------------- */
+
+    window.addEventListener("resize", () => {
+        moveToSlide(currentSlideIndex, false);
+    });
+
+
+    /* ---------------------------------
+       최초 실행
+    --------------------------------- */
+
+    moveToSlide(0, false);
+    changeServiceContent(0);
+}

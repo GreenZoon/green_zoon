@@ -19,6 +19,7 @@
 
     }
 
+
     .footer_wrap{
 
         width: 100%;
@@ -58,7 +59,7 @@
 
     .footer_menu_3{
 
-              display: flex;
+        display: flex;
         margin: 0;
         gap: 0 50px;
         flex-direction: column;
@@ -88,7 +89,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-         gap: 40px;
+        gap: 40px;
 
     }
 
@@ -112,3 +113,36 @@
       
     }
     
+    
+@media (max-width: 1023px) {
+
+
+    footer{
+
+        padding: 20px 40px;
+    }
+
+        footer p{
+
+        font-size: 14px;    
+    
+    }
+
+
+}
+
+@media (max-width:480px){
+
+    footer{
+
+        padding: 0 20px;
+        
+    }
+
+    footer p{
+
+        font-size: 12px;    
+    
+    }
+
+}
