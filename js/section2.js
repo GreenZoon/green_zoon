@@ -23,18 +23,11 @@ if (section2) {
     const contentImages = section2.querySelectorAll(".img_box img");
 
 
-    /* ---------------------------------
-       서비스별 콘텐츠 데이터
-
-       이미지 파일명과 설명은 실제 내용에 맞게
-       수정하면 됨
-    --------------------------------- */
-
     const serviceData = [
         {
             title: "공장 청소",
             description:
-                "(주)그린죤은 공장 청소를 전문으로<br>기계 설비, 도색 등 다양한 작업의 청소 용역이 가능합니다.",
+                "공장, 기계 설비, 도색 등 <br>다양한 작업의 공장 청소가 가능합니다.",
             // link: "#",
             images: [
                 {
@@ -50,7 +43,7 @@ if (section2) {
         {
             title: "미화원 파견",
             description:
-                "(주)그린죤은 현장 환경에 적합한<br>전문 미화 인력을 파견합니다.",
+                "전문 교육을 거친 <br>선별된 미화 인력을 파견합니다.",
             // link: "#",
             images: [
                 {
@@ -58,7 +51,7 @@ if (section2) {
                     alt: "미화원 파견 작업 전"
                 },
                 {
-                    src: "img/mainimgs/cleaner_ing.jpg",
+                    src: "img/mainimgs/dispatch_sanitation_ing.jpg",
                     alt: "미화원 파견 작업 중"
                 }
             ]
@@ -66,7 +59,7 @@ if (section2) {
         {
             title: "물탱크 청소",
             description:
-                "(주)그린죤은 물탱크 내부의 오염물을 제거하고<br>위생적인 급수 환경을 관리합니다.",
+                "물탱크 내부의 오염물을 제거하고<br>위생적인 급수 환경을 관리합니다.",
             // link: "#",
             images: [
                 {
@@ -82,7 +75,7 @@ if (section2) {
         {
             title: "소독·방역",
             description:
-                "(주)그린죤은 시설 특성에 맞는<br>전문 소독 및 방역 서비스를 제공합니다.",
+                "각 시설과 환경 특성에 맞는<br>전문 소독 및 방역 서비스를 제공합니다.",
             // link: "#",
             images: [
                 {
@@ -98,7 +91,7 @@ if (section2) {
         {
             title: "비둘기 퇴치",
             description:
-                "(주)그린죤은 비둘기로 인한 오염과 시설 피해를<br>효과적으로 예방합니다.",
+                "비둘기로 인한 오염과 시설 피해를<br>복구 및 예방하기위한 작업입니다.",
             // link: "#",
             images: [
                 {
@@ -114,7 +107,7 @@ if (section2) {
         {
             title: "카펫·패브릭 청소",
             description:
-                "(주)그린죤은 카펫과 패브릭의 오염을 제거하여<br>깨끗하고 쾌적한 환경을 조성합니다.",
+                "카펫과 패브릭의 오염을 제거하여<br>깨끗하고 쾌적한 환경을 조성합니다.",
             // link: "#",
             images: [
                 {
@@ -130,7 +123,7 @@ if (section2) {
         {
             title: "행사장 청소",
             description:
-                "(주)그린죤은 행사 전후에 필요한<br>행사장 정리 및 청소 서비스를 제공합니다.",
+                "미화 인력을 파견한 행사 전후 <br> 행사장 정리 및 청소 서비스를 제공합니다.",
             // link: "#",
             images: [
                 {
@@ -146,7 +139,7 @@ if (section2) {
         {
             title: "선박·유람선 청소",
             description:
-                "(주)그린죤은 선박과 유람선의 특수 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
+                " 선박과 유람선의 특수 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
             // link: "#",
             images: [
                 {
@@ -162,15 +155,15 @@ if (section2) {
         {
             title: "건물 외벽 청소",
             description:
-                "(주)그린죤은 건물 외벽의 오염과 묵은 때를 제거하여<br>깨끗한 외관을 유지합니다.",
+                "건물 외벽의 오염과 묵은 때를 제거하여<br>깨끗한 외관을 유지합니다.",
             // link: "#",
             images: [
                 {
-                    src: "img/mainimgs/brick_wall_before.jpg",
+                    src: "img/mainimgs/building_wall_cleaning_Before.jpg",
                     alt: "건물 외벽 청소 전"
                 },
                 {
-                    src: "img/mainimgs/brick_wall_ing.jpg",
+                    src: "img/mainimgs/building_wall_cleaning_ing.jpg",
                     alt: "건물 외벽 청소 중"
                 }
             ]
@@ -178,7 +171,7 @@ if (section2) {
         {
             title: "왁스 코팅",
             description:
-                "(주)그린죤은 바닥 표면을 보호하고 광택을 유지하는<br>전문 왁스 코팅 작업을 제공합니다.",
+                " 바닥 표면을 보호하고 광택을 유지하는<br>왁스 코팅 작업을 제공합니다.",
             // link: "#",
             images: [
                 {
@@ -194,7 +187,7 @@ if (section2) {
         {
             title: "시설물 청소",
             description:
-                "(주)그린죤은 다양한 시설물의 특성과 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
+                "다양한 시설물의 특성과 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
             // link: "#",
             images: [
                 {

@@ -23,7 +23,7 @@ a{
     text-decoration: none;
     fill:currentColor;
     color: inherit;
-  
+
 }
 
 h2{
@@ -32,11 +32,10 @@ h2{
     font-weight: 700;
 }
 
-
-
 .f8f8f8{
 
     color: #F8F8F8;
+
 }
 
 p{
@@ -67,8 +66,6 @@ body{
         font-size: 16px;
     }
 
-
-
 }
 
 @media (max-width:480px){
@@ -85,13 +82,9 @@ body{
     }
 
 
-
-
 }
 
-
 /* ------폰트규칙--------- */
-
 
 section{
 
@@ -112,8 +105,6 @@ section{
 
 }
 
-
-
 @media (max-width: 1023px) {
 
 
@@ -127,11 +118,11 @@ section{
 
 @media (max-width:480px){
 
-section{
+    section{
 
-    padding: 0 20px;
+        padding: 0 20px;
 
-}
+    }
 
 }
 
@@ -160,11 +151,32 @@ section{
     display: flex;
 }
 
-
 .box{
 
     width: 50%;
    
+}
+
+/* ------------ 이미지 위치 조정용-------------- */
+
+.focus_left {
+    object-position: left center;
+}
+
+.focus_right {
+    object-position: right center;
+}
+
+.focus_top {
+    object-position: center top;
+}
+
+.focus_left {
+    object-position: left center;
+}
+
+.focus_right {
+    object-position: right center;
 }
 
 
@@ -302,7 +314,6 @@ svg{
     -webkit-mask-size: contain;
     mask-size: contain;
 
-
     transition: transform 0.25s ease;
 
 }
@@ -328,7 +339,6 @@ svg{
     -webkit-mask-size: contain;
     mask-size: contain;
 
-
     transition: transform 0.25s ease;
 
 }
@@ -353,7 +363,6 @@ svg{
 
     -webkit-mask-size: contain;
     mask-size: contain;
-
 
     transition: transform 0.25s ease;
 
@@ -473,7 +482,6 @@ svg{
     -webkit-mask-image: url("../img/icon/cancel.svg");
     mask-image: url("../img/icon/cancel.svg");
 
-
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
 
@@ -507,7 +515,7 @@ svg{
 
     -webkit-mask-size: contain;
     mask-size: contain;
-    
+
     transition: transform 0.25s ease;
 
 }
@@ -625,7 +633,6 @@ svg{
     -webkit-mask-image: url("../img/icon/play.svg");
     mask-image: url("../img/icon/play.svg");
 
-
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
 
@@ -639,8 +646,6 @@ svg{
 
 
 }
-
-
 
 /* -------아이콘 끝--------- */
 
