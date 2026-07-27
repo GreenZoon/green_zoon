@@ -38,7 +38,7 @@
 .login_menu{
 
     display: flex;
-    gap:6px;
+    gap:14px;
 
     align-items: center;
     justify-content: space-evenly;
