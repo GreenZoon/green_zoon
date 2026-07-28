@@ -24,12 +24,15 @@ if (section2) {
 
 
     const serviceData = [
+     
         {
             title: "공장 청소",
             description:
                 "공장, 기계 설비, 도색 등 <br>다양한 작업의 공장 청소가 가능합니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
                     src: "img/mainimgs/factory_cleane_Before.jpg",
                     alt: "공장 청소 전"
@@ -40,28 +43,32 @@ if (section2) {
                 }
             ]
         },
-                {
+        {
             title: "카펫·패브릭 청소",
             description:
                 "카펫과 패브릭의 오염을 제거하여<br>깨끗하고 쾌적한 환경을 조성합니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
                     src: "img/mainimgs/cleaning_carpet_before.jpg",
                     alt: "카펫 패브릭 청소 전"
                 },
                 {
-                    src: "img/mainimgs/carpet_cleaning_ing.jpg",
+                    src: "img/mainimgs/cleaning_carpet_ing.jpg",
                     alt: "카펫 패브릭 청소 중"
                 }
             ]
-        }
-        ,        {
+        },
+        {
             title: "왁스 코팅",
             description:
                 " 바닥 표면을 보호하고 광택을 유지하는<br>왁스 코팅 작업을 제공합니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
                     src: "img/mainimgs/wax_Before.jpg",
                     alt: "왁스 코팅 전"
@@ -72,12 +79,14 @@ if (section2) {
                 }
             ]
         },
-                {
+        {
             title: "비둘기 퇴치",
             description:
                 "비둘기로 인한 오염과 시설 피해를<br>복구 및 예방하기위한 작업입니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
                     src: "img/mainimgs/bird_spike_before.jpg",
                     alt: "비둘기 퇴치 작업 전"
@@ -93,13 +102,15 @@ if (section2) {
             description:
                 "미화 인력을 파견한 행사 전후 <br> 행사장 정리 및 청소 서비스를 제공합니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
-                    src: "img/mainimgs/opera_before.jpg",
+                    src: "img/mainimgs/cleaning_event_Before.png",
                     alt: "행사장 청소 전"
                 },
                 {
-                    src: "img/mainimgs/opera_ing.jpg",
+                    src: "img/mainimgs/cleaning_event_ing.png",
                     alt: "행사장 청소 중"
                 }
             ]
@@ -107,11 +118,13 @@ if (section2) {
         {
             title: "선박·유람선 청소",
             description:
-                " 선박과 유람선의 특수 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
+                " 선박과 유람선에 맞춘<br>전문 청소 서비스를 제공합니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
-                    src: "img/mainimgs/ship_before.jpg",
+                    src: "img/mainimgs/ship_After.jpg",
                     alt: "선박 유람선 청소 전"
                 },
                 {
@@ -119,14 +132,15 @@ if (section2) {
                     alt: "선박 유람선 청소 중"
                 }
             ]
-        },
-                
+        },       
         {
             title: "건물 외벽 청소",
             description:
-                "건물 외벽의 오염과 묵은 때를 제거하여<br>깨끗한 외관을 유지합니다.",
+                "누적된 오염과 묵은 때를 제거하여<br>깨끗한 외관을 유지합니다.",
             // link: "#",
-            images: [
+            images:
+            
+            [
                 {
                     src: "img/mainimgs/building_wall_cleaning_Before.jpg",
                     alt: "건물 외벽 청소 전"
@@ -142,24 +156,27 @@ if (section2) {
             description:
                 "다양한 시설물의 특성과 환경에 맞춘<br>전문 청소 서비스를 제공합니다.",
             // link: "#",
-            images: [
+            images: 
+            
+            [
                 {
-                    src: "img/mainimgs/greek_before.jpg",
+                    src: "img/mainimgs/statue_cleaning_1.jpg",
                     alt: "시설물 청소 전"
                 },
                 {
-                    src: "img/mainimgs/greek_ing.jpg",
+                    src: "img/mainimgs/statue_cleaning_ing_1.jpg",
                     alt: "시설물 청소 중"
                 }
             ]
-        },
-            
+        }, 
         {
             title: "미화원 파견",
             description:
                 "전문 교육을 거친 <br>선별된 미화 인력을 파견합니다.",
             // link: "#",
-            images: [
+            images: 
+            
+            [
                 {
                     src: "img/mainimgs/dispatch_sanitation_Before.jpg",
                     alt: "미화원 파견 작업 전"
@@ -175,7 +192,8 @@ if (section2) {
             description:
                 "물탱크 내부의 오염물을 제거하고<br>위생적인 급수 환경을 관리합니다.",
             // link: "#",
-            images: [
+            images:
+            [
                 {
                     src: "img/mainimgs/water_tank_Before.jpg",
                     alt: "물탱크 청소 전"
@@ -186,12 +204,15 @@ if (section2) {
                 }
             ]
         },
-                {
+        {
+        
             title: "연못",
             description:
-                "슬러시, 녹조, 수초등<br>연못 외관을 해치는 요소를 청소해드립니다",
+                "슬러시,녹조,수초등<br>연못 외관을 해치는 요소를 청소합니다",
             // link: "#",
-            images: [
+            images: 
+            
+            [
                 {
                     src: "img/mainimgs/Pond_Before.jpg",
                     alt: "연못 청소 전"
@@ -207,13 +228,15 @@ if (section2) {
             description:
                 "각 시설과 환경 특성에 맞는<br>전문 소독 및 방역 서비스를 제공합니다.",
             // link: "#",
-            images: [
+            images: 
+            
+            [
                 {
-                    src: "img/mainimgs/doctor_before.jpg",
+                    src: "img/mainimgs/Disinfection_Before.jpg",
                     alt: "소독 방역 전"
                 },
                 {
-                    src: "img/mainimgs/doctor_ing.jpg",
+                    src: "img/mainimgs/Disinfection_ing.jpg",
                     alt: "소독 방역 중"
                 }
             ]
