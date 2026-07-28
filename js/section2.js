@@ -47,7 +47,7 @@ if (section2) {
             // link: "#",
             images: [
                 {
-                    src: "img/mainimgs/carpet_cleaning_Before.jpg",
+                    src: "img/mainimgs/cleaning_carpet_before.jpg",
                     alt: "카펫 패브릭 청소 전"
                 },
                 {
@@ -56,7 +56,22 @@ if (section2) {
                 }
             ]
         }
-        ,
+        ,        {
+            title: "왁스 코팅",
+            description:
+                " 바닥 표면을 보호하고 광택을 유지하는<br>왁스 코팅 작업을 제공합니다.",
+            // link: "#",
+            images: [
+                {
+                    src: "img/mainimgs/wax_Before.jpg",
+                    alt: "왁스 코팅 전"
+                },
+                {
+                    src: "img/mainimgs/wax_ing.jpg",
+                    alt: "왁스 코팅 중"
+                }
+            ]
+        },
                 {
             title: "비둘기 퇴치",
             description:
@@ -162,11 +177,11 @@ if (section2) {
             // link: "#",
             images: [
                 {
-                    src: "img/mainimgs/water_tower_before.jpg",
+                    src: "img/mainimgs/water_tank_Before.jpg",
                     alt: "물탱크 청소 전"
                 },
                 {
-                    src: "img/mainimgs/water_tower_ing.jpg",
+                    src: "img/mainimgs/water_tank_ing.jpg",
                     alt: "물탱크 청소 중"
                 }
             ]
@@ -178,11 +193,11 @@ if (section2) {
             // link: "#",
             images: [
                 {
-                    src: "img/mainimgs/water_tower_before.jpg",
+                    src: "img/mainimgs/Pond_Before.jpg",
                     alt: "연못 청소 전"
                 },
                 {
-                    src: "img/mainimgs/water_tower_ing.jpg",
+                    src: "img/mainimgs/Pond_ing.jpg",
                     alt: "연못 청소 중"
                 }
             ]
@@ -202,24 +217,9 @@ if (section2) {
                     alt: "소독 방역 중"
                 }
             ]
-        },
-
-        {
-            title: "왁스 코팅",
-            description:
-                " 바닥 표면을 보호하고 광택을 유지하는<br>왁스 코팅 작업을 제공합니다.",
-            // link: "#",
-            images: [
-                {
-                    src: "img/mainimgs/soap_bottle_before.jpg",
-                    alt: "왁스 코팅 전"
-                },
-                {
-                    src: "img/mainimgs/soap_bottle_ing.jpg",
-                    alt: "왁스 코팅 중"
-                }
-            ]
         }
+
+
         
     ];
 
