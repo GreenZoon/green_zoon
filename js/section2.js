@@ -262,11 +262,8 @@ if (section2) {
     let startX = 0;
     let currentX = 0;
 
-    const dragThreshold = 50;
-
-
     /* ---------------------------------
-       버튼 한 칸의 이동 거리 계산
+    버튼 한 칸의 이동 거리 계산
     --------------------------------- */
 
     function getButtonMoveDistance() {
@@ -276,14 +273,37 @@ if (section2) {
             return 0;
         }
 
-        const buttonWidth = firstButton.getBoundingClientRect().width;
+        const buttonWidth =
+            firstButton.getBoundingClientRect().width;
 
-        const trackStyle = window.getComputedStyle(buttonTrack);
+        const trackStyle =
+            window.getComputedStyle(buttonTrack);
+
         const gap = parseFloat(trackStyle.gap) || 0;
 
         return buttonWidth + gap;
     }
 
+
+    /* ---------------------------------
+    화면에 보이는 버튼 개수 계산
+    --------------------------------- */
+
+    function getVisibleButtonCount() {
+        const moveDistance = getButtonMoveDistance();
+
+        if (moveDistance <= 0) {
+            return 1;
+        }
+
+        return Math.max(
+            1,
+            Math.floor(
+                clippingMask.clientWidth / moveDistance
+            )
+        );
+    }
+        
 
     /* ---------------------------------
        트랙이 이동할 수 있는 최대 거리
@@ -294,6 +314,22 @@ if (section2) {
         const maskWidth = clippingMask.clientWidth;
 
         return Math.max(0, trackWidth - maskWidth);
+    }
+
+    /* ---------------------------------
+    마지막으로 이동 가능한 인덱스
+    --------------------------------- */
+
+    function getLastSlideIndex() {
+        const moveDistance = getButtonMoveDistance();
+
+        if (moveDistance <= 0) {
+            return 0;
+        }
+
+        return Math.ceil(
+            getMaxTranslateX() / moveDistance
+        );
     }
 
 
@@ -310,15 +346,32 @@ if (section2) {
     }
 
 
+
     /* ---------------------------------
-       도트 활성 상태 변경
+    현재 이동 위치에 따라 도트 활성화
     --------------------------------- */
 
     function updateDots() {
+        const dotCount = slideDots.length;
+
+        if (dotCount === 0) {
+            return;
+        }
+
+        const maxTranslate = getMaxTranslateX();
+
+        const progress = maxTranslate > 0
+            ? currentTranslateX / maxTranslate
+            : 0;
+
+        const activeDotIndex = Math.round(
+            progress * (dotCount - 1)
+        );
+
         slideDots.forEach((dot, index) => {
             dot.classList.toggle(
                 "is_active_2",
-                index === currentSlideIndex
+                index === activeDotIndex
             );
         });
     }
@@ -347,7 +400,7 @@ if (section2) {
     --------------------------------- */
 
     function moveToSlide(index, useAnimation = true) {
-        const lastIndex = serviceButtons.length - 1;
+        const lastIndex = getLastSlideIndex();
 
         currentSlideIndex = Math.max(
             0,
@@ -358,11 +411,11 @@ if (section2) {
             getTranslateByIndex(currentSlideIndex);
 
         buttonTrack.style.transition = useAnimation
-            ? "transform 0.35s ease"
+            ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
             : "none";
 
         buttonTrack.style.transform =
-            `translateX(-${currentTranslateX}px)`;
+            `translate3d(-${currentTranslateX}px, 0, 0)`;
 
         updateDots();
         updateArrowState();
@@ -423,16 +476,16 @@ if (section2) {
 
 
     /* ---------------------------------
-       좌우 화살표 클릭
+    좌우 화살표 클릭
     --------------------------------- */
 
-    prevButton?.addEventListener("click", () => {
-        moveToSlide(currentSlideIndex - 1);
-    });
+        prevButton?.addEventListener("click", () => {
+            moveToSlide(currentSlideIndex - 1);
+        });
 
-    nextButton?.addEventListener("click", () => {
-        moveToSlide(currentSlideIndex + 1);
-    });
+        nextButton?.addEventListener("click", () => {
+            moveToSlide(currentSlideIndex + 1);
+        });
 
 
     /* ---------------------------------
@@ -539,19 +592,25 @@ if (section2) {
 
         buttonTrack.classList.remove("is_dragging");
 
-        const dragDistance = currentX - startX;
+        const moveDistance = getButtonMoveDistance();
 
-        if (dragDistance <= -dragThreshold) {
-            moveToSlide(currentSlideIndex + 1);
-        } else if (dragDistance >= dragThreshold) {
-            moveToSlide(currentSlideIndex - 1);
-        } else {
-            moveToSlide(currentSlideIndex);
+        if (moveDistance <= 0) {
+            return;
         }
+
+        /*
+        현재 드래그된 위치를 기준으로
+        가장 가까운 버튼 위치 계산
+        */
+        const nearestIndex = Math.round(
+            currentTranslateX / moveDistance
+        );
+
+        moveToSlide(nearestIndex);
 
         window.setTimeout(() => {
             hasDragged = false;
-        }, 0);
+        }, 50);
     }
 
 

@@ -50,7 +50,12 @@ p{
 body{
 
     width: 100%;
+    /* width: 1920px; */
+
+    margin: 0 auto;
     max-width: 1920px;
+
+
 }
 
 @media (max-width: 1023px) {
@@ -155,6 +160,16 @@ section{
 
     width: 50%;
    
+}
+
+.box_3and2{
+
+    aspect-ratio: 2 / 3;
+}
+
+.box_2and2{
+
+    aspect-ratio: 2 / 2;
 }
 
 /* ------------ 이미지 위치 조정용-------------- */
