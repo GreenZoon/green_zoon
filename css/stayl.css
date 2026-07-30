@@ -349,6 +349,7 @@
     flex-direction: column;
     gap: 30px;
 
+    max-height: 900px;
 
 }
 
@@ -716,43 +717,80 @@
 
 /* --------- 섹션 4--------- */
 
-    .section_4{
+    .section_4 {
 
-        background-color: #f8f8f8;
+        width: 100%;
+        min-height: 700px;
+
         display: flex;
         flex-direction: column;
+        gap: 30px;
 
-        gap: 36px;
+        background-color: #f8f8f8;
 
     }
 
-    .box_wrap{
+
+    /* 화면 밖 카드 숨김 */
+    .clipping_mask_4 {
+
+        width: 100%;
+        max-width: 1350px;
+        height: 100%;
+
+        margin: 0 auto;
+        overflow: hidden;
+        
+    }
+
+    /* 실제로 움직일 카드 트랙 */
+    .box_wrap_4 {
+        
+        width: max-content;
 
         display: flex;
         gap: 16px;
 
+        position: relative;
+
+        cursor: grab;
+        user-select: none;
+        touch-action: pan-y;
+
+        will-change: transform;
+        transition: transform 0.6s ease;
+
     }
 
-    .box_wrap_4{
+    .box_wrap_4.is_dragging {
 
-        position: absolute;
-        
+        cursor: grabbing;
+        transition: none;
+    
     }
+
 
     .slide_control_4{
 
+        width: 100%;
+        height: 100%;
+        max-height: 360px;
+       
         position: relative;
+        align-items: start;
+
     }
+        
 
     .box_4{
 
-        width: 100%;
+        flex: 0 0 325px;
+        width: 325px;
+
         display: flex;
         gap: 12px;
-
         aspect-ratio: 1 / 1;
-        max-width: 350px;
-        max-height: 350px;
+        max-width: 325px;
         padding: 16px;
 
     }
@@ -760,39 +798,84 @@
     .box_in_wrap{
 
         width: 100%;
+        height: 100%;
+
         display: flex;
         flex-direction: column;
         gap: 12px;
+
     }
 
-    .img_wrap_4{
+
+    .img_wrap_4 {
+
+        width: 100%;
+        height: 200px;
 
         display: block;
-        border-radius: 10px;
         overflow: hidden;
-        max-height: 200px;
 
-        
+        border-radius: 10px;
+
+    }
+
+
+
+    .img_wrap_4 img {
+
         width: 100%;
         height: 100%;
 
-    
+        display: block;
         object-fit: cover;
         object-position: center;
     }
 
-    .img_wrap_4 img{
+    .slide_pagination_4 {
 
-        width: 300px;
+        position: absolute;
+        left: 50%;
+        bottom: -8%;
+
+        display: flex;
+        gap: 4px;
+
+        transform: translateX(-50%);
+        z-index: 20;
 
     }
 
+        /* 기본 도트 */
+    .slide_pagination_4 .slide_dot {
+
+        width: 20px;
+        height: 5px;
+
+        border-radius: 999px;
+
+        transition:
+        width 0.25s ease,
+        background-color 0.25s ease;
+    }
+
+    /* 활성 도트 */
+    .slide_pagination_4 .slide_dot.is_active_4 {
+
+        width: 36px;
+        background-color: #009944;
+
+    }
+
+    .slide_dot[hidden] {
+    display: none;
+    }
 
     .tit_wrap_4{
 
         display: flex;
         gap: 9px;
         flex-direction: column;
+
     }
 
     .tit_wrap_4 h3{
@@ -801,6 +884,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow:ellipsis;
+
     }
 
 
@@ -819,10 +903,20 @@
         gap: 3px;
     }
 
+    .icon_4{
+
+        width: 12px;
+    }
+
     .p_wrap{
 
         display: flex;
         justify-content: space-between;
+    }
+
+        .box_wrap_4.is_dragging {
+        cursor: grabbing;
+        transition: none;
     }
 
 /* --------- 섹션5--------- */

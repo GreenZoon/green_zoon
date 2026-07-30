@@ -284,7 +284,9 @@ input{
 
 .keyword_section{
 
+    flex-direction: column;
     padding: 0 150px;
+    gap: 7px;
 }
 
 .keyword_section + .keyword_section {
