@@ -919,37 +919,94 @@
         transition: none;
     }
 
-/* --------- 섹션5--------- */
+        /* --------- 섹션5--------- */
 
-    .section_5{
+        .section_5 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 40px;
-    }
-
-    .img_wrap_5{
-
-        display: flex;
-
-        gap: 40px;
-
-    }
+            text-align: center;
+            gap: 40px;
+        }
 
 
-    .earth{
+        /* 캐러셀 전체 영역 */
+        .img_wrap_5 {
+            width: 100%;
+            max-width: 1100px;
+            height: 420px;
 
-        width: 30%;
-       height: 30%;
-       
-       
-    }
+            position: relative;
+        }
+
+
+        /* 지구 이미지 공통 */
+        .earth {
+            width: 320px;
+            height: 320px;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transition:
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.8s ease,
+                filter 0.8s ease;
+
+            transform-origin: center;
+        }
+
+
+        /* 실제 이미지 */
+        .earth img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+            object-fit: contain;
+        }
+
+
+        /* 왼쪽 이미지 */
+        .earth.is_left_5 {
+            z-index: 1;
+            opacity: 0.65;
+            filter: brightness(0.85);
+
+            transform:
+                translate(-150%, -50%)
+                scale(0.72)
+                rotate(-8deg);
+        }
+
+
+        /* 중앙 이미지 */
+        .earth.is_center_5 {
+            z-index: 3;
+            opacity: 1;
+            filter: brightness(1);
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.1)
+                rotate(0deg);
+        }
+
+
+        /* 오른쪽 이미지 */
+        .earth.is_right_5 {
+            z-index: 1;
+            opacity: 0.65;
+            filter: brightness(0.85);
+
+            transform:
+                translate(50%, -50%)
+                scale(0.72)
+                rotate(8deg);
+        }
 
 
     /* --------- 섹션6--------- */
