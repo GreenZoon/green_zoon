@@ -1,11 +1,6 @@
 @charset "utf-8";
 
 
-.box{
-
-    padding: 24px 16px;
-    border-radius: 20px;
-}
 
 /* ---- 슬라이드 coom ----- */
 
@@ -273,7 +268,7 @@
     width: 100%;
     height: 100%;
     transition: transform 0.6s ease;
-
+  
 }
 
 .main_img_1 {
@@ -332,6 +327,13 @@
 .tit_wrap_1 h2{
 
     color: #f2f2f2;
+    line-height: 1;
+}
+
+.tit_wrap_1 p{
+
+      color: #f2f2f2;
+
 }
 
 /* --------- 섹션 1 끝 --------- */
@@ -438,8 +440,6 @@
 
         gap: 40px;
 
-        color: #8E8E8E;
-        border: solid 2px #C6C6C6;
 
         position: relative;
         
@@ -488,7 +488,7 @@
         bottom: 4%;
         z-index: 20;
 
-        font-size: 12px;
+        font-size: 14px;
 
     }
 
@@ -564,6 +564,8 @@
 
     }
 
+    
+
     .left_arrow_2{
 
         left: 0;
@@ -577,8 +579,9 @@
         transform: rotate(-90deg);
     }
 
-    .arrow:disabled {
-        opacity: 0.3;
+    .sleid_wrap_2 .arrow:disabled,.sleid_wrap_2 .arrow:disabled .right_arrow_2 {
+        opacity: 1;
+        background-color: #d6d6d6;
         cursor: default;
         pointer-events: none;
     }
@@ -713,11 +716,114 @@
 
 /* --------- 섹션 4--------- */
 
+    .section_4{
+
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+
+        gap: 36px;
+
+    }
+
+    .box_wrap{
+
+        display: flex;
+        gap: 16px;
+
+    }
+
+    .box_wrap_4{
+
+        position: absolute;
+        
+    }
+
+    .slide_control_4{
+
+        position: relative;
+    }
+
+    .box_4{
+
+        width: 100%;
+        display: flex;
+        gap: 12px;
+
+        aspect-ratio: 1 / 1;
+        max-width: 350px;
+        max-height: 350px;
+        padding: 16px;
+
+    }
+
+    .box_in_wrap{
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .img_wrap_4{
+
+        display: block;
+        border-radius: 10px;
+        overflow: hidden;
+        max-height: 200px;
+
+        
+        width: 100%;
+        height: 100%;
+
+    
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .img_wrap_4 img{
+
+        width: 300px;
+
+    }
 
 
+    .tit_wrap_4{
+
+        display: flex;
+        gap: 9px;
+        flex-direction: column;
+    }
+
+    .tit_wrap_4 h3{
+
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+    }
 
 
+    .sub_tit_wrap p,.p_wrap p{
 
+        color: #8E8E8E;
+        font-weight: 400;
+        font-size: 14px;
+
+    }
+
+    .sub_tit_wrap{
+
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .p_wrap{
+
+        display: flex;
+        justify-content: space-between;
+    }
 
 /* --------- 섹션5--------- */
 

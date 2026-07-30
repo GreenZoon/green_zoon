@@ -385,7 +385,7 @@ if (section2) {
         const maxTranslate = getMaxTranslateX();
 
         if (prevButton) {
-            prevButton.disabled = currentTranslateX <= 0;
+            prevButton.disabled = currentTranslateX <= 1;
         }
 
         if (nextButton) {
