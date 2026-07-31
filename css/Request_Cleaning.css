@@ -1,0 +1,125 @@
+
+.Cleaning_box {
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    aspect-ratio: 7 / 2;
+    gap: 20px;
+    color: #009944;
+    border: 2px solid  #009944;
+}
+
+.Cleaning_box_green {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    aspect-ratio: 7 / 2;
+    gap: 20px;
+    color: #f2f2f2;
+   border: 2px solid  #009944;
+   background-color: #009944;
+
+}
+
+.Cleaning_tit_wrap{
+
+    width: 100%;
+    color: inherit;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+  
+}
+
+.Cleaning_tit_wrap h2{
+
+    font-size: 25px;
+    color: inherit;
+    font-weight: 700;
+}
+
+.Cleaning_tit_wrap p{
+
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 500;
+   
+}
+
+.Cleaning_ul_wrap{
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 70%;;
+    
+}
+
+.Cleaning_ul{
+
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.Cleaning_ul li{
+
+    display: flex;
+    width: 100%;
+        gap: 15px;
+    white-space: nowrap;
+}
+
+.Cleaning_ul li p{
+
+    font-size: 17px;
+    font-weight: 500;
+
+}
+
+.Cleaning_icon {
+
+    width: 50%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.Cleaning_icon_green{
+
+    width: 25%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #009944;
+}
+
+.Cleaning_box_in_wrap{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+  
+    gap: 12px;
+
+}
+
+.Cleaning_box:hover{
+
+    background-color: #009944;
+    color: #f2f2f2;
+    transition: 0.3s;
+}
+
+.Cleaning_box:hover .Cleaning_icon_green{
+
+    background-color: #f2f2f2;
+    transition: 0.3s;
+}

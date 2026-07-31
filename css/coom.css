@@ -28,7 +28,7 @@ a{
 
 h2{
 
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
 
@@ -736,6 +736,58 @@ svg{
 
     
 }
+
+.call_center{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/call-center.svg");
+    mask-image: url("../img/icon/call-center.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.contract{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/contract.svg");
+    mask-image: url("../img/icon/contract.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/* .contract:hover{
+
+    -webkit-mask-image: url("../img/icon/contract_blak.svg");
+    mask-image: url("../img/icon/contract_blak.svg");
+    background-color: #009944;
+    
+} */
 
 .play_but{
 
