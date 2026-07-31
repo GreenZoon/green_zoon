@@ -103,3 +103,4 @@ function closeHeaderSearch() {
 loadComponent("header", "./components/header_v2.html");
 loadComponent("footer", "./components/footer.html");
 loadComponent("menu", "./components/menu.html");
+loadComponent("Request_Cleaning", "./components/Request_Cleaning.html");

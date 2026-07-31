@@ -1150,47 +1150,34 @@
         animation: clientSlideLeft 35s linear infinite;
     }
 
-    @keyframes clientSlideRight {
-        from {
-            transform: translateX(-50%);
-        }
 
-        to {
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes clientSlideLeft {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
-    }
 
     /* -------------섹션 8---------------- */
 
 
-    .section_8
+    .section_8{
+
+        align-items: center;
+        justify-content: center;
+
+    }
     
 
     /* --------- 섹션 END--------- */
 
-    .section_end{
+
+    .section_end {
 
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 20px 150px;
         gap: 12px;
-
         border-top: 1px solid #dbdbdb;
 
     }
 
-    .slied_wrap_end{
+    .slide_wrap_end{
 
           display: flex;
         align-items: center;
