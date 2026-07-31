@@ -334,19 +334,151 @@ if (slider) {
 
 // -----------------------------------------
 
-document.querySelectorAll('.client_wrap').forEach(function (clientWrap) {
+const certificationSlider = document.querySelector(".section_end");
 
-    const clientGroup = clientWrap.querySelector('.client_group_7');
+if (certificationSlider) {
+    const certificationWrap =
+        certificationSlider.querySelector(".certification_wrap");
 
-    if (!clientGroup) {
-        return;
+    const leftButton =
+        certificationSlider.querySelector(".left_arrow_2");
+
+    const rightButton =
+        certificationSlider.querySelector(".right_arrow_2");
+
+    const originalItems = Array.from(
+        certificationWrap.querySelectorAll(".certification")
+    );
+
+    if (originalItems.length > 0) {
+        const originalLength = originalItems.length;
+
+        /* 원본 전체를 앞뒤로 한 세트씩 복제 */
+        const frontClones = originalItems.map((item) => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+
+            return clone;
+        });
+
+        const backClones = originalItems.map((item) => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+
+            return clone;
+        });
+
+        /* 앞쪽 복제본 삽입 */
+        frontClones.reverse().forEach((clone) => {
+            certificationWrap.insertBefore(
+                clone,
+                certificationWrap.firstChild
+            );
+        });
+
+        /* 뒤쪽 복제본 삽입 */
+        backClones.forEach((clone) => {
+            certificationWrap.appendChild(clone);
+        });
+
+        let currentIndex = originalLength;
+        let autoSlideTimer = null;
+        let isMoving = false;
+
+        function getMoveDistance() {
+            const firstItem =
+                certificationWrap.querySelector(".certification");
+
+            const wrapStyle =
+                window.getComputedStyle(certificationWrap);
+
+            const gap = parseFloat(wrapStyle.columnGap) || 0;
+
+            return firstItem.getBoundingClientRect().width + gap;
+        }
+
+        function updateCertificationSlide(withAnimation = true) {
+            const moveDistance = getMoveDistance();
+
+            certificationWrap.style.transition = withAnimation
+                ? "transform 0.4s ease"
+                : "none";
+
+            certificationWrap.style.transform =
+                `translateX(-${currentIndex * moveDistance}px)`;
+        }
+
+        function moveCertificationNext() {
+            if (isMoving) {
+                return;
+            }
+
+            isMoving = true;
+            currentIndex++;
+
+            updateCertificationSlide(true);
+        }
+
+        function moveCertificationPrevious() {
+            if (isMoving) {
+                return;
+            }
+
+            isMoving = true;
+            currentIndex--;
+
+            updateCertificationSlide(true);
+        }
+
+        certificationWrap.addEventListener("transitionend", function () {
+            /*
+             * 뒤쪽 복제 세트로 들어가면
+             * 같은 모양의 원본 위치로 순간 이동
+             */
+            if (currentIndex >= originalLength * 2) {
+                currentIndex -= originalLength;
+                updateCertificationSlide(false);
+            }
+
+            /*
+             * 앞쪽 복제 세트로 들어가면
+             * 같은 모양의 원본 위치로 순간 이동
+             */
+            if (currentIndex < originalLength) {
+                currentIndex += originalLength;
+                updateCertificationSlide(false);
+            }
+
+            isMoving = false;
+        });
+
+        function startCertificationAutoSlide() {
+            clearInterval(autoSlideTimer);
+
+            autoSlideTimer = setInterval(function () {
+                moveCertificationNext();
+            }, 3000);
+        }
+
+        rightButton?.addEventListener("click", function () {
+            moveCertificationNext();
+            startCertificationAutoSlide();
+        });
+
+        leftButton?.addEventListener("click", function () {
+            moveCertificationPrevious();
+            startCertificationAutoSlide();
+        });
+
+        /* 이미지 크기가 계산된 후 초기 위치 설정 */
+        window.addEventListener("load", function () {
+            updateCertificationSlide(false);
+            startCertificationAutoSlide();
+        });
+
+        /* 화면 크기가 바뀌면 현재 위치 다시 계산 */
+        window.addEventListener("resize", function () {
+            updateCertificationSlide(false);
+        });
     }
-
-    const clonedGroup = clientGroup.cloneNode(true);
-
-    /* 복제 이미지는 스크린 리더에서 중복으로 읽지 않도록 처리 */
-    clonedGroup.setAttribute('aria-hidden', 'true');
-
-    clientWrap.appendChild(clonedGroup);
-
-});
+}
