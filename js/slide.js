@@ -330,3 +330,23 @@ if (slider) {
     updateToggleButton();
     startAutoPlay();
 }
+
+
+// -----------------------------------------
+
+document.querySelectorAll('.client_wrap').forEach(function (clientWrap) {
+
+    const clientGroup = clientWrap.querySelector('.client_group_7');
+
+    if (!clientGroup) {
+        return;
+    }
+
+    const clonedGroup = clientGroup.cloneNode(true);
+
+    /* 복제 이미지는 스크린 리더에서 중복으로 읽지 않도록 처리 */
+    clonedGroup.setAttribute('aria-hidden', 'true');
+
+    clientWrap.appendChild(clonedGroup);
+
+});

@@ -1072,10 +1072,109 @@
 
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
-        gap: 40px;
+        width: 100%;
+        gap: 0;
+
+        overflow: hidden;
+        
     }
 
+    .slide_wrap_7{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        gap: 30px;
+         margin-top: 50px;
+        position: relative;
+
+    }
+
+    .clipping_mask_7{
+
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 80px;
+
+        position: relative;
+
+        overflow: hidden;
+        
+    }
+
+    /* 로고 한 묶음 */
+    .client_group_7 {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        /* 그룹이 이어지는 부분에도 동일한 간격 생성 */
+        padding-right: 24px;
+    }
+
+
+    .client_wrap{
+
+        display: flex;
+        align-items: center;
+        will-change: transform;
+        width: max-content;
+        gap: 0;
+        padding-right: 36px;
+
+    }
+
+    .client {
+        flex-shrink: 0;
+
+        width: 180px;
+        height: 100px;
+
+        object-fit: contain;
+    }
+
+        /* 위쪽: 왼쪽에서 오른쪽 */
+    .slide_right_7 .client_wrap {
+        animation: clientSlideRight 35s linear infinite;
+    }
+
+    /* 아래쪽: 오른쪽에서 왼쪽 */
+    .slide_left_7 .client_wrap {
+        animation: clientSlideLeft 35s linear infinite;
+    }
+
+    @keyframes clientSlideRight {
+        from {
+            transform: translateX(-50%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes clientSlideLeft {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* -------------섹션 8---------------- */
+
+
+    .section_8
+    
 
     /* --------- 섹션 END--------- */
 
@@ -1091,13 +1190,20 @@
 
     }
 
-
     .slied_wrap_end{
 
           display: flex;
         align-items: center;
         width: 100%;
        
+    }
+
+    .certification_wrap{
+        
+        display: flex;
+        gap: 0 36px;
+
+        height: 27px;
     }
 
     .clipping_mask_end{
@@ -1115,20 +1221,3 @@
     }
 
 
-    .certification_wrap{
-
-        display: flex;
-        
-     
-        gap: 0 36px;
-        
-        position: absolute;
-        
-    }
-
-    
-
-    .certification{
-
-        height: 27px;
-    }
