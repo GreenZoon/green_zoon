@@ -73,6 +73,11 @@ h3{
 
     }
 
+    .tit_wrap_senter{
+
+        text-align: center;
+    }
+
     .tit_wrap p {
 
         color: #1d1d1d;
@@ -737,6 +742,75 @@ svg{
     
 }
 
+.calendar{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/calendar.svg");
+    mask-image: url("../img/icon/calendar.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.pen{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/pen.svg");
+    mask-image: url("../img/icon/pen.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.party{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/party.svg");
+    mask-image: url("../img/icon/party.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
 .call_center{
 
     display: block;
@@ -759,6 +833,27 @@ svg{
     mask-size: contain;
 }
 
+.question_answer{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/question-answer.svg");
+    mask-image: url("../img/icon/question-answer.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
 .contract{
 
     display: block;
@@ -788,6 +883,51 @@ svg{
     background-color: #009944;
     
 } */
+
+.megaphone{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/megaphone.svg");
+    mask-image: url("../img/icon/megaphone.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.info{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/info.svg");
+    mask-image: url("../img/icon/info.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
 
 .play_but{
 
