@@ -378,6 +378,7 @@
 
     width: 100%;
     max-width: 1560px;
+    padding: 3px;
     overflow: hidden;
 }
 
@@ -388,12 +389,11 @@
     flex: 0 0 118px;
     
     width: 100%;
-    max-width: 118px;
-    max-height:120px;
-
+    max-width: 110px;
+    aspect-ratio: 1 / 1;
     flex-shrink: 0;
 
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
 
     display: flex;
     align-items: center;
@@ -1011,6 +1011,60 @@
 
     /* --------- 섹션6--------- */
 
+    .section_6 .con_wrap{
+
+        width: 50%;
+
+    }
+
+    .con_wrap_6{
+
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .con_wrap_in_wrap{
+
+        display: flex;
+        gap: 27px;
+    }
+
+    .con_6{
+
+        width: 30%;
+        border: #009944 2px solid;
+        background-color: #fff;
+        color: #009944;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+
+        gap: 0px;
+        
+    }
+
+    .con_6 h3{
+
+        color: #009944;
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    .con_6 p{
+
+        font-size: 19px;
+    }
+
+    .Graph{
+
+        border-radius: 20px;
+        overflow: hidden;
+
+    }
 
     /* --------- 섹션7--------- */
 
@@ -1040,17 +1094,39 @@
 
     .slied_wrap_end{
 
+          display: flex;
+        align-items: center;
+        width: 100%;
+       
+    }
+
+    .clipping_mask_end{
+
+        width:100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        height:30px;
+        overflow: hidden;
+        position: relative;
+
         display: flex;
+        align-items: center;
 
     }
+
 
     .certification_wrap{
 
         display: flex;
+        
+     
         gap: 0 36px;
-        overflow: hidden;
+        
+        position: absolute;
         
     }
+
+    
 
     .certification{
 
