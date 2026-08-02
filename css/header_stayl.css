@@ -28,6 +28,8 @@
 
 .logo{
 
+    width: 100%;
+    display: flex;
    max-width: 150px;
    max-height:45px;
 }
