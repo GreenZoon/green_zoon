@@ -1,15 +1,16 @@
 
 p{
 
-     color: inherit;
-     line-height: 1;
+    color: inherit;
+    line-height: 1;
+    font-weight: 400;
 
 }
 
 
 .tit_wrap p {
 
- color: inherit;
+    color: inherit;
 
 }
 
@@ -23,7 +24,6 @@ p{
     width: 100%;
     height:400px;
     object-fit: cover;
-    
 
 }
 
@@ -112,7 +112,57 @@ p{
 
 }
 
+.sub_pag_gnb{
 
+    width: 100%;
+    height: 100%;
+    background-color: #ffff;
+   
+    max-height: 50px;
+   
+}
+
+.sub_pag_menu{
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 150px;
+    gap: 20px;
+}
+
+.sub_pag_depth{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+    color: #8e8e8e;
+    text-align: center;
+    max-width: 120px;
+
+}
+
+.sub_pag_tit{
+    
+    font-size: 18px;
+    text-align: center;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;  
+    font-weight: 600;
+    padding: 10px;
+
+}
+
+.sub_pag_depth:hover{ 
+
+    background-color: #009944;
+    color: #f2f2f2;
+}
 
 .storage{
 
