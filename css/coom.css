@@ -1045,17 +1045,23 @@ svg{
     mask-size: contain;
 }
 
-.play_but{
 
-    width: 24px;
-    height: 24px;
-    padding: 4px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
+/* -------------효과--------------- */
 
-    -webkit-mask-image: url("../img/icon/play.svg");
-    mask-image: url("../img/icon/play.svg");
+
+/* 공장 환경 개선 */
+
+.Factory_Environmental_Improvement{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/Factory_Environmental_Improvement.svg");
+    mask-image: url("../img/icon/Factory_Environmental_Improvement.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -1066,7 +1072,54 @@ svg{
     -webkit-mask-size: contain;
     mask-size: contain;
 
-    background-color: #f8f8f8;
+}
+
+/* 안전사고 예방 */
+
+.Safety_accident_prevention{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/Safety-accident-prevention.svg");
+    mask-image: url("../img/icon/Safety-accident-prevention.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+}
+
+.Increase_work_efficiency{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/Increase-work-efficiency.svg");
+    mask-image: url("../img/icon/Increase-work-efficiency.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
 
 
 }

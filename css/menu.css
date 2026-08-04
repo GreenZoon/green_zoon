@@ -80,9 +80,6 @@ nav{
 
 }
 
-
-
-
 .depth_2{
 
     display:flex;
@@ -130,7 +127,7 @@ nav{
     align-items:center;
     justify-content:center;
     gap:6px;
-     transition: transform 0.25s ease;
+    transition: transform 0.25s ease;
 
 
 

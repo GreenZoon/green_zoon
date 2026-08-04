@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: end;
     aspect-ratio: 7 / 2;
-    gap: 20px;
+    gap: 14px;
     color: #009944;
     border: 2px solid  #009944;
 }
@@ -44,15 +44,14 @@
 
     white-space: nowrap;
     font-size: 17px;
-    line-height: 1.2;
-    
-   
+    line-height: 1.5;
+
 }
 
 .Cleaning_ul_wrap{
 
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 12px;
     width: 70%;;
     
@@ -60,8 +59,8 @@
 
 .Cleaning_ul{
 
-    
     display: flex;
+    gap: 14px;
     flex-direction: column;
 }
 
