@@ -7,7 +7,6 @@ nav{
     max-height: 50px;
     border-bottom: 2px solid #f2f2f2;
    
-
 }
 
 .gnb{
@@ -128,8 +127,6 @@ nav{
     justify-content:center;
     gap:6px;
     transition: transform 0.25s ease;
-
-
 
 }
 
