@@ -108,6 +108,7 @@ function closeHeaderSearch() {
 
 loadComponent("header", "../../components/header_v2.html");
 loadComponent("menu", "../../components/menu.html");
+loadComponent("Factry_sub_menu", "../../components/sub_pag/Factry_sub_menu.html");
 loadComponent("footer", "../../components/footer.html");
 loadComponent("Request_Cleaning", "../../components/Request_Cleaning.html");
 

@@ -1,17 +1,39 @@
 
-  
-    html,
-    body,
-    button,
-    input,
-    textarea,
-    select{
+
+
+
+    /* 
+
+    
+    대제목
+    font-size: 2rem;          32px 
+
+    중제목 
+    font-size: 1.5rem;        24px 
+
+    부제목 
+    font-size: 1.25rem;       20px 
+
+    카드 제목 
+    font-size: 1.0625rem;      17px 
+
+    일반 본문
+    font-size: 0.9375rem;      15px 
+
+    보조 문구 
+    font-size: 0.8125rem;      13px 
+
+    */
+
+    
+    html,body,button,input,textarea,select{
 
         font-family: "Pretendard", sans-serif;
 
     }
 
     h1,h2,h3,h4,p,a{
+
         font-family: "Pretendard", sans-serif;
         letter-spacing: -0.05em;
         
@@ -56,7 +78,7 @@
 
        font-size: 1.3125rem;
         font-weight: 500;
-        letter-spacing: -0.02em; 
+        letter-spacing: -0.02rem; 
         color: inherit;
 
     }
@@ -90,7 +112,7 @@
     }
     
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
 
     h2{
 
@@ -119,7 +141,7 @@
     }
 
 
-}
+} */
 
 /* ------폰트규칙--------- */
 
@@ -301,6 +323,7 @@ svg{
     color: #f2f2f2;
     align-items: center;
     justify-content: center;
+
 }
 
 

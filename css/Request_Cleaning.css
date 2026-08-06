@@ -10,6 +10,11 @@
     border: 2px solid  #009944;
 }
 
+.Cleaning_box,.Cleaning_box_green{
+
+    padding: 35px 40px;
+}
+
 .Cleaning_box_green {
 
     display: flex;
@@ -28,14 +33,14 @@
     width: 100%;
     color: inherit;
     display: flex;
-    gap: 15px;
+    gap: 9px;
     flex-direction: column;
   
 }
 
 .Cleaning_tit_wrap h2{
 
-    font-size: 25px;
+    font-size: 1.5rem; 
     color: inherit;
     font-weight: 700;
 }
@@ -43,8 +48,9 @@
 .Cleaning_tit_wrap p{
 
     white-space: nowrap;
-    font-size: 17px;
+    font-size: 1.0625rem;    
     line-height: 1.5;
+    font-weight: 500;
 
 }
 
@@ -60,23 +66,22 @@
 .Cleaning_ul{
 
     display: flex;
-    gap: 14px;
     flex-direction: column;
+
 }
 
 .Cleaning_ul li{
 
     display: flex;
     width: 100%;
-    gap: 15px;
+    gap: 2rem;
     white-space: nowrap;
 }
 
 .Cleaning_ul li p{
 
-    font-size: 17px;
+    font-size: 1.0625rem; 
     
-
 }
 
 .Cleaning_icon {
