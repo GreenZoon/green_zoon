@@ -504,7 +504,9 @@
 
     .tit_wrap_2 p{
 
-        font-size: 1rem;
+        font-size: 0.9375rem;
+        color: #8E8E8E;
+        font-weight: 500;
     
     }
 
@@ -686,7 +688,7 @@
     .section_3{
 
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         flex-direction: column;
 
@@ -907,6 +909,7 @@
     .icon_4{
 
         width: 12px;
+        flex: initial;
     }
 
     .p_wrap{
@@ -963,16 +966,19 @@
 
         /* 실제 이미지 */
         .earth img {
+
             width: 100%;
             height: 100%;
 
             display: block;
             object-fit: contain;
+
         }
 
 
         /* 왼쪽 이미지 */
         .earth.is_left_5 {
+
             z-index: 1;
             opacity: 0.65;
             filter: brightness(0.85);
@@ -986,6 +992,7 @@
 
         /* 중앙 이미지 */
         .earth.is_center_5 {
+
             z-index: 3;
             opacity: 1;
             filter: brightness(1);
@@ -999,6 +1006,7 @@
 
         /* 오른쪽 이미지 */
         .earth.is_right_5 {
+
             z-index: 1;
             opacity: 0.65;
             filter: brightness(0.85);
@@ -1023,12 +1031,14 @@
         display: flex;
         flex-direction: column;
         gap: 50px;
+
     }
 
     .con_wrap_in_wrap{
 
         display: flex;
         gap: 27px;
+
     }
 
     .con_6{
@@ -1051,13 +1061,14 @@
     .con_6 h3{
 
         color: #009944;
-        font-size: 25px;
+        font-size: 1.5rem;
         line-height: 1.2;
+
     }
 
     .con_6 p{
 
-        font-size: 19px;
+        font-size: 1.0625rem;
     }
 
     .Graph{
@@ -1112,6 +1123,7 @@
 
     /* 로고 한 묶음 */
     .client_group_7 {
+
         display: flex;
         align-items: center;
         gap: 24px;
@@ -1215,13 +1227,14 @@
 
     .box_8:hover .icon_8{
 
-            background-color: #009944;
+        background-color: #009944;
 
     }
 
     .box_8:hover .arrow_up_right{
 
-            background-color: #009944;
+        background-color: #009944;
+
     }
 
     .box_in_wrap_8{
@@ -1238,7 +1251,7 @@
 
     .box_in_wrap_8 h3{
 
-        font-size: 25px;
+        font-size: 1.5rem;
         line-height: 1.2;
         font-weight: 700;
        color: inherit;
@@ -1250,7 +1263,8 @@
         align-items: center;
         white-space: nowrap;
         gap: 4px;
-        font-size: 17px;
+        font-size: 1.0625rem;
+        font-weight: 500;
         line-height: 1.2;
         color: inherit;
         
@@ -1260,7 +1274,8 @@
 
         width: 12px;
         height: 12px;
-          background-color:    #8E8E8E;
+        background-color:    #8E8E8E;
+
     }
 
 
