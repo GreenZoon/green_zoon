@@ -310,6 +310,8 @@ svg{
 .icon{
 
     width: 24px;
+    
+    flex: 0 0 48px;
     aspect-ratio: 1 / 1;
    
 }
@@ -573,183 +575,6 @@ svg{
 
 }
 
-.cancel{
-
-    width: 24px;
-    height: 24px;
-    padding: 4px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
-
-    -webkit-mask-image: url("../img/icon/cancel.svg");
-    mask-image: url("../img/icon/cancel.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    background-color: #1d1d1d;
-
-}
-
-.opera{
-
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/opera.svg");
-    mask-image: url("../img/icon/opera.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-}
-
-.ship{
-
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/ship.svg");
-    mask-image: url("../img/icon/ship.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-}
-
-
-.soap_ottle{
-
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/soap-bottle.svg");
-    mask-image: url("../img/icon/soap-bottle.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-}
-
-.greek{
-
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/greek.svg");
-    mask-image: url("../img/icon/greek.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-}
-
-.user{
-
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/user.svg");
-    mask-image: url("../img/icon/user.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-}
-
-.pond{
-
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/pond.svg");
-    mask-image: url("../img/icon/pond.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-
-}
-
 .arrow_up_right{
 
         display: block;
@@ -775,6 +600,60 @@ svg{
     
 }
 
+.cancel{
+
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+    -webkit-mask-image: url("../img/icon/cancel.svg");
+    mask-image: url("../img/icon/cancel.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+}
+
+/* 유저 */
+.user{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/user.svg");
+    mask-image: url("../img/icon/user.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+
+/* 달력 */
+
 .calendar{
 
     display: block;
@@ -797,6 +676,8 @@ svg{
     mask-size: contain;
 
 }
+
+/* 펜_작성 */
 
 .pen{
 
@@ -821,6 +702,9 @@ svg{
 
 }
 
+
+/* 축하_이벤트_파티 */
+
 .party{
 
     display: block;
@@ -844,6 +728,7 @@ svg{
 
 }
 
+/* 고객센터 */
 .call_center{
 
     display: block;
@@ -866,6 +751,7 @@ svg{
     mask-size: contain;
 }
 
+/* QA */
 .question_answer{
 
     display: block;
@@ -888,6 +774,7 @@ svg{
     mask-size: contain;
 }
 
+/* 신청_작성 */
 .contract{
 
     display: block;
@@ -918,6 +805,8 @@ svg{
     
 } */
 
+
+/* 메가폰 */
 .megaphone{
 
     display: block;
@@ -940,6 +829,7 @@ svg{
     mask-size: contain;
 }
 
+/* 정보 i */
 .info{
 
     display: block;
@@ -962,6 +852,7 @@ svg{
     mask-size: contain;
 }
 
+/* 창고 */
 .storage{
 
     display: block;
@@ -985,6 +876,7 @@ svg{
 
 }
 
+/* 사무실 */
 .office{
 
     display: block;
@@ -1008,6 +900,7 @@ svg{
 
 }
 
+/* 배관 */
 .pipeline{
 
     display: block;
@@ -1030,6 +923,7 @@ svg{
     mask-size: contain;
 }
 
+/* 기계실 */
 .gears{
     
     display: block;
@@ -1052,6 +946,7 @@ svg{
     mask-size: contain;
 }
 
+/* 보일러실 */
 .gas_heater{
 
     display: block;
@@ -1075,6 +970,200 @@ svg{
 
 }
 
+/* 무대 */
+
+.opera{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/opera.svg");
+    mask-image: url("../img/icon/opera.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+
+/* 배 */
+
+.ship{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/ship.svg");
+    mask-image: url("../img/icon/ship.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+/* 락스 */
+
+.soap_ottle{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/soap-bottle.svg");
+    mask-image: url("../img/icon/soap-bottle.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+/* 동상 */
+
+.greek{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/greek.svg");
+    mask-image: url("../img/icon/greek.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+
+
+/* 호수 */
+
+.pond{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/pond.svg");
+    mask-image: url("../img/icon/pond.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+
+}
+
+/* 바닥 */
+
+.floor{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/floor.svg");
+    mask-image: url("../img/icon/floor.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+}
+
+
+.staircase{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/staircase.svg");
+    mask-image: url("../img/icon/staircase.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+
+
+}
+
+/* 프리픽크 */
 .freepik{
 
     width: 100%;
@@ -1101,6 +1190,7 @@ svg{
 
 }
 
+/* 집 */
 .home{
 
     display: block;
@@ -1372,7 +1462,28 @@ svg{
 
 }
 
+.youtube{
 
+    display: block;
+    width: 24px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #8E8E8E;
+
+    -webkit-mask-image: url("../img/icon/youtube.svg");
+    mask-image: url("../img/icon/youtube.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
 
 /* -------아이콘 끝--------- */
 
