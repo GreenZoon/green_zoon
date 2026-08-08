@@ -1320,7 +1320,7 @@ svg{
 
 }
 
-/* 설비 보수 비용 감수*/
+/* 설비 보수 비용 감소*/
 
 .Equipment_maintenance{
 
@@ -1344,9 +1344,9 @@ svg{
 
 }
 
-    /* 설비 효율 증대 */
+/* 설비 효율 증대 */
 
-.Improving_equipmen{
+.Process-improvement{
 
     display: block;
     padding: 0;
@@ -1354,8 +1354,8 @@ svg{
     cursor: pointer;
     background-color: #1d1d1d;
 
-    -webkit-mask-image: url("../img/icon/Improving_equipment_efficiency");
-    mask-image: url("../img/icon/Improving_equipment_efficiency");
+    -webkit-mask-image: url("../img/icon/Process-improvement.svg");
+    mask-image: url("../img/icon/Process-improvement.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -1379,8 +1379,8 @@ svg{
 
     background-color: #1d1d1d;
 
-    -webkit-mask-image: url("../img/icon/Improvement_product_quality.svg");
-    mask-image: url("../img/icon/Improvement_product_quality.svg");
+    -webkit-mask-image: url("../img/icon/Extending-equipment-lifespan.svg");
+    mask-image: url("../img/icon/Extending-equipment-lifespan.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -1395,7 +1395,7 @@ svg{
 
 /* 제품 품질 향상 */
 
-.Improvement_product{
+.Developing{
 
     display: block;
     padding: 0;
@@ -1404,8 +1404,8 @@ svg{
 
     background-color: #1d1d1d;
 
-    -webkit-mask-image: url("../img/icon/i");
-    mask-image: url("../img/icon/Extending-equipment-lifespan.svg");
+    -webkit-mask-image: url("../img/icon/developing.svg");
+    mask-image: url("../img/icon/developing.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -1427,8 +1427,8 @@ svg{
 
     background-color: #1d1d1d;
 
-    -webkit-mask-image: url("../img/icon/Pier-surface-extension.svg");
-    mask-image: url("../img/icon/Pier-surface-extension.svg");
+    -webkit-mask-image: url("../img/icon/Ensure-repairability-durability.svg");
+    mask-image: url("../img/icon/Ensure-repairability-durability.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
