@@ -65,8 +65,9 @@
 
     h3{
 
-       font-size: 1.1875rem;
+        font-size: 1.1875rem;
         font-weight: 700;
+
     }
 
     .f8f8f8{
@@ -111,6 +112,7 @@
 
         color: #1d1d1d;
         font-weight: 600;
+
     }
     
 
@@ -247,6 +249,23 @@ section{
     justify-content: center;
     line-height: 1;
     gap: 4px;
+}
+
+.flx_li_g{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    gap: 4px;
+    background-color: #009944;
+
+    color: #f2f2f2;
+}
+
+.content_start{
+
+    justify-content: start;
 }
 
 .tit_li{
@@ -400,30 +419,7 @@ svg{
 
 }
 
-.carpet{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/carpet.svg");
-    mask-image: url("../img/icon/carpet.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
-}
 
 .doctor{
 
@@ -878,6 +874,55 @@ svg{
 
 }
 
+/* 회사 */
+.company_back{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/company_blak.svg");
+    mask-image: url("../img/icon/company_blak.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+}
+
+.company{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/company.svg");
+    mask-image: url("../img/icon/company.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
+}
+
 /* 사무실 */
 .office{
 
@@ -899,6 +944,58 @@ svg{
 
     -webkit-mask-size: contain;
     mask-size: contain;
+
+}
+
+/* 카펫 */
+.carpet{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/carpet.svg");
+    mask-image: url("../img/icon/carpet.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+.sofa{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/sofa.svg");
+    mask-image: url("../img/icon/sofa.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
 
 }
 
@@ -973,7 +1070,6 @@ svg{
 }
 
 /* 무대 */
-
 .opera{
 
     display: block;
@@ -999,9 +1095,58 @@ svg{
 
 }
 
+/* 행사 */
+.stage{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/stage.svg");
+    mask-image: url("../img/icon/stage.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
+/* 관공서 */
+.courthouse{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/courthouse.svg");
+    mask-image: url("../img/icon/courthouse.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+}
 
 /* 배 */
-
 .ship{
 
     display: block;
@@ -1028,7 +1173,6 @@ svg{
 }
 
 /* 락스 */
-
 .soap_ottle{
 
     display: block;
@@ -1055,7 +1199,6 @@ svg{
 }
 
 /* 동상 */
-
 .greek{
 
     display: block;
@@ -1081,10 +1224,7 @@ svg{
 
 }
 
-
-
 /* 호수 */
-
 .pond{
 
     display: block;
@@ -1108,11 +1248,9 @@ svg{
 
     transition: transform 0.25s ease;
 
-
 }
 
 /* 바닥 */
-
 .floor{
 
     display: block;
@@ -1137,7 +1275,7 @@ svg{
     transition: transform 0.25s ease;
 }
 
-
+/* 계단 */
 .staircase{
 
     display: block;
@@ -1161,9 +1299,60 @@ svg{
 
     transition: transform 0.25s ease;
 
+}
 
+/* 호텔 */
+.hotel{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/hotel.svg");
+    mask-image: url("../img/icon/hotel.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
 
 }
+
+/* 후드 */
+.extracto{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/extracto.svg");
+    mask-image: url("../img/icon/extracto.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
 
 /* 프리픽크 */
 .freepik{
