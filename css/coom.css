@@ -1,365 +1,446 @@
 
-
-
-
-    /* 
-
-    
-    대제목
-    font-size: 2rem;          32px 
-
-    중제목 
-    font-size: 1.5rem;        24px 
-
-    부제목 
-    font-size: 1.25rem;       20px 
-
-    카드 제목 
-    font-size: 1.0625rem;      17px 
-
-    일반 본문
-    font-size: 0.9375rem;      15px 
-
-    보조 문구 
-    font-size: 0.8125rem;      13px 
-
-    */
-
-    
-    html,body,button,input,textarea,select{
-
-        font-family: "Pretendard", sans-serif;
-
-    }
-
-    h1,h2,h3,h4,p,a{
-
-        font-family: "Pretendard", sans-serif;
-        letter-spacing: -4%;
-        line-height: 150%;
-        
-        color: #1d1d1d;
-    }
-
-    html{
-
-        font-size: 16px;
-
-    }
-
-    a{
-
-        text-decoration: none;
-        fill:currentColor;
-        color: inherit;
-
-    }
-
-    h2{
-
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 3rem;
-        
-    }
-
-    h3{
-
-        font-size: 1.1875rem;
-        font-weight: 700;
-
-    }
-
-    .f8f8f8{
-
-        color: #F8F8F8;
-
-    }
-
-    p{
-
-       font-size: 1.3125rem;
-        font-weight: 500;
-        line-height: 150%;
-        letter-spacing: -4%;
-        color: inherit;
-
-    }
-
-    body{
-
-        width: 100%;
-        /* width: 1920px; */
-
-        margin: 0 auto;
-        max-width: 1920px;
-
-
-    }
-
-    .tit_wrap{
-
-        color: #1d1d1d;
-
-    }
-
-    .tit_wrap_senter{
-
-        text-align: center;
-    }
-
-    .tit_wrap p {
-
-        color: #1d1d1d;
-        font-weight: 600;
-
-    }
-    
-
-/* @media (max-width: 1023px) {
-
-    h2{
-
-    font-size: 2rem;
-
-    }
-
-    p{
-
-        font-size: 1rem;
-    }
-
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-@media (max-width:480px){
+html {
+    font-size: 16px;
+}
 
-        h2{
+html,
+body,
+button,
+input,
+textarea,
+select {
+    font-family: "Pretendard", sans-serif;
+}
 
-    font-size: 25px;
+body {
+    width: 100%;
+    max-width: 1920px;
 
-    }
+    margin: 0 auto;
 
-    p{
-
-        font-size: 14px;
-    }
+    color: #1d1d1d;
+}
 
 
-} */
+/* 기본 여백 제거 */
 
-/* ------폰트규칙--------- */
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
 
-section{
+
+/* 링크 */
+
+a {
+    color: inherit;
+    text-decoration: none;
+    fill: currentColor;
+}
+
+
+/* 이미지 */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* 버튼 */
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   2. TYPOGRAPHY SYSTEM
+========================================================= */
+
+/*
+
+DESKTOP
+
+페이지 대표 제목
+40px / 700
+2.5rem
+
+섹션 제목
+25px / 700
+1.5625rem
+
+중간 제목
+19px / 700
+1.1875rem
+
+콘텐츠 제목
+19px / 700
+1.1875rem
+
+일반 본문
+17px / 500
+1.0625rem
+
+보조 문구
+15px / 400
+0.9375rem
+
+작은 정보
+12px / 400
+0.75rem
+
+*/
+
+
+/* 공통 텍스트 기본 */
+
+h1,
+h2,
+h3,
+h4,
+p{
+    color: #1d1d1d;
+}
+
+
+/* -------------------------
+   페이지 대표 제목
+------------------------- */
+
+.page_title {
+
+    font-size: 2.5rem;          /* 40px */
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+
+/* -------------------------
+   섹션 제목
+------------------------- */
+
+h2,
+.section_title {
+
+    font-size: 1.5625rem;       /* 25px */
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+}
+
+
+/* -------------------------
+   중간 제목
+------------------------- */
+
+h3,
+.sub_title,
+.content_title {
+
+    font-size: 1.1875rem;       /* 19px */
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    
+}
+
+
+/* -------------------------
+   일반 본문
+------------------------- */
+
+p,
+.body_text {
+
+    font-size: 1.0625rem;       /* 17px */
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+
+    color: inherit;
+}
+
+
+/* -------------------------
+   보조 문구
+------------------------- */
+
+.info_text {
+
+    font-size: 0.9375rem;       /* 15px */
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+}
+
+
+/* -------------------------
+   작은 정보 / 푸터 등
+------------------------- */
+
+.small_text {
+
+    font-size: 0.75rem;         /* 12px */
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+}
+
+
+/* 기존 타이틀 wrapper */
+
+.tit_wrap {
+
+    color: #1d1d1d;
+}
+
+.tit_wrap p {
+
+    color: inherit;
+}
+
+.tit_wrap_senter {
+
+    text-align: center;
+}
+
+
+/* 밝은 텍스트 */
+
+.f8f8f8 {
+
+    color: #f8f8f8;
+}
+
+
+/* =========================================================
+   3. SECTION
+========================================================= */
+
+/*
+    공통 section에는
+    height / max-height를 걸지 않는다.
+
+    내용이 긴 서브페이지도
+    자연스럽게 높이가 증가하도록 함.
+*/
+
+section {
+
 
     width: 100%;
-    height: 100%;
-    max-height: 700px;
     padding: 100px 150px;
-    
     display: flex;
     gap: 40px;
 
 }
 
-.section_g{
 
-    background-color: #009944 ;
+/* 초록색 섹션 */
 
+.section_g {
+
+    background-color: #009944;
+    color: #f8f8f8;
 }
 
-.section_g a,.section_g a p{
+.section_g a,
+.section_g a p {
 
-    color: #F8F8F8;
-
-}
-
-@media (max-width: 1023px) {
-
-
-    section{
-
-        padding: 20px 40px;
-    }
-    
+    color: #f8f8f8;
 }
 
 
-@media (max-width:480px){
+/* =========================================================
+   4. COMMON BOX
+========================================================= */
 
-    section{
-
-        padding: 0 20px;
-
-    }
-
-}
-
-/* 마스크 버전 */
-
-.cover {
-
-  mask-image: linear-gradient(#1d1d1d50);
-
-}
-
- /* -------임시 박스---------- */
-
-.con{
+.con {
 
     display: flex;
+
     width: 100px;
     aspect-ratio: 1 / 1;
-    border-radius: 999px;
-    background-color: #f2f2f2;
 
+    border-radius: 999px;
+
+    background-color: #f2f2f2;
 }
 
-.box_wrap{
+
+.box_wrap {
 
     width: 100%;
+
     display: flex;
     gap: 16px;
-
 }
 
-.box{
+
+.box {
 
     width: 50%;
-    color: #8E8E8E;
-    border: solid 2px #C6C6C6;
 
-    padding: 16px 24px ;
+    padding: 16px 24px;
+
+    color: #8e8e8e;
+
+    border: 2px solid #c6c6c6;
     border-radius: 20px;
 }
 
-.box_3and2{
+
+.box_3and2 {
 
     aspect-ratio: 2 / 3;
 }
 
-.box_2and2{
 
-    aspect-ratio: 2 / 2;
+.box_2and2 {
+
+    aspect-ratio: 1 / 1;
 }
 
-.flx_li{
+
+/* =========================================================
+   5. FLEX UTILITIES
+========================================================= */
+
+.flex {
+
+    display: flex;
+}
+
+
+.column {
+
+    flex-direction: column;
+}
+
+
+.flx_li {
 
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
+
     gap: 4px;
+
+    line-height: 1;
 }
 
-.flx_li_g{
+.flx_li_g {
 
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
+
     gap: 4px;
+
+    line-height: 1;
+
     background-color: #009944;
-
     color: #f2f2f2;
 }
 
-.content_start{
+.content_start {
 
-    justify-content: start;
+    justify-content: flex-start;
 }
 
-.tit_li{
 
+.tit_li {
     display: flex;
     align-items: center;
+
     gap: 4px;
 }
 
-/* ------------ 이미지 위치 조정용-------------- */
+
+/* =========================================================
+   6. IMAGE POSITION UTILITIES
+========================================================= */
 
 .focus_left {
 
     object-position: left center;
 }
 
+
 .focus_right {
 
     object-position: right center;
 }
+
 
 .focus_top {
 
     object-position: center top;
 }
 
-.focus_left {
 
-    object-position: left center;
-}
+.focus_bottom {
 
-.focus_right {
-
-    object-position: right center;
+    object-position: center bottom;
 }
 
 
-/* --------플랙스--------- */
+.focus_center {
 
-.flex{
-
-    display: flex;
-}
-
-.column{
-
-    flex-direction: column;
+    object-position: center center;
 }
 
 
-/* -----아이콘------ */
+/* =========================================================
+   7. MASK / COVER
+========================================================= */
 
-svg{
+.cover {
+
+    mask-image: linear-gradient(#1d1d1d50);
+    -webkit-mask-image: linear-gradient(#1d1d1d50);
+
+}
+
+
+/* =========================================================
+   8. COMMON ICON SIZE
+   개별 아이콘 mask 코드는 아래 기존 코드 사용
+========================================================= */
+
+svg {
 
     width: 24px;
-     aspect-ratio: 1 / 1;
-    fill:currentColor;
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    fill: currentColor;
+
     transition: transform 0.25s ease;
-    flex-shrink: 0;
-
 }
 
-.icon{
 
-    width: 24px;
-    
+.icon {
+
+    width: 48px;
+    height: 48px;
+
     flex: 0 0 48px;
-    aspect-ratio: 1 / 1;
-   
+
+    display: block;
 }
-
-.but_bg{
-
-    display: flex;
-    border-radius: 999px;
-    padding: 4px 6px;
-    background-color: #1d1d1d50;
-    color: #f2f2f2;
-    align-items: center;
-    justify-content: center;
-
-}
-
-
-@media (max-width:480px){
-
-    .but_bg_none{
-
-        display: none;
-
-    }
-
-}
-
 
 .arrow{
 
@@ -609,6 +690,31 @@ svg{
 
     -webkit-mask-image: url("../img/icon/cancel.svg");
     mask-image: url("../img/icon/cancel.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #1d1d1d;
+
+}
+
+.login{
+
+       width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: inline-block;
+    flex: 0 0 14px;
+    flex-shrink: 0;
+
+    -webkit-mask-image: url("../img/icon/login.svg");
+    mask-image: url("../img/icon/login.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -874,7 +980,7 @@ svg{
 
 }
 
-/* 회사 */
+/* 회사 블럭*/
 .company_back{
 
     display: block;
@@ -899,6 +1005,7 @@ svg{
 
 }
 
+/* 아파트 */
 .company{
 
     display: block;
@@ -919,7 +1026,6 @@ svg{
 
     -webkit-mask-size: contain;
     mask-size: contain;
-
 
 }
 
@@ -973,6 +1079,7 @@ svg{
 
 }
 
+/* 소파 */
 .sofa{
 
     display: block;
@@ -995,7 +1102,6 @@ svg{
     mask-size: contain;
 
     transition: transform 0.25s ease;
-
 
 }
 
@@ -1301,6 +1407,31 @@ svg{
 
 }
 
+.spa{
+
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #1d1d1d;
+
+    -webkit-mask-image: url("../img/icon/spa.svg");
+    mask-image: url("../img/icon/spa.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
 /* 호텔 */
 .hotel{
 
@@ -1428,6 +1559,34 @@ svg{
 
     -webkit-mask-size: contain;
     mask-size: contain;
+
+}
+
+.phone_call{
+
+
+    width: 24px;
+    aspect-ratio: 1 / 1;
+    display: block;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: #8e8e8e;
+
+    -webkit-mask-image: url("../img/icon/phone-call.svg");
+    mask-image: url("../img/icon/phone-call.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+
 
 }
 
@@ -1693,22 +1852,194 @@ svg{
 }
 
 
-    @keyframes clientSlideRight {
-        from {
-            transform: translateX(-50%);
-        }
+/* =========================================================
+   9. BUTTON BACKGROUND
+========================================================= */
 
-        to {
-            transform: translateX(0);
-        }
+.but_bg {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 6px;
+
+    border-radius: 999px;
+
+    background-color: #1d1d1d50;
+    color: #f2f2f2;
+}
+
+
+/* =========================================================
+   10. SLIDE TOGGLE
+========================================================= */
+
+.slide_toggle {
+
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   11. ANIMATION
+========================================================= */
+
+@keyframes clientSlideRight {
+
+    from {
+        transform: translateX(-50%);
     }
 
-    @keyframes clientSlideLeft {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
+    to {
+        transform: translateX(0);
     }
+
+}
+
+
+@keyframes clientSlideLeft {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+/* =========================================================
+   12. TABLET
+========================================================= */
+
+@media (max-width: 1023px) {
+
+    section {
+        padding: 48px 40px;
+        gap: 32px;
+    }
+
+
+    .page_title {
+        font-size: 2.25rem;      /* 36px */
+    }
+
+
+    h2,
+    .section_title {
+        font-size: 1.5rem;       /* 24px */
+    }
+
+
+    p,
+    .body_text {
+        font-size: 1rem;         /* 16px */
+    }
+
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    section {
+        padding: 32px 20px;
+        gap: 24px;
+    }
+
+
+    /* 페이지 대표 제목 */
+
+    .page_title {
+        font-size: 2rem;         /* 32px */
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+    }
+
+
+    /* 섹션 제목 */
+
+    h2,
+    .section_title {
+        font-size: 1.5rem;       /* 24px */
+        line-height: 1.3;
+        letter-spacing: -0.035em;
+    }
+
+
+    /* 중간 제목 */
+
+    h3,
+    .sub_title {
+        font-size: 1.1875rem;    /* 19px */
+        line-height: 1.4;
+    }
+
+
+    /* 카드 / 콘텐츠 제목 */
+
+    .content_title {
+        font-size: 0.875rem;     /* 14px */
+        line-height: 1.4;
+    }
+
+
+    /* 본문 */
+
+    p,
+    .body_text {
+        font-size: 0.75rem;      /* 12px */
+        line-height: 1.55;
+        letter-spacing: -0.01em;
+    }
+
+
+    /* 추가정보 */
+
+    .info_text {
+        font-size: 0.625rem;     /* 10px */
+        line-height: 1.5;
+    }
+
+
+    /* 작은 글 */
+
+    .small_text {
+        font-size: 0.75rem;      /* 12px */
+    }
+
+
+    /* 필요 없는 배경 버튼 */
+
+    .but_bg_none {
+        display: none;
+    }
+
+
+    /* 박스가 모바일에서 눌리는 것 방지 */
+
+    .box_wrap {
+        gap: 12px;
+    }
+
+}
+
+ 

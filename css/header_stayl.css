@@ -60,16 +60,10 @@
     color: #1d1d1d;
 }
 
-.login_li svg{
-
-    width: 16px;
-    height: 16px;
-
-}
-
-.login_menu >li:hover{
+.login_menu >li .login_li:hover{
 
      color: #009944;
+     
 
 }
 
@@ -77,6 +71,11 @@
 
      color: #009944;
 
+}
+
+.login_menu .icon:hover{
+
+    background-color: #009944;
 }
 
 .login_li p{
@@ -349,6 +348,16 @@ input{
 
 /* -------- 헤더 끝------ */
 
+
+
+
+.mobile_header_menu {
+    display: none;
+}
+
+
+
+
 @media (max-width: 1023px) {
 
 
@@ -375,7 +384,19 @@ input{
     }
 
 
+
+    .login_menu {
+        display: none;
+    }
+
+    .mobile_header_menu {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
 }
+
 
 @media (max-width:480px){
 

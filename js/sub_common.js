@@ -105,6 +105,43 @@ function closeHeaderSearch() {
     openButton?.setAttribute("aria-expanded", "false");
 }
 
+function moveRequestCleaning() {
+
+    const requestCleaning = document.getElementById("Request_Cleaning");
+    const requestOrigin = document.getElementById("Request_Cleaning_origin");
+
+    // 모바일에서 문의 영역이 들어갈 위치
+    const targetSection = document.querySelector(".section_3");
+
+    if (!requestCleaning || !requestOrigin || !targetSection) {
+        return;
+    }
+
+
+    if (window.innerWidth <= 768) {
+
+        // 모바일
+        // 작업 대상 바로 아래로 이동
+        targetSection.insertAdjacentElement(
+            "afterend",
+            requestCleaning
+        );
+
+    } else {
+
+        // PC / 태블릿
+        // 원래 위치로 복귀
+        requestOrigin.insertAdjacentElement(
+            "afterend",
+            requestCleaning
+        );
+
+    }
+}
+
+
+window.addEventListener("load", moveRequestCleaning);
+window.addEventListener("resize", moveRequestCleaning);
 
 loadComponent("header", "../../components/header_v2.html");
 loadComponent("menu", "../../components/menu.html");

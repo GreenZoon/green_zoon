@@ -2,10 +2,9 @@
 
 nav{
 
-    background-color: #ffff;
-   
+    /* background-color: #ffff; */
     max-height: 50px;
-    border-bottom: 2px solid #f2f2f2;
+    /* border-bottom: 2px solid #f2f2f2; */
    
 }
 
@@ -204,4 +203,12 @@ nav{
 .depth_2:hover > .depth_2_tit >.menu_arrow{
     background-color: #009944;
     transform:rotate(0deg);
+}
+
+@media (max-width: 1023px) {
+
+    .gnb {
+        display: none;
+    }
+
 }
