@@ -698,16 +698,24 @@
 
 /* --------- VIDEO --------- */
 
+/* --------- VIDEO --------- */
+
 .section_video {
+
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 49px;
+    gap: 21px;
+
     padding: 50px 150px;
 
 }
+
+
+/* 제목 */
 
 .video_title_wrap {
 
@@ -716,31 +724,85 @@
     align-items: center;
 
     gap: 5px;
+
     text-align: center;
 
 }
 
-.video_list {
+.video_tit_li {
+
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+}
+
+.video_tit_li .arrow_up_right {
+
+    width: 18px;
+    height: 18px;
+
+}
+
+
+/* 슬라이드 전체 */
+
+.video_slider {
 
     width: 100%;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
     gap: 21px;
 
 }
 
+
+/* 실제 화면에 보이는 영역 */
+
+.video_viewport {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+/* 움직이는 카드 묶음 */
+
+.video_track {
+
+    width: max-content;
+
+    display: flex;
+
+    gap: 21px;
+
+    will-change: transform;
+
+    transition: transform 0.5s ease;
+
+}
+
+
+/* 카드 */
+
 .video_card {
 
     width: 480px;
-    flex: 0 1 480px;
+
+    flex: 0 0 480px;
 
     display: flex;
     flex-direction: column;
 
 }
+
+
+/* 썸네일 */
 
 .video_thumbnail {
 
@@ -748,6 +810,7 @@
     height: 320px;
 
     position: relative;
+
     overflow: hidden;
 
     border-radius: 15px;
@@ -759,13 +822,19 @@
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
 
 }
 
+
+/* 재생 버튼 */
+
 .video_play {
 
     position: absolute;
+
     left: 50%;
     top: 50%;
 
@@ -775,13 +844,20 @@
     transform: translate(-50%, -50%);
 
     border-radius: 50%;
+
     background-color: #f8f8f880;
 
+    z-index: 5;
+
 }
+
+
+/* PC 카드 하단 녹색 제목 */
 
 .video_card_pc_title {
 
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 0;
@@ -792,18 +868,21 @@
 
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     background-color: #009944;
+
     color: #f8f8f8;
 
+    z-index: 6;
+
 }
-
-
 
 .video_card_pc_title h3 {
 
     color: #f8f8f8;
+
     font-size: 1.1875rem; /* 19px */
 
 }
@@ -817,6 +896,9 @@
 
 }
 
+
+/* 모바일 제목은 PC에서 숨김 */
+
 .video_card_mobile_title {
 
     display: none;
@@ -824,10 +906,97 @@
 }
 
 
-.video_tit_li .arrow_up_right{
+/* 좌우 화살표 */
 
-    width: 16px;
-    
+.video_arrow {
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+.video_arrow .arrow {
+
+    width: 24px;
+    height: 24px;
+
+    background-color: #8e8e8e;
+
+}
+
+.video_prev .arrow {
+
+    transform: rotate(90deg);
+
+}
+
+.video_next .arrow {
+
+    transform: rotate(-90deg);
+
+}
+
+.video_arrow:disabled {
+
+    opacity: 0.35;
+
+    cursor: default;
+
+}
+
+
+/* pagination */
+
+.video_pagination {
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+.video_dot {
+
+    width: 20px;
+    height: 12px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background-color: #d9d9d9;
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background-color 0.25s ease;
+
+}
+
+.video_dot.is_active {
+
+    width: 40px;
+
+    background-color: #339933;
+
 }
 
 /* --------- 섹션 3--------- */
@@ -1622,5 +1791,152 @@ display: none;
 
 }
 
+/* --------- VIDEO MOBILE --------- */
+
+.section_video {
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 20px;
+
+}
+
+
+.video_title_wrap {
+
+    align-items: flex-start;
+
+    text-align: left;
+
+}
+
+
+.video_title_wrap .page_title {
+
+    font-size: 1.1875rem; /* 19px */
+
+}
+
+
+/* PC 설명 숨김 */
+
+.video_tit_li {
+
+    display: none;
+
+}
+
+
+/* 화살표 숨김 */
+
+.video_arrow {
+
+    display: none;
+
+}
+
+
+/* 모바일에서는 옆 카드가 일부 보이게 */
+
+.video_viewport {
+
+    width: calc(100vw - 20px);
+
+    overflow: hidden;
+
+}
+
+
+/* 모바일 카드 */
+
+.video_track {
+
+    gap: 7px;
+
+}
+
+
+.video_card {
+
+    width: 200px;
+
+    flex: 0 0 200px;
+
+    gap: 7px;
+
+}
+
+
+.video_thumbnail {
+
+    width: 200px;
+    height: 135px;
+
+    border-radius: 10px;
+
+}
+
+
+/* 모바일 재생 아이콘 */
+
+.video_play {
+
+    width: 70px;
+    height: 70px;
+
+}
+
+
+/* PC 녹색바 숨김 */
+
+.video_card_pc_title {
+
+    display: none;
+
+}
+
+
+/* 모바일 제목 표시 */
+
+.video_card_mobile_title {
+
+    display: block;
+
+    color: #555;
+
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 700;
+
+}
+
+
+/* 모바일 pagination */
+
+.video_pagination {
+
+    align-self: center;
+
+    gap: 6px;
+
+}
+
+
+.video_dot {
+
+    width: 12px;
+    height: 5px;
+
+    border-radius: 999px;
+
+}
+
+
+.video_dot.is_active {
+
+    width: 24px;
+
+}
 
 }
