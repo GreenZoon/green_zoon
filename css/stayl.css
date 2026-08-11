@@ -702,7 +702,10 @@
 
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+
+    gap: 49px;
+    padding: 50px 150px;
 
 }
 
@@ -710,7 +713,10 @@
 
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+
+    gap: 5px;
+    text-align: center;
 
 }
 
@@ -719,30 +725,32 @@
     width: 100%;
 
     display: flex;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 21px;
 
 }
 
 .video_card {
 
-    width: 100%;
+    width: 480px;
+    flex: 0 1 480px;
 
     display: flex;
     flex-direction: column;
-    gap: 12px;
 
 }
 
 .video_thumbnail {
 
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 320px;
 
     position: relative;
     overflow: hidden;
 
-    border-radius: 10px;
-    background-color: #f2f2f2;
+    border-radius: 15px;
 
 }
 
@@ -761,30 +769,65 @@
     left: 50%;
     top: 50%;
 
-    width: 48px;
-    height: 48px;
+    width: 120px;
+    height: 120px;
 
     transform: translate(-50%, -50%);
 
     border-radius: 50%;
-    background-color: #1d1d1d80;
+    background-color: #f8f8f880;
 
 }
 
-.video_play::after {
-
-    content: "";
+.video_card_pc_title {
 
     position: absolute;
-    left: 53%;
-    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-    transform: translate(-50%, -50%);
+    min-height: 52px;
 
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 11px solid #f8f8f8;
+    padding: 12px 24px;
 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: #009944;
+    color: #f8f8f8;
+
+}
+
+
+
+.video_card_pc_title h3 {
+
+    color: #f8f8f8;
+    font-size: 1.1875rem; /* 19px */
+
+}
+
+.video_card_pc_title .icon {
+
+    width: 15px;
+    height: 15px;
+
+    background-color: #f8f8f8;
+
+}
+
+.video_card_mobile_title {
+
+    display: none;
+
+}
+
+
+.video_tit_li .arrow_up_right{
+
+    width: 16px;
+    
 }
 
 /* --------- 섹션 3--------- */
@@ -1500,22 +1543,82 @@ display: none;
 
 }
 
+.section_video {
+
+    align-items: flex-start;
+
+    padding: 5px 20px;
+    gap: 7px;
+
+}
+
+.video_title_wrap {
+
+    align-items: flex-start;
+    text-align: left;
+
+}
+
+/* PC용 설명은 모바일에서 숨김 */
+.video_title_wrap .section_title {
+
+    display: none;
+
+}
+
+.video_title_wrap .page_title {
+
+    font-size: 1.1875rem; /* 19px */
+
+}
+
 .video_list {
 
-    gap: 12px;
+    justify-content: flex-start;
+
+    gap: 7px;
     overflow: hidden;
 
 }
 
 .video_card {
 
-    flex: 0 0 78%;
+    flex: 0 0 205px;
+    width: 205px;
+
+    gap: 7px;
+
+}
+
+.video_thumbnail {
+
+    width: 200px;
+    height: 135px;
+
+    border-radius: 10px;
+
 }
 
 .video_play {
 
-    width: 36px;
-    height: 36px;
+    width: 70px;
+    height: 70px;
+
+}
+
+.video_card_pc_title {
+
+    display: none;
+
+}
+
+.video_card_mobile_title {
+
+    display: block;
+
+    color: #555;
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 700;
 
 }
 

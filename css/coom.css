@@ -556,6 +556,22 @@ svg {
 
 }
 
+.play{
+
+        -webkit-mask-image: url("../img/icon/play.svg");
+    mask-image: url("../img/icon/login.svg");
+
+}
+
+.play_Block{
+
+            -webkit-mask-image: url("../img/icon/play_Block.svg");
+    mask-image: url("../img/icon/play_Block.svg");
+    background-color: #f2f2f2;
+
+
+}
+
 /* 유저 */
 .user{
 
