@@ -674,7 +674,13 @@
 .slide_wrap_2 .arrow,
 .slide_pagination_2 {
     display: flex;
-    width: 25px;
+   
+}
+
+.slide_wrap_2 .arrow{
+
+     width: 25px;
+    
 }
 
 
