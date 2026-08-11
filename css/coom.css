@@ -2,11 +2,15 @@
 *,
 *::before,
 *::after {
+
     box-sizing: border-box;
+
 }
 
 html {
+
     font-size: 16px;
+
 }
 
 html,
@@ -15,16 +19,20 @@ button,
 input,
 textarea,
 select {
+
     font-family: "Pretendard", sans-serif;
+
 }
 
 body {
+
     width: 100%;
     max-width: 1920px;
 
     margin: 0 auto;
 
     color: #1d1d1d;
+
 }
 
 
@@ -139,6 +147,10 @@ h2,
     font-weight: 700;
 }
 
+    /* 큰 본문 / 메인같은 본문 */
+
+    /* font-size: 1.4375rem; 23px */
+
 
 /* -------------------------
    중간 제목
@@ -154,6 +166,7 @@ h3,
     font-weight: 700;
     
 }
+
 
 
 /* -------------------------
@@ -437,9 +450,22 @@ svg {
     width: 48px;
     height: 48px;
 
-    flex: 0 0 48px;
+    /* 아이콘 크기를 따로 변경하면 그 크기를 그대로 사용 */
+    flex: 0 0 auto;
+    flex-shrink: 0;
 
     display: block;
+
+    /* mask 아이콘 공통 설정 */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
 }
 
 .arrow{

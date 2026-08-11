@@ -292,6 +292,7 @@ input{
 }
 
 .keyword_section + .keyword_section {
+    
     margin-top: 38px;
 }
 
@@ -302,6 +303,7 @@ input{
 }
 
 .keyword_list,.keyword_list li {
+
     border-bottom: 1px solid #eee;
 }
 
@@ -350,6 +352,7 @@ input{
 
 
 .hamburger_icon {
+
     width: 18px;
     height: 14px;
 
@@ -359,6 +362,7 @@ input{
 }
 
 .hamburger_icon span {
+
     display: block;
 
     width: 100%;
@@ -370,6 +374,7 @@ input{
 
 
 .mobile_header_menu {
+
     display: none;
 }
 

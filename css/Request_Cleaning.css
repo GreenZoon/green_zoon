@@ -173,6 +173,7 @@
 
 
 .Cleaning_ul li {
+    
     display: grid;
 
     grid-template-columns: auto auto;
@@ -185,6 +186,7 @@
 
 .Cleaning_ul li p,
 .Cleaning_ul li a {
+
     margin: 0;
 
     font-size: clamp(14px, 0.85vw, 16px);
@@ -204,6 +206,7 @@
 
 .Cleaning_icon,
 .Cleaning_icon_green {
+
     width: clamp(120px, 8vw, 150px);
     height: clamp(120px, 8vw, 150px);
 
@@ -223,6 +226,7 @@
 /* 온라인 아이콘 */
 
 .Cleaning_icon_green {
+
     margin-left: auto;
 
     align-self: flex-end;
