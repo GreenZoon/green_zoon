@@ -20,32 +20,32 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
 
-    let currentPage = 0;
+    let currentIndex = 0;
+
+    let isDragging = false;
+
+    let startX = 0;
+    let startTranslate = 0;
+    let currentTranslate = 0;
 
 
-    function getCardsPerPage() {
+    function getVisibleCount() {
 
         if (window.innerWidth <= 480) {
-
             return 1;
-
         }
 
         return 3;
-
     }
 
 
     function getGap() {
 
         if (window.innerWidth <= 480) {
-
             return 7;
-
         }
 
         return 21;
-
     }
 
 
@@ -54,85 +54,101 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!cards.length) return 0;
 
         return cards[0].getBoundingClientRect().width;
-
     }
 
 
-    function getPageCount() {
+    function getMaxIndex() {
 
-        return Math.ceil(
-            cards.length / getCardsPerPage()
+        return Math.max(
+            0,
+            cards.length - getVisibleCount()
         );
-
     }
 
 
-    function updateSlider() {
+    function getMoveDistance(index) {
 
-        const cardsPerPage = getCardsPerPage();
-
-        const cardWidth = getCardWidth();
-
-        const gap = getGap();
-
-
-        const moveCount =
-            currentPage * cardsPerPage;
+        return index * (
+            getCardWidth() + getGap()
+        );
+    }
 
 
-        const moveDistance =
-            moveCount * (cardWidth + gap);
+    function updatePagination() {
+
+        const maxIndex = getMaxIndex();
+
+        const progress =
+            maxIndex === 0
+                ? 0
+                : currentIndex / maxIndex;
 
 
-        track.style.transform =
-            `translateX(-${moveDistance}px)`;
+        const dotIndex =
+            Math.round(
+                progress * (dots.length - 1)
+            );
 
 
         dots.forEach((dot, index) => {
 
             dot.classList.toggle(
                 "is_active",
-                index === currentPage
+                index === dotIndex
             );
 
         });
-
-
-        if (prevButton) {
-
-            prevButton.disabled =
-                currentPage === 0;
-
-        }
-
-
-        if (nextButton) {
-
-            nextButton.disabled =
-                currentPage >= getPageCount() - 1;
-
-        }
-
     }
 
 
-    function goToPage(page) {
+    function updateButtons() {
 
-        const lastPage =
-            getPageCount() - 1;
+        if (prevButton) {
+            prevButton.disabled =
+                currentIndex <= 0;
+        }
+
+        if (nextButton) {
+            nextButton.disabled =
+                currentIndex >= getMaxIndex();
+        }
+    }
 
 
-        currentPage =
-            Math.max(
-                0,
-                Math.min(page, lastPage)
-            );
+    function updateSlider(animate = true) {
+
+        currentTranslate =
+            -getMoveDistance(currentIndex);
+
+
+        track.style.transition =
+            animate
+                ? "transform 0.45s ease"
+                : "none";
+
+
+        track.style.transform =
+            `translateX(${currentTranslate}px)`;
+
+
+        updatePagination();
+        updateButtons();
+    }
+
+
+    function goToIndex(index) {
+
+        currentIndex = Math.max(
+            0,
+            Math.min(index, getMaxIndex())
+        );
 
 
         updateSlider();
-
     }
 
+
+    /* 화살표 - 한 장씩 */
 
     if (prevButton) {
 
@@ -140,11 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
             "click",
             () => {
 
-                goToPage(currentPage - 1);
+                goToIndex(currentIndex - 1);
 
             }
         );
-
     }
 
 
@@ -154,13 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
             "click",
             () => {
 
-                goToPage(currentPage + 1);
+                goToIndex(currentIndex + 1);
 
             }
         );
-
     }
 
+
+    /* pagination */
 
     dots.forEach((dot, index) => {
 
@@ -168,7 +184,146 @@ document.addEventListener("DOMContentLoaded", () => {
             "click",
             () => {
 
-                goToPage(index);
+                const maxIndex =
+                    getMaxIndex();
+
+
+                const target =
+                    Math.round(
+                        (
+                            index /
+                            (dots.length - 1)
+                        ) * maxIndex
+                    );
+
+
+                goToIndex(target);
+            }
+        );
+    });
+
+
+    /* -------------------------
+       DRAG
+    ------------------------- */
+
+
+    viewport.addEventListener(
+        "pointerdown",
+        (event) => {
+
+            isDragging = true;
+
+            startX = event.clientX;
+
+            startTranslate =
+                currentTranslate;
+
+
+            viewport.setPointerCapture(
+                event.pointerId
+            );
+
+
+            track.style.transition =
+                "none";
+
+
+            viewport.classList.add(
+                "is_dragging"
+            );
+
+        }
+    );
+
+
+    viewport.addEventListener(
+        "pointermove",
+        (event) => {
+
+            if (!isDragging) return;
+
+
+            const diff =
+                event.clientX - startX;
+
+
+            track.style.transform =
+                `translateX(${startTranslate + diff}px)`;
+
+        }
+    );
+
+
+    function finishDrag(event) {
+
+        if (!isDragging) return;
+
+
+        isDragging = false;
+
+
+        const diff =
+            event.clientX - startX;
+
+
+        const threshold =
+            getCardWidth() * 0.15;
+
+
+        if (diff < -threshold) {
+
+            currentIndex++;
+
+        }
+
+        else if (diff > threshold) {
+
+            currentIndex--;
+
+        }
+
+
+        currentIndex = Math.max(
+            0,
+            Math.min(
+                currentIndex,
+                getMaxIndex()
+            )
+        );
+
+
+        viewport.classList.remove(
+            "is_dragging"
+        );
+
+
+        updateSlider();
+
+    }
+
+
+    viewport.addEventListener(
+        "pointerup",
+        finishDrag
+    );
+
+
+    viewport.addEventListener(
+        "pointercancel",
+        finishDrag
+    );
+
+
+    /* 링크 드래그 방지 */
+
+    cards.forEach((card) => {
+
+        card.addEventListener(
+            "dragstart",
+            (event) => {
+
+                event.preventDefault();
 
             }
         );
@@ -176,18 +331,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    /* 화면 크기 변경 */
+
     window.addEventListener(
         "resize",
         () => {
 
-            currentPage = 0;
+            currentIndex = Math.min(
+                currentIndex,
+                getMaxIndex()
+            );
 
-            updateSlider();
+
+            updateSlider(false);
 
         }
     );
 
 
-    updateSlider();
+    updateSlider(false);
 
 });
