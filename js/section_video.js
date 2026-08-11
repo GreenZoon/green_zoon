@@ -54,6 +54,38 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!cards.length) return 0;
 
         return cards[0].getBoundingClientRect().width;
+
+        function setCardWidth() {
+
+        if (!viewport) return;
+
+
+        if (window.innerWidth <= 480) {
+
+            track.style.setProperty(
+                "--video-card-width",
+                "200px"
+            );
+
+            return;
+    }
+
+
+    const gap = getGap();
+
+    const viewportWidth =
+        viewport.getBoundingClientRect().width;
+
+
+    const cardWidth =
+        (viewportWidth - gap * 2) / 3;
+
+
+    track.style.setProperty(
+        "--video-card-width",
+        `${cardWidth}px`
+    );
+}
     }
 
 
@@ -337,18 +369,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "resize",
         () => {
 
+            setCardWidth();
+
             currentIndex = Math.min(
                 currentIndex,
                 getMaxIndex()
             );
 
-
             updateSlider(false);
-
         }
     );
 
-
+    setCardWidth();
     updateSlider(false);
 
 });
