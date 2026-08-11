@@ -292,7 +292,7 @@ input{
 }
 
 .keyword_section + .keyword_section {
-    
+
     margin-top: 38px;
 }
 
@@ -425,7 +425,7 @@ input{
 
     .header{
 
-        padding: 0 20px;
+        padding: 4px 20px;
         
     }
 

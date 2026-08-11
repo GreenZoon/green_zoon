@@ -59,8 +59,10 @@ a {
 /* 이미지 */
 
 img {
+
     display: block;
     max-width: 100%;
+
 }
 
 
@@ -133,7 +135,6 @@ p{
     font-weight: 700;
 }
 
-
 /* -------------------------
    섹션 제목
 ------------------------- */
@@ -145,6 +146,7 @@ h2,
     line-height: 1.3;
     letter-spacing: -0.035em;
     font-weight: 700;
+
 }
 
     /* 큰 본문 / 메인같은 본문 */
@@ -1976,6 +1978,101 @@ svg {
         font-size: 1rem;         /* 16px */
     }
 
+    .page_title {
+
+
+
+    font-size: 1.5625rem;       /* 25px */
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+
+}
+
+/* -------------------------
+   섹션 제목
+------------------------- */
+
+h2,
+.section_title {
+
+
+        font-size: 1.1875rem;       /* 19px */
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    
+}
+
+    /* 큰 본문 / 메인같은 본문 */
+
+    /* font-size: 1.4375rem; 23px */
+
+
+/* -------------------------
+   중간 제목
+------------------------- */
+
+h3,
+.sub_title,
+.content_title {
+
+
+
+        font-size: 1.0625rem;       /* 17px */
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+
+    color: inherit;
+    
+}
+
+
+
+/* -------------------------
+   일반 본문
+------------------------- */
+
+p,
+.body_text {
+
+
+
+        font-size: 0.9375rem;       /* 15px */
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+}
+
+
+/* -------------------------
+   보조 문구
+------------------------- */
+
+.info_text {
+
+    font-size: 0.9375rem;       /* 15px */
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+
+}
+
+
+/* -------------------------
+   작은 정보 / 푸터 등
+------------------------- */
+
+.small_text {
+
+    font-size: 0.75rem;         /* 12px */
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+}
+
+
 
 }
 
@@ -1986,18 +2083,28 @@ svg {
 
 @media (max-width: 480px) {
 
+    .icon{
+
+        width: 16px;
+        height: 16px;
+    }
+
     section {
-        padding: 32px 20px;
+
+        padding:20px;
         gap: 24px;
+
     }
 
 
     /* 페이지 대표 제목 */
 
     .page_title {
+
         font-size: 2rem;         /* 32px */
         line-height: 1.2;
         letter-spacing: -0.04em;
+
     }
 
 
@@ -2065,6 +2172,7 @@ svg {
     .box_wrap {
         gap: 12px;
     }
+
 
 }
 

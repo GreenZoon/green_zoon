@@ -555,7 +555,6 @@ nav{
         gap: 8px;
     }
 
-
     .mobile_apply_icon {
         width: 23px;
         height: 23px;
@@ -586,7 +585,6 @@ nav{
         background-color: #fff;
     }
 
-
     .mobile_menu_head {
         min-height: 50px;
 
@@ -600,14 +598,12 @@ nav{
         border-bottom: 1px solid #eee;
     }
 
-
     .mobile_menu_head p {
         margin: 0;
 
         font-size: 16px;
         font-weight: 600;
     }
-
 
     .mobile_menu_grid {
         width: 20px;
@@ -644,7 +640,6 @@ nav{
         background-color: #f8f8f8;
     }
 
-
     .mobile_menu_column {
         min-width: 0;
 
@@ -654,24 +649,20 @@ nav{
         list-style: none;
     }
 
-
     .mobile_depth_1 {
         background-color: #fff;
 
         border-right: 1px solid #eee;
     }
 
-
     .mobile_depth_2 {
         border-right: 1px solid #eee;
     }
-
 
     .mobile_depth_2,
     .mobile_depth_3 {
         background-color: #f8f8f8;
     }
-
 
     .mobile_menu_column button,
     .mobile_menu_column a {
@@ -700,13 +691,11 @@ nav{
         word-break: keep-all;
     }
 
-
     .mobile_depth_1 button {
         padding-left: 20px;
 
         font-weight: 600;
     }
-
 
     .mobile_menu_column .is_active {
         background-color: #009944;
@@ -726,16 +715,19 @@ nav{
 @media (max-width: 480px) {
 
     .mobile_user_area {
+
         padding: 24px 20px;
     }
 
 
     .mobile_user_text strong {
+
         font-size: 17px;
     }
 
 
     .mobile_profile_image {
+
         width: 48px;
         height: 48px;
 
@@ -744,46 +736,59 @@ nav{
 
 
     .mobile_quick_menu {
+
         padding: 10px 20px 18px;
     }
 
 
     .mobile_quick_item {
+
         min-height: 46px;
     }
 
 
     .mobile_quick_left > span:last-child {
+
         font-size: 13px;
+
     }
 
 
     .mobile_schedule_area {
+
         margin-top: 30px;
+
     }
 
 
     .mobile_schedule_apply {
+
         padding: 0 20px;
+
     }
 
 
     .mobile_schedule_apply strong {
+
         font-size: 15px;
+
     }
 
 
     .mobile_site_menu {
+
         margin-top: 30px;
     }
 
 
     .mobile_menu_head {
+
         padding: 0 20px;
     }
 
 
     .mobile_menu_body {
+
         grid-template-columns:
             minmax(0, 1.15fr)
             minmax(0, 1fr)
@@ -793,6 +798,7 @@ nav{
 
     .mobile_menu_column button,
     .mobile_menu_column a {
+
         min-height: 49px;
 
         padding: 9px 10px;
@@ -802,7 +808,9 @@ nav{
 
 
     .mobile_depth_1 button {
+
         padding-left: 12px;
+
     }
 
 }

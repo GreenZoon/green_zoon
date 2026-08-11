@@ -41,7 +41,6 @@ fetch("./components/header_v2.html?v=" + Date.now(), {
 
 // -------------------search--------------------------
 
-
 document.addEventListener("click", (event) => {
     const openButton = event.target.closest(".search_open_btn");
     const closeButton = event.target.closest(".search_close_btn");

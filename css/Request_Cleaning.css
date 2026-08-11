@@ -173,7 +173,7 @@
 
 
 .Cleaning_ul li {
-    
+
     display: grid;
 
     grid-template-columns: auto auto;
@@ -373,10 +373,6 @@
 @media (max-width: 480px) {
 
 
-
-
-
-
     /* 모바일용 전화 아이콘 ON */
     .Cleaning_mobile_icon{
 
@@ -389,8 +385,6 @@
 
         background-color: #f2f2f2;
     }
-
-
 
     /*
         모바일에서는 다시
@@ -506,6 +500,7 @@
 
     .Cleaning_icon,
     .Cleaning_icon_green {
+
         width: 28px;
         height: 28px;
 
