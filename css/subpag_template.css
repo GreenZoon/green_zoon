@@ -1,8 +1,7 @@
 
-
 /* =========================================================
    SUB PAGE TEMPLATE
-   메인 stayl.css를 기반으로 하는 서브페이지 전용 override
+   stayl.css 기반 서브페이지 전용 override
 ========================================================= */
 
 
@@ -76,7 +75,7 @@
 
     width: 100%;
 
-    padding: 0 150px;
+        padding: 7px 150px;
 
     border-bottom: 2px solid #f2f2f2;
 
@@ -209,6 +208,8 @@
 .section_2 {
 
     width: 100%;
+    max-width: 1500px;
+
     min-height: 320px;
 
     display: flex;
@@ -216,17 +217,30 @@
     align-items: center;
     justify-content: center;
 
-    gap: 3rem;
+    gap: 40px;
 
-    padding: 1rem 150px 3rem;
+    margin: 0 auto;
+
+    padding: 32px 150px 56px;
 }
 
 
 .section_2 > .img_wrap,
 .section_2 > .tit_wrap {
 
-    width: calc((100% - 3rem) / 2);
-    max-width: 600px;
+    width: calc((100% - 40px) / 2);
+}
+
+
+.section_2 > .img_wrap {
+
+    max-width: 560px;
+}
+
+
+.section_2 > .tit_wrap {
+
+    max-width: 560px;
 }
 
 
@@ -285,8 +299,10 @@
 
 .section_2 .tit_wrap p {
 
+    margin-top: 4px;
+
     font-size: 1.4375rem;
-    line-height: 1.6;
+    line-height: 1.65;
     letter-spacing: -0.015em;
     font-weight: 500;
 
@@ -296,7 +312,7 @@
 
 
 /* =========================================================
-   6. GREEN SECTIONS
+   6. GREEN SECTION
 ========================================================= */
 
 .section_g {
@@ -308,9 +324,9 @@
     align-items: center;
     justify-content: center;
 
-    gap: 1.5rem;
+    gap: 18px;
 
-    padding: 50px 150px;
+    padding: 42px 150px 34px;
 
     color: #f2f2f2;
 
@@ -328,9 +344,9 @@
     align-items: center;
     justify-content: center;
 
-    gap: 40px;
+    gap: 36px;
 
-    padding: 0 150px 45px;
+    padding: 24px 150px 52px;
 
     color: #f2f2f2;
 
@@ -365,6 +381,12 @@
 }
 
 
+.section_g_2 .tit_wrap {
+
+    max-width: 520px;
+}
+
+
 .section_g h2,
 .section_g_2 h2,
 .section_g p,
@@ -374,9 +396,24 @@
 }
 
 
+.section_g > h2 {
+
+    margin-bottom: 2px;
+}
+
+
+.section_g > p {
+
+    margin-top: 0;
+
+    font-size: 13px;
+}
+
+
 .section_g_2 > div {
 
     width: 50%;
+    max-width: 600px;
 }
 
 
@@ -427,19 +464,20 @@
     width: 100%;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
-    gap: clamp(0.75rem, 2vw, 2rem);
+    gap: 22px;
 }
 
 
 .con,
 .con_g {
 
-    width: 100%;
-    max-width: 150px;
+    width: 104px;
+    max-width: 104px;
+
     aspect-ratio: 1 / 1;
 
     display: flex;
@@ -447,9 +485,9 @@
     align-items: center;
     justify-content: center;
 
-    flex: 0 1 150px;
+    flex: 0 0 104px;
 
-    padding: 0 20px;
+    padding: 12px;
 
     text-align: center;
 }
@@ -467,10 +505,12 @@
 
 .con > .icon {
 
-    width: clamp(70px, 5vw, 100px);
-    height: clamp(70px, 5vw, 100px);
+    width: 54px;
+    height: 54px;
 
-    flex: 0 0 auto;
+    max-width: 54px;
+
+    flex: 0 0 54px;
 
     background-color: #009944;
 }
@@ -479,10 +519,10 @@
 .con > p,
 .con_g > p {
 
-    margin: 0;
+    margin: 3px 0 0;
 
-    font-size: clamp(12px, 0.9vw, 16px);
-    line-height: 1.3;
+    font-size: 13px;
+    line-height: 1.2;
     font-weight: 600;
 
     text-align: center;
@@ -493,9 +533,6 @@
 .icon_g,
 .icon_w,
 .storage {
-
-    width: 100%;
-    max-width: 60px;
 
     flex-shrink: 0;
 }
@@ -521,6 +558,8 @@
 .con_section {
 
     width: 100%;
+    max-width: 1500px;
+
     min-height: 160px;
 
     display: flex;
@@ -528,41 +567,59 @@
 
     gap: 0.75rem;
 
-    padding: 1rem 150px 2.5rem;
+    margin: 0 auto;
+
+    padding: 12px 150px 56px;
 }
 
 
 .con_section > h2 {
 
-    margin-left: 12px;
+    margin-left: 0;
+    margin-bottom: 4px;
 
     color: #009944;
+}
+
+
+.con_section .box_wrap {
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
 }
 
 
 .box_g {
 
     width: 100%;
-    min-height: 85px;
+    min-width: 0;
+    min-height: 92px;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
-    gap: 0.75rem;
+    gap: 14px;
 
-    padding: 0.875rem 1rem;
+    padding: 16px 18px;
 
     border: 2px solid #009944;
-    border-radius: 10px;
+    border-radius: 12px;
 
     background-color: #fff;
 }
 
 
-.box_g .icon {
+.con_section .box_g > .icon {
 
-    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
 
     background-color: #009944;
 }
@@ -578,23 +635,29 @@
 
 .tit_g h3 {
 
-    font-size: 1.1875rem;
+    margin-bottom: 2px;
+
+    font-size: 17px;
     line-height: 1.4;
     letter-spacing: -0.025em;
     font-weight: 700;
 
     color: #009944;
+
+    white-space: normal;
+    word-break: keep-all;
 }
 
 
 .tit_g p {
 
-    font-size: 0.9375rem;
+    font-size: 13px;
     line-height: 1.5;
     letter-spacing: -0.015em;
-    font-weight: 500;
+    font-weight: 600;
 
-    white-space: nowrap;
+    white-space: normal;
+    word-break: keep-all;
 }
 
 
@@ -635,9 +698,9 @@
     align-items: center;
     justify-content: center;
 
-    gap: 2rem;
+    gap: 24px;
 
-    padding: 3rem 150px;
+    padding: 28px 150px 40px;
 }
 
 
@@ -649,6 +712,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    gap: 3px;
 
     text-align: center;
 
@@ -671,7 +736,7 @@
     font-size: 0.9375rem;
     line-height: 1.5;
     letter-spacing: -0.015em;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 
@@ -838,7 +903,7 @@
 
     gap: 8px;
 
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 
@@ -991,6 +1056,7 @@
     border-radius: 20px;
 
     background-color: #fff;
+
     background-size: cover;
     background-position: center;
 }
@@ -1023,6 +1089,7 @@
 
     width: 100%;
     max-width: 100px;
+
     aspect-ratio: 1 / 1;
 
     position: absolute;
@@ -1037,6 +1104,7 @@
 .play_but {
 
     width: 80%;
+
     aspect-ratio: 1 / 1;
 
     background-color: #f8f8f8;
@@ -1060,139 +1128,95 @@
     object-fit: contain;
 }
 
-/* =========================================================
-   SUB PAGE ICON / EFFECT CARD FIX
-========================================================= */
 
 
 /* =========================================================
-   청소 효과 카드
-========================================================= */
-
-.con_section .box_wrap {
-
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    gap: 12px;
-}
-
-
-.con_section .box_g {
-
-    width: 100%;
-    min-width: 0;
-
-    gap: 12px;
-}
-
-
-/* 청소 효과 카드 아이콘 */
-
-.con_section .box_g > .icon {
-
-    width: 32px;
-    height: 32px;
-
-    flex: 0 0 32px;
-
-    background-color: #009944;
-}
-
-
-/* 텍스트 영역 */
-
-.con_section .box_g .tit_wrap {
-
-    min-width: 0;
-}
-
-
-.con_section .box_g .tit_wrap h3 {
-
-    white-space: normal;
-    word-break: keep-all;
-}
-
-
-.con_section .box_g .tit_wrap p {
-
-    white-space: normal;
-    word-break: keep-all;
-}
-
-
-
-/* =========================================================
-   작업 대상 con
-========================================================= */
-
-.section_g .con_wrap,
-.section_3 .con_wrap {
-
-    align-items: center;
-}
-
-
-/* PC 작업 대상 원 */
-
-.section_g .con,
-.section_3 .con {
-
-    width: 110px;
-    max-width: 110px;
-
-    flex: 0 0 110px;
-
-    padding: 12px;
-
-    aspect-ratio: 1 / 1;
-}
-
-
-/* 작업 대상 아이콘 */
-
-.section_g .con > .icon,
-.section_3 .con > .icon {
-
-    width: 58px;
-    height: 58px;
-
-    max-width: 58px;
-
-    flex: 0 0 58px;
-}
-
-
-/* 작업 대상 글자 */
-
-.section_g .con > p,
-.section_3 .con > p {
-
-    margin-top: 4px;
-
-    font-size: 14px;
-    line-height: 1.2;
-}
-
-
-
-/* =========================================================
-   TABLET
+   14. TABLET
 ========================================================= */
 
 @media (max-width: 1023px) {
 
 
-    /* 청소 효과 2 x 2 */
+    /* 공통 좌우 여백 */
+
+    .sub_pag_gnb,
+    .breadcrumb,
+    .section_2,
+    .section_3,
+    .section_g,
+    .section_g_2,
+    .section_g_p,
+    .con_section,
+    .img_section,
+    .tix_section {
+
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+
+
+    /* 상단 이미지 */
+
+    .man_sled img {
+
+        height: 320px;
+    }
+
+
+
+    /* INTRO */
+
+    .section_2 {
+
+        gap: 32px;
+
+        padding-top: 28px;
+        padding-bottom: 48px;
+    }
+
+
+    .section_2 > .img_wrap,
+    .section_2 > .tit_wrap {
+
+        width: calc((100% - 32px) / 2);
+    }
+
+
+    .section_2 .tit_wrap h2 {
+
+        font-size: 2.25rem;
+    }
+
+
+    .section_2 .tit_wrap h3 {
+
+        font-size: 1.1875rem;
+    }
+
+
+    .section_2 .tit_wrap p {
+
+        font-size: 0.9375rem;
+    }
+
+
+
+    /* CLEANING EFFECT */
 
     .con_section .box_wrap {
 
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
         gap: 12px;
+    }
+
+
+    .con_section .box_g {
+
+        min-height: 88px;
+
+        padding: 14px 16px;
     }
 
 
@@ -1205,7 +1229,8 @@
     }
 
 
-    /* 작업 대상 */
+
+    /* TARGET */
 
     .section_g .con,
     .section_3 .con {
@@ -1237,266 +1262,9 @@
         font-size: 12px;
     }
 
-}
 
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-
-    /* 청소 효과 계속 2 x 2 */
-
-    .con_section .box_wrap {
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 10px;
-    }
-
-
-    .con_section .box_g {
-
-        min-height: 76px;
-
-        padding: 10px;
-
-        gap: 8px;
-    }
-
-
-    .con_section .box_g > .icon {
-
-        width: 24px;
-        height: 24px;
-
-        flex-basis: 24px;
-    }
-
-
-    .con_section .box_g .tit_wrap h3 {
-
-        font-size: 14px;
-        line-height: 1.3;
-    }
-
-
-    .con_section .box_g .tit_wrap p {
-
-        font-size: 11px;
-        line-height: 1.4;
-    }
-
-
-
-    /* 작업 대상은 모바일에서 원 제거 */
-
-    .section_g .con,
-    .section_3 .con {
-
-        width: calc((100% - 24px) / 4);
-        max-width: none;
-
-        flex: 0 0 calc((100% - 24px) / 4);
-
-        padding: 0;
-
-        aspect-ratio: auto;
-
-        border: none;
-
-        background-color: transparent;
-    }
-
-
-    .section_g .con > .icon,
-    .section_3 .con > .icon {
-
-        width: 42px;
-        height: 42px;
-
-        max-width: 42px;
-
-        flex-basis: 42px;
-
-        background-color: #f2f2f2;
-    }
-
-
-    .section_g .con > p,
-    .section_3 .con > p {
-
-        margin-top: 5px;
-
-        font-size: 11px;
-
-        color: #f2f2f2;
-    }
-
-}
-
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-
-    .con_section .box_g {
-
-        padding: 8px;
-
-        gap: 6px;
-    }
-
-
-    .con_section .box_g > .icon {
-
-        width: 22px;
-        height: 22px;
-
-        flex-basis: 22px;
-    }
-
-
-    .con_section .box_g .tit_wrap h3 {
-
-        font-size: 12px;
-    }
-
-
-    .con_section .box_g .tit_wrap p {
-
-        font-size: 10px;
-    }
-
-
-    .section_g .con > .icon,
-    .section_3 .con > .icon {
-
-        width: 38px;
-        height: 38px;
-
-        max-width: 38px;
-
-        flex-basis: 38px;
-    }
-
-
-    .section_g .con > p,
-    .section_3 .con > p {
-
-        font-size: 10px;
-    }
-
-}
-
-
-
-/* =========================================================
-   14. TABLET
-========================================================= */
-
-@media (max-width: 1023px) {
-
-
-    /* 공통 여백 */
-
-    .sub_pag_gnb,
-    .breadcrumb,
-    .section_2,
-    .section_3,
-    .section_g,
-    .section_g_2,
-    .section_g_p,
-    .con_section,
-    .img_section,
-    .tix_section {
-
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
-
-    /* 상단 */
-
-    .man_sled img {
-
-        height: 320px;
-    }
-
-
-    /* 소개 */
-
-    .section_2 {
-
-        gap: 2rem;
-    }
-
-
-    .section_2 > .img_wrap,
-    .section_2 > .tit_wrap {
-
-        width: calc((100% - 2rem) / 2);
-    }
-
-
-    .section_2 .tit_wrap h2 {
-
-        font-size: 2.25rem;
-    }
-
-
-    .section_2 .tit_wrap h3 {
-
-        font-size: 1.1875rem;
-    }
-
-
-    .section_2 .tit_wrap p {
-
-        font-size: 0.9375rem;
-    }
-
-
-    /* 대상 */
-
-    .con_wrap {
-
-        gap: 0.75rem;
-    }
-
-
-    .con,
-    .con_g {
-
-        max-width: 130px;
-
-        flex-basis: 130px;
-
-        padding: 0 10px;
-    }
-
-
-    .con > .icon {
-
-        width: clamp(55px, 7vw, 80px);
-        height: clamp(55px, 7vw, 80px);
-    }
-
-
-    .con p {
-
-        font-size: 0.75rem;
-    }
-
-
-    /* 작업 종류 */
+    /* WORK TYPE */
 
     .tix_section {
 
@@ -1511,7 +1279,8 @@
     }
 
 
-    /* 갤러리 */
+
+    /* GALLERY */
 
     .sub_pag_clipping_mask {
 
@@ -1528,11 +1297,22 @@
     }
 
 
-    /* 영상 */
+
+    /* GREEN */
+
+    .section_g {
+
+        padding-top: 38px;
+        padding-bottom: 30px;
+    }
+
 
     .section_g_2 {
 
         gap: 30px;
+
+        padding-top: 20px;
+        padding-bottom: 44px;
     }
 
 }
@@ -1635,7 +1415,7 @@
         gap: 1rem;
 
         padding-top: 0;
-        padding-bottom: 2rem;
+        padding-bottom: 32px;
     }
 
 
@@ -1700,6 +1480,67 @@
 
 
     /* =====================================================
+       CLEANING EFFECT
+    ===================================================== */
+
+    .con_section {
+
+        min-height: 0;
+
+        padding-top: 24px;
+        padding-bottom: 36px;
+    }
+
+
+    .con_section > h2 {
+
+        margin-left: 0;
+    }
+
+
+    .con_section .box_wrap {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .con_section .box_g {
+
+        min-height: 76px;
+
+        padding: 10px;
+
+        gap: 8px;
+    }
+
+
+    .con_section .box_g > .icon {
+
+        width: 24px;
+        height: 24px;
+
+        flex-basis: 24px;
+    }
+
+
+    .con_section .box_g .tit_wrap h3 {
+
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+
+    .con_section .box_g .tit_wrap p {
+
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+
+
+    /* =====================================================
        TARGET SECTION
     ===================================================== */
 
@@ -1746,16 +1587,15 @@
 
 
     /* =====================================================
-       GREEN TARGET SECTION
-       Factory_man처럼 section_g를 작업대상으로 쓰는 페이지
+       GREEN TARGET
     ===================================================== */
 
     .section_g {
 
-        gap: 1rem;
+        gap: 16px;
 
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 28px;
+        padding-bottom: 26px;
     }
 
 
@@ -1817,73 +1657,29 @@
     }
 
 
-    .section_3 .con .icon,
-    .section_g .con .icon {
+    .section_3 .con > .icon,
+    .section_g .con > .icon {
 
-        width: 46px;
-        height: 46px;
+        width: 42px;
+        height: 42px;
 
-        max-width: none;
+        max-width: 42px;
 
-        flex: 0 0 46px;
+        flex: 0 0 42px;
 
         background-color: #f2f2f2;
     }
 
 
-    .section_3 .con p,
-    .section_g .con p {
+    .section_3 .con > p,
+    .section_g .con > p {
 
-        margin-top: 6px;
+        margin-top: 5px;
 
-        font-size: 0.6875rem;
+        font-size: 11px;
         line-height: 1.2;
 
         color: #f2f2f2;
-    }
-
-
-
-    /* =====================================================
-       CLEANING EFFECT
-    ===================================================== */
-
-    .con_section {
-
-        min-height: 0;
-
-        padding-top: 1.5rem;
-        padding-bottom: 2rem;
-    }
-
-
-    .con_section > h2 {
-
-        margin-left: 0;
-    }
-
-
-    .box_g {
-
-        min-height: 70px;
-
-        gap: 10px;
-
-        padding: 10px 12px;
-    }
-
-
-    .tit_g h3 {
-
-        font-size: 0.875rem;
-    }
-
-
-    .tit_g p {
-
-        font-size: 0.75rem;
-
-        white-space: normal;
     }
 
 
@@ -1898,8 +1694,8 @@
 
         gap: 14px;
 
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
 
 
@@ -1972,10 +1768,10 @@
 
         align-items: stretch;
 
-        gap: 1rem;
+        gap: 16px;
 
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 28px;
+        padding-bottom: 30px;
     }
 
 
@@ -2019,13 +1815,6 @@
     }
 
 
-    /*
-        기존 JS는 한 .sub_pag_img_wrap을
-        한 슬라이드로 계산하므로 구조는 그대로 유지한다.
-
-        모바일에서는 전/중/후 중 첫 이미지 우선 노출.
-    */
-
     .sub_slide_img {
 
         display: none;
@@ -2068,10 +1857,10 @@
         flex-direction: column;
         align-items: stretch;
 
-        gap: 1rem;
+        gap: 16px;
 
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 14px;
+        padding-bottom: 32px;
     }
 
 
@@ -2119,7 +1908,7 @@
 @media (max-width: 480px) {
 
 
-    /* 소개 */
+    /* INTRO */
 
     .section_2 .tit_wrap h2 {
 
@@ -2134,27 +1923,61 @@
 
 
 
-    /* 작업 대상 */
+    /* CLEANING EFFECT */
 
-    .section_3 .con .icon,
-    .section_g .con .icon {
+    .con_section .box_g {
 
-        width: 42px;
-        height: 42px;
+        padding: 8px;
 
-        flex-basis: 42px;
+        gap: 6px;
     }
 
 
-    .section_3 .con p,
-    .section_g .con p {
+    .con_section .box_g > .icon {
 
-        font-size: 0.625rem;
+        width: 22px;
+        height: 22px;
+
+        flex-basis: 22px;
+    }
+
+
+    .con_section .box_g .tit_wrap h3 {
+
+        font-size: 12px;
+    }
+
+
+    .con_section .box_g .tit_wrap p {
+
+        font-size: 10px;
     }
 
 
 
-    /* 작업 종류 */
+    /* TARGET ICON */
+
+    .section_g .con > .icon,
+    .section_3 .con > .icon {
+
+        width: 38px;
+        height: 38px;
+
+        max-width: 38px;
+
+        flex-basis: 38px;
+    }
+
+
+    .section_g .con > p,
+    .section_3 .con > p {
+
+        font-size: 10px;
+    }
+
+
+
+    /* WORK TYPE */
 
     .tix_box {
 
@@ -2177,7 +2000,7 @@
 
 
 
-    /* 갤러리 */
+    /* GALLERY */
 
     .cleane_bg {
 
