@@ -479,25 +479,6 @@ if (section4) {
 
 
     /* ---------------------------------
-       마우스를 올리면 자동 이동 정지
-    --------------------------------- */
-
-    section4.addEventListener(
-        "mouseenter",
-        stopGalleryAutoplay
-    );
-
-    section4.addEventListener(
-        "mouseleave",
-        () => {
-            if (!isDragging) {
-                startGalleryAutoplay();
-            }
-        }
-    );
-
-
-    /* ---------------------------------
        브라우저 탭 비활성화 시 정지
     --------------------------------- */
 
