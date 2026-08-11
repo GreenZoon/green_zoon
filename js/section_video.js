@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       간격
+       카드 사이 간격
     --------------------------------- */
 
     function getGap() {
@@ -64,12 +64,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ---------------------------------
        카드 크기 설정
+
+       모바일 : 200px
+       태블릿 : 2개
+       PC     : 3개
     --------------------------------- */
 
     function setCardWidth() {
 
         const gap = getGap();
 
+
+        /* 모바일 */
 
         if (window.innerWidth <= 480) {
 
@@ -81,6 +87,29 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+
+        /* 태블릿 */
+
+        if (window.innerWidth <= 1023) {
+
+            const viewportWidth =
+                viewport.clientWidth;
+
+
+            const cardWidth =
+                (viewportWidth - gap) / 2;
+
+
+            track.style.setProperty(
+                "--video-card-width",
+                `${cardWidth}px`
+            );
+
+            return;
+        }
+
+
+        /* PC */
 
         const viewportWidth =
             viewport.clientWidth;
@@ -159,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       인덱스 → 이동 거리
+       인덱스 기준 이동 위치
     --------------------------------- */
 
     function getTranslateByIndex(index) {
@@ -218,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       화살표 상태
+       좌우 화살표 상태
     --------------------------------- */
 
     function updateArrowState() {
@@ -288,10 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       화살표 클릭
-
-       한 번 클릭 = 한 카드
-       빠르게 여러 번 클릭 가능
+       이전 버튼
     --------------------------------- */
 
     prevButton?.addEventListener(
@@ -306,6 +332,10 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    /* ---------------------------------
+       다음 버튼
+    --------------------------------- */
+
     nextButton?.addEventListener(
         "click",
         () => {
@@ -319,10 +349,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       도트 클릭
+       페이지네이션 클릭
 
-       도트는 전체 길이를
-       비율로 나누어 큰 단위로 이동
+       전체 슬라이드 길이를
+       비율로 나누어 이동
     --------------------------------- */
 
     dots.forEach((dot, index) => {
@@ -359,7 +389,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         : 0;
 
 
-                moveToSlide(targetIndex);
+                moveToSlide(
+                    targetIndex
+                );
 
             }
         );
@@ -368,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       포인터 X
+       마우스 / 터치 X 위치
     --------------------------------- */
 
     function getPointerX(event) {
@@ -438,8 +470,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ---------------------------------
        드래그 중
 
-       움직인 거리만큼 그대로 이동
-       여러 카드를 한 번에 넘길 수 있음
+       잡아당긴 거리만큼 그대로 이동
+       여러 카드도 한 번에 넘길 수 있음
     --------------------------------- */
 
     function moveDrag(event) {
@@ -505,8 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ---------------------------------
        드래그 종료
 
-       드래그한 위치에서
-       가장 가까운 카드에 스냅
+       가장 가까운 카드 위치에 스냅
     --------------------------------- */
 
     function endDrag() {
@@ -557,7 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       마우스
+       마우스 드래그
     --------------------------------- */
 
     viewport.addEventListener(
@@ -577,7 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       터치
+       모바일 터치
     --------------------------------- */
 
     viewport.addEventListener(
@@ -609,7 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       드래그 후 링크 클릭 방지
+       드래그 직후 링크 클릭 방지
     --------------------------------- */
 
     cards.forEach((card) => {
@@ -619,7 +650,9 @@ document.addEventListener("DOMContentLoaded", () => {
             (event) => {
 
                 if (hasDragged) {
+
                     event.preventDefault();
+
                 }
 
             }
@@ -629,7 +662,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       기본 이미지 드래그 방지
+       브라우저 기본 이미지 드래그 방지
     --------------------------------- */
 
     track.addEventListener(
@@ -643,7 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ---------------------------------
-       리사이즈
+       화면 크기 변경
     --------------------------------- */
 
     window.addEventListener(
@@ -651,6 +684,7 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             setCardWidth();
+
 
             moveToSlide(
                 currentSlideIndex,

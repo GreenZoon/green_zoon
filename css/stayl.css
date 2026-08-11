@@ -674,6 +674,7 @@
 .slide_wrap_2 .arrow,
 .slide_pagination_2 {
     display: flex;
+    width: 25px;
 }
 
 
@@ -944,8 +945,8 @@
 
 .video_arrow .arrow {
 
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
 
     background-color: #8e8e8e;
 
@@ -986,7 +987,7 @@
 .video_dot {
 
     width: 20px;
-    height: 12px;
+    height: 5px;
 
     padding: 0;
 
@@ -1388,8 +1389,9 @@ display: none;
 .con_6 h3{
 
     color: #009944;
-    font-size: 1.5rem;
+    
     line-height: 1.2;
+    font-weight: 700;
 
 }
 
@@ -1573,7 +1575,6 @@ display: none;
 
 .box_in_wrap_8 h3{
 
-    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 700;
     color: inherit;
@@ -2032,8 +2033,8 @@ display: none;
 
     .video_arrow .arrow {
 
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     }
 
 
