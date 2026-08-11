@@ -447,15 +447,19 @@ svg {
 }
 
 
-.icon {
+.icon,.icon_2,.arrow{
 
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
+    aspect-ratio: 1 / 1;
 
     /* 아이콘 크기를 따로 변경하면 그 크기를 그대로 사용 */
     flex: 0 0 auto;
     flex-shrink: 0;
 
+    padding: 0;
+    border: 0;
+    cursor: pointer;
     display: block;
 
     /* mask 아이콘 공통 설정 */
@@ -468,63 +472,22 @@ svg {
     -webkit-mask-size: contain;
     mask-size: contain;
 
+    background-color: #1d1d1d;
+    transition: transform 0.25s ease;
+
 }
 
 .arrow{
 
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
-
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
     mask-image: url("../img/icon/down-arrow.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-
-    transition: transform 0.25s ease;
 
 }
 
 .factory{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/factory.svg");
     mask-image: url("../img/icon/factory.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-
-    transition: transform 0.25s ease;
 
 }
 
@@ -532,254 +495,72 @@ svg {
 
 .doctor{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/doctor.svg");
     mask-image: url("../img/icon/doctor.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 .water_tower{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/water-tower.svg");
     mask-image: url("../img/icon/water-tower.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
-
 
 }
 
 .cleaner{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/cleaner.svg");
     mask-image: url("../img/icon/cleaner.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 .bird_spike{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/bird-spike.svg");
     mask-image: url("../img/icon/bird-spike.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 .brick_wall{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/brick-wall.svg");
     mask-image: url("../img/icon/brick-wall.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 .search_ion{
 
-    padding: 4px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
-
     -webkit-mask-image: url("../img/icon/search.svg");
     mask-image: url("../img/icon/search.svg");
-
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    background-color: #1d1d1d;
-
-    transition: transform 0.25s ease;
 
 }
 
 .arrow_up_right{
 
-        display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/arrow-up-right.svg");
     mask-image: url("../img/icon/arrow-up-right.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-
     
 }
 
 .cancel{
 
-    width: 24px;
-    height: 24px;
-    padding: 4px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
-
     -webkit-mask-image: url("../img/icon/cancel.svg");
     mask-image: url("../img/icon/cancel.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    background-color: #1d1d1d;
 
 }
 
 .login{
 
-       width: 24px;
-    height: 24px;
-    padding: 4px;
-    display: inline-block;
-    flex: 0 0 14px;
-    flex-shrink: 0;
-
     -webkit-mask-image: url("../img/icon/login.svg");
     mask-image: url("../img/icon/login.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    background-color: #1d1d1d;
 
 }
 
 /* 유저 */
 .user{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/user.svg");
     mask-image: url("../img/icon/user.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
@@ -788,24 +569,8 @@ svg {
 
 .calendar{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/calendar.svg");
     mask-image: url("../img/icon/calendar.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -813,24 +578,8 @@ svg {
 
 .pen{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/pen.svg");
     mask-image: url("../img/icon/pen.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -839,94 +588,31 @@ svg {
 
 .party{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/party.svg");
     mask-image: url("../img/icon/party.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 /* 고객센터 */
 .call_center{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/call-center.svg");
     mask-image: url("../img/icon/call-center.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* QA */
 .question_answer{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/question-answer.svg");
     mask-image: url("../img/icon/question-answer.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* 신청_작성 */
 .contract{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/contract.svg");
     mask-image: url("../img/icon/contract.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* .contract:hover{
@@ -941,574 +627,184 @@ svg {
 /* 메가폰 */
 .megaphone{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/megaphone.svg");
     mask-image: url("../img/icon/megaphone.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* 정보 i */
 .info{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/info.svg");
     mask-image: url("../img/icon/info.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* 창고 */
 .storage{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/storage.svg");
     mask-image: url("../img/icon/storage.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 /* 회사 블럭*/
 .company_back{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/company_blak.svg");
     mask-image: url("../img/icon/company_blak.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
 
 }
 
 /* 아파트 */
 .company{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/company.svg");
     mask-image: url("../img/icon/company.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 /* 사무실 */
 .office{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/office.svg");
     mask-image: url("../img/icon/office.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 /* 카펫 */
 .carpet{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/carpet.svg");
     mask-image: url("../img/icon/carpet.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 소파 */
 .sofa{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/sofa.svg");
     mask-image: url("../img/icon/sofa.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 배관 */
 .pipeline{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/pipeline.svg");
     mask-image: url("../img/icon/pipeline.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* 기계실 */
 .gears{
     
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/gears.svg");
     mask-image: url("../img/icon/gears.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* 보일러실 */
 .gas_heater{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/gas-heater.svg");
     mask-image: url("../img/icon/gas-heater.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 /* 무대 */
 .opera{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/opera.svg");
     mask-image: url("../img/icon/opera.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 행사 */
 .stage{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/stage.svg");
     mask-image: url("../img/icon/stage.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 관공서 */
 .courthouse{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/courthouse.svg");
     mask-image: url("../img/icon/courthouse.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 }
 
 /* 배 */
 .ship{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/ship.svg");
     mask-image: url("../img/icon/ship.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 락스 */
 .soap_ottle{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/soap-bottle.svg");
     mask-image: url("../img/icon/soap-bottle.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 동상 */
 .greek{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/greek.svg");
     mask-image: url("../img/icon/greek.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 호수 */
 .pond{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/pond.svg");
     mask-image: url("../img/icon/pond.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 바닥 */
 .floor{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/floor.svg");
     mask-image: url("../img/icon/floor.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 }
 
 /* 계단 */
 .staircase{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/staircase.svg");
     mask-image: url("../img/icon/staircase.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 .spa{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/spa.svg");
     mask-image: url("../img/icon/spa.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 호텔 */
 .hotel{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/hotel.svg");
     mask-image: url("../img/icon/hotel.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
 /* 후드 */
 .extracto{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/extracto.svg");
     mask-image: url("../img/icon/extracto.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-    transition: transform 0.25s ease;
 
 }
 
@@ -1518,16 +814,21 @@ svg {
 
     width: 100%;
     aspect-ratio: 4 / 1;
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
 
     background-color: #8E8E8E;
 
     -webkit-mask-image: url("../img/icon/freepik.svg");
     mask-image: url("../img/icon/freepik.svg");
 
+        flex: 0 0 auto;
+    flex-shrink: 0;
+
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    display: block;
+
+    /* mask 아이콘 공통 설정 */
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
 
@@ -1536,6 +837,8 @@ svg {
 
     -webkit-mask-size: contain;
     mask-size: contain;
+
+    transition: transform 0.25s ease;
 
 
 }
@@ -1543,78 +846,27 @@ svg {
 /* 집 */
 .home{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/home.svg");
     mask-image: url("../img/icon/home.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
 
 }
 
 .dot{
 
-    width: 24px;
-    aspect-ratio: 1 / 1;
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
+  
     background-color: #8e8e8e;
 
     -webkit-mask-image: url("../img/icon/dot.svg");
     mask-image: url("../img/icon/dot.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
 }
 
 .phone_call{
-
-
-    width: 24px;
-    aspect-ratio: 1 / 1;
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
 
     background-color: #8e8e8e;
 
     -webkit-mask-image: url("../img/icon/phone-call.svg");
     mask-image: url("../img/icon/phone-call.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-
 
 }
 
@@ -1625,24 +877,9 @@ svg {
 
 .Factory_Environmental_Improvement{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Factory_Environmental_Improvement.svg");
     mask-image: url("../img/icon/Factory_Environmental_Improvement.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -1650,24 +887,8 @@ svg {
 
 .Safety_accident{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Safety-accident-prevention.svg");
     mask-image: url("../img/icon/Safety-accident-prevention.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
 
 }
 
@@ -1675,24 +896,8 @@ svg {
 
 .Increase_work{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Increase-work-efficiency.svg");
     mask-image: url("../img/icon/Increase-work-efficiency.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -1700,23 +905,8 @@ svg {
 
 .Equipment_maintenance{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Equipment-maintenance.svg");
     mask-image: url("../img/icon/Equipment-maintenance.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -1724,23 +914,8 @@ svg {
 
 .Process-improvement{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Process-improvement.svg");
     mask-image: url("../img/icon/Process-improvement.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -1748,24 +923,8 @@ svg {
 
 .Extending_equipment{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Extending-equipment-lifespan.svg");
     mask-image: url("../img/icon/Extending-equipment-lifespan.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
@@ -1773,94 +932,32 @@ svg {
 
 .Developing{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
-    -webkit-mask-image: url("../img/icon/developing.svg");
+   -webkit-mask-image: url("../img/icon/developing.svg");
     mask-image: url("../img/icon/developing.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 .Pier_surface{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Ensure-repairability-durability.svg");
     mask-image: url("../img/icon/Ensure-repairability-durability.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 .Ensure-repair{
 
-    display: block;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    background-color: #1d1d1d;
-
     -webkit-mask-image: url("../img/icon/Ensure-repairability-durability.svg");
     mask-image: url("../img/icon/Ensure-repairability-durability.svg");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 
 }
 
 .youtube{
-
-    display: block;
-    width: 24px;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
 
     background-color: #8E8E8E;
 
     -webkit-mask-image: url("../img/icon/youtube.svg");
     mask-image: url("../img/icon/youtube.svg");
 
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
 }
 
 /* -------아이콘 끝--------- */
@@ -1956,14 +1053,21 @@ svg {
 
 @media (max-width: 1023px) {
 
+    .tablet_none{
+
+        display: none;
+
+    }
+
     section {
         padding: 48px 40px;
         gap: 32px;
     }
 
+        .page_title {
 
-    .page_title {
-        font-size: 2.25rem;      /* 36px */
+        font-size: 2.25rem; /* 36px */
+    
     }
 
 
@@ -1980,14 +1084,13 @@ svg {
 
     .page_title {
 
-
-
     font-size: 1.5625rem;       /* 25px */
     line-height: 1.3;
     letter-spacing: -0.035em;
     font-weight: 700;
 
-}
+    }
+
 
 /* -------------------------
    섹션 제목
@@ -1997,7 +1100,7 @@ h2,
 .section_title {
 
 
-        font-size: 1.1875rem;       /* 19px */
+    font-size: 1.1875rem;       /* 19px */
     line-height: 1.4;
     letter-spacing: -0.025em;
     font-weight: 700;
@@ -2019,7 +1122,7 @@ h3,
 
 
 
-        font-size: 1.0625rem;       /* 17px */
+    font-size: 1.0625rem;       /* 17px */
     line-height: 1.6;
     letter-spacing: -0.015em;
     font-weight: 500;
@@ -2037,12 +1140,11 @@ h3,
 p,
 .body_text {
 
-
-
-        font-size: 0.9375rem;       /* 15px */
+    font-size: 0.9375rem;       /* 15px */
     line-height: 1.5;
     letter-spacing: -0.015em;
     font-weight: 400;
+
 }
 
 
@@ -2093,13 +1195,18 @@ p,
 
         padding:20px;
         gap: 24px;
+ 
+    }
+
+    .mbile_none{
+
+        display: none;
 
     }
 
-
     /* 페이지 대표 제목 */
 
-    .page_title {
+    .h1{
 
         font-size: 2rem;         /* 32px */
         line-height: 1.2;

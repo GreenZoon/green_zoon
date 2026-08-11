@@ -1385,13 +1385,8 @@ display: none;
 
 .section_end{
 
-    padding: 48px 40px;
+    padding: 20px;
 }
-
-
-}
-
-@media (max-width: 480px) {
 
 .section_3 {
 
@@ -1403,6 +1398,12 @@ display: none;
 
     display: none;
 }
+
+}
+
+@media (max-width: 480px) {
+
+
 
 .section_end{
 
