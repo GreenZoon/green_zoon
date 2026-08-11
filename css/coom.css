@@ -1061,6 +1061,7 @@ svg {
     /* 섹션 제목
        PC 25px → Tablet 19px
     */
+    
     h2,
     .section_title {
         font-size: 1.1875rem;    /* 19px */
@@ -1083,10 +1084,10 @@ svg {
         color: inherit;
     }
 
-
     /* 본문
        PC 17px → Tablet 15px
     */
+
     p,
     .body_text {
         font-size: 0.9375rem;    /* 15px */
@@ -1112,8 +1113,6 @@ svg {
     }
 
 }
-
-
 
 /* =========================================================
    13. MOBILE
