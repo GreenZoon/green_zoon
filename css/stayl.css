@@ -1956,3 +1956,97 @@ display: none;
 }
 
 }
+
+/* --------- VIDEO TABLET --------- */
+
+@media (max-width: 1023px) and (min-width: 481px) {
+
+    .section_video {
+
+        padding: 50px 60px;
+        gap: 28px;
+    }
+
+
+    .video_slider {
+
+        gap: 14px;
+    }
+
+
+    .video_track {
+
+        gap: 14px;
+    }
+
+
+    .video_card {
+
+        flex: 0 0 var(--video-card-width);
+    }
+
+
+    .video_thumbnail {
+
+        aspect-ratio: 3 / 2;
+        border-radius: 12px;
+    }
+
+
+    .video_play {
+
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .video_play .play_Block {
+
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .video_card_pc_title {
+
+        min-height: 44px;
+
+        padding: 9px 16px;
+    }
+
+
+    .video_card_pc_title h3 {
+
+        font-size: 1.0625rem;
+    }
+
+
+    .video_arrow {
+
+        width: 36px;
+        height: 36px;
+
+        flex: 0 0 36px;
+    }
+
+
+    .video_arrow .arrow {
+
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .video_dot {
+
+        width: 16px;
+        height: 8px;
+    }
+
+
+    .video_dot.is_active {
+
+        width: 32px;
+    }
+
+}
