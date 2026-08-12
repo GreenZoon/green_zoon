@@ -1165,6 +1165,7 @@
 
     position: absolute;
     left: 50%;
+    bottom: -8%;
 
     display: flex;
     gap: 4px;

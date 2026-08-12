@@ -1485,6 +1485,16 @@
     background-color: #009944;
 }
 
+/* =========================================================
+   MOBILE ONLY CONTENT
+   PC / TABLET에서는 숨김
+========================================================= */
+
+.service_gallery_meta,
+.service_video_mobile_caption {
+    display: none;
+}
+
 
 /* =========================================================
    14. TABLET
@@ -3471,6 +3481,70 @@
 
         font-size: 0.6875rem;
     }
+
+    /* =========================================================
+   MOBILE GALLERY META
+========================================================= */
+
+.service_gallery_meta {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+}
+
+
+.service_gallery_name {
+    color: #8e8e8e;
+
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+
+.service_gallery_status {
+    padding: 4px 9px;
+
+    border-radius: 6px;
+
+    color: #f8f8f8;
+    background-color: #009944;
+
+    font-size: 0.625rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   MOBILE VIDEO CARD
+========================================================= */
+
+.service_video .video_card_a {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.service_video_mobile_caption {
+    display: block;
+
+    width: 100%;
+
+    padding-left: 12px;
+
+    color: #8e8e8e;
+
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
 
 }
 
