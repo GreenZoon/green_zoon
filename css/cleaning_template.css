@@ -11,8 +11,11 @@
 
 .service_detail--cleaning .service_target {
     order: 2;
+
+    text-align: center;
     color: #555;
     background-color: #fff;
+
 }
 
 .service_detail--cleaning .service_gallery {
@@ -48,18 +51,17 @@
 .service_gallery--cleaning .tit_wrap p,
 .service_video--cleaning .service_video_title,
 .service_video--cleaning .service_video_title h2 {
+   
     color: inherit;
+
 }
 
-.sub_pag_depth.is_active {
-    color: #f8f8f8;
-    background-color: #009944;
-    box-shadow: inset 0 -2px 0 #009944;
-}
+
 
 /* 이미지가 준비되지 않은 영상 썸네일 슬롯 */
 
 .service_media_slot {
+
     width: 100%;
     height: 100%;
     position: relative;
@@ -69,21 +71,32 @@
     overflow: hidden;
     color: #8e8e8e;
     background-color: #f2f2f2;
+
 }
 
 .service_media_slot > img {
+
     width: 100%;
     height: 100%;
     position: absolute;
     inset: 0;
     object-fit: cover;
+
 }
 
 .service_media_slot_notice {
+
     position: relative;
     z-index: 1;
     font-size: 0.9375rem;
     line-height: 1.5;
+
+}
+
+.service_gallery_description{
+
+    align-items: center;
+
 }
 
 /* =========================================================
@@ -93,13 +106,17 @@
 @media (max-width: 1024px) {
 
     .service_detail--cleaning .service_intro {
+  
         order: 1;
+  
     }
 
     .service_detail--cleaning .service_target {
+   
         order: 2;
         color: #f8f8f8;
         background-color: #009944;
+  
     }
 
     .service_detail--cleaning .service_request {
@@ -131,8 +148,10 @@
     }
 
     .service_gallery--cleaning .tit_wrap {
+
         align-items: flex-start;
         text-align: left;
+
     }
 
     .service_gallery--cleaning .sub_slide_img {
@@ -157,11 +176,6 @@
         display: none;
     }
 
-    .sub_pag_depth.is_active {
-        color: #009944;
-        background-color: #fff;
-        box-shadow: inset 0 -2px 0 #009944;
-    }
 
 }
 
