@@ -2769,41 +2769,6 @@
     }
 
 
-    .service_target .con {
-
-        width: 48px;
-        max-width: 48px;
-
-        flex: 0 0 48px;
-
-        gap: 4px;
-
-    }
-
-
-    .service_target .con > .icon {
-
-        width: 48px;
-        height: 48px;
-
-        max-width: 48px;
-
-        flex: 0 0 48px;
-
-        background-color: #f8f8f8;
-    }
-
-
-    .service_target .con > p {
-
-        margin: 0;
-
-        font-size: 0.625rem;
-        line-height: 1.3;
-
-        color: #f8f8f8;
-    }
-
 
     .service_target_description {
 
