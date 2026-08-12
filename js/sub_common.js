@@ -42,35 +42,8 @@ async function loadComponent(id, file) {
             await response.text();
 
 
-
-        /* HEADER */
-
-        if (id === "header") {
-
-            const logo =
-                target.querySelector(".logo");
-
-
-            if (logo) {
-
-                logo.src =
-                    "../../img/logo.svg";
-
-
-                const logoLink =
-                    logo.closest("a");
-
-
-                if (logoLink) {
-
-                    logoLink.href =
-                        "../../index.html";
-
-                }
-
-            }
-
-        }
+        window.GreenZonePaths
+            ?.normalize(target);
 
 
         return target;
@@ -109,33 +82,6 @@ function closeHeaderSearch() {
             "aria-expanded",
             "false"
         );
-
-}
-
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function closeMobileMenu() {
-
-    document
-        .querySelector("#mobile_menu")
-        ?.classList.remove("is_open");
-
-
-    document
-        .querySelector(".mobile_menu_open_btn")
-        ?.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-
-    document.body.classList.remove(
-        "menu_open"
-    );
 
 }
 
@@ -246,62 +192,6 @@ document.addEventListener(
         }
 
 
-
-        /* MOBILE MENU */
-
-        const menuOpen =
-            event.target.closest(
-                ".mobile_menu_open_btn"
-            );
-
-
-        if (menuOpen) {
-
-            const menu =
-                document.querySelector(
-                    "#mobile_menu"
-                );
-
-
-            if (!menu) {
-                return;
-            }
-
-
-            const isOpen =
-                menu.classList.toggle(
-                    "is_open"
-                );
-
-
-            menuOpen.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-
-            document.body.classList.toggle(
-                "menu_open",
-                isOpen
-            );
-
-
-            return;
-
-        }
-
-
-
-        if (
-            event.target.closest(
-                ".mobile_menu_close_btn"
-            )
-        ) {
-
-            closeMobileMenu();
-
-        }
-
     }
 );
 
@@ -315,7 +205,7 @@ document.addEventListener(
 
             closeHeaderSearch();
 
-            closeMobileMenu();
+            window.closeMobileMenu?.();
 
         }
 
@@ -641,6 +531,12 @@ function initSubSliders() {
    INIT
 ========================================================= */
 
+const sitePath =
+    (path) =>
+        window.GreenZonePaths
+            ?.resolve(path) || path;
+
+
 document.addEventListener(
     "DOMContentLoaded",
     async function () {
@@ -655,31 +551,31 @@ document.addEventListener(
 
             loadComponent(
                 "header",
-                "../../components/header_v2.html"
+                sitePath("components/header_v2.html")
             ),
 
 
             loadComponent(
                 "menu",
-                "../../components/menu.html"
+                sitePath("components/menu.html")
             ),
 
 
             loadComponent(
                 "Factry_sub_menu",
-                "../../components/sub_pag/Factry_sub_menu.html"
+                sitePath("components/sub_pag/Factry_sub_menu.html")
             ),
 
 
             loadComponent(
                 "Request_Cleaning",
-                "../../components/Request_Cleaning.html"
+                sitePath("components/Request_Cleaning.html")
             ),
 
 
             loadComponent(
                 "footer",
-                "../../components/footer.html"
+                sitePath("components/footer.html")
             )
 
 

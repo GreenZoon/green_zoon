@@ -1,9 +1,6 @@
 
 const slider = document.querySelector(".section_1");
 
-console.log("slide.js 연결됨");
-console.log(slider);
-
 if (slider) {
     const track = slider.querySelector(".img_wrap_1");
     const slides = slider.querySelectorAll(".main_img_1");

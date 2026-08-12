@@ -157,11 +157,6 @@
     
 }
 
-.play_Block{
-
-    width: 40px;
-}
-
 /*
     p는 coom.css의 본문 스타일을 받지만
     전화번호 a에는 같은 타이포그래피가 적용되지 않으므로
@@ -282,13 +277,13 @@
 
 /* =========================================================
    10. TABLET
-   769px ~ 1023px
+   769px ~ 1024px
 
    공통 section 여백과 타이포그래피는
    coom.css의 태블릿 설정 사용
 ========================================================= */
 
-@media (max-width: 1023px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 769px) {
 
     #Request_Cleaning > section {
         flex-direction: column;

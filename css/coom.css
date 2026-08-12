@@ -120,8 +120,7 @@ DESKTOP
 h1,
 h2,
 h3,
-h4,
-p{
+h4 {
     color: #1d1d1d;
 }
 
@@ -350,7 +349,7 @@ section {
 .flx_li {
 
     display: flex;
-    align-items: center;
+   
     justify-content: center;
 
     gap: 4px;
@@ -361,8 +360,9 @@ section {
 .flx_li_g {
 
     display: flex;
-    align-items: center;
+   
     justify-content: center;
+    align-items: center;
 
     gap: 4px;
 
@@ -435,6 +435,39 @@ section {
 
 }
 
+
+
+/* =========================================================
+   COMMON SLIDER CONTROL
+========================================================= */
+
+.slide_pagination {
+
+    display: flex;
+    align-items: center;
+}
+
+.slide_dot {
+
+    width: 20px;
+    height: 5px;
+    padding: 0;
+
+    border: 0;
+    border-radius: 999px;
+
+    background-color: #dbdbdb;
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.slide_dot[hidden] {
+
+    display: none;
+}
 
 /* =========================================================
    8. COMMON ICON SIZE
@@ -580,7 +613,7 @@ svg {
 .play{
 
         -webkit-mask-image: url("../img/icon/play.svg");
-    mask-image: url("../img/icon/login.svg");
+    mask-image: url("../img/icon/play.svg");
 
 }
 
@@ -841,8 +874,8 @@ svg {
 /* 후드 */
 .extracto{
 
-    -webkit-mask-image: url("../img/icon/extracto.svg");
-    mask-image: url("../img/icon/extracto.svg");
+    -webkit-mask-image: url("../img/icon/extractor.svg");
+    mask-image: url("../img/icon/extractor.svg");
 
 }
 
@@ -1020,8 +1053,8 @@ svg {
 
         background-color: #8E8E8E;
 
-    -webkit-mask-image: url("../img/icon/Naver_blog.svg");
-    mask-image: url("../img/icon/Naver_blog.svg");
+    -webkit-mask-image: url("../img/icon/naver_blog.svg");
+    mask-image: url("../img/icon/naver_blog.svg");
 
 
 }
@@ -1320,3 +1353,4 @@ svg {
 
 
  
+

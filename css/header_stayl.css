@@ -218,30 +218,22 @@ input{
 }
 
 
-.search_but{
-
-    background-color: transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 48px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-
-}
-
 .search_but,
 .search_close_btn {
 
     display: flex;
     align-items: center;
     justify-content: center;
+
     border: 0;
     background: transparent;
     cursor: pointer;
+}
+
+.search_but {
+
+    width: 52px;
+    height: 48px;
 }
 
 .search_icon{
@@ -446,4 +438,5 @@ input{
 
 
 }
+
 

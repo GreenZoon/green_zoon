@@ -20,14 +20,19 @@
 .img_wrap_1 {
 
     display: flex;
-    transition: transform 0.6s ease;
+    width: 100%;
+    height: 100%;
 
+    transition: transform 0.6s ease;
 }
 
 .main_img_1 {
 
-    flex: 0 0 100%;
+    position: relative;
 
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .img_wrap{
@@ -119,30 +124,10 @@
 
 }
 
-.slide_pagination {
+.slide_control_1 .slide_pagination {
 
-    display: flex;
-    align-items: center;
     gap: 7px;
     padding: 7px 10px;
-}
-
-.slide_dot {
-
-    width: 20px;
-    height: 5px;
-    padding: 0;
-
-    border: 0;
-    border-radius: 999px;
-
-    background-color: #dbdbdb;
-    cursor: pointer;
-
-    transition:
-    width 0.25s ease,
-    background-color 0.25s ease;
-
 }
 
 /* 재생 중: 정지 아이콘 */
@@ -203,40 +188,13 @@
     cursor: pointer;
 }
 
-.slide_dot.is_active {
+.slide_control_1 .slide_dot.is_active {
 
     width: 36px;
     background-color: #f2f2f2;
 }
 
-@media (max-width: 1024px) {
 
-    .section_1 .left_arrow,
-    .section_1 .right_arrow {
-
-        display: none;
-
-    }
-
-    .slide_control_1 {
-
-        right: 20px;
-        bottom: 20px;
-        gap: 6px;
-    }
-
-    .slide_dot {
-
-        width: 12px;
-        height: 4px;
-    }
-
-    .slide_dot.is_active {
-
-        width: 24px;
-    }
-
-}
 
 
 /* ---- 슬라이드 coom end ----- */
@@ -254,24 +212,6 @@
     overflow: hidden;
     width: 100%;
     height: 600px;
-}
-
-.img_wrap_1 {
-
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease;
-  
-}
-
-.main_img_1 {
-
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-    height: 100%;
-
 }
 
 .main_img_in_wrap {
@@ -558,16 +498,16 @@
 .slide_wrap_2 .arrow{
 
     position: absolute;
+    width: 25px;
+
     background-color: #8E8E8E;
     z-index: 20;
-
 }
 
 .left_arrow_2{
 
     width: 16px;
     left: 0;
-    transform: rotate(90deg);
     
 }
 
@@ -575,7 +515,6 @@
 
     width: 16px;
     right: 0;
-    transform: rotate(-90deg);
 }
 
 .slide_wrap_2 .arrow:disabled,.slide_wrap_2 .arrow:disabled .right_arrow_2 {
@@ -662,21 +601,6 @@
 .slide_pagination_2 {
     display: flex;
    
-}
-
-.slide_wrap_2 .arrow{
-
-     width: 25px;
-    
-}
-
-
-/* 모바일: 숨김 */
-@media (max-width: 480px) {
-    .slide_wrap_2 .arrow,
-    .slide_pagination_2 {
-        display: none;
-    }
 }
 
 
@@ -1239,11 +1163,6 @@ display: none;
     justify-content: space-between;
 }
 
-    .box_wrap_4.is_dragging {
-    cursor: grabbing;
-    transition: none;
-}
-
     /* --------- 섹션5--------- */
 
     .section_5 {
@@ -1672,379 +1591,13 @@ display: none;
 
 
 
-@media (max-width: 1024px){
 
 
-.section_end{
 
-    padding: 20px;
-}
-
-.section_3 {
-
-    display: none;
-    
-}
-
-.section_5{
-
-    display: none;
-}
-
-}
-
-@media (max-width: 480px) {
-
-    .tit_wrap_4 h3 {
-        font-size: 0.875rem; /* 14px */
-    }
-
-
-.section_end{
-
-    display: none;
-}
-
-
-
-.tit_wrap_1 h2{
-
-    font-size: 2rem;         /* 32px */
-    line-height: 1.2;
-    letter-spacing: -0.04em;
-
-}
-
-.tit_wrap_1 p{
-
-    font-size: 1.1875rem;    /* 19px */
-    line-height: 1.4;
-    font-weight: 700;
-
-}
-
-.section_video {
-
-    align-items: flex-start;
-
-    padding: 5px 20px;
-    gap: 7px;
-
-}
-
-.video_title_wrap {
-
-    align-items: flex-start;
-    text-align: left;
-
-}
-
-/* PC용 설명은 모바일에서 숨김 */
-.video_title_wrap .section_title {
-
-    display: none;
-
-}
-
-.video_title_wrap .page_title {
-
-    font-size: 1.1875rem; /* 19px */
-
-}
-
-.video_list {
-
-    justify-content: flex-start;
-
-    gap: 7px;
-    overflow: hidden;
-
-}
-
-.video_card {
-
-    flex: 0 0 205px;
-    width: 205px;
-
-    gap: 7px;
-
-}
-
-.video_thumbnail {
-
-    width: 200px;
-    height: 135px;
-
-    border-radius: 10px;
-
-}
-
-.video_play {
-
-    width: 70px;
-    height: 70px;
-
-}
-
-.video_card_pc_title {
-
-    display: none;
-
-}
-
-.video_card_mobile_title {
-
-    display: block;
-
-    color: #555;
-    font-size: 0.9375rem; /* 15px */
-    font-weight: 700;
-
-}
-
-/* --------- VIDEO MOBILE --------- */
-
-.section_video {
-
-    align-items: flex-start;
-
-    gap: 12px;
-
-    padding: 20px;
-
-}
-
-
-.video_title_wrap {
-
-    align-items: flex-start;
-
-    text-align: left;
-
-}
-
-
-.video_title_wrap .page_title {
-
-    font-size: 1.1875rem; /* 19px */
-
-}
-
-
-/* PC 설명 숨김 */
-
-.video_tit_li {
-
-    display: none;
-
-}
-
-
-/* 화살표 숨김 */
-
-.video_arrow {
-
-    display: none;
-
-}
-
-
-/* 모바일에서는 옆 카드가 일부 보이게 */
-
-.video_viewport {
-
-    width: calc(100vw - 20px);
-
-    overflow: hidden;
-
-}
-
-
-/* 모바일 카드 */
-
-.video_track {
-
-    gap: 7px;
-
-}
-
-
-.video_card {
-
-    width: 200px;
-
-    flex: 0 0 200px;
-
-    gap: 7px;
-
-}
-
-
-.video_thumbnail {
-
-    width: 200px;
-    height: 135px;
-
-    border-radius: 10px;
-
-}
-
-
-/* 모바일 재생 아이콘 */
-
-.video_play {
-
-    width: 70px;
-    height: 70px;
-
-}
-
-
-/* PC 녹색바 숨김 */
-
-.video_card_pc_title {
-
-    display: none;
-
-}
-
-
-/* 모바일 제목 표시 */
-
-.video_card_mobile_title {
-
-    display: block;
-
-    color: #555;
-
-    font-size: 0.9375rem; /* 15px */
-    font-weight: 700;
-
-}
-
-
-/* 모바일 pagination */
-
-.video_pagination {
-
-    align-self: center;
-
-    gap: 6px;
-
-}
-
-
-.video_dot {
-
-    width: 12px;
-    height: 5px;
-
-    border-radius: 999px;
-
-}
-
-
-.video_dot.is_active {
-
-    width: 24px;
-
-}
-
-}
 
 /* --------- VIDEO TABLET --------- */
 
-@media (max-width: 1024px) and (min-width: 481px) {
 
-    .section_video {
-
-        padding: 50px 60px;
-        gap: 28px;
-    }
-
-
-    .video_slider {
-
-        gap: 14px;
-    }
-
-
-    .video_track {
-
-        gap: 14px;
-    }
-
-
-    .video_card {
-
-        flex: 0 0 var(--video-card-width);
-    }
-
-
-    .video_thumbnail {
-
-        aspect-ratio: 3 / 2;
-        border-radius: 12px;
-    }
-
-
-    .video_play {
-
-        width: 80px;
-        height: 80px;
-    }
-
-
-    .video_play .play_Block {
-
-        width: 36px;
-        height: 36px;
-    }
-
-
-    .video_card_pc_title {
-
-        min-height: 44px;
-
-        padding: 9px 16px;
-    }
-
-
-    .video_card_pc_title h3 {
-
-        font-size: 1.0625rem;
-    }
-
-
-    .video_arrow {
-
-        width: 36px;
-        height: 36px;
-
-        flex: 0 0 36px;
-    }
-
-
-    .video_arrow .arrow {
-
-        width: 25px;
-        height: 25px;
-    }
-
-
-    .video_dot {
-
-        width: 16px;
-        height: 8px;
-    }
-
-
-    .video_dot.is_active {
-
-        width: 32px;
-    }
-
-}
 
 /* =========================================================
    MAIN RESPONSIVE FINAL OVERRIDE
@@ -2052,9 +1605,13 @@ display: none;
    기존 규칙을 삭제하지 않고 마지막 우선순위로 정리
 ========================================================= */
 
+/* =========================================================
+   MAIN RESPONSIVE
+   Mobile + iPad: 1024px 이하 / PC: 1025px 이상
+========================================================= */
+
 @media (max-width: 1024px) {
 
-    /* 메인 슬라이드 */
     .wrap_1 {
         height: clamp(204px, 50vw, 430px);
     }
@@ -2086,7 +1643,15 @@ display: none;
         gap: 6px;
     }
 
-    /* 자주 찾는 서비스: 화살표는 숨기고 도트는 유지 */
+    .slide_control_1 .slide_dot {
+        width: 12px;
+        height: 4px;
+    }
+
+    .slide_control_1 .slide_dot.is_active {
+        width: 24px;
+    }
+
     .slide_wrap_2 .arrow {
         display: none;
     }
@@ -2095,14 +1660,12 @@ display: none;
         display: flex;
     }
 
-    /* 모바일·아이패드에서는 PC 전용 섹션 비활성화 */
     .section_3,
     .section_5,
     .section_end {
         display: none;
     }
 
-    /* 영상 갤러리: 모바일 구조를 아이패드까지 유지 */
     .section_video {
         align-items: flex-start;
         gap: 12px;
@@ -2112,11 +1675,6 @@ display: none;
     .video_title_wrap {
         align-items: flex-start;
         text-align: left;
-    }
-
-    .video_thumbnail{
-
-        border-radius: 7px;
     }
 
     .video_title_wrap .section_title,
@@ -2159,8 +1717,8 @@ display: none;
     }
 
     .video_play {
+        top: 50%;
         left: 50%;
-        top:50%;
         width: 70px;
         height: 70px;
     }
@@ -2196,4 +1754,12 @@ display: none;
         width: 24px;
     }
 }
+
+@media (max-width: 480px) {
+
+    .tit_wrap_4 h3 {
+        font-size: 0.875rem;
+    }
+}
+
 

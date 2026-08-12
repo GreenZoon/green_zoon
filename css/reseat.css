@@ -127,10 +127,6 @@ button{
 
 input {
   all: unset;
-}
-
-/* input 기본 스타일 초기화 */
-input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -168,14 +164,8 @@ select::-ms-expand {
   display: none;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
   display: none;
 }
+

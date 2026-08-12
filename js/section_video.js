@@ -87,25 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        /* 태블릿 */
-
-        if (window.innerWidth <= 1023) {
-
-            const viewportWidth =
-                viewport.clientWidth;
-
-
-            const cardWidth =
-                (viewportWidth - gap) / 2;
-
-
-            track.style.setProperty(
-                "--video-card-width",
-                `${cardWidth}px`
-            );
-
-            return;
-        }
 
 
         /* PC */
@@ -706,3 +687,4 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+

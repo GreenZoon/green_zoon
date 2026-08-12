@@ -245,6 +245,12 @@
 
 }
 
+.Cleaning_tit_wrap > p{
+
+    font-weight: 500;
+
+}
+
 .flx_li_g {
 
     margin-right: auto;
@@ -673,6 +679,7 @@
 
 .flx_li .arrow {
 
+    width: 16px;
     background-color: #555;
 }
 
@@ -889,6 +896,13 @@
     gap: 8px;
 
     margin-top: 12px;
+}
+
+.slide_pagination .slide_dot.is_active,
+.slide_pagination .slide_dot.is_active_4 {
+
+    width: 36px;
+    background-color: #009944;
 }
 
 
@@ -1176,19 +1190,35 @@
 ========================================================= */
 
 .service_intro {
+
     order: 1;
+    max-width: none;
+    gap: clamp(48px, 5vw, 100px);
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .service_effect {
+
     order: 2;
+    max-width: none;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 .service_gallery {
+
     order: 3;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .service_target {
+
     order: 4;
+    gap: 26px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .service_video {
@@ -1216,15 +1246,7 @@
    DESKTOP INTRO
 ========================================================= */
 
-.service_intro {
 
-    max-width: none;
-
-    gap: clamp(48px, 5vw, 100px);
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
 
 .service_intro > .img_wrap {
@@ -1268,13 +1290,7 @@
    DESKTOP EFFECT
 ========================================================= */
 
-.service_effect {
 
-    max-width: none;
-
-    padding-top: 30px;
-    padding-bottom: 50px;
-}
 
 
 .service_effect > h2 {
@@ -1332,11 +1348,7 @@
    DESKTOP GALLERY
 ========================================================= */
 
-.service_gallery {
 
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
 
 .service_gallery .tit_wrap h2 {
@@ -1350,13 +1362,7 @@
    DESKTOP TARGET
 ========================================================= */
 
-.service_target {
 
-    gap: 26px;
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
 
 .service_target > h2 {
@@ -1905,16 +1911,13 @@
 
     .section_2 {
 
-        min-height: 0;
-
-        flex-direction: column-reverse;
-        align-items: stretch;
-
-        gap: 1rem;
-
-        padding-top: 17px;
-        padding-bottom: 32px;
-    }
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    padding-top: 28px;
+    padding-bottom: 48px;
+}
 
 
     .section_2 > .img_wrap,
@@ -1937,18 +1940,16 @@
 
     .section_2 .tit_wrap {
 
-        align-items: flex-end;
-
-        text-align: right;
-    }
+    align-items: flex-start;
+    text-align: left;
+}
 
 
     .section_2 .tit_in_wrap {
 
-        width: 100%;
-
-        align-items: flex-end;
-    }
+    width: 100%;
+    align-items: flex-start;
+}
 
 
     .section_2 .tit_wrap h2 {
@@ -1969,11 +1970,11 @@
 
     .section_2 .tit_wrap p {
 
-        font-size: 0.75rem;
-        line-height: 1.55;
-
-        text-align: right;
-    }
+    font-size: 0.75rem;
+    line-height: 1.55;
+    text-align: left;
+    margin-top: 4px;
+}
 
 
 
@@ -1981,27 +1982,26 @@
 
     .con_section {
 
-        min-height: 0;
-
-        padding-top: 24px;
-        padding-bottom: 36px;
-    }
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 48px;
+    gap: 18px;
+}
 
 
     .con_section > h2 {
 
-        margin-left: 0;
-
-        font-size: 1.1875rem;
-    }
+    margin-left: 0;
+    font-size: 1.1875rem;
+    margin-bottom: 0;
+}
 
 
     .con_section .box_wrap {
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 10px;
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
 
 
     .con_section .box_g {
@@ -2088,11 +2088,10 @@
 
     .section_g {
 
-        gap: 16px;
-
-        padding-top: 28px;
-        padding-bottom: 26px;
-    }
+    gap: 24px;
+    padding-top: 42px;
+    padding-bottom: 44px;
+}
 
 
     .section_g > h2 {
@@ -2107,13 +2106,13 @@
 
     .section_g > p {
 
-        width: 100%;
-
-        font-size: 0.75rem;
-        line-height: 1.5;
-
-        text-align: center;
-    }
+    width: 100%;
+    font-size: 0.75rem;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+}
 
 
 
@@ -2255,24 +2254,21 @@
 
     .img_section {
 
-        align-items: stretch;
-
-        gap: 16px;
-
-        padding-top: 28px;
-        padding-bottom: 30px;
-    }
+    align-items: stretch;
+    gap: 22px;
+    padding-top: 44px;
+    padding-bottom: 48px;
+}
 
 
     .img_section .tit_wrap {
 
-        width: 100%;
-        max-width: none;
-
-        align-items: flex-start;
-
-        text-align: left;
-    }
+    width: 100%;
+    max-width: none;
+    align-items: flex-start;
+    text-align: left;
+    gap: 6px;
+}
 
 
     .img_section .tit_wrap h2 {
@@ -2367,14 +2363,12 @@
 
     .section_g_2 {
 
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 16px;
-
-        padding-top: 14px;
-        padding-bottom: 32px;
-    }
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding-top: 36px;
+    padding-bottom: 48px;
+}
 
 
     .section_g_2 > div,
@@ -2387,16 +2381,16 @@
 
     .section_g_2 .video_thumbnail {
 
-        border-radius: 12px;
-    }
+    border-radius: 14px;
+}
 
 
     .section_g_2 .tit_wrap {
 
-        align-items: flex-start;
-
-        text-align: left;
-    }
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+}
 
 
     .section_g_2 .tit_wrap h2 {
@@ -2444,37 +2438,16 @@
        이미지 → 텍스트 순서
     ===================================================== */
 
-    .section_2 {
-
-        flex-direction: column;
-
-        gap: 22px;
-
-        padding-top: 28px;
-        padding-bottom: 48px;
-    }
+    
 
 
-    .section_2 .tit_wrap {
-
-        align-items: flex-start;
-
-        text-align: left;
-    }
+    
 
 
-    .section_2 .tit_in_wrap {
-
-        align-items: flex-start;
-    }
+    
 
 
-    .section_2 .tit_wrap p {
-
-        margin-top: 4px;
-
-        text-align: left;
-    }
+    
 
 
 
@@ -2482,25 +2455,13 @@
        2. CLEANING EFFECT
     ===================================================== */
 
-    .con_section {
-
-        gap: 18px;
-
-        padding-top: 40px;
-        padding-bottom: 48px;
-    }
+    
 
 
-    .con_section > h2 {
-
-        margin-bottom: 0;
-    }
+    
 
 
-    .con_section .box_wrap {
-
-        gap: 12px;
-    }
+    
 
 
 
@@ -2508,19 +2469,10 @@
        3. GALLERY
     ===================================================== */
 
-    .img_section {
-
-        gap: 22px;
-
-        padding-top: 44px;
-        padding-bottom: 48px;
-    }
+    
 
 
-    .img_section .tit_wrap {
-
-        gap: 6px;
-    }
+    
 
 
 
@@ -2529,13 +2481,7 @@
        항목 수에 따라 자동 정렬
     ===================================================== */
 
-    .section_g {
-
-        gap: 24px;
-
-        padding-top: 42px;
-        padding-bottom: 44px;
-    }
+    
 
 
     .section_g .con_wrap {
@@ -2594,14 +2540,7 @@
     }
 
 
-    .section_g > p {
-
-        max-width: 620px;
-
-        margin: 0 auto;
-
-        line-height: 1.7;
-    }
+    
 
 
 
@@ -2610,27 +2549,13 @@
        영상 → 텍스트
     ===================================================== */
 
-    .section_g_2 {
-
-        flex-direction: column;
-
-        gap: 24px;
-
-        padding-top: 36px;
-        padding-bottom: 48px;
-    }
+    
 
 
-    .section_g_2 .tit_wrap {
-
-        gap: 8px;
-    }
+    
 
 
-    .section_g_2 .video_thumbnail {
-
-        border-radius: 14px;
-    }
+    
 
     
     /* =====================================================
@@ -2645,44 +2570,63 @@
     ===================================================== */
 
     .service_intro {
-        order: 1;
-    }
+
+    order: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding-top: 17px;
+    padding-bottom: 36px;
+}
 
     .service_target {
-        order: 2;
-    }
+
+    order: 2;
+    gap: 12px;
+    padding: 12px 20px;
+}
 
     .request_cleaning_pin {
-        order: 3;
-    }
+
+    order: 3;
+    display: block;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
 
     .service_request {
         order: 3;
     }
 
     .service_effect {
-        order: 4;
-    }
+
+    order: 4;
+    gap: 14px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
 
     .service_gallery {
-        order: 5;
-    }
+
+    order: 5;
+    gap: 12px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
 
     .service_video {
-        order: 6;
-    }
+
+    order: 6;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    background-color: #fff;
+    color: #555;
+}
 
 
-    .request_cleaning_pin {
-
-        display: block;
-
-        width: 0;
-        height: 0;
-
-        padding: 0;
-        margin: 0;
-    }
+    
 
 
 
@@ -2691,16 +2635,7 @@
        Figma : 이미지 → 우측 정렬 텍스트
     ===================================================== */
 
-    .service_intro {
-
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 14px;
-
-        padding-top: 17px;
-        padding-bottom: 36px;
-    }
+    
 
 
     .service_intro > .img_wrap,
@@ -2763,12 +2698,7 @@
        항목 수에 따라 자연스럽게 중앙 정렬
     ===================================================== */
 
-    .service_target {
-
-        gap: 12px;
-
-        padding: 12px 20px;
-    }
+    
 
 
     .service_target .con_wrap {
@@ -2799,13 +2729,7 @@
        2 × 2 박스 → 세로 리스트
     ===================================================== */
 
-    .service_effect {
-
-        gap: 14px;
-
-        padding-top: 36px;
-        padding-bottom: 36px;
-    }
+    
 
 
     .service_effect > h2 {
@@ -2887,13 +2811,7 @@
        GALLERY
     ===================================================== */
 
-    .service_gallery {
-
-        gap: 12px;
-
-        padding-top: 36px;
-        padding-bottom: 36px;
-    }
+    
 
 
     .service_gallery .tit_wrap {
@@ -2940,15 +2858,7 @@
        모바일 피그마는 흰색 영역
     ===================================================== */
 
-    .service_video {
-
-        padding-top: 36px;
-        padding-bottom: 36px;
-
-        background-color: #fff;
-
-        color: #555;
-    }
+    
 
 
     .service_video .tit_wrap {
@@ -2978,8 +2888,7 @@
 
 @media (max-width: 480px) {
 
-
-    .section_2 {
+.section_2 {
 
         gap: 18px;
 
@@ -3153,41 +3062,34 @@
 
     .service_gallery_meta {
 
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding: 0 12px;
-
-        margin-top: 0;
-    }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 0;
+}
 
 
     .service_gallery_name {
 
-        color: #8e8e8e;
-
-        font-size: 0.9375rem;
-        line-height: 1.5;
-        font-weight: 700;
-    }
+    color: #8e8e8e;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
 
 
     .service_gallery_status {
 
-        padding: 4px 9px;
-
-        border-radius: 6px;
-
-        color: #f8f8f8;
-        background-color: #009944;
-
-        font-size: 0.625rem;
-        line-height: 1.5;
-        font-weight: 500;
-    }
+    padding: 4px 9px;
+    border-radius: 6px;
+    color: #f8f8f8;
+    background-color: #009944;
+    font-size: 0.625rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
 
 
 
@@ -3285,110 +3187,54 @@
 
     .service_video_mobile_caption {
 
-        order: 3;
-
-        display: block;
-
-        width: 100%;
-
-        padding-left: 12px;
-
-        color: #8e8e8e;
-
-        font-size: 0.9375rem;
-        line-height: 1.5;
-        font-weight: 700;
-    }
+    order: 3;
+    display: block;
+    width: 100%;
+    padding-left: 12px;
+    color: #8e8e8e;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
 
 
     /* PLAY BUTTON */
 
     .service_video_play {
 
-        width: 72px;
-        height: 72px;
-
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        transform: translate(-50%, -50%);
-
-        border-radius: 50%;
-
-        background-color: rgba(248, 248, 248, 0.5);
-    }
-
-
-    .service_video_play .icon {
-
-        width: 34px;
-        height: 34px;
-
-        background-color: #f8f8f8;
-    }
-
-        .service_gallery_meta {
-
-        display: none;
-    }
-
-
-    .service_video_mobile_caption {
-
-        display: none;
-    }
-
-
-    .service_video_play {
-
-        width: clamp(80px, 8vw, 140px);
-        height: clamp(80px, 8vw, 140px);
-
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        transform: translate(-50%, -50%);
-
-        border-radius: 50%;
-
-        background-color: rgba(248, 248, 248, 0.5);
-    }
-
-
-    .service_video_play .icon {
-
-        width: 46%;
-        height: 46%;
-
-        background-color: #f8f8f8;
-    }
-
-
-
+    width: clamp(80px, 8vw, 140px);
+    height: clamp(80px, 8vw, 140px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(248, 248, 248, 0.5);
 }
 
 
+    .service_video_play .icon {
+
+    width: 46%;
+    height: 46%;
+    background-color: #f8f8f8;
+}
+
+        
 
 
-/* =========================================================
-   16. SMALL MOBILE
-========================================================= */
+    
 
-@media (max-width: 480px) {
 
-    /* INTRO */
+    
+
+
+    
+
+/* INTRO */
 
     .section_2 .tit_wrap h2 {
 
@@ -3493,38 +3339,13 @@
    MOBILE GALLERY META
 ========================================================= */
 
-.service_gallery_meta {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 12px;
-}
 
 
-.service_gallery_name {
-    color: #8e8e8e;
-
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    font-weight: 700;
-}
 
 
-.service_gallery_status {
-    padding: 4px 9px;
 
-    border-radius: 6px;
 
-    color: #f8f8f8;
-    background-color: #009944;
 
-    font-size: 0.625rem;
-    line-height: 1.5;
-    font-weight: 500;
-}
 
 
 /* =========================================================
@@ -3539,21 +3360,19 @@
 }
 
 
-.service_video_mobile_caption {
-    display: block;
 
-    width: 100%;
-
-    padding-left: 12px;
-
-    color: #8e8e8e;
-
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    font-weight: 700;
-}
 
 }
+
+
+
+
+/* =========================================================
+   16. SMALL MOBILE
+========================================================= */
+
+
+
 
 
 

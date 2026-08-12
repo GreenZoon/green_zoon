@@ -52,7 +52,7 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/cleaning_carpet_before.jpg",
+                    src: "img/mainimgs/cleaning_carpet_Before.jpg",
                     alt: "카펫 패브릭 청소 전"
                 },
                 {

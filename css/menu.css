@@ -132,7 +132,7 @@
 .depth_2_tit{
 
     position: relative;
-    height: 50px;
+    font-weight: 500;
 }
 
 .d_2_tit_wrap{
@@ -260,16 +260,26 @@
 
     }
 
-    .mobile_schedule_area{
+    .mobile_schedule_area {
 
-        flex-direction: column;
-
-    }
-
-        .mobile_site_menu{
+        width: 100%;
+        margin-top: 38px;
 
         display: flex;
         flex-direction: column;
+
+        background-color: #fff;
+    }
+
+    .mobile_site_menu {
+
+        width: 100%;
+        margin-top: 38px;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: #fff;
     }
 
     /* =====================================================
@@ -411,16 +421,6 @@
     /* =====================================================
        SCHEDULE
     ===================================================== */
-
-    .mobile_schedule_area {
-
-        width: 100%;
-
-        margin-top: 38px;
-
-        background-color: #fff;
-    }
-
 
     /* 탭 */
 
@@ -632,14 +632,6 @@
     /* =====================================================
        SITE MENU
     ===================================================== */
-
-    .mobile_site_menu {
-        width: 100%;
-
-        margin-top: 38px;
-
-        background-color: #fff;
-    }
 
     .mobile_menu_head {
         min-height: 50px;
@@ -870,3 +862,4 @@
     }
 
 }
+
