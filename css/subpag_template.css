@@ -3094,3 +3094,409 @@
     }
 
 }
+
+/* =========================================================
+   FACTORY DETAIL
+   Figma final visual correction
+========================================================= */
+
+
+/* =========================================================
+   1. EFFECT ICON
+========================================================= */
+
+.service_effect .effect_icon_circle {
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.service_effect .effect_icon_circle > .icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    background-color: #009944;
+}
+
+
+
+/* =========================================================
+   2. MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =====================================================
+       INTRO
+
+       현재 구조는 피그마와 거의 맞음.
+       과도하게 넓었던 아래 여백만 조금 정리.
+    ===================================================== */
+
+    .service_intro {
+
+        padding-bottom: 30px;
+    }
+
+
+
+    /* =====================================================
+       TARGET
+
+       피그마처럼 낮고 압축된 녹색 띠
+    ===================================================== */
+
+    .service_target {
+
+        gap: 12px;
+
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+
+    .service_target .con_wrap {
+
+        gap: 8px 12px;
+    }
+
+
+
+    /* =====================================================
+       EFFECT ICON
+
+       Figma
+       outer : 40
+       inner : 24
+    ===================================================== */
+
+    .service_effect .effect_icon_circle {
+
+        width: 40px;
+        height: 40px;
+
+        flex: 0 0 40px;
+
+        border: 1px solid #009944;
+        border-radius: 50%;
+    }
+
+
+    .service_effect .effect_icon_circle > .icon {
+
+        width: 24px;
+        height: 24px;
+
+        flex: 0 0 24px;
+
+        background-color: #009944;
+    }
+
+
+    .service_effect .box_g {
+
+        min-height: 50px;
+
+        gap: 8px;
+    }
+
+
+    .service_effect .box_g .tit_wrap h3 {
+
+        font-size: 0.875rem;
+    }
+
+
+    .service_effect .box_g .tit_wrap p {
+
+        font-size: 0.625rem;
+    }
+
+
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+
+    .service_gallery {
+
+        gap: 8px;
+
+        padding-top: 34px;
+        padding-bottom: 36px;
+    }
+
+
+    .service_gallery .slide_wrap {
+
+        margin-top: 4px;
+    }
+
+
+    .service_gallery_meta {
+
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 12px;
+
+        margin-top: 0;
+    }
+
+
+    .service_gallery_name {
+
+        color: #8e8e8e;
+
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        font-weight: 700;
+    }
+
+
+    .service_gallery_status {
+
+        padding: 4px 9px;
+
+        border-radius: 6px;
+
+        color: #f8f8f8;
+        background-color: #009944;
+
+        font-size: 0.625rem;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+
+
+    /* =====================================================
+       VIDEO
+
+       Figma mobile:
+       제목
+       ↓
+       영상
+       ↓
+       영상명
+    ===================================================== */
+
+    .service_video {
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 9px;
+
+        padding-top: 34px;
+        padding-bottom: 36px;
+
+        color: #555;
+
+        background-color: #fff;
+    }
+
+
+    .service_video .service_video_title {
+
+        order: 1;
+
+        width: 100%;
+
+        align-items: flex-start;
+
+        color: #555;
+
+        text-align: left;
+    }
+
+
+    .service_video .service_video_title h2 {
+
+        font-size: 1.1875rem;
+    }
+
+
+    /*
+       모바일 Figma에서는
+       제목 바로 밑 설명문 없음
+    */
+
+    .service_video .service_video_title .flx_li_g {
+
+        display: none;
+    }
+
+
+    .service_video .video_card {
+
+        order: 2;
+
+        width: 100%;
+    }
+
+
+    .service_video .video_thumbnail {
+
+        width: 100%;
+
+        aspect-ratio: 360 / 220;
+
+        border-radius: 10px;
+
+        background-color: #f2f2f2;
+    }
+
+
+    .service_video .video_thumbnail img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    .service_video_mobile_caption {
+
+        order: 3;
+
+        display: block;
+
+        width: 100%;
+
+        padding-left: 12px;
+
+        color: #8e8e8e;
+
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        font-weight: 700;
+    }
+
+
+    /* PLAY BUTTON */
+
+    .service_video_play {
+
+        width: 72px;
+        height: 72px;
+
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
+
+        background-color: rgba(248, 248, 248, 0.5);
+    }
+
+
+    .service_video_play .icon {
+
+        width: 34px;
+        height: 34px;
+
+        background-color: #f8f8f8;
+    }
+
+}
+
+
+
+/* =========================================================
+   PC / TABLET
+========================================================= */
+
+@media (min-width: 769px) {
+
+
+    .service_gallery_meta {
+
+        display: none;
+    }
+
+
+    .service_video_mobile_caption {
+
+        display: none;
+    }
+
+
+    .service_video_play {
+
+        width: clamp(80px, 8vw, 140px);
+        height: clamp(80px, 8vw, 140px);
+
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
+
+        background-color: rgba(248, 248, 248, 0.5);
+    }
+
+
+    .service_video_play .icon {
+
+        width: 46%;
+        height: 46%;
+
+        background-color: #f8f8f8;
+    }
+
+}
+
+/* =========================================================
+   SERVICE VIDEO RATIO FIX
+========================================================= */
+
+.service_video .video_thumbnail {
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+}
+
+
+.service_video .video_thumbnail img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}

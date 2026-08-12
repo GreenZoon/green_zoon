@@ -4,13 +4,14 @@
 
 
 /* =========================================================
-   COMPONENT LOAD
+   1. COMPONENT LOAD
 ========================================================= */
 
 async function loadComponent(id, file) {
 
     const target =
         document.getElementById(id);
+
 
     if (!target) {
         return null;
@@ -42,7 +43,7 @@ async function loadComponent(id, file) {
 
 
 
-        /* HEADER LOGO PATH */
+        /* HEADER */
 
         if (id === "header") {
 
@@ -92,7 +93,7 @@ async function loadComponent(id, file) {
 
 
 /* =========================================================
-   HEADER SEARCH
+   2. HEADER SEARCH
 ========================================================= */
 
 function closeHeaderSearch() {
@@ -124,7 +125,7 @@ function closeHeaderSearch() {
 
 
 /* =========================================================
-   MOBILE MENU
+   3. MOBILE MENU
 ========================================================= */
 
 function closeMobileMenu() {
@@ -161,7 +162,7 @@ function closeMobileMenu() {
 
 
 /* =========================================================
-   GLOBAL CLICK
+   4. GLOBAL CLICK
 ========================================================= */
 
 document.addEventListener(
@@ -337,7 +338,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   ESC
+   5. ESC
 ========================================================= */
 
 document.addEventListener(
@@ -359,7 +360,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   REQUEST CLEANING
+   6. REQUEST CLEANING
 ========================================================= */
 
 const requestMobileMedia =
@@ -451,10 +452,41 @@ function moveRequestCleaning() {
 
 
 /* =========================================================
-   SUB SLIDER
+   BREAKPOINT CHANGE
+
+   견적문의 위치만 변경
 ========================================================= */
 
-const subSliderRefreshers = [];
+if (
+    typeof requestMobileMedia.addEventListener ===
+    "function"
+) {
+
+    requestMobileMedia.addEventListener(
+        "change",
+        moveRequestCleaning
+    );
+
+}
+
+else if (
+    typeof requestMobileMedia.addListener ===
+    "function"
+) {
+
+    requestMobileMedia.addListener(
+        moveRequestCleaning
+    );
+
+}
+
+
+
+/* =========================================================
+   7. SUB PAGE SLIDER
+========================================================= */
+
+const subSliderShrinkRefreshers = [];
 
 
 
@@ -470,6 +502,8 @@ function initSubSliders() {
         function (wrap) {
 
 
+            /* 중복 초기화 방지 */
+
             if (
                 wrap.dataset.sliderInitialized ===
                 "true"
@@ -478,6 +512,7 @@ function initSubSliders() {
                 return;
 
             }
+
 
 
             const slider =
@@ -509,6 +544,7 @@ function initSubSliders() {
             }
 
 
+
             const slides =
                 Array.from(
                     slideTrack.querySelectorAll(
@@ -524,6 +560,7 @@ function initSubSliders() {
             if (slideCount === 0) {
                 return;
             }
+
 
 
             const prevButton =
@@ -546,9 +583,15 @@ function initSubSliders() {
                 );
 
 
+
             wrap.dataset.sliderInitialized =
                 "true";
 
+
+
+            /* =================================================
+               STATE
+            ================================================= */
 
             let currentIndex = 0;
 
@@ -618,6 +661,10 @@ function initSubSliders() {
             }
 
 
+
+            /* =================================================
+               GO TO
+            ================================================= */
 
             function goToSlide(index) {
 
@@ -710,7 +757,7 @@ function initSubSliders() {
 
                 if (
                     event.touches &&
-                    event.touches.length
+                    event.touches.length > 0
                 ) {
 
                     return (
@@ -724,7 +771,7 @@ function initSubSliders() {
 
                 if (
                     event.changedTouches &&
-                    event.changedTouches.length
+                    event.changedTouches.length > 0
                 ) {
 
                     return (
@@ -742,11 +789,16 @@ function initSubSliders() {
 
 
 
+            /* =================================================
+               DRAG START
+            ================================================= */
+
             function startDrag(event) {
 
                 isDragging = true;
 
                 hasDragged = false;
+
 
                 startX =
                     getPointerX(event);
@@ -754,6 +806,13 @@ function initSubSliders() {
             }
 
 
+
+            /* =================================================
+               DRAG MOVE
+
+               실제 transform 계산 안 함.
+               이동 거리만 체크.
+            ================================================= */
 
             function moveDrag(event) {
 
@@ -781,6 +840,10 @@ function initSubSliders() {
 
 
 
+            /* =================================================
+               DRAG END
+            ================================================= */
+
             function endDrag(event) {
 
                 if (!isDragging) {
@@ -795,7 +858,7 @@ function initSubSliders() {
                     getPointerX(event);
 
 
-                const distance =
+                const dragDistance =
                     endX -
                     startX;
 
@@ -808,8 +871,11 @@ function initSubSliders() {
                     );
 
 
+
+                /* 왼쪽 */
+
                 if (
-                    distance <
+                    dragDistance <
                     -threshold
                 ) {
 
@@ -819,8 +885,12 @@ function initSubSliders() {
 
                 }
 
+
+
+                /* 오른쪽 */
+
                 else if (
-                    distance >
+                    dragDistance >
                     threshold
                 ) {
 
@@ -912,7 +982,9 @@ function initSubSliders() {
 
 
 
-            /* IMAGE DEFAULT DRAG */
+            /* =================================================
+               IMAGE DEFAULT DRAG BLOCK
+            ================================================= */
 
             slideTrack.addEventListener(
                 "dragstart",
@@ -925,7 +997,9 @@ function initSubSliders() {
 
 
 
-            /* DRAG 후 LINK 방지 */
+            /* =================================================
+               DRAG 뒤 LINK 방지
+            ================================================= */
 
             slideTrack.addEventListener(
                 "click",
@@ -952,10 +1026,12 @@ function initSubSliders() {
 
 
             /* =================================================
-               RESIZE / ZOOM 이후 위치 재정렬
+               WIDTH SHRINK REFRESH
+
+               화면이 작아졌을 때만 호출됨.
             ================================================= */
 
-            function refreshSliderPosition() {
+            function refreshAfterShrink() {
 
                 slideTrack.style.transition =
                     "none";
@@ -969,22 +1045,11 @@ function initSubSliders() {
 
 
 
-                /*
-                    브라우저가 새 viewport 계산을
-                    완료한 뒤 transition 복구
-                */
-
                 requestAnimationFrame(
                     function () {
 
-                        requestAnimationFrame(
-                            function () {
-
-                                slideTrack.style.transition =
-                                    "transform 0.4s ease";
-
-                            }
-                        );
+                        slideTrack.style.transition =
+                            "transform 0.4s ease";
 
                     }
                 );
@@ -992,10 +1057,13 @@ function initSubSliders() {
             }
 
 
-            subSliderRefreshers.push(
-                refreshSliderPosition
+            subSliderShrinkRefreshers.push(
+                refreshAfterShrink
             );
 
+
+
+            /* 최초 위치 */
 
             updateSlide(false);
 
@@ -1007,112 +1075,90 @@ function initSubSliders() {
 
 
 /* =========================================================
-   RESPONSIVE REFRESH
+   8. WIDTH SHRINK ONLY
 ========================================================= */
 
-let responsiveTimer = null;
+let previousWindowWidth =
+    window.innerWidth;
 
 
-
-function refreshResponsiveLayout() {
-
-    moveRequestCleaning();
+let shrinkTimer = null;
 
 
-    subSliderRefreshers.forEach(
-        function (refresh) {
-
-            refresh();
-
-        }
-    );
-
-}
-
-
-
-function scheduleResponsiveRefresh() {
-
-    window.clearTimeout(
-        responsiveTimer
-    );
-
-
-    responsiveTimer =
-        window.setTimeout(
-            function () {
-
-                refreshResponsiveLayout();
-
-            },
-            180
-        );
-
-}
-
-
-
-/*
-    브라우저 창 크기 변경
-*/
 
 window.addEventListener(
     "resize",
-    scheduleResponsiveRefresh
+    function () {
+
+
+        const currentWindowWidth =
+            window.innerWidth;
+
+
+        /*
+            넓어졌거나 동일하면
+            아무 계산도 하지 않음.
+        */
+
+        if (
+            currentWindowWidth >=
+            previousWindowWidth
+        ) {
+
+            previousWindowWidth =
+                currentWindowWidth;
+
+
+            window.clearTimeout(
+                shrinkTimer
+            );
+
+
+            return;
+
+        }
+
+
+
+        /*
+            여기까지 왔다는 건
+            실제 width가 줄어든 경우.
+        */
+
+        previousWindowWidth =
+            currentWindowWidth;
+
+
+        window.clearTimeout(
+            shrinkTimer
+        );
+
+
+        shrinkTimer =
+            window.setTimeout(
+                function () {
+
+
+                    subSliderShrinkRefreshers.forEach(
+                        function (refresh) {
+
+                            refresh();
+
+                        }
+                    );
+
+
+                },
+                180
+            );
+
+    }
 );
 
 
 
-/*
-    확대 / 축소 대응
-
-    지원하는 브라우저에서는
-    visualViewport 변화도 같이 감지
-*/
-
-if (window.visualViewport) {
-
-    window.visualViewport.addEventListener(
-        "resize",
-        scheduleResponsiveRefresh
-    );
-
-}
-
-
-
-/*
-    breakpoint 자체가 변경될 때도
-    동일한 debounce 처리
-*/
-
-if (
-    typeof requestMobileMedia.addEventListener ===
-    "function"
-) {
-
-    requestMobileMedia.addEventListener(
-        "change",
-        scheduleResponsiveRefresh
-    );
-
-}
-
-else if (
-    typeof requestMobileMedia.addListener ===
-    "function"
-) {
-
-    requestMobileMedia.addListener(
-        scheduleResponsiveRefresh
-    );
-
-}
-
-
-
 /* =========================================================
-   INIT
+   9. INIT
 ========================================================= */
 
 document.addEventListener(
