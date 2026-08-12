@@ -86,6 +86,12 @@
     fill:currentColor;
 }
 
+.search_ion,.login{
+
+    width: 16px;
+    
+}
+
 /* --------검색------- */
 
 form{
