@@ -209,10 +209,10 @@
     background-color: #f2f2f2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
-    .left_arrow,
-    .right_arrow {
+    .section_1 .left_arrow,
+    .section_1 .right_arrow {
 
         display: none;
 
@@ -1674,7 +1674,7 @@ display: none;
 }
 
 
-@media (max-width: 1023px){
+@media (max-width: 1024px){
 
 
 .section_end{
@@ -1956,7 +1956,7 @@ display: none;
 
 /* --------- VIDEO TABLET --------- */
 
-@media (max-width: 1023px) and (min-width: 481px) {
+@media (max-width: 1024px) and (min-width: 481px) {
 
     .section_video {
 
@@ -2047,3 +2047,148 @@ display: none;
     }
 
 }
+
+/* =========================================================
+   MAIN RESPONSIVE FINAL OVERRIDE
+   Mobile + iPad: 1024px 이하 / PC: 1025px 이상
+   기존 규칙을 삭제하지 않고 마지막 우선순위로 정리
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* 메인 슬라이드 */
+    .wrap_1 {
+        height: clamp(204px, 50vw, 430px);
+    }
+
+    .tit_wrap_1 {
+        left: clamp(20px, 6vw, 60px);
+    }
+
+    .tit_wrap_1 h2 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+    }
+
+    .tit_wrap_1 p {
+        font-size: clamp(1.1875rem, 2.4vw, 1.5625rem);
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    .section_1 .left_arrow,
+    .section_1 .right_arrow {
+        display: none;
+    }
+
+    .slide_control_1 {
+        right: 20px;
+        bottom: 20px;
+        gap: 6px;
+    }
+
+    /* 자주 찾는 서비스: 화살표는 숨기고 도트는 유지 */
+    .slide_wrap_2 .arrow {
+        display: none;
+    }
+
+    .slide_pagination_2 {
+        display: flex;
+    }
+
+    /* 모바일·아이패드에서는 PC 전용 섹션 비활성화 */
+    .section_3,
+    .section_5,
+    .section_end {
+        display: none;
+    }
+
+    /* 영상 갤러리: 모바일 구조를 아이패드까지 유지 */
+    .section_video {
+        align-items: flex-start;
+        gap: 12px;
+        padding: clamp(20px, 4vw, 40px);
+    }
+
+    .video_title_wrap {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .video_title_wrap .section_title,
+    .video_tit_li {
+        display: none;
+    }
+
+    .video_title_wrap .page_title {
+        font-size: 1.1875rem;
+    }
+
+    .video_slider {
+        gap: 0;
+    }
+
+    .video_arrow {
+        display: none;
+    }
+
+    .video_viewport {
+        width: calc(100vw - clamp(20px, 4vw, 40px));
+        overflow: hidden;
+    }
+
+    .video_track {
+        gap: 7px;
+    }
+
+    .video_card {
+        width: 200px;
+        flex: 0 0 200px;
+        gap: 7px;
+    }
+
+    .video_thumbnail {
+        width: 200px;
+        height: 135px;
+        aspect-ratio: auto;
+        border-radius: 10px;
+    }
+
+    .video_play {
+        width: 70px;
+        height: 70px;
+    }
+
+    .video_play .play_Block {
+        width: 30px;
+        height: 30px;
+    }
+
+    .video_card_pc_title {
+        display: none;
+    }
+
+    .video_card_mobile_title {
+        display: block;
+        color: #555;
+        font-size: 0.9375rem;
+        font-weight: 700;
+    }
+
+    .video_pagination {
+        align-self: center;
+        gap: 6px;
+    }
+
+    .video_dot {
+        width: 12px;
+        height: 5px;
+        border-radius: 999px;
+    }
+
+    .video_dot.is_active {
+        width: 24px;
+    }
+}
+

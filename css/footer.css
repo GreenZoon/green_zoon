@@ -381,7 +381,7 @@ footer {
    TABLET
 ========================================================= */
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
 
     footer {
         padding: 2.5rem;
@@ -440,7 +440,7 @@ footer {
    641px ~ 1023px
 ========================================================= */
 
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
 
     footer {
         padding: 40px;
