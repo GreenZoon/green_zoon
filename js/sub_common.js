@@ -1,990 +1,595 @@
 /* =========================================================
-   SUB PAGE SLIDER
+   SUB PAGE COMMON
+========================================================= */
+
+
+/* =========================================================
+   COMPONENT LOAD
+========================================================= */
+
+async function loadComponent(id, file) {
+
+    const target =
+        document.getElementById(id);
+
+
+    if (!target) {
+
+        return null;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${file}?v=${Date.now()}`,
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `${file} 로드 실패: ${response.status}`
+            );
+
+        }
+
+
+        const html =
+            await response.text();
+
+
+        target.innerHTML =
+            html;
+
+
+
+        /* =================================================
+           HEADER 경로 보정
+        ================================================= */
+
+        if (id === "header") {
+
+            const logo =
+                target.querySelector(
+                    ".logo"
+                );
+
+
+            if (logo) {
+
+                logo.src =
+                    "../../img/logo.svg";
+
+
+                const logoLink =
+                    logo.closest("a");
+
+
+                if (logoLink) {
+
+                    logoLink.href =
+                        "../../index.html";
+
+                }
+
+            }
+
+        }
+
+
+        return target;
+
+
+    } catch (error) {
+
+        console.error(
+            `[sub_common] ${id}`,
+            error
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   HEADER SEARCH
+========================================================= */
+
+function closeHeaderSearch() {
+
+    const searchForm =
+        document.querySelector(
+            "#header_search"
+        );
+
+
+    const openButton =
+        document.querySelector(
+            ".search_open_btn"
+        );
+
+
+    searchForm?.classList.remove(
+        "is_open"
+    );
+
+
+    openButton?.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+
+        const openButton =
+            event.target.closest(
+                ".search_open_btn"
+            );
+
+
+        const closeButton =
+            event.target.closest(
+                ".search_close_btn"
+            );
+
+
+        const keywordButton =
+            event.target.closest(
+                ".keyword_button"
+            );
+
+
+
+        /* =================================================
+           검색 열기
+        ================================================= */
+
+        if (openButton) {
+
+
+            const searchForm =
+                document.querySelector(
+                    "#header_search"
+                );
+
+
+            if (!searchForm) {
+
+                return;
+
+            }
+
+
+            const isOpen =
+                searchForm.classList.toggle(
+                    "is_open"
+                );
+
+
+            openButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+
+            if (isOpen) {
+
+                searchForm
+                    .querySelector(
+                        ".search_input"
+                    )
+                    ?.focus();
+
+            }
+
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           검색 닫기
+        ================================================= */
+
+        if (closeButton) {
+
+            closeHeaderSearch();
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           추천 검색어
+        ================================================= */
+
+        if (keywordButton) {
+
+
+            const searchInput =
+                document.querySelector(
+                    "#search_input"
+                );
+
+
+            if (!searchInput) {
+
+                return;
+
+            }
+
+
+            searchInput.value =
+                keywordButton
+                    .textContent
+                    .trim();
+
+
+            searchInput.focus();
+
+        }
+
+    }
+);
+
+
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+
+        if (event.key === "Escape") {
+
+            closeHeaderSearch();
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function closeMobileMenu() {
+
+    const mobileMenu =
+        document.querySelector(
+            "#mobile_menu"
+        );
+
+
+    const menuButton =
+        document.querySelector(
+            ".mobile_menu_open_btn"
+        );
+
+
+    mobileMenu?.classList.remove(
+        "is_open"
+    );
+
+
+    menuButton?.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+    document.body.classList.remove(
+        "menu_open"
+    );
+
+}
+
+
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+
+        const menuButton =
+            event.target.closest(
+                ".mobile_menu_open_btn"
+            );
+
+
+        if (menuButton) {
+
+
+            const mobileMenu =
+                document.querySelector(
+                    "#mobile_menu"
+                );
+
+
+            if (!mobileMenu) {
+
+                return;
+
+            }
+
+
+            const isOpen =
+                mobileMenu.classList.toggle(
+                    "is_open"
+                );
+
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+
+            document.body.classList.toggle(
+                "menu_open",
+                isOpen
+            );
+
+
+            return;
+
+        }
+
+
+
+        const closeButton =
+            event.target.closest(
+                ".mobile_menu_close_btn"
+            );
+
+
+        if (closeButton) {
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   REQUEST CLEANING POSITION
+========================================================= */
+
+
+/*
+    PC / TABLET
+
+    공장 청소 대상
+    ↓
+    영상
+    ↓
+    견적문의
+
+
+    MOBILE
+
+    공장 청소 대상
+    ↓
+    견적문의
+    ↓
+    영상
+*/
+
+
+const requestMobileMedia =
+    window.matchMedia(
+        "(max-width: 768px)"
+    );
+
+
+
+function moveRequestCleaning() {
+
+
+    const requestCleaning =
+        document.getElementById(
+            "Request_Cleaning"
+        );
+
+
+    const targetSection =
+        document.querySelector(
+            ".section_g"
+        );
+
+
+    const videoSection =
+        document.querySelector(
+            ".section_g_2"
+        );
+
+
+    if (
+        !requestCleaning ||
+        !targetSection ||
+        !videoSection
+    ) {
+
+        return;
+
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    if (requestMobileMedia.matches) {
+
+
+        if (
+            targetSection
+                .nextElementSibling ===
+            requestCleaning
+        ) {
+
+            return;
+
+        }
+
+
+        targetSection.insertAdjacentElement(
+            "afterend",
+            requestCleaning
+        );
+
+
+        return;
+
+    }
+
+
+
+    /* =====================================================
+       PC / TABLET
+    ===================================================== */
+
+    if (
+        videoSection
+            .nextElementSibling ===
+        requestCleaning
+    ) {
+
+        return;
+
+    }
+
+
+    videoSection.insertAdjacentElement(
+        "afterend",
+        requestCleaning
+    );
+
+}
+
+
+
+/* =========================================================
+   BREAKPOINT CHANGE
+========================================================= */
+
+function handleRequestBreakpoint() {
+
+    moveRequestCleaning();
+
+}
+
+
+
+if (
+    typeof requestMobileMedia
+        .addEventListener ===
+    "function"
+) {
+
+    requestMobileMedia.addEventListener(
+        "change",
+        handleRequestBreakpoint
+    );
+
+}
+
+else {
+
+    requestMobileMedia.addListener(
+        handleRequestBreakpoint
+    );
+
+}
+
+
+
+/* =========================================================
+   PAGE INIT
 ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    function () {
+    async function () {
 
 
-        const slideWraps =
-            document.querySelectorAll(
-                ".slide_wrap"
-            );
+        /*
+            컴포넌트가 서로 독립적이기 때문에
+            동시에 불러옴
+        */
 
+        await Promise.all([
 
-        slideWraps.forEach(
-            function (wrap) {
 
+            loadComponent(
+                "header",
+                "../../components/header_v2.html"
+            ),
 
-                const slider =
-                    wrap.querySelector(
-                        ".sub_pag_slide_wrap"
-                    );
 
+            loadComponent(
+                "menu",
+                "../../components/menu.html"
+            ),
 
-                if (!slider) {
-                    return;
-                }
 
+            loadComponent(
+                "Factry_sub_menu",
+                "../../components/sub_pag/Factry_sub_menu.html"
+            ),
 
-                const clippingMask =
-                    slider.querySelector(
-                        ".sub_pag_clipping_mask"
-                    );
 
+            loadComponent(
+                "Request_Cleaning",
+                "../../components/Request_Cleaning.html"
+            ),
 
-                const slideTrack =
-                    slider.querySelector(
-                        ".img_con_wrap"
-                    );
 
+            loadComponent(
+                "footer",
+                "../../components/footer.html"
+            )
 
-                if (
-                    !clippingMask ||
-                    !slideTrack
-                ) {
 
-                    return;
+        ]);
 
-                }
 
 
-                const prevButton =
-                    slider.querySelector(
-                        ".left_arrow_2"
-                    );
+        /*
+            견적문의 HTML이 로드된 다음
+            모바일 / PC 위치 결정
+        */
 
-
-                const nextButton =
-                    slider.querySelector(
-                        ".right_arrow_2"
-                    );
-
-
-                const pagination =
-                    wrap.querySelector(
-                        ".slide_pagination"
-                    );
-
-
-                const dots =
-                    pagination
-                        ? Array.from(
-                            pagination.querySelectorAll(
-                                ".slide_dot"
-                            )
-                        )
-                        : [];
-
-
-                const originalSlides =
-                    Array.from(
-                        slideTrack.querySelectorAll(
-                            ".sub_pag_img_wrap"
-                        )
-                    );
-
-
-                const slideCount =
-                    originalSlides.length;
-
-
-                if (slideCount === 0) {
-                    return;
-                }
-
-
-
-                /* =================================================
-                   CLONE
-                ================================================= */
-
-                const firstClone =
-                    originalSlides[0]
-                        .cloneNode(true);
-
-
-                const lastClone =
-                    originalSlides[
-                        slideCount - 1
-                    ].cloneNode(true);
-
-
-                firstClone.classList.add(
-                    "is_clone"
-                );
-
-
-                lastClone.classList.add(
-                    "is_clone"
-                );
-
-
-                slideTrack.appendChild(
-                    firstClone
-                );
-
-
-                slideTrack.insertBefore(
-                    lastClone,
-                    slideTrack.firstChild
-                );
-
-
-                const allSlides =
-                    Array.from(
-                        slideTrack.querySelectorAll(
-                            ".sub_pag_img_wrap"
-                        )
-                    );
-
-
-
-                /* =================================================
-                   STATE
-                ================================================= */
-
-                let currentIndex = 1;
-
-                let isMoving = false;
-
-                let isDragging = false;
-
-                let hasDragged = false;
-
-
-                let startX = 0;
-
-                let currentX = 0;
-
-                let dragStartPosition = 0;
-
-
-                let slideWidth = 0;
-
-
-                let resizeFrame = null;
-
-
-
-                /* =================================================
-                   WIDTH
-                ================================================= */
-
-                function updateSlideSize() {
-
-
-                    const newWidth =
-                        clippingMask.clientWidth;
-
-
-                    /*
-                        실제 width 변화가 없으면
-                        아무것도 다시 계산하지 않음
-                    */
-
-                    if (
-                        !newWidth ||
-                        newWidth === slideWidth
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    slideWidth =
-                        newWidth;
-
-
-                    allSlides.forEach(
-                        function (slide) {
-
-
-                            slide.style.width =
-                                `${slideWidth}px`;
-
-
-                            slide.style.flex =
-                                `0 0 ${slideWidth}px`;
-
-                        }
-                    );
-
-
-                    slideTrack.style.width =
-                        `${
-                            slideWidth *
-                            allSlides.length
-                        }px`;
-
-
-                    /*
-                        크기 변경 후
-                        현재 슬라이드 위치만 즉시 재정렬
-                    */
-
-                    setPosition(
-                        currentIndex,
-                        false
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   POSITION
-                ================================================= */
-
-                function getPosition(index) {
-
-                    return (
-                        slideWidth *
-                        index
-                    );
-
-                }
-
-
-
-                function setPosition(
-                    index,
-                    animate = true
-                ) {
-
-
-                    currentIndex =
-                        index;
-
-
-                    if (animate) {
-
-
-                        slideTrack.style.transition =
-                            "transform 0.4s ease";
-
-
-                        isMoving = true;
-
-                    }
-
-
-                    else {
-
-
-                        slideTrack.style.transition =
-                            "none";
-
-
-                        isMoving = false;
-
-                    }
-
-
-                    const position =
-                        getPosition(
-                            currentIndex
-                        );
-
-
-                    slideTrack.style.transform =
-                        `translate3d(-${position}px, 0, 0)`;
-
-
-                    updateDots();
-
-                }
-
-
-
-                /* =================================================
-                   DOTS
-                ================================================= */
-
-                function updateDots() {
-
-
-                    let realIndex =
-                        currentIndex - 1;
-
-
-                    if (realIndex < 0) {
-
-
-                        realIndex =
-                            slideCount - 1;
-
-                    }
-
-
-                    if (
-                        realIndex >=
-                        slideCount
-                    ) {
-
-
-                        realIndex = 0;
-
-                    }
-
-
-                    dots.forEach(
-                        function (
-                            dot,
-                            index
-                        ) {
-
-
-                            const active =
-                                index ===
-                                realIndex;
-
-
-                            /*
-                                기존 CSS와 새 CSS 둘 다 대응
-                            */
-
-                            dot.classList.toggle(
-                                "is_active",
-                                active
-                            );
-
-
-                            dot.classList.toggle(
-                                "is_active_4",
-                                active
-                            );
-
-                        }
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   TRANSITION END
-                ================================================= */
-
-                slideTrack.addEventListener(
-                    "transitionend",
-                    function (event) {
-
-
-                        if (
-                            event.propertyName !==
-                            "transform"
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        isMoving = false;
-
-
-                        /* -----------------------------------------
-                           마지막 clone → 실제 첫 슬라이드
-                        ----------------------------------------- */
-
-                        if (
-                            currentIndex ===
-                            allSlides.length - 1
-                        ) {
-
-
-                            currentIndex = 1;
-
-
-                            setPosition(
-                                currentIndex,
-                                false
-                            );
-
-
-                            return;
-
-                        }
-
-
-                        /* -----------------------------------------
-                           첫 clone → 실제 마지막 슬라이드
-                        ----------------------------------------- */
-
-                        if (
-                            currentIndex === 0
-                        ) {
-
-
-                            currentIndex =
-                                slideCount;
-
-
-                            setPosition(
-                                currentIndex,
-                                false
-                            );
-
-                        }
-
-                    }
-                );
-
-
-
-                /* =================================================
-                   NEXT
-                ================================================= */
-
-                if (nextButton) {
-
-
-                    nextButton.addEventListener(
-                        "click",
-                        function () {
-
-
-                            if (isMoving) {
-                                return;
-                            }
-
-
-                            setPosition(
-                                currentIndex + 1,
-                                true
-                            );
-
-                        }
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   PREV
-                ================================================= */
-
-                if (prevButton) {
-
-
-                    prevButton.addEventListener(
-                        "click",
-                        function () {
-
-
-                            if (isMoving) {
-                                return;
-                            }
-
-
-                            setPosition(
-                                currentIndex - 1,
-                                true
-                            );
-
-                        }
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   DOT CLICK
-                ================================================= */
-
-                dots.forEach(
-                    function (
-                        dot,
-                        index
-                    ) {
-
-
-                        dot.addEventListener(
-                            "click",
-                            function () {
-
-
-                                if (isMoving) {
-                                    return;
-                                }
-
-
-                                setPosition(
-                                    index + 1,
-                                    true
-                                );
-
-                            }
-                        );
-
-                    }
-                );
-
-
-
-                /* =================================================
-                   POINTER
-                ================================================= */
-
-                function getPointerX(event) {
-
-
-                    if (
-                        event.touches &&
-                        event.touches.length
-                    ) {
-
-
-                        return (
-                            event
-                                .touches[0]
-                                .clientX
-                        );
-
-                    }
-
-
-                    if (
-                        event.changedTouches &&
-                        event.changedTouches.length
-                    ) {
-
-
-                        return (
-                            event
-                                .changedTouches[0]
-                                .clientX
-                        );
-
-                    }
-
-
-                    return event.clientX;
-
-                }
-
-
-
-                /* =================================================
-                   DRAG START
-                ================================================= */
-
-                function startDrag(event) {
-
-
-                    if (
-                        isMoving ||
-                        slideWidth === 0
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    isDragging = true;
-
-                    hasDragged = false;
-
-
-                    startX =
-                        getPointerX(event);
-
-
-                    currentX =
-                        startX;
-
-
-                    dragStartPosition =
-                        getPosition(
-                            currentIndex
-                        );
-
-
-                    slideTrack.style.transition =
-                        "none";
-
-
-                    slideTrack.classList.add(
-                        "is_dragging"
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   DRAG MOVE
-                ================================================= */
-
-                function moveDrag(event) {
-
-
-                    if (!isDragging) {
-                        return;
-                    }
-
-
-                    currentX =
-                        getPointerX(event);
-
-
-                    const dragDistance =
-                        currentX -
-                        startX;
-
-
-                    if (
-                        Math.abs(
-                            dragDistance
-                        ) > 5
-                    ) {
-
-
-                        hasDragged =
-                            true;
-
-                    }
-
-
-                    const nextPosition =
-                        dragStartPosition -
-                        dragDistance;
-
-
-                    slideTrack.style.transform =
-                        `translate3d(-${nextPosition}px, 0, 0)`;
-
-
-                    if (
-                        event.cancelable
-                    ) {
-
-
-                        event.preventDefault();
-
-                    }
-
-                }
-
-
-
-                /* =================================================
-                   DRAG END
-                ================================================= */
-
-                function endDrag(event) {
-
-
-                    if (!isDragging) {
-                        return;
-                    }
-
-
-                    isDragging = false;
-
-
-                    slideTrack.classList.remove(
-                        "is_dragging"
-                    );
-
-
-                    const endX =
-                        getPointerX(event);
-
-
-                    const dragDistance =
-                        endX -
-                        startX;
-
-
-                    const threshold =
-                        slideWidth *
-                        0.15;
-
-
-                    if (
-                        dragDistance <
-                        -threshold
-                    ) {
-
-
-                        setPosition(
-                            currentIndex + 1,
-                            true
-                        );
-
-                    }
-
-
-                    else if (
-                        dragDistance >
-                        threshold
-                    ) {
-
-
-                        setPosition(
-                            currentIndex - 1,
-                            true
-                        );
-
-                    }
-
-
-                    else {
-
-
-                        setPosition(
-                            currentIndex,
-                            true
-                        );
-
-                    }
-
-
-                    window.setTimeout(
-                        function () {
-
-
-                            hasDragged =
-                                false;
-
-                        },
-                        100
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   MOUSE
-                ================================================= */
-
-                clippingMask.addEventListener(
-                    "mousedown",
-                    startDrag
-                );
-
-
-                window.addEventListener(
-                    "mousemove",
-                    moveDrag
-                );
-
-
-                window.addEventListener(
-                    "mouseup",
-                    endDrag
-                );
-
-
-
-                /* =================================================
-                   TOUCH
-                ================================================= */
-
-                clippingMask.addEventListener(
-                    "touchstart",
-                    startDrag,
-                    {
-                        passive: true
-                    }
-                );
-
-
-                clippingMask.addEventListener(
-                    "touchmove",
-                    moveDrag,
-                    {
-                        passive: false
-                    }
-                );
-
-
-                clippingMask.addEventListener(
-                    "touchend",
-                    endDrag,
-                    {
-                        passive: true
-                    }
-                );
-
-
-                clippingMask.addEventListener(
-                    "touchcancel",
-                    endDrag,
-                    {
-                        passive: true
-                    }
-                );
-
-
-
-                /* =================================================
-                   IMAGE DRAG BLOCK
-                ================================================= */
-
-                slideTrack.addEventListener(
-                    "dragstart",
-                    function (event) {
-
-
-                        event.preventDefault();
-
-                    }
-                );
-
-
-
-                /* =================================================
-                   LINK BLOCK AFTER DRAG
-                ================================================= */
-
-                slideTrack.addEventListener(
-                    "click",
-                    function (event) {
-
-
-                        if (!hasDragged) {
-                            return;
-                        }
-
-
-                        const link =
-                            event.target.closest(
-                                "a"
-                            );
-
-
-                        if (link) {
-
-
-                            event.preventDefault();
-
-                        }
-
-                    }
-                );
-
-
-
-                /* =================================================
-                   RESIZE
-                ================================================= */
-
-
-                /*
-                    window resize마다 계산하지 않고
-
-                    clippingMask 실제 크기가 변했을 때만
-                    ResizeObserver가 알려줌.
-                */
-
-
-                function scheduleResize() {
-
-
-                    if (resizeFrame) {
-
-
-                        cancelAnimationFrame(
-                            resizeFrame
-                        );
-
-                    }
-
-
-                    resizeFrame =
-                        requestAnimationFrame(
-                            function () {
-
-
-                                resizeFrame = null;
-
-
-                                updateSlideSize();
-
-                            }
-                        );
-
-                }
-
-
-
-                if (
-                    "ResizeObserver"
-                    in window
-                ) {
-
-
-                    const resizeObserver =
-                        new ResizeObserver(
-                            function () {
-
-
-                                scheduleResize();
-
-                            }
-                        );
-
-
-                    resizeObserver.observe(
-                        clippingMask
-                    );
-
-                }
-
-
-                /*
-                    ResizeObserver가 없는
-                    오래된 브라우저용 fallback
-                */
-
-                else {
-
-
-                    window.addEventListener(
-                        "resize",
-                        scheduleResize
-                    );
-
-                }
-
-
-
-                /* =================================================
-                   FIRST INIT
-                ================================================= */
-
-
-                /*
-                    브라우저가 첫 레이아웃을
-                    계산한 다음 실행
-                */
-
-                requestAnimationFrame(
-                    function () {
-
-
-                        updateSlideSize();
-
-
-                        setPosition(
-                            currentIndex,
-                            false
-                        );
-
-                    }
-                );
-
-            }
-        );
+        moveRequestCleaning();
 
     }
 );
