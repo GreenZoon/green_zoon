@@ -1288,6 +1288,20 @@ svg {
         font-weight: 400;
     }
     
+    
+
+}
+
+@media (min-width: 481px) and (max-width: 1024px){
+
+
+    .icon, .icon_2, .arrow, .mobile_icon {
+
+            width: 20px;
+            flex: 0 0 20px;
+    }
+
+
 
 }
 
@@ -1393,6 +1407,12 @@ svg {
 
     .box_wrap {
         gap: 12px;
+    }
+
+    .icon, .icon_2, .arrow, .mobile_icon {
+
+            width: 16px;
+            flex: 0 0 16px;
     }
 
 }
