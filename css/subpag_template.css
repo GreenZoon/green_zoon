@@ -3870,7 +3870,7 @@
 
     .sub_pag_menu {
 
-        gap:3px;
+        gap:0;
     }
 
 
@@ -3893,15 +3893,11 @@
 
         }
 
+        .flx_li .arrow{
+
+
+            width: 12px;
+
+        }
+
 }
-
-
-
-
-
-
-
-
-
-
-
