@@ -1469,7 +1469,7 @@
 
         justify-content: flex-end;
 
-        gap: 14px;
+        gap: 4px;
     }
 
 
@@ -1484,7 +1484,7 @@
 
         padding: 8px 4px;
 
-        font-size: 0.75rem;
+        font-size:0.875rem;
     }
 
 
@@ -3536,4 +3536,31 @@
     height: 100%;
 
     object-fit: cover;
+}
+
+/* =========================================================
+   TEXT DOT
+========================================================= */
+
+.text_dot {
+
+    display: inline;
+
+    width: auto;
+
+}
+
+
+.text_dot::after {
+
+    content: "·";
+
+    display: inline;
+
+    margin-left: 5px;
+
+    color: currentColor;
+
+    font-size: 1em;
+    font-weight: 700;
 }
