@@ -331,15 +331,14 @@ const mobileMenuData = [
 
 
     /*
-        모바일 디자인에는 '교육사업'이 있지만
-        현재 PC menu.html에는 해당 메뉴가 없음.
+        교육사업은 디자인 자리만 남겨 둔 상태입니다.
+        실제 콘텐츠가 확정되면 아래 항목을 활성화합니다.
 
-        페이지가 정해지면 여기에 children 추가하면 됨.
+        {
+            title: "교육사업",
+            children: []
+        },
     */
-    {
-        title: "교육사업",
-        children: []
-    },
 
 
     {
@@ -792,5 +791,6 @@ document.addEventListener(
         }
     }
 );
+
 
 

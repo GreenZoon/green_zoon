@@ -276,55 +276,13 @@
 
 
 /* =========================================================
-   10. TABLET
-   769px ~ 1024px
-
-   공통 section 여백과 타이포그래피는
-   coom.css의 태블릿 설정 사용
-========================================================= */
-
-@media (max-width: 1024px) and (min-width: 769px) {
-
-    #Request_Cleaning > section {
-        flex-direction: column;
-
-       
-    }
-
-    .Cleaning_box,
-    .Cleaning_box_green {
-        width: 100%;
-
-        flex: none;
-
-        min-height: 240px;
-
-        padding: 24px 28px;
-    }
-
-
-    .Cleaning_ul li p,
-    .Cleaning_ul li a {
-        font-size: 14px;
-    }
-
-
-    .Cleaning_icon,
-    .Cleaning_icon_green {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-
-/* =========================================================
-   11. COMPACT REQUEST BUTTON
-   768px 이하
+   10. COMPACT REQUEST BUTTON
+   1024px 이하
 
    JS에서 문의 영역이 본문 위로 이동하는 기준과 동일
 ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     #Request_Cleaning > section {
         flex-direction: row;
@@ -457,3 +415,4 @@
         align-self: center;
     }
 }
+

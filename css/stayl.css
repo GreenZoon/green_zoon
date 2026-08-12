@@ -1117,9 +1117,6 @@
 
 }
 
-.slide_dot[hidden] {
-display: none;
-}
 
 .tit_wrap_4{
 
@@ -1590,15 +1587,6 @@ display: none;
 }
 
 
-
-
-
-
-
-/* --------- VIDEO TABLET --------- */
-
-
-
 /* =========================================================
    MAIN RESPONSIVE FINAL OVERRIDE
    Mobile + iPad: 1024px 이하 / PC: 1025px 이상
@@ -1761,5 +1749,6 @@ display: none;
         font-size: 0.875rem;
     }
 }
+
 
 

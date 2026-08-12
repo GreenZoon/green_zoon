@@ -219,8 +219,9 @@ document.addEventListener(
 ========================================================= */
 
 const requestMobileMedia =
+
     window.matchMedia(
-        "(max-width: 768px)"
+        "(max-width: 1024px)"
     );
 
 
@@ -586,3 +587,4 @@ document.addEventListener(
 
     }
 );
+
