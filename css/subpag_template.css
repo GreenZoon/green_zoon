@@ -70,31 +70,21 @@
    3. SUB PAGE MENU
 ========================================================= */
 
-.sub_pag_gnb {
+.sub_pag_gnb{
 
-    width: 100%;
-    height: 100%;
-
+    border-bottom: solid 2px #F8F8F8;
     padding: 0 150px;
 
-    border-bottom: 2px solid #f2f2f2;
-
-    background-color: #fff;
-     max-height: 37px;
-    
 }
 
 
-.sub_pag_menu {
-
-    width: 100%;
+.sub_pag_menu{
 
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 20px;
-
+    flex-direction:row;
+    justify-content: end;
+    align-items: end;
+    
 }
 
 
@@ -102,6 +92,7 @@
 
     width: 100%;
     max-width: 120px;
+    max-height: 37px;
 
     display: flex;
     flex-direction: column;
@@ -111,11 +102,18 @@
     color: #8e8e8e;
 
     text-align: center;
-     max-height: 37px;
+
+    /*
+        border를 사용하지 않고 내부 그림자로 표시합니다.
+        호버해도 요소 높이가 바뀌지 않습니다.
+    */
+    box-shadow:
+        inset 0 -2px 0 transparent;
 
     transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+
 }
 
 
@@ -141,12 +139,11 @@
 
 .sub_pag_depth:hover {
 
-    color:  #009944;
+    color: #009944;
 
-    border-bottom: 2px solid #009944;
-
+    box-shadow:
+        inset 0 -2px 0 #009944;
 }
-
 
 
 /* =========================================================
@@ -162,7 +159,7 @@
 
     gap: 7px;
 
-    padding: 4px 150px;
+    padding: 4px 50px;
 
     border: none;
 
@@ -1511,6 +1508,8 @@
    14. TABLET
 ========================================================= */
 
+
+
 @media (max-width: 1024px) {
 
 
@@ -1528,7 +1527,6 @@
         padding-left: 40px;
         padding-right: 40px;
     }
-
 
     .man_sled img {
 
@@ -1752,6 +1750,7 @@
 
         padding-top: 20px;
         padding-bottom: 44px;
+
     }
 
 
@@ -1813,16 +1812,6 @@
         flex-basis: 96px;
     }
 
-}
-
-
-/* =========================================================
-   15. MOBILE
-========================================================= */
-
-@media (max-width: 1024px) {
-
-
     .sub_pag_gnb,
     .section_2,
     .section_3,
@@ -1843,6 +1832,7 @@
         display: none;
     }
 
+    
 
     .man_sled {
 
@@ -1865,6 +1855,7 @@
         scrollbar-width: none;
     }
 
+    
 
     .sub_pag_gnb::-webkit-scrollbar {
 
@@ -1879,7 +1870,11 @@
 
         justify-content: flex-end;
 
-        gap: 4px;
+        gap: 12px;
+
+        padding: 0p 40px;
+       
+
     }
 
 
@@ -2805,7 +2800,6 @@
         padding-top: 24px;
         padding-bottom: 40px;
     }
-
 
     .con_section {
 
