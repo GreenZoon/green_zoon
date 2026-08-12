@@ -74,6 +74,7 @@
 
     border-bottom: solid 2px #F8F8F8;
     padding: 0 150px;
+    padding-top: 7px;
 
 }
 
@@ -127,8 +128,10 @@
 
     color: inherit;
 
-    font-size: 1.0625rem;
-    font-weight: 600;
+     font-size: 1.1875rem;    /* 19px */
+        line-height: 1.4;
+        letter-spacing: -0.025em;
+        font-weight:500;
 
     white-space: nowrap;
     text-align: center;
@@ -1577,6 +1580,14 @@
 
     }
 
+    .sub_pag_tit{
+
+        font-size: 1.0625rem; /* 17px */
+        line-height: 1.55;
+        letter-spacing: -0.04em;
+
+    }
+
 }
 
 
@@ -1960,7 +1971,9 @@
 
         padding: 12px 4px;
 
-        font-size:0.875rem;
+           font-size: 1.0625rem; /* 17px */
+        line-height: 1.55;
+        letter-spacing: -0.04em;
     }
 
 
@@ -2981,7 +2994,6 @@
         max-width: 720px;
 
         display: flex;
-        flex-wrap: nowrap;
         align-items: flex-start;
         justify-content: center;
 
@@ -2993,10 +3005,6 @@
 
     .service_target .con {
 
-        width: 76px;
-        max-width: 76px;
-
-        flex: 0 0 76px;
 
         padding: 8px;
     }
@@ -3152,7 +3160,7 @@
 
     .service_effect .box_g .tit_wrap p {
 
-        color: #8e8e8e;
+          color: #009944;
 
         font-size: 0.75rem; /* 12px */
         line-height: 1.45;
@@ -3368,6 +3376,21 @@
         object-fit: cover;
     }
 
+        .sub_pag_tit {
+
+        font-size: 0.9375rem;    /* 15px */
+        line-height: 1.5;
+        letter-spacing: -0.015em;
+        font-weight: 500;
+
+    }
+
+
+    .sub_pag_menu {
+
+        gap: 7px;
+    }
+
 }
 
 /* =========================================================
@@ -3539,6 +3562,9 @@
 
     .service_gallery .slide_wrap {
 
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
         margin-top: 4px;
     }
 
@@ -3761,7 +3787,9 @@
 
     .con_section .box_g .tit_wrap h3 {
 
-        font-size: 0.75rem; /* 12px */
+         font-size: 0.875rem;     /* 14px */
+   
+
     }
 
 
@@ -3829,6 +3857,41 @@
 
         font-size: 0.6875rem; /* 11px */
     }
+
+            .sub_pag_tit {
+
+        font-size: 0.875rem;     /* 14px */
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+        font-weight: 500;
+
+    }
+
+
+    .sub_pag_menu {
+
+        gap:3px;
+    }
+
+
+    .service_effect .effect_icon_circle{
+
+
+        width: 70px;
+        height: 70px;
+        flex: 0 0 70px;
+
+    }
+
+        .service_effect .effect_icon_circle > .icon{
+
+
+            width: 36px;
+            height: 36px;
+                 flex: 0 0 36px;
+
+
+        }
 
 }
 
