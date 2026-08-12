@@ -355,7 +355,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   ESC
+   5. ESC
 ========================================================= */
 
 document.addEventListener(
@@ -377,7 +377,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   5. REQUEST CLEANING POSITION
+   6. REQUEST CLEANING POSITION
 ========================================================= */
 
 
@@ -529,7 +529,7 @@ else if (
 
 
 /* =========================================================
-   6. SUB PAGE SLIDER
+   7. SUB PAGE SLIDER
 ========================================================= */
 
 function initSubSliders() {
@@ -544,9 +544,7 @@ function initSubSliders() {
         function (wrap) {
 
 
-            /*
-                같은 slider를 두 번 초기화하지 않음
-            */
+            /* 중복 초기화 방지 */
 
             if (
                 wrap.dataset.sliderInitialized ===
@@ -558,30 +556,27 @@ function initSubSliders() {
             }
 
 
+
             const slider =
                 wrap.querySelector(
                     ".sub_pag_slide_wrap"
                 );
 
 
-            if (!slider) {
-                return;
-            }
-
-
             const clippingMask =
-                slider.querySelector(
+                wrap.querySelector(
                     ".sub_pag_clipping_mask"
                 );
 
 
             const slideTrack =
-                slider.querySelector(
+                wrap.querySelector(
                     ".img_con_wrap"
                 );
 
 
             if (
+                !slider ||
                 !clippingMask ||
                 !slideTrack
             ) {
@@ -591,7 +586,8 @@ function initSubSliders() {
             }
 
 
-            const originalSlides =
+
+            const slides =
                 Array.from(
                     slideTrack.querySelectorAll(
                         ":scope > .sub_pag_img_wrap"
@@ -600,16 +596,12 @@ function initSubSliders() {
 
 
             const slideCount =
-                originalSlides.length;
+                slides.length;
 
 
             if (slideCount === 0) {
                 return;
             }
-
-
-            wrap.dataset.sliderInitialized =
-                "true";
 
 
 
@@ -634,40 +626,8 @@ function initSubSliders() {
 
 
 
-            /* =================================================
-               CLONE
-            ================================================= */
-
-            const firstClone =
-                originalSlides[0]
-                    .cloneNode(true);
-
-
-            const lastClone =
-                originalSlides[
-                    slideCount - 1
-                ].cloneNode(true);
-
-
-            firstClone.classList.add(
-                "is_clone"
-            );
-
-
-            lastClone.classList.add(
-                "is_clone"
-            );
-
-
-            slideTrack.appendChild(
-                firstClone
-            );
-
-
-            slideTrack.insertBefore(
-                lastClone,
-                slideTrack.firstChild
-            );
+            wrap.dataset.sliderInitialized =
+                "true";
 
 
 
@@ -675,9 +635,7 @@ function initSubSliders() {
                STATE
             ================================================= */
 
-            let currentIndex = 1;
-
-            let isMoving = false;
+            let currentIndex = 0;
 
             let isDragging = false;
 
@@ -685,37 +643,15 @@ function initSubSliders() {
 
             let startX = 0;
 
-            let currentX = 0;
-
 
 
             /* =================================================
                POSITION
             ================================================= */
 
-
-            /*
-                핵심:
-
-                JS에서 width 계산 안 함.
-                slide 하나 = CSS에서 100%.
-
-                따라서 위치도
-
-                0%
-                -100%
-                -200%
-
-                방식으로 이동.
-            */
-
-            function setPosition(
-                index,
+            function updateSlide(
                 animate = true
             ) {
-
-                currentIndex =
-                    index;
 
 
                 if (animate) {
@@ -723,18 +659,12 @@ function initSubSliders() {
                     slideTrack.style.transition =
                         "transform 0.4s ease";
 
-
-                    isMoving = true;
-
                 }
 
                 else {
 
                     slideTrack.style.transition =
                         "none";
-
-
-                    isMoving = false;
 
                 }
 
@@ -750,31 +680,45 @@ function initSubSliders() {
 
 
             /* =================================================
-               DOT
+               INDEX
             ================================================= */
 
-            function updateDots() {
-
-                let realIndex =
-                    currentIndex - 1;
+            function goToSlide(index) {
 
 
-                if (realIndex < 0) {
+                if (index < 0) {
 
-                    realIndex =
+                    currentIndex =
                         slideCount - 1;
 
                 }
 
-
-                if (
-                    realIndex >=
-                    slideCount
+                else if (
+                    index >= slideCount
                 ) {
 
-                    realIndex = 0;
+                    currentIndex = 0;
 
                 }
+
+                else {
+
+                    currentIndex = index;
+
+                }
+
+
+                updateSlide(true);
+
+            }
+
+
+
+            /* =================================================
+               DOT
+            ================================================= */
+
+            function updateDots() {
 
 
                 dots.forEach(
@@ -783,9 +727,10 @@ function initSubSliders() {
                         index
                     ) {
 
+
                         const active =
                             index ===
-                            realIndex;
+                            currentIndex;
 
 
                         dot.classList.toggle(
@@ -793,10 +738,6 @@ function initSubSliders() {
                             active
                         );
 
-
-                        /*
-                            기존 CSS 호환
-                        */
 
                         dot.classList.toggle(
                             "is_active_4",
@@ -811,90 +752,17 @@ function initSubSliders() {
 
 
             /* =================================================
-               TRANSITION END
+               BUTTON
             ================================================= */
 
-            slideTrack.addEventListener(
-                "transitionend",
-                function (event) {
+            if (prevButton) {
 
-
-                    if (
-                        event.propertyName !==
-                        "transform"
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    isMoving = false;
-
-
-
-                    /* 마지막 clone */
-
-                    if (
-                        currentIndex ===
-                        slideCount + 1
-                    ) {
-
-                        currentIndex = 1;
-
-
-                        setPosition(
-                            currentIndex,
-                            false
-                        );
-
-
-                        return;
-
-                    }
-
-
-
-                    /* 첫 clone */
-
-                    if (
-                        currentIndex === 0
-                    ) {
-
-                        currentIndex =
-                            slideCount;
-
-
-                        setPosition(
-                            currentIndex,
-                            false
-                        );
-
-                    }
-
-                }
-            );
-
-
-
-            /* =================================================
-               NEXT
-            ================================================= */
-
-            if (nextButton) {
-
-                nextButton.addEventListener(
+                prevButton.addEventListener(
                     "click",
                     function () {
 
-
-                        if (isMoving) {
-                            return;
-                        }
-
-
-                        setPosition(
-                            currentIndex + 1
+                        goToSlide(
+                            currentIndex - 1
                         );
 
                     }
@@ -904,24 +772,14 @@ function initSubSliders() {
 
 
 
-            /* =================================================
-               PREV
-            ================================================= */
+            if (nextButton) {
 
-            if (prevButton) {
-
-                prevButton.addEventListener(
+                nextButton.addEventListener(
                     "click",
                     function () {
 
-
-                        if (isMoving) {
-                            return;
-                        }
-
-
-                        setPosition(
-                            currentIndex - 1
+                        goToSlide(
+                            currentIndex + 1
                         );
 
                     }
@@ -946,15 +804,7 @@ function initSubSliders() {
                         "click",
                         function () {
 
-
-                            if (isMoving) {
-                                return;
-                            }
-
-
-                            setPosition(
-                                index + 1
-                            );
+                            goToSlide(index);
 
                         }
                     );
@@ -970,16 +820,15 @@ function initSubSliders() {
 
             function getPointerX(event) {
 
+
                 if (
                     event.touches &&
                     event.touches.length > 0
                 ) {
 
-                    return (
-                        event
-                            .touches[0]
-                            .clientX
-                    );
+                    return event
+                        .touches[0]
+                        .clientX;
 
                 }
 
@@ -989,11 +838,9 @@ function initSubSliders() {
                     event.changedTouches.length > 0
                 ) {
 
-                    return (
-                        event
-                            .changedTouches[0]
-                            .clientX
-                    );
+                    return event
+                        .changedTouches[0]
+                        .clientX;
 
                 }
 
@@ -1010,11 +857,6 @@ function initSubSliders() {
 
             function startDrag(event) {
 
-                if (isMoving) {
-                    return;
-                }
-
-
                 isDragging = true;
 
                 hasDragged = false;
@@ -1022,19 +864,6 @@ function initSubSliders() {
 
                 startX =
                     getPointerX(event);
-
-
-                currentX =
-                    startX;
-
-
-                slideTrack.style.transition =
-                    "none";
-
-
-                slideTrack.classList.add(
-                    "is_dragging"
-                );
 
             }
 
@@ -1051,7 +880,7 @@ function initSubSliders() {
                 }
 
 
-                currentX =
+                const currentX =
                     getPointerX(event);
 
 
@@ -1066,42 +895,8 @@ function initSubSliders() {
                     ) > 5
                 ) {
 
-                    hasDragged = true;
-
-                }
-
-
-
-                /*
-                    drag 중일 때만
-                    현재 mask 폭 사용.
-
-                    리사이즈 때 계산하는 게 아님.
-                */
-
-                const slideWidth =
-                    clippingMask.clientWidth;
-
-
-                const basePosition =
-                    currentIndex *
-                    slideWidth;
-
-
-                const nextPosition =
-                    basePosition -
-                    dragDistance;
-
-
-                slideTrack.style.transform =
-                    `translate3d(-${nextPosition}px, 0, 0)`;
-
-
-                if (
-                    event.cancelable
-                ) {
-
-                    event.preventDefault();
+                    hasDragged =
+                        true;
 
                 }
 
@@ -1123,11 +918,6 @@ function initSubSliders() {
                 isDragging = false;
 
 
-                slideTrack.classList.remove(
-                    "is_dragging"
-                );
-
-
                 const endX =
                     getPointerX(event);
 
@@ -1142,34 +932,21 @@ function initSubSliders() {
 
 
                 const threshold =
-                    slideWidth *
-                    0.15;
-
-
-
-                /* 오른쪽으로 넘김 */
-
-                if (
-                    dragDistance >
-                    threshold
-                ) {
-
-                    setPosition(
-                        currentIndex - 1
+                    Math.max(
+                        40,
+                        slideWidth * 0.12
                     );
 
-                }
 
 
+                /* 왼쪽으로 드래그 */
 
-                /* 왼쪽으로 넘김 */
-
-                else if (
+                if (
                     dragDistance <
                     -threshold
                 ) {
 
-                    setPosition(
+                    goToSlide(
                         currentIndex + 1
                     );
 
@@ -1177,12 +954,15 @@ function initSubSliders() {
 
 
 
-                /* 원래 위치 */
+                /* 오른쪽으로 드래그 */
 
-                else {
+                else if (
+                    dragDistance >
+                    threshold
+                ) {
 
-                    setPosition(
-                        currentIndex
+                    goToSlide(
+                        currentIndex - 1
                     );
 
                 }
@@ -1195,7 +975,7 @@ function initSubSliders() {
                             false;
 
                     },
-                    100
+                    80
                 );
 
             }
@@ -1242,7 +1022,7 @@ function initSubSliders() {
                 "touchmove",
                 moveDrag,
                 {
-                    passive: false
+                    passive: true
                 }
             );
 
@@ -1258,7 +1038,11 @@ function initSubSliders() {
 
             clippingMask.addEventListener(
                 "touchcancel",
-                endDrag,
+                function () {
+
+                    isDragging = false;
+
+                },
                 {
                     passive: true
                 }
@@ -1267,7 +1051,7 @@ function initSubSliders() {
 
 
             /* =================================================
-               IMAGE DRAG BLOCK
+               IMAGE DEFAULT DRAG BLOCK
             ================================================= */
 
             slideTrack.addEventListener(
@@ -1282,7 +1066,7 @@ function initSubSliders() {
 
 
             /* =================================================
-               DRAG 후 LINK CLICK 방지
+               DRAG 뒤 링크 이동 방지
             ================================================= */
 
             slideTrack.addEventListener(
@@ -1313,13 +1097,10 @@ function initSubSliders() {
 
 
             /* =================================================
-               FIRST POSITION
+               FIRST INIT
             ================================================= */
 
-            setPosition(
-                currentIndex,
-                false
-            );
+            updateSlide(false);
 
         }
     );
@@ -1329,7 +1110,7 @@ function initSubSliders() {
 
 
 /* =========================================================
-   7. INIT
+   8. INIT
 ========================================================= */
 
 document.addEventListener(
@@ -1338,8 +1119,8 @@ document.addEventListener(
 
 
         /*
-            갤러리는 페이지 HTML 안에 있으므로
-            컴포넌트 fetch를 기다릴 필요 없음.
+            페이지 안에 이미 존재하는
+            갤러리 먼저 초기화
         */
 
         initSubSliders();
@@ -1347,7 +1128,7 @@ document.addEventListener(
 
 
         /*
-            공통 컴포넌트 동시 로딩
+            공통 컴포넌트 로딩
         */
 
         await Promise.all([
@@ -1388,8 +1169,7 @@ document.addEventListener(
 
 
         /*
-            견적문의가 실제로 로드된 이후
-            위치 결정
+            견적문의 로딩 후 위치 결정
         */
 
         moveRequestCleaning();
