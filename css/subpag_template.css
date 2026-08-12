@@ -665,47 +665,6 @@
 
 
 
-/* =========================================================
-   영상 설명 + 화살표
-   줄바꿈되어도 마지막 글자 바로 뒤에 화살표 표시
-========================================================= */
-
-.flx_li_g {
-
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0;
-}
-
-
-.flx_li_g p {
-
-    display: inline;
-
-    width: auto;
-
-    margin: 0;
-}
-
-
-.flx_li_g .icon {
-
-    display: inline-block;
-
-    width: 12px;
-    height: 12px;
-
-    margin-left: 6px;
-
-    vertical-align: -1px;
-
-    background-color: #f2f2f2;
-}
-
-
 
 /* =========================================================
    10. IMAGE GALLERY
@@ -2357,53 +2316,6 @@
         border-radius: 14px;
     }
 
-
-
-    /* =====================================================
-       6. VIDEO TEXT + ARROW
-       문장 끝에 바로 화살표
-    ===================================================== */
-
-    .section_g_2 .flx_li_g {
-
-        display: block;
-
-        width: 100%;
-
-        margin: 0;
-    }
-
-
-    .section_g_2 .flx_li_g p {
-
-        display: inline;
-
-        width: auto;
-
-        margin: 0;
-
-        line-height: 1.7;
-    }
-
-
-    .section_g_2 .flx_li_g .icon {
-
-        display: inline-block;
-
-        width: 11px;
-        height: 11px;
-
-        margin-left: 5px;
-
-        vertical-align: -1px;
-
-        flex: none;
-    }
-
-}
-
-
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
@@ -2474,6 +2386,711 @@
 
         padding-top: 32px;
         padding-bottom: 42px;
+    }
+
+}
+}
+
+/* =========================================================
+   SERVICE DETAIL
+   Figma 기준 레이아웃 교정
+========================================================= */
+
+.service_detail {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   DESKTOP ORDER
+
+   소개
+   → 효과
+   → 갤러리
+   → 대상
+   → 영상
+   → 견적
+========================================================= */
+
+.service_intro {
+    order: 1;
+}
+
+.service_effect {
+    order: 2;
+}
+
+.service_gallery {
+    order: 3;
+}
+
+.service_target {
+    order: 4;
+}
+
+.service_video {
+    order: 5;
+}
+
+.service_request {
+    order: 6;
+}
+
+
+.request_cleaning_pin {
+
+    display: none;
+
+    width: 0;
+    height: 0;
+
+    overflow: hidden;
+}
+
+
+
+/* =========================================================
+   DESKTOP INTRO
+========================================================= */
+
+.service_intro {
+
+    max-width: none;
+
+    gap: clamp(48px, 5vw, 100px);
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.service_intro > .img_wrap {
+
+    width: 650px;
+    max-width: 650px;
+
+    flex: 0 1 650px;
+}
+
+
+.service_intro > .tit_wrap {
+
+    width: 725px;
+    max-width: 725px;
+
+    flex: 0 1 725px;
+}
+
+
+.service_intro .tit_wrap h2 {
+
+    font-size: clamp(2rem, 2.1vw, 2.5rem);
+}
+
+
+.service_intro .tit_wrap h3 {
+
+    font-size: clamp(1.1875rem, 1.3vw, 1.5625rem);
+}
+
+
+.service_intro .tit_wrap > p {
+
+    font-size: clamp(1.0625rem, 1.2vw, 1.4375rem);
+}
+
+
+
+/* =========================================================
+   DESKTOP EFFECT
+========================================================= */
+
+.service_effect {
+
+    max-width: none;
+
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+
+.service_effect > h2 {
+
+    margin-left: 0;
+
+    font-size: 1.5625rem;
+
+    color: #009944;
+}
+
+
+.service_effect .box_wrap {
+
+    gap: 16px;
+}
+
+
+.service_effect .box_g {
+
+    min-height: 85px;
+
+    gap: 10px;
+
+    padding: 16px 24px;
+
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+
+.service_effect .box_g > .icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+}
+
+
+.service_effect .tit_g h3 {
+
+    font-size: clamp(0.9375rem, 1vw, 1.1875rem);
+}
+
+
+.service_effect .tit_g p {
+
+    font-size: clamp(0.75rem, 0.8vw, 0.9375rem);
+}
+
+
+
+/* =========================================================
+   DESKTOP GALLERY
+========================================================= */
+
+.service_gallery {
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.service_gallery .tit_wrap h2 {
+
+    font-size: clamp(1.5625rem, 2vw, 2.5rem);
+}
+
+
+
+/* =========================================================
+   DESKTOP TARGET
+========================================================= */
+
+.service_target {
+
+    gap: 26px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.service_target > h2 {
+
+    font-size: clamp(1.5625rem, 2vw, 2.5rem);
+}
+
+
+.service_target .con_wrap {
+
+    gap: 30px 49px;
+}
+
+
+.service_target .con {
+
+    width: 125px;
+    max-width: 125px;
+
+    flex: 0 0 125px;
+
+    border-width: 1px;
+    border-radius: 50%;
+}
+
+
+.service_target .con > .icon {
+
+    width: 48px;
+    height: 48px;
+
+    max-width: 48px;
+
+    flex-basis: 48px;
+}
+
+
+.service_target .con > p {
+
+    font-size: 0.9375rem;
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1023px) {
+
+
+    /* INTRO */
+
+    .service_intro {
+
+        gap: 36px;
+    }
+
+
+    /* EFFECT */
+
+    .service_effect .box_g > .icon {
+
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+
+    /* GALLERY
+       전 / 후
+    */
+
+    .service_gallery .slide_before,
+    .service_gallery .slide_after {
+
+        display: block;
+
+        width: calc((100% - 20px) / 2);
+
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+
+
+    .service_gallery .slide_ing {
+
+        display: none;
+    }
+
+
+    /* TARGET */
+
+    .service_target .con {
+
+        width: 96px;
+        max-width: 96px;
+
+        flex-basis: 96px;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =====================================================
+       MOBILE ORDER
+
+       소개
+       → 대상
+       → 견적
+       → 효과
+       → 갤러리
+       → 영상
+    ===================================================== */
+
+    .service_intro {
+        order: 1;
+    }
+
+    .service_target {
+        order: 2;
+    }
+
+    .request_cleaning_pin {
+        order: 3;
+    }
+
+    .service_request {
+        order: 3;
+    }
+
+    .service_effect {
+        order: 4;
+    }
+
+    .service_gallery {
+        order: 5;
+    }
+
+    .service_video {
+        order: 6;
+    }
+
+
+    .request_cleaning_pin {
+
+        display: block;
+
+        width: 0;
+        height: 0;
+
+        padding: 0;
+        margin: 0;
+    }
+
+
+
+    /* =====================================================
+       INTRO
+       Figma : 이미지 → 우측 정렬 텍스트
+    ===================================================== */
+
+    .service_intro {
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 14px;
+
+        padding-top: 17px;
+        padding-bottom: 36px;
+    }
+
+
+    .service_intro > .img_wrap,
+    .service_intro > .tit_wrap {
+
+        width: 100%;
+        max-width: none;
+
+        flex: none;
+    }
+
+
+    .service_intro .tit_wrap {
+
+        align-items: flex-end;
+
+        text-align: right;
+    }
+
+
+    .service_intro .tit_in_wrap {
+
+        width: 100%;
+
+        align-items: flex-end;
+    }
+
+
+    .service_intro .tit_wrap h2 {
+
+        display: none;
+    }
+
+
+    .service_intro .tit_wrap h3 {
+
+        margin-bottom: 0;
+
+        font-size: 1.1875rem;
+        line-height: 1.45;
+    }
+
+
+    .service_intro .tit_wrap > p {
+
+        width: min(100%, 300px);
+
+        margin-top: 0;
+
+        font-size: 0.75rem;
+        line-height: 1.55;
+
+        text-align: right;
+    }
+
+
+
+    /* =====================================================
+       TARGET
+       항목 수에 따라 자연스럽게 중앙 정렬
+    ===================================================== */
+
+    .service_target {
+
+        gap: 12px;
+
+        padding: 12px 20px;
+    }
+
+
+    .service_target > h2 {
+
+        font-size: 0.875rem;
+    }
+
+
+    .service_target .con_wrap {
+
+        width: 100%;
+        max-width: none;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 10px 12px;
+    }
+
+
+    .service_target .con {
+
+        width: 48px;
+        max-width: 48px;
+
+        flex: 0 0 48px;
+
+        gap: 4px;
+
+        padding: 0;
+
+        border: none;
+
+        background: transparent;
+    }
+
+
+    .service_target .con > .icon {
+
+        width: 48px;
+        height: 48px;
+
+        max-width: 48px;
+
+        flex: 0 0 48px;
+
+        background-color: #f8f8f8;
+    }
+
+
+    .service_target .con > p {
+
+        margin: 0;
+
+        font-size: 0.625rem;
+        line-height: 1.3;
+
+        color: #f8f8f8;
+    }
+
+
+    .service_target_description {
+
+        display: none;
+    }
+
+
+
+    /* =====================================================
+       EFFECT
+       2 × 2 박스 → 세로 리스트
+    ===================================================== */
+
+    .service_effect {
+
+        gap: 14px;
+
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+
+    .service_effect > h2 {
+
+        margin: 0;
+
+        font-size: 1.1875rem;
+
+        color: #555;
+    }
+
+
+    .service_effect .box_wrap {
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 11px;
+    }
+
+
+    .service_effect .box_g {
+
+        width: 100%;
+        min-height: 50px;
+
+        justify-content: flex-start;
+
+        gap: 10px;
+
+        padding: 0;
+
+        border: none;
+        border-radius: 0;
+    }
+
+
+    .service_effect .box_g > .icon {
+
+        width: 40px;
+        height: 40px;
+
+        flex: 0 0 40px;
+    }
+
+
+    .service_effect .box_g .tit_wrap {
+
+        width: auto;
+
+        flex: 0 1 auto;
+
+        color: #555;
+    }
+
+
+    .service_effect .box_g .tit_wrap h3 {
+
+        margin: 0;
+
+        font-size: 0.875rem;
+        line-height: 1.45;
+
+        color: #555;
+    }
+
+
+    .service_effect .box_g .tit_wrap p {
+
+        font-size: 0.625rem;
+        line-height: 1.5;
+
+        color: #8e8e8e;
+    }
+
+
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+
+    .service_gallery {
+
+        gap: 12px;
+
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+
+    .service_gallery .tit_wrap {
+
+        gap: 0;
+    }
+
+
+    .service_gallery .tit_wrap h2 {
+
+        font-size: 1.1875rem;
+    }
+
+
+    /* Figma 모바일에는 이 문구 없음 */
+
+    .service_gallery_description {
+
+        display: none;
+    }
+
+
+    .service_gallery .slide_before,
+    .service_gallery .slide_ing {
+
+        display: none;
+    }
+
+
+    .service_gallery .slide_after {
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        flex: 0 0 100%;
+    }
+
+
+
+    /* =====================================================
+       VIDEO
+       모바일 피그마는 흰색 영역
+    ===================================================== */
+
+    .service_video {
+
+        padding-top: 36px;
+        padding-bottom: 36px;
+
+        background-color: #fff;
+
+        color: #555;
+    }
+
+
+    .service_video .tit_wrap {
+
+        color: #555;
+    }
+
+
+    .service_video .tit_wrap h2 {
+
+        font-size: 1.1875rem;
+    }
+
+
+    .service_video .flx_li_g {
+
+        background-color: transparent;
+
+        color: #8e8e8e;
     }
 
 }

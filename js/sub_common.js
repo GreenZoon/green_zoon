@@ -4,14 +4,13 @@
 
 
 /* =========================================================
-   1. COMPONENT LOAD
+   COMPONENT LOAD
 ========================================================= */
 
 async function loadComponent(id, file) {
 
     const target =
         document.getElementById(id);
-
 
     if (!target) {
         return null;
@@ -38,18 +37,12 @@ async function loadComponent(id, file) {
         }
 
 
-        const html =
+        target.innerHTML =
             await response.text();
 
 
-        target.innerHTML =
-            html;
 
-
-
-        /* =================================================
-           HEADER 경로 보정
-        ================================================= */
+        /* HEADER LOGO PATH */
 
         if (id === "header") {
 
@@ -99,7 +92,7 @@ async function loadComponent(id, file) {
 
 
 /* =========================================================
-   2. HEADER SEARCH
+   HEADER SEARCH
 ========================================================= */
 
 function closeHeaderSearch() {
@@ -131,7 +124,7 @@ function closeHeaderSearch() {
 
 
 /* =========================================================
-   3. MOBILE MENU
+   MOBILE MENU
 ========================================================= */
 
 function closeMobileMenu() {
@@ -168,7 +161,7 @@ function closeMobileMenu() {
 
 
 /* =========================================================
-   4. GLOBAL CLICK
+   GLOBAL CLICK
 ========================================================= */
 
 document.addEventListener(
@@ -176,9 +169,7 @@ document.addEventListener(
     function (event) {
 
 
-        /* =================================================
-           SEARCH OPEN
-        ================================================= */
+        /* SEARCH OPEN */
 
         const searchOpenButton =
             event.target.closest(
@@ -228,9 +219,7 @@ document.addEventListener(
 
 
 
-        /* =================================================
-           SEARCH CLOSE
-        ================================================= */
+        /* SEARCH CLOSE */
 
         const searchCloseButton =
             event.target.closest(
@@ -248,9 +237,7 @@ document.addEventListener(
 
 
 
-        /* =================================================
-           SEARCH KEYWORD
-        ================================================= */
+        /* SEARCH KEYWORD */
 
         const keywordButton =
             event.target.closest(
@@ -279,16 +266,13 @@ document.addEventListener(
 
             searchInput.focus();
 
-
             return;
 
         }
 
 
 
-        /* =================================================
-           MOBILE MENU OPEN
-        ================================================= */
+        /* MOBILE MENU OPEN */
 
         const mobileMenuButton =
             event.target.closest(
@@ -333,9 +317,7 @@ document.addEventListener(
 
 
 
-        /* =================================================
-           MOBILE MENU CLOSE
-        ================================================= */
+        /* MOBILE MENU CLOSE */
 
         const mobileMenuCloseButton =
             event.target.closest(
@@ -355,7 +337,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   5. ESC
+   ESC
 ========================================================= */
 
 document.addEventListener(
@@ -377,29 +359,8 @@ document.addEventListener(
 
 
 /* =========================================================
-   6. REQUEST CLEANING POSITION
+   REQUEST CLEANING
 ========================================================= */
-
-
-/*
-    PC / TABLET
-
-    section_g
-    ↓
-    section_g_2
-    ↓
-    Request_Cleaning
-
-
-    MOBILE
-
-    section_g
-    ↓
-    Request_Cleaning
-    ↓
-    section_g_2
-*/
-
 
 const requestMobileMedia =
     window.matchMedia(
@@ -416,21 +377,20 @@ function moveRequestCleaning() {
         );
 
 
-    const targetSection =
+    const requestPin =
         document.querySelector(
-            ".section_g"
+            ".request_cleaning_pin"
         );
 
 
     const videoSection =
         document.querySelector(
-            ".section_g_2"
+            ".service_video"
         );
 
 
     if (
         !requestCleaning ||
-        !targetSection ||
         !videoSection
     ) {
 
@@ -440,14 +400,15 @@ function moveRequestCleaning() {
 
 
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
+    /* MOBILE */
 
-    if (requestMobileMedia.matches) {
+    if (
+        requestMobileMedia.matches &&
+        requestPin
+    ) {
 
         if (
-            targetSection.nextElementSibling ===
+            requestPin.nextElementSibling ===
             requestCleaning
         ) {
 
@@ -456,7 +417,7 @@ function moveRequestCleaning() {
         }
 
 
-        targetSection.insertAdjacentElement(
+        requestPin.insertAdjacentElement(
             "afterend",
             requestCleaning
         );
@@ -468,9 +429,7 @@ function moveRequestCleaning() {
 
 
 
-    /* =====================================================
-       PC / TABLET
-    ===================================================== */
+    /* PC / TABLET */
 
     if (
         videoSection.nextElementSibling ===
@@ -492,45 +451,12 @@ function moveRequestCleaning() {
 
 
 /* =========================================================
-   REQUEST BREAKPOINT
+   SUB SLIDER
 ========================================================= */
 
-function handleRequestBreakpoint() {
-
-    moveRequestCleaning();
-
-}
+const subSliderRefreshers = [];
 
 
-
-if (
-    typeof requestMobileMedia.addEventListener ===
-    "function"
-) {
-
-    requestMobileMedia.addEventListener(
-        "change",
-        handleRequestBreakpoint
-    );
-
-}
-
-else if (
-    typeof requestMobileMedia.addListener ===
-    "function"
-) {
-
-    requestMobileMedia.addListener(
-        handleRequestBreakpoint
-    );
-
-}
-
-
-
-/* =========================================================
-   7. SUB PAGE SLIDER
-========================================================= */
 
 function initSubSliders() {
 
@@ -544,8 +470,6 @@ function initSubSliders() {
         function (wrap) {
 
 
-            /* 중복 초기화 방지 */
-
             if (
                 wrap.dataset.sliderInitialized ===
                 "true"
@@ -554,7 +478,6 @@ function initSubSliders() {
                 return;
 
             }
-
 
 
             const slider =
@@ -586,7 +509,6 @@ function initSubSliders() {
             }
 
 
-
             const slides =
                 Array.from(
                     slideTrack.querySelectorAll(
@@ -602,7 +524,6 @@ function initSubSliders() {
             if (slideCount === 0) {
                 return;
             }
-
 
 
             const prevButton =
@@ -625,15 +546,9 @@ function initSubSliders() {
                 );
 
 
-
             wrap.dataset.sliderInitialized =
                 "true";
 
-
-
-            /* =================================================
-               STATE
-            ================================================= */
 
             let currentIndex = 0;
 
@@ -646,6 +561,41 @@ function initSubSliders() {
 
 
             /* =================================================
+               DOT
+            ================================================= */
+
+            function updateDots() {
+
+                dots.forEach(
+                    function (
+                        dot,
+                        index
+                    ) {
+
+                        const active =
+                            index ===
+                            currentIndex;
+
+
+                        dot.classList.toggle(
+                            "is_active",
+                            active
+                        );
+
+
+                        dot.classList.toggle(
+                            "is_active_4",
+                            active
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            /* =================================================
                POSITION
             ================================================= */
 
@@ -653,20 +603,10 @@ function initSubSliders() {
                 animate = true
             ) {
 
-
-                if (animate) {
-
-                    slideTrack.style.transition =
-                        "transform 0.4s ease";
-
-                }
-
-                else {
-
-                    slideTrack.style.transition =
-                        "none";
-
-                }
+                slideTrack.style.transition =
+                    animate
+                        ? "transform 0.4s ease"
+                        : "none";
 
 
                 slideTrack.style.transform =
@@ -679,12 +619,7 @@ function initSubSliders() {
 
 
 
-            /* =================================================
-               INDEX
-            ================================================= */
-
             function goToSlide(index) {
-
 
                 if (index < 0) {
 
@@ -715,82 +650,36 @@ function initSubSliders() {
 
 
             /* =================================================
-               DOT
-            ================================================= */
-
-            function updateDots() {
-
-
-                dots.forEach(
-                    function (
-                        dot,
-                        index
-                    ) {
-
-
-                        const active =
-                            index ===
-                            currentIndex;
-
-
-                        dot.classList.toggle(
-                            "is_active",
-                            active
-                        );
-
-
-                        dot.classList.toggle(
-                            "is_active_4",
-                            active
-                        );
-
-                    }
-                );
-
-            }
-
-
-
-            /* =================================================
                BUTTON
             ================================================= */
 
-            if (prevButton) {
+            prevButton?.addEventListener(
+                "click",
+                function () {
 
-                prevButton.addEventListener(
-                    "click",
-                    function () {
+                    goToSlide(
+                        currentIndex - 1
+                    );
 
-                        goToSlide(
-                            currentIndex - 1
-                        );
-
-                    }
-                );
-
-            }
+                }
+            );
 
 
+            nextButton?.addEventListener(
+                "click",
+                function () {
 
-            if (nextButton) {
+                    goToSlide(
+                        currentIndex + 1
+                    );
 
-                nextButton.addEventListener(
-                    "click",
-                    function () {
-
-                        goToSlide(
-                            currentIndex + 1
-                        );
-
-                    }
-                );
-
-            }
+                }
+            );
 
 
 
             /* =================================================
-               DOT CLICK
+               DOT
             ================================================= */
 
             dots.forEach(
@@ -798,7 +687,6 @@ function initSubSliders() {
                     dot,
                     index
                 ) {
-
 
                     dot.addEventListener(
                         "click",
@@ -815,32 +703,35 @@ function initSubSliders() {
 
 
             /* =================================================
-               POINTER X
+               POINTER
             ================================================= */
 
             function getPointerX(event) {
 
-
                 if (
                     event.touches &&
-                    event.touches.length > 0
+                    event.touches.length
                 ) {
 
-                    return event
-                        .touches[0]
-                        .clientX;
+                    return (
+                        event
+                            .touches[0]
+                            .clientX
+                    );
 
                 }
 
 
                 if (
                     event.changedTouches &&
-                    event.changedTouches.length > 0
+                    event.changedTouches.length
                 ) {
 
-                    return event
-                        .changedTouches[0]
-                        .clientX;
+                    return (
+                        event
+                            .changedTouches[0]
+                            .clientX
+                    );
 
                 }
 
@@ -851,16 +742,11 @@ function initSubSliders() {
 
 
 
-            /* =================================================
-               DRAG START
-            ================================================= */
-
             function startDrag(event) {
 
                 isDragging = true;
 
                 hasDragged = false;
-
 
                 startX =
                     getPointerX(event);
@@ -868,10 +754,6 @@ function initSubSliders() {
             }
 
 
-
-            /* =================================================
-               DRAG MOVE
-            ================================================= */
 
             function moveDrag(event) {
 
@@ -884,29 +766,20 @@ function initSubSliders() {
                     getPointerX(event);
 
 
-                const dragDistance =
-                    currentX -
-                    startX;
-
-
                 if (
                     Math.abs(
-                        dragDistance
+                        currentX -
+                        startX
                     ) > 5
                 ) {
 
-                    hasDragged =
-                        true;
+                    hasDragged = true;
 
                 }
 
             }
 
 
-
-            /* =================================================
-               DRAG END
-            ================================================= */
 
             function endDrag(event) {
 
@@ -922,27 +795,21 @@ function initSubSliders() {
                     getPointerX(event);
 
 
-                const dragDistance =
+                const distance =
                     endX -
                     startX;
-
-
-                const slideWidth =
-                    clippingMask.clientWidth;
 
 
                 const threshold =
                     Math.max(
                         40,
-                        slideWidth * 0.12
+                        clippingMask.clientWidth *
+                        0.12
                     );
 
 
-
-                /* 왼쪽으로 드래그 */
-
                 if (
-                    dragDistance <
+                    distance <
                     -threshold
                 ) {
 
@@ -952,12 +819,8 @@ function initSubSliders() {
 
                 }
 
-
-
-                /* 오른쪽으로 드래그 */
-
                 else if (
-                    dragDistance >
+                    distance >
                     threshold
                 ) {
 
@@ -971,8 +834,7 @@ function initSubSliders() {
                 window.setTimeout(
                     function () {
 
-                        hasDragged =
-                            false;
+                        hasDragged = false;
 
                     },
                     80
@@ -1050,9 +912,7 @@ function initSubSliders() {
 
 
 
-            /* =================================================
-               IMAGE DEFAULT DRAG BLOCK
-            ================================================= */
+            /* IMAGE DEFAULT DRAG */
 
             slideTrack.addEventListener(
                 "dragstart",
@@ -1065,14 +925,11 @@ function initSubSliders() {
 
 
 
-            /* =================================================
-               DRAG 뒤 링크 이동 방지
-            ================================================= */
+            /* DRAG 후 LINK 방지 */
 
             slideTrack.addEventListener(
                 "click",
                 function (event) {
-
 
                     if (!hasDragged) {
                         return;
@@ -1080,9 +937,7 @@ function initSubSliders() {
 
 
                     const link =
-                        event.target.closest(
-                            "a"
-                        );
+                        event.target.closest("a");
 
 
                     if (link) {
@@ -1097,8 +952,50 @@ function initSubSliders() {
 
 
             /* =================================================
-               FIRST INIT
+               RESIZE / ZOOM 이후 위치 재정렬
             ================================================= */
+
+            function refreshSliderPosition() {
+
+                slideTrack.style.transition =
+                    "none";
+
+
+                slideTrack.style.transform =
+                    `translate3d(-${currentIndex * 100}%, 0, 0)`;
+
+
+                updateDots();
+
+
+
+                /*
+                    브라우저가 새 viewport 계산을
+                    완료한 뒤 transition 복구
+                */
+
+                requestAnimationFrame(
+                    function () {
+
+                        requestAnimationFrame(
+                            function () {
+
+                                slideTrack.style.transition =
+                                    "transform 0.4s ease";
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+
+
+            subSliderRefreshers.push(
+                refreshSliderPosition
+            );
+
 
             updateSlide(false);
 
@@ -1110,7 +1007,112 @@ function initSubSliders() {
 
 
 /* =========================================================
-   8. INIT
+   RESPONSIVE REFRESH
+========================================================= */
+
+let responsiveTimer = null;
+
+
+
+function refreshResponsiveLayout() {
+
+    moveRequestCleaning();
+
+
+    subSliderRefreshers.forEach(
+        function (refresh) {
+
+            refresh();
+
+        }
+    );
+
+}
+
+
+
+function scheduleResponsiveRefresh() {
+
+    window.clearTimeout(
+        responsiveTimer
+    );
+
+
+    responsiveTimer =
+        window.setTimeout(
+            function () {
+
+                refreshResponsiveLayout();
+
+            },
+            180
+        );
+
+}
+
+
+
+/*
+    브라우저 창 크기 변경
+*/
+
+window.addEventListener(
+    "resize",
+    scheduleResponsiveRefresh
+);
+
+
+
+/*
+    확대 / 축소 대응
+
+    지원하는 브라우저에서는
+    visualViewport 변화도 같이 감지
+*/
+
+if (window.visualViewport) {
+
+    window.visualViewport.addEventListener(
+        "resize",
+        scheduleResponsiveRefresh
+    );
+
+}
+
+
+
+/*
+    breakpoint 자체가 변경될 때도
+    동일한 debounce 처리
+*/
+
+if (
+    typeof requestMobileMedia.addEventListener ===
+    "function"
+) {
+
+    requestMobileMedia.addEventListener(
+        "change",
+        scheduleResponsiveRefresh
+    );
+
+}
+
+else if (
+    typeof requestMobileMedia.addListener ===
+    "function"
+) {
+
+    requestMobileMedia.addListener(
+        scheduleResponsiveRefresh
+    );
+
+}
+
+
+
+/* =========================================================
+   INIT
 ========================================================= */
 
 document.addEventListener(
@@ -1118,18 +1120,9 @@ document.addEventListener(
     async function () {
 
 
-        /*
-            페이지 안에 이미 존재하는
-            갤러리 먼저 초기화
-        */
-
         initSubSliders();
 
 
-
-        /*
-            공통 컴포넌트 로딩
-        */
 
         await Promise.all([
 
@@ -1166,11 +1159,6 @@ document.addEventListener(
 
         ]);
 
-
-
-        /*
-            견적문의 로딩 후 위치 결정
-        */
 
         moveRequestCleaning();
 
