@@ -396,7 +396,7 @@ section {
 .focus_left {
 
     object-position: left center;
-    
+
 }
 
 
@@ -998,6 +998,35 @@ svg {
     mask-image: url("../img/icon/youtube.svg");
 
 }
+
+.facebook{
+
+    background-color: #8E8E8E;
+
+    -webkit-mask-image: url("../img/icon/facebook.svg");
+    mask-image: url("../img/icon/facebook.svg");
+
+}
+
+.instagram{
+
+    background-color: #8E8E8E;
+
+    -webkit-mask-image: url("../img/icon/instagram.svg");
+    mask-image: url("../img/icon/instagram.svg");
+
+}
+
+.Naver_blog{
+
+        background-color: #8E8E8E;
+
+    -webkit-mask-image: url("../img/icon/Naver_blog.svg");
+    mask-image: url("../img/icon/Naver_blog.svg");
+
+
+}
+
 
 /* 모바일 설정 */
 .mobile_setting_icon{
