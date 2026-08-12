@@ -1428,13 +1428,20 @@
     }
 
 
-    .man_sled,
     .breadcrumb {
 
         display: none;
     }
 
 
+    .man_sled {
+
+        display: block;
+
+        width: 100%;
+
+        overflow: hidden;
+    }
 
     /* SUB MENU */
 
@@ -2004,6 +2011,20 @@
 
         display: none;
     }
+
+    
+.man_sled img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 6;
+
+    object-fit: cover;
+}
+
 
 }
 
