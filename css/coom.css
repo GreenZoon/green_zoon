@@ -258,7 +258,7 @@ section {
 
 
     width: 100%;
-    padding: 100px 150px;
+    padding: 3rem 150px;
     display: flex;
     gap: 40px;
 
@@ -1136,14 +1136,23 @@ svg {
    12. TABLET
 ========================================================= */
 
-@media (max-width: 1023px) {
+@media (max-width: 1500px) {
+
+    section {
+        padding: 48px 50px;
+        gap: 32px;
+    }
+
+}
+
+@media(max-width: 1023px) and (min-width: 769px){
 
     .tablet_none {
         display: none;
     }
 
     section {
-        padding: 48px 40px;
+        padding: 40px;
         gap: 32px;
     }
 

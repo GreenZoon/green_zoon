@@ -52,12 +52,14 @@
 ========================================================= */
 
 .Cleaning_box {
+
     color: #009944;
     background-color: #ffffff;
 
     transition:
         color 0.3s ease,
         background-color 0.3s ease;
+
 }
 
 
@@ -67,6 +69,7 @@
 ========================================================= */
 
 .Cleaning_tit_wrap {
+
     width: 100%;
 
     display: flex;
@@ -75,6 +78,7 @@
     gap: 8px;
 
     color: inherit;
+
 }
 
 
@@ -84,7 +88,9 @@
 */
 
 .Cleaning_tit_wrap h2 {
+
     color: inherit;
+
 }
 
 
@@ -93,6 +99,7 @@
 ========================================================= */
 
 .Cleaning_box_in_wrap {
+
     width: 100%;
 
     display: flex;
@@ -101,6 +108,7 @@
     justify-content: space-between;
 
     gap: clamp(20px, 2.5vw, 40px);
+
 }
 
 
@@ -109,6 +117,7 @@
 ========================================================= */
 
 .Cleaning_ul_wrap {
+
     min-width: 0;
 
     flex: 1;
@@ -117,10 +126,12 @@
     align-items: flex-end;
 
     gap: clamp(18px, 2vw, 36px);
+
 }
 
 
 .Cleaning_ul {
+
     margin: 0;
     padding: 0;
 
@@ -130,10 +141,12 @@
     gap: 8px;
 
     list-style: none;
+
 }
 
 
 .Cleaning_ul li {
+
     display: grid;
 
     grid-template-columns: auto auto;
@@ -141,6 +154,7 @@
     gap: clamp(12px, 1.2vw, 24px);
 
     white-space: nowrap;
+    
 }
 
 
@@ -223,7 +237,6 @@
 @media (max-width: 1500px) {
 
     #Request_Cleaning > section {
-        flex-direction: column;
 
         gap: 20px;
     }
@@ -267,6 +280,12 @@
 ========================================================= */
 
 @media (max-width: 1023px) and (min-width: 769px) {
+
+    #Request_Cleaning > section {
+        flex-direction: column;
+
+       
+    }
 
     .Cleaning_box,
     .Cleaning_box_green {
