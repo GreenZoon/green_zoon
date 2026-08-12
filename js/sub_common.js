@@ -2,589 +2,1276 @@
    SUB PAGE COMMON
 ========================================================= */
 
+(function () {
 
-/* =========================================================
-   COMPONENT LOAD
-========================================================= */
-
-async function loadComponent(id, file) {
-
-    const target =
-        document.getElementById(id);
+    "use strict";
 
 
-    if (!target) {
-        return null;
+    /* =====================================================
+       DUPLICATE INITIALIZATION GUARD
+    ===================================================== */
+
+    if (window.GreenZoneSubCommonInitialized) {
+        return;
     }
 
+    window.GreenZoneSubCommonInitialized = true;
 
-    try {
 
-        const response =
-            await fetch(
-                `${file}?v=${Date.now()}`,
-                {
-                    cache: "no-store"
-                }
+
+    /* =====================================================
+       COMPONENT LOAD
+    ===================================================== */
+
+    const COMPONENT_TIMEOUT = 8000;
+
+
+    async function loadComponent(id, file) {
+
+        const target =
+            document.getElementById(id);
+
+
+        if (!target) {
+            return null;
+        }
+
+
+        const controller =
+            new AbortController();
+
+
+        const timeoutId =
+            window.setTimeout(
+                function () {
+
+                    controller.abort();
+
+                },
+                COMPONENT_TIMEOUT
             );
 
 
-        if (!response.ok) {
+        try {
 
-            throw new Error(
-                `${file} 로드 실패: ${response.status}`
+            const response =
+                await fetch(
+                    file,
+                    {
+                        cache: "no-cache",
+                        signal: controller.signal
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                console.error(
+                    `[sub_common] ${id} 로드 실패:`,
+                    response.status,
+                    file
+                );
+
+                return null;
+
+            }
+
+
+            const html =
+                await response.text();
+
+
+            target.innerHTML =
+                html;
+
+
+            window.GreenZonePaths
+                ?.normalize(target);
+
+
+            return target;
+
+
+        } catch (error) {
+
+            if (error.name === "AbortError") {
+
+                console.warn(
+                    `[sub_common] ${id} 로드 시간 초과:`,
+                    file
+                );
+
+            } else {
+
+                console.error(
+                    `[sub_common] ${id} 로드 오류:`,
+                    error
+                );
+
+            }
+
+
+            return null;
+
+
+        } finally {
+
+            window.clearTimeout(
+                timeoutId
             );
 
         }
 
-
-        target.innerHTML =
-            await response.text();
-
-
-        window.GreenZonePaths
-            ?.normalize(target);
-
-
-        return target;
-
-
-    } catch (error) {
-
-        console.error(
-            `[sub_common] ${id}`,
-            error
-        );
-
-
-        return null;
-
     }
 
-}
 
 
+    /* =====================================================
+       HEADER SEARCH
+    ===================================================== */
 
-/* =========================================================
-   HEADER SEARCH
-========================================================= */
+    function closeHeaderSearch() {
 
-function closeHeaderSearch() {
-
-    document
-        .querySelector("#header_search")
-        ?.classList.remove("is_open");
-
-
-    document
-        .querySelector(".search_open_btn")
-        ?.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-}
+        document
+            .querySelector("#header_search")
+            ?.classList.remove("is_open");
 
 
-
-/* =========================================================
-   GLOBAL CLICK
-========================================================= */
-
-document.addEventListener(
-    "click",
-    function (event) {
-
-
-        /* SEARCH OPEN */
-
-        const searchOpen =
-            event.target.closest(
-                ".search_open_btn"
-            );
-
-
-        if (searchOpen) {
-
-            const searchForm =
-                document.querySelector(
-                    "#header_search"
-                );
-
-
-            if (!searchForm) {
-                return;
-            }
-
-
-            const isOpen =
-                searchForm.classList.toggle(
-                    "is_open"
-                );
-
-
-            searchOpen.setAttribute(
+        document
+            .querySelector(".search_open_btn")
+            ?.setAttribute(
                 "aria-expanded",
-                String(isOpen)
+                "false"
+            );
+
+    }
+
+
+
+    /* =====================================================
+       PLACEHOLDER LINK
+    ===================================================== */
+
+    function preventPlaceholderLink(event) {
+
+        const link =
+            event.target.closest(
+                'a[href=""], a[href="#"]'
             );
 
 
-            if (isOpen) {
-
-                searchForm
-                    .querySelector(".search_input")
-                    ?.focus();
-
-            }
-
-
-            return;
-
+        if (!link) {
+            return false;
         }
 
 
+        event.preventDefault();
 
-        /* SEARCH CLOSE */
+        return true;
 
-        if (
-            event.target.closest(
-                ".search_close_btn"
-            )
-        ) {
-
-            closeHeaderSearch();
-
-            return;
-
-        }
+    }
 
 
 
-        /* SEARCH KEYWORD */
+    /* =====================================================
+       GLOBAL CLICK
+    ===================================================== */
 
-        const keyword =
-            event.target.closest(
-                ".keyword_button"
-            );
+    document.addEventListener(
+        "click",
+        function (event) {
 
 
-        if (keyword) {
+            preventPlaceholderLink(event);
 
-            const input =
-                document.querySelector(
-                    "#search_input"
+
+
+            /* SEARCH OPEN */
+
+            const searchOpen =
+                event.target.closest(
+                    ".search_open_btn"
                 );
 
 
-            if (!input) {
+            if (searchOpen) {
+
+                const searchForm =
+                    document.querySelector(
+                        "#header_search"
+                    );
+
+
+                if (!searchForm) {
+                    return;
+                }
+
+
+                const isOpen =
+                    searchForm.classList.toggle(
+                        "is_open"
+                    );
+
+
+                searchOpen.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+
+                if (isOpen) {
+
+                    searchForm
+                        .querySelector(".search_input")
+                        ?.focus();
+
+                }
+
+
                 return;
+
             }
 
 
-            input.value =
-                keyword.textContent.trim();
+
+            /* SEARCH CLOSE */
+
+            const searchClose =
+                event.target.closest(
+                    ".search_close_btn"
+                );
 
 
-            input.focus();
+            if (searchClose) {
 
-            return;
+                closeHeaderSearch();
+
+                return;
+
+            }
+
+
+
+            /* SEARCH KEYWORD */
+
+            const keyword =
+                event.target.closest(
+                    ".keyword_button"
+                );
+
+
+            if (keyword) {
+
+                const input =
+                    document.querySelector(
+                        "#search_input"
+                    );
+
+
+                if (!input) {
+                    return;
+                }
+
+
+                input.value =
+                    keyword.textContent.trim();
+
+
+                input.focus();
+
+            }
 
         }
-
-
-    }
-);
+    );
 
 
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+    /* =====================================================
+       KEYBOARD
+    ===================================================== */
 
-        if (event.key === "Escape") {
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
 
             closeHeaderSearch();
 
             window.closeMobileMenu?.();
 
         }
-
-    }
-);
-
-
-
-/* =========================================================
-   REQUEST CLEANING
-========================================================= */
-
-const requestMobileMedia =
-
-    window.matchMedia(
-        "(max-width: 1024px)"
     );
 
 
 
-function moveRequestCleaning() {
+    /* =====================================================
+       REQUEST CLEANING POSITION
+    ===================================================== */
 
-    const request =
-        document.getElementById(
-            "Request_Cleaning"
+    const requestMobileMedia =
+        window.matchMedia(
+            "(max-width: 1024px)"
         );
 
 
-    const pin =
-        document.querySelector(
-            ".request_cleaning_pin"
-        );
+    function moveRequestCleaning() {
+
+        const request =
+            document.getElementById(
+                "Request_Cleaning"
+            );
 
 
-    const video =
-        document.querySelector(
-            ".service_video"
-        );
+        if (!request) {
+            return;
+        }
 
 
-    if (
-        !request ||
-        !video
-    ) {
-
-        return;
-
-    }
+        const pin =
+            document.querySelector(
+                ".request_cleaning_pin"
+            );
 
 
+        const video =
+            document.querySelector(
+                ".service_video"
+            );
 
-    /* MOBILE */
 
-    if (
-        requestMobileMedia.matches &&
-        pin
-    ) {
+
+        /* MOBILE / IPAD */
+
+        if (requestMobileMedia.matches) {
+
+            if (
+                pin &&
+                pin.nextElementSibling !== request
+            ) {
+
+                pin.insertAdjacentElement(
+                    "afterend",
+                    request
+                );
+
+            }
+
+
+            return;
+
+        }
+
+
+
+        /* PC */
 
         if (
-            pin.nextElementSibling !==
-            request
+            video &&
+            video.nextElementSibling !== request
         ) {
 
-            pin.insertAdjacentElement(
+            video.insertAdjacentElement(
                 "afterend",
                 request
             );
 
         }
 
-
-        return;
-
     }
 
 
 
-    /* PC / TABLET */
+    /* =====================================================
+       REQUEST RESPONSIVE CHANGE
+    ===================================================== */
 
     if (
-        video.nextElementSibling !==
-        request
+        typeof requestMobileMedia.addEventListener ===
+        "function"
     ) {
 
-        video.insertAdjacentElement(
-            "afterend",
-            request
+        requestMobileMedia.addEventListener(
+            "change",
+            moveRequestCleaning
+        );
+
+    } else {
+
+        requestMobileMedia.addListener(
+            moveRequestCleaning
         );
 
     }
 
-}
 
 
+    /* =====================================================
+       SUB GALLERY SLIDER
 
-if (
-    typeof requestMobileMedia.addEventListener ===
-    "function"
-) {
+       메인페이지 슬라이더 방식 적용
+       - 마우스 드래그
+       - 모바일 터치
+       - window에서 드래그 추적
+    ===================================================== */
 
-    requestMobileMedia.addEventListener(
-        "change",
-        moveRequestCleaning
-    );
+    function initSubSliders() {
 
-}
-
-else {
-
-    requestMobileMedia.addListener(
-        moveRequestCleaning
-    );
-
-}
-
-
-
-/* =========================================================
-   SUB GALLERY SLIDER
-
-   버튼 / 도트 클릭만 사용.
-   크기 계산 없음.
-========================================================= */
-
-function initSubSliders() {
-
-    const sliders =
-        document.querySelectorAll(
-            ".slide_wrap"
-        );
-
-
-    sliders.forEach(
-        function (wrap) {
-
-
-            if (
-                wrap.dataset.sliderInitialized ===
-                "true"
-            ) {
-
-                return;
-
-            }
-
-
-            const track =
-                wrap.querySelector(
-                    ".img_con_wrap"
-                );
-
-
-            if (!track) {
-                return;
-            }
-
-
-            const slides =
-                Array.from(
-                    track.querySelectorAll(
-                        ":scope > .sub_pag_img_wrap"
-                    )
-                );
-
-
-            if (slides.length === 0) {
-                return;
-            }
-
-
-            const prev =
-                wrap.querySelector(
-                    ".left_arrow_2"
-                );
-
-
-            const next =
-                wrap.querySelector(
-                    ".right_arrow_2"
-                );
-
-
-            const dots =
-                Array.from(
-                    wrap.querySelectorAll(
-                        ".slide_pagination .slide_dot"
-                    )
-                );
-
-
-            let currentIndex = 0;
-
-
-            wrap.dataset.sliderInitialized =
-                "true";
-
-
-
-            /* POSITION */
-
-            function render() {
-
-                track.style.transform =
-                    `translateX(-${currentIndex * 100}%)`;
-
-
-                dots.forEach(
-                    function (
-                        dot,
-                        index
-                    ) {
-
-                        const active =
-                            index ===
-                            currentIndex;
-
-
-                        dot.classList.toggle(
-                            "is_active",
-                            active
-                        );
-
-
-                        dot.classList.toggle(
-                            "is_active_4",
-                            active
-                        );
-
-                    }
-                );
-
-            }
-
-
-
-            /* NEXT */
-
-            next?.addEventListener(
-                "click",
-                function () {
-
-                    currentIndex++;
-
-
-                    if (
-                        currentIndex >=
-                        slides.length
-                    ) {
-
-                        currentIndex = 0;
-
-                    }
-
-
-                    render();
-
-                }
+        const sliders =
+            document.querySelectorAll(
+                ".slide_wrap"
             );
 
 
-
-            /* PREV */
-
-            prev?.addEventListener(
-                "click",
-                function () {
-
-                    currentIndex--;
+        sliders.forEach(
+            function (wrap) {
 
 
-                    if (
-                        currentIndex < 0
-                    ) {
+                if (
+                    wrap.dataset.sliderInitialized ===
+                    "true"
+                ) {
+
+                    return;
+
+                }
+
+
+                const clippingMask =
+                    wrap.querySelector(
+                        ".sub_pag_clipping_mask"
+                    );
+
+
+                const track =
+                    wrap.querySelector(
+                        ".img_con_wrap"
+                    );
+
+
+                if (
+                    !clippingMask ||
+                    !track
+                ) {
+
+                    return;
+
+                }
+
+
+                const slides =
+                    Array.from(
+                        track.querySelectorAll(
+                            ":scope > .sub_pag_img_wrap"
+                        )
+                    );
+
+
+                if (slides.length === 0) {
+                    return;
+                }
+
+
+                const prevButton =
+                    wrap.querySelector(
+                        ".left_arrow_2"
+                    );
+
+
+                const nextButton =
+                    wrap.querySelector(
+                        ".right_arrow_2"
+                    );
+
+
+                const dots =
+                    Array.from(
+                        wrap.querySelectorAll(
+                            ".slide_pagination .slide_dot"
+                        )
+                    );
+
+
+                let currentIndex = 0;
+
+                let isDragging = false;
+                let hasDragged = false;
+
+                let dragDirection = null;
+
+                let startX = 0;
+                let startY = 0;
+
+                let currentX = 0;
+                let currentY = 0;
+
+                let dragDistance = 0;
+
+                let clickResetTimer = null;
+
+
+                /*
+                    메인 슬라이더와 같은 고정 기준.
+
+                    화면 크기와 관계없이 50px 이상 움직이면
+                    다음 또는 이전 슬라이드로 넘어감.
+                */
+
+                const dragThreshold = 50;
+
+
+                wrap.dataset.sliderInitialized =
+                    "true";
+
+
+                wrap.style.cursor =
+                    "grab";
+
+
+                clippingMask.style.touchAction =
+                    "pan-y";
+
+
+
+                /* -----------------------------------------
+                   SLIDER POSITION
+                ----------------------------------------- */
+
+                function showSlide(
+                    index,
+                    useAnimation = true
+                ) {
+
+                    if (index < 0) {
 
                         currentIndex =
                             slides.length - 1;
 
+                    } else if (
+                        index >= slides.length
+                    ) {
+
+                        currentIndex = 0;
+
+                    } else {
+
+                        currentIndex = index;
+
                     }
 
 
-                    render();
-
-                }
-            );
-
-
-
-            /* DOT */
-
-            dots.forEach(
-                function (
-                    dot,
-                    index
-                ) {
-
-                    dot.addEventListener(
-                        "click",
-                        function () {
-
-                            currentIndex =
-                                index;
+                    track.style.transition =
+                        useAnimation
+                            ? "transform 0.5s ease"
+                            : "none";
 
 
-                            render();
+                    track.style.transform =
+                        `translateX(-${currentIndex * 100}%)`;
+
+
+                    dots.forEach(
+                        function (dot, dotIndex) {
+
+                            const active =
+                                dotIndex === currentIndex;
+
+
+                            dot.classList.toggle(
+                                "is_active",
+                                active
+                            );
+
+
+                            dot.classList.toggle(
+                                "is_active_4",
+                                active
+                            );
+
+
+                            dot.setAttribute(
+                                "aria-current",
+                                active
+                                    ? "true"
+                                    : "false"
+                            );
 
                         }
                     );
 
                 }
-            );
 
 
 
-            render();
+                /* -----------------------------------------
+                   NEXT
+                ----------------------------------------- */
 
-        }
-    );
+                function nextSlide() {
 
-}
+                    showSlide(
+                        currentIndex + 1
+                    );
 
-
-
-/* =========================================================
-   INIT
-========================================================= */
-
-const sitePath =
-    (path) =>
-        window.GreenZonePaths
-            ?.resolve(path) || path;
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    async function () {
-
-
-        initSubSliders();
+                }
 
 
 
-        await Promise.all([
+                /* -----------------------------------------
+                   PREVIOUS
+                ----------------------------------------- */
 
+                function previousSlide() {
+
+                    showSlide(
+                        currentIndex - 1
+                    );
+
+                }
+
+
+
+                /* -----------------------------------------
+                   BUTTON
+                ----------------------------------------- */
+
+                nextButton?.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+
+                        nextSlide();
+
+                    }
+                );
+
+
+                prevButton?.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+
+                        previousSlide();
+
+                    }
+                );
+
+
+
+                /* -----------------------------------------
+                   DOT
+                ----------------------------------------- */
+
+                dots.forEach(
+                    function (dot, index) {
+
+                        dot.addEventListener(
+                            "click",
+                            function (event) {
+
+                                event.preventDefault();
+
+
+                                if (
+                                    index >=
+                                    slides.length
+                                ) {
+
+                                    return;
+
+                                }
+
+
+                                showSlide(index);
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+                /* -----------------------------------------
+                   MOUSE / TOUCH POSITION
+                ----------------------------------------- */
+
+                function getPointerX(event) {
+
+                    if (
+                        event.touches &&
+                        event.touches.length > 0
+                    ) {
+
+                        return event
+                            .touches[0]
+                            .clientX;
+
+                    }
+
+
+                    if (
+                        event.changedTouches &&
+                        event.changedTouches.length > 0
+                    ) {
+
+                        return event
+                            .changedTouches[0]
+                            .clientX;
+
+                    }
+
+
+                    return event.clientX;
+
+                }
+
+
+                function getPointerY(event) {
+
+                    if (
+                        event.touches &&
+                        event.touches.length > 0
+                    ) {
+
+                        return event
+                            .touches[0]
+                            .clientY;
+
+                    }
+
+
+                    if (
+                        event.changedTouches &&
+                        event.changedTouches.length > 0
+                    ) {
+
+                        return event
+                            .changedTouches[0]
+                            .clientY;
+
+                    }
+
+
+                    return event.clientY;
+
+                }
+
+
+
+                /* -----------------------------------------
+                   DRAG START
+                ----------------------------------------- */
+
+                function startDrag(event) {
+
+
+                    /*
+                        화살표와 페이지네이션 클릭은
+                        드래그로 시작하지 않음
+                    */
+
+                    if (
+                        event.target.closest(
+                            ".arrow, .slide_pagination"
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                        마우스 오른쪽 버튼 드래그 방지
+                    */
+
+                    if (
+                        event.type === "mousedown" &&
+                        event.button !== 0
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    isDragging = true;
+                    hasDragged = false;
+
+                    dragDirection = null;
+
+
+                    startX =
+                        getPointerX(event);
+
+
+                    startY =
+                        getPointerY(event);
+
+
+                    currentX = startX;
+                    currentY = startY;
+
+                    dragDistance = 0;
+
+
+                    track.style.transition =
+                        "none";
+
+
+                    wrap.style.cursor =
+                        "grabbing";
+
+                }
+
+
+
+                /* -----------------------------------------
+                   DRAG MOVE
+
+                   메인페이지처럼 실제 드래그한 거리만큼
+                   슬라이드가 마우스와 함께 움직임
+                ----------------------------------------- */
+
+                function moveDrag(event) {
+
+                    if (!isDragging) {
+                        return;
+                    }
+
+
+                    currentX =
+                        getPointerX(event);
+
+
+                    currentY =
+                        getPointerY(event);
+
+
+                    const moveX =
+                        currentX - startX;
+
+
+                    const moveY =
+                        currentY - startY;
+
+
+
+                    /*
+                        처음 움직인 방향으로
+                        드래그와 세로 스크롤 구분
+                    */
+
+                    if (!dragDirection) {
+
+                        const absoluteX =
+                            Math.abs(moveX);
+
+
+                        const absoluteY =
+                            Math.abs(moveY);
+
+
+                        if (
+                            absoluteX < 5 &&
+                            absoluteY < 5
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        dragDirection =
+                            absoluteX > absoluteY
+                                ? "horizontal"
+                                : "vertical";
+
+                    }
+
+
+
+                    /*
+                        세로 이동이면 페이지 스크롤 유지
+                    */
+
+                    if (
+                        dragDirection !==
+                        "horizontal"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    dragDistance =
+                        moveX;
+
+
+                    if (
+                        Math.abs(dragDistance) > 5
+                    ) {
+
+                        hasDragged = true;
+
+                    }
+
+
+                    const sliderWidth =
+                        clippingMask.clientWidth;
+
+
+                    const basePosition =
+                        currentIndex *
+                        sliderWidth;
+
+
+                    track.style.transform =
+                        `translateX(${-(basePosition) + dragDistance}px)`;
+
+
+                    if (event.cancelable) {
+
+                        event.preventDefault();
+
+                    }
+
+                }
+
+
+
+                /* -----------------------------------------
+                   DRAG END
+                ----------------------------------------- */
+
+                function endDrag() {
+
+                    if (!isDragging) {
+                        return;
+                    }
+
+
+                    isDragging = false;
+
+
+                    wrap.style.cursor =
+                        "grab";
+
+
+                    if (
+                        dragDirection === "horizontal" &&
+                        dragDistance <= -dragThreshold
+                    ) {
+
+                        nextSlide();
+
+                    } else if (
+                        dragDirection === "horizontal" &&
+                        dragDistance >= dragThreshold
+                    ) {
+
+                        previousSlide();
+
+                    } else {
+
+                        showSlide(currentIndex);
+
+                    }
+
+
+                    dragDistance = 0;
+                    dragDirection = null;
+
+
+                    /*
+                        드래그 직후 발생하는 링크 클릭을 막고
+                        잠시 뒤 상태를 초기화
+                    */
+
+                    if (hasDragged) {
+
+                        window.clearTimeout(
+                            clickResetTimer
+                        );
+
+
+                        clickResetTimer =
+                            window.setTimeout(
+                                function () {
+
+                                    hasDragged = false;
+
+                                },
+                                300
+                            );
+
+                    }
+
+                }
+
+
+
+                /* -----------------------------------------
+                   MOUSE DRAG
+
+                   시작은 slide_wrap 전체
+                   이동과 종료는 window 전체
+                ----------------------------------------- */
+
+                wrap.addEventListener(
+                    "mousedown",
+                    startDrag
+                );
+
+
+                window.addEventListener(
+                    "mousemove",
+                    moveDrag
+                );
+
+
+                window.addEventListener(
+                    "mouseup",
+                    endDrag
+                );
+
+
+
+                /* -----------------------------------------
+                   MOBILE TOUCH
+
+                   slide_wrap 전체에서 스와이프 가능
+                ----------------------------------------- */
+
+                wrap.addEventListener(
+                    "touchstart",
+                    startDrag,
+                    {
+                        passive: true
+                    }
+                );
+
+
+                wrap.addEventListener(
+                    "touchmove",
+                    moveDrag,
+                    {
+                        passive: false
+                    }
+                );
+
+
+                wrap.addEventListener(
+                    "touchend",
+                    endDrag,
+                    {
+                        passive: true
+                    }
+                );
+
+
+                wrap.addEventListener(
+                    "touchcancel",
+                    endDrag,
+                    {
+                        passive: true
+                    }
+                );
+
+
+
+                /* -----------------------------------------
+                   IMAGE DEFAULT DRAG PREVENTION
+                ----------------------------------------- */
+
+                wrap.addEventListener(
+                    "dragstart",
+                    function (event) {
+
+                        event.preventDefault();
+
+                    }
+                );
+
+
+
+                /* -----------------------------------------
+                   CLICK AFTER DRAG PREVENTION
+                ----------------------------------------- */
+
+                wrap.addEventListener(
+                    "click",
+                    function (event) {
+
+                        if (!hasDragged) {
+                            return;
+                        }
+
+
+                        event.preventDefault();
+
+                        event.stopPropagation();
+
+
+                        hasDragged = false;
+
+
+                        window.clearTimeout(
+                            clickResetTimer
+                        );
+
+                    },
+                    true
+                );
+
+
+
+                /* -----------------------------------------
+                   RESIZE
+                ----------------------------------------- */
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+
+                        showSlide(
+                            currentIndex,
+                            false
+                        );
+
+                    }
+                );
+
+
+
+                /* -----------------------------------------
+                   FIRST RENDER
+                ----------------------------------------- */
+
+                showSlide(
+                    0,
+                    false
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       SITE PATH
+    ===================================================== */
+
+    function sitePath(path) {
+
+        return (
+            window.GreenZonePaths
+                ?.resolve(path) ||
+            path
+        );
+
+    }
+
+
+
+    /* =====================================================
+       COMPONENT INITIALIZATION
+    ===================================================== */
+
+    function loadSubComponents() {
+
+        const componentJobs = [
 
             loadComponent(
                 "header",
-                sitePath("components/header_v2.html")
+                sitePath(
+                    "components/header_v2.html"
+                )
             ),
-
 
             loadComponent(
                 "menu",
-                sitePath("components/menu.html")
+                sitePath(
+                    "components/menu.html"
+                )
             ),
-
 
             loadComponent(
                 "Factry_sub_menu",
-                sitePath("components/sub_pag/Factry_sub_menu.html")
+                sitePath(
+                    "components/sub_pag/Factry_sub_menu.html"
+                )
             ),
-
 
             loadComponent(
                 "Request_Cleaning",
-                sitePath("components/Request_Cleaning.html")
+                sitePath(
+                    "components/Request_Cleaning.html"
+                )
             ),
-
 
             loadComponent(
                 "footer",
-                sitePath("components/footer.html")
+                sitePath(
+                    "components/footer.html"
+                )
             )
 
+        ];
 
-        ]);
 
+        Promise
+            .allSettled(componentJobs)
+            .then(
+                function () {
+
+                    moveRequestCleaning();
+
+                }
+            );
+
+    }
+
+
+
+    /* =====================================================
+       INIT
+    ===================================================== */
+
+    function initializeSubPage() {
 
         moveRequestCleaning();
 
-    }
-);
+        initSubSliders();
 
+        loadSubComponents();
+
+    }
+
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initializeSubPage,
+            {
+                once: true
+            }
+        );
+
+    } else {
+
+        initializeSubPage();
+
+    }
+
+})();
