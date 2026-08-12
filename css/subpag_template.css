@@ -1193,7 +1193,7 @@
     order: 1;
     max-width: none;
     gap: clamp(48px, 3vw, 100px);
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 50px;
 }
 
@@ -1507,7 +1507,77 @@
 /* =========================================================
    14. TABLET
 ========================================================= */
+/* =========================================================
+   MIDDLE PC
+   1025px ~ 1500px
+========================================================= */
 
+@media (min-width: 1025px) and (max-width: 1500px) {
+
+    /* =====================================================
+       GALLERY
+
+       이미지 3장은 유지하고
+       좌우 여백을 줄여 사진 크기를 키움
+    ===================================================== */
+
+    .service_gallery {
+
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+
+    .service_gallery .slide_wrap {
+
+        width: 100%;
+        max-width: none;
+    }
+
+
+    .service_gallery .sub_pag_clipping_mask {
+
+        width: 100%;
+
+        aspect-ratio: 39 / 8;
+    }
+
+
+    .service_gallery .sub_pag_img_wrap {
+
+        gap: 20px;
+    }
+
+
+    .service_gallery .sub_slide_img {
+
+        display: block;
+
+        width: calc((100% - 40px) / 3);
+
+        flex: 0 0 calc((100% - 40px) / 3);
+    }
+
+        .sub_pag_slide_wrap > .arrow{
+
+        width: 30px;
+        height: 30px;
+        
+    }
+
+    .service_effect .box_wrap {
+
+        gap: 7px;
+
+    }
+
+    .service_effect .box_g {
+
+            padding: 6px 12px;
+
+    }
+
+}
 
 
 @media (max-width: 1024px) {
@@ -1544,6 +1614,7 @@
         padding-top: 28px;
         padding-bottom: 48px;
     }
+
 
 
     .section_2 > .img_wrap,
