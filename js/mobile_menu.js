@@ -20,7 +20,6 @@
             path.startsWith("#") ||
             /^(?:https?:|mailto:|tel:|javascript:|data:)/i.test(path)
         ) {
-
             return path;
         }
 
@@ -48,7 +47,6 @@
                             value &&
                             value.startsWith("/")
                         ) {
-
                             element.setAttribute(
                                 attribute,
                                 resolve(value)
@@ -65,6 +63,7 @@
     };
 
     normalize(document);
+
 })();
 
 
@@ -179,7 +178,7 @@ const mobileMenuData = [
                     },
 
                     {
-                        title: "패브릭",
+                        title: "페트릭",
                         href: "/sub_page/Cleaning/Fabric_cleaning.html"
                     }
 
@@ -286,13 +285,16 @@ const mobileMenuData = [
                         href: "#"
                     }
                 ]
-            },
+            }
 
 
-            // {
-            //     title: "미화원 파견",
-            //     href: "#"
-            // }
+            // 미화원 파견은 추후 활성화
+            /*
+            {
+                title: "미화원 파견",
+                href: "#"
+            }
+            */
 
         ]
     },
@@ -408,29 +410,21 @@ function renderMobileDepth1() {
         return;
     }
 
-
     depth1.innerHTML = "";
-
 
     mobileMenuData.forEach((menu, index) => {
 
         const li =
             document.createElement("li");
 
-
         const button =
             document.createElement("button");
 
-
         button.type = "button";
-
         button.textContent = menu.title;
-
         button.dataset.mobileDepth1 = index;
 
-
         li.appendChild(button);
-
         depth1.appendChild(li);
 
     });
@@ -450,31 +444,24 @@ function renderMobileDepth2(depth1Index) {
     const depth3 =
         document.querySelector("#mobile_depth_3");
 
-
     if (!depth2 || !depth3) {
         return;
     }
 
-
     depth2.innerHTML = "";
-
     depth3.innerHTML = "";
-
 
     const menu =
         mobileMenuData[depth1Index];
-
 
     if (!menu?.children) {
         return;
     }
 
-
     menu.children.forEach((item, index) => {
 
         const li =
             document.createElement("li");
-
 
         /*
             하위 3뎁스가 있는 메뉴
@@ -484,20 +471,14 @@ function renderMobileDepth2(depth1Index) {
             const button =
                 document.createElement("button");
 
-
             button.type = "button";
-
             button.textContent = item.title;
-
             button.dataset.mobileDepth2 = index;
-
             button.dataset.parentDepth1 = depth1Index;
-
 
             li.appendChild(button);
 
         }
-
 
         /*
             바로 이동하는 메뉴
@@ -507,7 +488,6 @@ function renderMobileDepth2(depth1Index) {
             const link =
                 document.createElement("a");
 
-
             link.textContent = item.title;
 
             link.href =
@@ -515,11 +495,9 @@ function renderMobileDepth2(depth1Index) {
                     item.href || "#"
                 );
 
-
             li.appendChild(link);
 
         }
-
 
         depth2.appendChild(li);
 
@@ -537,33 +515,26 @@ function renderMobileDepth3(depth1Index, depth2Index) {
     const depth3 =
         document.querySelector("#mobile_depth_3");
 
-
     if (!depth3) {
         return;
     }
 
-
     depth3.innerHTML = "";
-
 
     const menu =
         mobileMenuData[depth1Index]?.children?.[depth2Index];
 
-
     if (!menu?.children) {
         return;
     }
-
 
     menu.children.forEach((item) => {
 
         const li =
             document.createElement("li");
 
-
         const link =
             document.createElement("a");
-
 
         link.textContent = item.title;
 
@@ -572,9 +543,7 @@ function renderMobileDepth3(depth1Index, depth2Index) {
                 item.href || "#"
             );
 
-
         li.appendChild(link);
-
         depth3.appendChild(li);
 
     });
@@ -591,11 +560,9 @@ function setMobileMenuActive(containerSelector, target) {
     const container =
         document.querySelector(containerSelector);
 
-
     if (!container) {
         return;
     }
-
 
     container
         .querySelectorAll(".is_active")
@@ -604,7 +571,6 @@ function setMobileMenuActive(containerSelector, target) {
             item.classList.remove("is_active");
 
         });
-
 
     target.classList.add("is_active");
 
@@ -627,6 +593,7 @@ function closeMobileMenu() {
     document.body.classList.remove(
         "menu_open"
     );
+
 }
 
 window.closeMobileMenu =
@@ -651,60 +618,52 @@ document.addEventListener("click", (event) => {
         return;
     }
 
+
     /* ---------------------------------
        햄버거
     --------------------------------- */
 
     const menuButton =
-        event.target.closest(".mobile_menu_open_btn");
-
+        event.target.closest(
+            ".mobile_menu_open_btn"
+        );
 
     if (menuButton) {
 
         const mobileMenu =
             document.querySelector("#mobile_menu");
 
-
         if (!mobileMenu) {
             return;
         }
 
-
         const isOpen =
             mobileMenu.classList.toggle("is_open");
-
 
         document.body.classList.toggle(
             "menu_open",
             isOpen
         );
 
-
         menuButton.setAttribute(
             "aria-expanded",
             String(isOpen)
         );
 
-
         /*
             처음 열었을 때만
             1뎁스 생성
         */
-
         if (
             isOpen &&
             !document.querySelector(
                 "#mobile_depth_1 li"
             )
         ) {
-
             renderMobileDepth1();
-
         }
 
-
         return;
-
     }
 
 
@@ -717,7 +676,6 @@ document.addEventListener("click", (event) => {
             "[data-mobile-depth1]"
         );
 
-
     if (depth1Button) {
 
         const depth1Index =
@@ -725,20 +683,16 @@ document.addEventListener("click", (event) => {
                 depth1Button.dataset.mobileDepth1
             );
 
-
         setMobileMenuActive(
             "#mobile_depth_1",
             depth1Button
         );
 
-
         renderMobileDepth2(
             depth1Index
         );
 
-
         return;
-
     }
 
 
@@ -751,7 +705,6 @@ document.addEventListener("click", (event) => {
             "[data-mobile-depth2]"
         );
 
-
     if (depth2Button) {
 
         const depth1Index =
@@ -759,18 +712,15 @@ document.addEventListener("click", (event) => {
                 depth2Button.dataset.parentDepth1
             );
 
-
         const depth2Index =
             Number(
                 depth2Button.dataset.mobileDepth2
             );
 
-
         setMobileMenuActive(
             "#mobile_depth_2",
             depth2Button
         );
-
 
         renderMobileDepth3(
             depth1Index,
@@ -781,16 +731,14 @@ document.addEventListener("click", (event) => {
 
 });
 
+
 document.addEventListener(
     "keydown",
     (event) => {
 
         if (event.key === "Escape") {
-
             closeMobileMenu();
         }
+
     }
 );
-
-
-
