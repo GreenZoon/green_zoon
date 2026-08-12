@@ -1,323 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린죤 - 카펫 청소</title>
 
     <link rel="stylesheet" href="../../css/reseat.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="../../css/coom.css">
-<link rel="stylesheet" href="../../css/header_stayl.css">
+    <link rel="stylesheet" href="../../css/header_stayl.css">
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/Request_Cleaning.css">
-    
     <link rel="stylesheet" href="../../css/subpag_template.css">
-    
+    <link rel="stylesheet" href="../../css/cleaning_template.css">
 </head>
-<body>
 
+<body>
     <div id="header"></div>
     <div id="menu"></div>
 
+    <!-- 상단 이미지 -->
     <section class="man_sled">
-
-        <img src="../../img/slide/Carpet_cleaning_solide.jpg" alt="카펫 청소 직원">
-    
+        <img src="../../img/slide/Carpet_cleaning_solide.jpg" alt="카펫 청소 작업 현장">
     </section>
 
- <nav class="sub_pag_gnb">
-      
+    <!-- 카펫·페트릭 서브메뉴 -->
+    <nav class="sub_pag_gnb" aria-label="카펫 청소 하위 메뉴">
         <ul class="sub_pag_menu">
-
-            <li class="sub_pag_depth">
-
-                <a class="sub_pag_tit" href="/sub_page/Cleaning/Carpet_cleaning.html">
-
-                    카펫 청소
-
-                </a>
-
+            <li class="sub_pag_depth is_active">
+                <a class="sub_pag_tit" href="./Carpet_cleaning.html" aria-current="page">카펫 청소</a>
             </li>
-
             <li class="sub_pag_depth">
-
-                <a class="sub_pag_tit" href="/sub_page/Cleaning/Fabric_cleaning.html">
-
-
-                   페브릭
-
-                </a>
-
-            </li>  
-
+                <a class="sub_pag_tit" href="./Fabric_cleaning.html">페트릭</a>
+            </li>
         </ul>
-
     </nav>
 
+    <!-- 현재 페이지 경로 -->
     <nav class="breadcrumb" aria-label="현재 페이지 경로">
-
-        <span class="home"></span>
-
+        <span class="home" aria-hidden="true"></span>
         <a href="../../index.html">홈</a>
-
         <span class="arrow left_arrow_2" aria-hidden="true"></span>
-
-        <a href="../../index.html" >
-
-            <p>위생관리 용역</p>
-
-        </a>
-
+        <a href="../../index.html">위생관리 용역</a>
         <span class="arrow left_arrow_2" aria-hidden="true"></span>
-
-        <p aria-current="page">카펫청소</p>
-
+        <p aria-current="page">카펫 청소</p>
     </nav>
 
-    <section class="section_2">
+    <main class="service_detail service_detail--cleaning">
 
-        <div class="tit_wrap tit_wrap_2">
-
-            <div class="tit_in_wrap">
-
-                <h2>카펫 청소</h2>
-
-                <h3>전문가에게 맡겨보세요</h3>
-                
+        <!-- 소개: PC 글→이미지 / 모바일 이미지→글 -->
+        <section class="section_2 service_intro service_intro--media-right">
+            <div class="tit_wrap tit_wrap_2">
+                <div class="tit_in_wrap">
+                    <h2 class="page_title">카펫 청소</h2>
+                    <h3>전문가에게 맡겨보세요</h3>
+                </div>
+                <p>
+                    관리하기 힘든 카펫 내부의 미세먼지, 진드기, 찌든 때와 각종 얼룩을
+                    전문 장비와 약품을 사용하여 제거합니다.
+                </p>
             </div>
 
-            <p>
-                카펫 내부는 전문장비없이는 완벽하게 관리하기 힘든니다. <br>
-                미세먼지, 진드기, 찌든 때, 각종 얼룩 제거를 위해 전문 장비와 약품을 사용합니다. <br>
-                              
+            <div class="img_wrap main_img">
+                <img src="../../img/sub_page/Sub_Carpet_cleaning_main.jpg" alt="전문 장비를 이용한 카펫 청소">
+            </div>
+        </section>
+
+        <!-- 청소 대상 -->
+        <section class="section_3 service_target service_target--cleaning">
+            <h2>카펫 청소 대상</h2>
+
+            <div class="con_wrap">
+                <div class="con">
+                    <span class="icon icon_g hotel" aria-hidden="true"></span>
+                    <p>호텔</p>
+                </div>
+                <div class="con icon_small">
+                    <span class="icon icon_g courthouse" aria-hidden="true"></span>
+                    <p>관공서</p>
+                </div>
+                <div class="con">
+                    <span class="icon icon_g opera" aria-hidden="true"></span>
+                    <p>행사장</p>
+                </div>
+                <div class="con">
+                    <span class="icon icon_g office" aria-hidden="true"></span>
+                    <p>사무실</p>
+                </div>
+                <div class="con">
+                    <span class="icon icon_g company" aria-hidden="true"></span>
+                    <p>회사</p>
+                </div>
+                <div class="con">
+                    <span class="icon icon_g carpet" aria-hidden="true"></span>
+                    <p>카페트</p>
+                </div>
+            </div>
+
+            <p class="service_target_description">
+                개인을 제외한 호텔, 관공서, 행사장, 사무실, 회사 등
+                상업시설 및 공공기관에 설치된 카펫을 청소하고 있습니다.
             </p>
-
-        </div>
-
-        <div class="img_wrap main_img">
-
-            <img src="../../img/sub_page/Sub_Carpet_cleaning_main.jpg" alt="카펫 청소">
-        
-        </div>
-
-
-
-    </section>
-
-    <section class="section_3 ">
-
-        <h2> 카페트 청소 대상</h2>
-
-        <div class="con_wrap">
-
-            <div class="con">
-
-                <span class=" icon icon_g hotel"></span>
-                <p>호텔</p>
-
-            </div>
-
-            <div class="con icon_small">
-
-                <span class=" icon icon_g courthouse"></span>
-                <p>관공서</p>
-
-            </div>
-
-            <div class="con ">
-
-                <span class=" icon icon_g opera"></span>
-                <p>행사장</p>       
-
-            </div>
-
-            <div class="con">
-
-                <span class=" icon icon_g office"></span>
-                <p>사무실</p>
-
-            </div>
-
-            <div class=" con ">
-
-                <span class=" icon icon_g company"></span>
-
-                <p>회사</p>
-
-            </div>
-
-            <div class=" con ">
-
-                <span class=" icon icon_g carpet"></span>
-                <p>카페트</p>
-
-            </div>
-
-        </div>
-
-        <p>개인을 제외한 호텔, 관공서, 행사장,  사무실, 회사 등 상업시설 및 공공기관에 설치된 카펫을 청소하고 있습니다</p>
-
-    </section>
-
-    <section class="img_section img_section_g">
-
-        <a href="" class="tit_wrap">
-
-            <h2>카펫  청소 갤러리</h2>
-            <p class="flx_li_g">청소 과정을 확인 할 수 있습니다<span class="arrow right_arrow_2"></span></p>
-
-        </a>
-
-        <div class= "slide_wrap" >
-
-            <div class="sub_pag_slide_wrap">
-
-                <button type="button"  class="arrow left_arrow_2 wit_arrow" aria-label="이전 슬라이드"></button>
-
-                <div class=" sub_pag_clipping_mask">
-                    
-                    <div class="img_con_wrap">
-
-                        <a href=""  class="sub_pag_img_wrap">
-                        
-                            <div class="sub_slide_img">
-
-                                <img src="../../img/mainimgs/cleaning_carpet_Before.jpg" alt="극장 바닥청소 전">
-                                <p class="but_bg cleane_bg">청소 전</p>
-
-                            </div>
-
-                            <div class="sub_slide_img">
-
-                                <img src="../../img/mainimgs/cleaning_carpet_ing.jpg" alt="극장 바닥청소 중">
-                                <p class="but_bg cleane_bg">청소 중</p>
-
-                            </div>
-
-                                <div class="sub_slide_img">
-
-                                <img src="../../img/mainimgs/cleaning_carpet_After.jpg" alt="극장 바닥청소 후">
-                                <p class="but_bg cleane_bg">청소 후</p>
-
-                            </div>
-
-                        </a>
-
-                        <a href=""  class="sub_pag_img_wrap">
-                        
-                            <div class="sub_slide_img">
-
-                                <img src="../../img/sub_page/cleaning_carpet_Before_2.jpg" alt="바닥카펫 청소 전">
-                                <p class="but_bg cleane_bg">청소 전</p>
-
-                            </div>
-
-                            <div class="sub_slide_img">
-
-                                <img src="../../img/sub_page/cleaning_carpet_ing_2.jpg" alt="바닥카펫 청소 중">
-                                <p class="but_bg cleane_bg">청소 중</p>
-
-                            </div>
-
-                                <div class="sub_slide_img">
-
-                                <img src="../../img/sub_page/cleaning_carpet_After_2.jpg" alt="바닥카펫 청소 후">
-                                <p class="but_bg cleane_bg">청소 후</p>
-
-                            </div>
-
-                        </a>
-
-                        <a href=""  class="sub_pag_img_wrap">
-                        
-                            <div class="sub_slide_img">
-
-                                <img src="../../img/sub_page/cleaning_carpet_Before_3.jpg" alt="강당 바닥카펫 전">
-                                <p class="but_bg cleane_bg">청소 전</p>
-
-                            </div>
-
-                            <div class="sub_slide_img">
-
-                                <img src="../../img/sub_page/cleaning_carpet_ing_3.jpg" alt="강당 바닥카펫 전">
-                                <p class="but_bg cleane_bg">청소 중</p>
-
-                            </div>
-
-                                <div class="sub_slide_img">
-
-                                <img src="../../img/sub_page/cleaning_carpet_After_3.jpg" alt="강당 바닥카펫 전">
-                                <p class="but_bg cleane_bg">청소 후</p>
-
-                            </div>
-
-                        </a>
-
-                    </div>
-                
-                </div>
-
-                <button type="button" class="arrow right_arrow_2 wit_arrow"  aria-label="다음 슬라이드"></button>
-
-            </div>
-          
-            
-            <div class="slide_pagination " aria-label="슬라이드 선택">
-        
-                <button type="button" class="slide_dot is_active"
-                    aria-label="첫 번째 버튼 보기"></button>
-
-                <button type="button" class="slide_dot"
-                    aria-label="두 번째 버튼 보기"></button>
-
-                <button type="button" class="slide_dot"
-                    aria-label="세 번째 버튼 보기"></button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="section_g_2 ">
-        
-        <div class="video_card video_card--disabled">
-
-            <a href="#" class="video_card_a " aria-disabled="true">
-              
-                <div class="video_thumbnail">
-                          
-                    <!-- <div class="but_bg play_bg"><span class="play_but "></span></div> -->
-                    <p>영상 준비 중입니다.</p>
-                   
-                </div>
-                             
+        </section>
+
+        <!-- 모바일에서 견적 버튼이 들어갈 위치 -->
+        <div class="request_cleaning_pin" aria-hidden="true"></div>
+
+        <!-- 갤러리 -->
+        <section class="img_section img_section_g service_gallery service_gallery--cleaning">
+            <a href="#" class="tit_wrap">
+                <h2>카펫 청소 갤러리</h2>
+                <p class="flx_li_g service_gallery_description section_title">
+                    청소 과정을 확인할 수 있습니다
+                    <span class="arrow right_arrow_2" aria-hidden="true"></span>
+                </p>
             </a>
-            
-        </div>
 
-        <a href="" class="tit_wrap">
+            <div class="slide_wrap">
+                <div class="sub_pag_slide_wrap">
+                    <button type="button" class="arrow left_arrow_2 wit_arrow" aria-label="이전 슬라이드"></button>
 
-            <h2>청소 과정이 담긴 동영상</h2>
-           
-          <div class="flx_li_g content_start"><p>사진과 영상 갤러리에서 더 많은 청소 과정을 확인 할 수 있습니다</p><span class="icon arrow_up_right"></span></div> 
+                    <div class="sub_pag_clipping_mask">
+                        <div class="img_con_wrap">
 
-        </a>
-       
+                            <a href="#" class="sub_pag_img_wrap">
+                                <div class="sub_slide_img">
+                                    <img src="../../img/mainimgs/cleaning_carpet_Before.jpg" alt="카펫 청소 전">
+                                    <p class="but_bg cleane_bg">청소 전</p>
+                                </div>
+                                <div class="sub_slide_img mobile_featured">
+                                    <img src="../../img/mainimgs/cleaning_carpet_ing.jpg" alt="카펫 청소 중">
+                                    <p class="but_bg cleane_bg">청소 중</p>
+                                </div>
+                                <div class="sub_slide_img">
+                                    <img src="../../img/mainimgs/cleaning_carpet_After.jpg" alt="카펫 청소 후">
+                                    <p class="but_bg cleane_bg">청소 후</p>
+                                </div>
+                            </a>
 
-    </section>
+                            <a href="#" class="sub_pag_img_wrap">
+                                <div class="sub_slide_img">
+                                    <img src="../../img/sub_page/cleaning_carpet_Before_2.jpg" alt="바닥 카펫 청소 전">
+                                    <p class="but_bg cleane_bg">청소 전</p>
+                                </div>
+                                <div class="sub_slide_img mobile_featured">
+                                    <img src="../../img/sub_page/cleaning_carpet_ing_2.jpg" alt="바닥 카펫 청소 중">
+                                    <p class="but_bg cleane_bg">청소 중</p>
+                                </div>
+                                <div class="sub_slide_img">
+                                    <img src="../../img/sub_page/cleaning_carpet_After_2.jpg" alt="바닥 카펫 청소 후">
+                                    <p class="but_bg cleane_bg">청소 후</p>
+                                </div>
+                            </a>
 
-    <div id="Request_Cleaning"></div>
+                            <a href="#" class="sub_pag_img_wrap">
+                                <div class="sub_slide_img">
+                                    <img src="../../img/sub_page/cleaning_carpet_Before_3.jpg" alt="강당 카펫 청소 전">
+                                    <p class="but_bg cleane_bg">청소 전</p>
+                                </div>
+                                <div class="sub_slide_img mobile_featured">
+                                    <img src="../../img/sub_page/cleaning_carpet_ing_3.jpg" alt="강당 카펫 청소 중">
+                                    <p class="but_bg cleane_bg">청소 중</p>
+                                </div>
+                                <div class="sub_slide_img">
+                                    <img src="../../img/sub_page/cleaning_carpet_After_3.jpg" alt="강당 카펫 청소 후">
+                                    <p class="but_bg cleane_bg">청소 후</p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <button type="button" class="arrow right_arrow_2 wit_arrow" aria-label="다음 슬라이드"></button>
+                </div>
+
+                <div class="service_gallery_meta">
+                    <p class="service_gallery_name">호텔 바닥 카펫 청소</p>
+                    <span class="service_gallery_status">청소 중</span>
+                </div>
+
+                <div class="slide_pagination" aria-label="슬라이드 선택">
+                    <button type="button" class="slide_dot is_active" aria-label="첫 번째 이미지 보기"></button>
+                    <button type="button" class="slide_dot" aria-label="두 번째 이미지 보기"></button>
+                    <button type="button" class="slide_dot" aria-label="세 번째 이미지 보기"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 동영상: 대표 이미지가 준비되면 주석의 img를 활성화 -->
+        <section class="section_g_2 service_video service_video--cleaning">
+            <div class="video_card video_card--asset-pending">
+                <a href="#" class="video_card_a" aria-disabled="true">
+                    <div class="video_thumbnail service_media_slot">
+                        <!-- 이미지 준비 후 아래 주석을 해제하고 실제 파일명으로 교체하세요.
+                        <img src="../../img/sub_page/Carpet_cleaning_video.jpg" alt="공연장 카펫 청소 영상 대표 이미지">
+                        -->
+                        <p class="service_media_slot_notice">영상 대표 이미지 교체 영역</p>
+                        <span class="service_video_play" aria-hidden="true">
+                            <span class="icon play_but"></span>
+                        </span>
+                    </div>
+                    <p class="service_video_mobile_caption">공연장 바닥 카펫 청소 작업</p>
+                </a>
+            </div>
+
+            <a href="#" class="tit_wrap service_video_title">
+                <h2>카펫 청소 과정이 담긴 동영상</h2>
+                <div class="flx_li_g content_start">
+                    <p>사진과 영상 갤러리에서 더 많은 청소 과정을 확인할 수 있습니다.</p>
+                    <span class="icon arrow_up_right" aria-hidden="true"></span>
+                </div>
+            </a>
+        </section>
+
+        <!-- PC에서는 영상 뒤, 모바일·아이패드에서는 대상 뒤로 JS가 이동 -->
+        <div id="Request_Cleaning" class="service_request"></div>
+
+    </main>
+
     <div id="footer"></div>
 
     <script src="../../js/jquery-3.7.1.min.js"></script>
     <script src="../../js/mobile_menu.js"></script>
     <script src="../../js/sub_common.js"></script>
- 
 </body>
+
 </html>
