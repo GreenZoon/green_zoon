@@ -4,7 +4,7 @@
 
 
 /* =========================================================
-   COMPONENT LOAD
+   1. COMPONENT LOAD
 ========================================================= */
 
 async function loadComponent(id, file) {
@@ -14,9 +14,7 @@ async function loadComponent(id, file) {
 
 
     if (!target) {
-
         return null;
-
     }
 
 
@@ -56,9 +54,7 @@ async function loadComponent(id, file) {
         if (id === "header") {
 
             const logo =
-                target.querySelector(
-                    ".logo"
-                );
+                target.querySelector(".logo");
 
 
             if (logo) {
@@ -89,7 +85,7 @@ async function loadComponent(id, file) {
     } catch (error) {
 
         console.error(
-            `[sub_common] ${id}`,
+            `[sub_common] ${id} 로딩 오류`,
             error
         );
 
@@ -103,7 +99,7 @@ async function loadComponent(id, file) {
 
 
 /* =========================================================
-   HEADER SEARCH
+   2. HEADER SEARCH
 ========================================================= */
 
 function closeHeaderSearch() {
@@ -134,148 +130,8 @@ function closeHeaderSearch() {
 
 
 
-document.addEventListener(
-    "click",
-    function (event) {
-
-
-        const openButton =
-            event.target.closest(
-                ".search_open_btn"
-            );
-
-
-        const closeButton =
-            event.target.closest(
-                ".search_close_btn"
-            );
-
-
-        const keywordButton =
-            event.target.closest(
-                ".keyword_button"
-            );
-
-
-
-        /* =================================================
-           검색 열기
-        ================================================= */
-
-        if (openButton) {
-
-
-            const searchForm =
-                document.querySelector(
-                    "#header_search"
-                );
-
-
-            if (!searchForm) {
-
-                return;
-
-            }
-
-
-            const isOpen =
-                searchForm.classList.toggle(
-                    "is_open"
-                );
-
-
-            openButton.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-
-            if (isOpen) {
-
-                searchForm
-                    .querySelector(
-                        ".search_input"
-                    )
-                    ?.focus();
-
-            }
-
-
-            return;
-
-        }
-
-
-
-        /* =================================================
-           검색 닫기
-        ================================================= */
-
-        if (closeButton) {
-
-            closeHeaderSearch();
-
-            return;
-
-        }
-
-
-
-        /* =================================================
-           추천 검색어
-        ================================================= */
-
-        if (keywordButton) {
-
-
-            const searchInput =
-                document.querySelector(
-                    "#search_input"
-                );
-
-
-            if (!searchInput) {
-
-                return;
-
-            }
-
-
-            searchInput.value =
-                keywordButton
-                    .textContent
-                    .trim();
-
-
-            searchInput.focus();
-
-        }
-
-    }
-);
-
-
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-
-        if (event.key === "Escape") {
-
-            closeHeaderSearch();
-
-            closeMobileMenu();
-
-        }
-
-    }
-);
-
-
-
 /* =========================================================
-   MOBILE MENU
+   3. MOBILE MENU
 ========================================================= */
 
 function closeMobileMenu() {
@@ -311,19 +167,136 @@ function closeMobileMenu() {
 
 
 
+/* =========================================================
+   4. GLOBAL CLICK
+========================================================= */
+
 document.addEventListener(
     "click",
     function (event) {
 
 
-        const menuButton =
+        /* =================================================
+           SEARCH OPEN
+        ================================================= */
+
+        const searchOpenButton =
+            event.target.closest(
+                ".search_open_btn"
+            );
+
+
+        if (searchOpenButton) {
+
+            const searchForm =
+                document.querySelector(
+                    "#header_search"
+                );
+
+
+            if (!searchForm) {
+                return;
+            }
+
+
+            const isOpen =
+                searchForm.classList.toggle(
+                    "is_open"
+                );
+
+
+            searchOpenButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+
+            if (isOpen) {
+
+                searchForm
+                    .querySelector(
+                        ".search_input"
+                    )
+                    ?.focus();
+
+            }
+
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           SEARCH CLOSE
+        ================================================= */
+
+        const searchCloseButton =
+            event.target.closest(
+                ".search_close_btn"
+            );
+
+
+        if (searchCloseButton) {
+
+            closeHeaderSearch();
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           SEARCH KEYWORD
+        ================================================= */
+
+        const keywordButton =
+            event.target.closest(
+                ".keyword_button"
+            );
+
+
+        if (keywordButton) {
+
+            const searchInput =
+                document.querySelector(
+                    "#search_input"
+                );
+
+
+            if (!searchInput) {
+                return;
+            }
+
+
+            searchInput.value =
+                keywordButton
+                    .textContent
+                    .trim();
+
+
+            searchInput.focus();
+
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           MOBILE MENU OPEN
+        ================================================= */
+
+        const mobileMenuButton =
             event.target.closest(
                 ".mobile_menu_open_btn"
             );
 
 
-        if (menuButton) {
-
+        if (mobileMenuButton) {
 
             const mobileMenu =
                 document.querySelector(
@@ -332,9 +305,7 @@ document.addEventListener(
 
 
             if (!mobileMenu) {
-
                 return;
-
             }
 
 
@@ -344,7 +315,7 @@ document.addEventListener(
                 );
 
 
-            menuButton.setAttribute(
+            mobileMenuButton.setAttribute(
                 "aria-expanded",
                 String(isOpen)
             );
@@ -362,13 +333,17 @@ document.addEventListener(
 
 
 
-        const closeButton =
+        /* =================================================
+           MOBILE MENU CLOSE
+        ================================================= */
+
+        const mobileMenuCloseButton =
             event.target.closest(
                 ".mobile_menu_close_btn"
             );
 
 
-        if (closeButton) {
+        if (mobileMenuCloseButton) {
 
             closeMobileMenu();
 
@@ -380,27 +355,49 @@ document.addEventListener(
 
 
 /* =========================================================
-   REQUEST CLEANING POSITION
+   ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key !== "Escape") {
+            return;
+        }
+
+
+        closeHeaderSearch();
+
+        closeMobileMenu();
+
+    }
+);
+
+
+
+/* =========================================================
+   5. REQUEST CLEANING POSITION
 ========================================================= */
 
 
 /*
     PC / TABLET
 
-    공장 청소 대상
+    section_g
     ↓
-    영상
+    section_g_2
     ↓
-    견적문의
+    Request_Cleaning
 
 
     MOBILE
 
-    공장 청소 대상
+    section_g
     ↓
-    견적문의
+    Request_Cleaning
     ↓
-    영상
+    section_g_2
 */
 
 
@@ -412,7 +409,6 @@ const requestMobileMedia =
 
 
 function moveRequestCleaning() {
-
 
     const requestCleaning =
         document.getElementById(
@@ -450,10 +446,8 @@ function moveRequestCleaning() {
 
     if (requestMobileMedia.matches) {
 
-
         if (
-            targetSection
-                .nextElementSibling ===
+            targetSection.nextElementSibling ===
             requestCleaning
         ) {
 
@@ -479,8 +473,7 @@ function moveRequestCleaning() {
     ===================================================== */
 
     if (
-        videoSection
-            .nextElementSibling ===
+        videoSection.nextElementSibling ===
         requestCleaning
     ) {
 
@@ -499,7 +492,7 @@ function moveRequestCleaning() {
 
 
 /* =========================================================
-   BREAKPOINT CHANGE
+   REQUEST BREAKPOINT
 ========================================================= */
 
 function handleRequestBreakpoint() {
@@ -511,8 +504,7 @@ function handleRequestBreakpoint() {
 
 
 if (
-    typeof requestMobileMedia
-        .addEventListener ===
+    typeof requestMobileMedia.addEventListener ===
     "function"
 ) {
 
@@ -523,7 +515,10 @@ if (
 
 }
 
-else {
+else if (
+    typeof requestMobileMedia.addListener ===
+    "function"
+) {
 
     requestMobileMedia.addListener(
         handleRequestBreakpoint
@@ -534,7 +529,807 @@ else {
 
 
 /* =========================================================
-   PAGE INIT
+   6. SUB PAGE SLIDER
+========================================================= */
+
+function initSubSliders() {
+
+    const slideWraps =
+        document.querySelectorAll(
+            ".slide_wrap"
+        );
+
+
+    slideWraps.forEach(
+        function (wrap) {
+
+
+            /*
+                같은 slider를 두 번 초기화하지 않음
+            */
+
+            if (
+                wrap.dataset.sliderInitialized ===
+                "true"
+            ) {
+
+                return;
+
+            }
+
+
+            const slider =
+                wrap.querySelector(
+                    ".sub_pag_slide_wrap"
+                );
+
+
+            if (!slider) {
+                return;
+            }
+
+
+            const clippingMask =
+                slider.querySelector(
+                    ".sub_pag_clipping_mask"
+                );
+
+
+            const slideTrack =
+                slider.querySelector(
+                    ".img_con_wrap"
+                );
+
+
+            if (
+                !clippingMask ||
+                !slideTrack
+            ) {
+
+                return;
+
+            }
+
+
+            const originalSlides =
+                Array.from(
+                    slideTrack.querySelectorAll(
+                        ":scope > .sub_pag_img_wrap"
+                    )
+                );
+
+
+            const slideCount =
+                originalSlides.length;
+
+
+            if (slideCount === 0) {
+                return;
+            }
+
+
+            wrap.dataset.sliderInitialized =
+                "true";
+
+
+
+            const prevButton =
+                slider.querySelector(
+                    ".left_arrow_2"
+                );
+
+
+            const nextButton =
+                slider.querySelector(
+                    ".right_arrow_2"
+                );
+
+
+            const dots =
+                Array.from(
+                    wrap.querySelectorAll(
+                        ".slide_pagination .slide_dot"
+                    )
+                );
+
+
+
+            /* =================================================
+               CLONE
+            ================================================= */
+
+            const firstClone =
+                originalSlides[0]
+                    .cloneNode(true);
+
+
+            const lastClone =
+                originalSlides[
+                    slideCount - 1
+                ].cloneNode(true);
+
+
+            firstClone.classList.add(
+                "is_clone"
+            );
+
+
+            lastClone.classList.add(
+                "is_clone"
+            );
+
+
+            slideTrack.appendChild(
+                firstClone
+            );
+
+
+            slideTrack.insertBefore(
+                lastClone,
+                slideTrack.firstChild
+            );
+
+
+
+            /* =================================================
+               STATE
+            ================================================= */
+
+            let currentIndex = 1;
+
+            let isMoving = false;
+
+            let isDragging = false;
+
+            let hasDragged = false;
+
+            let startX = 0;
+
+            let currentX = 0;
+
+
+
+            /* =================================================
+               POSITION
+            ================================================= */
+
+
+            /*
+                핵심:
+
+                JS에서 width 계산 안 함.
+                slide 하나 = CSS에서 100%.
+
+                따라서 위치도
+
+                0%
+                -100%
+                -200%
+
+                방식으로 이동.
+            */
+
+            function setPosition(
+                index,
+                animate = true
+            ) {
+
+                currentIndex =
+                    index;
+
+
+                if (animate) {
+
+                    slideTrack.style.transition =
+                        "transform 0.4s ease";
+
+
+                    isMoving = true;
+
+                }
+
+                else {
+
+                    slideTrack.style.transition =
+                        "none";
+
+
+                    isMoving = false;
+
+                }
+
+
+                slideTrack.style.transform =
+                    `translate3d(-${currentIndex * 100}%, 0, 0)`;
+
+
+                updateDots();
+
+            }
+
+
+
+            /* =================================================
+               DOT
+            ================================================= */
+
+            function updateDots() {
+
+                let realIndex =
+                    currentIndex - 1;
+
+
+                if (realIndex < 0) {
+
+                    realIndex =
+                        slideCount - 1;
+
+                }
+
+
+                if (
+                    realIndex >=
+                    slideCount
+                ) {
+
+                    realIndex = 0;
+
+                }
+
+
+                dots.forEach(
+                    function (
+                        dot,
+                        index
+                    ) {
+
+                        const active =
+                            index ===
+                            realIndex;
+
+
+                        dot.classList.toggle(
+                            "is_active",
+                            active
+                        );
+
+
+                        /*
+                            기존 CSS 호환
+                        */
+
+                        dot.classList.toggle(
+                            "is_active_4",
+                            active
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            /* =================================================
+               TRANSITION END
+            ================================================= */
+
+            slideTrack.addEventListener(
+                "transitionend",
+                function (event) {
+
+
+                    if (
+                        event.propertyName !==
+                        "transform"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    isMoving = false;
+
+
+
+                    /* 마지막 clone */
+
+                    if (
+                        currentIndex ===
+                        slideCount + 1
+                    ) {
+
+                        currentIndex = 1;
+
+
+                        setPosition(
+                            currentIndex,
+                            false
+                        );
+
+
+                        return;
+
+                    }
+
+
+
+                    /* 첫 clone */
+
+                    if (
+                        currentIndex === 0
+                    ) {
+
+                        currentIndex =
+                            slideCount;
+
+
+                        setPosition(
+                            currentIndex,
+                            false
+                        );
+
+                    }
+
+                }
+            );
+
+
+
+            /* =================================================
+               NEXT
+            ================================================= */
+
+            if (nextButton) {
+
+                nextButton.addEventListener(
+                    "click",
+                    function () {
+
+
+                        if (isMoving) {
+                            return;
+                        }
+
+
+                        setPosition(
+                            currentIndex + 1
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            /* =================================================
+               PREV
+            ================================================= */
+
+            if (prevButton) {
+
+                prevButton.addEventListener(
+                    "click",
+                    function () {
+
+
+                        if (isMoving) {
+                            return;
+                        }
+
+
+                        setPosition(
+                            currentIndex - 1
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            /* =================================================
+               DOT CLICK
+            ================================================= */
+
+            dots.forEach(
+                function (
+                    dot,
+                    index
+                ) {
+
+
+                    dot.addEventListener(
+                        "click",
+                        function () {
+
+
+                            if (isMoving) {
+                                return;
+                            }
+
+
+                            setPosition(
+                                index + 1
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+            /* =================================================
+               POINTER X
+            ================================================= */
+
+            function getPointerX(event) {
+
+                if (
+                    event.touches &&
+                    event.touches.length > 0
+                ) {
+
+                    return (
+                        event
+                            .touches[0]
+                            .clientX
+                    );
+
+                }
+
+
+                if (
+                    event.changedTouches &&
+                    event.changedTouches.length > 0
+                ) {
+
+                    return (
+                        event
+                            .changedTouches[0]
+                            .clientX
+                    );
+
+                }
+
+
+                return event.clientX;
+
+            }
+
+
+
+            /* =================================================
+               DRAG START
+            ================================================= */
+
+            function startDrag(event) {
+
+                if (isMoving) {
+                    return;
+                }
+
+
+                isDragging = true;
+
+                hasDragged = false;
+
+
+                startX =
+                    getPointerX(event);
+
+
+                currentX =
+                    startX;
+
+
+                slideTrack.style.transition =
+                    "none";
+
+
+                slideTrack.classList.add(
+                    "is_dragging"
+                );
+
+            }
+
+
+
+            /* =================================================
+               DRAG MOVE
+            ================================================= */
+
+            function moveDrag(event) {
+
+                if (!isDragging) {
+                    return;
+                }
+
+
+                currentX =
+                    getPointerX(event);
+
+
+                const dragDistance =
+                    currentX -
+                    startX;
+
+
+                if (
+                    Math.abs(
+                        dragDistance
+                    ) > 5
+                ) {
+
+                    hasDragged = true;
+
+                }
+
+
+
+                /*
+                    drag 중일 때만
+                    현재 mask 폭 사용.
+
+                    리사이즈 때 계산하는 게 아님.
+                */
+
+                const slideWidth =
+                    clippingMask.clientWidth;
+
+
+                const basePosition =
+                    currentIndex *
+                    slideWidth;
+
+
+                const nextPosition =
+                    basePosition -
+                    dragDistance;
+
+
+                slideTrack.style.transform =
+                    `translate3d(-${nextPosition}px, 0, 0)`;
+
+
+                if (
+                    event.cancelable
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+            }
+
+
+
+            /* =================================================
+               DRAG END
+            ================================================= */
+
+            function endDrag(event) {
+
+                if (!isDragging) {
+                    return;
+                }
+
+
+                isDragging = false;
+
+
+                slideTrack.classList.remove(
+                    "is_dragging"
+                );
+
+
+                const endX =
+                    getPointerX(event);
+
+
+                const dragDistance =
+                    endX -
+                    startX;
+
+
+                const slideWidth =
+                    clippingMask.clientWidth;
+
+
+                const threshold =
+                    slideWidth *
+                    0.15;
+
+
+
+                /* 오른쪽으로 넘김 */
+
+                if (
+                    dragDistance >
+                    threshold
+                ) {
+
+                    setPosition(
+                        currentIndex - 1
+                    );
+
+                }
+
+
+
+                /* 왼쪽으로 넘김 */
+
+                else if (
+                    dragDistance <
+                    -threshold
+                ) {
+
+                    setPosition(
+                        currentIndex + 1
+                    );
+
+                }
+
+
+
+                /* 원래 위치 */
+
+                else {
+
+                    setPosition(
+                        currentIndex
+                    );
+
+                }
+
+
+                window.setTimeout(
+                    function () {
+
+                        hasDragged =
+                            false;
+
+                    },
+                    100
+                );
+
+            }
+
+
+
+            /* =================================================
+               MOUSE
+            ================================================= */
+
+            clippingMask.addEventListener(
+                "mousedown",
+                startDrag
+            );
+
+
+            window.addEventListener(
+                "mousemove",
+                moveDrag
+            );
+
+
+            window.addEventListener(
+                "mouseup",
+                endDrag
+            );
+
+
+
+            /* =================================================
+               TOUCH
+            ================================================= */
+
+            clippingMask.addEventListener(
+                "touchstart",
+                startDrag,
+                {
+                    passive: true
+                }
+            );
+
+
+            clippingMask.addEventListener(
+                "touchmove",
+                moveDrag,
+                {
+                    passive: false
+                }
+            );
+
+
+            clippingMask.addEventListener(
+                "touchend",
+                endDrag,
+                {
+                    passive: true
+                }
+            );
+
+
+            clippingMask.addEventListener(
+                "touchcancel",
+                endDrag,
+                {
+                    passive: true
+                }
+            );
+
+
+
+            /* =================================================
+               IMAGE DRAG BLOCK
+            ================================================= */
+
+            slideTrack.addEventListener(
+                "dragstart",
+                function (event) {
+
+                    event.preventDefault();
+
+                }
+            );
+
+
+
+            /* =================================================
+               DRAG 후 LINK CLICK 방지
+            ================================================= */
+
+            slideTrack.addEventListener(
+                "click",
+                function (event) {
+
+
+                    if (!hasDragged) {
+                        return;
+                    }
+
+
+                    const link =
+                        event.target.closest(
+                            "a"
+                        );
+
+
+                    if (link) {
+
+                        event.preventDefault();
+
+                    }
+
+                }
+            );
+
+
+
+            /* =================================================
+               FIRST POSITION
+            ================================================= */
+
+            setPosition(
+                currentIndex,
+                false
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   7. INIT
 ========================================================= */
 
 document.addEventListener(
@@ -543,8 +1338,16 @@ document.addEventListener(
 
 
         /*
-            컴포넌트가 서로 독립적이기 때문에
-            동시에 불러옴
+            갤러리는 페이지 HTML 안에 있으므로
+            컴포넌트 fetch를 기다릴 필요 없음.
+        */
+
+        initSubSliders();
+
+
+
+        /*
+            공통 컴포넌트 동시 로딩
         */
 
         await Promise.all([
@@ -585,8 +1388,8 @@ document.addEventListener(
 
 
         /*
-            견적문의 HTML이 로드된 다음
-            모바일 / PC 위치 결정
+            견적문의가 실제로 로드된 이후
+            위치 결정
         */
 
         moveRequestCleaning();
