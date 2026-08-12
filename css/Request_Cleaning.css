@@ -303,6 +303,13 @@
         height: clamp(110px, 8vw, 140px);
     }
 
+        #Request_Cleaning > section {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
 }
 
 /* =====================================================
@@ -312,11 +319,6 @@
 
 @media (max-width: 1023px) and (min-width: 481px) {
 
-    #Request_Cleaning > section {
-        flex-direction: column;
-
-        gap: 20px;
-    }
 
 
     .Cleaning_box,

@@ -616,10 +616,10 @@
 
 .con_section .box_g > .icon {
 
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
 
-    flex: 0 0 34px;
+    flex: 0 0 36px;
 
     background-color: #009944;
 }
@@ -1010,27 +1010,31 @@
    13. VIDEO
 ========================================================= */
 
-.video_card--disabled {
+.video_card {
 
-    pointer-events: none;
-
-    cursor: default;
+    width: 100%;
+    min-width: 0;
 }
 
 
 .video_card_a {
 
     width: 100%;
+    min-width: 0;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
 }
 
 
-.section_g_2 .video_thumbnail {
+/* =========================================================
+   공통 영상 썸네일 비율
+   실제 영상 / 준비중 / 이미지 썸네일 모두 16:9 유지
+========================================================= */
+
+.video_thumbnail {
 
     width: 100%;
+
     aspect-ratio: 16 / 9;
 
     position: relative;
@@ -1046,12 +1050,55 @@
 }
 
 
-.section_g_2 .video_thumbnail p {
+/* 실제 이미지가 들어오는 경우 */
+
+.video_thumbnail > img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* 실제 video 태그가 들어오는 경우 */
+
+.video_thumbnail > video {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* YouTube 등 iframe이 들어오는 경우 */
+
+.video_thumbnail > iframe {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* 영상 준비중 문구 */
+
+.video_thumbnail > p {
 
     position: absolute;
 
     top: 50%;
     left: 50%;
+
+    margin: 0;
 
     transform: translate(-50%, -50%);
 
@@ -1207,10 +1254,10 @@ margin-right: auto;
 
     .con_section .box_g > .icon {
 
-        width: 28px;
-        height: 28px;
+        width: 46px;
+        height: 46px;
 
-        flex-basis: 28px;
+        flex-basis: 46px;
     }
 
 
@@ -1520,10 +1567,10 @@ margin-right: auto;
 
     .con_section .box_g > .icon {
 
-        width: 24px;
-        height: 24px;
+        width: 36px;
+        height: 36px;
 
-        flex-basis: 24px;
+        flex-basis: 36px;
     }
 
 
