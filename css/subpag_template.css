@@ -2859,6 +2859,518 @@
 }
 
 /* =========================================================
+   TABLET DETAIL
+   481px ~ 1024px
+
+   모바일 섹션 순서는 유지하면서
+   태블릿 화면에 맞게 콘텐츠 폭과 배치를 조정
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+
+
+    /* =====================================================
+       INTRO
+
+       전체 화면을 채우던 이미지를 제한하고
+       이미지가 지나치게 세로로 커지지 않도록 조정
+    ===================================================== */
+
+    .service_intro {
+
+        width: 100%;
+        max-width: 720px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 20px;
+
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 28px;
+        padding-bottom: 40px;
+    }
+
+
+    .service_intro > .img_wrap,
+    .service_intro > .tit_wrap {
+
+        width: 100%;
+        max-width: none;
+    }
+
+
+    .service_intro .main_img {
+
+        width: 100%;
+
+        aspect-ratio: 2 / 1;
+
+        border-radius: 12px;
+    }
+
+
+    .service_intro .main_img img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    .service_intro .tit_wrap {
+
+        width: 100%;
+
+        align-items: flex-end;
+
+        text-align: right;
+    }
+
+
+    .service_intro .tit_in_wrap {
+
+        width: 100%;
+
+        align-items: flex-end;
+    }
+
+
+    .service_intro .tit_wrap h3 {
+
+        font-size: 1.3125rem; /* 21px */
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+    }
+
+
+    .service_intro .tit_wrap > p {
+
+        width: min(100%, 520px);
+
+        color: #8e8e8e;
+
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.6;
+        letter-spacing: -0.025em;
+
+        text-align: right;
+    }
+
+
+    /* =====================================================
+       TARGET
+
+       모바일 순서는 유지하고
+       아이콘이 한 줄에 자연스럽게 배치되도록 조정
+    ===================================================== */
+
+    .service_target {
+
+        gap: 20px;
+
+        padding: 24px 32px;
+    }
+
+
+    .service_target .con_wrap {
+
+        width: 100%;
+        max-width: 720px;
+
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 14px;
+
+        margin: 0 auto;
+    }
+
+
+    .service_target .con {
+
+        width: 76px;
+        max-width: 76px;
+
+        flex: 0 0 76px;
+
+        padding: 8px;
+    }
+
+
+    .service_target .con > .icon {
+
+        width: 44px;
+        height: 44px;
+
+        max-width: 44px;
+
+        flex: 0 0 44px;
+    }
+
+
+    .service_target .con > p {
+
+        font-size: 0.6875rem; /* 11px */
+        line-height: 1.3;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       REQUEST
+
+       태블릿에서 버튼이 화면 끝까지 늘어나지 않도록 제한
+    ===================================================== */
+
+    .service_request {
+
+        width: 100%;
+        max-width: 720px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =====================================================
+       EFFECT
+
+       모바일 세로 1열 대신
+       태블릿에서는 2열 × 2행으로 배치
+    ===================================================== */
+
+    .service_effect {
+
+        width: 100%;
+        max-width: 720px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 18px;
+
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 44px;
+        padding-bottom: 52px;
+    }
+
+
+    .service_effect > h2 {
+
+        width: 100%;
+
+        margin: 0;
+
+        font-size: 1.1875rem;
+
+        color: #555;
+    }
+
+
+    .service_effect .box_wrap {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .service_effect .box_g {
+
+        width: 100%;
+        min-height: 84px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 10px;
+
+        padding: 12px 14px;
+
+        border: 1px solid #009944;
+        border-radius: 10px;
+
+        background-color: #fff;
+    }
+
+
+    .service_effect .effect_icon_circle {
+
+        width: 42px;
+        height: 42px;
+
+        flex: 0 0 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .service_effect .effect_icon_circle > .icon {
+
+        width: 30px;
+        height: 30px;
+
+        flex: 0 0 30px;
+    }
+
+
+    .service_effect .box_g .tit_wrap {
+
+        width: auto;
+
+        flex: 1;
+
+        color: #009944;
+    }
+
+
+    .service_effect .box_g .tit_wrap h3 {
+
+        margin: 0;
+
+        color: #009944;
+
+        font-size: 0.8125rem; /* 13px */
+        line-height: 1.4;
+    }
+
+
+    .service_effect .box_g .tit_wrap p {
+
+        color: #8e8e8e;
+
+        font-size: 0.75rem; /* 12px */
+        line-height: 1.45;
+    }
+
+
+    /* 기존 HTML의 직접 아이콘 구조도 대응 */
+
+    .service_effect .box_g > .icon {
+
+        width: 42px;
+        height: 42px;
+
+        flex: 0 0 42px;
+    }
+
+
+    /* =====================================================
+       GALLERY
+
+       모바일 한 장 배치를 해제하고
+       태블릿에서는 전·후 사진 두 장 표시
+    ===================================================== */
+
+    .service_gallery {
+
+        width: 100%;
+        max-width: 780px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 18px;
+
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 44px;
+        padding-bottom: 52px;
+    }
+
+
+    .service_gallery .tit_wrap {
+
+        width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .service_gallery .tit_wrap h2 {
+
+        font-size: 1.1875rem;
+    }
+
+
+    .service_gallery .slide_wrap {
+
+        width: 100%;
+        max-width: none;
+    }
+
+
+    .service_gallery .sub_pag_slide_wrap {
+
+        gap: 14px;
+    }
+
+
+    .service_gallery .sub_pag_slide_wrap > .arrow {
+
+        display: block;
+
+        width: 28px;
+        height: 28px;
+
+        flex: 0 0 28px;
+    }
+
+
+    .service_gallery .sub_pag_clipping_mask {
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 13 / 4;
+
+        border-radius: 10px;
+    }
+
+
+    .service_gallery .sub_pag_img_wrap {
+
+        gap: 14px;
+    }
+
+
+    .service_gallery .slide_before,
+    .service_gallery .slide_after {
+
+        display: block;
+
+        width: calc((100% - 14px) / 2);
+        height: 100%;
+
+        flex: 0 0 calc((100% - 14px) / 2);
+
+        border-radius: 10px;
+    }
+
+
+    .service_gallery .slide_ing {
+
+        display: none;
+    }
+
+
+    .service_gallery .slide_before img,
+    .service_gallery .slide_after img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* =====================================================
+       VIDEO
+
+       제목을 영상 위로 이동하고
+       영상 최대 폭을 제한
+    ===================================================== */
+
+    .service_video {
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 18px;
+
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 44px;
+        padding-bottom: 52px;
+
+        color: #555;
+
+        background-color: #fff;
+    }
+
+
+    .service_video .service_video_title {
+
+        order: 1;
+
+        width: 100%;
+        max-width: 680px;
+
+        align-items: flex-start;
+
+        margin: 0 auto;
+
+        color: #555;
+
+        text-align: left;
+    }
+
+
+    .service_video .service_video_title h2 {
+
+        font-size: 1.1875rem;
+        line-height: 1.4;
+    }
+
+
+    .service_video .service_video_title .flx_li_g {
+
+        display: none;
+    }
+
+
+    .service_video .video_card {
+
+        order: 2;
+
+        width: 100%;
+        max-width: 680px;
+
+        margin: 0 auto;
+    }
+
+
+    .service_video .video_thumbnail {
+
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+
+        border-radius: 12px;
+    }
+
+
+    .service_video .video_thumbnail img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+}
+
+/* =========================================================
    SMALL MOBILE
 ========================================================= */
 
