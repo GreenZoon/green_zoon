@@ -1119,6 +1119,7 @@
 }
 
 
+
 .play_bg {
 
     width: 100%;
@@ -1156,6 +1157,11 @@
     mask-size: contain;
 }
 
+.video_thumbnail .service_video_play .play_Block{
+
+    width:60%;
+
+}
 
 .logo img {
 
@@ -1455,7 +1461,7 @@
 .service_effect .effect_icon_circle {
 
     width: 48px;
-    height: 48px;
+    aspect-ratio: 1 / 1;
 
     flex: 0 0 48px;
 
@@ -1468,7 +1474,7 @@
 .service_effect .effect_icon_circle > .icon {
 
     width: 48px;
-    height: 48px;
+    aspect-ratio: 1 / 1;
 
     flex: 0 0 48px;
 
@@ -2924,20 +2930,19 @@
 
     .service_effect .effect_icon_circle {
 
-        width: 40px;
-        height: 40px;
+        width: 46px;
 
-        flex: 0 0 40px;
+        flex: 0 0 46px;
 
         border: 1px solid #009944;
         border-radius: 50%;
+
     }
 
 
     .service_effect .effect_icon_circle > .icon {
 
         width: 24px;
-        height: 24px;
 
         flex: 0 0 24px;
 

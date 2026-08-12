@@ -486,6 +486,46 @@ svg {
 }
 
 
+/* =========================================================
+   9. BUTTON BACKGROUND
+========================================================= */
+
+.but_bg {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 6px;
+
+    border-radius: 999px;
+
+    background-color: #1d1d1d50;
+    color: #f2f2f2;
+}
+
+
+/* =========================================================
+   10. SLIDE TOGGLE
+========================================================= */
+
+.slide_toggle {
+
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
 .icon,.icon_2,.arrow,.mobile_icon{
 
     width: 24px;
@@ -1088,49 +1128,6 @@ svg {
     -webkit-mask-image: url("../img/icon/contract.svg");
     mask-image: url("../img/icon/contract.svg");
 
-}
-
-
-
-
-/* =========================================================
-   9. BUTTON BACKGROUND
-========================================================= */
-
-.but_bg {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 4px 6px;
-
-    border-radius: 999px;
-
-    background-color: #1d1d1d50;
-    color: #f2f2f2;
-}
-
-
-/* =========================================================
-   10. SLIDE TOGGLE
-========================================================= */
-
-.slide_toggle {
-
-    position: relative;
-
-    width: 24px;
-    height: 24px;
-
-    padding: 0;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: transparent;
-
-    cursor: pointer;
 }
 
 
