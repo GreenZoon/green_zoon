@@ -1580,7 +1580,7 @@
 
     }
 
-    .sub_pag_tit{
+    .sub_pag_tit {
 
         font-size: 1.0625rem; /* 17px */
         line-height: 1.55;
@@ -1588,7 +1588,7 @@
         font-weight: 600;
 
     }
-
+    
 }
 
 
@@ -1861,27 +1861,6 @@
         height: 44px;
 
         flex-basis: 44px;
-    }
-
-
-    /* GALLERY
-       전 / 후
-    */
-
-    .service_gallery .slide_before,
-    .service_gallery .slide_after {
-
-        display: block;
-
-        width: calc((100% - 20px) / 2);
-
-        flex: 0 0 calc((100% - 20px) / 2);
-    }
-
-
-    .service_gallery .slide_ing {
-
-        display: none;
     }
 
 
@@ -2454,15 +2433,16 @@
     .section_g_2 .video_thumbnail {
 
     border-radius: 14px;
-}
+
+    }
 
 
-    .section_g_2 .tit_wrap {
+        .section_g_2 .tit_wrap {
 
-    align-items: flex-start;
-    text-align: left;
-    gap: 8px;
-}
+        align-items: flex-start;
+        text-align: left;
+        gap: 8px;
+    }
 
 
     .section_g_2 .tit_wrap h2 {
@@ -2483,17 +2463,17 @@
     }
 
     
-.man_sled img {
+    .man_sled img {
 
-    display: block;
+        display: block;
 
-    width: 100%;
-    height: auto;
+        width: 100%;
+        height: auto;
 
-    aspect-ratio: 16 / 6;
+        aspect-ratio: 16 / 6;
 
-    object-fit: cover;
-}
+        object-fit: cover;
+    }
 
 
     .section_g .con_wrap {
@@ -2626,8 +2606,6 @@
     ===================================================== */
 
     
-
-
     .service_intro > .img_wrap,
     .service_intro > .tit_wrap {
 
@@ -2688,8 +2666,6 @@
        항목 수에 따라 자연스럽게 중앙 정렬
     ===================================================== */
 
-    
-
 
     .service_target .con_wrap {
 
@@ -2718,9 +2694,6 @@
        EFFECT
        2 × 2 박스 → 세로 리스트
     ===================================================== */
-
-    
-
 
     .service_effect > h2 {
 
@@ -3485,7 +3458,28 @@
 
        기존에 조정한 값 유지
     ===================================================== */
+ 
+ 
+    /* =====================================================
+    SUB PAGE MENU TYPOGRAPHY
+    ===================================================== */
 
+    .sub_pag_menu {
+
+        gap: 7px;
+
+    }
+
+    .sub_pag_tit {
+
+        padding: 10px 4px;
+
+        font-size: 0.9375rem; /* 15px */
+        line-height: 1.5;
+        letter-spacing: -0.015em;
+        font-weight: 500;
+
+    }
 
 
 }
