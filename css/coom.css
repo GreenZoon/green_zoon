@@ -450,7 +450,7 @@ svg {
 }
 
 
-.icon,.icon_2,.arrow{
+.icon,.icon_2,.arrow,.mobile_icon{
 
     width: 24px;
     height: 24px;
@@ -480,11 +480,26 @@ svg {
 
 }
 
+.mobile_icon{
+
+    width: 16px;
+}
+
 .arrow{
 
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
     mask-image: url("../img/icon/down-arrow.svg");
 
+}
+
+.left_arrow.left_arrow_2 {
+
+    transform: rotate(90deg);
+}
+
+.right_arrow,.right_arrow_2 {
+
+    transform: rotate(-90deg);
 }
 
 .factory{
@@ -493,8 +508,6 @@ svg {
     mask-image: url("../img/icon/factory.svg");
 
 }
-
-
 
 .doctor{
 
@@ -641,6 +654,7 @@ svg {
     background-color: #009944;
     
 } */
+
 
 
 /* 메가폰 */
@@ -978,6 +992,39 @@ svg {
     mask-image: url("../img/icon/youtube.svg");
 
 }
+
+/* 모바일 설정 */
+.mobile_setting_icon{
+
+    -webkit-mask-image: url("../img/icon/gear.svg");
+    mask-image: url("../img/icon/gear.svg");
+}
+
+/* 모바일 내 정보 아이콘 */
+.mobile_user_icon{
+
+  -webkit-mask-image: url("../img/icon/user_liin.svg");
+    mask-image: url("../img/icon/user_liin.svg");
+
+}
+
+/* 모바일 고객센터 아이콘 */
+.mobile_call_center_icon{
+
+    -webkit-mask-image: url("../img/icon/call-center-hedset.svg");
+    mask-image: url("../img/icon/call-center-hedset.svg");
+
+}
+
+/* 모바일신청서 아이콘 */
+.mobile_contract_icon{
+
+    -webkit-mask-image: url("../img/icon/contract.svg");
+    mask-image: url("../img/icon/contract.svg");
+
+}
+
+
 
 
 /* =========================================================

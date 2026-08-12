@@ -81,7 +81,7 @@
 .depth_2{
 
     display:flex;
-   flex-direction: column;
+    flex-direction: column;
     align-items: center;
     width: 160px;
     position: relative;
@@ -154,6 +154,11 @@
     background-color: #8E8E8E;
 }
 
+.mobile_menu_head p{
+
+ white-space: nowrap;
+
+}
 
 /* ----------호버------------- */
 
@@ -245,6 +250,11 @@
         display: block;
     }
 
+    .mobile_schedule_area{
+
+        flex-direction: column;
+    }
+
 
     /* =====================================================
        USER
@@ -254,6 +264,7 @@
         width: 100%;
 
         padding: 28px 40px;
+        
 
         background-color: #fff;
 
@@ -356,12 +367,15 @@
 
 
     .mobile_quick_left > span:last-child {
+
         font-size: 14px;
         font-weight: 500;
+
     }
 
 
     .mobile_quick_arrow {
+
         font-size: 25px;
         line-height: 1;
 
@@ -374,6 +388,7 @@
     ===================================================== */
 
     .mobile_schedule_area {
+
         width: 100%;
 
         margin-top: 38px;
@@ -385,6 +400,7 @@
     /* 탭 */
 
     .mobile_schedule_tab {
+
         width: 100%;
 
         display: flex;
@@ -397,6 +413,7 @@
 
 
     .mobile_schedule_tab_btn {
+
         min-width: 90px;
 
         padding: 14px 8px 12px;
@@ -414,15 +431,18 @@
 
 
     .mobile_schedule_tab_btn.is_active {
+
         color: #009944;
 
         border-bottom-color: #009944;
+
     }
 
 
     /* 요일 */
 
     .mobile_schedule_week {
+
         width: 100%;
 
         display: grid;
@@ -432,41 +452,50 @@
         padding: 14px 0;
 
         text-align: center;
+
     }
 
 
     .mobile_schedule_week span {
+
         font-size: 13px;
         font-weight: 600;
 
         color: #555;
+
     }
 
 
     .mobile_schedule_week .sunday {
+
         color: #ff3b30;
+
     }
 
 
     .mobile_schedule_week .saturday {
+
         color: #1687ff;
+
     }
 
 
     /* 일정 카드 */
 
     .mobile_schedule_cards {
+
         width: 100%;
 
         display: grid;
 
         grid-template-columns: repeat(4, minmax(100px, 1fr));
 
-        gap: 4px;
+        gap: 11px;
 
         overflow-x: auto;
 
         scrollbar-width: none;
+
     }
 
 

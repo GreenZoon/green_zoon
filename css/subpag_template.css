@@ -1871,7 +1871,7 @@
 
     .sub_pag_tit {
 
-        padding: 8px 4px;
+        padding: 12px 4px;
 
         font-size:0.875rem;
     }
@@ -3370,7 +3370,6 @@
 ========================================================= */
 
 @media (max-width: 480px) {
-
 
     /* INTRO */
 

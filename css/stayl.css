@@ -209,16 +209,6 @@
     background-color: #f2f2f2;
 }
 
-.left_arrow {
-
-    transform: rotate(90deg);
-}
-
-.right_arrow {
-
-    transform: rotate(-90deg);
-}
-
 @media (max-width: 768px) {
 
     .left_arrow,
