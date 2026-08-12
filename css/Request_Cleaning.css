@@ -282,7 +282,7 @@
    JS에서 문의 영역이 본문 위로 이동하는 기준과 동일
 ========================================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
 
     #Request_Cleaning > section {
         flex-direction: row;
