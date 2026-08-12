@@ -1,9 +1,17 @@
+/* =========================================================
+   SUB PAGE COMMON
+========================================================= */
+
+
+/* =========================================================
+   COMPONENT LOAD
+========================================================= */
+
 async function loadComponent(id, file) {
 
     const target = document.getElementById(id);
 
     if (!target) {
-        console.error(`#${id} 요소를 찾지 못했습니다.`);
         return;
     }
 
@@ -19,7 +27,11 @@ async function loadComponent(id, file) {
 
 
         if (!response.ok) {
-            throw new Error(`${file} 로드 실패`);
+
+            throw new Error(
+                `${file} 로드 실패: ${response.status}`
+            );
+
         }
 
 
@@ -40,10 +52,16 @@ async function loadComponent(id, file) {
 
                 logo.src = "../../img/logo.svg";
 
-                const logoLink = logo.closest("a");
+
+                const logoLink =
+                    logo.closest("a");
+
 
                 if (logoLink) {
-                    logoLink.href = "../../index.html";
+
+                    logoLink.href =
+                        "../../index.html";
+
                 }
 
             }
@@ -51,28 +69,14 @@ async function loadComponent(id, file) {
         }
 
 
-        /* -----------------------------
-           컴포넌트 로드 후 처리
-        ----------------------------- */
-
-        if (id === "header") {
-
-            initMobileMenu();
-            initHeaderSearch();
-
-        }
-
-
-        if (id === "Request_Cleaning") {
-
-            moveRequestCleaning();
-
-        }
+        return target;
 
 
     } catch (error) {
 
         console.error(error);
+
+        return null;
 
     }
 
@@ -84,34 +88,38 @@ async function loadComponent(id, file) {
    HEADER SEARCH
 ========================================================= */
 
-function initHeaderSearch() {
-
-    if (document.body.dataset.searchInitialized === "true") {
-        return;
-    }
-
-
-    document.body.dataset.searchInitialized = "true";
-
-
-    document.addEventListener("click", (event) => {
+document.addEventListener(
+    "click",
+    function (event) {
 
         const openButton =
-            event.target.closest(".search_open_btn");
+            event.target.closest(
+                ".search_open_btn"
+            );
+
 
         const closeButton =
-            event.target.closest(".search_close_btn");
+            event.target.closest(
+                ".search_close_btn"
+            );
+
 
         const keywordButton =
-            event.target.closest(".keyword_button");
+            event.target.closest(
+                ".keyword_button"
+            );
 
 
-        /* 검색창 열기 */
+        /* -----------------------------
+           검색창 열기
+        ----------------------------- */
 
         if (openButton) {
 
             const searchForm =
-                document.querySelector("#header_search");
+                document.querySelector(
+                    "#header_search"
+                );
 
 
             if (!searchForm) {
@@ -120,7 +128,9 @@ function initHeaderSearch() {
 
 
             const isOpen =
-                searchForm.classList.toggle("is_open");
+                searchForm.classList.toggle(
+                    "is_open"
+                );
 
 
             openButton.setAttribute(
@@ -132,177 +142,96 @@ function initHeaderSearch() {
             if (isOpen) {
 
                 searchForm
-                    .querySelector(".search_input")
+                    .querySelector(
+                        ".search_input"
+                    )
                     ?.focus();
 
             }
 
 
             return;
+
         }
 
 
-        /* 검색창 닫기 */
+        /* -----------------------------
+           검색창 닫기
+        ----------------------------- */
 
         if (closeButton) {
 
             closeHeaderSearch();
 
             return;
+
         }
 
 
-        /* 추천 검색어 */
+        /* -----------------------------
+           추천 검색어
+        ----------------------------- */
 
-        if (!keywordButton) {
-            return;
-        }
+        if (keywordButton) {
 
-
-        const searchInput =
-            document.querySelector("#search_input");
-
-
-        if (!searchInput) {
-            return;
-        }
+            const searchInput =
+                document.querySelector(
+                    "#search_input"
+                );
 
 
-        searchInput.value =
-            keywordButton.textContent.trim();
-
-
-        searchInput.focus();
-
-    });
-
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (event.key === "Escape") {
-
-                closeHeaderSearch();
-                closeMobileMenu();
-
+            if (!searchInput) {
+                return;
             }
 
-        }
-    );
 
-}
+            searchInput.value =
+                keywordButton
+                    .textContent
+                    .trim();
+
+
+            searchInput.focus();
+
+        }
+
+    }
+);
+
+
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key === "Escape") {
+
+            closeHeaderSearch();
+
+        }
+
+    }
+);
+
 
 
 function closeHeaderSearch() {
 
     const searchForm =
-        document.querySelector("#header_search");
-
-
-    const openButton =
-        document.querySelector(".search_open_btn");
-
-
-    searchForm?.classList.remove("is_open");
-
-
-    openButton?.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-}
-
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function initMobileMenu() {
-
-    const openButton =
-        document.querySelector(".mobile_menu_open_btn");
-
-
-    const mobileMenu =
-        document.querySelector("#mobile_menu");
-
-
-    if (!openButton || !mobileMenu) {
-        return;
-    }
-
-
-    if (openButton.dataset.menuInitialized === "true") {
-        return;
-    }
-
-
-    openButton.dataset.menuInitialized = "true";
-
-
-    openButton.addEventListener(
-        "click",
-        () => {
-
-            const isOpen =
-                mobileMenu.classList.toggle("is_open");
-
-
-            openButton.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-
-            document.body.classList.toggle(
-                "menu_open",
-                isOpen
-            );
-
-        }
-    );
-
-
-    /* 메뉴 안의 닫기 버튼 */
-
-    mobileMenu.addEventListener(
-        "click",
-        (event) => {
-
-            const closeButton =
-                event.target.closest(
-                    ".mobile_menu_close_btn"
-                );
-
-
-            if (closeButton) {
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-
-}
-
-
-function closeMobileMenu() {
-
-    const mobileMenu =
-        document.querySelector("#mobile_menu");
+        document.querySelector(
+            "#header_search"
+        );
 
 
     const openButton =
         document.querySelector(
-            ".mobile_menu_open_btn"
+            ".search_open_btn"
         );
 
 
-    mobileMenu?.classList.remove("is_open");
+    searchForm?.classList.remove(
+        "is_open"
+    );
 
 
     openButton?.setAttribute(
@@ -310,18 +239,42 @@ function closeMobileMenu() {
         "false"
     );
 
-
-    document.body.classList.remove(
-        "menu_open"
-    );
-
 }
 
 
 
 /* =========================================================
-   REQUEST CLEANING 위치 이동
+   REQUEST CLEANING
+   PC / MOBILE 위치 이동
 ========================================================= */
+
+
+/*
+    모바일 기준
+
+    section_g
+    ↓
+    Request_Cleaning
+    ↓
+    section_g_2
+
+
+    PC / TABLET 기준
+
+    section_g
+    ↓
+    section_g_2
+    ↓
+    Request_Cleaning
+*/
+
+
+const requestMobileMedia =
+    window.matchMedia(
+        "(max-width: 768px)"
+    );
+
+
 
 function moveRequestCleaning() {
 
@@ -331,167 +284,205 @@ function moveRequestCleaning() {
         );
 
 
-    if (!requestCleaning) {
-        return;
-    }
-
-
-    /* 공장청소 대상 섹션 */
-
     const targetSection =
-        document.querySelector(".section_g");
+        document.querySelector(
+            ".section_g"
+        );
 
-
-    /* 영상 섹션 */
 
     const videoSection =
-        document.querySelector(".section_g_2");
+        document.querySelector(
+            ".section_g_2"
+        );
 
 
-    if (!targetSection || !videoSection) {
+    if (
+        !requestCleaning ||
+        !targetSection ||
+        !videoSection
+    ) {
+
         return;
+
     }
 
 
-    /*
-        모바일
+    /* =====================================================
+       MOBILE
+    ===================================================== */
 
-        공장 청소 대상
-        ↓
-        견적 문의
-        ↓
-        영상
-    */
+    if (requestMobileMedia.matches) {
 
-    if (window.innerWidth <= 768) {
+
+        /*
+            이미 원하는 위치에 있으면
+            DOM을 다시 움직이지 않음
+        */
 
         if (
-            targetSection.nextElementSibling
-            !== requestCleaning
+            targetSection
+                .nextElementSibling
+            === requestCleaning
         ) {
 
-            targetSection.insertAdjacentElement(
-                "afterend",
-                requestCleaning
-            );
+            return;
 
         }
 
 
-        return;
-    }
-
-
-    /*
-        PC / TABLET
-
-        공장 청소 대상
-        ↓
-        영상
-        ↓
-        견적 문의
-    */
-
-    if (
-        videoSection.nextElementSibling
-        !== requestCleaning
-    ) {
-
-        videoSection.insertAdjacentElement(
+        targetSection.insertAdjacentElement(
             "afterend",
             requestCleaning
         );
 
+
+        return;
+
     }
+
+
+
+    /* =====================================================
+       PC / TABLET
+    ===================================================== */
+
+
+    /*
+        이미 영상 아래에 있으면
+        DOM을 다시 움직이지 않음
+    */
+
+    if (
+        videoSection
+            .nextElementSibling
+        === requestCleaning
+    ) {
+
+        return;
+
+    }
+
+
+    videoSection.insertAdjacentElement(
+        "afterend",
+        requestCleaning
+    );
 
 }
 
 
 
 /* =========================================================
-   RESIZE
+   BREAKPOINT CHANGE
 ========================================================= */
 
-let resizeTimer;
+
+/*
+    기존처럼 resize마다 실행하지 않음.
+
+    768px 경계를
+
+    PC → MOBILE
+    MOBILE → PC
+
+    로 넘어가는 순간에만 실행.
+*/
 
 
-window.addEventListener(
-    "resize",
-    () => {
+function handleRequestBreakpoint() {
 
-        clearTimeout(resizeTimer);
+    moveRequestCleaning();
+
+}
 
 
-        resizeTimer =
-            setTimeout(
-                () => {
 
-                    moveRequestCleaning();
+if (
+    typeof requestMobileMedia
+        .addEventListener
+    === "function"
+) {
 
-                },
-                100
-            );
+    requestMobileMedia.addEventListener(
+        "change",
+        handleRequestBreakpoint
+    );
 
-    }
-);
+}
+
+
+/*
+    구형 브라우저 대응
+*/
+
+else if (
+    typeof requestMobileMedia
+        .addListener
+    === "function"
+) {
+
+    requestMobileMedia.addListener(
+        handleRequestBreakpoint
+    );
+
+}
 
 
 
 /* =========================================================
-   COMPONENT LOAD
+   COMPONENT INIT
 ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    async () => {
-
-        await loadComponent(
-            "header",
-            "../../components/header_v2.html"
-        );
-
-
-        await loadComponent(
-            "menu",
-            "../../components/menu.html"
-        );
-
-
-        await loadComponent(
-            "Factry_sub_menu",
-            "../../components/sub_pag/Factry_sub_menu.html"
-        );
-
-
-        await loadComponent(
-            "Request_Cleaning",
-            "../../components/Request_Cleaning.html"
-        );
-
-
-        await loadComponent(
-            "footer",
-            "../../components/footer.html"
-        );
+    async function () {
 
 
         /*
-            Request_Cleaning 컴포넌트가
-            실제로 삽입된 뒤 다시 위치 계산
+            서로 독립적인 컴포넌트이므로
+            한 번에 로드
+        */
+
+        await Promise.all([
+
+            loadComponent(
+                "header",
+                "../../components/header_v2.html"
+            ),
+
+
+            loadComponent(
+                "menu",
+                "../../components/menu.html"
+            ),
+
+
+            loadComponent(
+                "Factry_sub_menu",
+                "../../components/sub_pag/Factry_sub_menu.html"
+            ),
+
+
+            loadComponent(
+                "Request_Cleaning",
+                "../../components/Request_Cleaning.html"
+            ),
+
+
+            loadComponent(
+                "footer",
+                "../../components/footer.html"
+            )
+
+        ]);
+
+
+        /*
+            Request_Cleaning이 실제 DOM에
+            들어온 이후 딱 한 번 초기 위치 계산
         */
 
         moveRequestCleaning();
 
     }
 );
-
-
-window.addEventListener("load", moveRequestCleaning);
-window.addEventListener("resize", moveRequestCleaning);
-
-loadComponent("header", "../../components/header_v2.html");
-loadComponent("menu", "../../components/menu.html");
-loadComponent("Factry_sub_menu", "../../components/sub_pag/Factry_sub_menu.html");
-loadComponent("footer", "../../components/footer.html");
-loadComponent("Request_Cleaning", "../../components/Request_Cleaning.html");
-
