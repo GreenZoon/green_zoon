@@ -29,7 +29,6 @@
     object-fit: cover;
 }
 
-
 .tit_in_wrap {
 
     display: flex;
@@ -232,6 +231,16 @@
     width: calc((100% - 40px) / 2);
 }
 
+.tit_wrap > p{
+
+    font-weight: 700;
+
+}
+
+.flx_li_g {
+
+    margin-right: auto;
+}
 
 .section_2 > .img_wrap {
 
@@ -544,6 +553,13 @@
     background-color: #f2f2f2;
 }
 
+.arrow_up_right{
+
+    background-color: #f2f2f2;
+    width: 14px;
+    height: 14px;
+    
+}
 
 
 /* =========================================================
