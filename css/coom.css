@@ -370,6 +370,7 @@ section {
 
     background-color: #009944;
     color: #f2f2f2;
+
 }
 
 .content_start {
@@ -379,10 +380,12 @@ section {
 
 
 .tit_li {
+
     display: flex;
     align-items: center;
 
     gap: 4px;
+
 }
 
 
@@ -393,6 +396,7 @@ section {
 .focus_left {
 
     object-position: left center;
+    
 }
 
 
@@ -483,6 +487,8 @@ svg {
 .mobile_icon{
 
     width: 16px;
+    background-color: #555;
+
 }
 
 .arrow{
@@ -848,7 +854,7 @@ svg {
     width: 100%;
     aspect-ratio: 4 / 1;
 
-    background-color: #8E8E8E;
+    background-color: #858585;
 
     -webkit-mask-image: url("../img/icon/freepik.svg");
     mask-image: url("../img/icon/freepik.svg");

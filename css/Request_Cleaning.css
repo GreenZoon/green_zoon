@@ -324,6 +324,7 @@
 
     .Cleaning_box,
     .Cleaning_box_green {
+
         width: 100%;
 
         flex: none;
@@ -331,6 +332,7 @@
         min-height: 240px;
 
         padding: 24px 28px;
+
     }
 
 
@@ -469,7 +471,9 @@
     /* 모바일 설명 숨김 */
 
     .Cleaning_tit_wrap p {
+
         display: none;
+        
     }
 
 
@@ -478,7 +482,9 @@
     ===================================================== */
 
     .Cleaning_ul_wrap {
+
         display: none;
+
     }
 
 
@@ -487,6 +493,7 @@
     ===================================================== */
 
     .Cleaning_box_in_wrap {
+
         width: auto;
 
         display: flex;
@@ -495,6 +502,7 @@
         justify-content: center;
 
         gap: 7px;
+
     }
 
 
