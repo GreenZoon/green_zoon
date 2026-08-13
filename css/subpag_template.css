@@ -2891,19 +2891,54 @@
         gap: 12px;
     }
 
-       .sub_pag_menu {
+    .sub_pag_menu {
 
-              gap: 0;
+        gap: 0;
     }
 
-        .sub_pag_tit {
+    .sub_pag_tit {
 
-       font-size: 1.0625rem;    /* 17px */
+        font-size: 1.0625rem; /* 17px */
         line-height: 1.6;
         letter-spacing: -0.015em;
-       
     }
 
+
+    /* =====================================================
+       GALLERY
+       769px ~ 1024px : 청소 전 / 청소 후 2장
+    ===================================================== */
+
+    .service_gallery
+    .sub_pag_clipping_mask {
+
+        aspect-ratio: 13 / 4;
+    }
+
+    .service_gallery
+    .sub_pag_img_wrap {
+
+        gap: 14px;
+    }
+
+    .service_gallery
+    .slide_before,
+    .service_gallery
+    .slide_after {
+
+        display: block;
+
+        width: calc((100% - 14px) / 2);
+        height: 100%;
+
+        flex: 0 0 calc((100% - 14px) / 2);
+    }
+
+    .service_gallery
+    .slide_ing {
+
+        display: none;
+    }
 }
 
 /* =========================================================
