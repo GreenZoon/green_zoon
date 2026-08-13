@@ -1796,7 +1796,6 @@
 
         display: flex;
         align-items: center;
-        gap: 7px;
         padding: 0 12px;
 
     }
@@ -2501,8 +2500,7 @@
 
         display: flex;
         align-items: center;
-        gap: 7px;
-
+        
     }
 
     .video_title_wrap .page_title .arrow,
@@ -2833,7 +2831,7 @@
 
         display: flex;
         flex-direction: column;
-        gap: 11px;
+        gap: 7px;
 
     }
 

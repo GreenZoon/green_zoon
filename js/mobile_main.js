@@ -14,10 +14,14 @@
 
         let currentIndex = 0;
         let startX = 0;
+        let startY = 0;
+        let currentX = 0;
         let startTranslate = 0;
         let currentTranslate = 0;
         let dragging = false;
         let moved = false;
+        let dragDirection = "";
+        let lastTouchTime = 0;
 
         function gap() {
             return parseFloat(getComputedStyle(track).gap) || 0;
@@ -67,33 +71,80 @@
             updateDots();
         }
 
-        track.addEventListener("pointerdown", (event) => {
+        function pointerX(event) {
+            if (event.touches?.length) {
+                return event.touches[0].clientX;
+            }
+
+            if (event.changedTouches?.length) {
+                return event.changedTouches[0].clientX;
+            }
+
+            return event.clientX;
+        }
+
+        function pointerY(event) {
+            if (event.touches?.length) {
+                return event.touches[0].clientY;
+            }
+
+            if (event.changedTouches?.length) {
+                return event.changedTouches[0].clientY;
+            }
+
+            return event.clientY;
+        }
+
+        function startDrag(event) {
             if (window.innerWidth > mobileWidth) {
                 return;
             }
 
+            if (event.type === "mousedown" && Date.now() - lastTouchTime < 500) {
+                return;
+            }
+
+            if (event.type === "touchstart") {
+                lastTouchTime = Date.now();
+            }
+
             dragging = true;
             moved = false;
-            startX = event.clientX;
+            dragDirection = "";
+            startX = pointerX(event);
+            startY = pointerY(event);
+            currentX = startX;
             startTranslate = currentTranslate;
             track.classList.add("is_dragging");
-            track.setPointerCapture(event.pointerId);
-        });
+        }
 
-        track.addEventListener("pointermove", (event) => {
+        function moveDrag(event) {
             if (!dragging) {
                 return;
             }
 
-            const delta = event.clientX - startX;
+            currentX = pointerX(event);
 
-            if (Math.abs(delta) > 5) {
+            const deltaX = currentX - startX;
+            const deltaY = pointerY(event) - startY;
+
+            if (!dragDirection && Math.max(Math.abs(deltaX), Math.abs(deltaY)) > 6) {
+                dragDirection = Math.abs(deltaX) > Math.abs(deltaY)
+                    ? "horizontal"
+                    : "vertical";
+            }
+
+            if (dragDirection !== "horizontal") {
+                return;
+            }
+
+            if (Math.abs(deltaX) > 5) {
                 moved = true;
             }
 
             currentTranslate = Math.max(
                 0,
-                Math.min(startTranslate - delta, maxTranslate())
+                Math.min(startTranslate - deltaX, maxTranslate())
             );
 
             track.style.transform = `translate3d(${-currentTranslate}px, 0, 0)`;
@@ -101,9 +152,9 @@
             if (moved && event.cancelable) {
                 event.preventDefault();
             }
-        });
+        }
 
-        function endDrag(event) {
+        function endDrag() {
             if (!dragging) {
                 return;
             }
@@ -111,15 +162,41 @@
             dragging = false;
             track.classList.remove("is_dragging");
 
-            if (track.hasPointerCapture(event.pointerId)) {
-                track.releasePointerCapture(event.pointerId);
+            const dragDistance = currentX - startX;
+            const step = distance();
+
+            if (step <= 0) {
+                return;
             }
 
-            moveTo(Math.round(currentTranslate / distance()));
+            const threshold = Math.min(40, step * 0.18);
+
+            if (dragDirection === "horizontal" && Math.abs(dragDistance) >= threshold) {
+                const movedCards = Math.max(1, Math.round(Math.abs(dragDistance) / step));
+                const direction = dragDistance < 0 ? 1 : -1;
+
+                moveTo(currentIndex + direction * movedCards);
+            } else {
+                moveTo(currentIndex);
+            }
+
+            window.setTimeout(() => {
+                moved = false;
+            }, 50);
         }
 
-        track.addEventListener("pointerup", endDrag);
-        track.addEventListener("pointercancel", endDrag);
+        track.addEventListener("mousedown", startDrag);
+        window.addEventListener("mousemove", moveDrag);
+        window.addEventListener("mouseup", endDrag);
+
+        track.addEventListener("touchstart", startDrag, { passive: true });
+        track.addEventListener("touchmove", moveDrag, { passive: false });
+        track.addEventListener("touchend", endDrag, { passive: true });
+        track.addEventListener("touchcancel", endDrag, { passive: true });
+
+        track.addEventListener("dragstart", (event) => {
+            event.preventDefault();
+        });
 
         track.addEventListener("click", (event) => {
             if (moved || event.target.closest("a[href='#']")) {

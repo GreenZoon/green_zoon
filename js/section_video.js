@@ -66,7 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
        카드 크기 설정
 
        모바일 + iPad : 200px (1024px 이하)
-       PC            : 3개 (1025px 이상)
+       중간 화면     : 2개 (1025px ~ 1500px)
+       PC            : 3개 (1501px 이상)
     --------------------------------- */
 
     function setCardWidth() {
@@ -89,14 +90,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-        /* PC */
+        /* 중간 화면 + PC */
 
         const viewportWidth =
             viewport.clientWidth;
 
+        const visibleCardCount =
+            window.innerWidth <= 1500
+                ? 2
+                : 3;
+
 
         const cardWidth =
-            (viewportWidth - gap * 2) / 3;
+            (
+                viewportWidth -
+                gap * (visibleCardCount - 1)
+            ) / visibleCardCount;
 
 
         track.style.setProperty(
@@ -687,4 +696,3 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
-
