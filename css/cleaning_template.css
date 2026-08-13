@@ -7,14 +7,6 @@
     text-align: center;
 }
 
-.service_cleaning .service_video {
-    order: 4;
-}
-
-.service_cleaning .service_request {
-    order: 5;
-}
-
 /* 초록 배경 제목 안의 작은 화살표 */
 
 .flx_li_g .wit_arrow {
@@ -36,20 +28,13 @@
     color: #8e8e8e;
 }
 
+.tit_wrap_g h2{
+
+    color: #f2f2f2;
+
+}
+
 @media (max-width: 1024px) {
-    .service_cleaning .service_target {
-        color: #f8f8f8;
-        background-color: #009944;
-    }
-
-    .service_cleaning .service_gallery {
-        order: 4;
-    }
-
-    .service_cleaning .service_video {
-        order: 5;
-    }
-
     .service_cleaning .service_intro > .main_img {
         order: 1;
     }
@@ -57,55 +42,132 @@
     .service_cleaning .service_intro > .tit_wrap {
         order: 2;
     }
+}
+
+/* 태블릿 */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service_cleaning .service_target {
+        color: #f8f8f8;
+        background-color: #009944;
+    }
+
+    .service_cleaning .service_target .con_wrap {
+        flex-wrap: nowrap;
+        gap: 14px;
+    }
+
+    .service_cleaning .service_target .con {
+        width: 96px;
+        max-width: 96px;
+        flex: 0 0 96px;
+    }
+}
+
+/* 소형 태블릿·모바일 */
+
+@media (max-width: 768px) {
+
+
+    .service_cleaning .service_target {
+
+        background-color: #009944;
+        
+        color: #fff;
+    }
+
+    .img_section_g {
+
+        background-color: #fff;
+        color: #009944;
+    }
+
+    .service_cleaning .service_target .con_wrap {
+        width: 100%;
+        max-width: 316px;
+        gap: 14px;
+    }
+
+    .service_cleaning .service_target .con {
+        width: 96px;
+        max-width: 96px;
+        flex: 0 0 96px;
+    }
 
     .service_cleaning .service_gallery .tit_wrap {
         align-items: flex-start;
         text-align: left;
     }
 
-    .service_cleaning .service_gallery .sub_slide_img {
-        display: none;
+    .service_media_slot_notice {
+
+        font-size: 0.75rem;
+
     }
 
-    .service_cleaning .service_gallery .mobile_featured {
-        width: 100%;
-        height: 100%;
-        display: block;
-        flex: 0 0 100%;
-        border-radius: 12px;
-    }
-
-    .service_cleaning .service_gallery .mobile_featured .but_bg {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
     .service_cleaning .service_target .con_wrap {
+
         flex-wrap: nowrap;
-        justify-content: space-between;
         gap: 4px;
+
     }
 
-    .service_cleaning .service_target .con {
-        width: 48px;
-        max-width: 48px;
-        min-width: 48px;
-        flex: 0 0 48px;
-        padding: 0;
+    .service_cleaning .service_target .con{
+
+        width: 100%;
+        max-width: 74px;
+        flex: 0 0 60px;
+        padding: 0px 16px;
+
+
     }
+        
 
     .service_cleaning .service_target .con > .icon {
-        width: 48px;
-        height: 48px;
-        flex: 0 0 48px;
+
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+
     }
 
     .service_cleaning .service_target .con > p {
+
         font-size: 0.625rem;
+
     }
 
     .service_media_slot_notice {
+
         font-size: 0.75rem;
+
     }
+
+    .service_gallery_meta {
+
+
+        justify-content: space-around;
+        margin: 0;
+    }
+
+
+    .sub_pag_slide_wrap .arrow{
+
+        display: none;
+    }
+
+
+      .flx_li_g {
+
+            background-color: #fff;
+            color: #8e8e8e;
+        }
+
+}
+
+@media (max-width: 480px) {
+
+
+
+
 }
