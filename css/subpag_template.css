@@ -671,6 +671,17 @@
     color: inherit;
 }
 
+.img_section_g .flx_li_g {
+
+    margin: 0;
+}
+
+.flx_li_g .wit_arrow {
+
+    width: 16px;
+    background-color: #f2f2f2;
+}
+
 /* =========================================================
    11. SUB PAGE SLIDER
 
@@ -1039,6 +1050,16 @@
     font-weight: 500;
 
     white-space: nowrap;
+}
+
+.service_media_slot {
+
+    background-color: #f2f2f2;
+}
+
+.service_media_slot_notice {
+
+    z-index: 1;
 }
 
 .video_card_a .play_icon {
@@ -1954,7 +1975,7 @@
 
     /* =====================================================
        GALLERY
-       MOBILE : 후 사진 1장
+       MOBILE : 지정한 대표 사진 1장
     ===================================================== */
 
     .img_section {
@@ -2004,23 +2025,13 @@
         gap: 0;
     }
 
-    /* 전 - 숨김 */
-
-    .sub_slide_img:first-child {
+    .sub_slide_img {
 
         display: none;
     }
 
-    /* 중 - 숨김 */
-
-    .sub_slide_img:nth-child(2) {
-
-        display: none;
-    }
-
-    /* 후 - 대표 이미지 */
-
-    .sub_slide_img:nth-child(3) {
+    .sub_slide_img.mobile_featured,
+    .sub_pag_img_wrap:not(:has(.mobile_featured)) .sub_slide_img:last-child {
 
         display: block;
 
@@ -2032,12 +2043,9 @@
         border-radius: 12px;
     }
 
-    .sub_slide_img:nth-child(3) img {
+    .mobile_featured .but_bg {
 
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
+        display: none;
     }
 
     .slide_pagination {
@@ -3324,6 +3332,11 @@
         font-size: 0.9375rem; /* 15px */
         line-height: 1.5;
         font-weight: 700;
+    }
+
+    .service_media_slot_notice {
+
+        font-size: 0.75rem;
     }
 
     /* PLAY BUTTON */
