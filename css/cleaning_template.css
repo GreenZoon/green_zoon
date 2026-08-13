@@ -19,16 +19,19 @@
 
 .flx_li_g .wit_arrow {
     width: 16px;
+            flex: 0 0 16px;
     background-color: #f2f2f2;
 }
 
 /* 영상 이미지가 준비되기 전 사용하는 자리 */
 
 .service_media_slot {
+
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f2f2f2;
+    
 }
 
 .service_media_slot_notice {
@@ -37,6 +40,7 @@
 }
 
 @media (max-width: 1024px) {
+
     .service_cleaning .service_target {
         color: #f8f8f8;
         background-color: #009944;
@@ -59,8 +63,8 @@
     }
 
     .service_cleaning .service_gallery .tit_wrap {
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
     }
 
     .service_cleaning .service_gallery .sub_slide_img {
@@ -78,34 +82,55 @@
     .service_cleaning .service_gallery .mobile_featured .but_bg {
         display: none;
     }
+
+    .flx_li_g .wit_arrow {
+    width: 14px;
+            flex: 0 0 14px;
+    background-color: #f2f2f2;
+}
 }
 
-@media (max-width: 480px) {
-    .service_cleaning .service_target .con_wrap {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 4px;
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+
+ .icon,.flx_li_g .wit_arrow  {
+
+        width: 12px;
+        flex: 0 0 12px;
     }
 
+}
+
+  
+@media (max-width: 480px) {
+
+
     .service_cleaning .service_target .con {
-        width: 48px;
-        max-width: 48px;
-        min-width: 48px;
-        flex: 0 0 48px;
-        padding: 0;
+
+        flex: 0 0 70px;
+ 
+
     }
 
     .service_cleaning .service_target .con > .icon {
-        width: 48px;
-        height: 48px;
-        flex: 0 0 48px;
+
+        width: 32x;
+        height: 32px;
+        flex: 0 0 32px;
+
     }
 
     .service_cleaning .service_target .con > p {
+
         font-size: 0.625rem;
+        
     }
+
 
     .service_media_slot_notice {
         font-size: 0.75rem;
     }
+
+
 }
