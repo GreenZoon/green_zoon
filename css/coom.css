@@ -1149,6 +1149,47 @@ svg {
     
 }
 
+.happy{
+    
+     -webkit-mask-image: url("../img/icon/happy.svg");
+    mask-image: url("../img/icon/happy.svg");
+
+}
+
+.speech_bubble{
+
+     -webkit-mask-image: url("../img/icon/speech-bubble.svg");
+    mask-image: url("../img/icon/speech-bubble.svg");
+
+}
+
+.picture{
+
+     -webkit-mask-image: url("../img/icon/picture.svg");
+    mask-image: url("../img/icon/picture.svg");
+
+
+}
+
+/* 직장인 기본교육 */
+.lesson{
+
+     -webkit-mask-image: url("../img/icon/lesson.svg");
+    mask-image: url("../img/icon/lesson.svg");
+
+}
+
+/* 창업교육 */
+.presentation{
+
+   -webkit-mask-image: url("../img/icon/presentation.svg");
+    mask-image: url("../img/icon/presentation.svg");
+
+
+}
+
+.s
+
 /* =========================================================
    11. ANIMATION
 ========================================================= */

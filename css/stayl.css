@@ -1803,6 +1803,12 @@
 
     }
 
+    .mobile_tab_item .icon{
+
+        width: 24px;
+        background-color: #8E8E8E;
+    }
+
     /* 메인 슬라이드 */
 
     .wrap_1 {
@@ -2871,10 +2877,10 @@
         margin: 16px 20px 36px;
         padding: 20px 12px;
 
-        border: 1px solid #009944;
+        border: 2px solid #009944;
         border-radius: 15px;
 
-        color: #8e8e8e;
+        color: #009944;
 
     }
 
@@ -2885,13 +2891,14 @@
         justify-content: space-between;
         gap: 12px;
 
-        color: #555;
+        color: #009944;
 
     }
 
     .mobile_contact_title h2 {
 
         font-size: 0.9375rem;
+        color: #009944;
 
     }
 
