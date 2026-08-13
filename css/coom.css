@@ -1270,7 +1270,7 @@ svg {
 
 }
 
-@media (min-width: 481px) and (max-width: 1024px){
+@media (min-width: 516px) and (max-width: 1024px){
 
     .icon, .icon_2, .arrow, .mobile_icon {
 
@@ -1284,7 +1284,7 @@ svg {
    13. MOBILE
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 515px) {
 
     section {
 
