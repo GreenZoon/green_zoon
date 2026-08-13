@@ -2127,6 +2127,7 @@
         align-items: center;
         gap: 6px;
 
+        font-weight: 600;
         font-size: clamp(1.1875rem, calc(1rem + 0.5vw), 1.375rem);
         letter-spacing: -0.04em;
 
@@ -2170,11 +2171,17 @@
         color: #f8f8f8;
 
     }
+    
+    .mobile_schedule_box strong{
+
+        font-weight: 700;
+    }
 
     .mobile_box_side strong {
 
         font-size: clamp(0.875rem, calc(0.75rem + 0.3vw), 1rem);
         line-height: 1.5;
+        font-weight: 600;
 
     }
 
@@ -2451,6 +2458,7 @@
         padding: 0 12px;
         color: #555;
         font-size: 0.875rem;
+        font-weight: 700;
 
     }
 
@@ -2624,6 +2632,7 @@
         overflow: hidden;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+        font-weight: 700;
 
         white-space: normal;
         color: #555;
@@ -2713,7 +2722,8 @@
 
     .mobile_academy_icon .icon{
 
-        width: 36px;
+        width: 28px;
+        flex: 0 0 28px;
         background-color: #009944;
     }
 
@@ -2726,11 +2736,11 @@
 
     }
 
-    .mobile_academy .mobile_tit h2,
+    
     .mobile_academy_box h3 {
 
         color: #555;
-        font-size: 0.875rem;
+       font-weight: 700;
 
     }
 
@@ -2738,14 +2748,12 @@
     .mobile_academy_box p {
 
         color: #555;
-        font-size: 0.625rem;
-
     }
 
     .mobile_academy_list {
 
         display: grid;
-        grid-template-columns: repeat(3, 70px);
+        grid-template-columns: repeat(3,140px);
         gap: 9px 12px;
 
     }
@@ -2763,10 +2771,16 @@
 
     }
 
+    .mobile_academy_item p{
+
+        white-space: nowrap;
+
+    }
+
     .mobile_academy_icon {
 
-        width: 45px;
-        height: 45px;
+        width: 60px;
+        aspect-ratio: 1 / 1;
 
         display: flex;
         align-items: center;
@@ -2858,6 +2872,7 @@
     .mobile_event_box h3 {
 
         color: #555;
+        font-weight: 700;
         font-size: 0.875rem;
 
     }
@@ -3067,6 +3082,16 @@
         border-radius: 2px;
         background-color: currentColor;
 
+    }
+
+}
+
+@media (max-width: 515px){
+
+    .mobile_academy_list {
+        display: grid;
+        grid-template-columns: repeat(3, 75px);
+        gap: 9px 12px;
     }
 
 }
