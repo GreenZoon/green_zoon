@@ -5,55 +5,57 @@
 .service_cleaning .service_target {
     order: 2;
     text-align: center;
+    color: #555;
+    background-color: #fff;
 }
 
-.service_cleaning .service_video {
-    order: 4;
+.service_cleaning .tit_wrap_g h2 {
+    color: #f2f2f2;
 }
 
-.service_cleaning .service_request {
-    order: 5;
+.service_cleaning .flx_li_g {
+    margin: 0;
 }
 
-/* 초록 배경 제목 안의 작은 화살표 */
-
-.flx_li_g .wit_arrow {
+.service_cleaning .flx_li_g .wit_arrow {
     width: 16px;
-            flex: 0 0 16px;
     background-color: #f2f2f2;
 }
 
-/* 영상 이미지가 준비되기 전 사용하는 자리 */
+.service_cleaning .service_description {
+    align-items: center;
+}
+
+/* 이미지가 준비되지 않은 영상 썸네일 슬롯 */
 
 .service_media_slot {
-
+    width: 100%;
+    height: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    color: #8e8e8e;
     background-color: #f2f2f2;
-    
+}
+
+.service_media_slot > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
 }
 
 .service_media_slot_notice {
+    position: relative;
     z-index: 1;
-    color: #8e8e8e;
+    font-size: 0.9375rem;
+    line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
-
-    .service_cleaning .service_target {
-        color: #f8f8f8;
-        background-color: #009944;
-    }
-
-    .service_cleaning .service_gallery {
-        order: 4;
-    }
-
-    .service_cleaning .service_video {
-        order: 5;
-    }
-
     .service_cleaning .service_intro > .main_img {
         order: 1;
     }
@@ -62,16 +64,11 @@
         order: 2;
     }
 
-    .service_cleaning .service_gallery .tit_wrap {
-        align-items: center;
-        text-align: center;
-    }
-
     .service_cleaning .service_gallery .sub_slide_img {
         display: none;
     }
 
-    .service_cleaning .service_gallery .mobile_featured {
+    .service_cleaning .service_gallery .sub_slide_img.mobile_featured {
         width: 100%;
         height: 100%;
         display: block;
@@ -79,58 +76,44 @@
         border-radius: 12px;
     }
 
+    .service_cleaning .service_gallery .sub_slide_img.mobile_featured img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .service_cleaning .service_gallery .mobile_featured .but_bg {
         display: none;
     }
-
-    .flx_li_g .wit_arrow {
-    width: 14px;
-            flex: 0 0 14px;
-    background-color: #f2f2f2;
-}
 }
 
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-
- .icon,.flx_li_g .wit_arrow  {
-
-        width: 12px;
-        flex: 0 0 12px;
+@media (max-width: 480px) {
+    .service_cleaning .service_target .con_wrap {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 4px;
     }
 
-}
-
-  
-@media (max-width: 480px) {
-
-
     .service_cleaning .service_target .con {
-
-        flex: 0 0 70px;
- 
-
+        min-width: 48px;
+        padding: 0;
     }
 
     .service_cleaning .service_target .con > .icon {
-
-        width: 32x;
-        height: 32px;
-        flex: 0 0 32px;
-
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
     }
 
     .service_cleaning .service_target .con > p {
-
         font-size: 0.625rem;
-        
     }
 
+    .service_cleaning .service_target_description {
+        display: none;
+    }
 
     .service_media_slot_notice {
         font-size: 0.75rem;
     }
-
-
 }
