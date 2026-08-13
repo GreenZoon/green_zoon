@@ -1188,7 +1188,28 @@ svg {
 
 }
 
-.s
+.meeting{
+
+       -webkit-mask-image: url("../img/icon/meeting.svg");
+    mask-image: url("../img/icon/meeting.svg");
+
+
+}
+
+.education{
+
+           -webkit-mask-image: url("../img/icon/education.svg");
+    mask-image: url("../img/icon/education.svg");
+    
+}
+
+.graduate{
+
+           -webkit-mask-image: url("../img/icon/graduate.svg");
+    mask-image: url("../img/icon/graduate.svg");
+
+
+}
 
 /* =========================================================
    11. ANIMATION

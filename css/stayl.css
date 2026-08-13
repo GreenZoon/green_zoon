@@ -2656,6 +2656,12 @@
 
     }
 
+    .mobile_academy_icon .icon{
+
+        width: 36px;
+        background-color: #009944;
+    }
+
     .mobile_academy .mobile_tit {
 
         flex-direction: column;
