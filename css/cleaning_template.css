@@ -2,29 +2,55 @@
 
 /* 카펫 / 페트릭 페이지에서만 사용하는 차이값 */
 
+
+
 .service_cleaning .service_target {
+
     order: 2;
     text-align: center;
     color: #555;
     background-color: #fff;
+
 }
 
 .service_cleaning .tit_wrap_g h2 {
+
     color: #f2f2f2;
+
 }
 
 .service_cleaning .flx_li_g {
+
     margin: 0;
+
 }
 
 .service_cleaning .wit_arrow {
+
     width: 16px;
     background-color: #f2f2f2;
+
+}
+
+.flx_li_g{
+
+    margin: 0;
+
+}
+
+.section_3 .page_title{
+
+        font-size: 2.5rem;          /* 40px */
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    font-weight: 700;
 }
 
 
 
 @media (max-width: 1024px) {
+
+
     .service_cleaning .service_intro > .main_img {
         order: 1;
     }
@@ -46,23 +72,51 @@
     .service_cleaning .service_gallery .mobile_featured .but_bg {
         display: none;
     }
-}
 
-
-
-@media (min-width: 481px) and (max-width: 1024px) {
-
-    .service_cleaning .service_target {
+        .section_3 .page_title{
         
-        color: #f8f8f8;
+            font-size: 1.5625rem;       /* 25px */
+            line-height: 1.3;
+            letter-spacing: -0.035em;
+            font-weight: 700;
 
-        background-color: #009944;
     }
 }
 
 
 
-@media (max-width: 480px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .service_cleaning .service_target {
+
+        color: #f8f8f8;
+        background-color: #009944;
+
+    }
+
+    .service_cleaning .service_gallery .sub_pag_img_wrap {
+
+        gap: 14px;
+
+    }
+
+    .service_cleaning .service_gallery .sub_slide_img:first-child,
+    .service_cleaning .service_gallery .sub_slide_img.mobile_featured {
+
+        display: block;
+
+        width: calc((100% - 14px) / 2);
+        height: 100%;
+
+        flex: 0 0 calc((100% - 14px) / 2);
+        
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+
     .service_cleaning .service_gallery {
         color: #555;
         background-color: #fff;
@@ -93,6 +147,10 @@
         color: #f8f8f8;
         background-color: #009944;
     }
+}
+
+
+@media (max-width: 480px) {
 
     .service_cleaning .service_target .con_wrap {
         flex-wrap: nowrap;
@@ -107,6 +165,7 @@
     .service_cleaning .service_target .con > .icon {
         width: 48px;
         height: 48px;
+
         flex: 0 0 48px;
     }
 

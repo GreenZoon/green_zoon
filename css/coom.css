@@ -59,11 +59,18 @@ a {
 img {
 
    width: 100%;
-    aspect-ratio:6 / 4;
+      aspect-ratio: 3 / 2;
     display: block;
 
 
 }
+
+.tit_wrap_g h2{
+  color: inherit;
+
+}
+
+
 
 /* =========================================================
    FACTORY DETAIL
@@ -98,7 +105,7 @@ img {
 
 .service_video_play {
 
-    width: clamp(40%, 8vw, 140px);
+    width: clamp(30%, 8vw, 140px);
 
     position: absolute;
     
@@ -380,6 +387,13 @@ section {
 .flex {
 
     display: flex;
+}
+
+.align_center{
+
+        display: flex;
+        align-items: center;
+
 }
 
 .column {
@@ -678,6 +692,13 @@ svg {
 .right_arrow,.right_arrow_2 {
 
     transform: rotate(-90deg);
+}
+
+.flx_li_g .arrow{
+
+    background-color: #f2f2f2;
+    width: 16px;
+
 }
 
 .factory{
@@ -1387,14 +1408,17 @@ svg {
     /* 중간 / 콘텐츠 제목
        PC 19px → Tablet 17px
     */
+
     h3,
     .sub_title,
     .content_title {
+
         font-size: 1.0625rem;    /* 17px */
         line-height: 1.6;
         letter-spacing: -0.015em;
         font-weight: 500;
         color: inherit;
+
     }
 
     /* 본문
@@ -1403,20 +1427,25 @@ svg {
 
     p,
     .body_text {
+
         font-size: 0.9375rem;    /* 15px */
         line-height: 1.5;
         letter-spacing: -0.015em;
         font-weight: 500;
+
     }
 
     .info_text {
+
         font-size: 0.9375rem;    /* 15px */
         line-height: 1.5;
         letter-spacing: -0.015em;
         font-weight: 400;
+
     }
 
     .small_text {
+
         font-size: 0.75rem;      /* 12px */
         line-height: 1.5;
         letter-spacing: -0.01em;
@@ -1425,7 +1454,7 @@ svg {
 
 }
 
-@media (min-width: 516px) and (max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1024px){
 
     .icon, .icon_2, .arrow, .mobile_icon {
 
@@ -1433,26 +1462,35 @@ svg {
             flex: 0 0 20px;
     }
 
+        section {
+        padding: 40px;
+
+    }
 }
 
 /* =========================================================
    13. MOBILE
 ========================================================= */
 
-@media (max-width: 515px) {
+@media (max-width: 769px) {
 
-    section {
-
-        padding:20px;
-        gap: 24px;
-
-    }
 
     .mbile_none{
 
         display: none;
 
     }
+
+    
+    section {
+
+        padding:20px 40px;
+
+        gap: 24px;
+
+    }
+
+
 
     /* 페이지 대표 제목 기록용 */
 
@@ -1534,5 +1572,22 @@ svg {
             width: 16px;
             flex: 0 0 16px;
     }
+
+}
+
+@media (max-width: 480px){
+
+
+    section {
+
+        padding: 10px 20px;
+        
+        gap: 24px;
+
+    }
+
+
+
+
 
 }

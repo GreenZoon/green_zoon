@@ -380,7 +380,7 @@ input{
 
     .header,.search_area{
 
-        padding: 20px 40px;
+        padding: 7px 40px;
     }
 
     .keyword_section{
@@ -401,6 +401,8 @@ input{
     }
 
 
+}
+@media (max-width: 768px) {
 
     .login_menu {
         display: none;
@@ -411,8 +413,8 @@ input{
         align-items: center;
         gap: 12px;
     }
-
 }
+
 
 
 @media (max-width:515px){
