@@ -120,6 +120,7 @@
    
     font-size: 1.125rem;
     color: #8E8E8E;
+        white-space: nowrap;
 
     display:flex;
     align-items:center;
@@ -225,6 +226,48 @@
 
 }
 
+
+@media (max-width: 1024px) {
+
+
+    .gnb{
+
+        margin-top: 3px;
+        gap:3px;
+   
+
+    }
+
+    .main_tit {
+
+
+    padding: 7px;
+    gap: 2px;
+  
+}
+
+    .depth_2_tit{
+
+
+        font-size: 1.0625rem;       /* 17px */
+        line-height: 1.6;
+        letter-spacing: -0.015em;
+
+    }
+
+    .depth_3_tit{
+
+
+             font-size: 0.875rem;     /* 14px */
+        line-height: 1.5;
+
+
+    }
+
+
+
+
+}
 
 
 
@@ -528,6 +571,7 @@
 
 
     .mobile_schedule_card {
+
         min-width: 105px;
         min-height: 110px;
 
@@ -541,6 +585,7 @@
         border-radius: 9px;
 
         background-color: #fff;
+
     }
 
 
@@ -587,6 +632,7 @@
     /* 신청하기 */
 
     .mobile_schedule_apply {
+
         width: 100%;
 
         min-height: 52px;
@@ -601,31 +647,40 @@
         border-bottom: 1px solid #eee;
 
         color: #555;
+
     }
 
 
     .mobile_schedule_apply > div {
+
         display: flex;
         align-items: center;
 
         gap: 8px;
+
     }
 
     .mobile_apply_icon {
+
         width: 23px;
         height: 23px;
 
         display: block;
+
     }
 
 
     .mobile_schedule_apply strong {
-        font-size: 16px;
+
+        font-size: 1rem;
+
     }
 
 
     .mobile_schedule_apply > span {
-        font-size: 25px;
+
+         font-size: 1.5625rem; ;
+
     }
 
 
@@ -634,6 +689,7 @@
     ===================================================== */
 
     .mobile_menu_head {
+
         min-height: 50px;
 
         padding: 0 40px;
@@ -647,6 +703,7 @@
     }
 
     .mobile_menu_head p {
+
         margin: 0;
 
         font-size: 16px;
@@ -654,6 +711,7 @@
     }
 
     .mobile_menu_grid {
+
         width: 20px;
         height: 20px;
 
@@ -714,6 +772,7 @@
 
     .mobile_menu_column button,
     .mobile_menu_column a {
+
         width: 100%;
 
         min-height: 52px;
@@ -737,21 +796,27 @@
         text-align: left;
 
         word-break: keep-all;
+
     }
 
     .mobile_depth_1 button {
+
         padding-left: 20px;
 
         font-weight: 600;
+
     }
 
     .mobile_menu_column .is_active {
+
         background-color: #009944;
 
         color: #fff;
 
         font-weight: 600;
+
     }
+
 
 }
 
@@ -860,5 +925,10 @@
         padding-left: 12px;
 
     }
+
+}
+
+@media (max-width: 480px){
+
 
 }

@@ -390,28 +390,33 @@ input{
 
     .search_title{
 
-        font-size: 16px;
+        font-size: 1rem;
 
     }
 
     .login_li p{
 
-        font-size: 14px;    
+        font-size: 0.875rem;;    
     
     }
+
 
 
 }
 @media (max-width: 768px) {
 
     .login_menu {
+
         display: none;
+
     }
 
     .mobile_header_menu {
+
         display: flex;
         align-items: center;
         gap: 12px;
+
     }
 }
 
@@ -422,7 +427,7 @@ input{
     .search_ion,.login{
 
         width: 16px;
-        height: 16px;
+        aspect-ratio: 1 / 1;
         
     }
 
@@ -430,7 +435,6 @@ input{
     .header{
 
         padding: 4px 20px;
-        height: 48px;
         max-height: 48px;
         
     }
@@ -452,7 +456,7 @@ input{
     .mobile_header_btn {
 
         width: 16px;
-        height: 16px;
+        aspect-ratio: 1 / 1;
         padding: 0;
 
         display: flex;
