@@ -11,33 +11,13 @@
     background-color: #fff;
 }
 
-.service_detail--cleaning .service_gallery,
-.service_detail--cleaning .service_video {
+.service_detail_cleaning .service_gallery,
+.service_detail_cleaning .service_video {
     color: #f8f8f8;
     background-color: #009944;
 }
 
-.service_detail--cleaning .service_video {
-    order: 4;
-}
 
-.service_detail--cleaning .service_request {
-    order: 5;
-}
-
-.service_intro--media-right > .tit_wrap {
-    order: 1;
-}
-
-.service_intro--media-right > .main_img {
-    order: 2;
-}
-
-.service_gallery--cleaning .tit_wrap h2,
-.service_video--cleaning .service_video_title,
-.service_video--cleaning .service_video_title h2 {
-    color: inherit;
-}
 
 /* 이미지가 준비되지 않은 영상 썸네일 슬롯 */
 
