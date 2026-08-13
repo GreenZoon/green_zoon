@@ -5,12 +5,9 @@
    공통 subpag_template.css 뒤에 불러옵니다.
 ========================================================= */
 
-.service_detail--cleaning .service_intro {
-    order: 1;
-}
 
-.service_detail--cleaning .service_target {
-    order: 2;
+.service_cleaning{
+
 
     text-align: center;
     color: #555;
@@ -18,45 +15,26 @@
 
 }
 
-.service_detail--cleaning .service_gallery {
-    order: 3;
-    color: #f8f8f8;
-    background-color: #009944;
-}
+.tit_wrap_g h2{
 
-.service_detail--cleaning .service_video {
-    order: 4;
-    color: #f8f8f8;
-    background-color: #009944;
-}
+    color: #f2f2f2;
 
-.service_detail--cleaning .service_request {
-    order: 5;
-}
-
-.service_intro--media-right > .tit_wrap {
-    order: 1;
-}
-
-.service_intro--media-right > .main_img {
-    order: 2;
-}
-
-.service_target--cleaning .service_target_description {
-    color: #555;
-}
-
-.service_gallery--cleaning .tit_wrap,
-.service_gallery--cleaning .tit_wrap h2,
-.service_gallery--cleaning .tit_wrap p,
-.service_video--cleaning .service_video_title,
-.service_video--cleaning .service_video_title h2 {
-   
-    color: inherit;
 
 }
 
 
+.flx_li_g{
+
+margin: 0;
+
+}
+
+.flx_li_g .wit_arrow{
+
+    width: 16px;
+    background-color: #f2f2f2;
+
+}
 
 /* 이미지가 준비되지 않은 영상 썸네일 슬롯 */
 
@@ -105,54 +83,7 @@
 
 @media (max-width: 1024px) {
 
-    .service_detail--cleaning .service_intro {
-  
-        order: 1;
-  
-    }
 
-    .service_detail--cleaning .service_target {
-   
-        order: 2;
-        color: #f8f8f8;
-        background-color: #009944;
-  
-    }
-
-    .service_detail--cleaning .service_request {
-        order: 3;
-    }
-
-    .service_detail--cleaning .service_gallery {
-        order: 4;
-        color: #555;
-        background-color: #fff;
-    }
-
-    .service_detail--cleaning .service_video {
-        order: 5;
-        color: #555;
-        background-color: #fff;
-    }
-
-    .service_intro--media-right > .main_img {
-        order: 1;
-    }
-
-    .service_intro--media-right > .tit_wrap {
-        order: 2;
-    }
-
-    .service_target--cleaning .service_target_description {
-        color: #f8f8f8;
-    }
-
-    .service_gallery--cleaning .tit_wrap {
-
-        align-items: flex-start;
-        text-align: left;
-
-    }
 
     .service_gallery--cleaning .sub_slide_img {
         display: none;
