@@ -1,6 +1,6 @@
 (function () {
 
-    const mobileWidth = 515;
+    const mobileWidth = 1024;
 
     /* 작업 갤러리 */
 
@@ -175,6 +175,21 @@
         window.addEventListener("resize", () => filterPosts(selectedKeyword));
         filterPosts("전체");
     }
+
+    /* 미화원 파견 선택 */
+
+    const dispatchButton = document.querySelector(
+        ".mobile_box_side .mobile_box:first-child"
+    );
+
+    dispatchButton?.addEventListener("click", (event) => {
+        if (dispatchButton.getAttribute("href") === "#") {
+            event.preventDefault();
+        }
+
+        const selected = dispatchButton.classList.toggle("is_selected");
+        dispatchButton.setAttribute("aria-pressed", String(selected));
+    });
 
     /* 전체선택은 서비스 선택 상태를 초기화 */
 

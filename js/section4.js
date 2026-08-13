@@ -40,6 +40,10 @@ if (section4) {
 
     const autoplayDelay = 2500;
 
+    function isMobileGalleryLayout() {
+        return window.innerWidth <= 1024;
+    }
+
 
     /* ---------------------------------
        카드 한 칸의 이동 거리 계산
@@ -220,6 +224,10 @@ if (section4) {
     function startGalleryAutoplay() {
         stopGalleryAutoplay();
 
+        if (isMobileGalleryLayout()) {
+            return;
+        }
+
         if (getGalleryLastIndex() <= 0) {
             return;
         }
@@ -292,6 +300,10 @@ if (section4) {
     --------------------------------- */
 
     function startGalleryDrag(event) {
+        if (isMobileGalleryLayout()) {
+            return;
+        }
+
         isDragging = true;
         hasDragged = false;
 
@@ -501,13 +513,15 @@ if (section4) {
     window.addEventListener(
         "resize",
         () => {
-            updateGalleryDotCount();
-            moveGalleryTo(
-                currentGalleryIndex,
-                false
-            );
+            window.requestAnimationFrame(() => {
+                updateGalleryDotCount();
+                moveGalleryTo(
+                    currentGalleryIndex,
+                    false
+                );
 
-            startGalleryAutoplay();
+                startGalleryAutoplay();
+            });
         }
     );
 
