@@ -27,9 +27,9 @@ if (section2) {
      
         {
             title: "공장 청소",
+            link: "/sub_page/Factory_cleane/Factory_man.html",
             description:
                 " 공장 청소(주)그린죤은 공장 청소를 전문으로 기계 설비,도색등 다양한 작업의 청소 용역이 가능합니다",
-            // link: "#",
             images:
             
             [
@@ -45,9 +45,9 @@ if (section2) {
         },
         {
             title: "카펫·패브릭 청소",
+            link: "/sub_page/Cleaning/Carpet_cleaning.html",
             description:
                 "카펫과 패브릭의 오염을 제거하여 깨끗하고 쾌적한 환경을 조성합니다.",
-            // link: "#",
             images:
             
             [
@@ -63,9 +63,9 @@ if (section2) {
         },
         {
             title: "왁스 코팅",
+            link: "/sub_page/Cleaning/Wax_coating.html",
             description:
                 " 바닥 표면을 보호하고 광택을 유지하는 왁스 코팅 작업을 제공합니다.",
-            // link: "#",
             images:
             
             [
@@ -81,9 +81,9 @@ if (section2) {
         },
         {
             title: "비둘기 퇴치",
+            link: "/sub_page/Bird/Bird_control.html",
             description:
                 "비둘기로 인한 오염과 시설 피해를 복구 및 예방하기위한 작업입니다.",
-            // link: "#",
             images:
             
             [
@@ -99,9 +99,9 @@ if (section2) {
         },
         {
             title: "행사장 청소",
+            link: "/sub_page/Event/City_event.html",
             description:
                 "미화 인력을 파견한 행사 전후 행사장 정리 및 청소 서비스를 제공합니다.",
-            // link: "#",
             images:
             
             [
@@ -117,9 +117,9 @@ if (section2) {
         },
         {
             title: "선박·유람선 청소",
+            link: "/sub_page/Ship/Ship.html",
             description:
                 " 선박과 유람선에 맞춘 전문 청소 서비스를 제공합니다.",
-            // link: "#",
             images:
             
             [
@@ -135,9 +135,9 @@ if (section2) {
         },       
         {
             title: "건물 외벽 청소",
+            link: "/sub_page/Exterior/Commercial.html",
             description:
                 "누적된 오염과 묵은 때를 제거하여 깨끗한 외관을 유지합니다.",
-            // link: "#",
             images:
             
             [
@@ -153,9 +153,9 @@ if (section2) {
         },
         {
             title: "시설물 청소",
+            link: "/sub_page/Facility/Statue.html",
             description:
                 "다양한 시설물의 특성과 환경에 맞춘 전문 청소 서비스를 제공합니다.",
-            // link: "#",
             images: 
             
             [
@@ -171,9 +171,9 @@ if (section2) {
         }, 
         {
             title: "미화원 파견",
+            link: "/sub_page/Dispatch/Dispatch.html",
             description:
                 "전문 교육을 거친 선별된 미화 인력을 파견합니다.",
-            // link: "#",
             images: 
             
             [
@@ -189,9 +189,9 @@ if (section2) {
         },
         {
             title: "물탱크 청소",
+            link: "/sub_page/Water_tank/Water_tank.html",
             description:
                 "물탱크 내부의 오염물을 제거하고<br>위생적인 급수 환경을 관리합니다.",
-            // link: "#",
             images:
             [
                 {
@@ -207,9 +207,9 @@ if (section2) {
         {
         
             title: "연못",
+            link: "/sub_page/Water_tank/Pond.html",
             description:
                 "슬러시,녹조,수초등<br>연못 외관을 해치는 요소를 청소합니다",
-            // link: "#",
             images: 
             
             [
@@ -225,9 +225,9 @@ if (section2) {
         },
         {
             title: "소독·방역",
+            link: "/sub_page/Disinfection/Disinfection.html",
             description:
                 "각 시설과 환경 특성에 맞는 전문 소독 및 방역 서비스를 제공합니다.",
-            // link: "#",
             images: 
             
             [
@@ -471,6 +471,27 @@ if (section2) {
             }
 
             changeServiceContent(index);
+
+            if (window.innerWidth > 515) {
+                return;
+            }
+
+            serviceButtons.forEach((item) => {
+                item.classList.remove("is_selected");
+            });
+
+            button.classList.add("is_selected");
+
+            const link = serviceData[index]?.link;
+
+            if (!link) {
+                return;
+            }
+
+            window.setTimeout(() => {
+                window.location.href =
+                    window.GreenZonePaths?.resolve(link) || link;
+            }, 160);
         });
     });
 
