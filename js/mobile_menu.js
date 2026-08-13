@@ -188,7 +188,7 @@ const mobileMenuData = [
 
             {
                 title: "비둘기 퇴치",
-                href: "#"
+                href: "/sub_page/Bird/Bird_control.html"
             },
 
 
@@ -198,19 +198,19 @@ const mobileMenuData = [
                 children: [
                     {
                         title: "시/도 행사 청소",
-                        href: "#"
+                        href: "/sub_page/Event/City_event.html"
                     },
                     {
                         title: "전시회 청소",
-                        href: "#"
+                        href: "/sub_page/Event/Exhibition.html"
                     },
                     {
                         title: "경기장 청소",
-                        href: "#"
+                        href: "/sub_page/Event/Stadium.html"
                     },
                     {
                         title: "계절 청소",
-                        href: "#"
+                        href: "/sub_page/Event/Seasonal.html"
                     }
                 ]
             },
@@ -222,15 +222,15 @@ const mobileMenuData = [
                 children: [
                     {
                         title: "시 선박",
-                        href: "#"
+                        href: "/sub_page/Ship/Ship.html"
                     },
                     {
                         title: "유람선",
-                        href: "#"
+                        href: "/sub_page/Ship/Cruise.html"
                     },
                     {
                         title: "군함",
-                        href: "#"
+                        href: "/sub_page/Ship/Naval.html"
                     }
                 ]
             },
@@ -242,23 +242,23 @@ const mobileMenuData = [
                 children: [
                     {
                         title: "상가건물 외벽",
-                        href: "#"
+                        href: "/sub_page/Exterior/Commercial.html"
                     },
                     {
                         title: "사무실 외벽",
-                        href: "#"
+                        href: "/sub_page/Exterior/Office.html"
                     },
                     {
                         title: "관공서 외벽",
-                        href: "#"
+                        href: "/sub_page/Exterior/Government.html"
                     },
                     {
                         title: "공장 외벽",
-                        href: "#"
+                        href: "/sub_page/Exterior/Factory.html"
                     },
                     {
                         title: "외벽 시설물",
-                        href: "#"
+                        href: "/sub_page/Exterior/Facility.html"
                     }
                 ]
             },
@@ -270,19 +270,19 @@ const mobileMenuData = [
                 children: [
                     {
                         title: "동상/조형물",
-                        href: "#"
+                        href: "/sub_page/Facility/Statue.html"
                     },
                     {
                         title: "교각",
-                        href: "#"
+                        href: "/sub_page/Facility/Bridge.html"
                     },
                     {
                         title: "녹 제거",
-                        href: "#"
+                        href: "/sub_page/Facility/Rust_removal.html"
                     },
                     {
                         title: "터널",
-                        href: "#"
+                        href: "/sub_page/Facility/Tunnel.html"
                     }
                 ]
             }
@@ -306,11 +306,11 @@ const mobileMenuData = [
         children: [
             {
                 title: "연못 청소",
-                href: "#"
+                href: "/sub_page/Water_tank/Pond.html"
             },
             {
                 title: "저수조 청소",
-                href: "#"
+                href: "/sub_page/Water_tank/Water_tank.html"
             }
         ]
     },
@@ -322,11 +322,11 @@ const mobileMenuData = [
         children: [
             {
                 title: "소독",
-                href: "#"
+                href: "/sub_page/Disinfection/Disinfection.html"
             },
             {
                 title: "방역",
-                href: "#"
+                href: "/sub_page/Disinfection/Quarantine.html"
             }
         ]
     },
