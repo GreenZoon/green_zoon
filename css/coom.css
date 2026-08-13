@@ -1062,6 +1062,16 @@ svg {
 
 }
 
+.location_Ping{
+
+
+    -webkit-mask-image: url("../img/icon/location_Ping.svg");
+    mask-image: url("../img/icon/location_Ping.svg");
+
+
+}
+
+
 .youtube{
 
     background-color: #8E8E8E;
@@ -1098,6 +1108,7 @@ svg {
 
 }
 
+
 /* 모바일 설정 */
 .mobile_setting_icon{
 
@@ -1127,6 +1138,15 @@ svg {
     -webkit-mask-image: url("../img/icon/contract.svg");
     mask-image: url("../img/icon/contract.svg");
 
+}
+
+.mobile_coall{
+    
+
+     -webkit-mask-image: url("../img/icon/mobile_coall.svg");
+    mask-image: url("../img/icon/mobile_coall.svg");
+    
+    
 }
 
 /* =========================================================
