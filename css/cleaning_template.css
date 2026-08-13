@@ -62,6 +62,8 @@
         max-width: 96px;
         flex: 0 0 96px;
     }
+
+
 }
 
 /* 소형 태블릿·모바일 */
@@ -81,22 +83,37 @@
         background-color: #fff;
         color: #009944;
     }
+        .tit_wrap_g h2{
+
+        color: #555;
+    }
+
+    .service_gallery_name{
+
+        color: #555;
+    }
 
     .service_cleaning .service_target .con_wrap {
+
         width: 100%;
         max-width: 316px;
         gap: 14px;
+
     }
 
     .service_cleaning .service_target .con {
+
         width: 96px;
         max-width: 96px;
         flex: 0 0 96px;
+
     }
 
     .service_cleaning .service_gallery .tit_wrap {
+
         align-items: flex-start;
         text-align: left;
+
     }
 
     .service_media_slot_notice {
@@ -122,6 +139,10 @@
 
     }
         
+    .img_section .tit_wrap p {
+
+        display: none
+    }
 
     .service_cleaning .service_target .con > .icon {
 
@@ -161,6 +182,11 @@
 
             background-color: #fff;
             color: #8e8e8e;
+        }
+
+        .wit_arrow{
+
+            display: none;
         }
 
 }

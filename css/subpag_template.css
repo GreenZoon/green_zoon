@@ -2760,8 +2760,7 @@
         gap: 14px;
     }
 
-    .service_gallery
-    .sub_pag_slide_wrap > .arrow {
+    .service_gallery > .arrow {
 
         display: block;
 
