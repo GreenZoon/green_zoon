@@ -58,9 +58,63 @@ a {
 
 img {
 
-    max-width: 100%;
+   width: 100%;
+    aspect-ratio:6 / 4;
+    display: block;
+
 
 }
+
+/* =========================================================
+   FACTORY DETAIL
+   Figma final visual correction
+========================================================= */
+
+/* =========================================================
+   1. EFFECT ICON
+========================================================= */
+
+.service_effect .effect_icon_circle {
+
+    width: 48px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service_effect .effect_icon_circle > .icon {
+
+    width: 48px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 48px;
+
+    background-color: #009944;
+}
+
+.service_video_play {
+
+    width: clamp(40%, 8vw, 140px);
+
+    position: absolute;
+    
+    aspect-ratio: 1 / 1;
+
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(248, 248, 248, 0.5);
+
+}
+
 
 /* 버튼 */
 
