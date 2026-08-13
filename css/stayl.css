@@ -1753,9 +1753,6 @@
     .video_dot.is_active {
         width: 24px;
     }
-}
-
-@media (max-width: 1024px) {
 
     body {
 
