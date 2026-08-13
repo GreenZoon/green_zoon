@@ -3,7 +3,6 @@
    stayl.css 기반 서브페이지 전용 override
 ========================================================= */
 
-
 /* =========================================================
    1. COMMON
 ========================================================= */
@@ -17,7 +16,6 @@
 
     border-radius: 15px;
 }
-
 
 .main_img img {
 
@@ -37,8 +35,6 @@
     color: inherit;
 }
 
-
-
 /* =========================================================
    2. TOP VISUAL
 ========================================================= */
@@ -52,7 +48,6 @@
     overflow: hidden;
 }
 
-
 .man_sled img {
 
     display: block;
@@ -63,8 +58,6 @@
     object-fit: cover;
 
 }
-
-
 
 /* =========================================================
    3. SUB PAGE MENU
@@ -78,16 +71,14 @@
 
 }
 
-
 .sub_pag_menu{
 
     display: flex;
     flex-direction:row;
     justify-content: end;
     align-items: end;
-    
-}
 
+}
 
 .sub_pag_depth {
 
@@ -117,7 +108,6 @@
 
 }
 
-
 .sub_pag_tit {
 
     display: flex;
@@ -139,7 +129,6 @@
     max-height: 37px;
 }
 
-
 .sub_pag_depth:hover {
 
     color: #009944;
@@ -147,7 +136,6 @@
     box-shadow:
         inset 0 -2px 0 #009944;
 }
-
 
 /* =========================================================
    4. BREADCRUMB
@@ -169,13 +157,11 @@
     color: #8e8e8e;
 }
 
-
 .breadcrumb a,
 .breadcrumb p {
 
     color: inherit;
 }
-
 
 .breadcrumb .arrow {
 
@@ -184,7 +170,6 @@
     background-color: #8e8e8e;
 }
 
-
 .breadcrumb_dot_wrap {
 
     display: flex;
@@ -192,7 +177,6 @@
 
     gap: 12px;
 }
-
 
 .breadcrumb_dot {
 
@@ -205,8 +189,6 @@
 
     background-color: #8e8e8e;
 }
-
-
 
 /* =========================================================
    5. PAGE INTRO
@@ -231,7 +213,6 @@
     margin: 0 auto;
 
 }
-
 
 .section_2 > .img_wrap,
 .section_2 > .tit_wrap {
@@ -261,18 +242,15 @@
     max-width: 560px;
 }
 
-
 .section_2 > .tit_wrap {
 
     max-width: 560px;
 }
 
-
 .section_2 .img_wrap {
 
     overflow: hidden;
 }
-
 
 .section_2 .img_wrap img {
 
@@ -284,7 +262,6 @@
     object-fit: cover;
 }
 
-
 .section_2 .tit_wrap {
 
     display: flex;
@@ -293,7 +270,6 @@
 
     color: #555;
 }
-
 
 .section_2 .tit_wrap h2 {
 
@@ -307,7 +283,6 @@
     color: inherit;
 }
 
-
 .section_2 .tit_wrap h3 {
 
     margin-bottom: 0.75rem;
@@ -320,7 +295,6 @@
     color: inherit;
 }
 
-
 .section_2 .tit_wrap p {
 
     margin-top: 4px;
@@ -332,8 +306,6 @@
 
     color: #8e8e8e;
 }
-
-
 
 /* =========================================================
    6. GREEN SECTION
@@ -353,7 +325,6 @@
     text-align: center;
 }
 
-
 .section_g_2 {
 
     width: 100%;
@@ -369,18 +340,15 @@
 
 }
 
-
 .section_g_p {
 
     padding: 50px 150px;
 }
 
-
 .section_g .icon {
 
     background-color: #f2f2f2;
 }
-
 
 .section_g .tit_wrap,
 .section_g_2 .tit_wrap {
@@ -396,12 +364,10 @@
     color: #f2f2f2;
 }
 
-
 .section_g_2 .tit_wrap {
 
     max-width: 520px;
 }
-
 
 .section_g h2,
 .section_g_2 h2,
@@ -411,20 +377,16 @@
     color: inherit;
 }
 
-
 .section_g_2 p {
 
     line-height: 1.5;
 }
-
 
 .section_g_2 > div {
 
     width: 50%;
     max-width: 600px;
 }
-
-
 
 /* =========================================================
    7. TARGET SECTION
@@ -442,14 +404,12 @@
     color: #555;
 }
 
-
 .section_3 h2 {
 
     font-size: 1.1875rem;
 
     color: inherit;
 }
-
 
 .section_3 > p {
 
@@ -460,8 +420,6 @@
 
     color: inherit;
 }
-
-
 
 /* =========================================================
    8. TARGET ICONS
@@ -478,7 +436,6 @@
 
     gap: 22px;
 }
-
 
 .con,
 .con_g {
@@ -500,7 +457,6 @@
     text-align: center;
 }
 
-
 .con {
 
     color: #009944;
@@ -509,7 +465,6 @@
 
     background-color: #fff;
 }
-
 
 .con > .icon {
 
@@ -522,7 +477,6 @@
 
     background-color: #009944;
 }
-
 
 .con > p,
 .con_g > p {
@@ -537,7 +491,6 @@
     white-space: nowrap;
 }
 
-
 .icon_g,
 .icon_w,
 .storage {
@@ -545,12 +498,10 @@
     flex-shrink: 0;
 }
 
-
 .icon_g {
 
     background-color: #009944;
 }
-
 
 .icon_w {
 
@@ -562,9 +513,8 @@
     background-color: #f2f2f2;
     width: 14px;
     height: 14px;
-    
-}
 
+}
 
 /* =========================================================
    9. CLEANING EFFECT
@@ -586,7 +536,6 @@
 
 }
 
-
 .con_section > h2 {
 
     margin-bottom: 4px;
@@ -597,7 +546,6 @@
     color: #009944;
 }
 
-
 .con_section .box_wrap {
 
     width: 100%;
@@ -607,7 +555,6 @@
 
     gap: 14px;
 }
-
 
 .box_g {
 
@@ -629,7 +576,6 @@
     background-color: #fff;
 }
 
-
 .con_section .box_g > .icon {
 
     width: 36px;
@@ -640,14 +586,12 @@
     background-color: #009944;
 }
 
-
 .box_g .tit_wrap {
 
     min-width: 0;
 
     color: #009944;
 }
-
 
 .tit_g h3 {
 
@@ -664,7 +608,6 @@
     word-break: keep-all;
 }
 
-
 .tit_g p {
 
     font-size: 0.8125rem;
@@ -676,15 +619,11 @@
     word-break: keep-all;
 }
 
-
 .flx_li .arrow {
 
     width: 16px;
     background-color: #555;
 }
-
-
-
 
 /* =========================================================
    10. IMAGE GALLERY
@@ -704,7 +643,6 @@
     padding: 28px 150px 40px;
 }
 
-
 .img_section .tit_wrap {
 
     width: 50%;
@@ -721,7 +659,6 @@
     color: #555;
 }
 
-
 .img_section_g {
 
     color: #f2f2f2;
@@ -729,13 +666,10 @@
     background-color: #009944;
 }
 
-
 .img_section_g .tit_wrap {
 
     color: inherit;
 }
-
-
 
 /* =========================================================
    11. SUB PAGE SLIDER
@@ -752,7 +686,6 @@
     position: relative;
 }
 
-
 .sub_pag_slide_wrap {
 
     width: 100%;
@@ -762,7 +695,6 @@
 
     gap: 20px;
 }
-
 
 .sub_pag_clipping_mask {
 
@@ -775,7 +707,6 @@
 
     overflow: hidden;
 }
-
 
 .img_con_wrap {
 
@@ -793,7 +724,6 @@
 
     will-change: transform;
 }
-
 
 .sub_pag_img_wrap {
 
@@ -815,12 +745,10 @@
     touch-action: pan-y;
 }
 
-
 .img_con_wrap.is_dragging .sub_pag_img_wrap {
 
     cursor: grabbing;
 }
-
 
 /* PC : 전 / 중 / 후 */
 
@@ -838,7 +766,6 @@
     border-radius: 15px;
 }
 
-
 .sub_slide_img img {
 
     display: block;
@@ -853,7 +780,6 @@
     -webkit-user-drag: none;
 }
 
-
 .sub_pag_slide_wrap > .arrow {
 
     width: 40px;
@@ -864,12 +790,10 @@
     background-color: #8e8e8e;
 }
 
-
 .sub_pag_slide_wrap > .wit_arrow {
 
     background-color: #f2f2f2;
 }
-
 
 .cleane_bg {
 
@@ -885,7 +809,6 @@
 
     text-align: center;
 }
-
 
 .slide_pagination {
 
@@ -903,7 +826,29 @@
     background-color: #009944;
 }
 
+/* 초록 배경 갤러리는 메인 슬라이드와 같은 흰색 도트 사용 */
 
+.img_section_g .slide_dot {
+
+    background-color: rgb(255 255 255 / 40%);
+}
+
+.img_section_g .slide_dot.is_active,
+.img_section_g .slide_dot.is_active_4 {
+
+    background-color: #f2f2f2;
+}
+
+.img_section_g .service_gallery_name {
+
+    color: rgb(248 248 248 / 65%);
+}
+
+.img_section_g .service_gallery_status {
+
+    color: #f8f8f8;
+    background-color: transparent;
+}
 
 /* =========================================================
    12. WORK TYPE
@@ -924,7 +869,6 @@
     overflow: visible;
 }
 
-
 .tix_section > h2 {
 
     width: 100%;
@@ -933,7 +877,6 @@
 
     color: #333;
 }
-
 
 .tix_box {
 
@@ -954,12 +897,10 @@
     text-align: left;
 }
 
-
 .tix_box:nth-of-type(even) {
 
     flex-direction: row-reverse;
 }
-
 
 .tix_box .img_wrap {
 
@@ -973,7 +914,6 @@
     border-radius: 15px;
 }
 
-
 .tix_box .img_wrap img {
 
     display: block;
@@ -983,7 +923,6 @@
 
     object-fit: cover;
 }
-
 
 .tix_box .tit_wrap {
 
@@ -997,7 +936,6 @@
     color: #555;
 }
 
-
 .tix_box .tit_wrap h3 {
 
     font-size: 1.0625rem;
@@ -1007,7 +945,6 @@
 
     color: #333;
 }
-
 
 .tix_box .tit_wrap p {
 
@@ -1019,8 +956,6 @@
     color: #666;
 }
 
-
-
 /* =========================================================
    13. VIDEO
 ========================================================= */
@@ -1031,7 +966,6 @@
     min-width: 0;
 }
 
-
 .video_card_a {
 
     width: 100%;
@@ -1039,7 +973,6 @@
 
     display: block;
 }
-
 
 .video_thumbnail {
 
@@ -1059,7 +992,6 @@
     background-position: center;
 }
 
-
 .video_thumbnail > img {
 
     display: block;
@@ -1069,7 +1001,6 @@
 
     object-fit: cover;
 }
-
 
 .video_thumbnail > video {
 
@@ -1081,7 +1012,6 @@
     object-fit: cover;
 }
 
-
 .video_thumbnail > iframe {
 
     display: block;
@@ -1091,7 +1021,6 @@
 
     border: 0;
 }
-
 
 .video_thumbnail > p {
 
@@ -1112,7 +1041,6 @@
     white-space: nowrap;
 }
 
-
 .video_card_a .play_icon {
 
     background-color: #1d1d1d50;
@@ -1132,7 +1060,6 @@
 
     transform: translate(-50%, -50%);
 }
-
 
 .play_but {
 
@@ -1178,7 +1105,6 @@
     display: flex;
     flex-direction: column;
 }
-
 
 /* =========================================================
    DESKTOP ORDER
@@ -1231,7 +1157,6 @@
     order: 6;
 }
 
-
 .request_cleaning_pin {
 
     display: none;
@@ -1254,7 +1179,6 @@
     flex: 0 1 650px;
 }
 
-
 .service_intro > .tit_wrap {
 
     width: 725px;
@@ -1263,18 +1187,15 @@
     flex: 0 1 725px;
 }
 
-
 .service_intro .tit_wrap h2 {
 
     font-size: clamp(2rem, 2.1vw, 2.5rem);
 }
 
-
 .service_intro .tit_wrap h3 {
 
     font-size: clamp(1.1875rem, 1.3vw, 1.5625rem);
 }
-
 
 .service_intro .tit_wrap > p {
 
@@ -1294,12 +1215,10 @@
     color: #009944;
 }
 
-
 .service_effect .box_wrap {
 
     gap: 16px;
 }
-
 
 .service_effect .box_g {
 
@@ -1313,7 +1232,6 @@
     border-radius: 10px;
 }
 
-
 .service_effect .box_g > .icon {
 
     width: 48px;
@@ -1322,52 +1240,38 @@
     flex: 0 0 48px;
 }
 
-
 .service_effect .tit_g h3 {
 
     font-size: clamp(0.9375rem, 1vw, 1.1875rem);
 }
-
 
 .service_effect .tit_g p {
 
     font-size: clamp(0.75rem, 0.8vw, 0.9375rem);
 }
 
-
-
 /* =========================================================
    DESKTOP GALLERY
 ========================================================= */
-
-
-
 
 .service_gallery .tit_wrap h2 {
 
     font-size: clamp(1.5625rem, 2vw, 2.5rem);
 }
 
-
-
 /* =========================================================
    DESKTOP TARGET
 ========================================================= */
-
-
-
 
 .service_target > h2 {
 
     font-size: clamp(1.5625rem, 2vw, 2.5rem);
 }
 
-
 .service_target .con_wrap {
 
     gap: 30px 49px;
 }
-
 
 .service_target .con {
 
@@ -1376,7 +1280,6 @@
 
     flex: 0 0 125px;
 }
-
 
 .service_target .con > .icon {
 
@@ -1387,7 +1290,6 @@
 
     flex-basis: 48px;
 }
-
 
 .service_target .con > p {
 
@@ -1407,7 +1309,6 @@
 
     overflow: hidden;
 }
-
 
 .service_video .video_thumbnail img {
 
@@ -1431,7 +1332,6 @@
 
 }
 
-
 .text_dot::after {
 
     content: "·";
@@ -1451,7 +1351,6 @@
    Figma final visual correction
 ========================================================= */
 
-
 /* =========================================================
    1. EFFECT ICON
 ========================================================= */
@@ -1468,7 +1367,6 @@
     justify-content: center;
 }
 
-
 .service_effect .effect_icon_circle > .icon {
 
     width: 48px;
@@ -1480,7 +1378,7 @@
 }
 
 .service_video_play {
-    
+
     width: clamp(80px, 8vw, 140px);
     height: clamp(80px, 8vw, 140px);
     position: absolute;
@@ -1495,7 +1393,6 @@
 
 }
 
-
 /* =========================================================
    MOBILE ONLY CONTENT
    PC / TABLET에서는 숨김
@@ -1505,7 +1402,6 @@
 .service_video_mobile_caption {
     display: none;
 }
-
 
 /* =========================================================
    14. TABLET
@@ -1530,13 +1426,11 @@
         padding-right: 60px;
     }
 
-
     .service_gallery .slide_wrap {
 
         width: 100%;
         max-width: none;
     }
-
 
     .service_gallery .sub_pag_clipping_mask {
 
@@ -1545,12 +1439,10 @@
         aspect-ratio: 39 / 8;
     }
 
-
     .service_gallery .sub_pag_img_wrap {
 
         gap: 20px;
     }
-
 
     .service_gallery .sub_slide_img {
 
@@ -1565,7 +1457,7 @@
 
         width: 30px;
         height: 30px;
-        
+
     }
 
     .service_effect .box_wrap {
@@ -1588,12 +1480,10 @@
         font-weight: 600;
 
     }
-    
+
 }
 
-
 @media (max-width: 1024px) {
-
 
     .sub_pag_gnb,
     .breadcrumb,
@@ -1610,90 +1500,19 @@
         padding-right: 40px;
     }
 
-    .man_sled img {
-
-        height: 320px;
-    }
-
-
-
     /* INTRO */
 
-    .section_2 {
-
-        gap: 32px;
-
-        padding-top: 28px;
-        padding-bottom: 48px;
-    }
-
-
-
-    .section_2 > .img_wrap,
-    .section_2 > .tit_wrap {
-
-        width: calc((100% - 32px) / 2);
-    }
-
-
-    .section_2 .tit_wrap h2 {
-
-        font-size: 1.1875rem;
-    }
-
-
-    .section_2 .tit_wrap h3 {
-
-        font-size: 1.0625rem;
-    }
-
-
-    .section_2 .tit_wrap p {
-
-        font-size: 0.9375rem;
-    }
-
-
-
     /* CLEANING EFFECT */
-
-    .con_section .box_wrap {
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 12px;
-    }
-
-
-    .con_section .box_g {
-
-        min-height: 88px;
-
-        padding: 14px 16px;
-    }
-
-
-    .con_section .box_g > .icon {
-
-        width: 46px;
-        height: 46px;
-
-        flex-basis: 46px;
-    }
-
 
     .con_section .tit_g h3 {
 
         font-size: 0.9375rem;
     }
 
-
     .con_section .tit_g p {
 
         font-size: 0.75rem;
     }
-
-
 
     /* TARGET */
 
@@ -1708,7 +1527,6 @@
         padding: 10px;
     }
 
-
     .section_g .con > .icon,
     .section_3 .con > .icon {
 
@@ -1720,44 +1538,22 @@
         flex-basis: 50px;
     }
 
-
     .section_g .con > p,
     .section_3 .con > p {
 
         font-size: 12px;
     }
 
-
-
     /* WORK TYPE */
-
-    .tix_section {
-
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
 
     .tix_box {
 
         gap: 32px;
     }
 
-
-    .tix_box .tit_wrap h3 {
-
-        font-size: 0.9375rem;
-    }
-
-
-    .tix_box .tit_wrap p {
-
-        font-size: 0.8125rem;
-    }
-
-
-
     .sub_pag_slide_wrap > .arrow {
+
+        display: none;
 
         width: 32px;
         height: 32px;
@@ -1765,53 +1561,15 @@
         flex-basis: 32px;
     }
 
-
-
     /* GREEN */
-
-    .section_g {
-
-        padding-top: 38px;
-        padding-bottom: 30px;
-    }
-
-
-    .section_g_2 {
-
-        gap: 30px;
-
-        padding-top: 20px;
-        padding-bottom: 44px;
-
-    }
-
-
-
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-
-
     /* INTRO */
 
-    .service_intro {
-
-        gap: 36px;
-    }
-
-
     /* EFFECT */
-
-    .service_effect .box_g > .icon {
-
-        width: 44px;
-        height: 44px;
-
-        flex-basis: 44px;
-    }
-
 
     /* TARGET */
 
@@ -1837,13 +1595,10 @@
         padding-right: 16px;
     }
 
-
     .breadcrumb {
 
         display: none;
     }
-
-    
 
     .man_sled {
 
@@ -1866,13 +1621,10 @@
         scrollbar-width: none;
     }
 
-    
-
     .sub_pag_gnb::-webkit-scrollbar {
 
         display: none;
     }
-
 
     .sub_pag_menu {
 
@@ -1882,17 +1634,14 @@
         justify-content: flex-end;
 
         gap: 12px;
-       
 
     }
-
 
     .sub_pag_depth {
 
         width: auto;
         min-width: max-content;
     }
-
 
     .sub_pag_tit {
 
@@ -1902,8 +1651,6 @@
         line-height: 1.55;
         letter-spacing: -0.04em;
     }
-
-
 
     /* INTRO */
 
@@ -1917,14 +1664,12 @@
     padding-bottom: 48px;
 }
 
-
     .section_2 > .img_wrap,
     .section_2 > .tit_wrap {
 
         width: 100%;
         max-width: none;
     }
-
 
     .section_2 .main_img {
 
@@ -1935,13 +1680,11 @@
         border-radius: 12px;
     }
 
-
     .section_2 .tit_wrap {
 
     align-items: flex-start;
     text-align: left;
 }
-
 
     .section_2 .tit_in_wrap {
 
@@ -1949,13 +1692,11 @@
     align-items: flex-start;
 }
 
-
     .section_2 .tit_wrap h2 {
 
         font-size: 1.1875rem;
         line-height: 1.3;
     }
-
 
     .section_2 .tit_wrap h3 {
 
@@ -1965,7 +1706,6 @@
         line-height: 1.4;
     }
 
-
     .section_2 .tit_wrap p {
 
     font-size: 0.75rem;
@@ -1973,8 +1713,6 @@
     text-align: left;
     margin-top: 4px;
 }
-
-
 
     /* CLEANING EFFECT */
 
@@ -1986,7 +1724,6 @@
     gap: 18px;
 }
 
-
     .con_section > h2 {
 
     margin-left: 0;
@@ -1994,13 +1731,11 @@
     margin-bottom: 0;
 }
 
-
     .con_section .box_wrap {
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
 }
-
 
     .con_section .box_g {
 
@@ -2011,7 +1746,6 @@
         gap: 8px;
     }
 
-
     .con_section .box_g > .icon {
 
         width: 36px;
@@ -2020,21 +1754,17 @@
         flex-basis: 36px;
     }
 
-
     .con_section .box_g .tit_wrap h3 {
 
         font-size: 0.75rem;
         line-height: 1.3;
     }
 
-
     .con_section .box_g .tit_wrap p {
 
         font-size: 0.625rem;
         line-height: 1.4;
     }
-
-
 
     /* TARGET */
 
@@ -2052,7 +1782,6 @@
         text-align: center;
     }
 
-
     .section_3 h2 {
 
         order: 1;
@@ -2061,7 +1790,6 @@
 
         color: inherit;
     }
-
 
     .section_3 > p {
 
@@ -2074,13 +1802,10 @@
         color: inherit;
     }
 
-
     .section_3 .con_wrap {
 
         order: 3;
     }
-
-
 
     /* GREEN TARGET */
 
@@ -2091,7 +1816,6 @@
     padding-bottom: 44px;
 }
 
-
     .section_g > h2 {
 
         width: 100%;
@@ -2100,7 +1824,6 @@
 
         text-align: center;
     }
-
 
     .section_g > p {
 
@@ -2111,8 +1834,6 @@
     max-width: 620px;
     margin: 0 auto;
 }
-
-
 
     /* TARGET ICONS */
 
@@ -2129,7 +1850,6 @@
         gap: 12px 8px;
     }
 
-
     .section_3 .con,
     .section_g .con {
 
@@ -2139,9 +1859,8 @@
         flex: 0 0 calc((100% - 24px) / 4);
 
         padding:10px;
-        
-    }
 
+    }
 
     .section_3 .con > .icon,
     .section_g .con > .icon {
@@ -2153,9 +1872,7 @@
 
         flex: 0 0 42px;
 
-       
     }
-
 
     .section_3 .con > p,
     .section_g .con > p {
@@ -2166,8 +1883,6 @@
         line-height: 1.2;
 
     }
-
-
 
     /* WORK TYPE */
 
@@ -2181,7 +1896,6 @@
         padding-bottom: 32px;
     }
 
-
     .tix_section > h2 {
 
         width: 100%;
@@ -2192,7 +1906,6 @@
 
         text-align: left;
     }
-
 
     .tix_box,
     .tix_box:nth-of-type(even) {
@@ -2207,7 +1920,6 @@
         gap: 12px;
     }
 
-
     .tix_box .img_wrap {
 
         width: 40%;
@@ -2216,7 +1928,6 @@
 
         border-radius: 8px;
     }
-
 
     .tix_box .tit_wrap {
 
@@ -2229,21 +1940,17 @@
         text-align: left;
     }
 
-
     .tix_box .tit_wrap h3 {
 
         font-size: 0.875rem;
         line-height: 1.4;
     }
 
-
     .tix_box .tit_wrap p {
 
         font-size: 0.75rem;
         line-height: 1.5;
     }
-
-
 
     /* =====================================================
        GALLERY
@@ -2258,7 +1965,6 @@
     padding-bottom: 48px;
 }
 
-
     .img_section .tit_wrap {
 
     width: 100%;
@@ -2268,30 +1974,20 @@
     gap: 6px;
 }
 
-
     .img_section .tit_wrap h2 {
 
         font-size: 1.1875rem;
     }
-
 
     .img_section .tit_wrap p {
 
         font-size: 0.75rem;
     }
 
-
     .sub_pag_slide_wrap {
 
         gap: 0;
     }
-
-
-    .sub_pag_slide_wrap > .arrow {
-
-        display: none;
-    }
-
 
     .sub_pag_clipping_mask {
 
@@ -2303,12 +1999,10 @@
         border-radius: 12px;
     }
 
-
     .sub_pag_img_wrap {
 
         gap: 0;
     }
-
 
     /* 전 - 숨김 */
 
@@ -2317,14 +2011,12 @@
         display: none;
     }
 
-
     /* 중 - 숨김 */
 
     .sub_slide_img:nth-child(2) {
 
         display: none;
     }
-
 
     /* 후 - 대표 이미지 */
 
@@ -2340,7 +2032,6 @@
         border-radius: 12px;
     }
 
-
     .sub_slide_img:nth-child(3) img {
 
         width: 100%;
@@ -2349,13 +2040,10 @@
         object-fit: cover;
     }
 
-
     .slide_pagination {
 
         margin-top: 10px;
     }
-
-
 
     /* VIDEO */
 
@@ -2368,7 +2056,6 @@
     padding-bottom: 48px;
 }
 
-
     .section_g_2 > div,
     .section_g_2 .tit_wrap {
 
@@ -2376,13 +2063,11 @@
         max-width: none;
     }
 
-
     .section_g_2 .video_thumbnail {
 
     border-radius: 14px;
 
     }
-
 
         .section_g_2 .tit_wrap {
 
@@ -2391,25 +2076,21 @@
         gap: 8px;
     }
 
-
     .section_g_2 .tit_wrap h2 {
 
         font-size: 1.1875rem;
     }
-
 
     .section_g_2 .tit_wrap p {
 
         font-size: 0.75rem;
     }
 
-
     .tit_wrap .none_p {
 
         display: none;
     }
 
-    
     .man_sled img {
 
         display: block;
@@ -2421,7 +2102,6 @@
 
         object-fit: cover;
     }
-
 
     .section_g .con_wrap {
 
@@ -2444,17 +2124,14 @@
         margin: 0 auto;
     }
 
-
     .section_g .con {
 
         width: 100%;
         max-width: 88px;
 
-
         gap: 6px;
 
     }
-
 
     .section_g .con > .icon {
 
@@ -2467,7 +2144,6 @@
 
     }
 
-
     .section_g .con > p {
 
         margin: 0;
@@ -2478,7 +2154,6 @@
         white-space: nowrap;
     }
 
-    
     /* =====================================================
        MOBILE ORDER
 
@@ -2493,8 +2168,6 @@
     .service_intro {
 
     order: 1;
-    flex-direction: column;
-    align-items: stretch;
     gap: 14px;
     padding-top: 17px;
     padding-bottom: 36px;
@@ -2540,19 +2213,16 @@
     .service_video {
 
     order: 6;
-    padding-top: 36px;
     padding-bottom: 36px;
     background-color: #fff;
     color: #555;
 }
-
 
     /* =====================================================
        INTRO
        Figma : 이미지 → 우측 정렬 텍스트
     ===================================================== */
 
-    
     .service_intro > .img_wrap,
     .service_intro > .tit_wrap {
 
@@ -2562,14 +2232,12 @@
         flex: none;
     }
 
-
     .service_intro .tit_wrap {
 
         align-items: flex-end;
 
         text-align: right;
     }
-
 
     .service_intro .tit_in_wrap {
 
@@ -2578,12 +2246,10 @@
         align-items: flex-end;
     }
 
-
     .service_intro .tit_wrap h2 {
 
         display: none;
     }
-
 
     .service_intro .tit_wrap h3 {
 
@@ -2592,7 +2258,6 @@
         font-size: 1.1875rem;
         line-height: 1.45;
     }
-
 
     .service_intro .tit_wrap > p {
 
@@ -2606,13 +2271,10 @@
         text-align: right;
     }
 
-
-
     /* =====================================================
        TARGET
        항목 수에 따라 자연스럽게 중앙 정렬
     ===================================================== */
-
 
     .service_target .con_wrap {
 
@@ -2628,14 +2290,10 @@
         gap: 10px 12px;
     }
 
-
-
     .service_target_description {
 
         display: none;
     }
-
-
 
     /* =====================================================
        EFFECT
@@ -2651,7 +2309,6 @@
         color: #555;
     }
 
-
     .service_effect .box_wrap {
 
         display: flex;
@@ -2659,7 +2316,6 @@
 
         gap: 11px;
     }
-
 
     .service_effect .box_g {
 
@@ -2676,7 +2332,6 @@
         border-radius: 0;
     }
 
-
     .service_effect .box_g > .icon {
 
         width: 40px;
@@ -2684,7 +2339,6 @@
 
         flex: 0 0 40px;
     }
-
 
     .service_effect .box_g .tit_wrap {
 
@@ -2694,7 +2348,6 @@
 
         color: #555;
     }
-
 
     .service_effect .box_g .tit_wrap h3 {
 
@@ -2706,7 +2359,6 @@
         color: #555;
     }
 
-
     .service_effect .box_g .tit_wrap p {
 
         font-size: 0.625rem;
@@ -2715,20 +2367,14 @@
         color: #8e8e8e;
     }
 
-
-
     /* =====================================================
        GALLERY
     ===================================================== */
-
-    
-
 
     .service_gallery .tit_wrap {
 
         gap: 0;
     }
-
 
     /* Figma 모바일에는 이 문구 없음 */
 
@@ -2737,13 +2383,11 @@
         display: none;
     }
 
-
     .service_gallery .slide_before,
     .service_gallery .slide_ing {
 
         display: none;
     }
-
 
     .service_gallery .slide_after {
 
@@ -2755,27 +2399,20 @@
         flex: 0 0 100%;
     }
 
-
-
     /* =====================================================
        VIDEO
        모바일 피그마는 흰색 영역
     ===================================================== */
-
-    
-
 
     .service_video .tit_wrap {
 
         color: #555;
     }
 
-
     .service_video .tit_wrap h2 {
 
         font-size: 1.1875rem;
     }
-
 
     .service_video .flx_li_g {
 
@@ -2786,15 +2423,12 @@
 
 }
 
-
-
 /* =========================================================
    TABLET DETAIL
    481px ~ 1024px
 ========================================================= */
 
 @media (min-width: 481px) and (max-width: 1024px) {
-
 
     /* =====================================================
        INTRO
@@ -2816,14 +2450,12 @@
         padding-bottom: 40px;
     }
 
-
     .service_intro > .img_wrap,
     .service_intro > .tit_wrap {
 
         width: 100%;
         max-width: none;
     }
-
 
     .service_intro .main_img {
 
@@ -2834,7 +2466,6 @@
         border-radius: 12px;
     }
 
-
     .service_intro .main_img img {
 
         width: 100%;
@@ -2842,7 +2473,6 @@
 
         object-fit: cover;
     }
-
 
     .service_intro .tit_wrap {
 
@@ -2853,7 +2483,6 @@
         text-align: right;
     }
 
-
     .service_intro .tit_in_wrap {
 
         width: 100%;
@@ -2861,14 +2490,12 @@
         align-items: flex-end;
     }
 
-
     .service_intro .tit_wrap h3 {
 
         font-size: 1.3125rem; /* 21px */
         line-height: 1.4;
         letter-spacing: -0.04em;
     }
-
 
     .service_intro .tit_wrap > p {
 
@@ -2883,7 +2510,6 @@
         text-align: right;
     }
 
-
     /* =====================================================
        TARGET
     ===================================================== */
@@ -2894,7 +2520,6 @@
 
         padding: 24px 32px;
     }
-
 
     .service_target .con_wrap {
 
@@ -2910,12 +2535,10 @@
         margin: 0 auto;
     }
 
-
     .service_target .con {
 
         padding: 8px;
     }
-
 
     .service_target .con > .icon {
 
@@ -2927,7 +2550,6 @@
         flex: 0 0 44px;
     }
 
-
     .service_target .con > p {
 
         font-size: 0.6875rem; /* 11px */
@@ -2935,7 +2557,6 @@
 
         white-space: nowrap;
     }
-
 
     /* =====================================================
        REQUEST
@@ -2949,7 +2570,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
 
     /* =====================================================
        EFFECT
@@ -2974,7 +2594,6 @@
         padding-bottom: 52px;
     }
 
-
     .service_effect > h2 {
 
         width: 100%;
@@ -2986,7 +2605,6 @@
         font-size: 1.1875rem;
     }
 
-
     .service_effect .box_wrap {
 
         width: 100%;
@@ -2996,7 +2614,6 @@
 
         gap: 11px;
     }
-
 
     .service_effect .box_g {
 
@@ -3017,7 +2634,6 @@
         background-color: #fff;
     }
 
-
     .service_effect .effect_icon_circle {
 
         width: 42px;
@@ -3030,7 +2646,6 @@
         justify-content: center;
     }
 
-
     .service_effect .effect_icon_circle > .icon {
 
         width: 40px;
@@ -3038,7 +2653,6 @@
 
         flex: 0 0 40px;
     }
-
 
     .service_effect .box_g .tit_wrap {
 
@@ -3048,7 +2662,6 @@
 
         color: #009944;
     }
-
 
     .service_effect .box_g .tit_wrap h3 {
 
@@ -3060,7 +2673,6 @@
         line-height: 1.4;
     }
 
-
     .service_effect .box_g .tit_wrap p {
 
         color: #009944;
@@ -3068,7 +2680,6 @@
         font-size: 0.75rem; /* 12px */
         line-height: 1.45;
     }
-
 
     /* 기존 HTML의 직접 아이콘 구조 대응 */
 
@@ -3079,7 +2690,6 @@
 
         flex: 0 0 42px;
     }
-
 
     /* =====================================================
        GALLERY
@@ -3103,7 +2713,6 @@
         padding-bottom: 52px;
     }
 
-
     .service_gallery .tit_wrap {
 
         width: 100%;
@@ -3113,7 +2722,6 @@
         text-align: center;
     }
 
-
     .service_gallery .tit_wrap h2 {
 
         font-size: 1.5625rem;       /* 25px */
@@ -3122,7 +2730,6 @@
         font-weight: 700;
 
     }
-
 
     .service_gallery .slide_wrap {
 
@@ -3138,7 +2745,6 @@
         margin-right: auto;
     }
 
-
     .service_gallery .sub_pag_slide_wrap {
 
         width: 100%;
@@ -3146,14 +2752,12 @@
         gap: 14px;
     }
 
-
     .service_gallery
     .sub_pag_slide_wrap > .arrow {
 
         display: block;
 
     }
-
 
     .service_gallery
     .sub_pag_clipping_mask {
@@ -3166,7 +2770,6 @@
         border-radius: 12px;
     }
 
-
     .service_gallery
     .sub_pag_img_wrap {
 
@@ -3178,7 +2781,6 @@
         flex: 0 0 100%;
     }
 
-
     /*
        전·중 이미지는 숨기고
        대표 이미지 한 장만 표시
@@ -3189,7 +2791,6 @@
 
         display: none;
     }
-
 
     .service_gallery .slide_after {
 
@@ -3203,7 +2804,6 @@
         border-radius: 12px;
     }
 
-
     .service_gallery .slide_after img {
 
         width: 100%;
@@ -3211,7 +2811,6 @@
 
         object-fit: cover;
     }
-
 
     /*
        이미지 안의 상태표시는 숨기고
@@ -3224,7 +2823,6 @@
 
         display: none;
     }
-
 
     .service_gallery_meta {
 
@@ -3243,7 +2841,6 @@
         padding: 0 12px;
     }
 
-
     .service_gallery_name {
 
         color: #8e8e8e;
@@ -3252,7 +2849,6 @@
         line-height: 1.5;
         font-weight: 600;
     }
-
 
     .service_gallery_status {
 
@@ -3269,7 +2865,6 @@
         line-height: 1.5;
         font-weight: 500;
     }
-
 
     /* =====================================================
        VIDEO
@@ -3294,7 +2889,6 @@
         background-color: #fff;
     }
 
-
     .service_video
     .service_video_title {
 
@@ -3312,7 +2906,6 @@
         text-align: left;
     }
 
-
     .service_video
     .service_video_title h2 {
 
@@ -3320,14 +2913,12 @@
         line-height: 1.4;
     }
 
-
     .service_video
     .service_video_title
     .flx_li_g {
 
         display: none;
     }
-
 
     .service_video .video_card {
 
@@ -3339,7 +2930,6 @@
         margin: 0 auto;
     }
 
-
     .service_video
     .video_thumbnail {
 
@@ -3350,7 +2940,6 @@
         border-radius: 12px;
     }
 
-
     .service_video
     .video_thumbnail img {
 
@@ -3359,7 +2948,6 @@
 
         object-fit: cover;
     }
-
 
     /* 영상 준비 중인 페이지만 낮게 표시 */
 
@@ -3382,14 +2970,12 @@
         line-height: 1.5;
     }
 
-
     .service_video
     .video_card--disabled
     .service_video_mobile_caption {
 
         display: none;
     }
-
 
     /* =====================================================
     SUB PAGE MENU TYPOGRAPHY
@@ -3412,9 +2998,7 @@
 
     }
 
-
 }
-
 
 /* =========================================================
    LARGE TABLET EFFECT
@@ -3433,7 +3017,6 @@
         gap: 12px;
     }
 
-
        .sub_pag_menu {
 
               gap: 0;
@@ -3448,9 +3031,7 @@
 
     }
 
-
 }
-
 
 /* =========================================================
    SMALL MOBILE
@@ -3472,20 +3053,17 @@
         padding-bottom: 42px;
     }
 
-
     .img_section {
 
         padding-top: 38px;
         padding-bottom: 42px;
     }
 
-
     .section_g {
 
         padding-top: 38px;
         padding-bottom: 40px;
     }
-
 
     .section_g .con_wrap {
 
@@ -3498,12 +3076,10 @@
         gap: 20px 10px;
     }
 
-
     .section_g .con {
 
         max-width: 78px;
     }
-
 
     .section_g .con > .icon {
 
@@ -3515,13 +3091,11 @@
         flex-basis: 42px;
     }
 
-
     .section_g_2 {
 
         padding-top: 32px;
         padding-bottom: 42px;
     }
-
 
     /* =====================================================
        INTRO
@@ -3531,7 +3105,6 @@
 
         padding-bottom: 30px;
     }
-
 
     /* =====================================================
        TARGET
@@ -3547,12 +3120,10 @@
         padding-bottom: 14px;
     }
 
-
     .service_target .con_wrap {
 
         gap: 8px 12px;
     }
-
 
     /* =====================================================
        EFFECT ICON
@@ -3564,26 +3135,24 @@
 
     .service_effect .effect_icon_circle {
 
-        width: 46px;
-        height: 46px;
+        width: 70px;
+        height: 70px;
 
-        flex: 0 0 46px;
+        flex: 0 0 70px;
 
         border: 1px solid #009944;
         border-radius: 50%;
     }
 
-
     .service_effect .effect_icon_circle > .icon {
 
-        width: 24px;
-        height: 24px;
+        width: 36px;
+        height: 36px;
 
-        flex: 0 0 24px;
+        flex: 0 0 36px;
 
         background-color: #009944;
     }
-
 
     .service_effect .box_g {
 
@@ -3592,19 +3161,16 @@
         gap: 8px;
     }
 
-
     .service_effect .box_g .tit_wrap h3 {
 
         font-size: 0.875rem; /* 14px */
     }
-
 
     .service_effect .box_g .tit_wrap p {
 
         font-size: 0.75rem; /* 12px */
         line-height: 1.5;
     }
-
 
     /* =====================================================
        GALLERY
@@ -3618,7 +3184,6 @@
         padding-bottom: 36px;
     }
 
-
     .service_gallery .slide_wrap {
 
         display: flex;
@@ -3626,7 +3191,6 @@
         gap: 5px;
         margin-top: 4px;
     }
-
 
     .service_gallery_meta {
 
@@ -3640,7 +3204,6 @@
         margin-top: 0;
     }
 
-
     .service_gallery_name {
 
         color: #8e8e8e;
@@ -3649,7 +3212,6 @@
         line-height: 1.5;
         font-weight: 700;
     }
-
 
     .service_gallery_status {
 
@@ -3664,7 +3226,6 @@
         line-height: 1.5;
         font-weight: 500;
     }
-
 
     /* =====================================================
        VIDEO
@@ -3689,7 +3250,6 @@
         background-color: #fff;
     }
 
-
     .service_video .service_video_title {
 
         order: 1;
@@ -3703,12 +3263,10 @@
         text-align: left;
     }
 
-
     .service_video .service_video_title h2 {
 
         font-size: 1.1875rem; /* 19px */
     }
-
 
     /* 모바일에서는 제목 바로 밑 설명문 숨김 */
 
@@ -3717,14 +3275,12 @@
         display: none;
     }
 
-
     .service_video .video_card {
 
         order: 2;
 
         width: 100%;
     }
-
 
     .service_video .video_card_a {
 
@@ -3733,7 +3289,6 @@
 
         gap: 9px;
     }
-
 
     .service_video .video_thumbnail {
 
@@ -3746,7 +3301,6 @@
         background-color: #f2f2f2;
     }
 
-
     .service_video .video_thumbnail img {
 
         width: 100%;
@@ -3754,7 +3308,6 @@
 
         object-fit: cover;
     }
-
 
     .service_video_mobile_caption {
 
@@ -3772,7 +3325,6 @@
         line-height: 1.5;
         font-weight: 700;
     }
-
 
     /* PLAY BUTTON */
 
@@ -3797,7 +3349,6 @@
         background-color: rgba(248, 248, 248, 0.5);
     }
 
-
     .service_video_play .icon {
 
         width: 46%;
@@ -3805,7 +3356,6 @@
 
         background-color: #f8f8f8;
     }
-
 
     /* =====================================================
        GENERIC INTRO
@@ -3816,12 +3366,10 @@
         display: none;
     }
 
-
     .section_2 .tit_wrap h3 {
 
         font-size: 1.0625rem; /* 17px */
     }
-
 
     /* =====================================================
        GENERIC CLEANING EFFECT
@@ -3834,7 +3382,6 @@
         gap: 6px;
     }
 
-
     .con_section .box_g > .icon {
 
         width: 22px;
@@ -3843,21 +3390,17 @@
         flex-basis: 22px;
     }
 
-
     .con_section .box_g .tit_wrap h3 {
 
          font-size: 0.875rem;     /* 14px */
-   
 
     }
-
 
     .con_section .box_g .tit_wrap p {
 
         font-size: 0.75rem; /* 12px */
         line-height: 1.5;
     }
-
 
     /* =====================================================
        TARGET ICON
@@ -3874,14 +3417,12 @@
         flex-basis: 38px;
     }
 
-
     .section_g .con > p,
     .section_3 .con > p {
 
         font-size: 0.6875rem; /* 11px */
         line-height: 1.3;
     }
-
 
     /* =====================================================
        WORK TYPE
@@ -3892,7 +3433,6 @@
         gap: 10px;
     }
 
-
     .tix_box .img_wrap {
 
         width: 42%;
@@ -3900,13 +3440,11 @@
         flex-basis: 42%;
     }
 
-
     .tix_box .tit_wrap p {
 
         font-size: 0.6875rem; /* 11px */
         line-height: 1.5;
     }
-
 
     /* 갤러리 이미지 상태표시 */
 
@@ -3928,34 +3466,13 @@
 
     }
 
-
     .sub_pag_menu {
 
         gap: 0;
 
     }
 
-
-    .service_effect .effect_icon_circle{
-
-        width: 70px;
-        height: 70px;
-        flex: 0 0 70px;
-
-    }
-
-    .service_effect .effect_icon_circle > .icon{
-
-
-        width: 36px;
-        height: 36px;
-        flex: 0 0 36px;
-
-
-    }
-
     .flx_li .arrow{
-
 
         width: 12px;
 
@@ -3970,12 +3487,10 @@
         justify-content: center;
 
         color: #8e8e8e;
-    
 
         font-size: 0.75rem;
         line-height: 1.5;
     }
-
 
     .service_video
     .video_card--disabled
