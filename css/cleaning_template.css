@@ -1,167 +1,107 @@
 @charset "utf-8";
 
-/* =========================================================
-   CARPET / PETRIC SERVICE TEMPLATE
-   공통 subpag_template.css 뒤에 불러옵니다.
-========================================================= */
+/* 카펫 / 페트릭 페이지에서만 사용하는 차이값 */
 
-.service_detail--cleaning .service_target {
+.service_cleaning .service_target {
     order: 2;
     text-align: center;
-    background-color: #fff;
 }
 
-.service_detail--cleaning .service_gallery,
-.service_detail--cleaning .service_video {
-    color: #f8f8f8;
-    background-color: #009944;
-}
-
-.service_detail--cleaning .service_video {
+.service_cleaning .service_video {
     order: 4;
 }
 
-.service_detail--cleaning .service_request {
+.service_cleaning .service_request {
     order: 5;
 }
 
-.service_intro--media-right > .tit_wrap {
-    order: 1;
-}
+/* 초록 배경 제목 안의 작은 화살표 */
 
-.service_intro--media-right > .main_img {
-    order: 2;
-}
-
-.service_gallery--cleaning .tit_wrap h2,
-.service_video--cleaning .service_video_title,
-.service_video--cleaning .service_video_title h2 {
-    color: inherit;
-}
-
-/* 이미지가 준비되지 않은 영상 썸네일 슬롯 */
-
-.service_media_slot {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: #8e8e8e;
+.flx_li_g .wit_arrow {
+    width: 16px;
     background-color: #f2f2f2;
 }
 
-.service_media_slot > img {
-    position: absolute;
-    inset: 0;
+/* 영상 이미지가 준비되기 전 사용하는 자리 */
+
+.service_media_slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
 }
 
 .service_media_slot_notice {
-    position: relative;
     z-index: 1;
-    font-size: 0.9375rem;
-    line-height: 1.5;
+    color: #8e8e8e;
 }
 
-/* =========================================================
-   MOBILE / IPAD
-========================================================= */
-
 @media (max-width: 1024px) {
-
-    .service_detail--cleaning .service_target {
+    .service_cleaning .service_target {
         color: #f8f8f8;
         background-color: #009944;
     }
 
-    .service_detail--cleaning .service_request {
-        order: 3;
-    }
-
-    .service_detail--cleaning .service_video {
-        color: #555;
-        background-color: #fff;
-    }
-
-    .service_detail--cleaning .service_gallery {
+    .service_cleaning .service_gallery {
         order: 4;
     }
 
-    .service_detail--cleaning .service_video {
+    .service_cleaning .service_video {
         order: 5;
     }
 
-    .service_intro--media-right > .main_img {
+    .service_cleaning .service_intro > .main_img {
         order: 1;
     }
 
-    .service_intro--media-right > .tit_wrap {
+    .service_cleaning .service_intro > .tit_wrap {
         order: 2;
     }
 
-    .service_gallery--cleaning .tit_wrap {
+    .service_cleaning .service_gallery .tit_wrap {
         align-items: flex-start;
         text-align: left;
     }
 
-    .service_gallery--cleaning .sub_slide_img {
+    .service_cleaning .service_gallery .sub_slide_img {
         display: none;
     }
 
-    .service_gallery--cleaning .sub_slide_img.mobile_featured {
+    .service_cleaning .service_gallery .mobile_featured {
         width: 100%;
+        height: 100%;
         display: block;
         flex: 0 0 100%;
         border-radius: 12px;
     }
 
-    .service_gallery--cleaning .mobile_featured .but_bg {
+    .service_cleaning .service_gallery .mobile_featured .but_bg {
         display: none;
-    }
-
-    .service_target--cleaning .con {
-        width: 76px;
-        max-width: 76px;
-        flex: 0 0 76px;
-        padding: 6px;
-    }
-
-    .service_target--cleaning .con > .icon {
-        width: 42px;
-        height: 42px;
-        max-width: 42px;
-        flex: 0 0 42px;
     }
 }
 
 @media (max-width: 480px) {
-
-    .service_gallery--cleaning .sub_pag_slide_wrap > .arrow {
-        display: none;
+    .service_cleaning .service_target .con_wrap {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 4px;
     }
 
-    .service_target--cleaning .con_wrap {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 12px;
+    .service_cleaning .service_target .con {
+        width: 48px;
+        max-width: 48px;
+        min-width: 48px;
+        flex: 0 0 48px;
+        padding: 0;
     }
 
-    .service_target--cleaning .con {
-        width: 72px;
-        max-width: 72px;
-        min-width: 72px;
-        flex-basis: 72px;
+    .service_cleaning .service_target .con > .icon {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
     }
 
-    .service_target--cleaning .con > .icon {
-        width: 42px;
-        height: 42px;
-        flex: 0 0 42px;
-    }
-
-    .service_target--cleaning .con > p {
+    .service_cleaning .service_target .con > p {
         font-size: 0.625rem;
     }
 
