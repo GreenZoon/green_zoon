@@ -1489,8 +1489,8 @@ svg {
     .sub_back {
 
         width: 100%;
-        min-height: 40px;
-        padding: 0 40px;
+        height: 36px;
+        padding: 0 20px;
 
         display: flex;
         align-items: center;
@@ -1502,6 +1502,7 @@ svg {
 
         font-size: 0.875rem;
         font-weight: 700;
+        line-height: 1.5;
         letter-spacing: -0.04em;
         text-align: left;
         cursor: pointer;
@@ -1513,12 +1514,11 @@ svg {
         content: "";
 
         width: 8px;
-        height: 8px;
+        height: 12px;
         flex: 0 0 8px;
 
-        border-left: 1.5px solid currentColor;
-        border-bottom: 1.5px solid currentColor;
-        transform: rotate(45deg);
+        background-color: currentColor;
+        clip-path: polygon(70% 0, 100% 0, 30% 50%, 100% 100%, 70% 100%, 0 50%);
 
     }
 
@@ -1649,14 +1649,6 @@ svg {
 }
 
 @media (max-width: 480px){
-
-    .sub_back {
-
-        min-height: 36px;
-        padding: 0 20px;
-
-    }
-
 
     section {
 
