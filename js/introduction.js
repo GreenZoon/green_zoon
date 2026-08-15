@@ -42,13 +42,6 @@
 
         }
 
-        const currentGroup =
-            document.body.dataset.companyGroup || "intro";
-
-        target
-            .querySelector(`[data-company-group='${currentGroup}']`)
-            ?.classList.add("is_active");
-
         const currentPage = document.body.dataset.companyPage;
 
         target
