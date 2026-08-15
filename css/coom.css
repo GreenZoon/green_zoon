@@ -1045,6 +1045,76 @@ svg {
 
 }
 
+.breadcrumb,
+.company_breadcrumb {
+
+    gap: 8px;
+    color: #8e8e8e;
+
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+
+}
+
+.breadcrumb a,
+.breadcrumb p,
+.company_breadcrumb a,
+.company_breadcrumb p {
+
+    color: inherit;
+
+}
+
+.breadcrumb .home,
+.company_breadcrumb .home {
+
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+
+    display: block;
+    background-color: #8e8e8e;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.breadcrumb .arrow,
+.company_breadcrumb .arrow {
+
+    width: 24px;
+    background-color: #8e8e8e;
+
+}
+
+.breadcrumb_dot_wrap {
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.breadcrumb_dot {
+
+    width: 5px;
+    height: 5px;
+    flex: 0 0 5px;
+
+    border-radius: 50%;
+    background-color: #8e8e8e;
+
+}
+
 .dot{
 
     background-color: #8e8e8e;

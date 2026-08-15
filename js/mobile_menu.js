@@ -108,14 +108,7 @@ function createSubBack() {
         "click",
         function () {
 
-            if (window.history.length > 1) {
-                window.history.back();
-                return;
-            }
-
-
-            window.location.href =
-                window.GreenZonePaths.resolve("index.html");
+            window.history.back();
 
         }
     );

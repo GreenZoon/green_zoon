@@ -148,49 +148,10 @@
     display: flex;
     align-items: center;
 
-    gap: 7px;
-
-    padding: 4px 50px;
+    padding: 0 150px;
 
     border: none;
 
-    color: #8e8e8e;
-
-}
-
-.breadcrumb a,
-.breadcrumb p {
-
-    color: inherit;
-
-}
-
-.breadcrumb .arrow {
-
-    width: 12px;
-
-    background-color: #8e8e8e;
-
-}
-
-.breadcrumb_dot_wrap {
-
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-}
-
-.breadcrumb_dot {
-
-    width: 4px;
-    height: 4px;
-
-    flex: 0 0 4px;
-
-    border-radius: 50%;
-
-    background-color: #8e8e8e;
 }
 
 /* =========================================================
@@ -1353,6 +1314,12 @@
 ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1500px) {
+
+    .breadcrumb {
+
+        padding: 0 50px;
+
+    }
 
 
     .service_gallery .slide_wrap {

@@ -389,20 +389,24 @@ footer {
 
 
     .footer_inner {
+        display: grid;
+
         grid-template-columns:
-            minmax(8rem, 0.8fr)
-            minmax(14rem, 1.3fr)
-            minmax(12rem, 1fr);
+            minmax(120px, 0.8fr)
+            minmax(220px, 1.3fr)
+            minmax(180px, 1fr);
 
         grid-template-areas:
             "logo company branch"
             "subnav subnav subnav"
-            "sns policy copy";
+            "sns policy policy"
+            "copy copy copy";
 
-        column-gap: 2rem;
-        row-gap: 2rem;
+        column-gap: 32px;
+        row-gap: 28px;
+
+        align-items: start;
     }
-
 
     .footer_logo {
         width: 8rem;
@@ -446,25 +450,7 @@ footer {
         padding: 40px;
     }
 
-    .footer_inner {
-        display: grid;
 
-        grid-template-columns:
-            minmax(120px, 0.8fr)
-            minmax(220px, 1.3fr)
-            minmax(180px, 1fr);
-
-        grid-template-areas:
-            "logo company branch"
-            "subnav subnav subnav"
-            "sns policy policy"
-            "copy copy copy";
-
-        column-gap: 32px;
-        row-gap: 28px;
-
-        align-items: start;
-    }
 
 
     .footer_logo {
@@ -533,17 +519,18 @@ footer {
 
         white-space: nowrap;
     }
+    
 
 }
 
 
 /* =========================================================
    MOBILE FOOTER
-   515px 이하
+   769px 이하
    402px Figma 시안 기반
 ========================================================= */
 
-@media (max-width: 515px) {
+@media (max-width:  769px) {
 
     footer {
 
