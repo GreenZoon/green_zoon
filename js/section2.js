@@ -18,7 +18,7 @@ if (section2) {
 
     const contentTitle = section2.querySelector(".tit_wrap_2 h3");
     const contentDescription = section2.querySelector(".tit_wrap_2 p");
-    // const contentLink = section2.querySelector(".box_li");
+    const contentLink = section2.querySelector(".box_li");
 
     const contentImages = section2.querySelectorAll(".img_box img");
 
@@ -442,9 +442,11 @@ if (section2) {
                 selectedData.description;
         }
 
-        // if (contentLink) {
-        //     contentLink.href = selectedData.link;
-        // }
+        if (contentLink) {
+            contentLink.href =
+                window.GreenZonePaths?.resolve(selectedData.link) ||
+                selectedData.link;
+        }
 
         contentImages.forEach((image, imageIndex) => {
             const imageData =
@@ -472,7 +474,7 @@ if (section2) {
 
             changeServiceContent(index);
 
-            if (window.innerWidth > 515) {
+            if (window.innerWidth > 1024) {
                 return;
             }
 

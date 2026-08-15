@@ -2003,19 +2003,30 @@
     }
 
     .button_2:hover,
-    .button_2:active {
+    .button_2:active,
+    .button_2.is_selected {
 
         border: 0;
         background: transparent;
-        color: #8e8e8e;
+        color: #009944;
         transform: none;
 
     }
 
     .button_2:hover .icon_2,
-    .button_2:active .icon_2 {
+    .button_2:active .icon_2,
+    .button_2.is_selected .icon_2 {
 
-        background-color: #8e8e8e;
+        background-color: #f8f8f8;
+
+    }
+
+    .button_2:hover::before,
+    .button_2:active::before,
+    .button_2.is_selected::before {
+
+        border-color: #009944;
+        background-color: #009944;
 
     }
 
