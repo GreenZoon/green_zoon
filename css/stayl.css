@@ -1971,10 +1971,10 @@
 
     .button_2 {
 
-        display: grid;
-        grid-template-columns: 70px;
-        grid-template-rows: 70px 18px;
-        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
 
     }
 
@@ -1982,7 +1982,9 @@
 
         content: "";
 
-        position: static;
+        position: absolute;
+        top: 0;
+        left: 0;
 
         width: 70px;
         height: 70px;
@@ -1991,13 +1993,13 @@
         border-radius: 50%;
         background-color: #fff;
 
-        grid-area: 1 / 1;
-
     }
 
     .button_2 .icon_2 {
 
-        grid-area: 1 / 1;
+        position: absolute;
+        top: 17px;
+        left: 17px;
 
         width: 36px;
         height: 36px;
@@ -2019,7 +2021,11 @@
 
     .button_2 p {
 
-        grid-area: 2 / 1;
+        height: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
 
