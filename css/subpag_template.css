@@ -67,7 +67,6 @@
 .sub_pag_gnb{
 
     border-bottom: solid 2px #F8F8F8;
-    padding: 0 150px;
     padding-top: 7px;
 
 }
@@ -119,23 +118,23 @@
 
     color: inherit;
 
-     font-size: 1.1875rem;    /* 19px */
-        line-height: 1.4;
-        letter-spacing: -0.025em;
-        font-weight:600;
+    /* font-size: 1.1875rem;    19px
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    font-weight:600;
 
     white-space: nowrap;
     text-align: center;
 
-    max-height: 37px;
+    max-height: 37px; */
 }
 
 .sub_pag_depth:hover {
 
     color: #009944;
 
-    box-shadow:
-        inset 0 -2px 0 #009944;
+    box-shadow: inset 0 -2px 0 #009944;
+
 }
 
 /* =========================================================
@@ -156,12 +155,14 @@
     border: none;
 
     color: #8e8e8e;
+
 }
 
 .breadcrumb a,
 .breadcrumb p {
 
     color: inherit;
+
 }
 
 .breadcrumb .arrow {
@@ -169,6 +170,7 @@
     width: 12px;
 
     background-color: #8e8e8e;
+
 }
 
 .breadcrumb_dot_wrap {
@@ -221,12 +223,6 @@
     width: calc((100% - 40px) / 2);
 }
 
-.tit_wrap > p{
-
-    font-weight: 700;
-
-}
-
 .Cleaning_tit_wrap > p{
 
     font-weight: 500;
@@ -274,39 +270,21 @@
 
 .section_2 .tit_wrap h2 {
 
-    margin-bottom: 0.25rem;
-
-    font-size: 1.5625rem;
-    line-height: 1.3;
-    letter-spacing: -0.035em;
-    font-weight: 700;
-
     color: inherit;
 }
 
 .section_2 .tit_wrap h3 {
 
-    margin-bottom: 0.75rem;
-
-    font-size: 1.1875rem;
-    line-height: 1.4;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-
     color: inherit;
+
 }
 
 .section_2 .tit_wrap p {
 
     margin-top: 4px;
 
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    letter-spacing: -0.015em;
-    font-weight: 500;
+    color: #8e8e8e;}
 
-    color: #8e8e8e;
-}
 
 /* =========================================================
    6. GREEN SECTION
@@ -333,7 +311,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-        color: #f2f2f2;
+    color: #f2f2f2;
 
     background-color: #009944;
 
@@ -344,11 +322,21 @@
 .section_g_p {
 
     padding: 50px 150px;
+
 }
 
 .section_g .icon {
 
     background-color: #f2f2f2;
+}
+
+.section_g h2,
+.section_g_2 h2,
+.section_g p,
+.section_g_2 p {
+
+    color: inherit;
+    
 }
 
 .section_g .tit_wrap,
@@ -368,14 +356,6 @@
 .section_g_2 .tit_wrap {
 
     max-width: 520px;
-}
-
-.section_g h2,
-.section_g_2 h2,
-.section_g p,
-.section_g_2 p {
-
-    color: inherit;
 }
 
 .section_g_2 p {
@@ -407,17 +387,13 @@
 
 .section_3 h2 {
 
-    font-size: 1.1875rem;
+
 
     color: inherit;
 }
 
 .section_3 > p {
 
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    letter-spacing: -0.015em;
-    font-weight: 500;
 
     color: inherit;
 }
@@ -1215,30 +1191,13 @@
     flex: 0 1 725px;
 }
 
-.service_intro .tit_wrap h2 {
 
-    font-size: clamp(2rem, 2.1vw, 2.5rem);
-}
-
-.service_intro .tit_wrap h3 {
-
-    font-size: clamp(1.1875rem, 1.3vw, 1.5625rem);
-}
-
-.service_intro .tit_wrap > p {
-
-    font-size: clamp(1.0625rem, 1.2vw, 1.4375rem);
-}
 
 /* =========================================================
    DESKTOP EFFECT
 ========================================================= */
 
 .service_effect > h2 {
-
-    margin-left: 0;
-
-    font-size: 1.5625rem;
 
     color: #009944;
 }
@@ -1487,7 +1446,7 @@
     .section_3 .con > .icon {
 
         width: 50px;
-        height: 50px;
+
         max-width: 50px;
         flex-basis: 50px;
 
@@ -1511,9 +1470,8 @@
         display: none;
 
         width: 32px;
-        height: 32px;
-
         flex-basis: 32px;
+
     }
 
     /* GREEN */
@@ -1540,6 +1498,7 @@
     .breadcrumb {
 
         display: none;
+
     }
 
     .man_sled {
@@ -1556,7 +1515,6 @@
     .sub_pag_gnb {
 
         padding: 0 40px;
-        
 
     }
 
@@ -1586,9 +1544,10 @@
 
         padding: 12px 4px;
 
-           font-size: 1.0625rem; /* 17px */
+        font-size: 1.0625rem; /* 17px */
         line-height: 1.55;
         letter-spacing: -0.04em;
+
     }
 
     /* INTRO */
@@ -1599,6 +1558,12 @@
     flex-direction: column;
     align-items: stretch;
     gap: 22px;
+
+}
+
+.service_cleaning  {
+
+    flex-direction: column-reverse;
 
 }
 

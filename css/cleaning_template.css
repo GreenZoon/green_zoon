@@ -19,7 +19,8 @@
 
 }
 
-.service_cleaning .flx_li_g {
+
+.flx_li_g{
 
     margin: 0;
 
@@ -30,20 +31,6 @@
     width: 16px;
     background-color: #f2f2f2;
 
-}
-
-.flx_li_g{
-
-    margin: 0;
-
-}
-
-.section_3 .page_title{
-
-        font-size: 2.5rem;          /* 40px */
-    line-height: 1.2;
-    letter-spacing: -0.04em;
-    font-weight: 700;
 }
 
 

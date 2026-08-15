@@ -2,7 +2,7 @@
 
 .nav{
 
-     background-color: #ffff; 
+    background-color: #ffff; 
     max-height: 50px;
     border-bottom: 2px solid #f2f2f2; 
    
@@ -28,7 +28,6 @@
 
     position:static;
    
-
 }
 
 
@@ -240,36 +239,39 @@
 
     .main_tit {
 
+        padding: 7px;
+        gap: 2px;
 
-    padding: 7px;
-    gap: 2px;
-  
-}
+        
+        font-size: 1.1875rem;    /* 19px */
+        line-height: 1.5;
+        letter-spacing: -0.04em;
+    }
+
+    .depth_2_tit,.depth_3_tit{
+
+        gap: 3px;
+
+    }
 
     .depth_2_tit{
-
 
         font-size: 1.0625rem;       /* 17px */
         line-height: 1.6;
         letter-spacing: -0.015em;
+        padding: 0;
 
     }
 
     .depth_3_tit{
 
-
-             font-size: 0.875rem;     /* 14px */
+        font-size: 0.875rem;     /* 14px */
         line-height: 1.5;
-
 
     }
 
 
-
-
 }
-
-
 
 /* =========================================================
    TABLET / MOBILE
@@ -339,6 +341,7 @@
 
         border-top: 1px solid #f2f2f2;
         border-bottom: 1px solid #f2f2f2;
+
     }
 
 

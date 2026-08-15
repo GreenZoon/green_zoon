@@ -195,8 +195,6 @@
 }
 
 
-
-
 /* ---- 슬라이드 coom end ----- */
 
 /* --------- 섹션 1 --------- */
@@ -3089,9 +3087,11 @@
 @media (max-width: 515px){
 
     .mobile_academy_list {
+
         display: grid;
         grid-template-columns: repeat(3, 75px);
         gap: 9px 12px;
+        
     }
 
 }

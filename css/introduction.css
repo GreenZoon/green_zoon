@@ -3,49 +3,63 @@
 /* 기업 관련 서브페이지 공통 */
 
 .company_page {
+
     color: #555;
+
 }
 
 .company_hero {
+
     width: 100%;
     height: 400px;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #cdcdcd;
+    
 }
 
 .company_hero img,
 .company_portrait img,
 .company_map img {
+
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+
 }
 
 .company_tabs {
+
     width: 100%;
-    min-height: 70px;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid #f2f2f2;
     background-color: #fff;
+
 }
 
-.company_tabs > ul {
-    width: min(100%, 1920px);
-    min-height: 70px;
+.company_menu{
+
+    width:100%;
+    height: 100%;
+    max-height: 40px;
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
-    margin: 0 auto;
-    padding-right: 150px;
+    padding: 0 150px;
+  
 }
 
-.company_tabs > ul > li {
+.company_menu > li {
+
     min-width: 180px;
     position: relative;
+
 }
 
-.company_tabs > ul > li > a {
-    min-height: 70px;
+.company_menu > li > .company_tit {
+
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,16 +67,20 @@
     color: #8e8e8e;
     font-size: 1.125rem;
     font-weight: 500;
+
 }
 
-.company_tabs > ul > li.is_active > a,
-.company_tabs > ul > li > a:hover,
-.company_tabs > ul > li > a:focus-visible {
+.company_menu > li.is_active > a,
+.company_menu > li > a:hover,
+.company_menu > li > a:focus-visible {
+
     color: #f8f8f8;
     background-color: #009944;
+
 }
 
 .company_tabs ul ul {
+
     width: 100%;
     display: none;
     position: absolute;
@@ -72,31 +90,38 @@
     border: 1px solid #009944;
     border-top: 0;
     background-color: #fff;
+
 }
 
 .company_tabs > ul > li:hover ul,
 .company_tabs > ul > li:focus-within ul {
+
     display: block;
+
 }
 
 .company_tabs ul ul a {
-    min-height: 48px;
+
     display: flex;
     align-items: center;
     justify-content: center;
     color: #8e8e8e;
     font-size: 1rem;
+
 }
 
 .company_tabs ul ul a:hover,
 .company_tabs ul ul a:focus-visible,
 .company_tabs ul ul a[aria-current="page"] {
+
     color: #f8f8f8;
     background-color: #009944;
+
 }
 
 .company_breadcrumb {
-    width: min(100%, 1920px);
+
+    width: 100%;
     min-height: 64px;
     display: flex;
     align-items: center;
@@ -105,41 +130,52 @@
     padding: 0 150px;
     color: #8e8e8e;
     font-size: 0.875rem;
+
 }
 
 .company_breadcrumb .home {
+
     width: 16px;
     height: 16px;
+
 }
 
 .company_breadcrumb .arrow {
+
     width: 12px;
-    height: 12px;
     background-color: #8e8e8e;
+
+
 }
 
 .company_intro {
+
     min-height: 600px;
     align-items: center;
     gap: 90px;
+
 }
 
 .company_intro h1,
 .company_greeting h1,
 .company_location h1 {
+
     margin: 0;
     color: #555;
     font-size: 2.5rem;
     line-height: 1.2;
     letter-spacing: -0.04em;
+
 }
 
 .company_intro_text {
+
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 32px;
     max-width: 720px;
+
 }
 
 .company_intro_text p {
@@ -169,6 +205,7 @@
 }
 
 .company_values li {
+
     width: 180px;
     height: 180px;
     display: flex;
@@ -182,6 +219,7 @@
     color: #009944;
     font-size: 1.125rem;
     font-weight: 700;
+
 }
 
 .company_values li:nth-child(1) {
@@ -235,14 +273,18 @@
 }
 
 .company_location {
+
     flex-direction: column;
     gap: 50px;
+
 }
 
 .company_location_wrap {
+
     display: flex;
     align-items: center;
     gap: 70px;
+    
 }
 
 .company_map {
@@ -288,80 +330,100 @@
 }
 
 .company_map_link {
+
     width: fit-content;
     border-bottom: 1px solid #009944;
     color: #009944;
     font-size: 0.9375rem;
+
 }
 
 @media (max-width: 1500px) {
 
     .company_tabs > ul {
-        padding-right: 50px;
+
+        padding: 0 100px;
+    
     }
 
-    .company_breadcrumb {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
 
     .company_intro {
+
         gap: 50px;
+
     }
 
     .company_values {
+
         flex-basis: 500px;
+
     }
 
     .company_location_wrap {
+
         gap: 50px;
+
     }
 
     .company_map {
+
         height: 520px;
+
     }
 }
 
 @media (max-width: 1024px) {
 
     .company_hero {
+
         height: 260px;
     }
 
     .company_breadcrumb {
+
         display: none;
     }
 
     .company_intro {
+
         flex-direction: column;
     }
 
     .company_values {
+
         order: -1;
     }
 
     .company_intro_text {
+
         max-width: none;
         text-align: right;
     }
 
     .company_greeting {
+
         gap: 40px;
     }
 
     .company_portrait {
+
         flex-basis: 260px;
         width: 260px;
         height: 480px;
+
     }
 
     .company_map {
+
         flex-basis: 62%;
         height: 360px;
+
     }
 
     .company_info {
+
         flex-basis: 32%;
+
     }
 }
 

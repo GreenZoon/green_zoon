@@ -58,19 +58,11 @@ a {
 
 img {
 
-   width: 100%;
-      aspect-ratio: 3 / 2;
+    width: 100%;
+    aspect-ratio: 3 / 2;
     display: block;
 
-
 }
-
-.tit_wrap_g h2{
-  color: inherit;
-
-}
-
-
 
 /* =========================================================
    FACTORY DETAIL
@@ -126,7 +118,9 @@ img {
 /* 버튼 */
 
 button {
+
     font: inherit;
+
 }
 
 /* =========================================================
@@ -176,8 +170,10 @@ h1,
 h2,
 h3,
 h4 {
-    color: #1d1d1d;
+        color: inherit;
 }
+
+
 
 /* -------------------------
    페이지 대표 제목
@@ -291,6 +287,13 @@ p,
 
     text-align: center;
 }
+
+.tit_wrap_g h2{
+
+  color: inherit;
+
+}
+
 
 /* 밝은 텍스트 */
 
@@ -1387,7 +1390,9 @@ svg {
     /* 페이지 대표 제목
        PC 40px → Tablet 25px
     */
+
     .page_title {
+
         font-size: 1.5625rem;    /* 25px */
         line-height: 1.3;
         letter-spacing: -0.035em;
@@ -1400,6 +1405,7 @@ svg {
 
     h2,
     .section_title {
+
         font-size: 1.1875rem;    /* 19px */
         line-height: 1.4;
         letter-spacing: -0.025em;
@@ -1536,7 +1542,6 @@ svg {
     section {
 
         padding:20px 40px;
-
         gap: 24px;
 
     }
@@ -1554,74 +1559,91 @@ svg {
 
     /* 모바일 페이지 대표 제목 */
     .page_title {
+
         font-size: 1.5625rem;    /* 25px */
         line-height: 1.3;
         letter-spacing: -0.035em;
         font-weight: 700;
+
     }
 
     .sub_p_23 {
 
-    color: #8e8e8e;
+        color: #8e8e8e;
 
-    font-size: 0.75rem; /* 12px */
-    line-height: 1.55;
-    letter-spacing: -0.04em;
-    font-weight: 500;
+        font-size: 0.75rem; /* 12px */
+        line-height: 1.55;
+        letter-spacing: -0.04em;
+        font-weight: 500;
+
 }
 
     /* 섹션 대표 제목 */
     h2,
     .section_title {
+
         font-size: 1.1875rem;    /* 19px */
         line-height: 1.5;
         letter-spacing: -0.04em;
         font-weight: 700;
+
     }
 
     /* 중간 제목 */
     h3,
     .sub_title {
+
         font-size: 1.0625rem;    /* 17px */
         line-height: 1.5;
+
     }
 
     /* 카드 / 콘텐츠 제목 */
     .content_title {
+
         font-size: 0.875rem;     /* 14px */
         line-height: 1.5;
+
     }
 
     /* 일반 본문 */
     p,
     .body_text {
+
         font-size: 0.75rem;      /* 12px */
         line-height: 1.55;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.04em;
+        font-weight: 500;
+
     }
 
     /* 추가 정보 */
     .info_text {
+
         font-size: 0.625rem;     /* 10px */
         line-height: 1.5;
+
     }
 
     .small_text {
+
         font-size: 0.75rem;      /* 12px */
     }
 
     .but_bg_none {
+
         display: none;
     }
 
     .box_wrap {
+
         gap: 12px;
     }
 
     .icon, .icon_2, .arrow, .mobile_icon {
 
-            width: 16px;
-            flex: 0 0 16px;
+        width: 16px;
+            
     }
 
 }
