@@ -6,10 +6,6 @@
     color: #555;
 }
 
-.company_back {
-    display: none;
-}
-
 .company_hero {
     width: 100%;
     height: 400px;
@@ -122,18 +118,8 @@
     background-color: #8e8e8e;
 }
 
-.company_intro,
-.company_greeting,
-.company_location {
-    width: min(100%, 1920px);
-    margin: 0 auto;
-    padding: 100px 150px;
-}
-
 .company_intro {
     min-height: 600px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 600px;
     align-items: center;
     gap: 90px;
 }
@@ -149,11 +135,14 @@
 }
 
 .company_intro_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     max-width: 720px;
 }
 
 .company_intro_text p {
-    margin-top: 32px;
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
@@ -161,10 +150,11 @@
 }
 
 .company_values {
+    flex: 0 0 500px;
     width: 500px;
     height: 500px;
     position: relative;
-    justify-self: center;
+    align-self: center;
 }
 
 .company_values::before {
@@ -211,14 +201,18 @@
 
 .company_greeting {
     min-height: 757px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 380px;
     align-items: center;
     gap: 80px;
 }
 
+.company_greeting_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+
 .company_greeting h2 {
-    margin-top: 12px;
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
@@ -226,7 +220,6 @@
 
 .company_greeting p {
     max-width: 980px;
-    margin-top: 42px;
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
@@ -234,26 +227,26 @@
 }
 
 .company_portrait {
+    flex: 0 0 302px;
     width: 302px;
     height: 557px;
-    justify-self: center;
+    align-self: center;
     background-color: #f2f2f2;
 }
 
 .company_location {
-    padding-top: 36px;
-    padding-bottom: 100px;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .company_location_wrap {
-    display: grid;
-    grid-template-columns: minmax(0, 1075px) minmax(300px, 1fr);
+    display: flex;
     align-items: center;
     gap: 70px;
-    margin-top: 50px;
 }
 
 .company_map {
+    flex: 1 1 1075px;
     width: 100%;
     height: 600px;
     overflow: hidden;
@@ -269,13 +262,20 @@
 }
 
 .company_info {
+    flex: 0 1 430px;
     display: flex;
     flex-direction: column;
     gap: 48px;
 }
 
+.company_info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .company_info h2 {
-    margin: 0 0 24px;
+    margin: 0;
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
@@ -289,7 +289,6 @@
 
 .company_map_link {
     width: fit-content;
-    padding-bottom: 3px;
     border-bottom: 1px solid #009944;
     color: #009944;
     font-size: 0.9375rem;
@@ -301,22 +300,25 @@
         padding-right: 50px;
     }
 
-    .company_breadcrumb,
-    .company_intro,
-    .company_greeting,
-    .company_location {
+    .company_breadcrumb {
         padding-left: 50px;
         padding-right: 50px;
     }
 
     .company_intro {
-        grid-template-columns: minmax(0, 1fr) 500px;
         gap: 50px;
     }
 
+    .company_values {
+        flex-basis: 500px;
+    }
+
     .company_location_wrap {
-        grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
         gap: 50px;
+    }
+
+    .company_map {
+        height: 520px;
     }
 }
 
@@ -330,65 +332,40 @@
         display: none;
     }
 
-    .company_intro,
-    .company_greeting,
-    .company_location {
-        padding: 60px 40px;
-    }
-
     .company_intro {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .company_values {
-        grid-row: 1;
+        order: -1;
     }
 
     .company_intro_text {
-        grid-row: 2;
         max-width: none;
         text-align: right;
     }
 
     .company_greeting {
-        grid-template-columns: minmax(0, 1fr) 280px;
         gap: 40px;
     }
 
     .company_portrait {
+        flex-basis: 260px;
         width: 260px;
         height: 480px;
     }
 
-    .company_location_wrap {
-        grid-template-columns: 1fr;
-    }
-
     .company_map {
-        height: 460px;
+        flex-basis: 62%;
+        height: 360px;
     }
 
     .company_info {
-        align-items: flex-end;
-        text-align: right;
+        flex-basis: 32%;
     }
 }
 
 @media (max-width: 768px) {
-
-    .company_back {
-        width: 100%;
-        min-height: 42px;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-        border: 0;
-        background-color: #fff;
-        color: #555;
-        font-size: 0.8125rem;
-        text-align: left;
-        cursor: pointer;
-    }
 
     .company_hero {
         height: 173px;
@@ -433,12 +410,6 @@
         display: none !important;
     }
 
-    .company_intro,
-    .company_greeting,
-    .company_location {
-        padding: 30px 20px 42px;
-    }
-
     .company_intro h1,
     .company_greeting h1,
     .company_location h1 {
@@ -450,7 +421,12 @@
         gap: 26px;
     }
 
+    .company_intro_text {
+        gap: 24px;
+    }
+
     .company_values {
+        flex-basis: 300px;
         width: 300px;
         height: 300px;
     }
@@ -496,6 +472,7 @@
     }
 
     .company_portrait {
+        flex-basis: auto;
         width: min(100%, 260px);
         height: 480px;
         order: 2;
@@ -517,22 +494,27 @@
         text-align: right;
     }
 
-    .company_location {
-        padding-top: 18px;
-    }
-
     .company_location_wrap {
+        flex-direction: column;
+        align-items: stretch;
         gap: 30px;
-        margin-top: 34px;
     }
 
     .company_map {
-        height: 220px;
+        flex-basis: auto;
+        height: 320px;
         border-radius: 10px;
     }
 
     .company_info {
+        flex-basis: auto;
+        align-items: flex-end;
         gap: 28px;
+        text-align: right;
+    }
+
+    .company_info > div {
+        gap: 14px;
     }
 
     .company_info h2 {
@@ -549,7 +531,12 @@
 
 @media (max-width: 480px) {
 
+    .company_map {
+        height: 220px;
+    }
+
     .company_values {
+        flex-basis: 280px;
         width: 280px;
         height: 280px;
     }

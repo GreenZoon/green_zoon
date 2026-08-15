@@ -1316,6 +1316,16 @@ svg {
 
 }
 
+
+/* 모바일 서브페이지 뒤로가기 */
+
+.sub_back {
+
+    display: none;
+
+}
+
+
 /* =========================================================
    12. TABLET
 ========================================================= */
@@ -1468,6 +1478,47 @@ svg {
     }
 }
 
+@media (max-width: 768px) {
+
+    .sub_back {
+
+        width: 100%;
+        min-height: 40px;
+        padding: 0 40px;
+
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        border: 0;
+        background: #fff;
+        color: #555;
+
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        text-align: left;
+        cursor: pointer;
+
+    }
+
+    .sub_back::before {
+
+        content: "";
+
+        width: 8px;
+        height: 8px;
+        flex: 0 0 8px;
+
+        border-left: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        transform: rotate(45deg);
+
+    }
+
+}
+
+
 /* =========================================================
    13. MOBILE
 ========================================================= */
@@ -1576,6 +1627,13 @@ svg {
 }
 
 @media (max-width: 480px){
+
+    .sub_back {
+
+        min-height: 36px;
+        padding: 0 20px;
+
+    }
 
 
     section {

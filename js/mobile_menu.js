@@ -56,7 +56,7 @@
             });
     }
 
-    window.GreenZonePaths = {
+window.GreenZonePaths = {
         baseUrl,
         resolve,
         normalize
@@ -65,6 +65,71 @@
     normalize(document);
 
 })();
+
+
+// =========================================================
+// SUB PAGE BACK
+// =========================================================
+
+function createSubBack() {
+
+    if (
+        !window.location.pathname.includes("/sub_page/") ||
+        document.querySelector(".sub_back")
+    ) {
+        return;
+    }
+
+
+    const reference =
+        document.getElementById("menu") ||
+        document.getElementById("header");
+
+
+    if (!reference) {
+        return;
+    }
+
+
+    const button =
+        document.createElement("button");
+
+
+    button.type = "button";
+    button.className = "sub_back";
+    button.textContent = "뒤로가기";
+    button.setAttribute(
+        "aria-label",
+        "이전 페이지로 돌아가기"
+    );
+
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            if (window.history.length > 1) {
+                window.history.back();
+                return;
+            }
+
+
+            window.location.href =
+                window.GreenZonePaths.resolve("index.html");
+
+        }
+    );
+
+
+    reference.insertAdjacentElement(
+        "afterend",
+        button
+    );
+
+}
+
+
+createSubBack();
 
 
 // =========================================================
@@ -750,4 +815,3 @@ document.addEventListener(
 
     }
 );
-
