@@ -121,5 +121,5 @@ loadComponent(
 
 loadComponent(
     "Request_Cleaning",
-    sitePath("components/Request_Cleaning.html")
+    sitePath("components/sub_pag/Request_Cleaning.html")
 );

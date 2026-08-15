@@ -1215,7 +1215,7 @@
             loadComponent(
                 "Request_Cleaning",
                 sitePath(
-                    "components/Request_Cleaning.html"
+                    "components/sub_pag/Request_Cleaning.html"
                 )
             ),
 

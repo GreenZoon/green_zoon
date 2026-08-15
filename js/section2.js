@@ -99,7 +99,7 @@ if (section2) {
         },
         {
             title: "행사장 청소",
-            link: "/sub_page/Event/City_event.html",
+            link: "/sub_page/Event_cleane/City_event.html",
             description:
                 "미화 인력을 파견한 행사 전후 행사장 정리 및 청소 서비스를 제공합니다.",
             images:

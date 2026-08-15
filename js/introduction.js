@@ -14,7 +14,7 @@
 
             const response = await fetch(
                 window.GreenZonePaths.resolve(
-                    "components/Introduction_sub_menu.html"
+                    "components/sub_pag/Introduction_sub_menu.html"
                 ),
                 {
                     cache: "no-cache"

@@ -271,19 +271,19 @@ const mobileMenuData = [
                 children: [
                     {
                         title: "시/도 행사 청소",
-                        href: "/sub_page/Event/City_event.html"
+                        href: "/sub_page/Event_cleane/City_event.html"
                     },
                     {
                         title: "전시회 청소",
-                        href: "/sub_page/Event/Exhibition.html"
+                        href: "/sub_page/Event_cleane/Exhibition.html"
                     },
                     {
                         title: "경기장 청소",
-                        href: "/sub_page/Event/Stadium.html"
+                        href: "/sub_page/Event_cleane/Stadium.html"
                     },
                     {
                         title: "계절 청소",
-                        href: "/sub_page/Event/Seasonal.html"
+                        href: "/sub_page/Event_cleane/Seasonal.html"
                     }
                 ]
             },

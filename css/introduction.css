@@ -108,8 +108,10 @@
     left: 0;
     z-index: 30;
     border: 1px solid #009944;
-    border-top: 0;
+    
     background-color: #fff;
+    border-top:0;
+    border-radius:0 0 15px 15px;
 
 }
 
@@ -217,6 +219,7 @@
 }
 
 .company_values::before {
+
     content: "";
     width: 330px;
     height: 330px;
@@ -225,6 +228,7 @@
     left: 85px;
     border: 4px solid #009944;
     border-radius: 50%;
+
 }
 
 .company_values li {
@@ -246,53 +250,69 @@
 }
 
 .company_values li:nth-child(1) {
+
     top: 0;
     left: 160px;
+
 }
 
 .company_values li:nth-child(2) {
+
     bottom: 0;
     left: 0;
+
 }
 
 .company_values li:nth-child(3) {
+
     right: 0;
     bottom: 0;
+
 }
 
 .company_greeting {
+
     min-height: 757px;
     align-items: center;
     gap: 80px;
+
 }
 
 .company_greeting_text {
+
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 42px;
+
 }
 
 .company_greeting h2 {
+
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
+
 }
 
 .company_greeting p {
+
     max-width: 980px;
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
     letter-spacing: -0.025em;
+
 }
 
 .company_portrait {
+
     flex: 0 0 302px;
     width: 302px;
     height: 557px;
     align-self: center;
     background-color: #f2f2f2;
+
 }
 
 .company_location {
@@ -311,45 +331,58 @@
 }
 
 .company_map {
+
     flex: 1 1 1075px;
     width: 100%;
     height: 600px;
     overflow: hidden;
     border-radius: 12px;
     background-color: #f2f2f2;
+
 }
 
+
 .company_map iframe {
+
     width: 100%;
     height: 100%;
     display: block;
     border: 0;
+
 }
 
 .company_info {
+
     flex: 0 1 430px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+
 }
 
 .company_info > div {
+
     display: flex;
     flex-direction: column;
     gap: 24px;
+
 }
 
 .company_info h2 {
+
     margin: 0;
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
+
 }
 
 .company_info p {
+
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
+
 }
 
 .company_map_link {
@@ -367,7 +400,7 @@
     .company_menu,
     .company_tit {
 
-        min-height: 60px;
+        min-height: 50px;
 
     }
 
@@ -509,7 +542,9 @@
 @media (max-width: 768px) {
 
     .company_hero {
+
         height: 173px;
+
     }
 
     .company_tabs {
@@ -520,9 +555,6 @@
 
     }
 
-    .company_tabs::-webkit-scrollbar {
-        display: none;
-    }
 
     .company_menu {
 
@@ -578,119 +610,159 @@
     .company_intro h1,
     .company_greeting h1,
     .company_location h1 {
+
         font-size: 1.5625rem;
         line-height: 1.3;
+
     }
 
     .company_intro {
+
         gap: 26px;
+
     }
 
     .company_intro_text {
+
         gap: 24px;
+
     }
 
     .company_values {
+
         flex-basis: 300px;
         width: 300px;
         height: 300px;
+
     }
 
     .company_values::before {
+
         width: 196px;
         height: 196px;
         top: 52px;
         left: 52px;
         border-width: 2px;
+
     }
 
     .company_values li {
+
         width: 104px;
         height: 104px;
         border-width: 1px;
         font-size: 0.75rem;
+
     }
 
     .company_values li:nth-child(1) {
+
         left: 98px;
+
     }
 
     .company_intro_text p {
+
         margin-top: 24px;
         font-size: 0.75rem;
         line-height: 1.7;
+
     }
 
     .company_greeting {
+
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 22px;
+
     }
 
     .company_greeting_text {
+
         display: contents;
+
     }
 
     .company_greeting h1 {
+
         order: 1;
+
     }
 
     .company_portrait {
+
         flex-basis: auto;
         width: min(100%, 260px);
         height: 480px;
         order: 2;
         align-self: center;
+
     }
 
     .company_greeting h2 {
+
         order: 3;
         margin: 0;
         font-size: 1rem;
         text-align: right;
+
     }
 
     .company_greeting p {
+
         order: 4;
         margin: 0;
         font-size: 0.75rem;
         line-height: 1.7;
         text-align: right;
+
     }
 
     .company_location_wrap {
+
         flex-direction: column;
         align-items: stretch;
         gap: 30px;
+
     }
 
     .company_map {
+
         flex-basis: auto;
         height: 320px;
         border-radius: 10px;
+
     }
 
     .company_info {
+
         flex-basis: auto;
         align-items: flex-end;
         gap: 28px;
         text-align: right;
+
     }
 
     .company_info > div {
+
         gap: 14px;
+
     }
 
     .company_info h2 {
+
         margin-bottom: 14px;
         font-size: 1.1875rem;
+
     }
 
     .company_info p,
     .company_map_link {
+
         font-size: 0.75rem;
         line-height: 1.7;
+
     }
 }
 
@@ -703,28 +775,37 @@
     }
 
     .company_map {
+
         height: 220px;
+
     }
 
     .company_values {
+
         flex-basis: 280px;
         width: 280px;
         height: 280px;
+
     }
 
     .company_values::before {
+
         width: 184px;
         height: 184px;
         top: 48px;
         left: 48px;
+
     }
 
     .company_values li {
+
         width: 96px;
         height: 96px;
+
     }
 
     .company_values li:nth-child(1) {
+
         left: 92px;
     }
 }
@@ -736,101 +817,117 @@
 .company_awards,
 .company_history,
 .company_clients {
+
     flex-direction: column;
     gap: 80px;
+
 }
 
 .company_branches h1,
 .company_awards h1,
 .company_clients h1,
 .company_clients h2 {
+
     color: #555;
     font-size: 2.5rem;
     line-height: 1.25;
     letter-spacing: -0.04em;
+
 }
 
 .company_branch_wrap {
+
     display: flex;
     gap: 46px;
+
 }
 
 .company_branch {
+
     flex: 1;
-    min-height: 360px;
+    padding: 35px 40px;
     display: flex;
     flex-direction: column;
     gap: 28px;
     border: 2px solid #009944;
     border-radius: 24px;
+
 }
 
 .company_branch.address {
+
     color: #fff;
     background-color: #009944;
+
 }
 
 .company_branch h2 {
+
     color: inherit;
     font-size: 1.5625rem;
+
 }
 
 .company_branch > p {
+
     color: #8e8e8e;
     font-size: 0.9375rem;
+
 }
 
 .company_branch dl {
+
     display: flex;
     flex-direction: column;
     gap: 18px;
+
 }
 
 .company_branch dl div {
+
     display: flex;
+    justify-content: space-between;
     gap: 20px;
+
 }
 
-.company_branch dt {
-    flex: 0 0 110px;
-}
-
-.company_branch dd {
-    flex: 1;
-}
-
-.company_branch dt,
-.company_branch dd {
-    font-size: 1rem;
-    line-height: 1.6;
-}
 
 .company_branch.contact h2,
 .company_branch.contact dd {
+
     color: #009944;
+
 }
 
 .company_doc_main,
 .company_doc_grid {
+
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
+
 }
 
 .company_doc_main .company_doc {
+
     flex: 1 1 calc((100% - 140px) / 3);
+
 }
 
 .company_doc_grid .company_doc {
+
     flex: 1 1 calc((100% - 210px) / 4);
+
 }
 
 .company_doc {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 18px;
     text-align: center;
+
 }
 
 .company_doc_img,
@@ -838,7 +935,9 @@
 .company_history_img,
 .company_history_logo,
 .company_logo {
+
     background-color: #f2f2f2;
+
 }
 
 .company_doc_img img,
@@ -846,9 +945,11 @@
 .company_logo img,
 .company_award_img img,
 .company_history_img img {
+
     width: 100%;
     height: 100%;
     display: block;
+
 }
 
 .company_doc_img img,
@@ -885,6 +986,7 @@
     display: none;
 }
 
+
 .company_award {
     display: flex;
     flex-direction: row-reverse;
@@ -900,23 +1002,29 @@
 }
 
 .company_award > div:last-child {
+
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 36px;
+
 }
 
 .company_award h2 {
+    
     color: #555;
     font-size: 2rem;
     line-height: 1.4;
+
 }
 
 .company_award p {
+
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.75;
+
 }
 
 .company_award a {
@@ -1094,7 +1202,9 @@
 }
 
 .company_client_logos .company_logo {
+
     min-height: 48px;
+
 }
 
 @media (max-width: 1500px) {
@@ -1106,34 +1216,67 @@
     .company_client_list li {
         flex-basis: calc((100% - 105px) / 4);
     }
+
+    .company_tit{
+
+        font-weight: 600;
+    }
+        
+    .company_branch {
+
+        padding: 24px 32px;
+        gap: 24px
+    
+    }
 }
 
 @media (max-width: 1024px) {
 
     .company_branch_wrap,
     .company_award {
+
         gap: 36px;
+
     }
 
     .company_doc_main {
+
         gap: 35px;
+
     }
 
     .company_doc_grid {
+
         gap: 45px;
+
     }
 
     .company_doc_grid .company_doc {
+
         flex-basis: calc((100% - 90px) / 3);
+
     }
 
     .company_logo {
+
         flex-basis: calc((100% - 84px) / 4);
+        
     }
 
     .company_client_list li {
+
         flex-basis: calc((100% - 70px) / 3);
+
     }
+
+    .company_branch {
+
+        padding: 19px 27px;
+        gap: 20px
+
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -1143,25 +1286,34 @@
     .company_awards,
     .company_history,
     .company_clients {
+
         gap: 40px;
+
     }
 
     .company_branches h1,
     .company_awards h1,
     .company_clients h1,
     .company_clients h2 {
+
         font-size: 1.5625rem;
+
     }
 
     .company_branch_wrap {
+
         flex-direction: column;
         gap: 18px;
+
     }
 
     .company_branch {
-        min-height: 0;
+
+        padding: 16px 24px;
+        gap: 16px;
         border-width: 1px;
         border-radius: 8px;
+
     }
 
     .company_branch.contact {
