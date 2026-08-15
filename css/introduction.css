@@ -715,8 +715,7 @@
 .company_branches,
 .company_docs,
 .company_awards,
-.company_history,
-.company_clients {
+.company_history {
     flex-direction: column;
     gap: 80px;
 }
@@ -967,7 +966,7 @@
     background-color: #009944;
 }
 
-.company_timeline > ul > li > ul {
+.company_timeline li ul {
     width: calc(100% - 70px);
     display: flex;
     flex-direction: column;
@@ -976,7 +975,7 @@
     padding: 0;
 }
 
-.company_timeline > ul > li > ul > li {
+.company_timeline li li {
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -1122,8 +1121,7 @@
     .company_branches,
     .company_docs,
     .company_awards,
-    .company_history,
-    .company_clients {
+    .company_history {
         gap: 40px;
     }
 
@@ -1315,7 +1313,7 @@
         flex-basis: 50px;
     }
 
-    .company_timeline > ul > li > ul {
+    .company_timeline li ul {
         width: calc(100% - 36px);
         gap: 12px;
     }

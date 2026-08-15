@@ -20,7 +20,7 @@
 }
 
 
-.flx_li_g{
+.service_cleaning .flx_li_g{
 
     margin: 0;
 
@@ -56,11 +56,11 @@
         flex: 0 0 100%;
     }
 
-    .service_cleaning .service_gallery .mobile_featured .but_bg {
+    .service_cleaning .mobile_featured .but_bg {
         display: none;
     }
 
-        .section_3 .page_title{
+    .service_cleaning .section_3 .page_title{
         
             font-size: 1.5625rem;       /* 25px */
             line-height: 1.3;
@@ -109,7 +109,7 @@
         background-color: #fff;
     }
 
-    .service_cleaning .service_gallery .tit_wrap_g h2 {
+    .service_cleaning .tit_wrap_g h2 {
         color: #555;
     }
 

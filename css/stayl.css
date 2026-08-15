@@ -172,6 +172,7 @@
     border-left: 12px solid #f2f2f2;
 
     border-radius: 2px;
+    
 }
 
 
@@ -1603,12 +1604,6 @@
 
 
 /* =========================================================
-   MAIN RESPONSIVE FINAL OVERRIDE
-   Mobile + iPad: 1024px 이하 / PC: 1025px 이상
-   기존 규칙을 삭제하지 않고 마지막 우선순위로 정리
-========================================================= */
-
-/* =========================================================
    MAIN RESPONSIVE
    Mobile + iPad: 1024px 이하 / PC: 1025px 이상
 ========================================================= */
@@ -1616,21 +1611,21 @@
 @media (max-width: 1024px) {
 
     .wrap_1 {
-        height: clamp(204px, 50vw, 430px);
+        height: 204px;
     }
 
     .tit_wrap_1 {
-        left: clamp(20px, 6vw, 60px);
+        left: 20px;
     }
 
     .tit_wrap_1 h2 {
-        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-size: 1.5625rem;
         line-height: 1.2;
         letter-spacing: -0.04em;
     }
 
     .tit_wrap_1 p {
-        font-size: clamp(1.1875rem, 2.4vw, 1.5625rem);
+        font-size: 0.9375rem;
         line-height: 1.4;
         font-weight: 700;
     }
@@ -1641,8 +1636,8 @@
     }
 
     .slide_control_1 {
-        right: 20px;
-        bottom: 20px;
+        right: 12px;
+        bottom: 12px;
         gap: 6px;
     }
 
@@ -1672,7 +1667,7 @@
     .section_video {
         align-items: flex-start;
         gap: 12px;
-        padding: clamp(20px, 4vw, 40px);
+        padding: 20px;
     }
 
     .video_title_wrap {
@@ -1738,7 +1733,7 @@
     .video_card_mobile_title {
         display: block;
         color: #555;
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
         font-weight: 700;
     }
 
@@ -1770,6 +1765,19 @@
     }
 
 
+
+    .section_2 .page_title,
+    .mobile_tit .page_title,
+    .section_video .page_title,
+    .section_4 .page_title,
+    .section_7 .page_title {
+
+        font-size: clamp(1.1875rem, calc(1rem + 0.5vw), 1.375rem);
+        line-height: 1.5;
+        letter-spacing: -0.04em;
+
+    }
+
     .mobile_tit {
 
         display: flex;
@@ -1790,39 +1798,6 @@
 
         width: 24px;
         background-color: #8E8E8E;
-    }
-
-    /* 메인 슬라이드 */
-
-    .wrap_1 {
-
-        height: 204px;
-
-    }
-
-    .tit_wrap_1 {
-
-        left: 20px;
-
-    }
-
-    .tit_wrap_1 h2 {
-
-        font-size: 1.5625rem;
-
-    }
-
-    .tit_wrap_1 p {
-
-        font-size: 0.9375rem;
-
-    }
-
-    .slide_control_1 {
-
-        right: 12px;
-        bottom: 12px;
-
     }
 
     /* 자주 찾는 서비스 */
@@ -1933,8 +1908,6 @@
         border-radius: 0;
         background: transparent;
 
-        color: #8e8e8e;
-
     }
 
     .mobile_all {
@@ -1944,6 +1917,7 @@
         align-items: center;
         justify-content: center;
         gap: 5px;
+        color: #339933;
 
     }
 
@@ -1953,6 +1927,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
+        color: #8e8e8e;
 
     }
 
@@ -2007,7 +1982,9 @@
 
     }
 
-    .button_2:hover {
+    .button_2:hover,
+    .button_2:active,
+    .button_2.is_selected {
 
         border: 0;
         background: transparent;
@@ -2029,16 +2006,6 @@
 
     }
 
-    .button_2:active,
-    .button_2.is_selected {
-
-        border: 0;
-        background: transparent;
-        color: #339933;
-        transform: none;
-
-    }
-
     .button_2:active .icon_2,
     .button_2.is_selected .icon_2 {
 
@@ -2051,12 +2018,6 @@
 
         border-color: #f8f8f8;
         background-color: #339933;
-
-    }
-
-    .mobile_all {
-
-        color: #339933;
 
     }
 
@@ -2518,12 +2479,6 @@
 
     /* 영상 갤러리 */
 
-    .section_video {
-
-        padding: 20px;
-
-    }
-
     .video_title_wrap {
 
         padding: 0 12px;
@@ -2544,12 +2499,6 @@
         width: 9px;
         height: 14px;
         background-color: #555;
-
-    }
-
-    .video_card_mobile_title {
-
-        font-size: 0.875rem;
 
     }
 
