@@ -12,7 +12,7 @@
 
         const response = await fetch(
             window.GreenZonePaths.resolve(
-                "components/sub_pag/Introduction_sub_menu.html"
+                "components/Introduction_sub_menu.html"
             ),
             {
                 cache: "no-cache"
@@ -27,8 +27,11 @@
         target.innerHTML = await response.text();
         window.GreenZonePaths.normalize(target);
 
+        const currentGroup =
+            document.body.dataset.companyGroup || "intro";
+
         target
-            .querySelector("[data-company-group='intro']")
+            .querySelector(`[data-company-group='${currentGroup}']`)
             ?.classList.add("is_active");
 
         const currentPage = document.body.dataset.companyPage;
@@ -54,3 +57,4 @@
     }
 
 })();
+

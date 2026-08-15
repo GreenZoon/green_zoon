@@ -83,12 +83,16 @@ const mobileMenuData = [
 
                 children: [
                     {
+                        title: "기업소개",
+                        href: "/sub_page/Introduction/Introduction_main.html"
+                    },
+                    {
                         title: "대표 인사말",
-                        href: "#"
+                        href: "/sub_page/Introduction/CEO_message.html"
                     },
                     {
                         title: "찾아오시는 길",
-                        href: "#"
+                        href: "/sub_page/Introduction/Directions.html"
                     }
                 ]
             },
@@ -99,11 +103,11 @@ const mobileMenuData = [
                 children: [
                     {
                         title: "회사 연혁",
-                        href: "#"
+                        href: "/sub_page/Introduction/Company_history.html"
                     },
                     {
                         title: "각 지점 정보",
-                        href: "#"
+                        href: "/sub_page/Introduction/Branches.html"
                     }
                 ]
             },
@@ -113,12 +117,16 @@ const mobileMenuData = [
 
                 children: [
                     {
+                        title: "허가증 및 인증서",
+                        href: "/sub_page/Introduction/Certificates.html"
+                    },
+                    {
                         title: "수상내역",
-                        href: "#"
+                        href: "/sub_page/Introduction/Awards.html"
                     },
                     {
                         title: "협력/거래처",
-                        href: "#"
+                        href: "/sub_page/Introduction/Clients.html"
                     }
                 ]
             }
@@ -742,3 +750,4 @@ document.addEventListener(
 
     }
 );
+
