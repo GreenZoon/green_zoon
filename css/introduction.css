@@ -139,17 +139,6 @@
 
 }
 
-.company_breadcrumb {
-
-    width: 100%;
-    min-height: 64px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 150px;
-
-}
-
 .company_intro {
 
     min-height: 600px;
@@ -342,12 +331,6 @@
 
 @media (max-width: 1500px) {
 
-    .company_breadcrumb {
-
-        padding: 0 100px;
-
-    }
-
     .company_tabs {
 
         min-height: 60px;
@@ -446,11 +429,6 @@
     .company_hero {
 
         height: 260px;
-    }
-
-    .company_breadcrumb {
-
-        display: none;
     }
 
     .company_intro {

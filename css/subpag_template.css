@@ -138,23 +138,6 @@
 }
 
 /* =========================================================
-   4. BREADCRUMB
-========================================================= */
-
-.breadcrumb {
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 150px;
-
-    border: none;
-
-}
-
-/* =========================================================
    5. PAGE INTRO
    서브페이지 타이포:
    25px → 19px → 17px
@@ -1315,13 +1298,6 @@
 
 @media (min-width: 1025px) and (max-width: 1500px) {
 
-    .breadcrumb {
-
-        padding: 0 50px;
-
-    }
-
-
     .service_gallery .slide_wrap {
 
         width: 100%;
@@ -1461,12 +1437,6 @@
         flex-basis: 96px;
     }
 
-
-    .breadcrumb {
-
-        display: none;
-
-    }
 
     .man_sled {
 

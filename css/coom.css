@@ -1045,10 +1045,17 @@ svg {
 
 }
 
-.breadcrumb,
-.company_breadcrumb {
+.breadcrumb {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
 
     gap: 8px;
+    padding: 0 150px;
+
+    border: none;
     color: #8e8e8e;
 
     font-size: 0.9375rem;
@@ -1059,16 +1066,13 @@ svg {
 }
 
 .breadcrumb a,
-.breadcrumb p,
-.company_breadcrumb a,
-.company_breadcrumb p {
+.breadcrumb p {
 
     color: inherit;
 
 }
 
-.breadcrumb .home,
-.company_breadcrumb .home {
+.breadcrumb .home {
 
     width: 24px;
     height: 24px;
@@ -1088,8 +1092,7 @@ svg {
 
 }
 
-.breadcrumb .arrow,
-.company_breadcrumb .arrow {
+.breadcrumb .arrow {
 
     width: 24px;
     background-color: #8e8e8e;
@@ -1405,6 +1408,12 @@ svg {
 
 @media (max-width: 1500px) {
 
+    .breadcrumb {
+
+        padding: 0 50px;
+
+    }
+
     section {
         padding: 48px 50px;
         gap: 32px;
@@ -1447,6 +1456,12 @@ svg {
 }
 
 @media (max-width: 1024px) {
+
+    .breadcrumb {
+
+        display: none;
+
+    }
 
     .tablet_none {
         display: none;
