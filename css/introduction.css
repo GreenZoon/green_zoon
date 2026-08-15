@@ -31,6 +31,7 @@
 .company_tabs {
 
     width: 100%;
+    min-height: 70px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
@@ -40,9 +41,8 @@
 
 .company_menu{
 
-    width:100%;
-    height: 100%;
-    max-height: 40px;
+    width: 100%;
+    min-height: 70px;
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
@@ -52,34 +52,54 @@
 
 .company_menu > li {
 
-    min-width: 180px;
+    width: 180px;
     position: relative;
 
 }
 
-.company_menu > li > .company_tit {
+.company_tit {
 
     width: 100%;
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 7px;
     padding: 0 20px;
     color: #8e8e8e;
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
 
 }
 
-.company_menu > li.is_active > a,
-.company_menu > li > a:hover,
-.company_menu > li > a:focus-visible {
+.company_menu .is_active > .company_tit,
+.company_tit:hover,
+.company_tit:focus-visible {
 
     color: #f8f8f8;
     background-color: #009944;
 
 }
 
-.company_tabs ul ul {
+.company_arrow {
+
+    width: 14px;
+    height: 9px;
+    background-color: currentColor;
+    transform: rotate(180deg);
+
+}
+
+.company_menu .is_active .company_arrow,
+.company_tit:hover .company_arrow,
+.company_tit:focus-visible .company_arrow {
+
+    transform: rotate(0deg);
+
+}
+
+.company_drop {
 
     width: 100%;
     display: none;
@@ -93,26 +113,29 @@
 
 }
 
-.company_tabs > ul > li:hover ul,
-.company_tabs > ul > li:focus-within ul {
+.company_menu > li:hover .company_drop,
+.company_menu > li:focus-within .company_drop {
 
     display: block;
 
 }
 
-.company_tabs ul ul a {
+.company_drop a {
 
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #8e8e8e;
     font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
 
 }
 
-.company_tabs ul ul a:hover,
-.company_tabs ul ul a:focus-visible,
-.company_tabs ul ul a[aria-current="page"] {
+.company_drop a:hover,
+.company_drop a:focus-visible,
+.company_drop a[aria-current="page"] {
 
     color: #f8f8f8;
     background-color: #009944;
@@ -340,10 +363,24 @@
 
 @media (max-width: 1500px) {
 
-    .company_tabs > ul {
+    .company_tabs,
+    .company_menu,
+    .company_tit {
+
+        min-height: 60px;
+
+    }
+
+    .company_menu {
 
         padding: 0 100px;
     
+    }
+
+    .company_menu > li {
+
+        width: 170px;
+
     }
 
 
@@ -373,6 +410,48 @@
 }
 
 @media (max-width: 1024px) {
+
+    .company_tabs,
+    .company_menu,
+    .company_tit {
+
+        min-height: 50px;
+
+    }
+
+    .company_menu {
+
+        padding: 0 40px;
+
+    }
+
+    .company_menu > li {
+
+        width: 150px;
+
+    }
+
+    .company_tit {
+
+        gap: 5px;
+        padding: 0 14px;
+        font-size: 1rem;
+
+    }
+
+    .company_arrow {
+
+        width: 12px;
+        height: 8px;
+
+    }
+
+    .company_drop a {
+
+        min-height: 42px;
+        font-size: 0.875rem;
+
+    }
 
     .company_hero {
 
@@ -434,42 +513,66 @@
     }
 
     .company_tabs {
+
         min-height: 42px;
         overflow-x: auto;
         scrollbar-width: none;
+
     }
 
     .company_tabs::-webkit-scrollbar {
         display: none;
     }
 
-    .company_tabs > ul {
+    .company_menu {
+
         width: max-content;
         min-width: 100%;
         min-height: 42px;
+        gap: 12px;
         justify-content: flex-end;
-        padding: 0;
+        padding: 0 20px;
+
     }
 
-    .company_tabs > ul > li {
+    .company_menu > li {
+
+        width: auto;
         min-width: max-content;
+
     }
 
-    .company_tabs > ul > li > a {
+    .company_tit {
+
         min-height: 42px;
-        padding: 0 8px;
+        gap: 3px;
+        padding: 0;
         color: #8e8e8e;
         background-color: #fff;
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
+
     }
 
-    .company_tabs > ul > li.is_active > a {
+    .company_menu .is_active > .company_tit {
+
         color: #8e8e8e;
         background-color: #fff;
+
     }
 
-    .company_tabs ul ul {
+    .company_arrow,
+    .company_menu .is_active .company_arrow {
+
+        width: 10px;
+        height: 10px;
+        transform: rotate(0deg);
+
+    }
+
+    .company_drop {
+
         display: none !important;
+
     }
 
     .company_intro h1,
@@ -592,6 +695,12 @@
 }
 
 @media (max-width: 480px) {
+
+    .company_menu {
+
+        gap: 10px;
+
+    }
 
     .company_map {
         height: 220px;
