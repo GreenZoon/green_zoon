@@ -11,9 +11,13 @@ async function loadComponent(id, file) {
         });
 
         if (!response.ok) {
-            throw new Error(
-                `${file} 로드 실패: ${response.status} ${response.statusText}`
+            console.warn(
+                `[common] ${file} 로드 실패:`,
+                response.status,
+                response.statusText
             );
+
+            return null;
         }
 
         const html = await response.text();
@@ -22,9 +26,16 @@ async function loadComponent(id, file) {
 
         window.GreenZonePaths
             ?.normalize(target);
+
+        return target;
         
     } catch (error) {
-        console.error(error);
+        console.warn(
+            `[common] ${file} 로드 오류:`,
+            error
+        );
+
+        return null;
     }
 }
 
