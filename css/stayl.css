@@ -1769,28 +1769,6 @@
 
     }
 
-    .mobile_hide,
-    .section_2 .box_wrap_2,
-    .section_4 > .tit_wrap .tit_li,
-    .section_6,
-    .section_8,
-    #Request_Cleaning {
-
-        display: none;
-
-    }
-
-    .section_2 .page_title,
-    .mobile_tit .page_title,
-    .section_video .page_title,
-    .section_4 .page_title,
-    .section_7 .page_title {
-
-        font-size: clamp(1.1875rem, calc(1rem + 0.5vw), 1.375rem);
-        line-height: 1.5;
-        letter-spacing: -0.04em;
-
-    }
 
     .mobile_tit {
 

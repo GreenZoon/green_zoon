@@ -341,7 +341,53 @@ section {
    4. COMMON BOX
 ========================================================= */
 
+
+.con_wrap {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 22px;
+}
+
+.con,
+.con_g {
+
+    width: 104px;
+    max-width: 104px;
+
+    aspect-ratio: 1 / 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    padding: 12px;
+
+    text-align: center;
+}
+
 .con {
+
+    display: flex;
+
+    width: 100px;
+
+
+    border-radius: 999px;
+
+    background-color: #f2f2f2;
+}
+
+.con_g{
+
 
     display: flex;
 
@@ -351,7 +397,67 @@ section {
     border-radius: 999px;
 
     background-color: #f2f2f2;
+
+
 }
+
+.con {
+
+    color: #009944;
+
+    border: 2px solid #009944;
+
+    background-color: #fff;
+}
+
+.con > .icon {
+
+    width: 54px;
+    height: 54px;
+
+    max-width: 54px;
+
+    flex: 0 0 54px;
+
+    background-color: #009944;
+}
+
+.con > p,
+.con_g > p {
+
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    font-weight: 600;
+
+    text-align: center;
+    white-space: nowrap;
+}
+
+.icon_g,
+.icon_w,
+.storage {
+
+    flex-shrink: 0;
+}
+
+.icon_g {
+
+    background-color: #009944;
+}
+
+.icon_w {
+
+    background-color: #f2f2f2;
+}
+
+.arrow_up_right{
+
+    background-color: #f2f2f2;
+    width: 14px;
+    height: 14px;
+
+}
+
 
 .box_wrap {
 
