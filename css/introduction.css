@@ -517,13 +517,8 @@
     .company_tabs {
 
         min-height: 42px;
-        overflow-x: auto;
-        scrollbar-width: none;
+        overflow: visible;
 
-    }
-
-    .company_tabs::-webkit-scrollbar {
-        display: none;
     }
 
     .company_menu {
@@ -555,6 +550,13 @@
 
     }
 
+    .company_tit:hover {
+
+        color: #8e8e8e;
+        background-color: #fff;
+
+    }
+
     .company_arrow {
 
         width: 10px;
@@ -563,9 +565,28 @@
 
     }
 
-    .company_drop {
+    .company_tit:hover .company_arrow {
 
-        display: none !important;
+        transform: rotate(0deg);
+
+    }
+
+    .company_tit[aria-expanded="true"] .company_arrow {
+
+        transform: rotate(180deg);
+
+    }
+
+    .company_menu > li:hover .company_drop,
+    .company_menu > li:focus-within .company_drop {
+
+        display: none;
+
+    }
+
+    .company_tit[aria-expanded="true"] + .company_drop {
+
+        display: block;
 
     }
 
@@ -1203,6 +1224,8 @@
 
     .company_doc_main {
         flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
         gap: 52px;
     }
 
@@ -1211,7 +1234,13 @@
     }
 
     .company_doc_main .company_doc {
-        flex-basis: auto;
+        width: 100%;
+        flex: none;
+    }
+
+    .company_doc_main .company_doc_img {
+        height: auto;
+        flex: none;
     }
 
     .company_doc h2 {

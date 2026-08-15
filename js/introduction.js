@@ -47,6 +47,66 @@
         target
             .querySelector(`[data-company-page='${currentPage}']`)
             ?.setAttribute("aria-current", "page");
+
+        const mobileMenu = window.matchMedia("(max-width: 768px)");
+
+        function closeCompanyMenu(except) {
+
+            target
+                .querySelectorAll(".company_tit[aria-expanded='true']")
+                .forEach(function (title) {
+
+                    if (title !== except) {
+                        title.setAttribute("aria-expanded", "false");
+                    }
+
+                });
+
+        }
+
+        target.addEventListener("click", function (event) {
+
+            if (!mobileMenu.matches) {
+                return;
+            }
+
+            const title = event.target.closest(".company_tit");
+
+            if (!title || !target.contains(title)) {
+                return;
+            }
+
+            const drop = title.nextElementSibling;
+
+            if (!drop || !drop.classList.contains("company_drop")) {
+                return;
+            }
+
+            const isOpen = title.getAttribute("aria-expanded") === "true";
+
+            if (isOpen) {
+                return;
+            }
+
+            event.preventDefault();
+            closeCompanyMenu(title);
+            title.setAttribute("aria-expanded", "true");
+
+        });
+
+        document.addEventListener("click", function (event) {
+
+            if (!target.contains(event.target)) {
+                closeCompanyMenu();
+            }
+
+        });
+
+        mobileMenu.addEventListener("change", function () {
+
+            closeCompanyMenu();
+
+        });
     }
 
     if (document.readyState === "loading") {
