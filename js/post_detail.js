@@ -376,6 +376,84 @@
         });
     }
 
+    function initListPagination() {
+        document.querySelectorAll(".content_paging").forEach(function (paging) {
+            const scope = paging.parentElement;
+            const list = scope.querySelector(".gallery_cards, .event_cards, .information_cards, .board");
+            if (!list) return;
+
+            let items;
+            let perPage;
+
+            if (list.classList.contains("board")) {
+                items = Array.from(list.querySelectorAll(":scope > .board_row"));
+                perPage = 5;
+            } else {
+                items = Array.from(list.children);
+                perPage = list.classList.contains("event_cards") ? 3 : 8;
+            }
+
+            if (!items.length) return;
+
+            const pageCount = Math.ceil(items.length / perPage);
+            let currentPage = 0;
+
+            const previous = document.createElement("button");
+            previous.type = "button";
+            previous.className = "page_arrow arrow left_arrow_2";
+            previous.setAttribute("aria-label", "이전 페이지");
+
+            const next = document.createElement("button");
+            next.type = "button";
+            next.className = "page_arrow arrow right_arrow_2";
+            next.setAttribute("aria-label", "다음 페이지");
+
+            const numbers = document.createElement("span");
+            numbers.className = "page_numbers";
+
+            paging.replaceChildren(previous, numbers, next);
+
+            function showPage(page) {
+                currentPage = Math.min(Math.max(page, 0), pageCount - 1);
+                const start = currentPage * perPage;
+                const end = start + perPage;
+
+                items.forEach(function (item, index) {
+                    item.hidden = index < start || index >= end;
+                });
+
+                numbers.querySelectorAll("button").forEach(function (button, index) {
+                    const active = index === currentPage;
+                    button.toggleAttribute("aria-current", active);
+                    button.setAttribute("aria-label", (index + 1) + "페이지" + (active ? ", 현재 페이지" : ""));
+                });
+
+                previous.disabled = currentPage === 0;
+                next.disabled = currentPage === pageCount - 1;
+            }
+
+            for (let page = 0; page < pageCount; page += 1) {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.textContent = page + 1;
+                button.addEventListener("click", function () {
+                    showPage(page);
+                });
+                numbers.appendChild(button);
+            }
+
+            previous.addEventListener("click", function () {
+                showPage(currentPage - 1);
+            });
+
+            next.addEventListener("click", function () {
+                showPage(currentPage + 1);
+            });
+
+            showPage(0);
+        });
+    }
+
     function mediaMarkup(post) {
         const images = post.images.length ? post.images : [""];
 
@@ -565,5 +643,6 @@
     }
 
     bindListLinks();
+    initListPagination();
     renderPost();
 })();

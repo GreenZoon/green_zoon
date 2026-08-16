@@ -83,7 +83,12 @@
 .content_search input { width: 100%; padding: 0 24px; }
 
 .content_paging { display: flex; align-items: center; justify-content: center; gap: 18px; color: #8e8e8e; font-size: 14px; }
-.content_paging a[aria-current="page"] { color: #009944; font-weight: 700; }
+.page_numbers { display: flex; align-items: center; gap: 18px; }
+.content_paging button { border: 0; background-color: transparent; color: inherit; font: inherit; cursor: pointer; }
+.content_paging .page_numbers button[aria-current] { color: #009944; font-weight: 700; }
+.content_paging .page_arrow { width: 16px; height: 16px; flex: 0 0 auto; background-color: #8e8e8e; }
+.content_paging .page_arrow:disabled { background-color: #c6c6c6; cursor: default; opacity: .55; }
+.gallery_cards > [hidden], .event_cards > [hidden], .information_cards > [hidden], .board > [hidden] { display: none !important; }
 .empty_image { display: flex; align-items: center; justify-content: center; background: #f2f2f2; color: #c6c6c6; }
 
 /* =========================================================
