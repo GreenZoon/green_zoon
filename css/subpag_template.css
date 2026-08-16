@@ -66,7 +66,7 @@
 
 .sub_pag_gnb{
 
-    border-bottom: solid 2px #F8F8F8;
+       box-shadow: inset 0 -2px 0#f2f2f2;
     padding-top: 7px;
 
 }
@@ -117,6 +117,7 @@
     padding: 10px;
 
     color: inherit;
+    font-weight: 600;
 
     /* font-size: 1.1875rem;    19px
     line-height: 1.4;
@@ -352,55 +353,18 @@
 
 .con_wrap {
 
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
     gap: 22px;
+
 }
 
-.con,
-.con_g {
 
-    width: 104px;
-    max-width: 104px;
-
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    flex: 0 0 104px;
-
-    padding: 12px;
-
-    text-align: center;
-}
-
-.con {
-
-    color: #009944;
-
-    border: 2px solid #009944;
-
-    background-color: #fff;
-}
 
 .con > .icon {
 
     width: 54px;
-    height: 54px;
-
     max-width: 54px;
-
-    flex: 0 0 54px;
-
     background-color: #009944;
+
 }
 
 .con > p,
@@ -664,7 +628,7 @@
     align-items: stretch;
     justify-content: center;
 
-    flex: 0 0 100%;
+    flex: 0 0 auto;
 
     gap: 20px;
 
@@ -713,10 +677,6 @@
 .sub_pag_slide_wrap > .arrow {
 
     width: 40px;
-    height: 40px;
-
-    flex: 0 0 40px;
-
     background-color: #8e8e8e;
 }
 
@@ -1175,9 +1135,7 @@
 .service_effect .box_g > .icon {
 
     width: 48px;
-    height: 48px;
 
-    flex: 0 0 48px;
 }
 
 .service_effect .tit_g h3 {
@@ -1208,27 +1166,22 @@
     font-size: clamp(1.5625rem, 2vw, 2.5rem);
 }
 
-.service_target .con_wrap {
 
-    gap: 30px 49px;
-}
-
+.service_target .con, 
+.section_3 .con,
 .service_target .con {
 
     width: 125px;
     max-width: 125px;
 
-    flex: 0 0 125px;
+
 }
 
 .service_target .con > .icon {
 
     width: 48px;
-    height: 48px;
-
     max-width: 48px;
 
-    flex-basis: 48px;
 }
 
 .service_target .con > p {
@@ -1372,15 +1325,15 @@
     /* TARGET */
 
     .section_g .con,
-    .section_3 .con {
+    .section_3 .con,
+    .service_target .con{
 
-        width: 88px;
-        max-width: 88px;
-
-
-        padding: 10px;
+        width: 96px;
+        max-width: 96px;
+        gap: 6px;
 
     }
+
 
     .section_g .con > .icon,
     .section_3 .con > .icon {
@@ -1395,6 +1348,16 @@
     .section_3 .con > p {
 
         font-size: 0.6875rem;
+              
+        line-height: 1.3;
+
+        white-space: nowrap;
+    }
+
+        .section_g .con > p {
+              margin: 0;
+
+
     }
 
     /* WORK TYPE */
@@ -1417,15 +1380,6 @@
     /* EFFECT */
 
     /* TARGET */
-
-    .service_target .con {
-
-        width: 96px;
-        max-width: 96px;
-
-        flex-basis: 96px;
-    }
-
 
     .man_sled {
 
@@ -1519,6 +1473,10 @@
 
     width: 100%;
     align-items: flex-start;
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    white-space: nowrap;
+    
 }
 
     .section_2 .tit_wrap h2 {
@@ -1658,12 +1616,12 @@
 
     .section_g > p {
 
-    width: 100%;
+ 
     font-size: 0.75rem;
     line-height: 1.7;
     text-align: center;
-    max-width: 620px;
-    margin: 0 auto;
+
+  
 }
 
     /* TARGET ICONS */
@@ -1671,17 +1629,8 @@
     .section_3 .con_wrap,
     .section_g .con_wrap {
 
-        width: 100%;
-        max-width: 620px;
+        gap:  16px;
 
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
-        gap: 22px 14px;
-
-        margin: 0 auto;
     }
 
     /* WORK TYPE */
@@ -1899,28 +1848,7 @@
         object-fit: cover;
     }
 
-    .section_g .con {
 
-        gap: 6px;
-
-    }
-
-    .section_g .con > .icon {
-
-        height: 48px;
-
-        flex: 0 0 48px;
-
-    }
-
-    .section_g .con > p {
-
-        margin: 0;
-
-        line-height: 1.3;
-
-        white-space: nowrap;
-    }
 
     /* =====================================================
        MOBILE ORDER
@@ -2044,16 +1972,8 @@
 
     .service_target .con_wrap {
 
-        width: 100%;
-        max-width: none;
+        gap:14px;
 
-        display: flex;
-        flex-wrap: wrap;
-
-        align-items: flex-start;
-        justify-content: center;
-
-        gap: 10px 12px;
     }
 
     .service_target_description {
@@ -2189,12 +2109,14 @@
 
 }
 
+
 /* =========================================================
-   TABLET DETAIL
-   481px ~ 1024px
+   LARGE TABLET EFFECT
+   769px 
 ========================================================= */
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (max-width: 768px) {
+
 
     /* =====================================================
        INTRO
@@ -2269,6 +2191,17 @@
         text-align: right;
     }
 
+        .section_g .con,
+    .section_3 .con,
+    .service_target .con{
+
+        width: 74px;
+       
+        gap: 6px;
+
+    }
+
+
     /* =====================================================
        TARGET
     ===================================================== */
@@ -2282,16 +2215,8 @@
 
     .service_target .con_wrap {
 
-        width: 100%;
-        max-width: 720px;
+        gap: 12px;
 
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-
-        gap: 14px;
-
-        margin: 0 auto;
     }
 
     .service_target .con {
@@ -2716,21 +2641,15 @@
     .sub_pag_tit {
 
         padding: 10px 4px;
-
+        font-weight: 600;
         font-size: 0.9375rem; /* 15px */
         line-height: 1.5;
         letter-spacing: -0.015em;
         
     }
 
-}
 
-/* =========================================================
-   LARGE TABLET EFFECT
-   769px ~ 1024px
-========================================================= */
 
-@media (min-width: 769px) and (max-width: 1024px) {
 
     .service_effect .box_wrap {
 
@@ -2757,6 +2676,7 @@
         letter-spacing: -0.015em;
     }
 
+                
 
     /* =====================================================
        GALLERY
@@ -2794,10 +2714,6 @@
         display: none;
     }
 
-}
-
-@media (max-width: 768px) {
-
 
 
     .sub_pag_slide_wrap > .arrow {
@@ -2808,28 +2724,31 @@
 
     .service_video_play {
 
-        width: clamp(80px, 8vw, 140px);
-        height: clamp(80px, 8vw, 140px);
+        width: 120px;
 
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        transform: translate(-50%, -50%);
-
-        border-radius: 50%;
-
-        background-color: rgba(248, 248, 248, 0.5);
     }
 
+    .con p,.con_g p{
 
+        position: absolute;
+        bottom: -75px;
+
+
+    }
 
 }
+
+
+
+
+
+      
+
+/* =========================================================
+   TABLET DETAIL
+   481px ~ 1024px
+========================================================= */
+
 
 /* =========================================================
    SMALL MOBILE
@@ -2894,7 +2813,7 @@
     .sub_pag_gnb {
 
        
-                padding: 4px 20px;
+        padding: 4px 20px;
 
     }
 
@@ -2904,6 +2823,13 @@
         background-color: #009944;
     
     }
+
+        .service_video_play {
+
+        width: 60px;
+
+    }
+
 
     .service_effect .box_g {
 

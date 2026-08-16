@@ -84,7 +84,6 @@
 .company_arrow {
 
     width: 14px;
-    height: 9px;
     background-color: currentColor;
     transform: rotate(180deg);
 
@@ -149,13 +148,15 @@
 
 .company_intro h1,
 .company_greeting h1,
-.company_location h1 {
+.company_location h1,
+.company_greeting_text h1{
 
     margin: 0;
     color: #555;
     font-size: 2.5rem;
     line-height: 1.2;
     letter-spacing: -0.04em;
+    font-weight: 700;
 
 }
 
