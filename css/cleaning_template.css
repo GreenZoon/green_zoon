@@ -38,23 +38,61 @@
 @media (max-width: 1024px) {
 
 
-    .tit_in_wrap {
-        width: 100%;
-        align-items: flex-end;
-    }
+    .service_cleaning .service_intro {
 
-    .tit_wrap h3 {
-        font-size: 1.3125rem;
-        line-height: 1.4;
-        letter-spacing: -0.04em;}
+        align-items: center;
+        gap: 20px;
+
+    }
 
 
     .service_cleaning .service_intro > .main_img {
+
         order: 1;
+        max-width: 800px;
+        aspect-ratio: 362 / 211;
+
     }
 
     .service_cleaning .service_intro > .tit_wrap {
+
         order: 2;
+        max-width: 800px;
+        align-items: flex-end;
+        text-align: right;
+
+    }
+
+    .service_cleaning .service_intro .tit_in_wrap {
+
+        align-items: flex-end;
+
+    }
+
+    .service_cleaning .service_intro .page_title {
+
+        display: none;
+
+    }
+
+    .service_cleaning .service_intro > .tit_wrap > p {
+
+        width: min(100%, 520px);
+        text-align: right;
+
+    }
+
+    .service_cleaning .service_target {
+
+        color: #f8f8f8;
+        background-color: #009944;
+
+    }
+
+    .service_cleaning .service_target .con > p {
+
+        position: static;
+
     }
 
     .service_cleaning .service_gallery .sub_slide_img {
@@ -71,45 +109,11 @@
         display: none;
     }
 
-    .service_cleaning .section_3 .page_title{
-        
-            font-size: 1.5625rem;       /* 25px */
-            line-height: 1.3;
-            letter-spacing: -0.035em;
-            font-weight: 700;
-
-    }
-
-    .service_cleaning{
-
-        flex-direction: column;
-
-    }
-
-    .tit_wrap > p {
-
-        width: min(100%, 520px);
-        color: #8e8e8e;
-        font-size: 0.875rem;
-        line-height: 1.6;
-        letter-spacing: -0.025em;
-        text-align: right;
-        
-    }
-
-
 }
 
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
-
-    .service_cleaning .service_target {
-
-        color: #f8f8f8;
-        background-color: #009944;
-
-    }
 
     .service_cleaning .service_gallery .sub_pag_img_wrap {
 
@@ -135,10 +139,8 @@
 @media (max-width: 768px) {
 
     .service_cleaning .service_gallery {
-
         color: #555;
         background-color: #fff;
-
     }
 
     .service_cleaning .tit_wrap_g h2 {
@@ -146,7 +148,7 @@
     }
 
     .service_cleaning .service_gallery .wit_arrow {
-        background-color: #8e8e8e;
+        background-color: #009944;
     }
 
     .service_cleaning .service_gallery .slide_dot {
@@ -183,7 +185,9 @@
 
     .service_cleaning .service_target .con > .icon {
         width: 48px;
+        height: 48px;
 
+        flex: 0 0 48px;
     }
 
     .service_cleaning .service_target .con > p {
