@@ -78,9 +78,7 @@
 
 }
 
-.company_tit:hover,
-.company_tit:focus-visible,
-.company_menu > li:has([aria-current="page"]) > .company_tit {
+.company_tit:hover {
 
     color: #f8f8f8;
     background-color: #009944;
@@ -95,8 +93,7 @@
 
 }
 
-.company_tit:hover .company_arrow,
-.company_tit:focus-visible .company_arrow {
+.company_tit:hover .company_arrow {
 
     transform: rotate(0deg);
 
@@ -528,8 +525,7 @@
 
     }
 
-    .company_tit:hover,
-    .company_menu > li:has([aria-current="page"]) > .company_tit {
+    .company_tit:hover {
 
         color: #8e8e8e;
         background-color: #fff;

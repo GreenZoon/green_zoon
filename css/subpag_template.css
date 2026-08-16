@@ -48,6 +48,15 @@
     overflow: hidden;
 }
 
+.man_sled > picture {
+
+    display: block;
+
+    width: 100%;
+    height: 400px;
+
+}
+
 .man_sled img {
 
     display: block;
@@ -145,8 +154,7 @@
     max-height: 37px; */
 }
 
-.sub_pag_depth:hover,
-.sub_pag_depth:has(.sub_pag_tit[aria-current="page"]) {
+.sub_pag_depth:hover {
 
     color: #f8f8f8;
     background-color: #009944;
@@ -1781,6 +1789,12 @@
         object-fit: cover;
     }
 
+    .man_sled > picture {
+
+        height: auto;
+
+    }
+
 
 
     /* =====================================================
@@ -2058,8 +2072,7 @@
         font-size: 0.875rem;
     }
 
-    .sub_pag_depth:hover,
-    .sub_pag_depth:has(.sub_pag_tit[aria-current="page"]) {
+    .sub_pag_depth:hover {
         color: #009944;
         background-color: transparent;
         box-shadow: inset 0 -2px 0 #009944;
