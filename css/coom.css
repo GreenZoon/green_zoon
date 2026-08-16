@@ -325,16 +325,36 @@ section {
 
 /* 초록색 섹션 */
 
-.section_g {
+.section_g,.section_g_2{
 
+    width: 100%;
     background-color: #009944;
-    color: #f8f8f8;
+    display: flex;
+   
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
+     gap: 36px;
+    
 }
 
 .section_g a,
-.section_g a p {
+.section_g_2 a {
 
-    color: #f8f8f8;
+    color: #f2f2f2;
+}
+
+.section_g_2{
+
+    text-align: center;
+     flex-direction: column;
+}
+
+.section_g h2,
+.section_g_2 h2 {
+
+    color: inherit;
+    
 }
 
 /* =========================================================
@@ -375,8 +395,6 @@ section {
 
 .con {
 
-
-
     color: #009944;
     border: 2px solid #009944;
     background-color: #fff;
@@ -385,23 +403,19 @@ section {
 
 .con_g{
 
-
     display: flex;
     background-color: #f2f2f2;
-
 
 }
 
 .con > .icon {
 
     width: 54px;
-     aspect-ratio: 1 / 1;
-
+    aspect-ratio: 1 / 1;
     max-width: 54px;
-
     flex: 0 0 auto;
-
     background-color: #009944;
+
 }
 
 .con > p,
@@ -439,14 +453,11 @@ section {
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
     
-
 }
-
 
 .box_wrap {
 
     width: 100%;
-
     display: flex;
     gap: 16px;
 
@@ -455,13 +466,11 @@ section {
 .box {
 
     width: 50%;
-
     padding: 16px 24px;
-
     color: #8e8e8e;
-
     border: 2px solid #c6c6c6;
     border-radius: 20px;
+
 }
 
 .box_3and2 {
@@ -501,11 +510,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-  white-space: nowrap;
-
+    white-space: nowrap;
     gap: 4px;
-
     line-height: 1;
+
 }
 
 .flx_li_g {
@@ -532,13 +540,13 @@ section {
 .content_start {
 
     justify-content: flex-start;
+
 }
 
 .tit_li {
 
     display: flex;
     align-items: center;
-
     gap: 4px;
 
 }
@@ -592,6 +600,7 @@ section {
 
     display: flex;
     align-items: center;
+
 }
 
 .slide_dot {
@@ -599,21 +608,18 @@ section {
     width: 20px;
     height: 5px;
     padding: 0;
-
     border: 0;
     border-radius: 999px;
-
     background-color: #dbdbdb;
     cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
 
-    transition:
-        width 0.25s ease,
-        background-color 0.25s ease;
 }
 
 .slide_dot[hidden] {
 
     display: none;
+
 }
 
 /* =========================================================
@@ -624,13 +630,11 @@ section {
 svg {
 
     width: 24px;
-aspect-ratio: 1 / 1;
-
+    aspect-ratio: 1 / 1;
     flex: 0 0 auto;
-
     fill: currentColor;
-
     transition: transform 0.25s ease;
+
 }
 
 /* =========================================================
@@ -642,11 +646,8 @@ aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 4px 6px;
-
     border-radius: 999px;
-
     background-color: #1d1d1d50;
     color: #f2f2f2;
 }
@@ -660,9 +661,8 @@ aspect-ratio: 1 / 1;
     position: relative;
 
     width: 24px;
-aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1;
     padding: 0;
-
     border: 0;
     border-radius: 50%;
 
@@ -735,7 +735,6 @@ aspect-ratio: 1 / 1;
 }
 
 .logo{
-
 
     width: 100%;
     aspect-ratio: 4 / 1;
