@@ -76,7 +76,7 @@
 .sub_pag_gnb{
 
     width: 100%;
-    min-height: 64px;
+    min-height: 50px;
     display: flex;
     align-items: stretch;
     border-bottom: 1px solid #f2f2f2;
@@ -86,11 +86,12 @@
 .sub_pag_menu{
 
     width: 100%;
+    padding: 0 150px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: stretch;
-    gap: 0;
+    gap: 21px;
 
 }
 
@@ -103,9 +104,8 @@
 
 .sub_pag_depth {
 
-    width: 180px;
-    min-height: 64px;
-    flex: 0 0 180px;
+    min-height: 50px;
+    flex: 0 0 auto;
 
     display: flex;
     flex-direction: column;
@@ -132,7 +132,6 @@
 .sub_pag_tit {
 
     width: 100%;
-    min-height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1197,14 +1196,15 @@
 
 @media (min-width: 1025px) and (max-width: 1500px) {
 
-    .sub_pag_menu {
-        justify-content: center;
-    }
-
     .sub_pag_menu::after {
         display: none;
     }
 
+    .sub_pag_menu{
+
+        padding: 0 50px;
+        
+    }
     .service_gallery .slide_wrap {
 
         width: 100%;
