@@ -433,7 +433,7 @@
         }).join("") + "</div>";
 
         const reviewReply = post.type === "review" ? '<div class="post_reply"><h2>관리자 답글</h2><p>고객님, 소중한 후기 감사합니다. 앞으로도 현장 상태에 맞는 작업과 꼼꼼한 마무리로 만족하실 수 있도록 최선을 다하겠습니다.</p></div>' : "";
-        const related = list.filter(function (item) { return item.id !== post.id; });
+        const related = list.filter(function (item) { return item.id !== post.id; }).slice(0, 6);
 
         const split = ["notice", "event", "information"].includes(type) ? " split" : "";
 
@@ -452,15 +452,16 @@
             let index = 0;
             let pageCount = 1;
             let startX = 0;
+            let startY = 0;
             let startScroll = 0;
             let dragX = 0;
             let dragging = false;
             let dragged = false;
+            let dragDirection = null;
 
             function visibleCount() {
                 if (window.innerWidth <= 768) return 1;
-                if (window.innerWidth <= 1024) return 2;
-                return 3;
+                return 2;
             }
 
             function drawDots() {
@@ -496,34 +497,57 @@
             slider.querySelector(".prev").addEventListener("click", function () { show(index - 1); });
             slider.querySelector(".next").addEventListener("click", function () { show(index + 1); });
 
-            view.style.touchAction = "pan-y";
-            view.addEventListener("pointerdown", function (event) {
+            function dragStart(event) {
+                const point = event.touches ? event.touches[0] : event;
                 dragging = true;
                 dragged = false;
-                startX = event.clientX;
+                dragDirection = null;
+                startX = point.clientX;
+                startY = point.clientY;
                 startScroll = view.scrollLeft;
                 dragX = 0;
                 view.style.scrollBehavior = "auto";
-                view.setPointerCapture(event.pointerId);
-            });
-            view.addEventListener("pointermove", function (event) {
+            }
+
+            function dragMove(event) {
                 if (!dragging) return;
-                dragX = event.clientX - startX;
+
+                const point = event.touches ? event.touches[0] : event;
+                dragX = point.clientX - startX;
+                const dragY = point.clientY - startY;
+
+                if (!dragDirection && (Math.abs(dragX) > 5 || Math.abs(dragY) > 5)) {
+                    dragDirection = Math.abs(dragX) > Math.abs(dragY) ? "horizontal" : "vertical";
+                }
+
+                if (dragDirection !== "horizontal") return;
+
                 if (Math.abs(dragX) > 8) {
                     dragged = true;
                     view.scrollLeft = startScroll - dragX;
                 }
-            });
-            view.addEventListener("pointerup", function () {
+
+                if (event.cancelable) event.preventDefault();
+            }
+
+            function dragEnd() {
                 if (!dragging) return;
                 dragging = false;
-                if (Math.abs(dragX) >= 45) show(index + (dragX < 0 ? 1 : -1));
+                if (dragDirection === "horizontal" && Math.abs(dragX) >= 45) show(index + (dragX < 0 ? 1 : -1));
                 else show(index);
-            });
-            view.addEventListener("pointercancel", function () {
-                dragging = false;
-                dragged = false;
-            });
+
+                dragDirection = null;
+                dragX = 0;
+            }
+
+            view.style.touchAction = "pan-y";
+            view.addEventListener("mousedown", dragStart);
+            window.addEventListener("mousemove", dragMove);
+            window.addEventListener("mouseup", dragEnd);
+            view.addEventListener("touchstart", dragStart, { passive: true });
+            view.addEventListener("touchmove", dragMove, { passive: false });
+            view.addEventListener("touchend", dragEnd, { passive: true });
+            view.addEventListener("touchcancel", dragEnd, { passive: true });
             view.addEventListener("click", function (event) {
                 if (dragged) {
                     event.preventDefault();
