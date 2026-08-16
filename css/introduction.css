@@ -866,6 +866,12 @@
     display: none;
 }
 
+.company_awards {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
 .company_award {
     display: flex;
     flex-direction: row-reverse;
@@ -1262,6 +1268,10 @@
         display: flex;
         flex-direction: column;
         gap: 18px;
+    }
+
+    .company_awards {
+        gap: 52px;
     }
 
     .company_award_img {

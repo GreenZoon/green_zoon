@@ -43,8 +43,8 @@
     ];
 
     const galleryEventTitles = [
-        "2025년 국제청소위생방역산업전, 대상수상",
-        "전국 건물위생관리 기능경진대회 최우수상 수상",
+        "2025년 전국 건물위생관리 기능경진대회 대상 수상",
+        "2023년 전국 건물위생관리 기능경진대회 최우수상 수상",
         "그린죤 2022 회식3",
         "그린죤 장노년 일자리 한마당 부스 참가",
         "그린죤 직원 간담회",
@@ -151,9 +151,8 @@
     ];
 
     const galleryEventImages = [
-        "img/sub_page/news_Competition_victory_2025.jpg",
-        "img/mainimgs/Community_victory_2025.jpg",
-        "img/mainimgs/Community_viciory_2023.jpg",
+        "img/sub_page/awards/award_2025_cover.jpg",
+        "img/sub_page/awards/award_2023_cover.jpg",
         "img/sub_page/news_event_2.jpg",
         "img/sub_page/news_event_3.jpg",
         "img/sub_page/news_event.jpg",
@@ -170,7 +169,7 @@
     ];
 
     const noticeImages = [
-        "img/mainimgs/Community_victory_2025.jpg",
+        "img/sub_page/awards/award_2025_cover.jpg",
         "img/sub_page/factory_equipment_ing.jpg",
         "img/mainimgs/dispatch_sanitation_ing.jpg",
         "img/sub_page/Disinfection_3.jpg",
@@ -180,7 +179,7 @@
         "img/mainimgs/factory_cleane_ing.jpg",
         "img/sub_page/factory_floor_ing.jpg",
         "img/mainimgs/Event_2.jpg",
-        "img/mainimgs/Community_viciory_2023.jpg"
+        "img/sub_page/awards/award_2023_cover.jpg"
     ];
 
     const communityEventImages = [
@@ -255,6 +254,22 @@
         review: makePosts("review", reviewTitles, reviewImages, "이용후기")
     };
 
+    posts.notice[0].date = "2025.06.23";
+    posts.notice[10].date = "2023.06.13";
+    posts.galleryEvent[0].date = "2025.06.23";
+    posts.galleryEvent[1].date = "2023.06.13";
+
+    posts.notice[10].images = [
+        "img/sub_page/awards/award_2023_cover.jpg",
+        "img/sub_page/awards/award_2023_venue.jpg",
+        "img/sub_page/awards/award_2023_competition.jpg",
+        "img/sub_page/awards/award_2023_presentation.jpg",
+        "img/sub_page/awards/award_2023_winners.jpg",
+        "img/sub_page/awards/award_2023_certificates.jpg"
+    ];
+
+    posts.galleryEvent[1].images = posts.notice[10].images.slice();
+
     posts.work[0].images = [
         "img/sub_page/Disinfection_3.jpg",
         "img/sub_page/Disinfection_4.jpg",
@@ -287,6 +302,13 @@
                     "2025년 국제청소위생방역산업전에서 열린 전국 건물위생관리 기능경진대회에서 (주)그린죤이 대상을 수상했습니다.",
                     "현장 안전수칙과 작업 순서를 준수하면서 오염 상태에 맞는 장비와 약품을 선택한 점을 높게 평가받았습니다.",
                     "앞으로도 체계적인 매뉴얼과 숙련된 인력을 바탕으로 믿고 맡길 수 있는 청소 서비스를 제공하겠습니다."
+                ];
+            }
+            if (post.id === 10) {
+                return [
+                    "2023년 전국 건물위생관리 기능경진대회 바닥세정 부문에서 그린죤 임직원 2명이 최우수상을 수상했습니다.",
+                    "대회 현장에서 안전수칙과 작업 순서를 지키며 전문 장비를 운용하고, 실제 작업 역량을 평가받았습니다.",
+                    "그린죤은 수상 경험을 현장 서비스와 작업자 교육에 이어가며 안전하고 체계적인 청소를 제공하겠습니다."
                 ];
             }
             return [
@@ -355,6 +377,13 @@
         linkCards(".notice_feature", "notice");
         linkCards(".notice_list .board_row", "notice");
         linkCards(".review_board .board_row", "review");
+
+        document.querySelectorAll(".notice_list .board_row").forEach(function (row) {
+            const title = row.querySelector(".board_title");
+            const text = title ? title.textContent.trim() : "";
+            if (text.includes("2025년 전국 건물위생관리")) row.href = postUrl("notice", 0);
+            if (text.includes("2023년 전국 건물위생관리")) row.href = postUrl("notice", 10);
+        });
 
         document.querySelectorAll(".mobile_gallery_box").forEach(function (card, index) {
             card.href = postUrl("work", index % posts.work.length);
