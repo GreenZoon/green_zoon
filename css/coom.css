@@ -624,9 +624,9 @@ section {
 svg {
 
     width: 24px;
-    height: 24px;
+aspect-ratio: 1 / 1;
 
-    flex: 0 0 24px;
+    flex: 0 0 auto;
 
     fill: currentColor;
 
@@ -660,8 +660,7 @@ svg {
     position: relative;
 
     width: 24px;
-    height: 24px;
-
+aspect-ratio: 1 / 1;
     padding: 0;
 
     border: 0;
@@ -1562,7 +1561,7 @@ svg {
     }
 
     .flx_li_g .icon {
-        
+
     width: 14px;
     
 }
@@ -1686,6 +1685,20 @@ svg {
 
     }
 
+        .section_g {
+
+        background-color: #fff;
+        
+    
+    }
+
+    .section_g a, .section_g a,.service_gallery_name{
+
+        color: #555;
+
+       
+    }
+
     .sub_back {
 
         width: 100%;
@@ -1737,23 +1750,18 @@ svg {
 
     }
 
-
-
     .mobile_none{
 
         display: none;
 
     }
-
     
     section {
 
-        padding:20px 40px;
+        padding:20px ;
         gap: 24px;
 
     }
-
-
 
     /* 페이지 대표 제목 기록용 */
 
@@ -1782,8 +1790,7 @@ svg {
         line-height: 1.55;
         letter-spacing: -0.04em;
         font-weight: 500;
-
-}
+    }
 
     /* 섹션 대표 제목 */
     h2,

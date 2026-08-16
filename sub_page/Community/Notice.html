@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린죤 - 공지사항</title>
-    <link rel="stylesheet" href="../../css/reseat.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-    <link rel="stylesheet" href="../../css/coom.css">
-    <link rel="stylesheet" href="../../css/header_stayl.css">
-    <link rel="stylesheet" href="../../css/menu.css">
-    <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/gallery_community.css">
+    <link rel="stylesheet" href="../../css/reseat.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="../../css/coom.css"><link rel="stylesheet" href="../../css/header_stayl.css"><link rel="stylesheet" href="../../css/menu.css"><link rel="stylesheet" href="../../css/footer.css"><link rel="stylesheet" href="../../css/gallery_community.css">
 </head>
-<body>
-    <div id="header"></div>
-    <div id="menu"></div>
-    <nav class="breadcrumb" aria-label="현재 페이지 경로">
-        <span class="home" aria-hidden="true"></span><a href="../../index.html">홈</a><span class="arrow left_arrow_2" aria-hidden="true"></span><div class="breadcrumb_dot_wrap" aria-hidden="true"><span class="breadcrumb_dot"></span><span class="breadcrumb_dot"></span><span class="breadcrumb_dot"></span></div><span class="arrow left_arrow_2" aria-hidden="true"></span><p aria-current="page">공지사항</p>
-    </nav>
+
+<body class="community_page">
+    <div id="header"></div><div id="menu"></div>
+    <div class="sub_visual" role="img" aria-label="커뮤니티 대표 이미지"></div>
+    <nav class="sub_category" aria-label="커뮤니티 서브메뉴"><a href="Notice.html" aria-current="page">공지사항</a><a href="Schedule.html">작업일정</a><a href="Event.html">이벤트</a><a href="Information.html">정보공유</a><a href="FAQ.html">자주하는 질문</a><a href="Reviews.html">이용후기</a></nav>
+    <nav class="breadcrumb" aria-label="현재 페이지 경로"><span class="home"></span><a href="../../index.html">홈</a><span class="arrow left_arrow_2"></span><p>커뮤니티</p><span class="arrow left_arrow_2"></span><p aria-current="page">공지사항</p></nav>
+
     <main class="community">
-        <nav class="community_menu" aria-label="커뮤니티 메뉴">
-            <a href="Notice.html" aria-current="page">공지사항</a>
-            <a href="Schedule.html">작업일정</a>
-            <a href="Event.html">이벤트</a>
-            <a href="Information.html">정보공유</a>
-            <a href="FAQ.html">자주하는 질문</a>
-            <a href="Reviews.html">이용후기</a>
-        </nav>
-        <header class="community_intro"><h1>공지사항</h1><p>(주)그린죤의 주요 소식을 안내합니다.</p></header>
-        <div class="community_board">
-            <div class="community_list">
-                <div class="community_item"><span class="community_badge">공지</span><a href="#">홈페이지 이용 안내</a><time datetime="2026-08-16">2026.08.16</time></div>
-                <div class="community_item"><span class="community_badge">공지</span><a href="#">그린죤 서비스 문의 안내</a><time datetime="2026-08-16">2026.08.16</time></div>
-                <div class="community_item"><span class="community_badge">소식</span><a href="#">게시글 제목 입력</a><time datetime="2026-08-16">2026.08.16</time></div>
+        <div class="sub_content community_body">
+            <h1 class="community_title">공지사항</h1>
+
+            <div class="notice_layout">
+                <a class="notice_feature" href="#">
+                    <img src="../../img/mainimgs/Community_victory_2025.jpg" alt="2025 전국 건물위생관리 기능경진대회 대상 수상">
+                    <span><time datetime="2025-06-23">2025.06.23</time>2025년 전국 건물위생관리 기능경진대회에서 대상을 수상 하였습니다.</span>
+                </a>
+
+                <div class="notice_list">
+                    <form class="content_search" action="#" role="search">
+                        <button type="button">필터</button>
+                        <input type="search" aria-label="공지사항 검색" placeholder="검색어를 입력해 주세요">
+                    </form>
+
+                    <div class="board" role="table" aria-label="공지사항 목록">
+                        <div class="board_head" role="row"><span class="board_badge"></span><span class="board_title">제목</span><span class="board_date">날짜</span><span class="board_writer">작성자</span><span class="board_view">조회</span></div>
+                        <a class="board_row" href="#"><span class="board_badge">공지</span><span class="board_title">2025년 전국 건물위생관리 기능경진대회에서 대상을 수상 하였습니다.</span><time class="board_date">2025.06.23</time><span class="board_writer">관리자</span><span class="board_view">179</span></a>
+                        <a class="board_row" href="#"><span class="board_badge">입찰</span><span class="board_title">시설물관리(기계)용역 입찰하였습니다.</span><time class="board_date">2026.03.24</time><span class="board_writer">관리자</span><span class="board_view">52</span></a>
+                        <a class="board_row" href="#"><span class="board_badge">입찰</span><span class="board_title">2026년도 수원국토사무소 관내 졸음쉼터 청소-관리용역 입찰하였습니다.</span><time class="board_date">2026.03.18</time><span class="board_writer">관리자</span><span class="board_view">34</span></a>
+                        <a class="board_row" href="#"><span class="board_badge">입찰</span><span class="board_title">2026년도 중앙보훈병원 방역·소독 위탁관리용역 입찰하였습니다.</span><time class="board_date">2026.03.12</time><span class="board_writer">관리자</span><span class="board_view">22</span></a>
+                        <a class="board_row" href="#"><span class="board_badge">입찰</span><span class="board_title">2026 학교 저수조 청소 용역 (4권역) 낙찰 되었습니다.</span><time class="board_date">2026.03.06</time><span class="board_writer">관리자</span><span class="board_view">14</span></a>
+                        <a class="board_row" href="#"><span class="board_badge">입찰</span><span class="board_title">2026년 경북 김천경찰서 지역경찰관서 청소용역 공고 입찰 하였습니다.</span><time class="board_date">2026.03.02</time><span class="board_writer">관리자</span><span class="board_view">27</span></a>
+                    </div>
+
+                    <nav class="content_paging" aria-label="공지사항 페이지"><a href="#">〈</a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">〉</a></nav>
+                </div>
             </div>
         </div>
     </main>
-    <div id="footer"></div>
-    <script src="../../js/jquery-3.7.1.min.js"></script>
-    <script src="../../js/mobile_menu.js"></script>
-    <script src="../../js/sub_common.js"></script>
+
+    <div id="footer"></div><script src="../../js/jquery-3.7.1.min.js"></script><script src="../../js/mobile_menu.js"></script><script src="../../js/sub_common.js"></script>
 </body>
 </html>

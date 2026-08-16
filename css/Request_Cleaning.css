@@ -296,9 +296,6 @@
         flex-direction: row;
 
         gap: 12px;
-
-        padding-top: 20px;
-        padding-bottom: 20px;
     }
 
     /* =====================================================
@@ -314,9 +311,9 @@
         display: block;
 
         width: 28px;
-        height: 28px;
 
-        flex: 0 0 28px;
+
+        flex: 0 0 auto;
 
         background-color: #f2f2f2;
     }

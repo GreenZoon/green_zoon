@@ -627,9 +627,6 @@
     align-items: center;
 
     gap: 21px;
-
-    padding: 50px 150px;
-
 }
 
 
@@ -1622,16 +1619,19 @@
 
     .section_1 .left_arrow,
     .section_1 .right_arrow {
+
         display: none;
     }
 
     .slide_control_1 {
+
         right: 12px;
         bottom: 12px;
         gap: 6px;
     }
 
     .slide_control_1 .slide_dot {
+
         width: 12px;
         height: 4px;
     }
@@ -1661,7 +1661,7 @@
     .section_video {
         align-items: flex-start;
         gap: 12px;
-        padding: 20px;
+        
     }
 
     .video_title_wrap {
