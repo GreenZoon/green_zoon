@@ -222,6 +222,43 @@
 .calendar .selected { border-color: #009944; color: #009944; }
 
 /* =========================================================
+   POST DETAIL
+   갤러리와 커뮤니티 상세 게시글 공통 구조
+========================================================= */
+
+.post { display: flex; flex-direction: column; align-items: center; }
+.post > .sub_content { gap: 70px; }
+.post_head { display: flex; flex-direction: column; gap: 18px; }
+.post_head h1 { color: #555; font-size: 40px; line-height: 1.3; letter-spacing: -.04em; }
+.post_meta { display: flex; align-items: center; gap: 24px; color: #8e8e8e; font-size: 14px; }
+.post_body { display: flex; flex-direction: column; align-items: center; gap: 70px; }
+.post_body.split { flex-direction: row; align-items: flex-start; }
+.post_body.split .post_media { flex: 0 0 44%; }
+.post_body.split .post_copy { flex: 1 1 auto; }
+.post_media { width: min(100%, 920px); display: flex; flex-direction: column; gap: 18px; }
+.post_media img, .post_media > .empty_image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 15px; }
+[data-post-type="notice"] .post_media img { aspect-ratio: 3 / 4; object-fit: contain; }
+[data-post-type="information"] .post_media img { aspect-ratio: 1 / 1; }
+.post_media figcaption { color: #8e8e8e; line-height: 1.6; text-align: center; }
+.post_video { position: relative; }
+.post_copy { width: min(100%, 920px); display: flex; flex-direction: column; gap: 18px; line-height: 1.8; }
+.post_reply { display: flex; flex-direction: column; gap: 24px; border: 1px solid #009944; border-radius: 15px; padding: 32px; }
+.post_reply h2 { font-size: 25px; }
+.post_related { display: flex; flex-direction: column; gap: 32px; border-top: 2px solid #f2f2f2; }
+.post_related h2 { font-size: 30px; line-height: 1.4; }
+.post_slider { width: 100%; display: flex; align-items: center; gap: 20px; }
+.post_view { min-width: 0; flex: 1 1 auto; overflow: hidden; }
+.post_track { display: flex; transition: transform .35s ease; }
+.post_card { flex: 0 0 25%; display: flex; flex-direction: column; gap: 10px; color: #555; padding: 0 8px; }
+.post_card img, .post_card .empty_image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; }
+.post_card strong { overflow: hidden; line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.post_card time { color: #8e8e8e; font-size: 12px; }
+.post_arrow { flex: 0 0 44px; min-height: 44px; border: 0; background: transparent; color: #8e8e8e; font-size: 34px; cursor: pointer; }
+.post_dots { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.post_dots .slide_dot { width: 22px; height: 4px; border: 0; border-radius: 2px; background: #dbdbdb; }
+.post_dots .slide_dot.active { background: #009944; }
+
+/* =========================================================
    1500
 ========================================================= */
 
@@ -232,6 +269,7 @@
     .gallery_feature { gap: 40px; }
     .gallery_feature_media img, .gallery_feature_media .empty_image { height: 340px; }
     .gallery_card, .information_card { width: calc((100% - 40px) / 3); }
+    .post > .sub_content { gap: 60px; }
 }
 
 /* =========================================================
@@ -253,6 +291,8 @@
     .notice_layout { gap: 40px; }
     .board_date, .board_writer, .board_view { flex-basis: 82px; }
     .calendar td { height: 110px; }
+    .post_head h1 { font-size: 32px; }
+    .post_card { flex-basis: 50%; }
 }
 
 /* =========================================================
@@ -353,6 +393,27 @@
     .calendar td { height: 46px; border: 0; border-radius: 50%; font-size: 12px; text-align: center; padding: 8px 2px; }
     .calendar td small { width: 4px; height: 4px; right: 50%; bottom: 5px; overflow: hidden; transform: translateX(50%); border-radius: 50%; background: #009944; color: transparent; }
     .calendar .selected { background: #009944; color: #fff; }
+    .post > .sub_content { gap: 36px; }
+    .post_head { gap: 10px; }
+    .post_head h1 { font-size: 25px; }
+    .post_meta { gap: 12px; font-size: 10px; }
+    .post_body { gap: 32px; }
+    .post_body.split { flex-direction: column; align-items: stretch; }
+    .post_body.split .post_media { flex-basis: auto; }
+    .post_media { gap: 10px; }
+    .post_media img, .post_media > .empty_image { border-radius: 8px; }
+    .post_media figcaption { font-size: 12px; text-align: left; }
+    .post_copy { gap: 14px; font-size: 14px; }
+    .post_reply { gap: 14px; border-radius: 8px; padding: 20px; }
+    .post_reply h2 { font-size: 19px; }
+    .post_related { gap: 20px; }
+    .post_related h2 { font-size: 19px; }
+    .post_slider { gap: 4px; }
+    .post_card { flex-basis: 100%; gap: 7px; padding: 0; }
+    .post_card strong { font-size: 14px; }
+    .post_arrow { flex-basis: 36px; min-height: 36px; font-size: 26px; }
+    .post_dots .slide_dot { width: 8px; }
+    .post_dots .slide_dot.active { width: 24px; }
 }
 
 /* =========================================================
@@ -371,4 +432,6 @@
     .board_date, .board_writer, .board_view { flex-basis: 43px; }
     .board_view { display: none; }
     .review_actions { gap: 10px; }
+    .post_head h1 { font-size: 23px; }
+    .post_copy { font-size: 13px; }
 }
