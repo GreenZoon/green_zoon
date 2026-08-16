@@ -415,15 +415,15 @@ const mobileMenuData = [
         children: [
             {
                 title: "작업 갤러리",
-                href: "#"
+                href: "/sub_page/Gallery/Work_gallery.html"
             },
             {
                 title: "작업 동영상",
-                href: "#"
+                href: "/sub_page/Gallery/Video_gallery.html"
             },
             {
                 title: "행사사진",
-                href: "#"
+                href: "/sub_page/Gallery/Event_gallery.html"
             }
         ]
     },
@@ -435,27 +435,27 @@ const mobileMenuData = [
         children: [
             {
                 title: "공지사항",
-                href: "#"
+                href: "/sub_page/Community/Notice.html"
             },
             {
                 title: "작업일정",
-                href: "#"
+                href: "/sub_page/Community/Schedule.html"
             },
             {
                 title: "이벤트",
-                href: "#"
+                href: "/sub_page/Community/Event.html"
             },
             {
                 title: "정보공유",
-                href: "#"
+                href: "/sub_page/Community/Information.html"
             },
             {
                 title: "자주하는 질문",
-                href: "#"
+                href: "/sub_page/Community/FAQ.html"
             },
             {
                 title: "이용후기",
-                href: "#"
+                href: "/sub_page/Community/Reviews.html"
             }
         ]
     }
