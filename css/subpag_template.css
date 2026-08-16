@@ -89,8 +89,8 @@
     padding: 0 150px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: stretch;
+    justify-content: end;
+    align-items: end;
     gap: 21px;
 
 }
@@ -106,7 +106,7 @@
 
     min-height: 50px;
     flex: 0 0 auto;
-
+    padding: 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -225,16 +225,7 @@
     color: #555;
 }
 
-.section_2 .tit_wrap h2 {
 
-    color: inherit;
-}
-
-.section_2 .tit_wrap h3 {
-
-    color: inherit;
-
-}
 
 .section_2 .tit_wrap p {
 
@@ -243,80 +234,8 @@
     color: #8e8e8e;}
 
 
-/* =========================================================
-   6. GREEN SECTION
-========================================================= */
 
-.section_g {
 
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 18px;
-
-    text-align: center;
-}
-
-.section_g_2 {
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f2f2f2;
-
-    background-color: #009944;
-
-    gap: 36px;
-
-}
-
-.section_g_p {
-
-    padding: 50px 150px;
-
-}
-
-.section_g h2,
-.section_g_2 h2 {
-
-    color: inherit;
-    
-}
-
-.section_g .tit_wrap,
-.section_g_2 .tit_wrap {
-
-    width: 50%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 7px;
-
-    color: #f2f2f2;
-}
-
-.section_g .tit_wrap {
-
-    max-width: 700px;
-}
-
-.section_g_2 .tit_wrap {
-
-    max-width: 520px;
-}
-
-.section_g_2 > div {
-
-    width: 50%;
-    max-width: 600px;
-}
 
 /* =========================================================
    7. TARGET SECTION
@@ -1327,10 +1246,9 @@
     .man_sled {
 
         display: block;
-
         width: 100%;
-
         overflow: hidden;
+
     }
 
     /* SUB MENU */
@@ -1340,14 +1258,10 @@
         display: none;
     }
 
-    .sub_pag_menu {
-        justify-content: center;
-        gap: 0;
-
-    }
-
     .sub_pag_menu::after {
+
         display: none;
+
     }
 
     .sub_pag_depth {
@@ -1363,6 +1277,7 @@
         font-size: 1.0625rem; /* 17px */
         line-height: 1.55;
         letter-spacing: -0.04em;
+        font-weight: 600;
 
     }
 
@@ -1795,7 +1710,10 @@
 
     }
 
+    .sub_pag_menu{
 
+        padding: 0 50px;
+    }
 
     /* =====================================================
        MOBILE ORDER
@@ -2047,13 +1965,6 @@
         scrollbar-width: none;
     }
 
-    .sub_pag_menu {
-        width: max-content;
-        min-width: 100%;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 12px;
-    }
 
     .sub_pag_menu::after {
         display: none;
@@ -2114,11 +2025,6 @@
         gap: 20px;
 
     }
-
-
-
-
-     
 
     .service_intro > .img_wrap,
     .service_intro > .tit_wrap {
@@ -2597,10 +2503,10 @@
 
     .sub_pag_menu {
 
+        padding: 0 20px;
         gap: 7px;
-
-
     }
+
 
     .sub_pag_tit {
 
@@ -2658,6 +2564,7 @@
 
     .sub_pag_menu {
 
+        padding: 0 50px;
         gap: 0;
     }
 
@@ -2946,7 +2853,7 @@
         order: 3;
 
         display: block;
-
+        text-align: start;
         width: 100%;
 
         padding-left: 12px;
