@@ -73,6 +73,7 @@
 
 .sub_pag_menu{
 
+    width: 100%;
     display: flex;
     flex-direction:row;
     justify-content: end;
@@ -261,11 +262,6 @@
 
 }
 
-.section_g .icon {
-
-    background-color: #f2f2f2;
-}
-
 .section_g h2,
 .section_g_2 h2,
 .section_g p,
@@ -298,11 +294,6 @@
     max-width: 520px;
 }
 
-.section_g_2 p {
-
-    line-height: 1.5;
-}
-
 .section_g_2 > div {
 
     width: 50%;
@@ -329,8 +320,6 @@
 
 .section_3 h2 {
 
-
-
     color: inherit;
 }
 
@@ -340,16 +329,6 @@
     color: inherit;
 }
 
-/* =========================================================
-   8. TARGET ICONS
-========================================================= */
-
-.con > p,
-.con_g > p {
-
-    margin: 3px 0 0;
-
-}
 
 /* =========================================================
    9. CLEANING EFFECT
@@ -386,8 +365,6 @@
     width: 100%;
 
     display: flex;
-    flex-wrap: wrap;
-
     gap: 14px;
 }
 
@@ -786,7 +763,7 @@
     letter-spacing: -0.015em;
     font-weight: 500;
 
-    color: #666;
+    color: #8e8e8e;
 }
 
 /* =========================================================
@@ -866,7 +843,7 @@
 
     transform: translate(-50%, -50%);
 
-    color: #adadad;
+    color: #f2f2f2;
 
     font-size: 0.9375rem;
     font-weight: 500;
@@ -1034,7 +1011,7 @@
     width: 650px;
     max-width: 650px;
 
-    flex: 0 1 650px;
+    flex: 0 1 auto;
 }
 
 .service_intro > .tit_wrap {
@@ -1042,7 +1019,7 @@
     width: 725px;
     max-width: 725px;
 
-    flex: 0 1 725px;
+    flex: 0 1 auto;
 }
 
 
@@ -1079,41 +1056,11 @@
 
 }
 
-.service_effect .tit_g h3 {
-
-    font-size: clamp(0.9375rem, 1vw, 1.1875rem);
-}
-
-.service_effect .tit_g p {
-
-    font-size: clamp(0.75rem, 0.8vw, 0.9375rem);
-}
-
-/* =========================================================
-   DESKTOP GALLERY
-========================================================= */
-
-.service_gallery .tit_wrap h2 {
-
-    font-size: clamp(1.5625rem, 2vw, 2.5rem);
-}
-
-/* =========================================================
-   DESKTOP TARGET
-========================================================= */
-
-.service_target > h2 {
-
-    font-size: clamp(1.5625rem, 2vw, 2.5rem);
-}
-
-
 .service_target .con,
 .section_3 .con {
 
     width: 125px;
     max-width: 125px;
-
 
 }
 
@@ -1278,9 +1225,8 @@
     .section_g .con > .icon,
     .section_3 .con > .icon {
 
-        width: 48px;
-
-        max-width: 48px;
+        width: 46px;
+        max-width: 46px;
 
     }
 
@@ -1288,15 +1234,14 @@
     .section_3 .con > p {
 
         font-size: 0.6875rem;
-              
         line-height: 1.3;
-
         white-space: nowrap;
+    
     }
 
-        .section_g .con > p {
-              margin: 0;
-
+    .section_g .con > p {
+    
+        margin: 0;
 
     }
 
@@ -1334,7 +1279,7 @@
 
     .sub_pag_gnb {
 
-        padding: 0 40px;
+        padding: 3px 40px;
 
     }
 
@@ -1344,11 +1289,6 @@
     }
 
     .sub_pag_menu {
-
-        width: max-content;
-        min-width: 100%;
-
-        justify-content: flex-end;
 
         gap: 12px;
 
@@ -1407,18 +1347,17 @@
 
     align-items: flex-start;
     text-align: left;
+
 }
 
     .section_2 .tit_in_wrap {
 
-    width: 100%;
-    align-items: flex-start;
-    font-size: 0.6875rem;
-    line-height: 1.3;
-    white-space: nowrap;
+        width: 100%;
+        font-size: 0.6875rem;
+        line-height: 1.3;
+        white-space: nowrap;
     
 }
-
     .section_2 .tit_wrap h2 {
 
         font-size: 1.1875rem;
@@ -1433,12 +1372,17 @@
         line-height: 1.4;
     }
 
-    .section_2 .tit_wrap p {
+    .service_intro .tit_wrap > p {
 
-    font-size: 0.75rem;
-    line-height: 1.55;
-    text-align: left;
-    margin-top: 4px;
+        width: min(100%,90% );
+
+        margin-top: 0;
+
+        font-size: 1.1875rem;       /* 19px */
+        line-height: 1.4;
+        letter-spacing: -0.025em;
+
+        text-align: right;
 }
 
     /* CLEANING EFFECT */
@@ -1640,30 +1584,35 @@
         line-height: 1.5;
     }
 
+
+
+        .service_effect {
+
+        order: 4;
+        gap: 14px;
+        padding-top: 36px;
+        padding-bottom: 36px;
+
+}
+
     /* =====================================================
        GALLERY
        MOBILE : 후 사진 1장
     ===================================================== */
 
-    .img_section {
+        .img_section {
 
-    gap: 22px;
-   
-}
+        gap: 22px;
+    
+    }
 
     .img_section .tit_wrap {
 
-    width: 100%;
-    max-width: none;
-    align-items: flex-start;
-    text-align: left;
-    gap: 6px;
-}
-
-    .img_section .tit_wrap h2 {
-
-        font-size: 1.1875rem;
+        width: 100%;
+        max-width: none;
+        gap: 6px;
     }
+
 
     .img_section .tit_wrap p {
 
@@ -1679,9 +1628,7 @@
 
         width: 100%;
         height: auto;
-
         aspect-ratio: 13 / 8;
-
         border-radius: 12px;
     }
 
@@ -1735,8 +1682,6 @@
 
     .section_g_2 {
 
-    flex-direction: column;
-    align-items: stretch;
     gap: 24px;
 
 }
@@ -1754,7 +1699,7 @@
 
     }
 
-        .section_g_2 .tit_wrap {
+    .section_g_2 .tit_wrap {
 
         align-items: flex-start;
         text-align: left;
@@ -1829,14 +1774,6 @@
         order: 3;
     }
 
-    .service_effect {
-
-    order: 4;
-    gap: 14px;
-    padding-top: 36px;
-    padding-bottom: 36px;
-}
-
     .service_gallery {
 
     order: 5;
@@ -1887,23 +1824,14 @@
 
     .service_intro .tit_wrap h3 {
 
-        margin-bottom: 0;
+        font-size: 1.5625rem;       /* 25px */
+        line-height: 1.3;
+        letter-spacing: -0.035em;
+        font-weight: 700;
 
-        font-size: 1.1875rem;
-        line-height: 1.45;
+
     }
 
-    .service_intro .tit_wrap > p {
-
-        width: min(100%, 300px);
-
-        margin-top: 0;
-
-        font-size: 0.75rem;
-        line-height: 1.55;
-
-        text-align: right;
-    }
 
     /* =====================================================
        TARGET
@@ -1947,15 +1875,10 @@
 
         width: 100%;
         min-height: 50px;
-
         justify-content: flex-start;
-
         gap: 10px;
 
-        padding: 0;
 
-        border: none;
-        border-radius: 0;
     }
 
     .service_effect .box_g > .icon {
@@ -1982,7 +1905,7 @@
         font-size: 0.875rem;
         line-height: 1.45;
 
-        color: #555;
+  
     }
 
     .service_effect .tit_g p {
@@ -2081,34 +2004,32 @@
     .service_intro .main_img {
 
         width: 100%;
-
         aspect-ratio: 2 / 1;
-
         border-radius: 12px;
+
     }
 
     .service_intro .main_img img {
 
         width: 100%;
         height: 100%;
-
         object-fit: cover;
+
     }
 
     .service_intro .tit_wrap {
 
         width: 100%;
-
         align-items: flex-end;
-
         text-align: right;
+
     }
 
     .service_intro .tit_in_wrap {
 
         width: 100%;
-
         align-items: flex-end;
+
     }
 
     .service_intro .tit_wrap h3 {
@@ -2116,27 +2037,26 @@
         font-size: 1.3125rem; /* 21px */
         line-height: 1.4;
         letter-spacing: -0.04em;
+
     }
 
     .service_intro .tit_wrap > p {
 
         width: min(100%, 520px);
-
         color: #8e8e8e;
 
         font-size: 0.875rem; /* 14px */
         line-height: 1.6;
         letter-spacing: -0.025em;
-
         text-align: right;
+
     }
 
-        .section_g .con,
+    .section_g .con,
     .section_3 .con,
     .service_target .con{
 
         width: 74px;
-       
         gap: 6px;
 
     }
@@ -2167,19 +2087,17 @@
     .service_target .con > .icon {
 
         width: 44px;
-        height: 44px;
-
         max-width: 44px;
 
-        flex: 0 0 44px;
     }
 
     .service_target .con > p {
 
         font-size: 0.6875rem; /* 11px */
         line-height: 1.3;
-
         white-space: nowrap;
+        color: #f2f2f2;
+
     }
 
     /* =====================================================
@@ -2190,7 +2108,6 @@
 
         width: 100%;
         max-width: 720px;
-
         margin-left: auto;
         margin-right: auto;
     }
@@ -2207,61 +2124,44 @@
         width: 100%;
         gap: 18px;
 
-      
     }
 
     .service_effect > h2 {
 
         width: 100%;
-
         margin: 0;
-
         color: #555;
-
         font-size: 1.1875rem;
+    
     }
 
     .service_effect .box_wrap {
 
         width: 100%;
-
         display: flex;
         flex-direction: column;
-
         gap: 11px;
+    
     }
 
     .service_effect .box_g {
 
         width: 100%;
         min-height: 84px;
-
-        flex: 0 0 auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-
         gap: 10px;
-
         padding: 12px 14px;
+        border: none;
 
-        border: 1px solid #009944;
-        border-radius: 10px;
-
-        background-color: #fff;
     }
 
     .service_effect .effect_icon_circle {
 
-        width: 42px;
-        height: 42px;
-
-        flex: 0 0 42px;
-
+        width: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
+        border: 1px solid #009944;
+        border-radius: 50%;
     }
 
     .service_effect .effect_icon_circle > .icon {
@@ -2285,18 +2185,21 @@
 
         margin: 0;
 
-        color: #009944;
+        color: #555;
+         font-size: 1.0625rem;    /* 17px */
+        line-height: 1.6;
+        letter-spacing: -0.015em;
+        font-weight: 700;
 
-        font-size: 0.8125rem; /* 13px */
-        line-height: 1.4;
     }
 
     .service_effect .tit_g p {
 
-        color: #009944;
-
-        font-size: 0.75rem; /* 12px */
-        line-height: 1.45;
+        color: #8e8e8e;
+        font-size: 0.9375rem;    /* 15px */
+        line-height: 1.5;
+        letter-spacing: -0.015em;
+        font-weight: 500;
     }
 
     /* 기존 HTML의 직접 아이콘 구조 대응 */
@@ -2304,9 +2207,7 @@
     .service_effect .box_g > .icon {
 
         width: 42px;
-        height: 42px;
 
-        flex: 0 0 42px;
     }
 
     /* =====================================================
@@ -2326,8 +2227,8 @@
 
         width: 100%;
 
-        align-items: center;
-        text-align: center;
+        align-items: start;
+        text-align: start;
     }
 
     .service_gallery .tit_wrap h2 {
@@ -2401,7 +2302,7 @@
         width: 100%;
         height: 100%;
 
-        flex: 0 0 100%;
+        flex: 0 0 auto;
 
         border-radius: 12px;
     }
@@ -2486,22 +2387,22 @@
     .service_video_title {
 
         order: 1;
-
         width: 100%;
         max-width: 680px;
-
         align-items: flex-start;
-
         color: #555;
-
         text-align: left;
+
     }
 
     .service_video
     .service_video_title h2 {
 
-        font-size: 1.1875rem;
-        line-height: 1.4;
+        font-size: 1.5625rem;    /* 25px */
+        line-height: 1.3;
+        letter-spacing: -0.035em;
+        font-weight: 700;
+
     }
 
     .service_video
@@ -2509,16 +2410,15 @@
     .flx_li_g {
 
         display: none;
+
     }
 
     .service_video .video_card {
 
         order: 2;
-
         width: 100%;
         max-width: 680px;
 
-        margin: 0 auto;
     }
 
     .service_video
@@ -2576,6 +2476,7 @@
 
         gap: 7px;
 
+
     }
 
     .sub_pag_tit {
@@ -2598,11 +2499,16 @@
         width: 120px;
     }
 
+    .con,.con_g{
+
+        position: relative;
+    }
+
     .con p,
     .con_g p {
 
         position: absolute;
-        bottom: -75px;
+        bottom: -23%;
     }
 
 }
@@ -2677,6 +2583,10 @@
         display: none;
     }
 
+        .sub_pag_gnb {
+        padding: 1px 20px;
+    }
+
 }
 
 /* =========================================================
@@ -2721,7 +2631,7 @@
 
     .service_target .con_wrap {
 
-        gap: 8px 12px;
+        gap: 4px
     }
 
     /* =====================================================
@@ -2735,14 +2645,13 @@
     .service_effect .effect_icon_circle {
 
         width: 70px;
-        border: 1px solid #009944;
-        border-radius: 50%;
+
     }
 
     .sub_pag_gnb {
 
        
-        padding: 4px 20px;
+        padding: 4px 5px;
 
     }
 
@@ -2759,23 +2668,24 @@
 
     }
 
+    .service_target .con {
+
+        width: 60px;
+        padding: 0px;
+    }
+
+    .con p,.con_g P{
+
+
+        bottom: -30%;
+
+    }
 
     .service_effect .box_g {
 
         min-height: 50px;
 
         gap: 8px;
-    }
-
-    .service_effect .tit_g h3 {
-
-        font-size: 0.875rem; /* 14px */
-    }
-
-    .service_effect .tit_g p {
-
-        font-size: 0.75rem; /* 12px */
-        line-height: 1.5;
     }
 
     /* =====================================================
@@ -2829,6 +2739,15 @@
         font-size: 0.75rem; /* 12px */
         line-height: 1.5;
         font-weight: 500;
+    }
+
+    .service_gallery .tit_wrap h2 {
+
+        font-size: 1.1875rem;    /* 19px */
+        line-height: 1.4;
+        letter-spacing: -0.025em;
+        font-weight: 700;
+
     }
 
     /* =====================================================
@@ -2933,9 +2852,7 @@
     .service_video_play .icon {
 
         width: 46%;
-        height: 46%;
-
-        background-color: #f8f8f8;
+        background-color: #f2f2f2;
     }
 
     /* =====================================================
@@ -2965,22 +2882,8 @@
 
     .con_section .box_g > .icon {
 
-        width: 22px;
-        height: 22px;
+        width: 24px;
 
-        flex-basis: 22px;
-    }
-
-    .con_section .tit_g h3 {
-
-         font-size: 0.875rem;     /* 14px */
-
-    }
-
-    .con_section .tit_g p {
-
-        font-size: 0.75rem; /* 12px */
-        line-height: 1.5;
     }
 
     /* =====================================================
@@ -3034,18 +2937,19 @@
 
     .sub_pag_tit {
 
-        padding: 8px 3px;
+        padding: 0;
 
         font-size: 0.875rem;       /* 14px */
         line-height: 1.5;
         letter-spacing: -0.015em;
-        font-weight: 500;
+        font-weight: 600;
 
     }
 
     .sub_pag_menu {
 
-        gap: 0;
+        justify-content: center;
+        gap: 6px;
 
     }
 
@@ -3054,7 +2958,6 @@
         width: 12px;
 
     }
-
 
     .video_thumbnail {
 
@@ -3068,5 +2971,5 @@
         line-height: 1.5;
     }
 
-
-    }
+     }
+ 

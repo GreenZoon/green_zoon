@@ -78,7 +78,7 @@ img {
     width: 48px;
     aspect-ratio: 1 / 1;
 
-    flex: 0 0 48px;
+    flex: 0 0 auto;
 
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ img {
     width: 48px;
     aspect-ratio: 1 / 1;
 
-    flex: 0 0 48px;
+    flex: 0 0 auto;
 
     background-color: #009944;
 }
@@ -438,6 +438,7 @@ section {
     width: 14px;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
+    
 
 }
 
@@ -480,12 +481,13 @@ section {
 .flex {
 
     display: flex;
+  
 }
 
 .align_center{
 
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -499,6 +501,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+  white-space: nowrap;
 
     gap: 4px;
 
@@ -515,9 +518,14 @@ section {
     gap: 4px;
 
     line-height: 1;
-
-    background-color: #009944;
     color: #f2f2f2;
+
+}
+
+.flx_li_g .icon{
+
+    width: 16px;
+    background-color: #f2f2f2;
 
 }
 
@@ -1521,7 +1529,7 @@ svg {
 
     .section_title_2{
 
-         font-size: 1.0625rem;    /* 17px */
+        font-size: 1.0625rem;    /* 17px */
         line-height: 1.6;
         letter-spacing: -0.015em;
         font-weight: 600;
@@ -1536,13 +1544,28 @@ svg {
 
     }
 
+    .section_title {
+
+        font-size: 1.1875rem;    /* 19px */
+        line-height: 1.4;
+        letter-spacing: -0.025em;
+        font-weight: 700;
+    }
+
+
     .tit_wrap_2 p{
 
-             font-size: 0.9375rem;    /* 15px */
+        font-size: 0.9375rem;    /* 15px */
         line-height: 1.5;
         letter-spacing: -0.015em;
 
     }
+
+    .flx_li_g .icon {
+        
+    width: 14px;
+    
+}
 
     /* .section_title{
 
@@ -1556,12 +1579,6 @@ svg {
 }
 
 @media (max-width: 1024px) {
-
-    .breadcrumb {
-
-        display: none;
-
-    }
 
     .tablet_none {
         display: none;
@@ -1655,7 +1672,7 @@ svg {
 
 }
 
-@media (min-width: 769px) and (max-width: 1024px){
+ @media (max-width: 768px){
 
     .icon, .icon_2, .arrow, .mobile_icon {
 
@@ -1668,9 +1685,6 @@ svg {
         padding: 40px;
 
     }
-}
-
-@media (max-width: 768px) {
 
     .sub_back {
 
@@ -1701,7 +1715,7 @@ svg {
 
         width: 8px;
         height: 12px;
-        flex: 0 0 8px;
+        flex: 0 0 auto;
 
         background-color: currentColor;
         clip-path: polygon(70% 0, 100% 0, 30% 50%, 100% 100%, 70% 100%, 0 50%);
@@ -1716,6 +1730,13 @@ svg {
 ========================================================= */
 
 @media (max-width: 769px) {
+
+        .breadcrumb {
+
+        display: none;
+
+    }
+
 
 
     .mobile_none{
@@ -1839,7 +1860,6 @@ svg {
     section {
 
         padding: 10px 20px;
-        
         gap: 24px;
 
     }

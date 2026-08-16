@@ -38,6 +38,17 @@
 @media (max-width: 1024px) {
 
 
+    .tit_in_wrap {
+        width: 100%;
+        align-items: flex-end;
+    }
+
+    .tit_wrap h3 {
+        font-size: 1.3125rem;
+        line-height: 1.4;
+        letter-spacing: -0.04em;}
+
+
     .service_cleaning .service_intro > .main_img {
         order: 1;
     }
@@ -68,6 +79,25 @@
             font-weight: 700;
 
     }
+
+    .service_cleaning{
+
+        flex-direction: column;
+
+    }
+
+    .tit_wrap > p {
+
+        width: min(100%, 520px);
+        color: #8e8e8e;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        letter-spacing: -0.025em;
+        text-align: right;
+        
+    }
+
+
 }
 
 
@@ -105,8 +135,10 @@
 @media (max-width: 768px) {
 
     .service_cleaning .service_gallery {
+
         color: #555;
         background-color: #fff;
+
     }
 
     .service_cleaning .tit_wrap_g h2 {
@@ -114,7 +146,7 @@
     }
 
     .service_cleaning .service_gallery .wit_arrow {
-        background-color: #009944;
+        background-color: #8e8e8e;
     }
 
     .service_cleaning .service_gallery .slide_dot {
@@ -151,9 +183,7 @@
 
     .service_cleaning .service_target .con > .icon {
         width: 48px;
-        height: 48px;
 
-        flex: 0 0 48px;
     }
 
     .service_cleaning .service_target .con > p {
