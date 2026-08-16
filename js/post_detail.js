@@ -46,6 +46,7 @@
         "2025년 전국 건물위생관리 기능경진대회 대상 수상",
         "2023년 전국 건물위생관리 기능경진대회 최우수상 수상",
         "그린죤 2022 회식3",
+        "그린죤 2022년 회식2",
         "그린죤 장노년 일자리 한마당 부스 참가",
         "그린죤 직원 간담회",
         "그린죤 2022년 회식",
@@ -151,21 +152,16 @@
     ];
 
     const galleryEventImages = [
-        "img/sub_page/awards/award_2025_cover.jpg",
-        "img/sub_page/awards/award_2023_cover.jpg",
-        "img/sub_page/news_event_2.jpg",
-        "img/sub_page/news_event_3.jpg",
-        "img/sub_page/news_event.jpg",
-        "img/sub_page/news_Dining_together.jpg",
-        "img/sub_page/Dispatch_janitor_1.jpg",
-        "img/sub_page/Dispatch_janitor_2.jpg",
-        "img/sub_page/news_Competition_victory_2023.jpg",
-        "img/sub_page/news_Competition_victory_2025.jpg",
-        "img/sub_page/news_nall.jpg",
-        "img/sub_page/news_event.jpg",
-        "img/sub_page/news_event_2.jpg",
-        "img/sub_page/news_event_3.jpg",
-        "img/sub_page/news_Dining_together.jpg"
+        "img/sub_page/gallery/event/gallery_event_01.png",
+        "img/sub_page/gallery/event/gallery_event_02.png",
+        "img/sub_page/gallery/event/gallery_event_03.png",
+        "img/sub_page/gallery/event/gallery_event_04.png",
+        "img/sub_page/gallery/event/gallery_event_05.png",
+        "img/sub_page/gallery/event/gallery_event_06.png",
+        "img/sub_page/gallery/event/gallery_event_07.png",
+        "", "", "", "",
+        "img/sub_page/gallery/event/gallery_event_08.png",
+        "", "", "", "", ""
     ];
 
     /* 공지·입찰 게시글에는 현장과 무관한 이미지를 연결하지 않는다. */
@@ -174,25 +170,18 @@
     const communityEventImages = [
         "img/mainimgs/Event_2.jpg",
         "img/mainimgs/Event_1.jpg",
-        "img/mainimgs/Event_3.jpg",
-        "img/sub_page/Wax_job_4.jpg",
-        "img/mainimgs/factory_cleane_ing.jpg",
-        "img/sub_page/cleaning_carpet_ing_3.jpg"
+        "img/mainimgs/Event_3.jpg"
     ];
 
     const informationImages = [
         "img/mainimgs/Community_Information.jpg",
-        "img/sub_page/Wax_job_4.jpg",
-        "img/sub_page/Disinfection_2.jpg",
-        "img/sub_page/cleaning_carpet_ing_2.jpg",
-        "img/mainimgs/factory_cleane_ing.jpg",
-        "img/sub_page/building_wall_ing_1.jpg",
-        "img/sub_page/quarantine_2.jpg",
-        "img/sub_page/Disinfection_4.jpg",
-        "img/sub_page/cleaning_carpet_Before_2.jpg",
-        "img/sub_page/factory_floor_ing_3.jpg",
-        "img/sub_page/water_tank_ing_2.jpg",
-        "img/sub_page/building_wall_Before_3.jpg"
+        "img/sub_page/community/info/info_02.png",
+        "img/sub_page/community/info/info_03.png",
+        "img/sub_page/community/info/info_04.png",
+        "img/sub_page/community/info/info_05.png",
+        "img/sub_page/community/info/info_06.png",
+        "img/sub_page/community/info/info_07.png",
+        "img/sub_page/community/info/info_08.png"
     ];
 
     const reviewImages = [

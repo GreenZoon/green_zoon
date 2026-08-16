@@ -346,6 +346,7 @@
     .company_menu {
 
         min-height: 60px;
+        justify-content: center;
     
     }
 
@@ -402,6 +403,7 @@
     .company_menu {
 
         min-height: 50px;
+        justify-content: center;
 
     }
 
@@ -417,6 +419,13 @@
         gap: 5px;
         padding: 0 14px;
         font-size: 1rem;
+
+    }
+
+    .company_arrow {
+
+        width: 12px;
+        height: 8px;
 
     }
 
