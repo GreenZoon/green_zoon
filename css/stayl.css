@@ -2386,6 +2386,13 @@
         display: flex;
         flex-direction: column;
         gap: 11px;
+
+    }
+
+    .mobile_gallery_viewport {
+
+        width: 100%;
+        min-width: 0;
         overflow: hidden;
 
     }

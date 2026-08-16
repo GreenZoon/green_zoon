@@ -8,6 +8,7 @@
 
     if (gallery) {
 
+        const viewport = gallery.querySelector(".mobile_gallery_viewport");
         const track = gallery.querySelector(".mobile_gallery_wrap");
         const cards = [...gallery.querySelectorAll(".mobile_gallery_box")];
         const dots = [...gallery.querySelectorAll(".mobile_dots .slide_dot")];
@@ -32,11 +33,7 @@
         }
 
         function viewportWidth() {
-            const style = getComputedStyle(gallery);
-
-            return gallery.clientWidth
-                - (parseFloat(style.paddingLeft) || 0)
-                - (parseFloat(style.paddingRight) || 0);
+            return viewport?.clientWidth || 0;
         }
 
         function maxTranslate() {
@@ -56,8 +53,14 @@
         }
 
         function updateDots() {
+            const limit = maxTranslate();
+            const progress = limit > 0
+                ? currentTranslate / limit
+                : 0;
+            const activeIndex = Math.round(progress * (dots.length - 1));
+
             dots.forEach((dot, index) => {
-                const active = index === currentIndex;
+                const active = index === activeIndex;
 
                 dot.classList.toggle("is_active", active);
                 dot.setAttribute("aria-current", active ? "true" : "false");
@@ -115,7 +118,8 @@
             startY = pointerY(event);
             currentX = startX;
             startTranslate = currentTranslate;
-            track.classList.add("is_dragging");
+            viewport.classList.add("is_dragging");
+            track.style.transition = "none";
         }
 
         function moveDrag(event) {
@@ -160,7 +164,8 @@
             }
 
             dragging = false;
-            track.classList.remove("is_dragging");
+            viewport.classList.remove("is_dragging");
+            track.style.transition = "";
 
             const dragDistance = currentX - startX;
             const step = distance();
@@ -185,14 +190,14 @@
             }, 50);
         }
 
-        track.addEventListener("mousedown", startDrag);
+        viewport.addEventListener("mousedown", startDrag);
         window.addEventListener("mousemove", moveDrag);
         window.addEventListener("mouseup", endDrag);
 
-        track.addEventListener("touchstart", startDrag, { passive: true });
-        track.addEventListener("touchmove", moveDrag, { passive: false });
-        track.addEventListener("touchend", endDrag, { passive: true });
-        track.addEventListener("touchcancel", endDrag, { passive: true });
+        viewport.addEventListener("touchstart", startDrag, { passive: true });
+        viewport.addEventListener("touchmove", moveDrag, { passive: false });
+        viewport.addEventListener("touchend", endDrag, { passive: true });
+        viewport.addEventListener("touchcancel", endDrag, { passive: true });
 
         track.addEventListener("dragstart", (event) => {
             event.preventDefault();
@@ -205,7 +210,17 @@
         });
 
         dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => moveTo(index));
+            dot.addEventListener("click", () => {
+                const ratio = dots.length <= 1
+                    ? 0
+                    : index / (dots.length - 1);
+                const step = distance();
+                const targetIndex = step > 0
+                    ? Math.round((maxTranslate() * ratio) / step)
+                    : 0;
+
+                moveTo(targetIndex);
+            });
         });
 
         window.addEventListener("resize", () => moveTo(currentIndex));
