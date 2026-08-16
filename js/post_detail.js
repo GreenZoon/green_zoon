@@ -124,14 +124,30 @@
         "img/sub_page/building_wall_ing_1.jpg",
         "img/mainimgs/Pond_ing.jpg",
         "img/sub_page/factory_floor_2_1_After.jpg",
-        "img/sub_page/factory_floor_ing_2.jpg"
+        "img/sub_page/factory_floor_ing_2.jpg",
+        "img/sub_page/factory_equipment_ing_2.jpg",
+        "img/sub_page/water_tank_ing_3.jpg",
+        "img/mainimgs/cleaning_carpet_ing.jpg",
+        "img/sub_page/building_wall_ing_3.jpg"
     ];
 
     const videoImages = [
         "img/sub_page/Disinfection_1.jpg",
         "img/sub_page/cleaning_carpet_ing_3.jpg",
         "img/mainimgs/bird_spike_ing.jpg",
-        "img/sub_page/factory_equipment_ing_2.jpg"
+        "img/sub_page/factory_equipment_ing_2.jpg",
+        "img/sub_page/factory_floor_ing.jpg",
+        "img/sub_page/factory_equipment_ing.jpg",
+        "img/sub_page/water_tank_ing_2.jpg",
+        "img/sub_page/building_wall_ing_1.jpg",
+        "img/sub_page/wax_ing_2.jpg",
+        "img/mainimgs/cleaning_carpet_ing.jpg",
+        "img/sub_page/statue_cleaning_ing_1.jpg",
+        "img/mainimgs/cleaning_event_ing.png",
+        "img/sub_page/factory_line_ing_4.jpg",
+        "img/sub_page/Wax_job_2.jpg",
+        "img/mainimgs/building_wall_cleaning_ing.jpg",
+        "img/sub_page/factory_equipment_ing_3.jpg"
     ];
 
     const galleryEventImages = [
@@ -140,7 +156,68 @@
         "img/mainimgs/Community_viciory_2023.jpg",
         "img/sub_page/news_event_2.jpg",
         "img/sub_page/news_event_3.jpg",
-        "img/sub_page/news_event.jpg"
+        "img/sub_page/news_event.jpg",
+        "img/sub_page/news_Dining_together.jpg",
+        "img/sub_page/Dispatch_janitor_1.jpg",
+        "img/sub_page/Dispatch_janitor_2.jpg",
+        "img/sub_page/news_Competition_victory_2023.jpg",
+        "img/sub_page/news_Competition_victory_2025.jpg",
+        "img/sub_page/news_nall.jpg",
+        "img/sub_page/news_event.jpg",
+        "img/sub_page/news_event_2.jpg",
+        "img/sub_page/news_event_3.jpg",
+        "img/sub_page/news_Dining_together.jpg"
+    ];
+
+    const noticeImages = [
+        "img/mainimgs/Community_victory_2025.jpg",
+        "img/sub_page/factory_equipment_ing.jpg",
+        "img/mainimgs/dispatch_sanitation_ing.jpg",
+        "img/sub_page/Disinfection_3.jpg",
+        "img/mainimgs/water_tank_ing.jpg",
+        "img/sub_page/Dispatch_janitor_1.jpg",
+        "img/sub_page/building_wall_ing_1.jpg",
+        "img/mainimgs/factory_cleane_ing.jpg",
+        "img/sub_page/factory_floor_ing.jpg",
+        "img/mainimgs/Event_2.jpg",
+        "img/mainimgs/Community_viciory_2023.jpg"
+    ];
+
+    const communityEventImages = [
+        "img/mainimgs/Event_2.jpg",
+        "img/mainimgs/Event_1.jpg",
+        "img/mainimgs/Event_3.jpg",
+        "img/sub_page/Wax_job_4.jpg",
+        "img/mainimgs/factory_cleane_ing.jpg",
+        "img/sub_page/cleaning_carpet_ing_3.jpg"
+    ];
+
+    const informationImages = [
+        "img/mainimgs/Community_Information.jpg",
+        "img/sub_page/Wax_job_4.jpg",
+        "img/sub_page/Disinfection_2.jpg",
+        "img/sub_page/cleaning_carpet_ing_2.jpg",
+        "img/mainimgs/factory_cleane_ing.jpg",
+        "img/sub_page/building_wall_ing_1.jpg",
+        "img/sub_page/quarantine_2.jpg",
+        "img/sub_page/Disinfection_4.jpg",
+        "img/sub_page/cleaning_carpet_Before_2.jpg",
+        "img/sub_page/factory_floor_ing_3.jpg",
+        "img/sub_page/water_tank_ing_2.jpg",
+        "img/sub_page/building_wall_Before_3.jpg"
+    ];
+
+    const reviewImages = [
+        "img/sub_page/rust_removal_ing.jpg",
+        "img/mainimgs/bird_spike_ing.jpg",
+        "img/sub_page/factory_floor_ing.jpg",
+        "img/sub_page/factory_floor_After.jpg",
+        "img/sub_page/Dispatch_janitor_1.jpg",
+        "img/sub_page/wax_After_2.jpg",
+        "img/sub_page/cleaning_carpet_After_2.jpg",
+        "img/sub_page/factory_floor_2_1_After.jpg",
+        "img/sub_page/building_wall_After_3.jpg",
+        "img/mainimgs/cleaning_event_ing.png"
     ];
 
     const dates = [
@@ -172,10 +249,10 @@
         work: makePosts("work", workTitles, workImages, "작업 갤러리"),
         video: makePosts("video", videoTitles, videoImages, "작업 동영상"),
         galleryEvent: makePosts("galleryEvent", galleryEventTitles, galleryEventImages, "행사 사진"),
-        notice: makePosts("notice", noticeTitles, ["img/mainimgs/Community_victory_2025.jpg"], "공지사항"),
-        event: makePosts("event", communityEventTitles, ["img/mainimgs/Event_2.jpg", "img/mainimgs/Event_1.jpg", "img/mainimgs/Event_3.jpg"], "이벤트"),
-        information: makePosts("information", informationTitles, ["img/mainimgs/Community_Information.jpg"], "정보공유"),
-        review: makePosts("review", reviewTitles, [], "이용후기")
+        notice: makePosts("notice", noticeTitles, noticeImages, "공지사항"),
+        event: makePosts("event", communityEventTitles, communityEventImages, "이벤트"),
+        information: makePosts("information", informationTitles, informationImages, "정보공유"),
+        review: makePosts("review", reviewTitles, reviewImages, "이용후기")
     };
 
     posts.work[0].images = [
@@ -323,10 +400,10 @@
                 '<strong>' + item.title + '</strong><time>' + item.date + '</time></a>';
         }).join("");
 
-        return '<section class="post_related"><h2>' + (post.type === "event" ? "다른 이벤트" : post.type === "notice" ? "전체 공지사항" : "다른 게시글") + '</h2>' +
-            '<div class="post_slider" data-post-slider><button class="post_arrow prev" type="button" aria-label="이전 게시글">〈</button>' +
+        return '<div class="post_related"><h2>' + (post.type === "event" ? "다른 이벤트" : post.type === "notice" ? "전체 공지사항" : "다른 게시글") + '</h2>' +
+            '<div class="post_slider" data-post-slider><button class="post_arrow prev" type="button" aria-label="이전 게시글"><span class="arrow left_arrow_2" aria-hidden="true"></span></button>' +
             '<div class="post_view"><div class="post_track">' + cards + '</div></div>' +
-            '<button class="post_arrow next" type="button" aria-label="다음 게시글">〉</button></div><div class="post_dots" aria-label="게시글 슬라이드 위치"></div></section>';
+            '<button class="post_arrow next" type="button" aria-label="다음 게시글"><span class="arrow right_arrow_2" aria-hidden="true"></span></button></div><div class="post_dots" aria-label="게시글 슬라이드 위치"></div></div>';
     }
 
     function renderPost() {
@@ -340,6 +417,7 @@
         const post = list[id];
         const copy = copyFor(post);
         document.body.dataset.postType = type;
+        document.body.dataset.postId = post.id;
 
         document.title = "그린죤 - " + post.title;
         const path = document.querySelector("[data-post-path]");
@@ -354,7 +432,7 @@
             return "<p>" + paragraph + "</p>";
         }).join("") + "</div>";
 
-        const reviewReply = post.type === "review" ? '<section class="post_reply"><h2>관리자 답글</h2><p>고객님, 소중한 후기 감사합니다. 앞으로도 현장 상태에 맞는 작업과 꼼꼼한 마무리로 만족하실 수 있도록 최선을 다하겠습니다.</p></section>' : "";
+        const reviewReply = post.type === "review" ? '<div class="post_reply"><h2>관리자 답글</h2><p>고객님, 소중한 후기 감사합니다. 앞으로도 현장 상태에 맞는 작업과 꼼꼼한 마무리로 만족하실 수 있도록 최선을 다하겠습니다.</p></div>' : "";
         const related = list.filter(function (item) { return item.id !== post.id; });
 
         const split = ["notice", "event", "information"].includes(type) ? " split" : "";
@@ -381,7 +459,7 @@
             function visibleCount() {
                 if (window.innerWidth <= 768) return 1;
                 if (window.innerWidth <= 1024) return 2;
-                return 4;
+                return 3;
             }
 
             function drawDots() {
@@ -398,7 +476,9 @@
 
             function show(next) {
                 index = (next + pageCount) % pageCount;
-                track.style.transform = "translateX(-" + (index * view.clientWidth) + "px)";
+                const firstCard = cards[index * visibleCount()];
+                const offset = firstCard ? firstCard.offsetLeft - cards[0].offsetLeft : 0;
+                track.style.transform = "translateX(-" + offset + "px)";
                 dots.querySelectorAll(".slide_dot").forEach(function (dot, dotIndex) {
                     dot.classList.toggle("active", dotIndex === index);
                 });
@@ -442,6 +522,10 @@
                     dragged = false;
                 }
             }, true);
+
+            view.addEventListener("dragstart", function (event) {
+                event.preventDefault();
+            });
 
             window.addEventListener("resize", resize);
             resize();
