@@ -213,7 +213,7 @@
 .today_card { width: 470px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #009944; border-radius: 15px; color: #009944; padding: 32px; }
 .calendar_head { display: flex; align-items: center; justify-content: center; gap: 40px; }
 .calendar_head h2 { font-size: 25px; }
-.calendar_head button { width: 34px; aspect-ratio: 1 / 1; border: 1px solid #c6c6c6; border-radius: 50%; background: #fff; color: #8e8e8e; }
+.calendar_head button { width: 34px; aspect-ratio: 1 / 1; flex: 0 0 auto; background-color: #8e8e8e; }
 .calendar { width: 100%; border-collapse: separate; border-spacing: 5px; table-layout: fixed; }
 .calendar th { height: 44px; }
 .calendar td { height: 150px; position: relative; vertical-align: top; border: 1px solid #dbdbdb; border-radius: 8px; color: #8e8e8e; padding: 10px; }
@@ -363,7 +363,13 @@
     min-width: 0;
     flex: 1 1 auto;
     overflow: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
     cursor: grab;
+}
+
+.post_view::-webkit-scrollbar {
+    display: none;
 }
 
 .post_view:active {
@@ -373,8 +379,6 @@
 .post_track {
     display: flex;
     gap: 20px;
-    transition: transform .35s ease;
-    will-change: transform;
 }
 
 .post_card {
@@ -406,20 +410,9 @@
 }
 
 .post_arrow {
-    flex: 0 0 44px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.post_arrow .arrow {
-    width: 16px;
+    width: 44px;
     aspect-ratio: 1 / 1;
-    display: block;
+    flex: 0 0 auto;
     background-color: #8e8e8e;
 }
 
@@ -597,7 +590,7 @@
     .post_track { gap: 10px; }
     .post_card { flex-basis: 100%; gap: 7px; }
     .post_card strong { font-size: 14px; }
-    .post_arrow { flex-basis: 36px; min-height: 36px; font-size: 26px; }
+    .post_arrow { width: 36px; }
     .post_dots .slide_dot { width: 8px; }
     .post_dots .slide_dot.active { width: 24px; }
 }

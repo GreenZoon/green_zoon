@@ -896,7 +896,7 @@ aspect-ratio: 1 / 1;
 
 /* 달력 */
 
-.calendar{
+.icon.calendar{
 
     -webkit-mask-image: url("../img/icon/calendar.svg");
     mask-image: url("../img/icon/calendar.svg");

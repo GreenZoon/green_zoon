@@ -401,9 +401,9 @@
         }).join("");
 
         return '<div class="post_related"><h2>' + (post.type === "event" ? "다른 이벤트" : post.type === "notice" ? "전체 공지사항" : "다른 게시글") + '</h2>' +
-            '<div class="post_slider" data-post-slider><button class="post_arrow prev" type="button" aria-label="이전 게시글"><span class="arrow left_arrow_2" aria-hidden="true"></span></button>' +
+            '<div class="post_slider" data-post-slider><button class="post_arrow arrow left_arrow_2 prev" type="button" aria-label="이전 게시글"></button>' +
             '<div class="post_view"><div class="post_track">' + cards + '</div></div>' +
-            '<button class="post_arrow next" type="button" aria-label="다음 게시글"><span class="arrow right_arrow_2" aria-hidden="true"></span></button></div><div class="post_dots" aria-label="게시글 슬라이드 위치"></div></div>';
+            '<button class="post_arrow arrow right_arrow_2 next" type="button" aria-label="다음 게시글"></button></div><div class="post_dots" aria-label="게시글 슬라이드 위치"></div></div>';
     }
 
     function renderPost() {
@@ -452,6 +452,7 @@
             let index = 0;
             let pageCount = 1;
             let startX = 0;
+            let startScroll = 0;
             let dragX = 0;
             let dragging = false;
             let dragged = false;
@@ -474,11 +475,12 @@
                 }
             }
 
-            function show(next) {
+            function show(next, useAnimation) {
                 index = (next + pageCount) % pageCount;
                 const firstCard = cards[index * visibleCount()];
                 const offset = firstCard ? firstCard.offsetLeft - cards[0].offsetLeft : 0;
-                track.style.transform = "translateX(-" + offset + "px)";
+                view.style.scrollBehavior = useAnimation === false ? "auto" : "smooth";
+                view.scrollLeft = offset;
                 dots.querySelectorAll(".slide_dot").forEach(function (dot, dotIndex) {
                     dot.classList.toggle("active", dotIndex === index);
                 });
@@ -488,7 +490,7 @@
                 pageCount = Math.max(1, Math.ceil(cards.length / visibleCount()));
                 if (index >= pageCount) index = pageCount - 1;
                 drawDots();
-                show(index);
+                show(index, false);
             }
 
             slider.querySelector(".prev").addEventListener("click", function () { show(index - 1); });
@@ -499,18 +501,24 @@
                 dragging = true;
                 dragged = false;
                 startX = event.clientX;
+                startScroll = view.scrollLeft;
                 dragX = 0;
+                view.style.scrollBehavior = "auto";
                 view.setPointerCapture(event.pointerId);
             });
             view.addEventListener("pointermove", function (event) {
                 if (!dragging) return;
                 dragX = event.clientX - startX;
-                if (Math.abs(dragX) > 8) dragged = true;
+                if (Math.abs(dragX) > 8) {
+                    dragged = true;
+                    view.scrollLeft = startScroll - dragX;
+                }
             });
             view.addEventListener("pointerup", function () {
                 if (!dragging) return;
                 dragging = false;
                 if (Math.abs(dragX) >= 45) show(index + (dragX < 0 ? 1 : -1));
+                else show(index);
             });
             view.addEventListener("pointercancel", function () {
                 dragging = false;
