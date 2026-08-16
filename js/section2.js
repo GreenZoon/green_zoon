@@ -153,7 +153,7 @@ if (section2) {
         },
         {
             title: "시설물 청소",
-            link: "/sub_page/Facility/Statue.html",
+            link: "/sub_page/Facility/Bridge.html",
             description:
                 "다양한 시설물의 특성과 환경에 맞춘 전문 청소 서비스를 제공합니다.",
             images: 
