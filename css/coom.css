@@ -1834,7 +1834,7 @@ aspect-ratio: 1 / 1;
     /* 추가 정보 */
     .info_text {
 
-        font-size: 0.625rem;     /* 10px */
+        font-size: 0.75rem;      /* 12px */
         line-height: 1.5;
 
     }

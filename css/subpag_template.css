@@ -986,6 +986,39 @@
     order: 6;
 }
 
+/* 터널 페이지: Figma의 소개·영상 비율을 기존 공통 구조에 맞춰 적용 */
+
+.service_tunnel .service_intro {
+    gap: 75px;
+}
+
+.service_tunnel .service_intro > .tit_wrap {
+    width: 526px;
+    max-width: 526px;
+}
+
+.service_tunnel .service_intro > .img_wrap {
+    width: 1019px;
+    max-width: 1019px;
+    aspect-ratio: 1019 / 500;
+}
+
+.service_tunnel .service_video .video_card {
+    max-width: 800px;
+}
+
+.service_tunnel .service_video .video_thumbnail {
+    aspect-ratio: 8 / 5;
+}
+
+.service_tunnel .service_video_title {
+    max-width: 608px;
+}
+
+.service_video_mobile_word {
+    display: none;
+}
+
 .request_cleaning_pin {
 
     display: none;
@@ -1972,6 +2005,32 @@
 ========================================================= */
 
 @media (max-width: 768px) {
+
+    .service_tunnel .service_intro {
+        gap: 7px;
+    }
+
+    .service_tunnel .service_intro .main_img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .service_tunnel .service_intro .tit_wrap h3 {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .service_tunnel .service_intro .tit_wrap > p {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .service_tunnel .service_video .video_thumbnail {
+        aspect-ratio: 8 / 5;
+    }
+
+    .service_tunnel .service_video_mobile_word {
+        display: inline;
+    }
 
 
     /* =====================================================
