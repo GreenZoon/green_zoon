@@ -2964,4 +2964,211 @@
     }
 
      }
+
+/* =========================================================
+   BRIDGE PAGE
+   Figma: desktop 469:7141 / mobile 785:26234
+========================================================= */
+
+.bridge_page .bridge_hero picture,
+.bridge_page .service_intro picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.bridge_page .bridge_hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.bridge_page .service_intro {
+    order: 1;
+    min-height: 600px;
+    padding: 50px 150px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.bridge_page .service_intro > .tit_wrap {
+    width: 673px;
+    max-width: 673px;
+}
+
+.bridge_page .service_intro > .img_wrap {
+    width: 800px;
+    max-width: 800px;
+    height: 500px;
+    aspect-ratio: auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.bridge_page .service_intro .main_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bridge_page .tix_section {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 450px);
+    justify-content: center;
+    gap: 28px 41px;
+    padding: 50px 0;
+}
+
+.bridge_page .tix_section > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.bridge_page .tix_box,
+.bridge_page .tix_box:nth-of-type(even) {
+    width: 450px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bridge_page .tix_box .img_wrap {
+    width: 450px;
+    height: 300px;
+    position: relative;
+    flex: none;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.bridge_page .tix_box .img_wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bridge_page .bridge_example_notice {
+    position: absolute;
+    right: 24px;
+    bottom: 16px;
+    color: #f8f8f8;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+}
+
+.bridge_page .tix_box .tit_wrap {
+    width: 100%;
+    text-align: center;
+}
+
+.bridge_page .tix_box .tit_wrap p {
+    color: #555;
+    font-size: 1.0625rem;
+}
+
+.bridge_page .con_section {
+    order: 3;
+}
+
+.bridge_page .service_request {
+    order: 4;
+}
+
+@media (max-width: 768px) {
+    .bridge_page .bridge_hero img {
+        height: 200px;
+        aspect-ratio: auto;
+    }
+
+    .bridge_page .service_intro {
+        min-height: 0;
+        padding: 0 20px;
+        flex-direction: column-reverse;
+        gap: 7px;
+    }
+
+    .bridge_page .service_intro > .img_wrap {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: 362 / 211;
+        border-radius: 12px;
+    }
+
+    .bridge_page .service_intro > .tit_wrap {
+        width: 100%;
+        max-width: none;
+    }
+
+    .bridge_page .service_intro .tit_wrap h3 {
+        font-size: 1.3125rem;
+    }
+
+    .bridge_page .service_intro .tit_wrap > p {
+        width: min(100%, 307px);
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .bridge_page .service_request {
+        order: 3;
+    }
+
+    .bridge_page .con_section {
+        order: 4;
+    }
+
+    .bridge_page .tix_section {
+        order: 5;
+        display: flex;
+        padding: 0 20px 36px;
+        gap: 7px;
+    }
+
+    .bridge_page .tix_section > h2 {
+        margin-bottom: 5px;
+        font-size: 1.1875rem;
+        text-align: left;
+    }
+
+    .bridge_page .tix_box,
+    .bridge_page .tix_box:nth-of-type(even) {
+        width: 100%;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .bridge_page .tix_box .img_wrap {
+        width: 150px;
+        height: 100px;
+        flex: 0 0 150px;
+        border-radius: 4px;
+    }
+
+    .bridge_page .bridge_example_notice {
+        display: none;
+    }
+
+    .bridge_page .tix_box .tit_wrap {
+        width: auto;
+        text-align: left;
+    }
+
+    .bridge_page .tix_box .tit_wrap::after {
+        content: "해당 이미지는 예시입니다.";
+        color: #8e8e8e;
+        font-size: 0.625rem;
+        line-height: 1.5;
+    }
+
+    .bridge_page .tix_box .tit_wrap p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
  
