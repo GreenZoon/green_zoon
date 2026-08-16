@@ -143,7 +143,7 @@
         "img/sub_page/building_wall_ing_1.jpg",
         "img/sub_page/wax_ing_2.jpg",
         "img/mainimgs/cleaning_carpet_ing.jpg",
-        "img/sub_page/statue_cleaning_ing_1.jpg",
+        "img/mainimgs/statue_cleaning_ing_1.jpg",
         "img/mainimgs/cleaning_event_ing.png",
         "img/sub_page/factory_line_ing_4.jpg",
         "img/sub_page/Wax_job_2.jpg",
@@ -158,7 +158,7 @@
         "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/gallery/event/gallery_event_05.png",
         "img/sub_page/gallery/event/gallery_event_06.png",
-        "img/sub_page/gallery/event/gallery_event_07.png",
+        "img/sub_page/gallery/event/gallery_event_06.png",
         "", "", "", "",
         "img/sub_page/gallery/event/gallery_event_08.png",
         "", "", "", "", ""
