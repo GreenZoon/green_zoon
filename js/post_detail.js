@@ -168,19 +168,8 @@
         "img/sub_page/news_Dining_together.jpg"
     ];
 
-    const noticeImages = [
-        "img/sub_page/awards/award_2025_cover.jpg",
-        "img/sub_page/factory_equipment_ing.jpg",
-        "img/mainimgs/dispatch_sanitation_ing.jpg",
-        "img/sub_page/Disinfection_3.jpg",
-        "img/mainimgs/water_tank_ing.jpg",
-        "img/sub_page/Dispatch_janitor_1.jpg",
-        "img/sub_page/building_wall_ing_1.jpg",
-        "img/mainimgs/factory_cleane_ing.jpg",
-        "img/sub_page/factory_floor_ing.jpg",
-        "img/mainimgs/Event_2.jpg",
-        "img/sub_page/awards/award_2023_cover.jpg"
-    ];
+    /* 공지·입찰 게시글에는 현장과 무관한 이미지를 연결하지 않는다. */
+    const noticeImages = [];
 
     const communityEventImages = [
         "img/mainimgs/Event_2.jpg",
@@ -259,7 +248,12 @@
     posts.galleryEvent[0].date = "2025.06.23";
     posts.galleryEvent[1].date = "2023.06.13";
 
-    posts.notice[10].images = [
+    posts.notice.forEach(function (post) {
+        post.image = "";
+        post.images = [];
+    });
+
+    posts.galleryEvent[1].images = [
         "img/sub_page/awards/award_2023_cover.jpg",
         "img/sub_page/awards/award_2023_venue.jpg",
         "img/sub_page/awards/award_2023_competition.jpg",
@@ -267,8 +261,6 @@
         "img/sub_page/awards/award_2023_winners.jpg",
         "img/sub_page/awards/award_2023_certificates.jpg"
     ];
-
-    posts.galleryEvent[1].images = posts.notice[10].images.slice();
 
     posts.work[0].images = [
         "img/sub_page/Disinfection_3.jpg",
@@ -484,6 +476,10 @@
     }
 
     function mediaMarkup(post) {
+        if (post.type === "notice") {
+            return "";
+        }
+
         const images = post.images.length ? post.images : [""];
 
         if (post.type === "video") {
@@ -503,7 +499,7 @@
     function relatedMarkup(post, list) {
         const cards = list.map(function (item) {
             return '<a class="post_card" href="' + postUrl(item.type, item.id) + '">' +
-                (item.image ? '<img src="' + asset(item.image) + '" alt="' + item.title + '">' : '<span class="empty_image">이미지 연결</span>') +
+                (item.image ? '<img src="' + asset(item.image) + '" alt="' + item.title + '">' : item.type === "notice" ? "" : '<span class="empty_image">이미지 연결</span>') +
                 '<strong>' + item.title + '</strong><time>' + item.date + '</time></a>';
         }).join("");
 

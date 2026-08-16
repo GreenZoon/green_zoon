@@ -46,8 +46,13 @@
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
-    padding: 0 150px;
+    gap: 0;
   
+}
+
+.company_menu::after {
+    content: "";
+    flex: 0 0 150px;
 }
 
 .company_menu > li {
@@ -74,7 +79,8 @@
 }
 
 .company_tit:hover,
-.company_tit:focus-visible {
+.company_tit:focus-visible,
+.company_menu > li:has([aria-current="page"]) > .company_tit {
 
     color: #f8f8f8;
     background-color: #009944;
@@ -106,6 +112,8 @@
     z-index: 30;
     border: 1px solid #009944;
     border-top: 0;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
     background-color: #fff;
 
 }
@@ -341,8 +349,12 @@
     .company_menu {
 
         min-height: 60px;
-        padding: 0 100px;
+        justify-content: center;
     
+    }
+
+    .company_menu::after {
+        display: none;
     }
 
     .company_tit {
@@ -394,7 +406,7 @@
     .company_menu {
 
         min-height: 50px;
-        padding: 0 40px;
+        justify-content: center;
 
     }
 
@@ -494,8 +506,7 @@
         min-width: 100%;
         min-height: 42px;
         gap: 12px;
-        justify-content: flex-end;
-        padding: 0 20px;
+        justify-content: center;
 
     }
 
@@ -517,7 +528,8 @@
 
     }
 
-    .company_tit:hover {
+    .company_tit:hover,
+    .company_menu > li:has([aria-current="page"]) > .company_tit {
 
         color: #8e8e8e;
         background-color: #fff;

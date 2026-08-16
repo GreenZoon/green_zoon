@@ -1235,9 +1235,37 @@
                 function () {
 
                     moveRequestCleaning();
+                    markCurrentSubMenu();
 
                 }
             );
+
+    }
+
+
+    function markCurrentSubMenu() {
+
+        const currentPath =
+            window.location.pathname.replace(/\/+$/, "");
+
+        document
+            .querySelectorAll(
+                ".sub_pag_menu .sub_pag_tit, .sub_category a"
+            )
+            .forEach(function (link) {
+
+                const linkPath =
+                    new URL(link.href, window.location.href)
+                        .pathname
+                        .replace(/\/+$/, "");
+
+                if (linkPath === currentPath) {
+                    link.setAttribute("aria-current", "page");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+
+            });
 
     }
 
@@ -1250,6 +1278,7 @@
     function initializeSubPage() {
 
         moveRequestCleaning();
+        markCurrentSubMenu();
 
         initSubSliders();
 
