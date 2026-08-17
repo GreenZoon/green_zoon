@@ -169,7 +169,7 @@
 
 .company_values {
 
-    flex: 0 0 500px;
+    flex: 0 0 auto;
     width: 500px;
     height: 500px;
     position: relative;
@@ -261,11 +261,11 @@
 }
 
 .company_portrait {
-    flex: 0 0 302px;
+    flex: 0 0 auto;
     width: 302px;
     height: 557px;
     align-self: center;
-    background-color: #f2f2f2;
+   
 }
 
 .company_location {
@@ -284,45 +284,57 @@
 }
 
 .company_map {
+
     flex: 1 1 1075px;
     width: 100%;
     height: 600px;
     overflow: hidden;
     border-radius: 12px;
     background-color: #f2f2f2;
+
 }
 
 .company_map iframe {
+
     width: 100%;
     height: 100%;
     display: block;
     border: 0;
+
 }
 
 .company_info {
+
     flex: 0 1 430px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+
 }
 
 .company_info > div {
+
     display: flex;
     flex-direction: column;
     gap: 24px;
+
 }
 
 .company_info h2 {
+
     margin: 0;
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
+
 }
 
 .company_info p {
+
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
+
 }
 
 .company_map_link {
@@ -340,96 +352,116 @@
 .company_docs,
 .company_awards,
 .company_history {
+
     flex-direction: column;
     gap: 80px;
+
 }
 
 .company_branches h1,
 .company_awards h1,
 .company_clients h1,
 .company_clients h2 {
+
     color: #555;
     font-size: 2.5rem;
     line-height: 1.25;
     letter-spacing: -0.04em;
+
 }
 
 .company_branch_wrap {
+
     display: flex;
     gap: 46px;
+
 }
 
 .company_branch {
+
     flex: 1;
-    min-height: 360px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    justify-content: space-between;
+    gap: 24px;
     border: 2px solid #009944;
-    border-radius: 24px;
+
+
 }
 
 .company_branch.address {
+
     color: #fff;
     background-color: #009944;
+
 }
 
 .company_branch h2 {
+
     color: inherit;
     font-size: 1.5625rem;
+
 }
 
-.company_branch > p {
+.company_branch > p,.company_tit_Wrap > p {
+
     color: #8e8e8e;
     font-size: 0.9375rem;
+
 }
 
+
 .company_branch dl {
+
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 6px;
+
 }
 
 .company_branch dl div {
+
     display: flex;
     gap: 20px;
-}
 
-.company_branch dt {
-    flex: 0 0 110px;
-}
-
-.company_branch dd {
-    flex: 1;
 }
 
 .company_branch dt,
 .company_branch dd {
+
     font-size: 1rem;
     line-height: 1.6;
+
 }
 
 .company_branch.contact h2,
 .company_branch.contact dd {
+
     color: #009944;
+
 }
 
 .company_doc_main,
 .company_doc_grid {
+
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
 }
 
 .company_doc_main .company_doc {
+
     flex: 1 1 calc((100% - 140px) / 3);
 }
 
 .company_doc_grid .company_doc {
+
     flex: 1 1 calc((100% - 210px) / 4);
 }
 
 .company_doc {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -439,10 +471,10 @@
 
 .company_doc_img,
 .company_award_img,
-.company_history_img,
-.company_history_logo,
-.company_logo {
+.company_history_img{
+
     background-color: #f2f2f2;
+
 }
 
 .company_doc_img img,
@@ -450,35 +482,37 @@
 .company_logo img,
 .company_award_img img,
 .company_history_img img {
+
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 .company_doc_img img,
 .company_history_logo img,
 .company_logo img {
-    object-fit: contain;
+  
+     object-fit: contain;
 }
 
-.company_award_img img,
-.company_history_img img {
-    object-fit: cover;
-}
 
 .company_doc_img {
+
     width: min(100%, 380px);
     aspect-ratio: 3 / 4;
     border-radius: 10px;
 }
 
 .company_doc h2 {
+
     color: #555;
     font-size: 1.25rem;
     line-height: 1.4;
 }
 
 .company_doc p {
+
     max-width: 380px;
     color: #8e8e8e;
     font-size: 0.9375rem;
@@ -486,6 +520,7 @@
 }
 
 .company_award_tabs {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -748,16 +783,13 @@
 /* 대상·최우수상 대표 이미지는 카드와 슬라이드에서도 정사각 비율 유지 */
 .company_award_img,
 .company_history_img {
+
     aspect-ratio: 1 / 1;
     overflow: hidden;
+
 }
 
-.company_award_img img,
-.company_history_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 
 
 
@@ -774,6 +806,11 @@
         min-height: 60px;
         padding: 0 60px;
     
+    }
+
+    .company_branch {
+
+        gap: 12px;
     }
 
     .company_menu::after {
@@ -810,7 +847,11 @@
         gap: 50px;
 
     }
+        .company_branch_wrap {
+   
+    border-radius: 20px;
 
+}
     .company_map {
 
         height: 520px;
@@ -834,6 +875,12 @@
         gap: clamp(28px, 4vw, 52px);
 
     }
+
+        .company_branch_wrap {
+   
+    border-radius: 16px;
+
+}
 
     .company_client_list {
 
@@ -1259,7 +1306,7 @@
 
     .company_branch.contact h2,
     .company_branch.contact dd,
-    .company_branch.contact > p {
+    .company_tit_Wrap > p  {
         color: #fff;
     }
 
@@ -1267,8 +1314,11 @@
         font-size: 1.125rem;
     }
 
-    .company_branch > p {
-        font-size: 0.6875rem;
+   .company_tit_Wrap > p  {
+
+        font-size: 0.75rem;
+        font-weight: 400;
+
     }
 
     .company_branch dl {
