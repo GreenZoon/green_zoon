@@ -175,17 +175,24 @@
 }
 
 
-.slide_control_1 .arrow {
+.slide_control_1 .slide_arrow {
 
     width: 18px;
-    height: 18px;
+    aspect-ratio: 1 / 1;
     padding: 0;
 
     border: 0;
     border-radius: 50%;
 
-    background-color: #f8f8f8;
+    background-color: transparent;
     cursor: pointer;
+}
+
+.slide_control_1 .slide_arrow .icon {
+
+    width: 18px;
+    background-color: #f8f8f8;
+
 }
 
 .slide_control_1 .slide_dot.is_active {
@@ -493,29 +500,40 @@
 
 }
 
-.slide_wrap_2 .arrow{
+.slide_wrap_2 .service_arrow{
 
     position: absolute;
     width: 25px;
+    aspect-ratio: 1 / 1;
 
-    background-color: #8E8E8E;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
     z-index: 20;
 }
 
-.left_arrow_2{
+.service_prev{
 
-    width: 16px;
     left: 0;
     
 }
 
-.right_arrow_2{
+.service_next{
 
-    width: 16px;
     right: 0;
 }
 
-.slide_wrap_2 .arrow:disabled,.slide_wrap_2 .arrow:disabled .right_arrow_2 {
+.slide_wrap_2 .service_arrow .icon {
+
+    width: 16px;
+    background-color: #8E8E8E;
+
+}
+
+.slide_wrap_2 .service_arrow:disabled .icon {
 
     opacity: 1;
     background-color: #d6d6d6;
@@ -595,7 +613,7 @@
 
 
 /* 기본 상태: 표시 */
-.slide_wrap_2 .arrow,
+.slide_wrap_2 .service_arrow,
 .slide_pagination_2 {
     
     display: flex;
@@ -606,7 +624,7 @@
 /* 큰 화면: 숨김 */
 @media (min-width: 1600px) {
 
-    .slide_wrap_2 .arrow,
+    .slide_wrap_2 .service_arrow,
     .slide_pagination_2 {
         display: none;
     }
@@ -1538,6 +1556,29 @@
 
 }
 
+.certification_arrow {
+
+    width: 24px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+
+}
+
+.certification_arrow .icon {
+
+    width: 16px;
+    background-color: #8e8e8e;
+
+}
+
 .slide_wrap_end{
 
     width: 100%;
@@ -1630,8 +1671,7 @@
 
     }
 
-    .section_1 .left_arrow,
-    .section_1 .right_arrow {
+    .section_1 .slide_arrow {
 
         display: none;
     }
@@ -1653,7 +1693,7 @@
         width: 24px;
     }
 
-    .slide_wrap_2 .arrow {
+    .slide_wrap_2 .service_arrow {
         display: none;
     }
 
@@ -1926,6 +1966,23 @@
 
     }
 
+    .mobile_all::before {
+
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 70px;
+        aspect-ratio: 1 / 1;
+
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        background-color: #fff;
+
+    }
+
     .button_2 {
 
         display: flex;
@@ -2030,23 +2087,10 @@
 
     .mobile_all_icon {
 
-        width: 70px;
-        height: 70px;
-
-        display: grid;
-        grid-template-columns: repeat(2, 10px);
-        grid-template-rows: repeat(2, 10px);
-        place-content: center;
-        gap: 4px;
-
-        border: 1px solid #339933;
-        border-radius: 50%;
-
-    }
-
-    .mobile_all_icon span {
-
-        border: 2px solid #339933;
+        width: 30px;
+        aspect-ratio: 1 / 1;
+        background-color: #339933;
+        z-index: 1;
 
     }
 
@@ -2269,10 +2313,8 @@
     .mobile_schedule_icon .icon {
 
         width: 40px;
-        height: 40px;
-        object-fit: contain;
+        aspect-ratio: 1 / 1;
         background-color: #f2f2f2;
-        filter: brightness(0) invert(1);
 
     }
 
@@ -3025,13 +3067,11 @@
 
     }
 
-    .mobile_tab_item > img,
     .mobile_gallery_icon,
     .mobile_menu_icon {
 
         width: 24px;
-        height: 24px;
-        object-fit: contain;
+        aspect-ratio: 1 / 1;
         opacity: 0.65;
 
     }
@@ -3045,18 +3085,6 @@
 
     .mobile_menu_icon {
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 4px;
-
-    }
-
-    .mobile_menu_icon span {
-
-        width: 24px;
-        height: 2px;
-        border-radius: 2px;
         background-color: currentColor;
 
     }

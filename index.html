@@ -105,8 +105,10 @@
 
                 <div class="but_bg tablet_none">
                     
-                    <button type="button" class="arrow left_arrow" 
-                    aria-label="이전 슬라이드"></button>
+                    <button type="button" class="slide_arrow slide_prev"
+                        aria-label="이전 슬라이드">
+                        <span class="icon arrow left_arrow" aria-hidden="true"></span>
+                    </button>
                     
                 </div>
 
@@ -135,8 +137,10 @@
 
                 <div class="but_bg tablet_none">
 
-                    <button type="button" class="arrow right_arrow"
-                    aria-label="다음 슬라이드"></button>
+                    <button type="button" class="slide_arrow slide_next"
+                        aria-label="다음 슬라이드">
+                        <span class="icon arrow right_arrow" aria-hidden="true"></span>
+                    </button>
 
                 </div>
 
@@ -174,9 +178,13 @@
 
         <div class="slide_wrap slide_wrap_2">
 
-            <button type="button" class="arrow right_arrow_2"  aria-label="다음 슬라이드"></button>
+            <button type="button" class="service_arrow service_next" aria-label="다음 슬라이드">
+                <span class="icon arrow right_arrow_2" aria-hidden="true"></span>
+            </button>
 
-            <button type="button"  class="arrow left_arrow_2" aria-label="이전 슬라이드"></button>
+            <button type="button" class="service_arrow service_prev" aria-label="이전 슬라이드">
+                <span class="icon arrow left_arrow_2" aria-hidden="true"></span>
+            </button>
 
             <div class="slide_pagination slide_pagination_2" aria-label="슬라이드 선택">
 
@@ -208,12 +216,7 @@
 
                         <button class="mobile_all mobile_only" type="button">
 
-                            <span class="mobile_all_icon" aria-hidden="true">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
+                            <span class="icon menu_grid mobile_all_icon" aria-hidden="true"></span>
 
                             <p>전체선택</p>
 
@@ -221,42 +224,42 @@
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 factory"></span>
+                            <span class="icon factory icon_2" aria-hidden="true"></span>
                             <p>공장 청소</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 carpet"></span>
+                            <span class="icon carpet icon_2" aria-hidden="true"></span>
                             <p>카펫/페브릭</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 soap_ottle"></span>
+                            <span class="icon soap_ottle icon_2" aria-hidden="true"></span>
                             <p>왁스 코팅</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 bird_spike"></span>
+                            <span class="icon bird_spike icon_2" aria-hidden="true"></span>
                             <p>비둘기 퇴치</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 opera"></span>
+                            <span class="icon opera icon_2" aria-hidden="true"></span>
                             <p>행사장 청소</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 ship"></span>
+                            <span class="icon ship icon_2" aria-hidden="true"></span>
                             <p>선박/유람선</p>
 
                         </button>
@@ -264,7 +267,7 @@
                         
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 brick_wall"></span>
+                            <span class="icon brick_wall icon_2" aria-hidden="true"></span>
                             <p>건물 외벽</p>
 
                         </button>
@@ -272,7 +275,7 @@
                         
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 greek"></span>
+                            <span class="icon greek icon_2" aria-hidden="true"></span>
                             <p>시설물</p>
 
                         </button>
@@ -280,28 +283,28 @@
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 cleaner"></span>
+                            <span class="icon cleaner icon_2" aria-hidden="true"></span>
                             <p>미화원 파견</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 water_tower"></span>
+                            <span class="icon water_tower icon_2" aria-hidden="true"></span>
                             <p>물탱크</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 pond"></span>
+                            <span class="icon pond icon_2" aria-hidden="true"></span>
                             <p>연못</p>
 
                         </button>
 
                         <button class="button_2" type="button">
 
-                            <span class="icon_2 doctor"></span>
+                            <span class="icon doctor icon_2" aria-hidden="true"></span>
                             <p>소독/방역</p>
 
                         </button>
@@ -330,7 +333,7 @@
                 <a class="box_li" href="/sub_page/Factory_cleane/Factory_man.html">
 
                     <p>작업 갤러리 가기</p>
-                    <span class="arrow right_arrow_2" aria-hidden="true"></span>
+                    <span class="icon arrow right_arrow_2" aria-hidden="true"></span>
                 
                 </a>
 
@@ -374,7 +377,7 @@
 
                 <strong>
                     청소 작업 신청
-                    <span class="arrow right_arrow" aria-hidden="true"></span>
+                    <span class="icon arrow right_arrow" aria-hidden="true"></span>
                 </strong>
 
             </a>
@@ -389,7 +392,7 @@
                         <span class="icon cleaner" aria-hidden="true"></span>
                         <span>
                             신청 안함
-                            <span class="arrow right_arrow" aria-hidden="true"></span>
+                            <span class="icon arrow right_arrow" aria-hidden="true"></span>
                         </span>
                     </span>
 
@@ -403,7 +406,7 @@
                         <span class="icon mobile_coall" aria-hidden="true"></span>
                         <span>
                             상담 가능
-                            <span class="arrow right_arrow" aria-hidden="true"></span>
+                            <span class="icon arrow right_arrow" aria-hidden="true"></span>
                         </span>
                     </span>
 
@@ -421,8 +424,8 @@
 
             <a class="box mobile_schedule_box" href="sub_page/Community/Schedule.html">
 
-                <span class="mobile_schedule_icon ">
-                    <span class="icon calendar"></span>
+                <span class="mobile_schedule_icon">
+                    <span class="icon calendar" aria-hidden="true"></span>
                 </span>
 
                 <strong>현재 작업 일정</strong>
@@ -432,8 +435,8 @@
 
             <a class="box mobile_schedule_box" href="sub_page/Community/Schedule.html">
 
-                <span class="mobile_schedule_icon ">
-                    <span class=" icon location_Ping"></span>
+                <span class="mobile_schedule_icon">
+                    <span class="icon location_Ping" aria-hidden="true"></span>
                 </span>
 
                 <strong>방문견적 일정</strong>
@@ -479,7 +482,7 @@
 
         <a class="tit_wrap mobile_tit" href="sub_page/Gallery/Work_gallery.html">
             <h2 class="page_title">작업 갤러리</h2>
-            <span class="arrow right_arrow" aria-hidden="true"></span>
+            <span class="icon arrow right_arrow" aria-hidden="true"></span>
         </a>
 
         <div class="video_viewport mobile_gallery_viewport">
@@ -560,7 +563,7 @@
             <h2 class="page_title mobile_hide">정직하게 청소 과정을 보여드립니다</h2>
             <h2 class="page_title mobile_only">
                 영상 갤러리
-                <span class="arrow right_arrow" aria-hidden="true"></span>
+                <span class="icon arrow right_arrow" aria-hidden="true"></span>
             </h2>
         </div>
 
@@ -584,7 +587,7 @@
             type="button"
             aria-label="이전 영상"
         >
-            <span class="arrow left_arrow"></span>
+            <span class="icon arrow left_arrow"></span>
         </button>
 
 
@@ -1023,7 +1026,7 @@
             type="button"
             aria-label="다음 영상"
         >
-            <span class="arrow right_arrow"></span>
+            <span class="icon arrow right_arrow"></span>
         </button>
 
     </div>
@@ -1090,14 +1093,14 @@
                 <span class="mobile_hide">갤러리</span>
                 <span class="mobile_only">
                     그린죤 커뮤니티
-                    <span class="arrow right_arrow" aria-hidden="true"></span>
+                    <span class="icon arrow right_arrow" aria-hidden="true"></span>
                 </span>
             </h2>
 
             <a href="" class="tit_li">
 
                 <p class="section_title">사진 갤러리와 커뮤니티를 통해 최신소식을 확인하세요.</p>
-                <span class="icon icon_4 arrow_up_right"></span>
+                <span class="icon arrow_up_right icon_4" aria-hidden="true"></span>
             
             </a> 
 
@@ -1381,28 +1384,28 @@
 
                 <div class="mobile_academy_item">
                     <span class="mobile_academy_icon">
-                        <span class="icon presentation "></span>
+                        <span class="icon presentation" aria-hidden="true"></span>
                     </span>
                     <p>창업교육</p>
                 </div>
 
                 <div class="mobile_academy_item">
                     <span class="mobile_academy_icon">
-                        <span class=" icon lesson"></span>
+                        <span class="icon lesson" aria-hidden="true"></span>
                     </span>
                     <p>직장인 기본교육</p>
                 </div>
 
                 <div class="mobile_academy_item">
                     <span class="mobile_academy_icon">
-                        <span class="icon meeting"></span>
+                        <span class="icon meeting" aria-hidden="true"></span>
                     </span>
                     <p>기존업체 향상교육</p>
                 </div>
 
                 <div class="mobile_academy_item">
                     <span class="mobile_academy_icon">
-                        <span class="icon happy"></span>
+                        <span class="icon happy" aria-hidden="true"></span>
                     </span>
                     <p>인성교육</p>
                 </div>
@@ -1447,7 +1450,7 @@
 
         <a class="tit_wrap mobile_tit" href="sub_page/Community/Event.html">
             <h2 class="page_title">이벤트</h2>
-            <span class="arrow right_arrow" aria-hidden="true"></span>
+            <span class="icon arrow right_arrow" aria-hidden="true"></span>
         </a>
 
         <a class="mobile_event_box" href="#">
@@ -1671,7 +1674,7 @@
 
                 <a href="sub_page/Community/Notice.html" class="box box_8">
                     
-                <div class="icon icon_8 megaphone"></div>
+                <span class="icon megaphone icon_8" aria-hidden="true"></span>
                 
                     <div class="box_in_wrap box_in_wrap_8">
 
@@ -1691,7 +1694,7 @@
 
                 <a href="sub_page/Community/Schedule.html" class="box box_8">
                     
-                <div class="icon icon_8 calendar"></div>
+                <span class="icon calendar icon_8" aria-hidden="true"></span>
                 
                 <div class="box_in_wrap box_in_wrap_8">
 
@@ -1711,7 +1714,7 @@
 
                 <a href="sub_page/Community/Information.html" class="box box_8">
                     
-                    <div class="icon icon_8 info"></div>
+                    <span class="icon info icon_8" aria-hidden="true"></span>
                     
                     <div class="box_in_wrap box_in_wrap_8">
 
@@ -1732,7 +1735,7 @@
 
                 <a href="sub_page/Community/Event.html" class="box box_8">
                     
-                    <div class="icon icon_8 party"></div>
+                    <span class="icon party icon_8" aria-hidden="true"></span>
                     
                     <div class="box_in_wrap box_in_wrap_8">
 
@@ -1752,7 +1755,7 @@
 
                 <a href="sub_page/Community/FAQ.html" class="box box_8">
                     
-                    <div class="icon icon_8 question_answer"></div>
+                    <span class="icon question_answer icon_8" aria-hidden="true"></span>
                     
                     <div class="box_in_wrap box_in_wrap_8">
 
@@ -1771,7 +1774,7 @@
 
                 <a href="sub_page/Community/Reviews.html" class="box box_8">
                     
-                    <div class="icon icon_8 pen"></div>
+                    <span class="icon pen icon_8" aria-hidden="true"></span>
                 
                     <div class="box_in_wrap box_in_wrap_8">
 
@@ -1799,7 +1802,10 @@
     
     <section class="section_end">
 
-        <button type="button" class="arrow left_arrow_2"></button>
+        <button type="button" class="certification_arrow certification_prev"
+            aria-label="이전 인증기관">
+            <span class="icon arrow left_arrow_2" aria-hidden="true"></span>
+        </button>
 
         <div class="slide_wrap slide_wrap_end">
 
@@ -1901,7 +1907,10 @@
 
         </div>
 
-        <button type="button" class="arrow right_arrow_2"></button>
+        <button type="button" class="certification_arrow certification_next"
+            aria-label="다음 인증기관">
+            <span class="icon arrow right_arrow_2" aria-hidden="true"></span>
+        </button>
 
     </section>
 
@@ -1940,12 +1949,12 @@
         </a>
 
         <a class="mobile_tab_item" href="user_page/Online_application.html">
-            <span class=" icon contract"  aria-hidden="true"></span>
+            <span class="icon contract" aria-hidden="true"></span>
             <p>작업문의</p>
         </a>
 
         <a class="mobile_tab_item" href="sub_page/Community/Notice.html">
-            <span class=" icon speech_bubble"  aria-hidden="true"></span>
+            <span class="icon speech_bubble" aria-hidden="true"></span>
             <p>커뮤니티</p>
         </a>
 
@@ -1957,11 +1966,7 @@
         <button class="mobile_tab_item mobile_menu_open_btn" type="button"
             aria-label="전체 메뉴 열기">
 
-            <span class="mobile_menu_icon" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+            <span class="icon menu_lines mobile_menu_icon" aria-hidden="true"></span>
 
             <span>메뉴</span>
 

@@ -6,8 +6,8 @@ if (slider) {
     const slides = slider.querySelectorAll(".main_img_1");
     const dots = slider.querySelectorAll(".slide_dot");
 
-    const prevButton = slider.querySelector(".left_arrow");
-    const nextButton = slider.querySelector(".right_arrow");
+    const prevButton = slider.querySelector(".slide_prev");
+    const nextButton = slider.querySelector(".slide_next");
     const toggleButton = slider.querySelector(".slide_toggle");
 
     let currentIndex = 0;
@@ -338,10 +338,10 @@ if (certificationSlider) {
         certificationSlider.querySelector(".certification_wrap");
 
     const leftButton =
-        certificationSlider.querySelector(".left_arrow_2");
+        certificationSlider.querySelector(".certification_prev");
 
     const rightButton =
-        certificationSlider.querySelector(".right_arrow_2");
+        certificationSlider.querySelector(".certification_next");
 
     const originalItems = Array.from(
         certificationWrap.querySelectorAll(".certification")

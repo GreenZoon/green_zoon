@@ -821,6 +821,20 @@ aspect-ratio: 1 / 1;
 
 }
 
+.menu_grid {
+
+    -webkit-mask-image: url("../img/icon/menu-grid.svg");
+    mask-image: url("../img/icon/menu-grid.svg");
+
+}
+
+.menu_lines {
+
+    -webkit-mask-image: url("../img/icon/menu-lines.svg");
+    mask-image: url("../img/icon/menu-lines.svg");
+
+}
+
 .arrow{
 
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
