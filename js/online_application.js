@@ -447,6 +447,8 @@
         let firstInvalid = null;
         let valid = true;
 
+        privacyError.textContent = "";
+
         form.querySelectorAll("[required]").forEach((element) => {
             element.classList.add("is_touched");
             if (!element.checkValidity()) {
@@ -459,6 +461,12 @@
             valid = false;
             document.getElementById("service_error").textContent = "작업종류를 하나 이상 선택해 주세요.";
             firstInvalid ||= selector.querySelector("button");
+        }
+
+        if (!privacyAgree.checked) {
+            valid = false;
+            privacyError.textContent = "개인정보 수집 및 이용에 동의해 주세요.";
+            firstInvalid ||= privacyAgree;
         }
 
         selectedServices.forEach((id) => {
@@ -539,6 +547,12 @@
         }
 
         updateSummary();
+    });
+
+    privacyAgree.addEventListener("change", function () {
+        privacyError.textContent = privacyAgree.checked
+            ? ""
+            : "개인정보 수집 및 이용에 동의해 주세요.";
     });
 
     form.addEventListener("submit", (event) => {

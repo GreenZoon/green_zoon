@@ -215,6 +215,7 @@
 .event_cards[data-empty]::after { content: "해당 상태의 이벤트가 없습니다."; width: 100%; padding-block: 72px; color: #8e8e8e; text-align: center; }
 .event_card { width: calc((100% - 40px) / 3); display: flex; flex-direction: column; gap: 12px; }
 .event_card img, .event_card .empty_image { width: 100%; aspect-ratio: 1.7 / 1; object-fit: cover; border-radius: 15px; }
+.event_card img { object-fit: contain; background: #f5f7f6; }
 .event_card h3 { font-size: 19px; line-height: 1.5; }
 .event_card time { align-self: flex-end; color: #8e8e8e; font-size: 12px; }
 
@@ -344,6 +345,11 @@
     aspect-ratio: 16 / 10;
     object-fit: cover;
     border-radius: 15px;
+}
+
+[data-post-type="galleryEvent"] .post_media img {
+    object-fit: contain;
+    background: #f5f7f6;
 }
 
 [data-post-type="notice"][data-post-id="0"] .post_media img {

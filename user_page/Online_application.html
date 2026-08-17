@@ -60,9 +60,10 @@
                         <p>수집된 개인정보는 작업 신청 외에는 사용되지 않으며, 계약이 체결되지 않을 경우 문서상 개인정보는 계약 취소 시 즉시 파기됩니다.</p>
                     </div>
                     <label class="privacy_agree">
-                        <input type="checkbox" name="privacy" required>
+                        <input id="privacy_agree" type="checkbox" name="privacy" aria-describedby="privacy_error" required>
                         <span>개인정보 이용 내역 동의하기 <b>(필수)</b></span>
                     </label>
+                    <p id="privacy_error" class="field_error privacy_error" role="alert"></p>
                 </fieldset>
 
                 <fieldset class="application_fieldset service_fieldset">
