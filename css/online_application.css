@@ -15,8 +15,41 @@
     background: #fff;
 }
 
-.application_page.is_auth_checking .application_main {
-    visibility: hidden;
+.application_page,
+.application_page * {
+    box-sizing: border-box;
+}
+
+.application_page {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.application_main,
+.application_form,
+.application_panel,
+.application_fieldset,
+.applicant_grid,
+.service_selector,
+.service_detail,
+.detail_header,
+.detail_body,
+.detail_fields,
+.application_field,
+.detail_label,
+.upload_grid,
+.upload_area,
+.visit_panel,
+.summary_panel,
+.visit_intro,
+.visit_slot,
+.summary_item,
+.visit_picker,
+.time_fieldset,
+.time_options,
+.modal_dialog {
+    min-width: 0;
+    max-width: 100%;
 }
 
 .application_main {
@@ -701,6 +734,15 @@ body.modal_open {
         padding: 24px 20px;
     }
 
+    .application_intro,
+    .visit_panel,
+    .summary_panel,
+    .detail_body,
+    .detail_header {
+        width: 100%;
+        overflow: hidden;
+    }
+
     .application_heading h1,
     .application_heading h2,
     .application_fieldset > legend,
@@ -838,8 +880,9 @@ body.modal_open {
     }
 
     .modal_dialog {
-        width: 100%;
+        width: min(100%, 100vw);
         max-height: 92vh;
+        overflow-x: hidden;
         border-radius: 28px 28px 0 0;
         padding: 32px 20px 26px;
     }

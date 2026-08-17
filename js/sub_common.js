@@ -1245,9 +1245,67 @@
 
                     moveRequestCleaning();
                     markCurrentSubMenu();
+                    connectDispatchApplication();
+                    connectServiceMediaLinks();
 
                 }
             );
+
+    }
+
+    function connectDispatchApplication() {
+        if (!window.location.pathname.includes("/Dispatch/Dispatch.html")) {
+            return;
+        }
+
+        document.querySelectorAll('a[href*="Online_application.html"]').forEach(function (link) {
+            const url = new URL(link.href, window.location.href);
+            url.searchParams.set("service", "dispatch");
+            link.href = url.href;
+        });
+    }
+
+
+    /* =====================================================
+       SERVICE GALLERY / VIDEO LINKS
+
+       서비스 상세 화면에 모양만 남아 있던 # 링크를
+       실제 갤러리 화면으로 연결한다.
+    ===================================================== */
+
+    function connectServiceMediaLinks() {
+
+        const workGallery =
+            sitePath("sub_page/Gallery/Work_gallery.html");
+
+        const videoGallery =
+            sitePath("sub_page/Gallery/Video_gallery.html");
+
+
+        document
+            .querySelectorAll(
+                '.service_gallery a.tit_wrap[href="#"], ' +
+                '.service_gallery a.tit_wrap_g[href="#"], ' +
+                '.service_gallery a.sub_pag_img_wrap[href="#"]'
+            )
+            .forEach(function (link) {
+
+                link.href = workGallery;
+
+            });
+
+
+        document
+            .querySelectorAll(
+                '.service_video a.service_video_title[href="#"], ' +
+                '.service_video a.video_card_a[href="#"]'
+            )
+            .forEach(function (link) {
+
+                link.href = videoGallery;
+                link.removeAttribute("aria-disabled");
+
+            });
 
     }
 
@@ -1288,6 +1346,8 @@
 
         moveRequestCleaning();
         markCurrentSubMenu();
+        connectDispatchApplication();
+        connectServiceMediaLinks();
 
         initSubSliders();
 

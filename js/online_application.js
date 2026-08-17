@@ -7,12 +7,6 @@
         return;
     }
 
-    if (!window.GreenZoneAuth?.requireLogin(window.location.href)) {
-        return;
-    }
-
-    document.body.classList.remove("is_auth_checking");
-
     const DRAFT_KEY = "greenZoneCleaningApplicationDraft";
     const iconRoot = "../img/icon/";
 
@@ -413,9 +407,11 @@
         };
     }
 
-    function saveDraft() {
+    function saveDraft(options = {}) {
         localStorage.setItem(DRAFT_KEY, JSON.stringify(getDraft()));
-        showToast("신청서가 임시저장되었습니다. 첨부 이미지는 보안상 저장되지 않습니다.");
+        if (!options.silent) {
+            showToast("신청서가 임시저장되었습니다. 첨부 이미지는 보안상 저장되지 않습니다.");
+        }
     }
 
     function restoreDraft() {
@@ -545,6 +541,16 @@
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+
+        if (!window.GreenZoneAuth?.isLoggedIn()) {
+            saveDraft({ silent: true });
+            showToast("작성 내용을 임시저장했습니다. 로그인 후 신청을 계속할 수 있습니다.");
+            window.setTimeout(() => {
+                window.location.assign(window.GreenZoneAuth.loginUrl(window.location.href));
+            }, 450);
+            return;
+        }
+
         if (!validateForm()) return;
         openModal(successModal);
     });

@@ -6,16 +6,18 @@
 
         const target = document.getElementById("Introduction_sub_menu");
 
-        if (!target || !window.GreenZonePaths) {
+        if (!target) {
             return;
         }
+
+        const resolvePath = window.GreenZonePaths?.resolve || function (path) {
+            return new URL("../../" + path.replace(/^\//, ""), window.location.href).href;
+        };
 
         try {
 
             const response = await fetch(
-                window.GreenZonePaths.resolve(
-                    "components/sub_pag/Introduction_sub_menu.html"
-                ),
+                resolvePath("components/sub_pag/Introduction_sub_menu.html"),
                 {
                     cache: "no-cache"
                 }
@@ -30,7 +32,7 @@
             }
 
             target.innerHTML = await response.text();
-            window.GreenZonePaths.normalize(target);
+            window.GreenZonePaths?.normalize(target);
 
         } catch (error) {
 
@@ -84,11 +86,13 @@
 
             const isOpen = title.getAttribute("aria-expanded") === "true";
 
+            event.preventDefault();
+
             if (isOpen) {
+                title.setAttribute("aria-expanded", "false");
                 return;
             }
 
-            event.preventDefault();
             closeCompanyMenu(title);
             title.setAttribute("aria-expanded", "true");
 

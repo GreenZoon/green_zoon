@@ -92,7 +92,29 @@
         help.hidden = !help.hidden;
     });
 
-    document.querySelector("[data-signup]")?.addEventListener("click", function () {
-        signupNotice.hidden = !signupNotice.hidden;
+    document.querySelectorAll("[data-signup]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            signupNotice.hidden = !signupNotice.hidden;
+        });
+    });
+
+    document.querySelector("[data-password-toggle]")?.addEventListener("click", function () {
+        const visible = password.type === "text";
+        password.type = visible ? "password" : "text";
+        this.classList.toggle("is_visible", !visible);
+        this.setAttribute("aria-label", visible ? "비밀번호 표시" : "비밀번호 숨기기");
+    });
+
+    document.querySelector("[data-guest]")?.addEventListener("click", function () {
+        window.location.assign(safeReturnUrl());
+    });
+
+    document.querySelectorAll("[data-social-login]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            showToast("간편 로그인은 준비 중입니다.");
+            window.setTimeout(function () {
+                toast.classList.remove("is_visible");
+            }, 1600);
+        });
     });
 })();

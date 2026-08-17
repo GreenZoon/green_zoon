@@ -152,8 +152,8 @@
     ];
 
     const galleryEventImages = [
-        "img/sub_page/gallery/event/gallery_event_01.png",
-        "img/sub_page/gallery/event/gallery_event_02.png",
+        "img/sub_page/awards/award_2025_cover.jpg",
+        "img/sub_page/awards/award_2023_cover.jpg",
         "img/sub_page/gallery/event/gallery_event_03.png",
         "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/gallery/event/gallery_event_05.png",
@@ -549,6 +549,50 @@
         });
     }
 
+    function initEventFilter() {
+        const nav = document.querySelector(".community_filter");
+        const list = document.querySelector(".event_cards");
+        if (!nav || !list) return;
+
+        const cards = Array.from(list.querySelectorAll(".event_card"));
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        function endDateFor(card) {
+            const text = card.querySelector("time")?.textContent.trim() || "";
+            const dates = text.match(/\d{4}\.\d{2}\.\d{2}|\d{2}\.\d{2}/g) || [];
+            if (!dates.length) return null;
+
+            const start = dates[0].split(".").map(Number);
+            const end = (dates[1] || dates[0]).split(".").map(Number);
+            const year = end.length === 3 ? end[0] : start[0];
+            const month = end.length === 3 ? end[1] : end[0];
+            const day = end.length === 3 ? end[2] : end[1];
+            return new Date(year, month - 1, day, 23, 59, 59);
+        }
+
+        cards.forEach(function (card) {
+            const endDate = endDateFor(card);
+            card.dataset.eventStatus = endDate && endDate >= today ? "진행중" : "종료";
+        });
+
+        nav.querySelectorAll("button").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const status = button.textContent.trim();
+                nav.querySelectorAll("button").forEach(function (item) {
+                    item.removeAttribute("aria-current");
+                });
+                button.setAttribute("aria-current", "page");
+
+                const matched = cards.filter(function (card) {
+                    return status === "전체" || card.dataset.eventStatus === status;
+                });
+                list.dispatchEvent(new CustomEvent("list-filter-change", { detail: { items: matched } }));
+                list.toggleAttribute("data-empty", matched.length === 0);
+            });
+        });
+    }
+
     function initFaqState() {
         document.querySelectorAll(".faq_list details").forEach(function (details) {
             const toggleText = details.querySelector(".faq_toggle_text");
@@ -626,8 +670,16 @@
 
     function initReviewWrite() {
         const storageKey = "greenzone-user-reviews";
+        const draftKey = "greenzone-review-draft";
         const form = document.querySelector("[data-review-form]");
         const reviewBoard = document.querySelector(".review_board .board");
+        const loginLink = document.querySelector("[data-review-login]");
+
+        if (loginLink && window.GreenZoneAuth) {
+            loginLink.href = window.GreenZoneAuth.loginUrl(
+                new URL("ReviewWrite.html", window.location.href).href
+            );
+        }
 
         if (reviewBoard) {
             let saved = [];
@@ -647,25 +699,49 @@
         }
 
         if (!form) return;
-        const params = new URLSearchParams(window.location.search);
         const message = form.querySelector("[data-review-message]");
-        if (params.get("mode") === "login" && message) {
-            message.textContent = "별도 로그인 서버가 연결되기 전까지는 작성자 확인 후 후기를 등록할 수 있습니다.";
-            form.querySelector('[name="author"]').focus();
+
+        try {
+            const draft = JSON.parse(localStorage.getItem(draftKey) || "null");
+            if (draft) {
+                ["author", "title", "content"].forEach(function (name) {
+                    if (form.elements[name] && typeof draft[name] === "string") {
+                        form.elements[name].value = draft[name];
+                    }
+                });
+                if (message) message.textContent = "로그인 전에 작성한 후기 내용을 자동으로 복구했습니다.";
+            }
+        } catch (_) {
+            localStorage.removeItem(draftKey);
         }
 
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             const data = new FormData(form);
+            const draft = {
+                author: String(data.get("author") || "").trim(),
+                title: String(data.get("title") || "").trim(),
+                content: String(data.get("content") || "").trim()
+            };
+
+            if (!window.GreenZoneAuth?.isLoggedIn()) {
+                localStorage.setItem(draftKey, JSON.stringify(draft));
+                window.location.assign(window.GreenZoneAuth
+                    ? window.GreenZoneAuth.loginUrl(window.location.href)
+                    : "../../user_page/Login.html?returnTo=" + encodeURIComponent(window.location.href));
+                return;
+            }
+
             let saved = [];
             try { saved = JSON.parse(localStorage.getItem(storageKey) || "[]"); } catch (_) { saved = []; }
             saved.push({
-                author: String(data.get("author") || "이용자").trim(),
-                title: String(data.get("title") || "이용 후기").trim(),
-                content: String(data.get("content") || "").trim(),
+                author: draft.author || window.GreenZoneAuth.getUser()?.name || "이용자",
+                title: draft.title || "이용 후기",
+                content: draft.content,
                 date: new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()).replace(/\. /g, ".").replace(/\.$/, "")
             });
             localStorage.setItem(storageKey, JSON.stringify(saved));
+            localStorage.removeItem(draftKey);
             window.location.href = "Reviews.html";
         });
     }
@@ -867,6 +943,7 @@
     initListPagination();
     initListSearch();
     initInformationFilter();
+    initEventFilter();
     initFaqState();
     initScheduleCalendar();
     renderPost();

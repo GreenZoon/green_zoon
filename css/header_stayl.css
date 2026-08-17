@@ -86,7 +86,7 @@
     fill:currentColor;
 }
 
-.search_ion,.login{
+.search_ion,.login,.user{
 
     width: 16px;
     
@@ -96,7 +96,7 @@
 
 form{
 
-    width: 100vw;
+    width: 100%;
     /* padding: 40px 150px;
     background: #009944; */
 
@@ -424,7 +424,7 @@ input{
 
 @media (max-width:515px){
 
-    .search_ion,.login{
+    .search_ion,.login,.user{
 
         width: 16px;
         aspect-ratio: 1 / 1;
@@ -475,4 +475,3 @@ input{
 
 
 }
-

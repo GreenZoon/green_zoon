@@ -1084,6 +1084,19 @@
     object-position: center;
 }
 
+/* 대상·최우수상 원본은 메인 카드에서도 항상 정사각형으로 표시한다. */
+.img_wrap_4.award_square {
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.img_wrap_4.award_square img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
 .slide_pagination_4 {
 
     position: absolute;
@@ -2580,6 +2593,13 @@
         height: clamp(100px, 14vw, 133px);
         flex: 0 0 clamp(150px, 21vw, 200px);
 
+    }
+
+    .img_wrap_4.award_square {
+        width: clamp(110px, 20vw, 140px);
+        height: auto;
+        flex: 0 0 clamp(110px, 20vw, 140px);
+        aspect-ratio: 1 / 1;
     }
 
     .tit_wrap_4 {

@@ -111,6 +111,31 @@
 .gallery_card { width: calc((100% - 60px) / 4); display: flex; flex-direction: column; gap: 12px; color: #555; }
 .gallery_card_image { width: 100%; aspect-ratio: 360 / 220; position: relative; overflow: hidden; border-radius: 10px; }
 .gallery_card_image img { height: 100%; object-fit: cover; }
+
+/* 대상·최우수상 원본은 어느 카드/대표 영역에서도 1:1을 유지 */
+.gallery_feature_media:has(img[src*="award_2025_cover"]),
+.gallery_feature_media:has(img[src*="award_2023_cover"]),
+.gallery_card_image:has(img[src*="gallery_event_01"]),
+.gallery_card_image:has(img[src*="gallery_event_02"]),
+.post_media:has(img[src*="award_2025_cover"]),
+.post_media:has(img[src*="award_2023_cover"]),
+.post_media:has(img[src*="Community_victory_2025"]) {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.gallery_feature_media img[src*="award_2025_cover"],
+.gallery_feature_media img[src*="award_2023_cover"],
+.gallery_card_image img[src*="gallery_event_01"],
+.gallery_card_image img[src*="gallery_event_02"],
+.post_media img[src*="award_2025_cover"],
+.post_media img[src*="award_2023_cover"],
+.post_media img[src*="Community_victory_2025"] {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover;
+}
 .gallery_card_tag { position: absolute; right: 12px; bottom: 12px; border-radius: 10px; background: #f8f8f8; color: #8e8e8e; font-size: 12px; padding: 6px 14px; }
 .gallery_card h3 { overflow: hidden; color: #555; font-size: 19px; font-weight: 700; line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
 .gallery_card time { color: #8e8e8e; font-size: 12px; }
@@ -142,6 +167,18 @@
 .notice_feature { width: 42%; position: relative; flex: 0 0 auto; overflow: hidden; border-radius: 15px; }
 .notice_layout > .notice_feature { width: 100%; grid-column: 1; grid-row: 2; }
 .notice_feature img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.notice_feature:has(img[src*="Community_victory_2025"]),
+.notice_feature:has(img[src*="award_2025_cover"]),
+.notice_feature:has(img[src*="award_2023_cover"]) {
+    aspect-ratio: 1 / 1;
+}
+.notice_feature img[src*="Community_victory_2025"],
+.notice_feature img[src*="award_2025_cover"],
+.notice_feature img[src*="award_2023_cover"] {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
 .notice_feature > span { width: 100%; position: absolute; left: 0; bottom: 0; display: flex; flex-direction: column; gap: 8px; background: linear-gradient(transparent, rgba(0, 0, 0, .72)); color: #fff; font-size: 19px; font-weight: 700; line-height: 1.5; padding: 80px 24px 24px; }
 .notice_feature time { font-size: 12px; font-weight: 400; }
 .notice_list { min-width: 0; flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; }
@@ -170,6 +207,7 @@
 .community_filter button:hover, .community_filter a:hover, .community_filter [aria-current="page"] { border-color: #009944; background: #009944; color: #fff; }
 
 .event_cards, .information_cards { display: flex; flex-wrap: wrap; gap: 28px 20px; }
+.event_cards[data-empty]::after { content: "해당 상태의 이벤트가 없습니다."; width: 100%; padding-block: 72px; color: #8e8e8e; text-align: center; }
 .event_card { width: calc((100% - 40px) / 3); display: flex; flex-direction: column; gap: 12px; }
 .event_card img, .event_card .empty_image { width: 100%; aspect-ratio: 1.7 / 1; object-fit: cover; border-radius: 15px; }
 .event_card h3 { font-size: 19px; line-height: 1.5; }
@@ -203,7 +241,7 @@
 .review_write h2, .review_board h2 { font-size: 25px; line-height: 1.4; }
 .review_write p { color: #8e8e8e; }
 .review_actions { display: flex; justify-content: flex-end; gap: 16px; }
-.review_actions a { min-width: 120px; min-height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #8e8e8e; border-radius: 8px; }
+.review_actions a { width: fit-content; max-width: 220px; min-height: 44px; padding: 10px 22px; display: flex; align-items: center; justify-content: center; border: 1px solid #8e8e8e; border-radius: 8px; white-space: nowrap; }
 .review_actions a:last-child { border-color: #009944; background: #009944; color: #fff; }
 .review_board { gap: 24px; padding: 28px; }
 .review_form { display: flex; flex-direction: column; gap: 22px; border: 1px solid #c6c6c6; border-radius: 15px; padding: 28px; }
@@ -579,7 +617,7 @@
     .review_form_actions a, .review_form_actions button { min-width: 100px; min-height: 40px; font-size: 14px; }
     .review_write h2, .review_board h2 { font-size: 19px; }
     .review_actions { justify-content: center; }
-    .review_actions a { min-width: 100px; min-height: 38px; font-size: 12px; }
+    .review_actions a { width: auto; max-width: 200px; min-height: 40px; padding: 9px 16px; font-size: 14px; }
     .today_work { flex-direction: column; }
     .today_card { width: 100%; min-height: 150px; padding: 24px; }
     .calendar_head { justify-content: space-between; gap: 16px; }

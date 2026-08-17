@@ -155,6 +155,10 @@ window.GreenZonePaths = {
         (root || document).querySelectorAll("[data-auth-label]").forEach(function (label) {
             label.textContent = user ? "내 정보" : "로그인";
         });
+
+        (root || document).querySelectorAll("[data-auth-user-name]").forEach(function (label) {
+            label.textContent = user ? `${user.name || "그린죤 사용자"} 계정` : "그린죤 방문자";
+        });
     }
 
     window.GreenZoneAuth = {
@@ -454,16 +458,12 @@ const mobileMenuData = [
                         href: "/sub_page/Facility/Tunnel.html"
                     }
                 ]
-            }
+            },
 
-
-            // 미화원 파견은 추후 활성화
-            /*
             {
                 title: "미화원 파견",
-                href: "#"
+                href: "/sub_page/Dispatch/Dispatch.html"
             }
-            */
 
         ]
     },
@@ -774,6 +774,7 @@ window.closeMobileMenu =
 // =========================================================
 
 document.addEventListener("click", (event) => {
+    const hoverCapableMenu = window.matchMedia("(hover: hover) and (pointer: fine)");
 
     const closeButton =
         event.target.closest(
@@ -830,6 +831,16 @@ document.addEventListener("click", (event) => {
             )
         ) {
             renderMobileDepth1();
+            const firstDepth1 = document.querySelector("[data-mobile-depth1='0']");
+            if (firstDepth1) {
+                setMobileMenuActive("#mobile_depth_1", firstDepth1);
+                renderMobileDepth2(0);
+                const firstDepth2 = document.querySelector("[data-mobile-depth2='0']");
+                if (firstDepth2) {
+                    setMobileMenuActive("#mobile_depth_2", firstDepth2);
+                    renderMobileDepth3(0, 0);
+                }
+            }
         }
 
         return;
@@ -846,6 +857,8 @@ document.addEventListener("click", (event) => {
         );
 
     if (depth1Button) {
+
+        if (hoverCapableMenu.matches) return;
 
         const depth1Index =
             Number(
@@ -876,6 +889,8 @@ document.addEventListener("click", (event) => {
 
     if (depth2Button) {
 
+        if (hoverCapableMenu.matches) return;
+
         const depth1Index =
             Number(
                 depth2Button.dataset.parentDepth1
@@ -896,6 +911,25 @@ document.addEventListener("click", (event) => {
             depth2Index
         );
 
+        return;
+    }
+
+    const scheduleTab = event.target.closest("[data-schedule-tab]");
+    if (scheduleTab) {
+        document.querySelectorAll("[data-schedule-tab]").forEach((button) => {
+            const active = button === scheduleTab;
+            button.classList.toggle("is_active", active);
+            button.setAttribute("aria-selected", String(active));
+        });
+
+        const selectedCard = document.querySelector(".mobile_schedule_card.is_selected");
+        if (selectedCard) {
+            selectedCard.querySelector("p").textContent = scheduleTab.dataset.scheduleTab === "work"
+                ? "공장 바닥 청소"
+                : "목욕탕 곰팡이 청소";
+            selectedCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }
+
     }
 
 });
@@ -911,3 +945,24 @@ document.addEventListener(
 
     }
 );
+
+/* 마우스가 있는 기기에서는 1·2뎁스를 호버로 미리 봅니다. 터치 기기는 클릭 동작을 유지합니다. */
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    document.addEventListener("pointerover", (event) => {
+        const depth1Button = event.target.closest("[data-mobile-depth1]");
+        if (depth1Button) {
+            const depth1Index = Number(depth1Button.dataset.mobileDepth1);
+            setMobileMenuActive("#mobile_depth_1", depth1Button);
+            renderMobileDepth2(depth1Index);
+            return;
+        }
+
+        const depth2Button = event.target.closest("[data-mobile-depth2]");
+        if (depth2Button) {
+            const depth1Index = Number(depth2Button.dataset.parentDepth1);
+            const depth2Index = Number(depth2Button.dataset.mobileDepth2);
+            setMobileMenuActive("#mobile_depth_2", depth2Button);
+            renderMobileDepth3(depth1Index, depth2Index);
+        }
+    });
+}

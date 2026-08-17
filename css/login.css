@@ -519,3 +519,523 @@
         flex-basis: auto;
     }
 }
+
+/* Standalone account login: Figma account screen structure */
+.account_page,
+.account_page * {
+    box-sizing: border-box;
+}
+
+.account_page {
+    min-width: 0;
+    overflow-x: hidden;
+    background: #fff;
+    color: #4f4f4f;
+    font-family: Pretendard, sans-serif;
+}
+
+.login_simple_header {
+    width: min(1180px, calc(100% - 40px));
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 auto;
+}
+
+.login_brand img {
+    width: 126px;
+    height: auto;
+    display: block;
+}
+
+.login_header_actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login_header_actions a {
+    width: 32px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+}
+
+.login_header_actions .icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #222;
+}
+
+.account_login {
+    width: min(420px, calc(100% - 40px));
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+    padding-block: 50px 80px;
+}
+
+.account_login_logo {
+    display: flex;
+    justify-content: center;
+}
+
+.account_login_logo img {
+    width: 156px;
+    height: auto;
+    display: block;
+}
+
+.account_login_panel,
+.account_login_heading,
+.account_login_form,
+.account_field {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.account_login_panel {
+    gap: 24px;
+}
+
+.account_login_heading {
+    align-items: center;
+    gap: 7px;
+    text-align: center;
+}
+
+.account_login_heading p {
+    color: var(--login-green);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.account_login_heading h1 {
+    color: #444;
+    font-size: clamp(30px, 6vw, 38px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.account_login_heading span {
+    color: #858585;
+    font-size: 14px;
+    line-height: 1.55;
+    word-break: keep-all;
+}
+
+.account_login_form {
+    gap: 16px;
+}
+
+.account_field {
+    gap: 7px;
+}
+
+.account_field > span:first-child {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.account_field input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    border: 1px solid #cfcfcf;
+    border-radius: 7px;
+    background: #fff;
+    color: #444;
+    padding: 11px 14px;
+    font: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+.account_field input:focus {
+    border-color: var(--login-green);
+    box-shadow: 0 0 0 3px rgba(0,153,68,.09);
+}
+
+.account_password_input {
+    position: relative;
+    display: block;
+}
+
+.account_password_input input {
+    padding-right: 48px;
+}
+
+.password_toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.password_toggle svg {
+    width: 20px;
+    fill: #8b8b8b;
+}
+
+.password_toggle.is_visible svg {
+    fill: var(--login-green);
+}
+
+.account_login_options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.account_submit,
+.account_guest {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.account_submit {
+    border: 1px solid var(--login-green);
+    background: var(--login-green);
+    color: #fff;
+}
+
+.account_guest {
+    border: 1px solid #cfcfcf;
+    background: #fff;
+    color: #555;
+}
+
+.account_divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.account_divider::before,
+.account_divider::after {
+    height: 1px;
+    flex: 1;
+    background: #e6e6e6;
+    content: "";
+}
+
+.account_social {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.account_social button {
+    width: 44px;
+    aspect-ratio: 1;
+    border: 1px solid #d8d8d8;
+    border-radius: 50%;
+    background: #fff;
+    color: #666;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.account_signup {
+    color: #777;
+    font-size: 14px;
+    text-align: center;
+}
+
+.account_signup button {
+    border: 0;
+    background: transparent;
+    color: var(--login-green);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    .login_simple_header {
+        border-bottom: 1px solid #eee;
+    }
+}
+
+@media (max-width: 768px) {
+    .login_simple_header {
+        width: calc(100% - 32px);
+        min-height: 64px;
+    }
+
+    .login_brand {
+        display: none;
+    }
+
+    .login_header_actions {
+        margin-left: auto;
+    }
+
+    .account_login {
+        width: min(100% - 40px, 420px);
+        min-height: calc(100dvh - 64px);
+        justify-content: flex-start;
+        gap: 24px;
+        padding-block: 34px 56px;
+    }
+
+    .account_login_logo img {
+        width: 142px;
+    }
+}
+
+@media (max-width: 420px) {
+    .account_login {
+        width: calc(100% - 32px);
+    }
+
+    .account_login_options {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Figma 1658:46545 / 1658:46744 - 메뉴가 없는 독립 로그인 화면 */
+.account_page {
+    min-height: 100dvh;
+    background: #f8f8f8;
+}
+
+.account_login {
+    width: min(1030px, calc(100% - 40px));
+    min-height: 100dvh;
+    justify-content: flex-start;
+    gap: 70px;
+    padding-block: clamp(90px, 14vh, 230px) 90px;
+}
+
+.account_login_logo img {
+    width: clamp(150px, 12vw, 200px);
+}
+
+.account_login_panel {
+    width: 100%;
+    gap: 30px;
+}
+
+.account_login_form {
+    gap: 30px;
+}
+
+.account_field {
+    gap: 6px;
+}
+
+.account_field > span:first-child {
+    color: var(--login-muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.account_field input {
+    min-height: 48px;
+    border: 0;
+    background: rgba(255, 255, 255, .72);
+    font-size: 15px;
+}
+
+.account_field input:focus {
+    background: #fff;
+}
+
+.account_login_options {
+    margin-top: -14px;
+}
+
+.login_error,
+.login_message {
+    min-height: 0;
+}
+
+.login_error:empty,
+.login_message:empty {
+    display: none;
+}
+
+.account_login_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 4vw, 50px);
+    margin-top: 6px;
+}
+
+.account_login_buttons > button {
+    width: min(100%, 362px);
+    min-height: 48px;
+    flex: 1 1 0;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.account_signup_button {
+    border: 1px solid #8e8e8e;
+    background: #8e8e8e;
+    color: #fff;
+}
+
+.account_submit {
+    border-color: var(--login-green);
+    background: var(--login-green);
+    color: #fff;
+}
+
+.account_guest {
+    display: none;
+    border: 1px solid #c6c6c6;
+    background: #fff;
+    color: #8e8e8e;
+}
+
+.account_divider {
+    width: min(362px, 100%);
+    align-self: center;
+    justify-content: center;
+    color: var(--login-muted);
+    font-size: 13px;
+}
+
+.account_social {
+    gap: 12px;
+}
+
+.account_social button {
+    width: 78px;
+    height: 38px;
+    border-radius: 7px;
+    background: transparent;
+}
+
+.account_social .social_naver { border-color: #2db400; color: #2db400; }
+.account_social .social_google { border-color: #8e8e8e; color: #555; }
+.account_social .social_facebook { border-color: #08f; color: #08f; }
+
+.account_signup {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .account_page {
+        background: #fff;
+    }
+
+    .account_login {
+        width: min(100% - 40px, 420px);
+        min-height: 100dvh;
+        gap: 34px;
+        padding-block: 78px 56px;
+    }
+
+    .account_login_logo img {
+        width: 200px;
+        max-width: 64vw;
+    }
+
+    .account_login_panel {
+        gap: 22px;
+    }
+
+    .account_login_form {
+        gap: 20px;
+    }
+
+    .account_field > span:first-child,
+    .account_login_options,
+    .account_signup {
+        font-size: 12px;
+    }
+
+    .account_field input {
+        min-height: 46px;
+        background: #f8f8f8;
+        font-size: 14px;
+    }
+
+    .account_login_options {
+        align-items: center;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: -12px;
+    }
+
+    .account_login_buttons {
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .account_login_buttons > button {
+        width: auto;
+        min-height: 46px;
+        padding: 9px 24px;
+        font-size: 14px;
+    }
+
+    .account_signup_button {
+        display: none;
+    }
+
+    .account_guest {
+        display: block;
+        order: 2;
+    }
+
+    .account_submit {
+        order: 1;
+    }
+
+    .account_divider {
+        width: 100%;
+    }
+
+    .account_social button {
+        width: 72px;
+        height: 36px;
+    }
+
+    .account_signup {
+        display: block;
+    }
+}
+
+@media (max-width: 380px) {
+    .account_login {
+        width: calc(100% - 28px);
+    }
+
+    .account_login_buttons > button {
+        padding-inline: 18px;
+    }
+}

@@ -282,6 +282,12 @@
 
 @media (max-width: 768px) {
 
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
     .gnb {
         display: none;
     }
@@ -291,12 +297,16 @@
         display: none;
 
         width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        overscroll-behavior-x: none;
 
         background-color: #f8f8f8;
 
         color: #555;
 
         position: relative;
+        contain: inline-size;
 
         z-index: 100;
     }
@@ -388,10 +398,32 @@
 
         border-radius: 50%;
 
+        display: grid;
+        place-items: center;
         background-color: #f2f2f2;
 
         overflow: hidden;
 
+    }
+
+    .mobile_profile_image .icon {
+        width: 24px;
+        height: 24px;
+        display: block;
+        background-color: #777;
+    }
+
+    .mobile_profile_image [data-auth-icon].user {
+        display: block;
+        background-color: #009944;
+        -webkit-mask-image: url("../img/icon/user.svg");
+        mask-image: url("../img/icon/user.svg");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
     }
 
 
@@ -573,6 +605,15 @@
         gap: 11px;
 
         overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+        padding-inline: 20px;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x proximity;
+        touch-action: pan-x;
+        contain: inline-size;
+        isolation: isolate;
+        -webkit-overflow-scrolling: touch;
 
         scrollbar-width: none;
 
@@ -587,7 +628,9 @@
     .mobile_schedule_card {
 
         min-width: 105px;
+        flex: 0 0 105px;
         min-height: 110px;
+        scroll-snap-align: start;
 
         padding: 12px 10px;
 
@@ -612,7 +655,7 @@
 
         margin: 0;
 
-        font-size: 10px;
+        font-size: 13px;
         line-height: 1.45;
 
     }
@@ -747,6 +790,8 @@
 
     .mobile_menu_body {
         width: 100%;
+        max-width: 100%;
+        overflow: hidden;
 
         display: grid;
 
@@ -813,7 +858,7 @@
 
     }
 
-    .mobile_depth_1 > button {
+    .mobile_depth_1 > li > button {
 
         padding-left: 20px;
 
@@ -821,7 +866,13 @@
 
     }
 
-    .mobile_menu_column .is_active {
+    .mobile_menu_column button:focus-visible,
+    .mobile_menu_column a:focus-visible {
+        outline: 2px solid #009944;
+        outline-offset: -2px;
+    }
+
+    .mobile_depth_1 .is_active {
 
         background-color: #009944;
 
@@ -829,6 +880,19 @@
 
         font-weight: 600;
 
+    }
+
+    .mobile_depth_2 .is_active,
+    .mobile_depth_3 .is_active {
+        color: #009944;
+        background-color: transparent;
+        box-shadow: inset 0 -2px 0 #009944;
+        font-weight: 600;
+    }
+
+    body.menu_open {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
 

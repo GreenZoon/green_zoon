@@ -524,13 +524,13 @@
         <div class="mobile_user_inner">
 
             <div class="mobile_user_text">
-                <strong>그린죤 관리자 계정</strong>
+                <strong data-auth-user-name>그린죤 방문자</strong>
             </div>
 
             <!-- 프로필 이미지 자리 -->
-            <div class="icon mobile_profile_image u">
-                <!-- 이미지 넣기 -->
-            </div>
+            <a class="mobile_profile_image" data-auth-link href="/user_page/Login.html" aria-label="로그인">
+                <span class="icon login" data-auth-icon aria-hidden="true"></span>
+            </a>
 
         </div>
 
@@ -543,7 +543,7 @@
 
     <nav class="mobile_quick_menu">
 
-        <a href="#" class="mobile_quick_item">
+        <a href="/user_page/user_Profile_page.html" class="mobile_quick_item" data-auth-link>
 
             <div class="mobile_quick_left">
 
@@ -560,7 +560,7 @@
         </a>
 
 
-        <a href="#" class="mobile_quick_item">
+        <a href="/user_page/user_Profile_page.html" class="mobile_quick_item" data-auth-link>
 
             <div class="mobile_quick_left">
 
@@ -577,7 +577,7 @@
         </a>
 
 
-        <a href="#" class="mobile_quick_item">
+        <a href="tel:18991367" class="mobile_quick_item">
 
             <div class="mobile_quick_left">
 
@@ -607,6 +607,8 @@
             <button
                 class="mobile_schedule_tab_btn"
                 type="button"
+                data-schedule-tab="work"
+                aria-selected="false"
             >
                 작업 일정
             </button>
@@ -614,6 +616,8 @@
             <button
                 class="mobile_schedule_tab_btn is_active"
                 type="button"
+                data-schedule-tab="visit"
+                aria-selected="true"
             >
                 방문 일정
             </button>
