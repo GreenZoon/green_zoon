@@ -157,7 +157,7 @@
         "img/sub_page/gallery/event/gallery_event_03.png",
         "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/gallery/event/gallery_event_05.png",
-        "img/sub_page/gallery/event/gallery_event_06.png",
+        "img/sub_page/news_Dining_together.jpg",
         "img/sub_page/news_event.jpg",
         "", "", "", "",
         "img/sub_page/gallery/event/gallery_event_08.png",
@@ -558,25 +558,13 @@
         if (!nav || !list) return;
 
         const cards = Array.from(list.querySelectorAll(".event_card"));
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        function endDateFor(card) {
-            const text = card.querySelector("time")?.textContent.trim() || "";
-            const dates = text.match(/\d{4}\.\d{2}\.\d{2}|\d{2}\.\d{2}/g) || [];
-            if (!dates.length) return null;
-
-            const start = dates[0].split(".").map(Number);
-            const end = (dates[1] || dates[0]).split(".").map(Number);
-            const year = end.length === 3 ? end[0] : start[0];
-            const month = end.length === 3 ? end[1] : end[0];
-            const day = end.length === 3 ? end[2] : end[1];
-            return new Date(year, month - 1, day, 23, 59, 59);
-        }
-
         cards.forEach(function (card) {
-            const endDate = endDateFor(card);
-            card.dataset.eventStatus = endDate && endDate >= today ? "진행중" : "종료";
+            const status = card.dataset.eventStatus;
+            const badge = card.querySelector(".event_status");
+            if (badge && (status === "진행중" || status === "종료")) {
+                badge.textContent = status;
+                badge.dataset.status = status;
+            }
         });
 
         nav.querySelectorAll("button").forEach(function (button) {
@@ -659,6 +647,9 @@
                         });
                         if (year === 2026 && month === 2 && day === 10) cell.classList.add("selected");
                         day += 1;
+                    } else {
+                        cell.classList.add("is-empty");
+                        cell.setAttribute("aria-hidden", "true");
                     }
                     row.appendChild(cell);
                 }

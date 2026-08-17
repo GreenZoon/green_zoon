@@ -30,17 +30,23 @@
 
 .company_tabs {
 
+    width: 100%;
     min-height: 70px;
+    display: flex;
     align-items: center;
+    border-bottom: 1px solid #f2f2f2;
     background-color: #fff;
 
 }
 
 .company_menu{
 
-    padding: 0 100px;
+    width: 100%;
     min-height: 70px;
+    display: flex;
     align-items: stretch;
+    justify-content: flex-end;
+    gap: 0;
   
 }
 
@@ -55,14 +61,27 @@
 
     width: 100%;
     min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 7px;
     padding: 0 20px;
     color: #8e8e8e;
+    font-size: 1.1875rem;
+    font-weight: 700;
     letter-spacing: -0.04em;
+    border: 0;
+    appearance: none;
+    background-color: transparent;
+    font-family: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 
 }
 
-.company_tit:hover {
+.company_tit:hover,
+.company_tit:focus-visible {
 
     color: #f8f8f8;
     background-color: #009944;
@@ -77,7 +96,8 @@
 
 }
 
-.company_tit:hover .company_arrow {
+.company_tit:hover .company_arrow,
+.company_tit:focus-visible .company_arrow {
 
     transform: rotate(0deg);
 
@@ -100,7 +120,9 @@
 }
 
 .company_menu > li:hover .company_drop,
-.company_menu > li:focus-within .company_drop {
+.company_menu > li:focus-within .company_drop,
+.company_menu > li.is-open .company_drop,
+.company_menu > li > .company_tit[aria-expanded="true"] + .company_drop {
 
     display: block;
 
@@ -160,7 +182,6 @@
 }
 
 .company_intro_text p {
-
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
@@ -168,8 +189,7 @@
 }
 
 .company_values {
-
-    flex: 0 0 auto;
+    flex: 0 0 500px;
     width: 500px;
     height: 500px;
     position: relative;
@@ -194,8 +214,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3%;
-    flex-direction: column;
     position: absolute;
     z-index: 1;
     border: 2px solid #009944;
@@ -207,25 +225,17 @@
 
 }
 
-.company_values li .icon{
-
-    background-color: #009944;
-    width: 28%;
-}
-
 .company_values li:nth-child(1) {
     top: 0;
     left: 160px;
 }
 
 .company_values li:nth-child(2) {
-
     bottom: 0;
     left: 0;
 }
 
 .company_values li:nth-child(3) {
-
     right: 0;
     bottom: 0;
 }
@@ -237,7 +247,6 @@
 }
 
 .company_greeting_text {
-
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -259,7 +268,7 @@
 }
 
 .company_portrait {
-    flex: 0 0 auto;
+    flex: 0 0 302px;
     width: 302px;
     height: 557px;
     align-self: center;
@@ -288,7 +297,6 @@
     overflow: hidden;
     border-radius: 12px;
     background-color: #f2f2f2;
-
 }
 
 .company_map iframe {
@@ -344,12 +352,8 @@
     .company_menu {
 
         min-height: 60px;
-        justify-content: center;
+        justify-content: flex-end;
     
-    }
-
-    .company_menu::after {
-        display: none;
     }
 
     .company_tit {
@@ -390,42 +394,6 @@
     }
 }
 
-@media (max-width: 1280px) {
-    .company_client_wrap {
-        align-items: flex-start;
-        gap: clamp(28px, 4vw, 52px);
-    }
-
-    .company_client_list {
-        gap: 12px 30px;
-    }
-
-    .company_client_list li {
-        flex-basis: calc((100% - 60px) / 3);
-        min-width: 0;
-        font-size: 0.875rem;
-        overflow-wrap: anywhere;
-    }
-
-    .company_client_logos {
-        flex-basis: 138px;
-    }
-}
-
-@media (max-width: 900px) and (min-width: 769px) {
-    .company_client_list li {
-        flex-basis: calc((100% - 30px) / 2);
-    }
-
-    .company_logo_grid {
-        gap: 16px;
-    }
-
-    .company_logo {
-        flex-basis: calc((100% - 48px) / 4);
-    }
-}
-
 @media (max-width: 1024px) {
 
     .company_tabs {
@@ -437,7 +405,7 @@
     .company_menu {
 
         min-height: 50px;
-        justify-content: center;
+        justify-content: flex-end;
 
     }
 
@@ -529,6 +497,11 @@
         overflow: visible;
     }
 
+    .company_menu > li.is-open .company_tit {
+        color: #009944;
+        background-color: #fff;
+    }
+
     .company_hero {
         height: 173px;
     }
@@ -545,9 +518,8 @@
     .company_menu {
 
         width: 100%;
-        min-width: 100%;
         min-height: 42px;
-        gap: clamp(16px, 7vw, 48px);
+        gap: 12px;
         justify-content: center;
         overflow: visible;
 
@@ -599,16 +571,18 @@
 
     }
 
-    .company_menu > li:hover .company_drop,
-    .company_menu > li:focus-within .company_drop {
+    .company_menu > li:hover:not(.is-open) .company_drop,
+    .company_menu > li:focus-within:not(.is-open) .company_drop {
 
         display: none;
 
     }
 
+    .company_menu > li.is-open .company_drop,
     .company_menu > li > .company_tit[aria-expanded="true"] + .company_drop {
 
-        display: block;
+        display: block !important;
+        pointer-events: auto;
 
     }
 
@@ -776,63 +750,6 @@
     }
 }
 
-/* 기업소개 모바일 공통 레이아웃 최종 규칙
-   앞선 페이지별 수치는 유지하고, 협력/거래처가 화면 밖으로 넘는 경우만 제한한다. */
-@media (max-width: 768px) {
-    .company_clients,
-    .company_clients > div,
-    .company_client_wrap,
-    .company_client_list,
-    .company_logo_grid {
-        box-sizing: border-box;
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-    }
-
-    .company_clients {
-        overflow: visible;
-    }
-
-    .company_clients > div {
-        gap: clamp(22px, 5vw, 40px);
-    }
-
-    .company_client_wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .company_client_list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px clamp(16px, 4vw, 28px);
-    }
-
-    .company_client_list li {
-        min-width: 0;
-        overflow-wrap: anywhere;
-    }
-
-    .company_logo_grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .company_logo_grid .company_logo {
-        min-width: 0;
-        min-height: 44px;
-    }
-}
-
-@media (max-width: 480px) {
-    .company_logo_grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
 /* 기업 정보 / 허가 및 인증서 */
 
 .company_branches,
@@ -860,7 +777,7 @@
 
 .company_branch {
     flex: 1;
-    min-height: 360px;
+    padding: 35px 40px;
     display: flex;
     flex-direction: column;
     gap: 28px;
@@ -891,40 +808,29 @@
 
 .company_branch dl div {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
-}
-
-.company_branch dt {
-    flex: 0 0 110px;
-}
-
-.company_branch dd {
-    flex: 1;
 }
 
 .company_branch dt,
 .company_branch dd {
     font-size: 1rem;
     line-height: 1.6;
-
 }
 
 .company_branch.contact h2,
 .company_branch.contact dd {
-
     color: #009944;
 }
 
 .company_doc_main,
 .company_doc_grid {
-
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
 }
 
 .company_doc_main .company_doc {
-
     flex: 1 1 calc((100% - 140px) / 3);
 }
 
@@ -941,9 +847,11 @@
 }
 
 .company_doc_img,
-.company_award_img{
+.company_award_img,
+.company_history_img,
+.company_history_logo,
+.company_logo {
     background-color: #f2f2f2;
-
 }
 
 .company_doc_img img,
@@ -951,37 +859,35 @@
 .company_logo img,
 .company_award_img img,
 .company_history_img img {
-
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
 }
 
 .company_doc_img img,
 .company_history_logo img,
 .company_logo img {
-  
-     object-fit: contain;
+    object-fit: contain;
 }
 
+.company_award_img img,
+.company_history_img img {
+    object-fit: cover;
+}
 
 .company_doc_img {
-
     width: min(100%, 380px);
     aspect-ratio: 3 / 4;
     border-radius: 10px;
 }
 
 .company_doc h2 {
-
     color: #555;
     font-size: 1.25rem;
     line-height: 1.4;
 }
 
 .company_doc p {
-
     max-width: 380px;
     color: #8e8e8e;
     font-size: 0.9375rem;
@@ -989,7 +895,6 @@
 }
 
 .company_award_tabs {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1258,6 +1163,11 @@
     .company_client_list li {
         flex-basis: calc((100% - 105px) / 4);
     }
+
+    .company_branch {
+        padding: 24px 32px;
+        gap: 24px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1286,6 +1196,11 @@
     .company_client_list li {
         flex-basis: calc((100% - 70px) / 3);
     }
+
+    .company_branch {
+        padding: 19px 27px;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1310,7 +1225,8 @@
     }
 
     .company_branch {
-        min-height: 0;
+        padding: 16px 24px;
+        gap: 16px;
         border-width: 1px;
         border-radius: 8px;
     }
@@ -1347,10 +1263,6 @@
 
     .company_branch dl div {
         gap: 12px;
-    }
-
-    .company_branch dt {
-        flex-basis: 80px;
     }
 
     .company_branch dt,
@@ -1492,18 +1404,15 @@
     }
 
     .company_clients {
-        width: 100%;
-        max-width: 100%;
         gap: 62px;
-        overflow: hidden;
     }
 
     .company_clients > div:first-child {
-        order: 2;
+        order: 1;
     }
 
     .company_clients > div:last-child {
-        order: 1;
+        order: 2;
     }
 
     .company_clients h1,
@@ -1521,39 +1430,21 @@
     }
 
     .company_client_wrap {
-        width: 100%;
-        min-width: 0;
         flex-direction: column;
-        gap: 24px;
     }
 
     .company_client_list {
-        width: 100%;
-        min-width: 0;
         gap: 5px 26px;
     }
 
     .company_client_list li {
-        min-width: 0;
         flex-basis: calc((100% - 26px) / 2);
-        font-size: 0.8125rem;
-        text-align: left;
-        line-height: 1.6;
+        font-size: 0.625rem;
+        text-align: center;
     }
 
     .company_client_logos {
-        width: 100%;
-        min-width: 0;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .company_client_logos .company_logo {
-        width: 100%;
-        min-width: 0;
-        min-height: 48px;
-        flex-basis: auto;
+        display: none;
     }
 }
 
@@ -1581,7 +1472,4 @@
         flex-basis: calc((100% - 20px) / 3);
     }
 
-    .company_client_logos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }

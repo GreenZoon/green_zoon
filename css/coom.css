@@ -122,10 +122,6 @@ h4 {
         color: inherit;
 }
 
-h1{
-
-      font-weight: 700;
-}
 
 
 /* -------------------------
@@ -284,10 +280,11 @@ section {
 .subpage_nav {
 
     width: 100%;
-
+    min-height: 44px;
     display: flex;
-
-    border-bottom: 1px solid #f2f2f2;
+    align-items: flex-end;
+    overflow: visible;
+    box-shadow: inset 0 -2px 0 #f2f2f2;
 }
 
 .subpage_nav_list {
@@ -296,25 +293,71 @@ section {
 
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
 
     gap: 0;
 }
 
-.subpage_nav_list::after {
-
-    content: "";
-
-    flex: 0 0 150px;
-}
-
 .subpage_nav_link {
 
+    width: auto;
+    min-width: 120px;
+    min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #8e8e8e;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: inset 0 -2px 0 transparent;
+    transition: color .25s ease, box-shadow .25s ease;
+}
 
-    font-size: 1.1875rem;
-    font-weight: 700;
+.subpage_nav_link:hover,
+.subpage_nav_link:focus-visible {
+    color: #009944;
+    background-color: transparent;
+    box-shadow: inset 0 -2px 0 #009944;
+}
+
+.subpage_nav_link[aria-current="page"] {
+    color: #8e8e8e;
+    background-color: transparent;
+    box-shadow: inset 0 -2px 0 transparent;
+}
+
+@media (max-width: 1500px) {
+    .subpage_nav_list {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .subpage_nav {
+        min-height: 42px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: none;
+    }
+
+    .subpage_nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subpage_nav_list {
+        width: max-content;
+        min-width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .subpage_nav_link {
+        min-width: max-content;
+        min-height: 42px;
+        flex: 0 0 auto;
+        font-size: 0.875rem;
+        padding-block: 8px;
+    }
 }
 
 /* 초록색 섹션 */
@@ -1449,21 +1492,10 @@ aspect-ratio: 1 / 1;
     
 }
 
-
-/* 인재 */
-
 .graduate{
 
            -webkit-mask-image: url("../img/icon/graduate.svg");
     mask-image: url("../img/icon/graduate.svg");
-
-
-}
-
-.digital_asset{
-
-               -webkit-mask-image: url("../img/icon/digital-asset.svg");
-    mask-image: url("../img/icon/digital-asset.svg");
 
 
 }
@@ -1579,11 +1611,7 @@ aspect-ratio: 1 / 1;
         font-weight: 700;
 
     } */
-.box {
 
-    padding: 12px 20px;
-    border-radius: 16px;
-}
 }
 
 @media (max-width: 1024px) {
@@ -1856,8 +1884,6 @@ aspect-ratio: 1 / 1;
 
     }
 
-
-
     .small_text {
 
         font-size: 0.75rem;      /* 12px */
@@ -1878,13 +1904,6 @@ aspect-ratio: 1 / 1;
         width: 16px;
             
     }
-
-    .box {
-
-    padding: 10px 16px;
-    border-radius: 14px;
-}
-
 
 }
 

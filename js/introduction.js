@@ -16,12 +16,17 @@
 
         try {
 
-            const response = await fetch(
+            const menuUrl = new URL(
                 resolvePath("components/sub_pag/Introduction_sub_menu.html"),
-                {
-                    cache: "no-cache"
-                }
+                window.location.href
             );
+
+            /* GitHub Pages에서도 수정된 메뉴 조각을 즉시 반영합니다. */
+            menuUrl.searchParams.set("v", String(Date.now()));
+
+            const response = await fetch(menuUrl.href, {
+                cache: "no-store"
+            });
 
             if (!response.ok) {
                 console.warn(
@@ -50,16 +55,15 @@
             .querySelector(`[data-company-page='${currentPage}']`)
             ?.setAttribute("aria-current", "page");
 
-        const mobileMenu = window.matchMedia("(max-width: 768px)");
-
         function closeCompanyMenu(except) {
 
             target
-                .querySelectorAll(".company_tit[aria-expanded='true']")
+                .querySelectorAll(".company_tit")
                 .forEach(function (title) {
 
                     if (title !== except) {
                         title.setAttribute("aria-expanded", "false");
+                        title.parentElement?.classList.remove("is-open");
                     }
 
                 });
@@ -67,11 +71,6 @@
         }
 
         target.addEventListener("click", function (event) {
-
-            if (!mobileMenu.matches) {
-                return;
-            }
-
             const title = event.target.closest(".company_tit");
 
             if (!title || !target.contains(title)) {
@@ -87,14 +86,17 @@
             const isOpen = title.getAttribute("aria-expanded") === "true";
 
             event.preventDefault();
+            event.stopPropagation();
 
             if (isOpen) {
                 title.setAttribute("aria-expanded", "false");
+                title.parentElement?.classList.remove("is-open");
                 return;
             }
 
             closeCompanyMenu(title);
             title.setAttribute("aria-expanded", "true");
+            title.parentElement?.classList.add("is-open");
 
         });
 
@@ -106,11 +108,9 @@
 
         });
 
-        mobileMenu.addEventListener("change", function () {
-
+        window.addEventListener("resize", function () {
             closeCompanyMenu();
-
-        });
+        }, { passive: true });
     }
 
     function initAwardTabs() {
