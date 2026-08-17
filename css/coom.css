@@ -64,57 +64,6 @@ img {
 
 }
 
-/* =========================================================
-   FACTORY DETAIL
-   Figma final visual correction
-========================================================= */
-
-/* =========================================================
-   1. EFFECT ICON
-========================================================= */
-
-.service_effect .effect_icon_circle {
-
-    width: 48px;
-    aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service_effect .effect_icon_circle > .icon {
-
-    width: 48px;
-    aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
-    background-color: #009944;
-}
-
-.service_video_play {
-
-    width: clamp(30%, 8vw, 140px);
-
-    position: absolute;
-    
-    aspect-ratio: 1 / 1;
-
-    top: 50%;
-    left: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: rgba(248, 248, 248, 0.5);
-
-}
-
-
 /* 버튼 */
 
 button {
@@ -324,104 +273,58 @@ section {
 }
 
 /* =========================================================
-   6. GREEN SECTION
+   SUB PAGE NAVIGATION BASE
+   계열별 높이와 반응형 차이는 전용 CSS에서 유지
 ========================================================= */
+
+.subpage_nav {
+
+    width: 100%;
+
+    display: flex;
+
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.subpage_nav_list {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 0;
+}
+
+.subpage_nav_list::after {
+
+    content: "";
+
+    flex: 0 0 150px;
+}
+
+.subpage_nav_link {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.1875rem;
+    font-weight: 700;
+}
+
+/* 초록색 섹션 */
 
 .section_g {
 
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 18px;
-
-    text-align: center;
-}
-
-.section_g_2 {
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f2f2f2;
-
     background-color: #009944;
-
-    gap: 36px;
-
-}
-
-.section_g h2,
-.section_g_2 h2 {
-
-    color: inherit;
-    
-}
-
-.section_g .tit_wrap,
-.section_g_2 .tit_wrap {
-
-    width: 50%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 7px;
-
-    color: #f2f2f2;
-}
-
-.section_g .tit_wrap {
-
-    max-width: 700px;
-}
-
-.section_g_2 .tit_wrap {
-
-    max-width: 520px;
-}
-
-.section_g_2 > div {
-
-    width: 50%;
-    max-width: 600px;
-}
-
-.section_g,.section_g_2{
-
-    width: 100%;
-    background-color: #009944;
-    display: flex;
-   
-    align-items: center;
-    justify-content: center;
-    color: #f2f2f2;
-     gap: 36px;
-    
+    color: #f8f8f8;
 }
 
 .section_g a,
-.section_g_2 a {
+.section_g a p {
 
-    color: #f2f2f2;
-}
-
-.section_g_2{
-
-    text-align: center;
-     flex-direction: column;
-}
-
-.section_g h2,
-.section_g_2 h2 {
-
-    color: inherit;
-    
+    color: #f8f8f8;
 }
 
 /* =========================================================
@@ -1772,7 +1675,7 @@ aspect-ratio: 1 / 1;
 
     }
 
-    .section_g_small_w {
+        .section_g {
 
         background-color: #fff;
         

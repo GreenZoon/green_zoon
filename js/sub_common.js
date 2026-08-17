@@ -1250,7 +1250,7 @@
 
         document
             .querySelectorAll(
-                ".sub_pag_menu .sub_pag_tit, .sub_category a"
+                ".subpage_nav_link:not(.company_tit)"
             )
             .forEach(function (link) {
 
