@@ -38,6 +38,7 @@
 
 .company_menu{
 
+       padding: 0 100px;
     min-height: 70px;
     align-items: stretch;
   
@@ -329,7 +330,7 @@
     .company_menu {
 
         min-height: 60px;
-        justify-content: center;
+        padding: 0 6px;
     
     }
 
@@ -339,6 +340,7 @@
 
     .company_tit {
 
+         
         min-height: 60px;
 
     }
@@ -386,7 +388,6 @@
     .company_menu {
 
         min-height: 50px;
-        justify-content: center;
 
     }
 
@@ -479,8 +480,7 @@
         min-width: 100%;
         min-height: 42px;
         gap: 12px;
-        justify-content: center;
-
+       padding: 0 40px;
     }
 
     .company_menu > li {
@@ -632,6 +632,7 @@
         flex-basis: auto;
         height: 320px;
         border-radius: 10px;
+        
     }
 
     .company_info {
@@ -667,6 +668,8 @@
 
     .company_map {
         height: 220px;
+         padding: 0 20px;
+             justify-content: center;
     }
 
     .company_values {
