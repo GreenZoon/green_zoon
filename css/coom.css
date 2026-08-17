@@ -122,6 +122,10 @@ h4 {
         color: inherit;
 }
 
+h1{
+
+      font-weight: 700;
+}
 
 
 /* -------------------------
@@ -1444,6 +1448,8 @@ aspect-ratio: 1 / 1;
     mask-image: url("../img/icon/education.svg");
     
 }
+
+/* 인재 */
 
 .graduate{
 
