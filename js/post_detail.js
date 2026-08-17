@@ -400,7 +400,7 @@
 
             if (list.classList.contains("board")) {
                 items = Array.from(list.querySelectorAll(":scope > .board_row"));
-                perPage = 5;
+                perPage = list.closest(".notice_list") ? 6 : 5;
             } else {
                 items = Array.from(list.children);
                 perPage = list.classList.contains("event_cards") ? 3 : 8;
