@@ -17,12 +17,10 @@
 
 .gallery_page .sub_visual {
     background-image:
-        linear-gradient(rgba(29, 29, 29, .12), rgba(29, 29, 29, .12)),
-        url("../img/mainimgs/Event_2.jpg"),
-        url("../img/mainimgs/Event_1.jpg"),
-        url("../img/mainimgs/Event_3.jpg");
-    background-position: center, left, center, right;
-    background-size: 100% 100%, 34% 100%, 34% 100%, 34% 100%;
+        linear-gradient(rgba(29, 29, 29, .08), rgba(29, 29, 29, .08)),
+        url("../img/sub_page/gallery/gallery_visual.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .community_page .sub_visual {
@@ -202,6 +200,14 @@
 .review_actions a { min-width: 120px; min-height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #8e8e8e; border-radius: 8px; }
 .review_actions a:last-child { border-color: #009944; background: #009944; color: #fff; }
 .review_board { gap: 24px; padding: 28px; }
+.review_form { display: flex; flex-direction: column; gap: 22px; border: 1px solid #c6c6c6; border-radius: 15px; padding: 28px; }
+.review_form label { display: flex; flex-direction: column; gap: 8px; font-weight: 700; }
+.review_form input, .review_form textarea { width: 100%; border: 1px solid #c6c6c6; border-radius: 8px; background: #fff; color: #555; font: inherit; padding: 14px 16px; }
+.review_form textarea { min-height: 220px; resize: vertical; }
+.review_form_actions { display: flex; justify-content: flex-end; gap: 12px; }
+.review_form_actions a, .review_form_actions button { min-width: 120px; min-height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #8e8e8e; border-radius: 8px; background: #fff; color: #555; }
+.review_form_actions button { border-color: #009944; background: #009944; color: #fff; cursor: pointer; }
+.review_form_message { color: #009944; line-height: 1.6; }
 
 .today_work { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
 .today_card { width: 470px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #009944; border-radius: 15px; color: #009944; padding: 32px; }
@@ -482,7 +488,7 @@
     .sub_visual_text { padding: 0 20px; }
     .sub_visual_text p { font-size: 14px; }
     .sub_visual_text h1 { font-size: 25px; }
-    .sub_category { justify-content: flex-start; gap: 12px; overflow-x: auto; scrollbar-width: none; }
+    .sub_category { justify-content: safe center; gap: 12px; overflow-x: auto; scrollbar-width: none; }
     .sub_category::-webkit-scrollbar { display: none; }
     .sub_category a { width: auto; min-width: max-content; flex: 0 0 auto; min-height: 44px; border-bottom: 2px solid transparent; background: transparent; color: #8e8e8e; font-size: 14px; }
     .sub_category a:hover { border-bottom-color: #009944; background: transparent; color: #009944; }
@@ -512,7 +518,7 @@
     .gallery_cards { gap: 20px 10px; }
     .gallery_card { width: calc((100% - 10px) / 2); gap: 8px; }
     .gallery_card h3 { font-size: 14px; }
-    .gallery_card_tag { right: 7px; bottom: 7px; font-size: 10px; padding: 4px 8px; }
+    .gallery_card_tag { right: 7px; bottom: 7px; font-size: 12px; padding: 4px 8px; }
     .gallery_play { width: 42px; }
     .gallery_channel { min-height: 360px; flex-direction: column; gap: 10px; padding: 28px 0; }
     .gallery_channel_title { gap: 20px; }
@@ -542,7 +548,7 @@
     .board_head { min-height: 40px; }
     .board_row { min-height: 52px; }
     .board_badge { flex-basis: 45px; padding: 5px; }
-    .board_date, .board_writer, .board_view { flex-basis: 48px; font-size: 10px; }
+    .board_date, .board_writer, .board_view { flex-basis: 48px; font-size: 12px; }
     .community_filter { gap: 12px; }
     .community_filter button, .community_filter a { min-width: 76px; min-height: 34px; border-radius: 6px; font-size: 12px; }
     .event_cards, .information_cards { gap: 22px 10px; }
@@ -558,6 +564,9 @@
     .faq_answer_text { gap: 16px; font-size: 13px; }
     .faq_answer img { width: 100%; }
     .review_write, .review_board { border-radius: 10px; padding: 20px; }
+    .review_form { border-radius: 10px; padding: 20px; }
+    .review_form_actions { justify-content: center; }
+    .review_form_actions a, .review_form_actions button { min-width: 100px; min-height: 40px; font-size: 14px; }
     .review_write h2, .review_board h2 { font-size: 19px; }
     .review_actions { justify-content: center; }
     .review_actions a { min-width: 100px; min-height: 38px; font-size: 12px; }
@@ -573,7 +582,7 @@
     .post_section > .sub_content { gap: 36px; }
     .post_head { gap: 10px; }
     .post_head h1 { font-size: 25px; }
-    .post_meta { gap: 12px; font-size: 10px; }
+    .post_meta { gap: 12px; font-size: 12px; }
     .post_body { gap: 32px; }
     .post_body.split { flex-direction: column; align-items: stretch; }
     .post_body.split .post_media { flex-basis: auto; }
@@ -606,7 +615,7 @@
     .sub_category a { font-size: 14px; }
     .content_head h1, .content_head h2, .gallery_feature_text h1, .community_title { font-size: 23px; }
     .gallery_feature_media img, .gallery_feature_media .empty_image { height: 180px; }
-    .gallery_card time, .information_meta, .event_card time { font-size: 10px; }
+    .gallery_card time, .information_meta, .event_card time { font-size: 12px; }
     .board_date, .board_writer, .board_view { flex-basis: 43px; }
     .board_view { display: none; }
     .review_actions { gap: 10px; }

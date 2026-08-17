@@ -158,7 +158,7 @@
         "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/gallery/event/gallery_event_05.png",
         "img/sub_page/gallery/event/gallery_event_06.png",
-        "img/sub_page/gallery/event/gallery_event_06.png",
+        "img/sub_page/news_event.jpg",
         "", "", "", "",
         "img/sub_page/gallery/event/gallery_event_08.png",
         "", "", "", "", ""
@@ -344,10 +344,13 @@
     }
 
     function linkCards(selector, type) {
-        document.querySelectorAll(selector).forEach(function (card, index) {
-            if (posts[type] && posts[type][index]) {
-                card.href = postUrl(type, index);
+        let contentIndex = 0;
+        document.querySelectorAll(selector).forEach(function (card) {
+            if (card.dataset.customReview === "true") return;
+            if (posts[type] && posts[type][contentIndex]) {
+                card.href = postUrl(type, contentIndex);
             }
+            contentIndex += 1;
         });
     }
 
@@ -405,7 +408,8 @@
 
             if (!items.length) return;
 
-            const pageCount = Math.ceil(items.length / perPage);
+            let filteredItems = items.slice();
+            let pageCount = Math.max(1, Math.ceil(filteredItems.length / perPage));
             let currentPage = 0;
 
             const previous = document.createElement("button");
@@ -423,12 +427,30 @@
 
             paging.replaceChildren(previous, numbers, next);
 
+            function renderNumbers() {
+                numbers.replaceChildren();
+
+                for (let page = 0; page < pageCount; page += 1) {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.textContent = page + 1;
+                    button.addEventListener("click", function () {
+                        showPage(page);
+                    });
+                    numbers.appendChild(button);
+                }
+            }
+
             function showPage(page) {
                 currentPage = Math.min(Math.max(page, 0), pageCount - 1);
                 const start = currentPage * perPage;
                 const end = start + perPage;
 
-                items.forEach(function (item, index) {
+                items.forEach(function (item) {
+                    item.hidden = true;
+                });
+
+                filteredItems.forEach(function (item, index) {
                     item.hidden = index < start || index >= end;
                 });
 
@@ -440,16 +462,7 @@
 
                 previous.disabled = currentPage === 0;
                 next.disabled = currentPage === pageCount - 1;
-            }
-
-            for (let page = 0; page < pageCount; page += 1) {
-                const button = document.createElement("button");
-                button.type = "button";
-                button.textContent = page + 1;
-                button.addEventListener("click", function () {
-                    showPage(page);
-                });
-                numbers.appendChild(button);
+                paging.hidden = filteredItems.length === 0;
             }
 
             previous.addEventListener("click", function () {
@@ -460,7 +473,200 @@
                 showPage(currentPage + 1);
             });
 
+            list.addEventListener("list-filter-change", function (event) {
+                const visible = event.detail && event.detail.items;
+                filteredItems = Array.isArray(visible) ? visible : items.slice();
+                pageCount = Math.max(1, Math.ceil(filteredItems.length / perPage));
+                renderNumbers();
+                showPage(0);
+            });
+
+            renderNumbers();
             showPage(0);
+        });
+    }
+
+    function initListSearch() {
+        document.querySelectorAll(".content_search").forEach(function (form) {
+            const scope = form.closest(".gallery_list, .community_body, .notice_list, .review_board") || form.parentElement;
+            const list = scope && scope.querySelector(".gallery_cards, .event_cards, .information_cards, .board, .faq_list");
+            const input = form.querySelector('input[type="search"]');
+            const filterButton = form.querySelector("button");
+            if (!list || !input) return;
+
+            const itemSelector = list.classList.contains("board") ? ":scope > .board_row" : list.classList.contains("faq_list") ? ":scope > details" : ":scope > a";
+            const items = Array.from(list.querySelectorAll(itemSelector));
+
+            function apply() {
+                const keyword = input.value.trim().toLocaleLowerCase("ko");
+                const matched = items.filter(function (item) {
+                    return !keyword || item.textContent.toLocaleLowerCase("ko").includes(keyword);
+                });
+
+                if (list.classList.contains("faq_list")) {
+                    items.forEach(function (item) { item.hidden = !matched.includes(item); });
+                } else {
+                    list.dispatchEvent(new CustomEvent("list-filter-change", { detail: { items: matched } }));
+                }
+            }
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                apply();
+            });
+            input.addEventListener("input", apply);
+            if (filterButton) {
+                filterButton.addEventListener("click", function () {
+                    if (input.value) {
+                        input.value = "";
+                        apply();
+                    }
+                    input.focus();
+                });
+            }
+        });
+    }
+
+    function initInformationFilter() {
+        const nav = document.querySelector(".information_filter");
+        const list = document.querySelector(".information_cards");
+        if (!nav || !list) return;
+
+        const cards = Array.from(list.querySelectorAll(".information_card"));
+        const categoryMap = ["생활", "정리", "청소", "생활", "청소", "생활", "청소", "관리", "관리", "관리", "관리", "관리"];
+
+        nav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const category = link.textContent.trim();
+                nav.querySelectorAll("a").forEach(function (item) { item.removeAttribute("aria-current"); });
+                link.setAttribute("aria-current", "page");
+                const matched = cards.filter(function (_, index) {
+                    return category === "전체" || categoryMap[index] === category;
+                });
+                list.dispatchEvent(new CustomEvent("list-filter-change", { detail: { items: matched } }));
+            });
+        });
+    }
+
+    function initFaqState() {
+        document.querySelectorAll(".faq_list details").forEach(function (details) {
+            const toggle = details.querySelector(".faq_toggle");
+            function sync() {
+                if (toggle) toggle.textContent = details.open ? "답변 닫기⌃" : "답변 확인하기⌄";
+            }
+            details.addEventListener("toggle", sync);
+            sync();
+        });
+    }
+
+    function initScheduleCalendar() {
+        const calendar = document.querySelector(".calendar");
+        const head = document.querySelector(".calendar_head");
+        if (!calendar || !head) return;
+
+        const title = head.querySelector("h2");
+        const previous = head.querySelector('button[aria-label="이전 달"]');
+        const next = head.querySelector('button[aria-label="다음 달"]');
+        const body = calendar.tBodies[0];
+        const todayCard = document.querySelector(".today_card");
+        let viewed = new Date(2026, 2, 1);
+
+        const marchJobs = ["삼일절", "공장청소", "공장 기계 세척", "물탱크 청소", "호텔 카페트 청소", "공장 바닥 청소", "새해맞이 학교 청소", "공장청소", "식품공장 청소", "목욕탕 곰팡이 청소", "김해 공장 전체 청소", "김해 새학년 맞이 대청소", "공장 물탱크 청소", "부산 물탱크 청소", "호텔 바닥 청소", "식품공장 청소", "공장청소", "김해 공장 전체 청소", "공장 설비 청소", "외벽 청소", "행사 청소", "공장청소", "본사 외벽 청소", "공장청소", "공장청소", "호텔 바닥 청소", "공장 기계 청소", "학교 청소", "공장청소", "외벽 청소", "공장청소"];
+
+        function jobFor(day) {
+            if (viewed.getFullYear() === 2026 && viewed.getMonth() === 2) return marchJobs[day - 1] || "";
+            return day % 3 === 0 ? "정기 청소" : "";
+        }
+
+        function select(cell) {
+            body.querySelectorAll("td").forEach(function (item) { item.classList.remove("selected"); });
+            cell.classList.add("selected");
+            const job = cell.querySelector("small");
+            if (todayCard && job && job.textContent) {
+                todayCard.innerHTML = "<strong>" + job.textContent + "</strong><span>" + (viewed.getMonth() + 1) + "월 " + cell.querySelector("span").textContent + "일 예정 작업</span>";
+            }
+        }
+
+        function render() {
+            const year = viewed.getFullYear();
+            const month = viewed.getMonth();
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+            title.textContent = year + "년  " + (month + 1) + "월";
+            calendar.setAttribute("aria-label", year + "년 " + (month + 1) + "월 작업 일정");
+            body.replaceChildren();
+
+            let day = 1;
+            for (let rowIndex = 0; rowIndex < 6 && day <= lastDate; rowIndex += 1) {
+                const row = document.createElement("tr");
+                for (let column = 0; column < 7; column += 1) {
+                    const cell = document.createElement("td");
+                    if ((rowIndex > 0 || column >= firstDay) && day <= lastDate) {
+                        const job = jobFor(day);
+                        cell.innerHTML = "<span>" + day + "</span>" + (job ? "<small>" + job + "</small>" : "");
+                        cell.tabIndex = 0;
+                        cell.addEventListener("click", function () { select(cell); });
+                        cell.addEventListener("keydown", function (event) {
+                            if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(cell); }
+                        });
+                        if (year === 2026 && month === 2 && day === 10) cell.classList.add("selected");
+                        day += 1;
+                    }
+                    row.appendChild(cell);
+                }
+                body.appendChild(row);
+            }
+        }
+
+        previous.addEventListener("click", function () { viewed.setMonth(viewed.getMonth() - 1); render(); });
+        next.addEventListener("click", function () { viewed.setMonth(viewed.getMonth() + 1); render(); });
+        render();
+    }
+
+    function initReviewWrite() {
+        const storageKey = "greenzone-user-reviews";
+        const form = document.querySelector("[data-review-form]");
+        const reviewBoard = document.querySelector(".review_board .board");
+
+        if (reviewBoard) {
+            let saved = [];
+            try { saved = JSON.parse(localStorage.getItem(storageKey) || "[]"); } catch (_) { saved = []; }
+            const firstRow = reviewBoard.querySelector(".board_head");
+            saved.slice().reverse().forEach(function (review) {
+                const row = document.createElement("a");
+                row.className = "board_row";
+                row.dataset.customReview = "true";
+                row.href = "ReviewWrite.html#saved-review";
+                row.innerHTML = '<span class="board_title"></span><time class="board_date"></time><span class="board_writer"></span><span class="board_view">0</span>';
+                row.querySelector(".board_title").textContent = review.title;
+                row.querySelector(".board_date").textContent = review.date;
+                row.querySelector(".board_writer").textContent = review.author;
+                firstRow.after(row);
+            });
+        }
+
+        if (!form) return;
+        const params = new URLSearchParams(window.location.search);
+        const message = form.querySelector("[data-review-message]");
+        if (params.get("mode") === "login" && message) {
+            message.textContent = "별도 로그인 서버가 연결되기 전까지는 작성자 확인 후 후기를 등록할 수 있습니다.";
+            form.querySelector('[name="author"]').focus();
+        }
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const data = new FormData(form);
+            let saved = [];
+            try { saved = JSON.parse(localStorage.getItem(storageKey) || "[]"); } catch (_) { saved = []; }
+            saved.push({
+                author: String(data.get("author") || "이용자").trim(),
+                title: String(data.get("title") || "이용 후기").trim(),
+                content: String(data.get("content") || "").trim(),
+                date: new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()).replace(/\. /g, ".").replace(/\.$/, "")
+            });
+            localStorage.setItem(storageKey, JSON.stringify(saved));
+            window.location.href = "Reviews.html";
         });
     }
 
@@ -656,7 +862,12 @@
         });
     }
 
+    initReviewWrite();
     bindListLinks();
     initListPagination();
+    initListSearch();
+    initInformationFilter();
+    initFaqState();
+    initScheduleCalendar();
     renderPost();
 })();

@@ -41,7 +41,7 @@ if (section4) {
     const autoplayDelay = 2500;
 
     function isMobileGalleryLayout() {
-        return window.innerWidth <= 1024;
+        return window.innerWidth <= 768;
     }
 
 

@@ -1,6 +1,6 @@
 (function () {
 
-    const mobileWidth = 1024;
+    const mobileWidth = 768;
 
     /* 작업 갤러리 */
 

@@ -474,7 +474,7 @@ if (section2) {
 
             changeServiceContent(index);
 
-            if (window.innerWidth > 1024) {
+            if (window.innerWidth > 768) {
                 return;
             }
 

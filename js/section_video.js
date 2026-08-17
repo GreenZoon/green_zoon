@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ---------------------------------
        카드 크기 설정
 
-       모바일 + iPad : 200px (1024px 이하)
+       모바일 : 200px (768px 이하)
        중간 화면     : 2개 (1025px ~ 1500px)
        PC            : 3개 (1501px 이상)
     --------------------------------- */
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         /* 모바일 */
 
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth <= 768) {
 
             track.style.setProperty(
                 "--video-card-width",

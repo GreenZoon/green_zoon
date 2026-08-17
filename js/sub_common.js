@@ -314,7 +314,7 @@
 
     const requestMobileMedia =
         window.matchMedia(
-            "(max-width: 1024px)"
+            "(max-width: 768px)"
         );
 
 
