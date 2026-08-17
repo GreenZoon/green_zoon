@@ -1449,12 +1449,21 @@ aspect-ratio: 1 / 1;
     
 }
 
+
 /* 인재 */
 
 .graduate{
 
            -webkit-mask-image: url("../img/icon/graduate.svg");
     mask-image: url("../img/icon/graduate.svg");
+
+
+}
+
+.digital_asset{
+
+               -webkit-mask-image: url("../img/icon/digital-asset.svg");
+    mask-image: url("../img/icon/digital-asset.svg");
 
 
 }
