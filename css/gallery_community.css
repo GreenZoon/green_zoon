@@ -112,6 +112,15 @@
 .gallery_card_image { width: 100%; aspect-ratio: 360 / 220; position: relative; overflow: hidden; border-radius: 10px; }
 .gallery_card_image img { height: 100%; object-fit: cover; }
 
+/* 행사 사진은 인물·문구·로고가 잘리지 않도록 원본 구도를 유지한다. */
+[data-gallery-page="event"] .gallery_card_image {
+    background: #f5f7f6;
+}
+
+[data-gallery-page="event"] .gallery_card_image img {
+    object-fit: contain;
+}
+
 /* 대상·최우수상 원본은 어느 카드/대표 영역에서도 1:1을 유지 */
 .gallery_feature_media:has(img[src*="award_2025_cover"]),
 .gallery_feature_media:has(img[src*="award_2023_cover"]),

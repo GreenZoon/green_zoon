@@ -170,7 +170,10 @@
     const communityEventImages = [
         "img/mainimgs/Event_2.jpg",
         "img/mainimgs/Event_1.jpg",
-        "img/mainimgs/Event_3.jpg"
+        "img/mainimgs/Event_3.jpg",
+        "img/sub_page/community/event/event_office_cleaning.jpg",
+        "img/sub_page/community/event/event_factory_cleaning.jpg",
+        "img/sub_page/community/event/event_fabric_cleaning.jpg"
     ];
 
     const informationImages = [

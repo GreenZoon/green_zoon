@@ -121,6 +121,8 @@
     const visitList = document.getElementById("visit_slots");
     const visitModal = document.getElementById("visit_modal");
     const successModal = document.getElementById("success_modal");
+    const privacyAgree = document.getElementById("privacy_agree");
+    const privacyError = document.getElementById("privacy_error");
 
     function escapeHtml(value) {
         return String(value ?? "")

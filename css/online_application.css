@@ -240,6 +240,22 @@
     accent-color: var(--application-green);
 }
 
+.privacy_agree:has(input:focus-visible) {
+    outline: 2px solid var(--application-green);
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+.privacy_agree:has(input:checked) {
+    color: var(--application-green);
+    font-weight: 700;
+}
+
+.privacy_error {
+    align-self: flex-end;
+    margin: 0;
+}
+
 .service_selector {
     display: grid;
     grid-template-columns: repeat(10, minmax(90px, 1fr));

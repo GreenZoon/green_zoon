@@ -346,6 +346,506 @@
 
 }
 
+@media (max-width: 1500px) {
+
+    .company_tabs {
+
+        min-height: 60px;
+
+    }
+
+    .company_menu {
+
+        min-height: 60px;
+        justify-content: center;
+    
+    }
+
+    .company_menu::after {
+        display: none;
+    }
+
+    .company_tit {
+
+        min-height: 60px;
+
+    }
+
+    .company_menu > li {
+
+        width: 170px;
+
+    }
+
+
+    .company_intro {
+
+        gap: 50px;
+
+    }
+
+    .company_values {
+
+        flex-basis: 500px;
+
+    }
+
+    .company_location_wrap {
+
+        gap: 50px;
+
+    }
+
+    .company_map {
+
+        height: 520px;
+
+    }
+}
+
+@media (max-width: 1280px) {
+    .company_client_wrap {
+        align-items: flex-start;
+        gap: clamp(28px, 4vw, 52px);
+    }
+
+    .company_client_list {
+        gap: 12px 30px;
+    }
+
+    .company_client_list li {
+        flex-basis: calc((100% - 60px) / 3);
+        min-width: 0;
+        font-size: 0.875rem;
+        overflow-wrap: anywhere;
+    }
+
+    .company_client_logos {
+        flex-basis: 138px;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+    .company_client_list li {
+        flex-basis: calc((100% - 30px) / 2);
+    }
+
+    .company_logo_grid {
+        gap: 16px;
+    }
+
+    .company_logo {
+        flex-basis: calc((100% - 48px) / 4);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .company_tabs {
+
+        min-height: 50px;
+
+    }
+
+    .company_menu {
+
+        min-height: 50px;
+        justify-content: center;
+
+    }
+
+    .company_menu > li {
+
+        width: 150px;
+
+    }
+
+    .company_tit {
+
+        min-height: 50px;
+        gap: 5px;
+        padding: 0 14px;
+        font-size: 1rem;
+
+    }
+
+    .company_arrow {
+
+        width: 12px;
+        height: 8px;
+
+    }
+
+    .company_drop a {
+
+        min-height: 42px;
+        font-size: 0.875rem;
+
+    }
+
+    .company_hero {
+
+        height: 260px;
+    }
+
+    .company_intro {
+
+        flex-direction: column;
+    }
+
+    .company_values {
+
+        order: -1;
+    }
+
+    .company_intro_text {
+
+        max-width: none;
+        text-align: right;
+    }
+
+    .company_greeting {
+
+        gap: 40px;
+    }
+
+    .company_portrait {
+
+        flex-basis: 260px;
+        width: 260px;
+        height: 480px;
+
+    }
+
+    .company_map {
+
+        flex-basis: 62%;
+        height: 360px;
+
+    }
+
+    .company_info {
+
+        flex-basis: 32%;
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    #Introduction_sub_menu {
+        display: block;
+        width: 100%;
+        min-height: 42px;
+        position: relative;
+        z-index: 50;
+        overflow: visible;
+    }
+
+    .company_hero {
+        height: 173px;
+    }
+
+    .company_tabs {
+
+        min-height: 42px;
+        overflow: visible;
+        position: relative;
+        z-index: 45;
+
+    }
+
+    .company_menu {
+
+        width: 100%;
+        min-width: 100%;
+        min-height: 42px;
+        gap: clamp(16px, 7vw, 48px);
+        justify-content: center;
+        overflow: visible;
+
+    }
+
+    .company_menu > li {
+
+        width: auto;
+        min-width: max-content;
+        overflow: visible;
+
+    }
+
+    .company_tit {
+
+        min-height: 42px;
+        gap: 3px;
+        padding: 0;
+        color: #8e8e8e;
+        background-color: #fff;
+        font-size: 0.875rem;
+
+    }
+
+    .company_tit:hover {
+
+        color: #8e8e8e;
+        background-color: #fff;
+
+    }
+
+    .company_arrow {
+
+        width: 10px;
+        height: 10px;
+        transform: rotate(0deg);
+
+    }
+
+    .company_tit:hover .company_arrow {
+
+        transform: rotate(0deg);
+
+    }
+
+    .company_tit[aria-expanded="true"] .company_arrow {
+
+        transform: rotate(180deg);
+
+    }
+
+    .company_menu > li:hover .company_drop,
+    .company_menu > li:focus-within .company_drop {
+
+        display: none;
+
+    }
+
+    .company_menu > li > .company_tit[aria-expanded="true"] + .company_drop {
+
+        display: block;
+
+    }
+
+    .company_drop {
+        width: max-content;
+        min-width: 150px;
+        top: 100%;
+        left: 50%;
+        z-index: 60;
+        transform: translateX(-50%);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+    }
+
+    .company_intro h1,
+    .company_greeting h1,
+    .company_location h1 {
+        font-size: 1.5625rem;
+        line-height: 1.3;
+    }
+
+    .company_intro {
+        gap: 26px;
+    }
+
+    .company_intro_text {
+        gap: 24px;
+    }
+
+    .company_values {
+        flex-basis: 300px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .company_values::before {
+        width: 196px;
+        height: 196px;
+        top: 52px;
+        left: 52px;
+        border-width: 2px;
+    }
+
+    .company_values li {
+        width: 104px;
+        height: 104px;
+        border-width: 1px;
+        font-size: 0.75rem;
+    }
+
+    .company_values li:nth-child(1) {
+        left: 98px;
+    }
+
+    .company_intro_text p {
+        margin-top: 24px;
+        font-size: 0.75rem;
+        line-height: 1.7;
+    }
+
+    .company_greeting {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .company_greeting_text {
+        display: contents;
+    }
+
+    .company_greeting h1 {
+        order: 1;
+    }
+
+    .company_portrait {
+        flex-basis: auto;
+        width: min(100%, 260px);
+        height: 480px;
+        order: 2;
+        align-self: center;
+    }
+
+    .company_greeting h2 {
+        order: 3;
+        margin: 0;
+        font-size: 1rem;
+        text-align: right;
+    }
+
+    .company_greeting p {
+        order: 4;
+        margin: 0;
+        font-size: 0.75rem;
+        line-height: 1.7;
+        text-align: right;
+    }
+
+    .company_location_wrap {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .company_map {
+        flex-basis: auto;
+        height: 320px;
+        border-radius: 10px;
+    }
+
+    .company_info {
+        flex-basis: auto;
+        align-items: flex-end;
+        gap: 28px;
+        text-align: right;
+    }
+
+    .company_info > div {
+        gap: 14px;
+    }
+
+    .company_info h2 {
+        margin-bottom: 14px;
+        font-size: 1.1875rem;
+    }
+
+    .company_info p,
+    .company_map_link {
+        font-size: 0.75rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .company_menu {
+
+        gap: 10px;
+
+    }
+
+    .company_map {
+        height: 220px;
+    }
+
+    .company_values {
+        flex-basis: 280px;
+        width: 280px;
+        height: 280px;
+    }
+
+    .company_values::before {
+        width: 184px;
+        height: 184px;
+        top: 48px;
+        left: 48px;
+    }
+
+    .company_values li {
+        width: 96px;
+        height: 96px;
+    }
+
+    .company_values li:nth-child(1) {
+        left: 92px;
+    }
+}
+
+/* 기업소개 모바일 공통 레이아웃 최종 규칙
+   앞선 페이지별 수치는 유지하고, 협력/거래처가 화면 밖으로 넘는 경우만 제한한다. */
+@media (max-width: 768px) {
+    .company_clients,
+    .company_clients > div,
+    .company_client_wrap,
+    .company_client_list,
+    .company_logo_grid {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .company_clients {
+        overflow: visible;
+    }
+
+    .company_clients > div {
+        gap: clamp(22px, 5vw, 40px);
+    }
+
+    .company_client_wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .company_client_list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px clamp(16px, 4vw, 28px);
+    }
+
+    .company_client_list li {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .company_logo_grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .company_logo_grid .company_logo {
+        min-width: 0;
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .company_logo_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 /* 기업 정보 / 허가 및 인증서 */
 
 .company_branches,
@@ -430,6 +930,8 @@
 .company_branch dt,
 .company_branch dd {
 
+.company_branch dt,
+.company_branch dd {
     font-size: 1rem;
     line-height: 1.6;
 
@@ -471,8 +973,9 @@
 
 .company_doc_img,
 .company_award_img,
-.company_history_img{
-
+.company_history_img,
+.company_history_logo,
+.company_logo {
     background-color: #f2f2f2;
 
 }
