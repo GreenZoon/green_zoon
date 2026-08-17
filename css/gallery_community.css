@@ -118,8 +118,7 @@
 .gallery_card_image:has(img[src*="gallery_event_01"]),
 .gallery_card_image:has(img[src*="gallery_event_02"]),
 .post_media:has(img[src*="award_2025_cover"]),
-.post_media:has(img[src*="award_2023_cover"]),
-.post_media:has(img[src*="Community_victory_2025"]) {
+.post_media:has(img[src*="award_2023_cover"]) {
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
@@ -129,8 +128,7 @@
 .gallery_card_image img[src*="gallery_event_01"],
 .gallery_card_image img[src*="gallery_event_02"],
 .post_media img[src*="award_2025_cover"],
-.post_media img[src*="award_2023_cover"],
-.post_media img[src*="Community_victory_2025"] {
+.post_media img[src*="award_2023_cover"] {
     width: 100% !important;
     height: 100% !important;
     aspect-ratio: 1 / 1 !important;
@@ -167,12 +165,10 @@
 .notice_feature { width: 42%; position: relative; flex: 0 0 auto; overflow: hidden; border-radius: 15px; }
 .notice_layout > .notice_feature { width: 100%; grid-column: 1; grid-row: 2; }
 .notice_feature img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.notice_feature:has(img[src*="Community_victory_2025"]),
 .notice_feature:has(img[src*="award_2025_cover"]),
 .notice_feature:has(img[src*="award_2023_cover"]) {
     aspect-ratio: 1 / 1;
 }
-.notice_feature img[src*="Community_victory_2025"],
 .notice_feature img[src*="award_2025_cover"],
 .notice_feature img[src*="award_2023_cover"] {
     height: 100%;
