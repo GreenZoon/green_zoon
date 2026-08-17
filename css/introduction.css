@@ -970,13 +970,51 @@
 }
 
 .company_award_tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.company_award_tabs button {
+    max-width: 180px;
+    padding: 10px 20px;
+    border: 1px solid #8e8e8e;
+    border-radius: 9px;
+    color: #8e8e8e;
+    background-color: #fff;
+    font: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.company_award_tabs button:hover,
+.company_award_tabs button:focus-visible {
+    border-color: #009944;
+    color: #009944;
+}
+
+.company_award_tabs button:focus-visible {
+    outline: 2px solid rgba(0, 153, 68, 0.25);
+    outline-offset: 3px;
+}
+
+.company_award_tabs button.on {
+    border-color: #009944;
+    color: #fff;
+    background-color: #009944;
+}
+
+.company_award[hidden] {
     display: none;
 }
 
 .company_awards {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 40px;
 }
 
 .company_award {
@@ -1352,20 +1390,13 @@
         gap: 16px;
     }
 
-    .company_award_tabs span {
-        min-width: 100px;
-        min-height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #8e8e8e;
-        border-radius: 8px;
-        color: #8e8e8e;
-        font-size: 0.6875rem;
-        text-align: center;
+    .company_award_tabs button {
+        max-width: 140px;
+        padding: 8px 17px;
+        font-size: 0.75rem;
     }
 
-    .company_award_tabs .on {
+    .company_award_tabs button.on {
         border-color: #009944;
         background-color: #009944;
         color: #fff;
@@ -1378,7 +1409,7 @@
     }
 
     .company_awards {
-        gap: 52px;
+        gap: 24px;
     }
 
     .company_award_img {

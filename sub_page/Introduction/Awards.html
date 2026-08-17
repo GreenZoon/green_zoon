@@ -47,12 +47,15 @@
 
         <h1>수상내역</h1>
 
-        <div class="company_award_tabs" role="group" aria-label="수상 연도">
-            <span class="on">2025년 수상</span>
-            <span>2023년 수상</span>
+        <div class="company_award_tabs" role="tablist" aria-label="수상 연도">
+            <button class="on" type="button" id="award-tab-2025" role="tab" aria-selected="true"
+                aria-controls="award-panel-2025" data-award-year="2025">2025년 수상</button>
+            <button type="button" id="award-tab-2023" role="tab" aria-selected="false" tabindex="-1"
+                aria-controls="award-panel-2023" data-award-year="2023">2023년 수상</button>
         </div>
 
-        <article class="company_award">
+        <article class="company_award" id="award-panel-2025" role="tabpanel" aria-labelledby="award-tab-2025"
+            data-award-panel="2025">
 
             <div class="company_award_img"><img src="../../img/sub_page/awards/award_2025_cover.jpg" alt="2025년 전국 건물위생관리 기능경진대회 대상 수상"></div>
 
@@ -80,7 +83,8 @@
 
         </article>
 
-        <article class="company_award">
+        <article class="company_award" id="award-panel-2023" role="tabpanel" aria-labelledby="award-tab-2023"
+            data-award-panel="2023" hidden>
 
             <div class="company_award_img"><img src="../../img/sub_page/awards/award_2023_cover.jpg" alt="2023년 전국 건물위생관리 기능경진대회 최우수상 수상"></div>
 
