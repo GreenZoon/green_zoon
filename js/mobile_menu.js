@@ -67,6 +67,109 @@ window.GreenZonePaths = {
 })();
 
 
+/* =========================================================
+   AUTH STATE
+   정식 서버 인증 연동 전까지 로그인 화면과 접근 제어를 한곳에서 관리
+========================================================= */
+
+(function () {
+
+    "use strict";
+
+    if (window.GreenZoneAuth) {
+        return;
+    }
+
+    const AUTH_KEY = "greenZoneAuthUser";
+
+    function read(storage) {
+        try {
+            const value = storage.getItem(AUTH_KEY);
+            return value ? JSON.parse(value) : null;
+        } catch (error) {
+            console.warn("[auth] 로그인 정보를 읽지 못했습니다.", error);
+            return null;
+        }
+    }
+
+    function getUser() {
+        return read(window.sessionStorage) || read(window.localStorage);
+    }
+
+    function clear() {
+        window.sessionStorage.removeItem(AUTH_KEY);
+        window.localStorage.removeItem(AUTH_KEY);
+    }
+
+    function login(user, remember) {
+        clear();
+        const storage = remember ? window.localStorage : window.sessionStorage;
+        storage.setItem(AUTH_KEY, JSON.stringify(user));
+        document.dispatchEvent(new CustomEvent("greenzone:authchange", { detail: user }));
+        syncUI(document);
+    }
+
+    function logout() {
+        clear();
+        document.dispatchEvent(new CustomEvent("greenzone:authchange", { detail: null }));
+        syncUI(document);
+    }
+
+    function loginUrl(returnTo) {
+        const base = window.GreenZonePaths?.resolve("user_page/Login.html") || "../user_page/Login.html";
+        const url = new URL(base, window.location.href);
+
+        if (returnTo) {
+            url.searchParams.set("returnTo", returnTo);
+        }
+
+        return url.href;
+    }
+
+    function requireLogin(returnTo) {
+        if (getUser()) {
+            return true;
+        }
+
+        window.location.replace(loginUrl(returnTo || window.location.href));
+        return false;
+    }
+
+    function syncUI(root) {
+        const user = getUser();
+        const profileUrl = window.GreenZonePaths?.resolve("user_page/user_Profile_page.html") || "../user_page/user_Profile_page.html";
+        const currentLoginUrl = loginUrl(
+            window.location.pathname.endsWith("/Login.html") ? "" : window.location.href
+        );
+
+        (root || document).querySelectorAll("[data-auth-link]").forEach(function (link) {
+            link.href = user ? profileUrl : currentLoginUrl;
+            link.setAttribute("aria-label", user ? "내 정보" : "로그인");
+        });
+
+        (root || document).querySelectorAll("[data-auth-icon]").forEach(function (icon) {
+            icon.classList.toggle("login", !user);
+            icon.classList.toggle("user", Boolean(user));
+        });
+
+        (root || document).querySelectorAll("[data-auth-label]").forEach(function (label) {
+            label.textContent = user ? "내 정보" : "로그인";
+        });
+    }
+
+    window.GreenZoneAuth = {
+        getUser,
+        isLoggedIn: function () { return Boolean(getUser()); },
+        login,
+        logout,
+        loginUrl,
+        requireLogin,
+        syncUI
+    };
+
+})();
+
+
 // =========================================================
 // SUB PAGE BACK
 // =========================================================

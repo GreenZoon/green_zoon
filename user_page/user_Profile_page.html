@@ -1,84 +1,54 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(주)그린죤 - 프로필 확인</title>
-
-    
+    <title>(주)그린죤 - 내 정보</title>
     <link rel="stylesheet" href="../css/reseat.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
     <link rel="stylesheet" href="../css/coom.css">
-<link rel="stylesheet" href="../css/header_stayl.css">
+    <link rel="stylesheet" href="../css/header_stayl.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/footer.css">
-
-
-
+    <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
-
+<body class="login_page profile_page is_auth_checking">
     <div id="header"></div>
     <div id="menu"></div>
 
+    <main class="login_main profile_main">
+        <nav class="login_breadcrumb" aria-label="현재 위치">
+            <a href="../index.html">홈</a>
+            <span class="icon arrow right_arrow_2 login_breadcrumb_arrow" aria-hidden="true"></span>
+            <span aria-current="page">내 정보</span>
+        </nav>
 
-    <div class="con">
-        <div class="user"></div>
-    </div>
-    
-    <button type="button">
+        <section class="profile_panel" aria-labelledby="profile_title">
+            <div class="profile_heading">
+                <span class="profile_avatar"><span class="icon user" aria-hidden="true"></span></span>
+                <div>
+                    <span>GREEN ZONE ACCOUNT</span>
+                    <h1 id="profile_title">내 정보</h1>
+                    <p>로그인 계정과 온라인 신청 메뉴를 확인할 수 있습니다.</p>
+                </div>
+            </div>
 
-    </button>
-    <button type="button">
-        
-    </button>
+            <dl class="profile_account">
+                <div><dt>이름</dt><dd id="profile_name">-</dd></div>
+                <div><dt>아이디</dt><dd id="profile_email">-</dd></div>
+            </dl>
 
-
-        <!-- 약관 내용 표시 박스 -->
-    <div style="width: 400px; height: 100px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px;">
-   
-        <h2>개인정보 수집 및 이용안내</h2>
-
-        <p>
-        본 프로필은 위생관리 용역업,저수조관리업,소독/방역,미화원 파견등 <br>
-        (주)그린죤에서 제공하는 청소 용역 서비스 신청을 위해 신청자의 성명,연락처를 요구합니다. 수집된 개인정보는 작업신청 외엔 절대 사용되지 않으며 계약이 체결되지 않을시 문서상 기재된 개인정보는 계약체결 취소시 즉시 파기됩니다.
-        </p>
-    
-    </div>
-
-    <!-- 동의 체크박스 -->
-    <label>
-
-    <input type="checkbox" id="agreeChk"> 개인정보 이용 내역 동의하기(필수)
-
-    </label>
-
-    <button onclick="checkForm()">다음으로</button>
-
-    <form action="">
-
-        <fieldset>
-
-            <label for=""></label>
-
-
-        </fieldset>
-
-    </form>
-
-
-
+            <div class="profile_actions">
+                <a class="login_primary_button profile_action_link" href="Online_application.html">온라인 작업 신청</a>
+                <button type="button" id="profile_logout" class="login_secondary_button">로그아웃</button>
+            </div>
+        </section>
+    </main>
 
     <div id="footer"></div>
-    
-
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/mobile_menu.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/user_Profile_page.js"></script>
-    
 </body>
 </html>

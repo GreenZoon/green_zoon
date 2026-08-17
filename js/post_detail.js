@@ -551,9 +551,9 @@
 
     function initFaqState() {
         document.querySelectorAll(".faq_list details").forEach(function (details) {
-            const toggle = details.querySelector(".faq_toggle");
+            const toggleText = details.querySelector(".faq_toggle_text");
             function sync() {
-                if (toggle) toggle.textContent = details.open ? "답변 닫기⌃" : "답변 확인하기⌄";
+                if (toggleText) toggleText.textContent = details.open ? "답변 닫기" : "답변 확인하기";
             }
             details.addEventListener("toggle", sync);
             sync();
@@ -681,7 +681,7 @@
             const image = images[0];
             return '<div class="post_media post_video">' +
                 (image ? '<img src="' + asset(image) + '" alt="' + post.title + '">' : '<span class="empty_image">영상 이미지 연결</span>') +
-                '<span class="gallery_play" aria-hidden="true">▶</span></div>';
+                '<span class="gallery_play" aria-hidden="true"><span class="icon play gallery_play_icon"></span></span></div>';
         }
 
         return images.map(function (image, index) {

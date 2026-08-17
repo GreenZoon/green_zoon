@@ -15,6 +15,10 @@
     background: #fff;
 }
 
+.application_page.is_auth_checking .application_main {
+    visibility: hidden;
+}
+
 .application_main {
     width: min(1620px, calc(100% - 48px));
     margin: 0 auto;
@@ -28,6 +32,12 @@
     color: var(--application-muted);
     font-size: 15px;
     margin-bottom: 30px;
+}
+
+.application_breadcrumb_arrow {
+    width: 12px;
+    color: currentColor;
+    background-color: currentColor;
 }
 
 .application_form,

@@ -155,11 +155,11 @@
 
             <li>
                 
-                <a class="login_li" href="#">
+                <a class="login_li" data-auth-link href="/user_page/Login.html" aria-label="로그인">
 
-                    <span class="icon login"></span>
+                    <span class="icon login" data-auth-icon aria-hidden="true"></span>
     
-                    <p>로그인</p>
+                    <p data-auth-label>로그인</p>
                     
                 </a>
 
@@ -183,11 +183,12 @@
     </button>
 
     <a
-        href="#"
+        href="/user_page/Login.html"
         class="mobile_header_btn"
+        data-auth-link
         aria-label="로그인"
     >
-        <span class="icon login" aria-hidden="true"></span>
+        <span class="icon login" data-auth-icon aria-hidden="true"></span>
     </a>
 
     <button

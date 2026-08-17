@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)그린죤 - 로그인</title>
+    <link rel="stylesheet" href="../css/reseat.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="../css/coom.css">
+    <link rel="stylesheet" href="../css/header_stayl.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login_page">
+    <div id="header"></div>
+    <div id="menu"></div>
+
+    <main class="login_main">
+        <nav class="login_breadcrumb" aria-label="현재 위치">
+            <a href="../index.html">홈</a>
+            <span class="icon arrow right_arrow_2 login_breadcrumb_arrow" aria-hidden="true"></span>
+            <span aria-current="page">로그인</span>
+        </nav>
+
+        <section class="login_shell" aria-labelledby="login_title">
+            <div class="login_intro">
+                <span class="login_intro_eyebrow">GREEN ZONE ACCOUNT</span>
+                <h1>더 빠른 작업 신청을<br>로그인으로 시작하세요.</h1>
+                <p>로그인하면 작성 중인 신청서를 이어서 작성하고, 작업 문의 정보를 한곳에서 확인할 수 있습니다.</p>
+                <ul class="login_benefits" aria-label="로그인 혜택">
+                    <li><span class="login_benefit_mark" aria-hidden="true"></span>온라인 청소 작업 신청</li>
+                    <li><span class="login_benefit_mark" aria-hidden="true"></span>신청 내용 임시 저장</li>
+                    <li><span class="login_benefit_mark" aria-hidden="true"></span>작업 문의 정보 확인</li>
+                </ul>
+            </div>
+
+            <div class="login_form_area">
+                <div class="login_heading">
+                    <span>회원 로그인</span>
+                    <h2 id="login_title">로그인</h2>
+                    <p>등록한 이메일과 비밀번호를 입력해 주세요.</p>
+                </div>
+
+                <form id="login_form" class="login_form" novalidate>
+                    <label class="login_field">
+                        <span>아이디</span>
+                        <input type="email" id="login_email" name="email" autocomplete="username" placeholder="이메일을 입력해 주세요" required>
+                        <small class="login_error" data-error-for="email"></small>
+                    </label>
+
+                    <label class="login_field">
+                        <span>비밀번호</span>
+                        <input type="password" id="login_password" name="password" autocomplete="current-password" placeholder="비밀번호를 입력해 주세요" minlength="4" required>
+                        <small class="login_error" data-error-for="password"></small>
+                    </label>
+
+                    <div class="login_options">
+                        <label class="remember_login">
+                            <input type="checkbox" name="remember">
+                            <span>로그인 상태 유지</span>
+                        </label>
+                        <button type="button" class="login_text_action" data-login-help>아이디·비밀번호 찾기</button>
+                    </div>
+
+                    <div id="login_help" class="login_inline_notice" hidden>
+                        가입 정보 확인은 대표번호 <a href="tel:18991367">1899-1367</a>로 문의해 주세요.
+                    </div>
+
+                    <div id="login_message" class="login_message" role="alert" aria-live="polite"></div>
+
+                    <div class="login_actions">
+                        <button type="button" class="login_secondary_button" data-signup>회원가입</button>
+                        <button type="submit" class="login_primary_button">로그인</button>
+                    </div>
+                </form>
+
+                <div id="signup_notice" class="login_signup_notice" hidden>
+                    온라인 회원가입 준비 중입니다. 계정 등록이 필요한 경우 대표번호로 문의해 주세요.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="login_toast" class="login_toast" role="status" aria-live="polite"></div>
+    <div id="footer"></div>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/mobile_menu.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

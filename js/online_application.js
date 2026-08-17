@@ -7,6 +7,12 @@
         return;
     }
 
+    if (!window.GreenZoneAuth?.requireLogin(window.location.href)) {
+        return;
+    }
+
+    document.body.classList.remove("is_auth_checking");
+
     const DRAFT_KEY = "greenZoneCleaningApplicationDraft";
     const iconRoot = "../img/icon/";
 

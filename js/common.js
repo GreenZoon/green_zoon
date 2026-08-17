@@ -27,6 +27,10 @@ async function loadComponent(id, file) {
         window.GreenZonePaths
             ?.normalize(target);
 
+        if (id === "header" || id === "menu") {
+            window.GreenZoneAuth?.syncUI(target);
+        }
+
         return target;
         
     } catch (error) {
