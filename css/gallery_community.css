@@ -59,8 +59,19 @@
     color: #555;
 }
 
-.content_head { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.content_head h1, .content_head h2 { font-size: 40px; font-weight: 700; line-height: 1.3; letter-spacing: -.04em; }
+.content_head {
+
+     display: flex; 
+     align-items: center; 
+     justify-content: space-between; 
+     gap: 24px; }
+
+.content_head h1, .content_head h2 {
+     font-size: 40px; 
+     font-weight: 700; 
+     line-height: 1.3;
+     letter-spacing: -.04em;
+     }
 
 .content_search { width: min(100%, 760px); display: flex; gap: 16px; }
 .content_search button, .content_search input { min-height: 48px; border: 1px solid #c6c6c6; border-radius: 10px; background: #fff; color: #8e8e8e; }
@@ -213,10 +224,10 @@
 .today_card { width: 470px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #009944; border-radius: 15px; color: #009944; padding: 32px; }
 .calendar_head { display: flex; align-items: center; justify-content: center; gap: 40px; }
 .calendar_head h2 { font-size: 25px; }
-.calendar_head button { width: 34px; aspect-ratio: 1 / 1; flex: 0 0 auto; background-color: #8e8e8e; }
+.calendar_head button { aspect-ratio: 1 / 1; flex: 0 0 auto; background-color: #8e8e8e; }
 .calendar { width: 100%; border-collapse: separate; border-spacing: 5px; table-layout: fixed; }
 .calendar th { height: 44px; }
-.calendar td { height: 150px; position: relative; vertical-align: top; border: 1px solid #dbdbdb; border-radius: 8px; color: #8e8e8e; padding: 10px; }
+.calendar td {  width: 150px;  aspect-ratio: 1 / 1; height: 150px; position: relative; vertical-align: top; border: 1px solid #dbdbdb; border-radius: 8px; color: #8e8e8e; padding: 10px; }
 .calendar td span, .calendar td small { display: block; }
 .calendar td small { position: absolute; right: 10px; bottom: 10px; text-align: right; }
 .calendar .selected { border-color: #009944; color: #009944; }
@@ -576,9 +587,9 @@
     .calendar_head h2 { font-size: 19px; }
     .calendar { border-spacing: 0; }
     .calendar th { height: 34px; font-size: 12px; }
-    .calendar td { height: 46px; border: 0; border-radius: 50%; font-size: 12px; text-align: center; padding: 8px 2px; }
+    .calendar td { height: 75px; border: 0; border-radius: 50%; font-size: 12px; text-align: center; padding: 8px 2px; }
     .calendar td small { width: 4px; height: 4px; right: 50%; bottom: 5px; overflow: hidden; transform: translateX(50%); border-radius: 50%; background: #009944; color: transparent; }
-    .calendar .selected { background: #009944; color: #fff; }
+    .calendar .selected { width: 100%; height: 40px; aspect-ratio: 1 / 1; background: #009944; color: #fff; }
     .post_section > .sub_content { gap: 36px; }
     .post_head { gap: 10px; }
     .post_head h1 { font-size: 25px; }
