@@ -245,11 +245,11 @@
 }
 
 .company_portrait {
-    flex: 0 0 302px;
+    flex: 0 0 auto;
     width: 302px;
     height: 557px;
     align-self: center;
-    background-color: #f2f2f2;
+   
 }
 
 .company_location {
@@ -619,16 +619,13 @@
 
     .company_greeting h2 {
         order: 3;
-        margin: 0;
-        font-size: 1rem;
+
         text-align: right;
     }
 
     .company_greeting p {
         order: 4;
-        margin: 0;
-        font-size: 0.75rem;
-        line-height: 1.7;
+
         text-align: right;
     }
 
@@ -700,6 +697,22 @@
     .company_values li:nth-child(1) {
         left: 92px;
     }
+
+        .company_greeting h2 {
+
+        margin: 0;
+        font-size: 1rem;
+   
+    }
+
+    .company_greeting p {
+
+        margin: 0;
+        font-size: 0.75rem;
+        line-height: 1.7;
+
+    }
+
 }
 
 /* 기업 정보 / 허가 및 인증서 */
@@ -708,26 +721,33 @@
 .company_docs,
 .company_awards,
 .company_history {
+
     flex-direction: column;
     gap: 80px;
+
 }
 
 .company_branches h1,
 .company_awards h1,
 .company_clients h1,
 .company_clients h2 {
+
     color: #555;
     font-size: 2.5rem;
     line-height: 1.25;
     letter-spacing: -0.04em;
+
 }
 
 .company_branch_wrap {
+
     display: flex;
     gap: 46px;
+
 }
 
 .company_branch {
+
     flex: 1;
     min-height: 360px;
     display: flex;
