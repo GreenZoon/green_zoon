@@ -70,13 +70,7 @@
     font-size: 1.1875rem;
     font-weight: 700;
     letter-spacing: -0.04em;
-    border: 0;
-    appearance: none;
     background-color: transparent;
-    font-family: inherit;
-    cursor: pointer;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
 
 }
 
@@ -120,9 +114,7 @@
 }
 
 .company_menu > li:hover .company_drop,
-.company_menu > li:focus-within .company_drop,
-.company_menu > li.is-open .company_drop,
-.company_menu > li > .company_tit[aria-expanded="true"] + .company_drop {
+.company_menu > li:focus-within .company_drop {
 
     display: block;
 
@@ -497,11 +489,6 @@
         overflow: visible;
     }
 
-    .company_menu > li.is-open .company_tit {
-        color: #009944;
-        background-color: #fff;
-    }
-
     .company_hero {
         height: 173px;
     }
@@ -544,11 +531,11 @@
 
     }
 
-    .company_tit:hover {
-
-        color: #8e8e8e;
+    .company_tit:hover,
+    .company_tit:focus-visible {
+        color: #009944;
         background-color: #fff;
-
+        box-shadow: inset 0 -2px 0 #009944;
     }
 
     .company_arrow {
@@ -559,31 +546,15 @@
 
     }
 
-    .company_tit:hover .company_arrow {
-
-        transform: rotate(0deg);
-
-    }
-
-    .company_tit[aria-expanded="true"] .company_arrow {
-
+    .company_tit:hover .company_arrow,
+    .company_tit:focus-visible .company_arrow {
         transform: rotate(180deg);
-
     }
 
-    .company_menu > li:hover:not(.is-open) .company_drop,
-    .company_menu > li:focus-within:not(.is-open) .company_drop {
-
-        display: none;
-
-    }
-
-    .company_menu > li.is-open .company_drop,
-    .company_menu > li > .company_tit[aria-expanded="true"] + .company_drop {
-
+    .company_menu > li:hover .company_drop,
+    .company_menu > li:focus-within .company_drop {
         display: block !important;
         pointer-events: auto;
-
     }
 
     .company_drop {
@@ -638,7 +609,7 @@
 
     .company_intro_text p {
         margin-top: 24px;
-        font-size: 0.75rem;
+        font-size: 0.9375rem;
         line-height: 1.7;
     }
 
@@ -675,7 +646,7 @@
     .company_greeting p {
         order: 4;
         margin: 0;
-        font-size: 0.75rem;
+        font-size: 0.9375rem;
         line-height: 1.7;
         text-align: right;
     }
@@ -710,7 +681,7 @@
 
     .company_info p,
     .company_map_link {
-        font-size: 0.75rem;
+        font-size: 0.9375rem;
         line-height: 1.7;
     }
 }
@@ -851,7 +822,7 @@
 .company_history_img,
 .company_history_logo,
 .company_logo {
-    background-color: #f2f2f2;
+    background-color: transparent;
 }
 
 .company_doc_img img,
@@ -1254,7 +1225,7 @@
     }
 
     .company_branch > p {
-        font-size: 0.6875rem;
+        font-size: 0.9375rem;
     }
 
     .company_branch dl {
@@ -1267,7 +1238,7 @@
 
     .company_branch dt,
     .company_branch dd {
-        font-size: 0.75rem;
+        font-size: 0.9375rem;
     }
 
     .company_doc_main {
@@ -1296,11 +1267,11 @@
     }
 
     .company_doc p {
-        font-size: 0.625rem;
+        font-size: 0.9375rem;
     }
 
     .company_doc_grid .company_doc h2 {
-        font-size: 0.625rem;
+        font-size: 0.875rem;
     }
 
     .company_doc_grid .company_doc {
@@ -1360,7 +1331,7 @@
 
     .company_award p,
     .company_award a {
-        font-size: 0.625rem;
+        font-size: 0.9375rem;
         line-height: 1.7;
     }
 
@@ -1387,7 +1358,7 @@
 
     .company_timeline time,
     .company_timeline p {
-        font-size: 0.625rem;
+        font-size: 0.9375rem;
     }
 
     .company_timeline time {
@@ -1439,7 +1410,7 @@
 
     .company_client_list li {
         flex-basis: calc((100% - 26px) / 2);
-        font-size: 0.625rem;
+        font-size: 0.875rem;
         text-align: center;
     }
 
@@ -1463,6 +1434,22 @@
 }
 
 @media (max-width: 480px) {
+
+    .company_intro_text p,
+    .company_greeting p,
+    .company_info p,
+    .company_map_link,
+    .company_branch > p,
+    .company_branch dt,
+    .company_branch dd,
+    .company_doc p,
+    .company_award p,
+    .company_award a,
+    .company_timeline time,
+    .company_timeline p,
+    .company_client_list li {
+        font-size: 0.875rem;
+    }
 
     .company_doc_grid .company_doc {
         flex-basis: calc((100% - 12px) / 2);

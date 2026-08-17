@@ -315,9 +315,9 @@ section {
 
 .subpage_nav_link:hover,
 .subpage_nav_link:focus-visible {
-    color: #009944;
-    background-color: transparent;
-    box-shadow: inset 0 -2px 0 #009944;
+    color: #fff;
+    background-color: #009944;
+    box-shadow: inset 0 -2px 0 transparent;
 }
 
 .subpage_nav_link[aria-current="page"] {
@@ -357,6 +357,13 @@ section {
         flex: 0 0 auto;
         font-size: 0.875rem;
         padding-block: 8px;
+    }
+
+    .subpage_nav_link:hover,
+    .subpage_nav_link:focus-visible {
+        color: #009944;
+        background-color: transparent;
+        box-shadow: inset 0 -2px 0 #009944;
     }
 }
 

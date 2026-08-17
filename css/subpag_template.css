@@ -138,10 +138,9 @@
 }
 
 .sub_pag_depth:hover {
-
-    color: #009944;
-    background-color: transparent;
-    box-shadow: inset 0 -2px 0 #009944;
+    color: #fff;
+    background-color: #009944;
+    box-shadow: inset 0 -2px 0 transparent;
 
 }
 

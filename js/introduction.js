@@ -55,62 +55,7 @@
             .querySelector(`[data-company-page='${currentPage}']`)
             ?.setAttribute("aria-current", "page");
 
-        function closeCompanyMenu(except) {
-
-            target
-                .querySelectorAll(".company_tit")
-                .forEach(function (title) {
-
-                    if (title !== except) {
-                        title.setAttribute("aria-expanded", "false");
-                        title.parentElement?.classList.remove("is-open");
-                    }
-
-                });
-
-        }
-
-        target.addEventListener("click", function (event) {
-            const title = event.target.closest(".company_tit");
-
-            if (!title || !target.contains(title)) {
-                return;
-            }
-
-            const drop = title.nextElementSibling;
-
-            if (!drop || !drop.classList.contains("company_drop")) {
-                return;
-            }
-
-            const isOpen = title.getAttribute("aria-expanded") === "true";
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            if (isOpen) {
-                title.setAttribute("aria-expanded", "false");
-                title.parentElement?.classList.remove("is-open");
-                return;
-            }
-
-            closeCompanyMenu(title);
-            title.setAttribute("aria-expanded", "true");
-            title.parentElement?.classList.add("is-open");
-
-        });
-
-        document.addEventListener("click", function (event) {
-
-            if (!target.contains(event.target)) {
-                closeCompanyMenu();
-            }
-
-        });
-
-        window.addEventListener("resize", function () {
-            closeCompanyMenu();
-        }, { passive: true });
+        /* 기업소개 서브메뉴는 모든 화면에서 hover / focus-within으로 동작한다. */
     }
 
     function initAwardTabs() {
