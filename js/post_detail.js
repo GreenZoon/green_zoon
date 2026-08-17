@@ -144,7 +144,7 @@
         "img/sub_page/wax_ing_2.jpg",
         "img/mainimgs/cleaning_carpet_ing.jpg",
         "img/mainimgs/statue_cleaning_ing_1.jpg",
-        "img/mainimgs/cleaning_event_ing.png",
+        "img/mainimgs/cleaning_event_ing.webp",
         "img/sub_page/factory_line_ing_4.jpg",
         "img/sub_page/Wax_job_2.jpg",
         "img/mainimgs/building_wall_cleaning_ing.jpg",
@@ -157,7 +157,7 @@
         "img/sub_page/gallery/event/gallery_event_03.png",
         "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/gallery/event/gallery_event_05.png",
-        "img/sub_page/news_Dining_together.jpg",
+        "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/news_event.jpg",
         "", "", "", "",
         "img/sub_page/gallery/event/gallery_event_08.png",
@@ -197,7 +197,7 @@
         "img/sub_page/cleaning_carpet_After_2.jpg",
         "img/sub_page/factory_floor_2_1_After.jpg",
         "img/sub_page/building_wall_After_3.jpg",
-        "img/mainimgs/cleaning_event_ing.png"
+        "img/mainimgs/cleaning_event_ing.webp"
     ];
 
     const dates = [

@@ -137,8 +137,6 @@
 /* 대상·최우수상 원본은 어느 카드/대표 영역에서도 1:1을 유지 */
 .gallery_feature_media:has(img[src*="award_2025_cover"]),
 .gallery_feature_media:has(img[src*="award_2023_cover"]),
-.gallery_card_image:has(img[src*="gallery_event_01"]),
-.gallery_card_image:has(img[src*="gallery_event_02"]),
 .post_media:has(img[src*="award_2025_cover"]),
 .post_media:has(img[src*="award_2023_cover"]) {
     aspect-ratio: 1 / 1;
@@ -147,8 +145,6 @@
 
 .gallery_feature_media img[src*="award_2025_cover"],
 .gallery_feature_media img[src*="award_2023_cover"],
-.gallery_card_image img[src*="gallery_event_01"],
-.gallery_card_image img[src*="gallery_event_02"],
 .post_media img[src*="award_2025_cover"],
 .post_media img[src*="award_2023_cover"] {
     width: 100% !important;

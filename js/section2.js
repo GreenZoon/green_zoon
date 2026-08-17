@@ -106,11 +106,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/cleaning_event_Before.png",
+                    src: "img/mainimgs/cleaning_event_Before.webp",
                     alt: "행사장 청소 전"
                 },
                 {
-                    src: "img/mainimgs/cleaning_event_ing.png",
+                    src: "img/mainimgs/cleaning_event_ing.webp",
                     alt: "행사장 청소 중"
                 }
             ]
