@@ -243,3 +243,42 @@
         font-size: 0.625rem;
     }
 }
+
+/* 피그마 모바일 청소 대상: 원형과 글자를 서로 분리해 원 비율을 유지 */
+
+@media (max-width: 768px) {
+
+    .service_cleaning .service_target .con {
+        width: 48px;
+        max-width: 48px;
+        min-width: 48px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 48px;
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 7px;
+        overflow: visible;
+    }
+
+    .service_cleaning .service_target .con > .icon {
+        width: 24px;
+        max-width: 24px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 24px;
+    }
+
+    .service_cleaning .service_target .con > p {
+        position: absolute;
+        bottom: -3%;
+
+        color: #f8f8f8;
+        font-size: 0.625rem;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+}

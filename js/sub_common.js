@@ -496,15 +496,84 @@
                     );
 
 
+                const pagination =
+                    wrap.querySelector(
+                        ".slide_pagination"
+                    );
+
+
+                const gallery =
+                    wrap.closest(
+                        ".service_gallery"
+                    );
+
+
+                const galleryMeta =
+                    gallery?.querySelector(
+                        ".service_gallery_meta"
+                    );
+
+
+                if (pagination && galleryMeta) {
+
+                    galleryMeta.after(
+                        pagination
+                    );
+
+                }
+
+
                 const dots =
                     Array.from(
-                        wrap.querySelectorAll(
-                            ".slide_pagination .slide_dot"
+                        pagination?.querySelectorAll(
+                            ".slide_dot"
                         )
+                        || []
+                    );
+
+
+                const slideStatus =
+                    document.createElement("div");
+
+
+                slideStatus.className =
+                    "slide_status";
+
+
+                slideStatus.innerHTML =
+                    `<span class="slide_count"><b>1</b> / ${slides.length}</span>
+                    <button type="button" class="slide_pause" aria-label="자동 슬라이드 일시정지">
+                        <span class="icon pause_icon" aria-hidden="true"></span>
+                    </button>`;
+
+
+                clippingMask.appendChild(
+                    slideStatus
+                );
+
+
+                wrap.classList.toggle(
+                    "is_single",
+                    slides.length < 2
+                );
+
+
+                const currentNumber =
+                    slideStatus.querySelector("b");
+
+
+                const pauseButton =
+                    slideStatus.querySelector(
+                        ".slide_pause"
                     );
 
 
                 let currentIndex = 0;
+
+                let isPlaying =
+                    slides.length > 1;
+
+                let autoPlayTimer = null;
 
                 let isDragging = false;
                 let hasDragged = false;
@@ -530,6 +599,8 @@
                 */
 
                 const dragThreshold = 50;
+
+                const autoPlayDelay = 5000;
 
 
                 wrap.dataset.sliderInitialized =
@@ -611,6 +682,55 @@
                         }
                     );
 
+
+                    currentNumber.textContent =
+                        String(currentIndex + 1);
+
+                }
+
+
+                function stopAutoPlay() {
+
+                    window.clearInterval(
+                        autoPlayTimer
+                    );
+
+                    autoPlayTimer = null;
+
+                }
+
+
+                function startAutoPlay() {
+
+                    stopAutoPlay();
+
+                    if (!isPlaying || slides.length < 2) {
+                        return;
+                    }
+
+                    autoPlayTimer =
+                        window.setInterval(
+                            nextSlide,
+                            autoPlayDelay
+                        );
+
+                }
+
+
+                function updatePauseButton() {
+
+                    pauseButton.classList.toggle(
+                        "is_paused",
+                        !isPlaying
+                    );
+
+                    pauseButton.setAttribute(
+                        "aria-label",
+                        isPlaying
+                            ? "자동 슬라이드 일시정지"
+                            : "자동 슬라이드 재생"
+                    );
+
                 }
 
 
@@ -666,6 +786,27 @@
                         event.preventDefault();
 
                         previousSlide();
+
+                    }
+                );
+
+
+                pauseButton.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        isPlaying = !isPlaying;
+
+                        updatePauseButton();
+
+                        if (isPlaying) {
+                            startAutoPlay();
+                        } else {
+                            stopAutoPlay();
+                        }
 
                     }
                 );
@@ -787,7 +928,7 @@
 
                     if (
                         event.target.closest(
-                            ".arrow, .slide_pagination"
+                            ".arrow, .slide_pagination, .slide_status"
                         )
                     ) {
 
@@ -1157,6 +1298,10 @@
 
                     }
                 );
+
+
+                updatePauseButton();
+                startAutoPlay();
 
 
 

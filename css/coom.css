@@ -315,30 +315,24 @@ section {
 
 .subpage_nav_link:hover,
 .subpage_nav_link:focus-visible {
-
     color: #fff;
     background-color: #009944;
     box-shadow: inset 0 -2px 0 transparent;
-
 }
 
 .subpage_nav_link[aria-current="page"] {
-
     color: #8e8e8e;
     background-color: transparent;
     box-shadow: inset 0 -2px 0 transparent;
-
 }
 
 @media (max-width: 1500px) {
-
     .subpage_nav_list {
         justify-content: flex-end;
     }
 }
 
 @media (max-width: 768px) {
-    
     .subpage_nav {
         min-height: 42px;
         overflow-x: auto;
@@ -827,20 +821,6 @@ aspect-ratio: 1 / 1;
 
 }
 
-.menu_grid {
-
-    -webkit-mask-image: url("../img/icon/menu-grid.svg");
-    mask-image: url("../img/icon/menu-grid.svg");
-
-}
-
-.menu_lines {
-
-    -webkit-mask-image: url("../img/icon/menu-lines.svg");
-    mask-image: url("../img/icon/menu-lines.svg");
-
-}
-
 .arrow{
 
     -webkit-mask-image: url("../img/icon/down-arrow.svg");
@@ -1068,6 +1048,22 @@ aspect-ratio: 1 / 1;
 
     -webkit-mask-image: url("../img/icon/carpet.svg");
     mask-image: url("../img/icon/carpet.svg");
+
+}
+
+/* 후드 */
+.hood {
+
+    -webkit-mask-image: url("../img/icon/extractor.svg");
+    mask-image: url("../img/icon/extractor.svg");
+
+}
+
+/* 위생 시설 */
+.cleaner {
+
+    -webkit-mask-image: url("../img/icon/cleaner.svg");
+    mask-image: url("../img/icon/cleaner.svg");
 
 }
 
