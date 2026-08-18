@@ -13,7 +13,6 @@
     aspect-ratio: 13 / 8;
 
     overflow: hidden;
-
     border-radius: 15px;
 }
 
@@ -75,7 +74,7 @@
 
 .sub_pag_gnb{
 
-    min-height: 50px;
+
     align-items: flex-end;
 
 }
@@ -341,9 +340,6 @@
 
     margin-bottom: 4px;
     margin-left: 7px;
-
-    font-size: 1.1875rem;
-
     color: #009944;
 }
 
@@ -901,7 +897,7 @@
 
 .service_effect .effect_icon_circle {
 
-   width: 100%;
+   width: 25%;
     aspect-ratio: 1 / 1;
 
     flex: 0 0 auto;
@@ -1005,8 +1001,7 @@
 
 .service_tunnel .service_intro > .tit_wrap {
     width: 526px;
-   
-    
+
 }
 
 .service_tunnel .service_intro > .img_wrap {
@@ -1044,11 +1039,10 @@
 .request_cleaning_pin {
 
     display: none;
-
     width: 0;
     height: 0;
-
     overflow: hidden;
+    
 }
 
 /* =========================================================
@@ -1088,6 +1082,7 @@
     gap: 10px;
     border-width: 1px;
     border-radius: 10px;
+    padding: 16px 24px;
 
 }
 
@@ -1130,7 +1125,6 @@
 .text_dot {
 
     display: inline;
-
     width: auto;
 
 }
@@ -1162,15 +1156,6 @@
 
 }
 
-/* =========================================================
-   14. TABLET
-========================================================= */
-
-
-/* =========================================================
-   FIGMA SUBPAGE COMMON FINAL
-========================================================= */
-
 .slide_status {
     display: none;
 }
@@ -1178,42 +1163,55 @@
 .pause_icon {
     width: 10px;
     aspect-ratio: 1 / 1;
-    flex: 0 0 10px;
+    flex: 0 0 auto;
     background-color: currentColor;
     -webkit-mask: url("../img/icon/pause.svg") center / contain no-repeat;
     mask: url("../img/icon/pause.svg") center / contain no-repeat;
 }
 
 .slide_pause.is_paused .pause_icon {
+
     -webkit-mask-image: url("../img/icon/play_Block.svg");
     mask-image: url("../img/icon/play_Block.svg");
+
 }
 
 .slide_dot {
+
     background-color: #c6c6c6;
+
 }
 
 .slide_dot.is_active,
 .slide_dot.is_active_4 {
+
     background-color: #009944;
+
 }
 
 .img_section_g .slide_dot {
+
     background-color: rgb(255 255 255 / 40%);
 }
 
 .img_section_g .slide_dot.is_active,
 .img_section_g .slide_dot.is_active_4 {
+
     background-color: #f8f8f8;
+
 }
 
 .section_g.service_gallery .slide_dot {
+
     background-color: rgb(255 255 255 / 40%);
+
 }
 
 .section_g.service_gallery .slide_dot.is_active,
 .section_g.service_gallery .slide_dot.is_active_4 {
+
     background-color: #f8f8f8;
+
 }
 
 
@@ -1221,10 +1219,6 @@
    DISPATCH PAGE
 ========================================================= */
 
-.dispatch_request {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
 .dispatch_request a {
     width: 100%;
@@ -1240,28 +1234,36 @@
 }
 
 .dispatch_request .icon {
+
     width: 110px;
     aspect-ratio: 1 / 1;
-    flex: 0 0 110px;
+    flex: 0 0 auto;
     order: 2;
     background-color: #009944;
+
 }
 
 .dispatch_request_text {
+
     display: flex;
     flex-direction: column;
     gap: 14px;
+
 }
 
 .dispatch_request_text strong {
+
     font-size: 1.5625rem;
 }
 
 .dispatch_request_text > span {
+
     color: #8e8e8e;
+
 }
 
 .dispatch_academy {
+
     align-items: center;
     justify-content: center;
     gap: 90px;
@@ -1270,6 +1272,7 @@
 }
 
 .dispatch_academy_info {
+
     width: min(100%, 760px);
     display: flex;
     flex-direction: column;
@@ -1277,26 +1280,30 @@
 }
 
 .dispatch_academy_info .tit_wrap {
+
     gap: 8px;
     color: inherit;
 }
 
 .dispatch_academy_list {
+
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px 28px;
 }
 
 .dispatch_academy_item {
+
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .dispatch_academy_icon {
+
     width: 48px;
     aspect-ratio: 1 / 1;
-    flex: 0 0 48px;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1307,7 +1314,7 @@
 .dispatch_academy_icon .icon {
     width: 26px;
     aspect-ratio: 1 / 1;
-    flex: 0 0 26px;
+    flex: 0 0 auto;
     background-color: currentColor;
 }
 
@@ -1337,12 +1344,14 @@
 }
 
 .dispatch_page .service_gallery {
+
     flex-direction: row;
     align-items: center;
     gap: 80px;
 }
 
 .dispatch_page .service_gallery > .tit_wrap {
+
     width: 40%;
     align-items: flex-start;
     text-align: left;
@@ -1354,24 +1363,29 @@
 }
 
 .dispatch_page .service_gallery .sub_pag_clipping_mask {
+
     aspect-ratio: 13 / 8;
 }
 
 .dispatch_page .service_gallery .sub_slide_img {
+
     display: none;
 }
 
 .dispatch_page .service_gallery .mobile_featured {
+
     display: block;
     width: 100%;
     height: 100%;
-    flex: 0 0 100%;
+    flex: 0 0 auto;
 }
 
 .dispatch_page .service_gallery .sub_pag_slide_wrap > .arrow,
 .dispatch_page .service_gallery .slide_pagination,
 .dispatch_page .service_gallery_meta {
+
     display: none;
+
 }
 
 
@@ -1382,18 +1396,23 @@
 
 .bridge_page .bridge_hero picture,
 .bridge_page .service_intro picture {
+
     display: block;
     width: 100%;
     height: 100%;
+
 }
 
 .bridge_page .bridge_hero img {
+
     width: 100%;
     height: 400px;
     object-fit: cover;
+
 }
 
 .bridge_page .service_intro {
+
     order: 1;
   
     flex-direction: row;
@@ -1403,11 +1422,14 @@
 }
 
 .bridge_page .service_intro > .tit_wrap {
+
     width: 673px;
     max-width: 673px;
+
 }
 
 .bridge_page .service_intro > .img_wrap {
+
     width: 800px;
     max-width: 800px;
     height: 500px;
