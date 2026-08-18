@@ -240,32 +240,39 @@
 }
 
 .company_values .value_icon {
+
     -webkit-mask-image: url("../img/icon/digital-asset.svg");
     mask-image: url("../img/icon/digital-asset.svg");
+
 }
 
 .company_values li:nth-child(1) {
+
     top: 0;
     left: 160px;
 }
 
 .company_values li:nth-child(2) {
+
     bottom: 0;
     left: 0;
 }
 
 .company_values li:nth-child(3) {
+
     right: 0;
     bottom: 0;
 }
 
 .company_greeting {
+
     min-height: 757px;
     align-items: center;
     gap: 80px;
 }
 
 .company_greeting_text {
+
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -273,12 +280,14 @@
 }
 
 .company_greeting h2 {
+
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
 }
 
 .company_greeting p {
+
     max-width: 980px;
     color: #8e8e8e;
     font-size: 1.0625rem;
@@ -287,11 +296,12 @@
 }
 
 .company_portrait {
-    flex: 0 0 302px;
+
+    flex: 0 0 auto;
     width: 302px;
     height: 557px;
     align-self: center;
-    background-color: #f2f2f2;
+
 }
 
 .company_location {
@@ -310,12 +320,13 @@
 }
 
 .company_map {
-    flex: 1 1 1075px;
+
+    flex: 1 1 auto;
     width: 100%;
     height: 600px;
     overflow: hidden;
     border-radius: 12px;
-    background-color: #f2f2f2;
+
 }
 
 .company_map iframe {
@@ -326,29 +337,37 @@
 }
 
 .company_info {
-    flex: 0 1 430px;
+
+    flex: 0 1 auto;
     display: flex;
     flex-direction: column;
     gap: 48px;
+
 }
 
 .company_info > div {
+
     display: flex;
     flex-direction: column;
     gap: 24px;
+
 }
 
 .company_info h2 {
+
     margin: 0;
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
+
 }
 
 .company_info p {
+
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
+
 }
 
 .company_map_link {
@@ -367,6 +386,7 @@
 .company_docs,
 .company_awards,
 .company_history {
+
     flex-direction: column;
     gap: 80px;
 }
@@ -375,6 +395,7 @@
 .company_awards h1,
 .company_clients h1,
 .company_clients h2 {
+
     color: #555;
     font-size: 2.5rem;
     line-height: 1.25;
@@ -387,6 +408,7 @@
 }
 
 .company_branch {
+
     flex: 1;
     padding: 35px 40px;
     display: flex;
@@ -397,59 +419,76 @@
 }
 
 .company_branch.address {
+
     color: #fff;
     background-color: #009944;
+
 }
 
 .company_branch h2 {
+
     color: inherit;
     font-size: 1.5625rem;
+
 }
 
 .company_branch > p {
+
     color: #8e8e8e;
     font-size: 0.9375rem;
 }
 
+
 .company_branch dl {
+
     display: flex;
     flex-direction: column;
     gap: 18px;
+
 }
 
 .company_branch dl div {
+
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
 }
 
 .company_branch dt,
 .company_branch dd {
+
     font-size: 1rem;
     line-height: 1.6;
+
 }
 
 .company_branch.contact h2,
 .company_branch.contact dd {
+
     color: #009944;
 }
 
 .company_doc_main,
 .company_doc_grid {
+
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
 }
 
 .company_doc_main .company_doc {
+
     flex: 1 1 calc((100% - 140px) / 3);
 }
 
 .company_doc_grid .company_doc {
+
     flex: 1 1 calc((100% - 210px) / 4);
 }
 
 .company_doc {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -462,6 +501,7 @@
 .company_history_img,
 .company_history_logo,
 .company_logo {
+
     background-color: transparent;
 }
 
@@ -470,6 +510,7 @@
 .company_logo img,
 .company_award_img img,
 .company_history_img img {
+
     width: 100%;
     height: 100%;
     display: block;
@@ -478,41 +519,52 @@
 .company_doc_img img,
 .company_history_logo img,
 .company_logo img {
+
     object-fit: contain;
+        aspect-ratio: 4 / 1;
 }
 
 .company_award_img img,
 .company_history_img img {
+
     object-fit: cover;
 }
 
 .company_doc_img {
+
     width: min(100%, 380px);
     aspect-ratio: 3 / 4;
     border-radius: 10px;
 }
 
 .company_doc h2 {
+
     color: #555;
     font-size: 1.25rem;
     line-height: 1.4;
+
 }
 
 .company_doc p {
+
     max-width: 380px;
     color: #8e8e8e;
     font-size: 0.9375rem;
     line-height: 1.7;
+
 }
 
 .company_award_tabs {
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
+
 }
 
 .company_award_tabs button {
+
     max-width: 180px;
     padding: 10px 20px;
     border: 1px solid #8e8e8e;
@@ -728,9 +780,9 @@
 }
 
 .company_logo {
+    
     flex: 1 1 calc((100% - 168px) / 7);
-    min-height: 76px;
-    border: 1px solid #ddd;
+  
 }
 
 .company_client_wrap {

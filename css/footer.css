@@ -20,8 +20,8 @@ footer {
 ========================================================= */
 
 .footer_inner {
-    width: 100%;
 
+    width: 100%;
     display: grid;
 
     grid-template-columns:
@@ -266,12 +266,12 @@ footer {
 
 
 .footer_policy a {
+
     font-size: 0.9375rem;      /* 15px */
     line-height: 1.5;
-
     color: inherit;
-
     white-space: nowrap;
+
 }
 
 
@@ -280,8 +280,8 @@ footer {
 ========================================================= */
 
 .footer_copy {
+    
     grid-area: copy;
-
     width: 100%;
     min-width: 0;
 
@@ -403,14 +403,6 @@ footer {
         width: 8rem;
     }
 
-
-    .footer_sub_nav {
-        justify-content: flex-start;
-
-        gap: clamp(3rem, 8vw, 6rem);
-    }
-
-
     .footer_company p,
     .footer_sub_nav a,
     .footer_branch span,
@@ -434,52 +426,52 @@ footer {
 @media (max-width: 1024px) and (min-width: 516px) {
 
 footer {
+
         padding: 40px;
+
     }
 
-
-
-
     .footer_logo {
+
         width: 120px;
+
     }
 
 
     .footer_company p,
     .footer_branch span,
     .footer_branch a {
+
         font-size: 14px;
-    }
 
-
-    .footer_sub_nav {
-        width: 100%;
-
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 40px;
     }
 
 
     .footer_sub_nav ul {
+
         gap: 8px;
+
     }
 
 
     .footer_sub_nav a {
+
         font-size: 14px;
+
     }
 
 
     .footer_sns {
+
         align-self: center;
 
         gap: 12px;
+
     }
 
 
     .footer_policy {
+
         justify-content: flex-start;
         align-self: center;
 
@@ -488,11 +480,14 @@ footer {
 
 
     .footer_policy a {
+
         font-size: 13px;
+
     }
 
 
     .footer_copy {
+
         width: 100%;
 
         align-items: flex-end;
@@ -502,6 +497,7 @@ footer {
 
 
     .footer_copy p {
+
         font-size: 12px;
 
         white-space: nowrap;
@@ -561,7 +557,6 @@ footer {
 
         display: flex;
         align-items: center;
-        justify-content: space-between;
 
         gap: 6px;
     }
@@ -657,7 +652,7 @@ footer {
     .footer_sns a {
 
         width: 16px;
-        height: 16px;
+        aspect-ratio: 1 / 1;
     }
 
 

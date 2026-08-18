@@ -2,10 +2,15 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>(주)그린죤 - 내 정보</title>
+
     <link rel="stylesheet" href="../css/reseat.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
     <link rel="stylesheet" href="../css/coom.css">
     <link rel="stylesheet" href="../css/header_stayl.css">
     <link rel="stylesheet" href="../css/menu.css">
@@ -13,36 +18,69 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body class="login_page profile_page is_auth_checking">
+
     <div id="header"></div>
     <div id="menu"></div>
 
     <main class="login_main profile_main">
+
         <nav class="login_breadcrumb" aria-label="현재 위치">
-            <a href="../index.html">홈</a>
+
+            <a class="icon logo"></a>
+
             <span class="icon arrow right_arrow_2 login_breadcrumb_arrow" aria-hidden="true"></span>
+
             <span aria-current="page">내 정보</span>
+
         </nav>
 
         <section class="profile_panel" aria-labelledby="profile_title">
+
             <div class="profile_heading">
+
                 <span class="profile_avatar"><span class="icon user" aria-hidden="true"></span></span>
+
                 <div>
                     <span>GREEN ZONE ACCOUNT</span>
+
                     <h1 id="profile_title">내 정보</h1>
+
                     <p>로그인 계정과 온라인 신청 메뉴를 확인할 수 있습니다.</p>
+
                 </div>
+
             </div>
 
+
             <dl class="profile_account">
-                <div><dt>이름</dt><dd id="profile_name">-</dd></div>
-                <div><dt>아이디</dt><dd id="profile_email">-</dd></div>
+
+                <div>
+
+                    <dt>이름</dt>
+
+                    <dd id="profile_name">-</dd>
+
+                </div>
+
+                <div>
+
+                    <dt>아이디</dt>
+                    <dd id="profile_email">-</dd>
+
+                </div>
+
             </dl>
 
             <div class="profile_actions">
+
                 <a class="login_primary_button profile_action_link" href="Online_application.html">온라인 작업 신청</a>
+
                 <button type="button" id="profile_logout" class="login_secondary_button">로그아웃</button>
+
             </div>
+
         </section>
+
     </main>
 
     <div id="footer"></div>
@@ -50,5 +88,6 @@
     <script src="../js/mobile_menu.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/user_Profile_page.js"></script>
+    
 </body>
 </html>

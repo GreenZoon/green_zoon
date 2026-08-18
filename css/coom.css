@@ -46,6 +46,12 @@ p {
     margin: 0;
 }
 
+h1{
+
+    font-weight: 700;
+
+}
+
 /* 링크 */
 
 a {
@@ -56,11 +62,13 @@ a {
 
 /* 이미지 */
 
-img {
+img,video{
 
     width: 100%;
+    height: 100%;
     aspect-ratio: 3 / 2;
     display: block;
+    object-fit: cover;
 
 }
 
@@ -278,7 +286,6 @@ section {
 .subpage_nav {
 
     width: 100%;
-    min-height: 44px;
     display: flex;
     align-items: flex-end;
     overflow: visible;
@@ -300,7 +307,6 @@ section {
 
     width: auto;
     min-width: 120px;
-    min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,7 +314,7 @@ section {
     font-size: 1rem;
     font-weight: 600;
     box-shadow: inset 0 -2px 0 transparent;
-    transition: color .25s ease, box-shadow .25s ease;
+    transition:  box-shadow .25s ease;
 }
 
 .subpage_nav_link:hover,
@@ -319,9 +325,11 @@ section {
 }
 
 .subpage_nav_link[aria-current="page"] {
+
     color: #8e8e8e;
     background-color: transparent;
     box-shadow: inset 0 -2px 0 transparent;
+
 }
 
 
@@ -369,7 +377,6 @@ section {
 
     flex: 0 0 auto;
     border-radius: 999px;
-    padding: 12px;
     gap: 0px;
 
     text-align: center;
@@ -386,19 +393,15 @@ section {
 
 .con_g{
 
-
     display: flex;
     background-color: #f2f2f2;
-
 
 }
 
 .con > .icon {
 
     width: 54px;
-     aspect-ratio: 1 / 1;
-
-    max-width: 54px;
+    aspect-ratio: 1 / 1;
 
     flex: 0 0 auto;
 
@@ -411,9 +414,9 @@ section {
     font-size: 0.8125rem;
     line-height: 1.2;
     font-weight: 600;
-
     text-align: center;
     white-space: nowrap;
+
 }
 
 .icon_g,
@@ -502,10 +505,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-  white-space: nowrap;
+    white-space: nowrap;
 
     gap: 4px;
-
     line-height: 1;
 }
 
@@ -1479,6 +1481,11 @@ aspect-ratio: 1 / 1;
 
 }
 
+    .mobile_on{
+
+        display: none;
+    }
+
 /* =========================================================
    11. ANIMATION
 ========================================================= */
@@ -1519,11 +1526,12 @@ aspect-ratio: 1 / 1;
 
 @media (max-width: 1500px) {
 
-.subpage_nav_list {
+    .subpage_nav_list {
+
         justify-content: flex-end;
     }
 
-.breadcrumb {
+    .breadcrumb {
 
         padding: 7px 50px;
 
@@ -1686,20 +1694,26 @@ aspect-ratio: 1 / 1;
         font-weight: 400;
     }
 
+    .box{
+
+        padding: 12px 20px;
+    }
+
 }
 
 
 @media (max-width: 768px) {
 
 .subpage_nav {
-        min-height: 42px;
-        overflow-x: auto;
-        overflow-y: visible;
-        scrollbar-width: none;
+
+        padding: 0 40px;
+    
     }
 
     .subpage_nav::-webkit-scrollbar {
+
         display: none;
+
     }
 
     .subpage_nav_list {
@@ -1710,21 +1724,25 @@ aspect-ratio: 1 / 1;
     }
 
     .subpage_nav_link {
+
         min-width: max-content;
         min-height: 42px;
         flex: 0 0 auto;
         font-size: 0.875rem;
         padding-block: 8px;
+
     }
 
     .subpage_nav_link:hover,
     .subpage_nav_link:focus-visible {
+
         color: #009944;
         background-color: transparent;
         box-shadow: inset 0 -2px 0 #009944;
+
     }
 
-.icon, .icon_2, .arrow, .mobile_icon {
+    .icon, .icon_2, .arrow, .mobile_icon {
 
         width: 20px;
 
@@ -1736,10 +1754,9 @@ aspect-ratio: 1 / 1;
 
     }
 
-        .section_g {
+    .section_g {
 
         background-color: #fff;
-
 
     }
 
@@ -1747,7 +1764,11 @@ aspect-ratio: 1 / 1;
 
         color: #555;
 
+    }
+     
+    .box{
 
+        padding: 10px 16px;
     }
 
     .sub_back {
@@ -1798,9 +1819,9 @@ aspect-ratio: 1 / 1;
 
     }
 
-.breadcrumb {
+    .breadcrumb {
 
-        display: none;
+            display: none;
 
     }
 
@@ -1808,6 +1829,11 @@ aspect-ratio: 1 / 1;
 
         display: none;
 
+    }
+
+    .mobile_on{
+
+        display: block;
     }
 
     section {
@@ -1890,7 +1916,7 @@ aspect-ratio: 1 / 1;
 
         font-size: 0.75rem;      /* 12px */
         line-height: 1.5;
-
+        letter-spacing: -0.04em;
     }
 
     .small_text {
@@ -1908,6 +1934,7 @@ aspect-ratio: 1 / 1;
         gap: 12px;
     }
 
+
     .icon, .icon_2, .arrow, .mobile_icon {
 
         width: 16px;
@@ -1919,11 +1946,17 @@ aspect-ratio: 1 / 1;
 
 @media (max-width: 480px) {
 
-section {
+    section {
 
         padding: 10px 20px;
         gap: 24px;
 
+    }
+
+    .subpage_nav {
+
+        padding: 0 20px;
+    
     }
 
 }
