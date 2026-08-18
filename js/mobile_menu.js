@@ -188,9 +188,13 @@ function createSubBack() {
     }
 
 
-    const reference =
-        document.getElementById("menu") ||
+    const header =
         document.getElementById("header");
+
+
+    const reference =
+        header ||
+        document.getElementById("menu");
 
 
     if (!reference) {
@@ -224,6 +228,54 @@ function createSubBack() {
     reference.insertAdjacentElement(
         "afterend",
         button
+    );
+
+
+    function syncSubBackTop() {
+
+        if (!header) {
+            return;
+        }
+
+
+        const headerHeight =
+            header.offsetHeight;
+
+
+        if (headerHeight === 0) {
+            return;
+        }
+
+
+        button.style.setProperty(
+            "--sub_back_top",
+            `${headerHeight}px`
+        );
+
+    }
+
+
+    syncSubBackTop();
+
+
+    if (header && "ResizeObserver" in window) {
+
+        const headerResizeObserver =
+            new ResizeObserver(
+                syncSubBackTop
+            );
+
+
+        headerResizeObserver.observe(
+            header
+        );
+
+    }
+
+
+    window.addEventListener(
+        "resize",
+        syncSubBackTop
     );
 
 }
