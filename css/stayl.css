@@ -383,6 +383,14 @@
 
 }
 
+.service_icon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .carpet {
 
     width: 36px;
@@ -1778,18 +1786,24 @@
     }
 
     .video_viewport {
+
         width: calc(100vw - clamp(20px, 4vw, 40px));
         overflow: hidden;
+
     }
 
     .video_track {
+
         gap: 7px;
+
     }
 
     .video_card {
+
         width: 200px;
-        flex: 0 0 200px;
+        flex: 0 0 auto;
         gap: 7px;
+
     }
 
     .video_thumbnail {
@@ -1800,47 +1814,62 @@
     }
 
     .video_play {
+
         top: 50%;
         left: 50%;
         width: 70px;
-        height: 70px;
+        aspect-ratio: 1 / 1;
+
     }
 
     .video_play .play_Block {
+
         width: 30px;
-        height: 30px;
+       aspect-ratio: 1 / 1;
+
     }
 
     .video_card_pc_title {
+
         display: none;
+
     }
 
     .video_card_mobile_title {
+
         display: block;
         color: #555;
         font-size: 0.875rem;
         font-weight: 700;
+
     }
 
     .video_pagination {
+
         align-self: center;
         gap: 6px;
+
     }
 
     .video_dot {
+
         width: 12px;
         height: 5px;
         border-radius: 999px;
+
     }
 
     .video_dot.is_active {
+
         width: 24px;
+
     }
 
     .page_title > .mobile_only {
 
         display: flex;
         align-items: center;
+        gap: 4px;
         
     }
 
@@ -1882,6 +1911,7 @@
         display: flex;
         align-items: center;
         padding: 0 12px;
+        gap: 4px;
 
     }
 
@@ -2064,7 +2094,7 @@
         max-width: 70px;
         height: 93px;
         aspect-ratio: auto;
-        flex: 0 0 70px;
+        flex: 0 0 auto;
 
         position: relative;
 
@@ -2073,94 +2103,68 @@
         border-radius: 0;
         background: transparent;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+
     }
 
     .mobile_all {
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 5px;
         color: #339933;
 
     }
 
-    .mobile_all::before {
-
-        content: "";
-
-        position: absolute;
-        top: 0;
-        left: 0;
+    .service_icon {
 
         width: 70px;
         aspect-ratio: 1 / 1;
+        flex: 0 0 auto;
 
-        border: 1px solid currentColor;
-        border-radius: 50%;
-        background-color: #fff;
-
-    }
-
-    .button_2 {
+        position: relative;
 
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
-        color: #8e8e8e;
-
-    }
-
-    .button_2::before {
-
-        content: "";
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 70px;
-        aspect-ratio: 1 / 1;
-
-        border: 1px solid #f8f8f8;
+        justify-content: center;
+      
         border-radius: 50%;
         background-color: #fff;
+        border: 1px solid #8e8e8e;
 
     }
+
+    .mobile_all .service_icon {
+
+        border-color: currentColor;
+
+    }
+
 
     .button_2 .icon_2 {
 
-        position: absolute;
-        top: 17px;
-        left: 17px;
-
         width: 36px;
         aspect-ratio: 1 / 1;
+        flex: 0 0 auto;
         padding: 2px;
-        z-index: 1;
 
     }
 
     .button_2 .water_tower {
 
-        top: 17px;
-        left: 23px;
-
         width: 24px;
         height: 36px;
+        flex: 0 0 auto;
         aspect-ratio: auto;
 
     }
 
     .button_2 .brick_wall {
 
-        top: 23px;
-        left: 20px;
-
         width: 30px;
         height: 25px;
+        flex: 0 0 auto;
         aspect-ratio: auto;
 
     }
@@ -2169,12 +2173,10 @@
     .mobile_all p {
 
         color: inherit;
-            font-size: 0.75rem;      /* 12px */
+        font-size: 0.75rem;      /* 12px */
         line-height: 1.55;
         letter-spacing: -0.04em;
         font-weight: 500;
-
-        z-index: 1;
 
     }
 
@@ -2182,6 +2184,9 @@
     .mobile_all p {
 
         height: 18px;
+
+        position: absolute;
+        bottom: -3%;
 
         display: flex;
         align-items: center;
@@ -2206,10 +2211,10 @@
 
     }
 
-    .button_2:hover::before {
+    .button_2:hover .service_icon {
 
         border-color: #339933;
-        background-color: #f8f8f8;
+
 
     }
 
@@ -2220,8 +2225,8 @@
 
     }
 
-    .button_2:active::before,
-    .button_2.is_selected::before {
+    .button_2:active .service_icon,
+    .button_2.is_selected .service_icon {
 
         border-color: #f8f8f8;
         background-color: #339933;
@@ -2230,14 +2235,10 @@
 
     .mobile_all_icon {
 
-        position: absolute;
-        top: 20px;
-        left: 20px;
-
         width: 30px;
         aspect-ratio: 1 / 1;
+        flex: 0 0 auto;
         background-color: #339933;
-        z-index: 1;
 
     }
 
@@ -2477,6 +2478,7 @@
     .mobile_schedule_box > span:last-child {
 
         color: #8e8e8e;
+        font-weight: 500;
 
     }
 
@@ -2883,15 +2885,15 @@
 
     .mobile_academy_icon .icon{
 
-        width: 20px;
-        flex: 0 0 20px;
+        width: 24px;
+        flex: 0 0 auto;
         background-color: #009944;
     }
 
     .mobile_academy_icon .presentation {
 
         width: 24px;
-        flex: 0 0 24px;
+        flex: 0 0 auto;
 
     }
 

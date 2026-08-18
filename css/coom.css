@@ -315,24 +315,30 @@ section {
 
 .subpage_nav_link:hover,
 .subpage_nav_link:focus-visible {
+
     color: #fff;
     background-color: #009944;
     box-shadow: inset 0 -2px 0 transparent;
+
 }
 
 .subpage_nav_link[aria-current="page"] {
+
     color: #8e8e8e;
     background-color: transparent;
     box-shadow: inset 0 -2px 0 transparent;
+
 }
 
 @media (max-width: 1500px) {
+
     .subpage_nav_list {
         justify-content: flex-end;
     }
 }
 
 @media (max-width: 768px) {
+    
     .subpage_nav {
         min-height: 42px;
         overflow-x: auto;
