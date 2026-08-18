@@ -219,13 +219,13 @@
 
 /* =========================================================
    MIDDLE PC
-   1025px ~ 1500px
+   769px ~ 1500px
 
    카드 형태는 유지하고
    전화번호와 겹치는 상담원 아이콘만 숨김
 ========================================================= */
 
-@media (min-width: 1025px) and (max-width: 1500px) {
+@media (min-width: 769px) and (max-width: 1500px) {
 
     #Request_Cleaning > section {
 
@@ -409,4 +409,3 @@
         align-self: center;
     }
 }
-

@@ -128,15 +128,14 @@
 
     }
 
-    .service_cleaning .service_gallery .sub_slide_img:first-child,
-    .service_cleaning .service_gallery .sub_slide_img.mobile_featured {
+    .service_cleaning .service_gallery .sub_slide_img {
 
         display: block;
 
-        width: calc((100% - 14px) / 2);
+        width: calc((100% - 28px) / 3);
         height: 100%;
 
-        flex: 0 0 calc((100% - 14px) / 2);
+        flex: 0 0 calc((100% - 28px) / 3);
         
     }
     

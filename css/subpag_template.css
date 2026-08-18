@@ -2702,6 +2702,15 @@
     background-color: #f8f8f8;
 }
 
+.section_g.service_gallery .slide_dot {
+    background-color: rgb(255 255 255 / 40%);
+}
+
+.section_g.service_gallery .slide_dot.is_active,
+.section_g.service_gallery .slide_dot.is_active_4 {
+    background-color: #f8f8f8;
+}
+
 @media (min-width: 769px) {
 
     .sub_pag_tit {
@@ -3229,7 +3238,7 @@
     }
 
     .sub_pag_menu {
-        justify-content: center;
+        justify-content: flex-end;
         gap: 12px;
     }
 
@@ -3343,6 +3352,63 @@
         width: calc((100% - 32px) / 2);
         max-width: none;
     }
+
+    .tix_box,
+    .tix_box:nth-of-type(odd) {
+        flex-direction: row;
+        gap: clamp(36px, 5vw, 72px);
+    }
+
+    .tix_box:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+
+    .tix_box .img_wrap {
+        width: 45%;
+        flex: 0 0 45%;
+    }
+
+    .tix_box .tit_wrap {
+        width: 55%;
+        gap: 8px;
+    }
+
+    .tix_box .tit_wrap h3 {
+        font-size: 1.0625rem;
+        line-height: 1.4;
+    }
+
+    .tix_box .tit_wrap p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+
+    .service_target .con {
+        width: 96px;
+        max-width: 96px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 96px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 50%;
+    }
+
+    .service_target .con > .icon {
+        width: 40px;
+        max-width: 40px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 40px;
+    }
+
+    .service_target .con > p {
+        position: absolute;
+        bottom: 12px;
+        font-size: 0.75rem;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -3369,29 +3435,75 @@
         line-height: 1.5;
     }
 
-    .service_target .con,
-    .service_cleaning .service_target .con {
+    .service_target .con {
         width: 48px;
         max-width: 48px;
         flex: 0 0 48px;
         padding: 7px;
     }
 
-    .service_target .con > .icon,
-    .service_cleaning .service_target .con > .icon {
+    .service_target .con > .icon {
         width: 24px;
         max-width: 24px;
         flex: 0 0 24px;
     }
 
-    .service_target .con > p,
-    .service_cleaning .service_target .con > p {
+    .service_target .con > p {
         bottom: -3%;
         font-size: 0.625rem;
     }
 
     .service_video_play {
         width: clamp(64px, 20vw, 80px);
+    }
+}
+
+/* =========================================================
+   DESKTOP SERVICE ORDER
+   피그마: 소개 → 대상 → 작업 내용 → 갤러리 → 영상 → 문의
+========================================================= */
+
+@media (min-width: 769px) {
+
+    .service_cleaning .service_intro {
+        order: 1;
+    }
+
+    .service_cleaning .service_target {
+        order: 2;
+    }
+
+    .service_cleaning .service_effect {
+        order: 3;
+    }
+
+    .service_cleaning .service_gallery {
+        order: 4;
+    }
+
+    .service_cleaning .service_video {
+        order: 5;
+    }
+
+    .service_cleaning .service_request {
+        order: 6;
+    }
+
+    .dispatch_page .service_gallery {
+        order: 3;
+    }
+
+    .dispatch_page .dispatch_academy {
+        order: 4;
+    }
+
+    .dispatch_page .dispatch_request {
+        order: 5;
+    }
+
+    .wax_page .tix_box .tit_wrap p {
+        font-size: 1rem;
+        line-height: 1.65;
     }
 }
 
@@ -3985,6 +4097,18 @@
         background-color: #fff;
     }
 
+    .section_g.service_gallery .slide_dot,
+    .img_section_g.service_gallery .slide_dot {
+        background-color: #c6c6c6;
+    }
+
+    .section_g.service_gallery .slide_dot.is_active,
+    .section_g.service_gallery .slide_dot.is_active_4,
+    .img_section_g.service_gallery .slide_dot.is_active,
+    .img_section_g.service_gallery .slide_dot.is_active_4 {
+        background-color: #009944;
+    }
+
     .service_gallery .tit_wrap_g,
     .service_gallery .tit_wrap {
         color: #555;
@@ -4011,6 +4135,56 @@
         font-size: 0.75rem;
         font-weight: 500;
         line-height: 1.5;
+    }
+
+    .service_target .con {
+        width: 48px;
+        max-width: 48px;
+        min-width: 48px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 48px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        padding: 7px;
+        border-radius: 50%;
+        overflow: visible;
+    }
+
+    .service_target .con > .icon {
+        width: 24px;
+        max-width: 24px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 24px;
+    }
+
+    .service_target .con > p {
+        position: absolute;
+        bottom: -3%;
+        color: #f8f8f8;
+        font-size: 0.625rem;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+
+    .service_cleaning .sub_slide_img {
+        display: none;
+    }
+
+    .service_cleaning .mobile_featured {
+        width: 100%;
+        height: 100%;
+        display: block;
+        flex: 0 0 100%;
+    }
+
+    .mobile_featured img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
  
