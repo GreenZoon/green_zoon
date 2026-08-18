@@ -1696,6 +1696,44 @@
         width: 24px;
     }
 
+    .mobile_slide_control.mobile_only {
+
+        position: absolute;
+        right: 20px;
+        bottom: 14px;
+        z-index: 20;
+
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        color: #f8f8f8;
+        font-size: 0.75rem;
+        line-height: 1.5;
+
+    }
+
+    .mobile_slide_count {
+
+        height: 24px;
+        padding: 0 18px;
+
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        border-radius: 5px;
+        background-color: rgb(29 29 29 / 50%);
+
+    }
+
+    .mobile_slide_control .slide_toggle {
+
+        flex: 0 0 24px;
+        background-color: rgb(29 29 29 / 50%);
+
+    }
+
     .slide_wrap_2 .service_arrow {
         display: none;
     }
@@ -2102,6 +2140,28 @@
         aspect-ratio: 1 / 1;
         padding: 2px;
         z-index: 1;
+
+    }
+
+    .button_2 .water_tower {
+
+        top: 17px;
+        left: 23px;
+
+        width: 24px;
+        height: 36px;
+        aspect-ratio: auto;
+
+    }
+
+    .button_2 .brick_wall {
+
+        top: 23px;
+        left: 20px;
+
+        width: 30px;
+        height: 25px;
+        aspect-ratio: auto;
 
     }
 
@@ -2823,9 +2883,16 @@
 
     .mobile_academy_icon .icon{
 
-        width: 28px;
-        flex: 0 0 28px;
+        width: 20px;
+        flex: 0 0 20px;
         background-color: #009944;
+    }
+
+    .mobile_academy_icon .presentation {
+
+        width: 24px;
+        flex: 0 0 24px;
+
     }
 
     .mobile_academy .mobile_tit {
@@ -2880,8 +2947,9 @@
 
     .mobile_academy_icon {
 
-        width: 60px;
+        width: 45px;
         aspect-ratio: 1 / 1;
+        flex: 0 0 45px;
 
         display: flex;
         align-items: center;
@@ -2949,9 +3017,9 @@
 
     .mobile_event_box .mobile_img {
 
-        width: 173px;
-        height: 115px;
-        flex: 0 0 173px;
+        width: 150px;
+        height: 100px;
+        flex: 0 0 150px;
 
         border-radius: 7px;
         overflow: hidden;
@@ -3177,7 +3245,7 @@
     .mobile_academy_list {
 
         display: grid;
-        grid-template-columns: repeat(3, 75px);
+        grid-template-columns: repeat(3, 70px);
         gap: 9px 12px;
         
     }

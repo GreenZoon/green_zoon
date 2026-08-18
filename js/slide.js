@@ -8,7 +8,13 @@ if (slider) {
 
     const prevButton = slider.querySelector(".slide_prev");
     const nextButton = slider.querySelector(".slide_next");
-    const toggleButton = slider.querySelector(".slide_toggle");
+    const toggleButtons = slider.querySelectorAll(".slide_toggle");
+    const mobileSlideCurrent = slider.querySelector(".mobile_slide_current");
+    const mobileSlideTotal = slider.querySelector(".mobile_slide_total");
+
+    if (mobileSlideTotal) {
+        mobileSlideTotal.textContent = slides.length;
+    }
 
     let currentIndex = 0;
     let isPlaying = true;
@@ -52,6 +58,10 @@ if (slider) {
                 dotIndex === currentIndex
             );
         });
+
+        if (mobileSlideCurrent) {
+            mobileSlideCurrent.textContent = currentIndex + 1;
+        }
     }
 
     function nextSlide() {
@@ -78,26 +88,28 @@ if (slider) {
     }
 
     function updateToggleButton() {
-        if (!toggleButton) {
+        if (toggleButtons.length === 0) {
             return;
         }
 
-        toggleButton.classList.toggle(
-            "is_playing",
-            isPlaying
-        );
+        toggleButtons.forEach((toggleButton) => {
+            toggleButton.classList.toggle(
+                "is_playing",
+                isPlaying
+            );
 
-        toggleButton.classList.toggle(
-            "is_paused",
-            !isPlaying
-        );
+            toggleButton.classList.toggle(
+                "is_paused",
+                !isPlaying
+            );
 
-        toggleButton.setAttribute(
-            "aria-label",
-            isPlaying
-                ? "자동재생 정지"
-                : "자동재생 시작"
-        );
+            toggleButton.setAttribute(
+                "aria-label",
+                isPlaying
+                    ? "자동재생 정지"
+                    : "자동재생 시작"
+            );
+        });
     }
 
     function getPointerX(event) {
@@ -224,9 +236,8 @@ if (slider) {
         );
     });
 
-    toggleButton?.addEventListener(
-        "click",
-        () => {
+    toggleButtons.forEach((toggleButton) => {
+        toggleButton.addEventListener("click", () => {
             isPlaying = !isPlaying;
 
             if (isPlaying) {
@@ -236,8 +247,8 @@ if (slider) {
             }
 
             updateToggleButton();
-        }
-    );
+        });
+    });
 
     track.addEventListener(
         "mousedown",

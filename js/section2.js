@@ -699,9 +699,5 @@ if (section2) {
 
     moveToSlide(0, false);
     changeServiceContent(0);
-
-    serviceButtons.forEach((button, index) => {
-        button.classList.toggle("is_selected", index === 0);
-    });
     
 }
