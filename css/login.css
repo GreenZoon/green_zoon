@@ -237,6 +237,12 @@
     padding: 14px 16px;
 }
 
+.account_login_logo {
+
+    max-width: 300px;
+    background-color: #009944;
+}
+
 .login_inline_notice a {
     color: var(--login-green);
     font-weight: 700;
@@ -815,6 +821,7 @@
 .account_login {
     width: min(1030px, calc(100% - 40px));
     min-height: 100dvh;
+    align-items: center;
     justify-content: center;
     gap: 0;
     padding-block: 60px;
@@ -823,6 +830,7 @@
 .account_login_panel {
     width: 100%;
     gap: 30px;
+   
 }
 
 .account_login_form {

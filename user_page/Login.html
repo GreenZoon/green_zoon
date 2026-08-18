@@ -11,29 +11,39 @@
 </head>
 <body class="login_page account_page">
     <main class="account_login">
-        <a class="account_login_logo" href="../index.html" aria-label="그린죤 메인으로 이동">
-         
-        </a>
+        <a class="account_login_logo icon logo" 
+        href="../index.html" aria-label="그린죤 메인으로 이동"></a>
 
         <section class="account_login_panel" aria-labelledby="login_title">
             <h1 id="login_title" class="blind">로그인</h1>
 
             <form id="login_form" class="account_login_form" novalidate>
-                <label class="account_field">
+                <label class="account_field"
+                >
                     <span>아이디를 입력해주세요</span>
+
                     <input type="email" id="login_email" name="email" autocomplete="username" placeholder="Green@green.com" required>
                     <small class="login_error" data-error-for="email"></small>
+                
                 </label>
 
                 <label class="account_field account_password_field">
+                   
                     <span>비밀번호를 입력해 주세요</span>
+                    
                     <span class="account_password_input">
+                        
                         <input type="password" id="login_password" name="password" autocomplete="current-password" placeholder="비밀번호" minlength="4" required>
+                       
                         <button type="button" class="password_toggle" data-password-toggle aria-label="비밀번호 표시">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Zm9.5 3.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z"/></svg>
+                        
                         </button>
+                    
                     </span>
+                   
                     <small class="login_error" data-error-for="password"></small>
+                
                 </label>
 
                 <div class="account_login_options">
