@@ -406,7 +406,19 @@
                 perPage = list.closest(".notice_list") ? 6 : 5;
             } else {
                 items = Array.from(list.children);
-                perPage = list.classList.contains("event_cards") ? 3 : 8;
+
+                const isMobile =
+                    window.matchMedia("(max-width: 768px)").matches;
+
+                if (isMobile) {
+                    perPage = 4;
+                } else if (list.classList.contains("gallery_cards")) {
+                    perPage = 12;
+                } else if (list.classList.contains("event_cards")) {
+                    perPage = 6;
+                } else {
+                    perPage = 8;
+                }
             }
 
             if (!items.length) return;
