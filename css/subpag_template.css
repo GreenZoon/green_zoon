@@ -950,11 +950,7 @@
 
 .service_effect .effect_icon_circle > .icon {
 
-    width: 48px;
-    aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
+    width: 100%;
     background-color: #009944;
 }
 
@@ -2562,6 +2558,30 @@
         aspect-ratio: 1 / 1;
         flex: 0 1 8%;
     }
+
+        .service_detail > * {
+        order: 0;
+    }
+
+    .dispatch_page .service_intro {
+        order: 1;
+    }
+
+    .dispatch_page .service_target {
+        order: 2;
+    }
+
+    .dispatch_page .service_gallery {
+        order: 3;
+    }
+
+    .dispatch_page .dispatch_academy {
+        order: 4;
+    }
+
+    .dispatch_page .dispatch_request {
+        order: 5;
+    }
 }
 
 /* =========================================================
@@ -2811,14 +2831,6 @@
         justify-content: center;
         border: 1px solid #009944;
         border-radius: 50%;
-    }
-
-    .service_effect .effect_icon_circle > .icon {
-
-        width: 40px;
-        height: 40px;
-
-        flex: 0 0 40px;
     }
 
     .service_effect .box_g .tit_wrap {
@@ -3162,43 +3174,22 @@
 
     .service_effect .effect_icon_circle {
         width: 40px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 40px;
-    }
-
-    .service_effect .effect_icon_circle > .icon {
-        width: 24px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 24px;
-    }
-
-    .service_effect .tit_g h3 {
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
-
-    .service_effect .tit_g p {
-        font-size: 0.625rem;
-        line-height: 1.5;
-    }
-
-    .service_target .con {
-        width: 48px;
-        max-width: 48px;
-        flex: 0 0 48px;
-        padding: 7px;
     }
 
     .service_target .con > .icon {
+
         width: 24px;
         max-width: 24px;
-        flex: 0 0 24px;
+
     }
 
     .service_target .con > p {
-                position: absolute;
-        bottom: -3%;
+
+        position: absolute;
+        bottom: -20%;
         font-size: 0.625rem;
+        color: #555;
+
     }
 
     .service_video_play {
@@ -3306,7 +3297,7 @@
     .slide_pause {
         width: 24px;
         aspect-ratio: 1 / 1;
-        flex: 0 0 24px;
+        flex: 0 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3359,29 +3350,7 @@
 ========================================================= */
 
 
-    .service_detail > * {
-        order: 0;
-    }
 
-    .dispatch_page .service_intro {
-        order: 1;
-    }
-
-    .dispatch_page .service_target {
-        order: 2;
-    }
-
-    .dispatch_page .service_gallery {
-        order: 3;
-    }
-
-    .dispatch_page .dispatch_academy {
-        order: 4;
-    }
-
-    .dispatch_page .dispatch_request {
-        order: 5;
-    }
 }
 
 @media (max-width: 768px) {
@@ -3408,7 +3377,7 @@
 
     .dispatch_request .icon {
         width: 24px;
-        flex: 0 0 24px;
+        flex: 0 0 auto;
         order: 0;
         background-color: currentColor;
     }
@@ -3470,7 +3439,7 @@
 
     .dispatch_academy_icon {
         width: 48px;
-        flex: 0 0 48px;
+        flex: 0 0 auto;
         color: #009944;
     }
 
@@ -3484,7 +3453,7 @@
 
     .dispatch_training .img_wrap {
         width: 42%;
-        flex: 0 0 42%;
+        flex: 0 0 auto;
         border-radius: 7px;
     }
 
@@ -3701,24 +3670,28 @@
     }
 
     .service_gallery_name {
+
         color: #8e8e8e;
         font-size: 0.9375rem;
         font-weight: 700;
         line-height: 1.5;
+
     }
 
     .service_gallery_status {
+
         color: #f8f8f8;
         background-color: #009944;
         font-size: 0.75rem;
         font-weight: 500;
         line-height: 1.5;
+
     }
 
     .service_target .con {
+
         width: 13.5%;
         max-width: 13.5%;
-        min-width: 0;
         aspect-ratio: 1 / 1;
         flex: 0 1 13.5%;
         position: relative;
@@ -3732,37 +3705,36 @@
     }
 
     .service_target .con > .icon {
+        
         width: 24px;
         max-width: 24px;
         aspect-ratio: 1 / 1;
-        flex: 0 0 24px;
+
     }
 
-    .service_target .con > p {
-        position: absolute;
-        bottom: -3%;
-        color: #f8f8f8;
-        font-size: 0.625rem;
-        line-height: 1.5;
-        white-space: nowrap;
-    }
 
     .service_cleaning .sub_slide_img {
+
         display: none;
+
     }
 
     .service_cleaning .mobile_featured {
+
         width: 100%;
         height: 100%;
         display: block;
         flex: 0 0 100%;
+
     }
 
     .mobile_featured img {
+        
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+
     }
 }
 
@@ -3828,8 +3800,8 @@
 
     .service_effect .effect_icon_circle > .icon {
 
-        width: 36px;
-        background-color: #009944;
+        width: 24px;
+
     
     }
 
