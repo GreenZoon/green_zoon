@@ -582,17 +582,6 @@
     padding-block: 50px 80px;
 }
 
-.account_login_logo {
-    display: flex;
-    justify-content: center;
-}
-
-.account_login_logo img {
-    width: 156px;
-    height: auto;
-    display: block;
-}
-
 .account_login_panel,
 .account_login_heading,
 .account_login_form,
@@ -803,9 +792,6 @@
         padding-block: 34px 56px;
     }
 
-    .account_login_logo img {
-        width: 142px;
-    }
 }
 
 @media (max-width: 420px) {
@@ -829,13 +815,9 @@
 .account_login {
     width: min(1030px, calc(100% - 40px));
     min-height: 100dvh;
-    justify-content: flex-start;
-    gap: 70px;
-    padding-block: clamp(90px, 14vh, 230px) 90px;
-}
-
-.account_login_logo img {
-    width: clamp(150px, 12vw, 200px);
+    justify-content: center;
+    gap: 0;
+    padding-block: 60px;
 }
 
 .account_login_panel {
@@ -955,13 +937,7 @@
     .account_login {
         width: min(100% - 40px, 420px);
         min-height: 100dvh;
-        gap: 34px;
-        padding-block: 78px 56px;
-    }
-
-    .account_login_logo img {
-        width: 200px;
-        max-width: 64vw;
+        padding-block: 40px;
     }
 
     .account_login_panel {
