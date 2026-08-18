@@ -1212,9 +1212,56 @@
     display: none;
 }
 
+
 /* =========================================================
-   14. TABLET
+   FIGMA SUBPAGE COMMON FINAL
 ========================================================= */
+
+.slide_status {
+    display: none;
+}
+
+.pause_icon {
+    width: 10px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 10px;
+    background-color: currentColor;
+    -webkit-mask: url("../img/icon/pause.svg") center / contain no-repeat;
+    mask: url("../img/icon/pause.svg") center / contain no-repeat;
+}
+
+.slide_pause.is_paused .pause_icon {
+    -webkit-mask-image: url("../img/icon/play_Block.svg");
+    mask-image: url("../img/icon/play_Block.svg");
+}
+
+.slide_dot {
+    background-color: #c6c6c6;
+}
+
+.slide_dot.is_active,
+.slide_dot.is_active_4 {
+    background-color: #009944;
+}
+
+.img_section_g .slide_dot {
+    background-color: rgb(255 255 255 / 40%);
+}
+
+.img_section_g .slide_dot.is_active,
+.img_section_g .slide_dot.is_active_4 {
+    background-color: #f8f8f8;
+}
+
+.section_g.service_gallery .slide_dot {
+    background-color: rgb(255 255 255 / 40%);
+}
+
+.section_g.service_gallery .slide_dot.is_active,
+.section_g.service_gallery .slide_dot.is_active_4 {
+    background-color: #f8f8f8;
+}
+
 /* =========================================================
    MIDDLE PC
    1025px ~ 1500px
@@ -1286,7 +1333,143 @@
     }
 
 }
+@media (min-width: 769px) and (max-width: 1024px) {
 
+    .man_sled > picture,
+    .man_sled img {
+        height: clamp(240px, 20.833vw, 400px);
+        aspect-ratio: auto;
+    }
+
+    .service_intro,
+    .service_cleaning .service_intro {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .service_intro > .img_wrap,
+    .service_intro > .tit_wrap,
+    .service_cleaning .service_intro > .img_wrap,
+    .service_cleaning .service_intro > .tit_wrap {
+        width: calc((100% - 40px) / 2);
+        max-width: none;
+        flex: 0 1 calc((100% - 40px) / 2);
+    }
+
+    .service_intro .tit_wrap,
+    .service_intro .tit_in_wrap,
+    .service_cleaning .service_intro > .tit_wrap,
+    .service_cleaning .service_intro .tit_in_wrap {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .service_intro .tit_wrap h2,
+    .service_cleaning .service_intro .page_title {
+        display: block;
+    }
+
+    .service_intro .tit_wrap > p,
+    .service_cleaning .service_intro > .tit_wrap > p {
+        width: 100%;
+        text-align: left;
+    }
+
+    .service_cleaning .service_target {
+        color: #555;
+        background-color: #fff;
+    }
+
+    .service_effect .box_wrap {
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .service_effect .box_g {
+        flex: 1 1 calc((100% - 36px) / 4);
+    }
+
+    .service_gallery .sub_pag_clipping_mask {
+        aspect-ratio: 39 / 8;
+    }
+
+    .service_gallery .sub_pag_img_wrap {
+        gap: 14px;
+    }
+
+    .service_gallery .sub_pag_img_wrap > .sub_slide_img,
+    .service_gallery .sub_pag_img_wrap > .sub_slide_img:nth-child(2) {
+        display: block;
+        width: calc((100% - 28px) / 3);
+        height: 100%;
+        flex: 0 0 calc((100% - 28px) / 3);
+    }
+
+    .service_video > div,
+    .service_video > .tit_wrap {
+        width: calc((100% - 32px) / 2);
+        max-width: none;
+    }
+
+    .tix_box,
+    .tix_box:nth-of-type(odd) {
+        flex-direction: row;
+        gap: clamp(36px, 5vw, 72px);
+    }
+
+    .tix_box:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+
+    .tix_box .img_wrap {
+        width: 45%;
+        flex: 0 0 45%;
+    }
+
+    .tix_box .tit_wrap {
+        width: 55%;
+        gap: 8px;
+    }
+
+    .tix_box .tit_wrap h3 {
+        font-size: 1.0625rem;
+        line-height: 1.4;
+    }
+
+    .tix_box .tit_wrap p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+
+    .service_target .con {
+        width: 10%;
+        max-width: 10%;
+        min-width: 0;
+        aspect-ratio: 1 / 1;
+        flex: 0 1 10%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 50%;
+    }
+
+    .service_target .con > .icon {
+        width: 40px;
+        max-width: 40px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 40px;
+    }
+
+    .service_target .con > p {
+
+        bottom: 12px;
+        font-size: 0.75rem;
+    }
+
+}
 @media (max-width: 1024px) {
 
 
@@ -1298,8 +1481,7 @@
     .section_3 .con,
     .service_target .con{
 
-        width: 96px;
-        max-width: 96px;
+       width: 40%;
         gap: 6px;
 
     }
@@ -2141,11 +2323,6 @@
 
     }
 
-
-
-
-     
-
     .service_intro > .img_wrap,
     .service_intro > .tit_wrap {
 
@@ -2662,55 +2839,103 @@
 
 }
 
+
+@media (max-width: 768px) {
+
+    .service_effect .effect_icon_circle {
+        width: 40px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 40px;
+    }
+
+    .service_effect .effect_icon_circle > .icon {
+        width: 24px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 24px;
+    }
+
+    .service_effect .tit_g h3 {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .service_effect .tit_g p {
+        font-size: 0.625rem;
+        line-height: 1.5;
+    }
+
+    .service_target .con {
+        width: 48px;
+        max-width: 48px;
+        flex: 0 0 48px;
+        padding: 7px;
+    }
+
+    .service_target .con > .icon {
+        width: 24px;
+        max-width: 24px;
+        flex: 0 0 24px;
+    }
+
+    .service_target .con > p {
+                position: absolute;
+        bottom: -3%;
+        font-size: 0.625rem;
+    }
+
+    .service_video_play {
+        width: clamp(64px, 20vw, 80px);
+    }
+}
+
 /* =========================================================
-   FIGMA SUBPAGE COMMON FINAL
+   DESKTOP SERVICE ORDER
+   피그마: 소개 → 대상 → 작업 내용 → 갤러리 → 영상 → 문의
 ========================================================= */
 
-.slide_status {
-    display: none;
-}
+@media (min-width: 769px) {
 
-.pause_icon {
-    width: 10px;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 10px;
-    background-color: currentColor;
-    -webkit-mask: url("../img/icon/pause.svg") center / contain no-repeat;
-    mask: url("../img/icon/pause.svg") center / contain no-repeat;
-}
+    .service_cleaning .service_intro {
+        order: 1;
+    }
 
-.slide_pause.is_paused .pause_icon {
-    -webkit-mask-image: url("../img/icon/play_Block.svg");
-    mask-image: url("../img/icon/play_Block.svg");
-}
+    .service_cleaning .service_target {
+        order: 2;
+    }
 
-.slide_dot {
-    background-color: #c6c6c6;
-}
+    .service_cleaning .service_effect {
+        order: 3;
+    }
 
-.slide_dot.is_active,
-.slide_dot.is_active_4 {
-    background-color: #009944;
-}
+    .service_cleaning .service_gallery {
+        order: 4;
+    }
 
-.img_section_g .slide_dot {
-    background-color: rgb(255 255 255 / 40%);
-}
+    .service_cleaning .service_video {
+        order: 5;
+    }
 
-.img_section_g .slide_dot.is_active,
-.img_section_g .slide_dot.is_active_4 {
-    background-color: #f8f8f8;
-}
+    .service_cleaning .service_request {
+        order: 6;
+    }
 
-.section_g.service_gallery .slide_dot {
-    background-color: rgb(255 255 255 / 40%);
-}
+    .dispatch_page .service_gallery {
+        order: 3;
+    }
 
-.section_g.service_gallery .slide_dot.is_active,
-.section_g.service_gallery .slide_dot.is_active_4 {
-    background-color: #f8f8f8;
-}
+    .dispatch_page .dispatch_academy {
+        order: 4;
+    }
 
+    .dispatch_page .dispatch_request {
+        order: 5;
+    }
+
+    .wax_page .tix_box .tit_wrap p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+}
 @media (min-width: 769px) {
 
     .sub_pag_tit {
@@ -3274,239 +3499,7 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
 
-    .man_sled > picture,
-    .man_sled img {
-        height: clamp(240px, 20.833vw, 400px);
-        aspect-ratio: auto;
-    }
-
-    .service_intro,
-    .service_cleaning .service_intro {
-        flex-direction: row;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .service_intro > .img_wrap,
-    .service_intro > .tit_wrap,
-    .service_cleaning .service_intro > .img_wrap,
-    .service_cleaning .service_intro > .tit_wrap {
-        width: calc((100% - 40px) / 2);
-        max-width: none;
-        flex: 0 1 calc((100% - 40px) / 2);
-    }
-
-    .service_intro .tit_wrap,
-    .service_intro .tit_in_wrap,
-    .service_cleaning .service_intro > .tit_wrap,
-    .service_cleaning .service_intro .tit_in_wrap {
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .service_intro .tit_wrap h2,
-    .service_cleaning .service_intro .page_title {
-        display: block;
-    }
-
-    .service_intro .tit_wrap > p,
-    .service_cleaning .service_intro > .tit_wrap > p {
-        width: 100%;
-        text-align: left;
-    }
-
-    .service_cleaning .service_target {
-        color: #555;
-        background-color: #fff;
-    }
-
-    .service_effect .box_wrap {
-        flex-wrap: nowrap;
-        gap: 12px;
-    }
-
-    .service_effect .box_g {
-        flex: 1 1 calc((100% - 36px) / 4);
-    }
-
-    .service_gallery .sub_pag_clipping_mask {
-        aspect-ratio: 39 / 8;
-    }
-
-    .service_gallery .sub_pag_img_wrap {
-        gap: 14px;
-    }
-
-    .service_gallery .sub_pag_img_wrap > .sub_slide_img,
-    .service_gallery .sub_pag_img_wrap > .sub_slide_img:nth-child(2) {
-        display: block;
-        width: calc((100% - 28px) / 3);
-        height: 100%;
-        flex: 0 0 calc((100% - 28px) / 3);
-    }
-
-    .service_video > div,
-    .service_video > .tit_wrap {
-        width: calc((100% - 32px) / 2);
-        max-width: none;
-    }
-
-    .tix_box,
-    .tix_box:nth-of-type(odd) {
-        flex-direction: row;
-        gap: clamp(36px, 5vw, 72px);
-    }
-
-    .tix_box:nth-of-type(even) {
-        flex-direction: row-reverse;
-    }
-
-    .tix_box .img_wrap {
-        width: 45%;
-        flex: 0 0 45%;
-    }
-
-    .tix_box .tit_wrap {
-        width: 55%;
-        gap: 8px;
-    }
-
-    .tix_box .tit_wrap h3 {
-        font-size: 1.0625rem;
-        line-height: 1.4;
-    }
-
-    .tix_box .tit_wrap p {
-        font-size: 0.9375rem;
-        line-height: 1.6;
-    }
-
-    .service_target .con {
-        width: 10%;
-        max-width: 10%;
-        min-width: 0;
-        aspect-ratio: 1 / 1;
-        flex: 0 1 10%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border-radius: 50%;
-    }
-
-    .service_target .con > .icon {
-        width: 40px;
-        max-width: 40px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 40px;
-    }
-
-    .service_target .con > p {
-        position: absolute;
-        bottom: 12px;
-        font-size: 0.75rem;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .service_effect .effect_icon_circle {
-        width: 40px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 40px;
-    }
-
-    .service_effect .effect_icon_circle > .icon {
-        width: 24px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 24px;
-    }
-
-    .service_effect .tit_g h3 {
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
-
-    .service_effect .tit_g p {
-        font-size: 0.625rem;
-        line-height: 1.5;
-    }
-
-    .service_target .con {
-        width: 48px;
-        max-width: 48px;
-        flex: 0 0 48px;
-        padding: 7px;
-    }
-
-    .service_target .con > .icon {
-        width: 24px;
-        max-width: 24px;
-        flex: 0 0 24px;
-    }
-
-    .service_target .con > p {
-        bottom: -3%;
-        font-size: 0.625rem;
-    }
-
-    .service_video_play {
-        width: clamp(64px, 20vw, 80px);
-    }
-}
-
-/* =========================================================
-   DESKTOP SERVICE ORDER
-   피그마: 소개 → 대상 → 작업 내용 → 갤러리 → 영상 → 문의
-========================================================= */
-
-@media (min-width: 769px) {
-
-    .service_cleaning .service_intro {
-        order: 1;
-    }
-
-    .service_cleaning .service_target {
-        order: 2;
-    }
-
-    .service_cleaning .service_effect {
-        order: 3;
-    }
-
-    .service_cleaning .service_gallery {
-        order: 4;
-    }
-
-    .service_cleaning .service_video {
-        order: 5;
-    }
-
-    .service_cleaning .service_request {
-        order: 6;
-    }
-
-    .dispatch_page .service_gallery {
-        order: 3;
-    }
-
-    .dispatch_page .dispatch_academy {
-        order: 4;
-    }
-
-    .dispatch_page .dispatch_request {
-        order: 5;
-    }
-
-    .wax_page .tix_box .tit_wrap p {
-        font-size: 1rem;
-        line-height: 1.65;
-    }
-}
 
 /* =========================================================
    DISPATCH PAGE
