@@ -230,6 +230,54 @@ function createSubBack() {
         button
     );
 
+
+    function syncSubBackTop() {
+
+        if (!header) {
+            return;
+        }
+
+
+        const headerHeight =
+            header.offsetHeight;
+
+
+        if (headerHeight === 0) {
+            return;
+        }
+
+
+        button.style.setProperty(
+            "--sub_back_top",
+            `${headerHeight}px`
+        );
+
+    }
+
+
+    syncSubBackTop();
+
+
+    if (header && "ResizeObserver" in window) {
+
+        const headerResizeObserver =
+            new ResizeObserver(
+                syncSubBackTop
+            );
+
+
+        headerResizeObserver.observe(
+            header
+        );
+
+    }
+
+
+    window.addEventListener(
+        "resize",
+        syncSubBackTop
+    );
+
 }
 
 
