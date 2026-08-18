@@ -3384,10 +3384,11 @@
     }
 
     .service_target .con {
-        width: 96px;
-        max-width: 96px;
+        width: 10%;
+        max-width: 10%;
+        min-width: 0;
         aspect-ratio: 1 / 1;
-        flex: 0 0 96px;
+        flex: 0 1 10%;
         position: relative;
         display: flex;
         align-items: center;
@@ -4138,11 +4139,11 @@
     }
 
     .service_target .con {
-        width: 48px;
-        max-width: 48px;
-        min-width: 48px;
+        width: 13.5%;
+        max-width: 13.5%;
+        min-width: 0;
         aspect-ratio: 1 / 1;
-        flex: 0 0 48px;
+        flex: 0 1 13.5%;
         position: relative;
         display: flex;
         align-items: center;
@@ -4185,6 +4186,17 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .service_target .con {
+        width: 8%;
+        max-width: 8%;
+        min-width: 0;
+        aspect-ratio: 1 / 1;
+        flex: 0 1 8%;
     }
 }
  

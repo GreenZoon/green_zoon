@@ -248,11 +248,11 @@
 @media (max-width: 768px) {
 
     .service_cleaning .service_target .con {
-        width: 48px;
-        max-width: 48px;
-        min-width: 48px;
+        width: 13.5%;
+        max-width: 13.5%;
+        min-width: 0;
         aspect-ratio: 1 / 1;
-        flex: 0 0 48px;
+        flex: 0 1 13.5%;
 
         position: relative;
 
