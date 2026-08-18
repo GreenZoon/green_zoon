@@ -217,17 +217,10 @@
     background-color: #f2f2f2;
 }
 
-/* =========================================================
-   MIDDLE PC
-   769px ~ 1500px
-
-   카드 형태는 유지하고
-   전화번호와 겹치는 상담원 아이콘만 숨김
-========================================================= */
 
 @media (min-width: 769px) and (max-width: 1500px) {
 
-    #Request_Cleaning > section {
+#Request_Cleaning > section {
 
         gap: 20px;
     }
@@ -283,16 +276,10 @@
 
 }
 
-/* =========================================================
-   10. COMPACT REQUEST BUTTON
-   1024px 이하
-
-   JS에서 문의 영역이 본문 위로 이동하는 기준과 동일
-========================================================= */
 
 @media (max-width: 768px) {
 
-    #Request_Cleaning > section {
+#Request_Cleaning > section {
         flex-direction: row;
 
         gap: 12px;
@@ -408,4 +395,5 @@
 
         align-self: center;
     }
+
 }

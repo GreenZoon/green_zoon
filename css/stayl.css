@@ -175,24 +175,17 @@
 }
 
 
-.slide_control_1 .slide_arrow {
+.slide_control_1 .arrow {
 
     width: 18px;
-    aspect-ratio: 1 / 1;
+    height: 18px;
     padding: 0;
 
     border: 0;
     border-radius: 50%;
 
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.slide_control_1 .slide_arrow .icon {
-
-    width: 18px;
     background-color: #f8f8f8;
-
+    cursor: pointer;
 }
 
 .slide_control_1 .slide_dot.is_active {
@@ -383,14 +376,6 @@
 
 }
 
-.service_icon {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
 .carpet {
 
     width: 36px;
@@ -475,8 +460,6 @@
 
 .box_li .arrow{
 
-    width: 0.75em;
-    flex: 0 0 0.75em;
     background-color: #8E8E8E;
 }
 
@@ -510,40 +493,29 @@
 
 }
 
-.slide_wrap_2 .service_arrow{
+.slide_wrap_2 .arrow{
 
     position: absolute;
     width: 25px;
-    aspect-ratio: 1 / 1;
 
-    align-items: center;
-    justify-content: center;
-
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
+    background-color: #8E8E8E;
     z-index: 20;
 }
 
-.service_prev{
+.left_arrow_2{
 
+    width: 16px;
     left: 0;
     
 }
 
-.service_next{
+.right_arrow_2{
 
+    width: 16px;
     right: 0;
 }
 
-.slide_wrap_2 .service_arrow .icon {
-
-    width: 16px;
-    background-color: #8E8E8E;
-
-}
-
-.slide_wrap_2 .service_arrow:disabled .icon {
+.slide_wrap_2 .arrow:disabled,.slide_wrap_2 .arrow:disabled .right_arrow_2 {
 
     opacity: 1;
     background-color: #d6d6d6;
@@ -607,20 +579,6 @@
 
 }
 
-.button_2.is_selected {
-
-    border-color: #009944;
-    background-color: #009944;
-    color: #f2f2f2;
-
-}
-
-.button_2.is_selected .icon_2 {
-
-    background-color: #f2f2f2;
-
-}
-
 /* 버튼 클릭 순간 */
 .button_2:active {
 
@@ -637,7 +595,7 @@
 
 
 /* 기본 상태: 표시 */
-.slide_wrap_2 .service_arrow,
+.slide_wrap_2 .arrow,
 .slide_pagination_2 {
     
     display: flex;
@@ -648,7 +606,7 @@
 /* 큰 화면: 숨김 */
 @media (min-width: 1600px) {
 
-    .slide_wrap_2 .service_arrow,
+    .slide_wrap_2 .arrow,
     .slide_pagination_2 {
         display: none;
     }
@@ -1126,6 +1084,19 @@
     object-position: center;
 }
 
+/* 대상·최우수상 원본은 메인 카드에서도 항상 정사각형으로 표시한다. */
+.img_wrap_4.award_square {
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.img_wrap_4.award_square img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
 .slide_pagination_4 {
 
     position: absolute;
@@ -1368,8 +1339,8 @@
     flex-direction: column;
     width: 100%;
 
-    gap: 10px;
-    margin-top: 48px;
+    gap: 30px;
+        margin-top: 50px;
     position: relative;
 
 }
@@ -1393,10 +1364,10 @@
 
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 24px;
 
     /* 그룹이 이어지는 부분에도 동일한 간격 생성 */
-    padding-right: 45px;
+    padding-right: 24px;
 }
 
 
@@ -1407,15 +1378,15 @@
     will-change: transform;
     width: max-content;
     gap: 0;
-    padding-right: 0;
+    padding-right: 36px;
 
 }
 
 .client {
-    flex: 0 0 150px;
+    flex-shrink: 0;
 
-    width: 150px;
-    height: 50px;
+    width: 180px;
+    height: 100px;
 
     object-fit: contain;
 }
@@ -1567,29 +1538,6 @@
 
 }
 
-.certification_arrow {
-
-    width: 24px;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-
-}
-
-.certification_arrow .icon {
-
-    width: 16px;
-    background-color: #8e8e8e;
-
-}
-
 .slide_wrap_end{
 
     width: 100%;
@@ -1682,7 +1630,8 @@
 
     }
 
-    .section_1 .slide_arrow {
+    .section_1 .left_arrow,
+    .section_1 .right_arrow {
 
         display: none;
     }
@@ -1704,45 +1653,7 @@
         width: 24px;
     }
 
-    .mobile_slide_control.mobile_only {
-
-        position: absolute;
-        right: 20px;
-        bottom: 14px;
-        z-index: 20;
-
-        display: flex;
-        align-items: center;
-        gap: 4px;
-
-        color: #f8f8f8;
-        font-size: 0.75rem;
-        line-height: 1.5;
-
-    }
-
-    .mobile_slide_count {
-
-        height: 24px;
-        padding: 0 18px;
-
-        display: flex;
-        align-items: center;
-        gap: 3px;
-
-        border-radius: 5px;
-        background-color: rgb(29 29 29 / 50%);
-
-    }
-
-    .mobile_slide_control .slide_toggle {
-
-        flex: 0 0 24px;
-        background-color: rgb(29 29 29 / 50%);
-
-    }
-
-    .slide_wrap_2 .service_arrow {
+    .slide_wrap_2 .arrow {
         display: none;
     }
 
@@ -1786,24 +1697,18 @@
     }
 
     .video_viewport {
-
         width: calc(100vw - clamp(20px, 4vw, 40px));
         overflow: hidden;
-
     }
 
     .video_track {
-
         gap: 7px;
-
     }
 
     .video_card {
-
         width: 200px;
-        flex: 0 0 auto;
+        flex: 0 0 200px;
         gap: 7px;
-
     }
 
     .video_thumbnail {
@@ -1814,62 +1719,47 @@
     }
 
     .video_play {
-
         top: 50%;
         left: 50%;
         width: 70px;
-        aspect-ratio: 1 / 1;
-
+        height: 70px;
     }
 
     .video_play .play_Block {
-
         width: 30px;
-       aspect-ratio: 1 / 1;
-
+        height: 30px;
     }
 
     .video_card_pc_title {
-
         display: none;
-
     }
 
     .video_card_mobile_title {
-
         display: block;
         color: #555;
         font-size: 0.875rem;
         font-weight: 700;
-
     }
 
     .video_pagination {
-
         align-self: center;
         gap: 6px;
-
     }
 
     .video_dot {
-
         width: 12px;
         height: 5px;
         border-radius: 999px;
-
     }
 
     .video_dot.is_active {
-
         width: 24px;
-
     }
 
     .page_title > .mobile_only {
 
         display: flex;
         align-items: center;
-        gap: 4px;
         
     }
 
@@ -1911,14 +1801,12 @@
         display: flex;
         align-items: center;
         padding: 0 12px;
-        gap: 4px;
 
     }
 
     .mobile_tit .arrow, .page_title .arrow {
    
-        width: 0.7em;
-        flex: 0 0 0.7em;
+        width: 16px;
         background-color: #555;
 
     }
@@ -2009,84 +1897,6 @@
 
     }
 
-    .mobile_all {
-
-        order: 0;
-
-    }
-
-    .button_2[data-service="factory"] {
-
-        order: 1;
-
-    }
-
-    .button_2[data-service="disinfection"] {
-
-        order: 2;
-
-    }
-
-    .button_2[data-service="tank"] {
-
-        order: 3;
-
-    }
-
-    .button_2[data-service="pigeon"] {
-
-        order: 4;
-
-    }
-
-    .button_2[data-service="wall"] {
-
-        order: 5;
-
-    }
-
-    .button_2[data-service="carpet"] {
-
-        order: 6;
-
-    }
-
-    .button_2[data-service="wax"] {
-
-        order: 7;
-
-    }
-
-    .button_2[data-service="event"] {
-
-        order: 8;
-
-    }
-
-    .button_2[data-service="ship"] {
-
-        order: 9;
-
-    }
-
-    .button_2[data-service="facility"] {
-
-        order: 10;
-
-    }
-
-    .button_2[data-service="dispatch"] {
-
-        order: 11;
-
-    }
-
-    .button_2[data-service="pond"] {
-
-        order: 12;
-
-    }
-
     .mobile_all,
     .button_2 {
 
@@ -2094,7 +1904,7 @@
         max-width: 70px;
         height: 93px;
         aspect-ratio: auto;
-        flex: 0 0 auto;
+        flex: 0 0 70px;
 
         position: relative;
 
@@ -2103,69 +1913,56 @@
         border-radius: 0;
         background: transparent;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 5px;
-
     }
 
     .mobile_all {
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
         color: #339933;
 
     }
 
-    .service_icon {
-
-        width: 70px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 auto;
-
-        position: relative;
+    .button_2 {
 
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-      
+        justify-content: flex-end;
+        color: #8e8e8e;
+
+    }
+
+    .button_2::before {
+
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 70px;
+        height: 70px;
+
+        border: 1px solid #f8f8f8;
         border-radius: 50%;
         background-color: #fff;
-        border: 1px solid #8e8e8e;
 
     }
-
-    .mobile_all .service_icon {
-
-        border-color: currentColor;
-
-    }
-
 
     .button_2 .icon_2 {
 
+        position: absolute;
+        top: 17px;
+        left: 17px;
+
         width: 36px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 auto;
-        padding: 2px;
-
-    }
-
-    .button_2 .water_tower {
-
-        width: 24px;
         height: 36px;
-        flex: 0 0 auto;
-        aspect-ratio: auto;
-
-    }
-
-    .button_2 .brick_wall {
-
-        width: 30px;
-        height: 25px;
-        flex: 0 0 auto;
-        aspect-ratio: auto;
+        padding: 2px;
+        z-index: 1;
 
     }
 
@@ -2173,20 +1970,18 @@
     .mobile_all p {
 
         color: inherit;
-        font-size: 0.75rem;      /* 12px */
+            font-size: 0.75rem;      /* 12px */
         line-height: 1.55;
         letter-spacing: -0.04em;
         font-weight: 500;
 
+        z-index: 1;
+
     }
 
-    .button_2 p,
-    .mobile_all p {
+    .button_2 p {
 
         height: 18px;
-
-        position: absolute;
-        bottom: -3%;
 
         display: flex;
         align-items: center;
@@ -2211,10 +2006,10 @@
 
     }
 
-    .button_2:hover .service_icon {
+    .button_2:hover::before {
 
         border-color: #339933;
-
+        background-color: #f8f8f8;
 
     }
 
@@ -2225,8 +2020,8 @@
 
     }
 
-    .button_2:active .service_icon,
-    .button_2.is_selected .service_icon {
+    .button_2:active::before,
+    .button_2.is_selected::before {
 
         border-color: #f8f8f8;
         background-color: #339933;
@@ -2235,10 +2030,23 @@
 
     .mobile_all_icon {
 
-        width: 30px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 auto;
-        background-color: #339933;
+        width: 70px;
+        height: 70px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 10px);
+        grid-template-rows: repeat(2, 10px);
+        place-content: center;
+        gap: 4px;
+
+        border: 1px solid #339933;
+        border-radius: 50%;
+
+    }
+
+    .mobile_all_icon span {
+
+        border: 2px solid #339933;
 
     }
 
@@ -2461,8 +2269,10 @@
     .mobile_schedule_icon .icon {
 
         width: 40px;
-        aspect-ratio: 1 / 1;
+        height: 40px;
+        object-fit: contain;
         background-color: #f2f2f2;
+        filter: brightness(0) invert(1);
 
     }
 
@@ -2478,7 +2288,6 @@
     .mobile_schedule_box > span:last-child {
 
         color: #8e8e8e;
-        font-weight: 500;
 
     }
 
@@ -2786,6 +2595,13 @@
 
     }
 
+    .img_wrap_4.award_square {
+        width: clamp(110px, 20vw, 140px);
+        height: auto;
+        flex: 0 0 clamp(110px, 20vw, 140px);
+        aspect-ratio: 1 / 1;
+    }
+
     .tit_wrap_4 {
 
         min-width: 0;
@@ -2885,16 +2701,9 @@
 
     .mobile_academy_icon .icon{
 
-        width: 24px;
-        flex: 0 0 auto;
+        width: 28px;
+        flex: 0 0 28px;
         background-color: #009944;
-    }
-
-    .mobile_academy_icon .presentation {
-
-        width: 24px;
-        flex: 0 0 auto;
-
     }
 
     .mobile_academy .mobile_tit {
@@ -2949,9 +2758,8 @@
 
     .mobile_academy_icon {
 
-        width: 45px;
+        width: 60px;
         aspect-ratio: 1 / 1;
-        flex: 0 0 45px;
 
         display: flex;
         align-items: center;
@@ -3019,9 +2827,9 @@
 
     .mobile_event_box .mobile_img {
 
-        width: 150px;
-        height: 100px;
-        flex: 0 0 150px;
+        width: 173px;
+        height: 115px;
+        flex: 0 0 173px;
 
         border-radius: 7px;
         overflow: hidden;
@@ -3094,8 +2902,8 @@
 
     .client_group_7 {
 
-        gap: 17px;
-        padding-right: 17px;
+        gap: 12px;
+        padding-right: 12px;
 
     }
 
@@ -3107,9 +2915,8 @@
 
     .client {
 
-        width: 100px;
-        height: 33px;
-        flex: 0 0 100px;
+        width: 90px;
+        height: 36px;
 
     }
 
@@ -3218,11 +3025,13 @@
 
     }
 
+    .mobile_tab_item > img,
     .mobile_gallery_icon,
     .mobile_menu_icon {
 
         width: 24px;
-        aspect-ratio: 1 / 1;
+        height: 24px;
+        object-fit: contain;
         opacity: 0.65;
 
     }
@@ -3236,6 +3045,18 @@
 
     .mobile_menu_icon {
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+
+    }
+
+    .mobile_menu_icon span {
+
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
         background-color: currentColor;
 
     }
@@ -3247,7 +3068,7 @@
     .mobile_academy_list {
 
         display: grid;
-        grid-template-columns: repeat(3, 70px);
+        grid-template-columns: repeat(3, 75px);
         gap: 9px 12px;
         
     }

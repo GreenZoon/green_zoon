@@ -517,12 +517,10 @@
     background: #009944;
 }
 
-/* =========================================================
-   1500
-========================================================= */
 
 @media (max-width: 1500px) {
-    .sub_visual_text { padding-left: 50px; padding-right: 50px; }
+
+.sub_visual_text { padding-left: 50px; padding-right: 50px; }
     .sub_category { justify-content: center; }
     .sub_category::after { display: none; }
     .sub_content { width: calc(100% - 100px); }
@@ -531,14 +529,13 @@
     .gallery_feature_media img, .gallery_feature_media .empty_image { height: 340px; }
     .gallery_card, .information_card { width: calc((100% - 40px) / 3); }
     .post_section > .sub_content { gap: 60px; }
+
 }
 
-/* =========================================================
-   1024
-========================================================= */
 
 @media (max-width: 1024px) {
-    .sub_visual { height: 300px; }
+
+.sub_visual { height: 300px; }
     .sub_visual_text h1, .content_head h1, .content_head h2, .gallery_feature_text h1, .community_title { font-size: 32px; }
     .sub_category { justify-content: center; }
     .sub_category a { width: auto; min-width: 120px; flex: 0 0 auto; min-height: 44px; font-size: 16px; }
@@ -555,14 +552,13 @@
     .post_head h1 { font-size: 32px; }
     .post_track { gap: 16px; }
     .post_card { flex-basis: calc((100% - 16px) / 2); }
+
 }
 
-/* =========================================================
-   768
-========================================================= */
 
 @media (max-width: 768px) {
-    .sub_visual { height: 220px; }
+
+.sub_visual { height: 220px; }
     [data-community-page="main"] .sub_visual { min-height: 300px; }
     .sub_visual_text { padding: 0 20px; }
     .sub_visual_text p { font-size: 14px; }
@@ -693,14 +689,13 @@
     .post_arrow { width: 36px; }
     .post_dots .slide_dot { width: 8px; }
     .post_dots .slide_dot.active { width: 24px; }
+
 }
 
-/* =========================================================
-   480
-========================================================= */
 
 @media (max-width: 480px) {
-    .sub_visual { height: 155px; }
+
+.sub_visual { height: 155px; }
     [data-community-page="main"] .sub_visual { min-height: 240px; }
     .sub_visual_text p { font-size: 12px; }
     .sub_visual_text h1 { font-size: 23px; }
@@ -712,4 +707,5 @@
     .board_view { display: none; }
     .review_actions { gap: 10px; }
     .post_copy { font-size: 13px; }
+
 }

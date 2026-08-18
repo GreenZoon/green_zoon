@@ -6,15 +6,9 @@ if (slider) {
     const slides = slider.querySelectorAll(".main_img_1");
     const dots = slider.querySelectorAll(".slide_dot");
 
-    const prevButton = slider.querySelector(".slide_prev");
-    const nextButton = slider.querySelector(".slide_next");
-    const toggleButtons = slider.querySelectorAll(".slide_toggle");
-    const mobileSlideCurrent = slider.querySelector(".mobile_slide_current");
-    const mobileSlideTotal = slider.querySelector(".mobile_slide_total");
-
-    if (mobileSlideTotal) {
-        mobileSlideTotal.textContent = slides.length;
-    }
+    const prevButton = slider.querySelector(".left_arrow");
+    const nextButton = slider.querySelector(".right_arrow");
+    const toggleButton = slider.querySelector(".slide_toggle");
 
     let currentIndex = 0;
     let isPlaying = true;
@@ -58,10 +52,6 @@ if (slider) {
                 dotIndex === currentIndex
             );
         });
-
-        if (mobileSlideCurrent) {
-            mobileSlideCurrent.textContent = currentIndex + 1;
-        }
     }
 
     function nextSlide() {
@@ -88,28 +78,26 @@ if (slider) {
     }
 
     function updateToggleButton() {
-        if (toggleButtons.length === 0) {
+        if (!toggleButton) {
             return;
         }
 
-        toggleButtons.forEach((toggleButton) => {
-            toggleButton.classList.toggle(
-                "is_playing",
-                isPlaying
-            );
+        toggleButton.classList.toggle(
+            "is_playing",
+            isPlaying
+        );
 
-            toggleButton.classList.toggle(
-                "is_paused",
-                !isPlaying
-            );
+        toggleButton.classList.toggle(
+            "is_paused",
+            !isPlaying
+        );
 
-            toggleButton.setAttribute(
-                "aria-label",
-                isPlaying
-                    ? "자동재생 정지"
-                    : "자동재생 시작"
-            );
-        });
+        toggleButton.setAttribute(
+            "aria-label",
+            isPlaying
+                ? "자동재생 정지"
+                : "자동재생 시작"
+        );
     }
 
     function getPointerX(event) {
@@ -236,8 +224,9 @@ if (slider) {
         );
     });
 
-    toggleButtons.forEach((toggleButton) => {
-        toggleButton.addEventListener("click", () => {
+    toggleButton?.addEventListener(
+        "click",
+        () => {
             isPlaying = !isPlaying;
 
             if (isPlaying) {
@@ -247,8 +236,8 @@ if (slider) {
             }
 
             updateToggleButton();
-        });
-    });
+        }
+    );
 
     track.addEventListener(
         "mousedown",
@@ -349,10 +338,10 @@ if (certificationSlider) {
         certificationSlider.querySelector(".certification_wrap");
 
     const leftButton =
-        certificationSlider.querySelector(".certification_prev");
+        certificationSlider.querySelector(".left_arrow_2");
 
     const rightButton =
-        certificationSlider.querySelector(".certification_next");
+        certificationSlider.querySelector(".right_arrow_2");
 
     const originalItems = Array.from(
         certificationWrap.querySelectorAll(".certification")

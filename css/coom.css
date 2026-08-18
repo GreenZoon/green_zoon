@@ -123,7 +123,6 @@ h4 {
 }
 
 
-
 /* -------------------------
    페이지 대표 제목
 ------------------------- */
@@ -193,7 +192,6 @@ p,
 
     color: inherit;
 }
-
 
 
 /* -------------------------
@@ -326,46 +324,6 @@ section {
     box-shadow: inset 0 -2px 0 transparent;
 }
 
-@media (max-width: 1500px) {
-    .subpage_nav_list {
-        justify-content: flex-end;
-    }
-}
-
-@media (max-width: 768px) {
-    .subpage_nav {
-        min-height: 42px;
-        overflow-x: auto;
-        overflow-y: visible;
-        scrollbar-width: none;
-    }
-
-    .subpage_nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .subpage_nav_list {
-        width: max-content;
-        min-width: 100%;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .subpage_nav_link {
-        min-width: max-content;
-        min-height: 42px;
-        flex: 0 0 auto;
-        font-size: 0.875rem;
-        padding-block: 8px;
-    }
-
-    .subpage_nav_link:hover,
-    .subpage_nav_link:focus-visible {
-        color: #009944;
-        background-color: transparent;
-        box-shadow: inset 0 -2px 0 #009944;
-    }
-}
 
 /* 초록색 섹션 */
 
@@ -403,7 +361,7 @@ section {
     max-width: 120px;
 
     aspect-ratio: 1 / 1;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -418,7 +376,6 @@ section {
 }
 
 .con {
-
 
 
     color: #009944;
@@ -482,7 +439,7 @@ section {
     width: 14px;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
-    
+
 
 }
 
@@ -525,7 +482,7 @@ section {
 .flex {
 
     display: flex;
-  
+
 }
 
 .align_center{
@@ -784,7 +741,7 @@ aspect-ratio: 1 / 1;
     width: 100%;
     aspect-ratio: 4 / 1;
 
-    
+
     background-color: #858585;
 
     -webkit-mask-image: url("../img/icon/logo.svg");
@@ -809,7 +766,6 @@ aspect-ratio: 1 / 1;
     mask-size: contain;
 
     transition: transform 0.25s ease;
-
 
 
 }
@@ -1453,16 +1409,16 @@ aspect-ratio: 1 / 1;
 }
 
 .mobile_coall{
-    
+
 
      -webkit-mask-image: url("../img/icon/mobile_coall.svg");
     mask-image: url("../img/icon/mobile_coall.svg");
-    
-    
+
+
 }
 
 .happy{
-    
+
      -webkit-mask-image: url("../img/icon/happy.svg");
     mask-image: url("../img/icon/happy.svg");
 
@@ -1512,7 +1468,7 @@ aspect-ratio: 1 / 1;
 
            -webkit-mask-image: url("../img/icon/education.svg");
     mask-image: url("../img/icon/education.svg");
-    
+
 }
 
 .graduate{
@@ -1561,13 +1517,13 @@ aspect-ratio: 1 / 1;
 }
 
 
-/* =========================================================
-   12. TABLET
-========================================================= */
-
 @media (max-width: 1500px) {
 
-    .breadcrumb {
+.subpage_nav_list {
+        justify-content: flex-end;
+    }
+
+.breadcrumb {
 
         padding: 7px 50px;
 
@@ -1623,7 +1579,7 @@ aspect-ratio: 1 / 1;
     .flx_li_g .icon {
 
     width: 14px;
-    
+
 }
 
     /* .section_title{
@@ -1637,9 +1593,10 @@ aspect-ratio: 1 / 1;
 
 }
 
+
 @media (max-width: 1024px) {
 
-    .tablet_none {
+.tablet_none {
         display: none;
     }
 
@@ -1731,12 +1688,46 @@ aspect-ratio: 1 / 1;
 
 }
 
- @media (max-width: 768px){
 
-    .icon, .icon_2, .arrow, .mobile_icon {
+@media (max-width: 768px) {
+
+.subpage_nav {
+        min-height: 42px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: none;
+    }
+
+    .subpage_nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subpage_nav_list {
+        width: max-content;
+        min-width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .subpage_nav_link {
+        min-width: max-content;
+        min-height: 42px;
+        flex: 0 0 auto;
+        font-size: 0.875rem;
+        padding-block: 8px;
+    }
+
+    .subpage_nav_link:hover,
+    .subpage_nav_link:focus-visible {
+        color: #009944;
+        background-color: transparent;
+        box-shadow: inset 0 -2px 0 #009944;
+    }
+
+.icon, .icon_2, .arrow, .mobile_icon {
 
         width: 20px;
-          
+
     }
 
     section {
@@ -1748,15 +1739,15 @@ aspect-ratio: 1 / 1;
         .section_g {
 
         background-color: #fff;
-        
-    
+
+
     }
 
     .section_g a, .section_g a,.service_gallery_name{
 
         color: #555;
 
-       
+
     }
 
     .sub_back {
@@ -1807,16 +1798,7 @@ aspect-ratio: 1 / 1;
 
     }
 
-}
-
-
-/* =========================================================
-   13. MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-        .breadcrumb {
+.breadcrumb {
 
         display: none;
 
@@ -1827,7 +1809,7 @@ aspect-ratio: 1 / 1;
         display: none;
 
     }
-    
+
     section {
 
         padding:20px ;
@@ -1929,19 +1911,19 @@ aspect-ratio: 1 / 1;
     .icon, .icon_2, .arrow, .mobile_icon {
 
         width: 16px;
-            
+
     }
 
 }
 
-@media (max-width: 480px){
 
-    section {
+@media (max-width: 480px) {
+
+section {
 
         padding: 10px 20px;
         gap: 24px;
 
     }
-
 
 }

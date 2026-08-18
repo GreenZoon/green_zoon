@@ -3,7 +3,6 @@
 /* 카펫 / 페트릭 페이지에서만 사용하는 차이값 */
 
 
-
 .service_cleaning .service_target {
 
     order: 2;
@@ -26,10 +25,32 @@
 
 }
 
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+.service_cleaning .service_gallery .sub_pag_img_wrap {
+
+        gap: 14px;
+
+    }
+
+    .service_cleaning .service_gallery .sub_slide_img {
+
+        display: block;
+
+        width: calc((100% - 28px) / 3);
+        height: 100%;
+
+        flex: 0 0 calc((100% - 28px) / 3);
+
+    }
+
+}
+
+
 @media (max-width: 768px) {
 
-
-    .service_cleaning .service_intro {
+.service_cleaning .service_intro {
 
         align-items: center;
         gap: 20px;
@@ -116,35 +137,7 @@
         display: none;
     }
 
-}
-
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-    .service_cleaning .service_gallery .sub_pag_img_wrap {
-
-        gap: 14px;
-
-    }
-
-    .service_cleaning .service_gallery .sub_slide_img {
-
-        display: block;
-
-        width: calc((100% - 28px) / 3);
-        height: 100%;
-
-        flex: 0 0 calc((100% - 28px) / 3);
-        
-    }
-    
-}
-
-
-@media (max-width: 768px) {
-
-    .service_cleaning .service_gallery {
+.service_cleaning .service_gallery {
         color: #555;
         background-color: #fff;
     }
@@ -212,42 +205,8 @@
         position: relative;
         overflow: hidden;
     }
-}
 
-
-@media (max-width: 480px) {
-
-    .service_cleaning .service_gallery .sub_pag_clipping_mask {
-        min-height: clamp(180px, 56vw, 230px);
-    }
-
-    .service_cleaning .service_target .con_wrap {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 4px;
-    }
-
-    .service_cleaning .service_target .con {
-        min-width: 48px;
-    }
-
-    .service_cleaning .service_target .con > .icon {
-        width: 48px;
-        height: 48px;
-
-        flex: 0 0 48px;
-    }
-
-    .service_cleaning .service_target .con > p {
-        font-size: 0.625rem;
-    }
-}
-
-/* 피그마 모바일 청소 대상: 원형과 글자를 서로 분리해 원 비율을 유지 */
-
-@media (max-width: 768px) {
-
-    .service_cleaning .service_target .con {
+.service_cleaning .service_target .con {
         width: 13.5%;
         max-width: 13.5%;
         min-width: 0;
@@ -280,4 +239,24 @@
         line-height: 1.5;
         white-space: nowrap;
     }
+
+}
+
+
+@media (max-width: 480px) {
+
+.service_cleaning .service_gallery .sub_pag_clipping_mask {
+        min-height: clamp(180px, 56vw, 230px);
+    }
+
+    .service_cleaning .service_target .con_wrap {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    .service_cleaning .service_target .con > p {
+        font-size: 0.625rem;
+    }
+
 }

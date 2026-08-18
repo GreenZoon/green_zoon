@@ -2,9 +2,9 @@
 
 .nav{
 
-    background-color: #ffff; 
+    background-color: #ffff;
     max-height: 50px;
- 
+
     box-shadow: inset 0 -2px 0 #f2f2f2;
 
 }
@@ -14,10 +14,10 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    position: relative;    
+    position: relative;
     margin-top: 10px;
     gap:27px;
-   
+
 }
 
 .main_menu{
@@ -28,7 +28,7 @@
     justify-content: space-evenly;
 
     position:static;
-   
+
 }
 
 
@@ -38,12 +38,12 @@
     align-items: center;
     width: 100%;
     height: 50px;
-  
+
     text-align: center;
     padding:10px;
     background-color: #fff;
     border-bottom: 2px solid #f2f2f2;
-  
+
     color: #1d1d1d;
     white-space: nowrap;
 
@@ -72,9 +72,9 @@
     justify-content:center;
     background-color:#fff;
     border-bottom: 2px solid #f2f2f2;
-   
+
     z-index:20;
-      
+
 
 }
 
@@ -115,7 +115,7 @@
     width:100%;
     height: 50px;
     padding: 7px;
-    
+
     font-size: 1.125rem;
     font-weight: 500;
     text-align: center;
@@ -146,11 +146,10 @@
 
 .menu_arrow {
 
-    width: 0.8em;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 0.8em;
+    width: 16px;
+    height: 16px;
     transform: rotatez(180deg);
-   
+
 }
 
 .depth_2_tit >.menu_arrow{
@@ -167,10 +166,10 @@
 /* ----------호버------------- */
 
 
-.main_menu .main_tit:hover{ 
-    
-    color: #009944; 
-    border-bottom: #009944 solid 2px; 
+.main_menu .main_tit:hover{
+
+    color: #009944;
+    border-bottom: #009944 solid 2px;
 
 }
 
@@ -182,20 +181,20 @@
 }
 
 .depth_2_tit:hover {
-       
- color: #009944; 
 
-    
+ color: #009944;
+
+
 }
 
-.main_menu:hover .sub_menu{ 
+.main_menu:hover .sub_menu{
 
-    display: flex; 
-    
-} 
+    display: flex;
 
-.depth_2:hover > .depth_3{ 
-    
+}
+
+.depth_2:hover > .depth_3{
+
     display:flex;
 
 }
@@ -232,12 +231,11 @@
 
 @media (max-width: 1024px) {
 
-
-    .gnb{
+.gnb{
 
         margin-top: 3px;
         gap:3px;
-   
+
 
     }
 
@@ -246,7 +244,7 @@
         padding: 7px;
         gap: 2px;
 
-        
+
         font-size: 1.1875rem;    /* 19px */
         line-height: 1.5;
         letter-spacing: -0.04em;
@@ -274,16 +272,12 @@
 
     }
 
-    
 }
 
-/* =========================================================
-   TABLET / MOBILE
-========================================================= */
 
 @media (max-width: 768px) {
 
-    html,
+html,
     body {
         max-width: 100%;
         overflow-x: clip;
@@ -771,9 +765,19 @@
     .mobile_menu_grid {
 
         width: 20px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 20px;
-        background-color: #555;
+        height: 20px;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        gap: 3px;
+    }
+
+
+    .mobile_menu_grid span {
+        border: 1.5px solid #555;
     }
 
 
@@ -886,17 +890,12 @@
         overflow-x: hidden;
     }
 
-
 }
 
 
-/* =========================================================
-   PHONE
-========================================================= */
-
 @media (max-width: 515px) {
 
-    .mobile_user_area {
+.mobile_user_area {
 
         padding: 24px 20px;
     }

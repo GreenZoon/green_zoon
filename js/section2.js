@@ -13,8 +13,8 @@ if (section2) {
     const serviceButtons = section2.querySelectorAll(".button_2");
     const slideDots = section2.querySelectorAll(".slide_dot");
 
-    const prevButton = section2.querySelector(".service_prev");
-    const nextButton = section2.querySelector(".service_next");
+    const prevButton = section2.querySelector(".left_arrow_2");
+    const nextButton = section2.querySelector(".right_arrow_2");
 
     const contentTitle = section2.querySelector(".tit_wrap_2 h3");
     const contentDescription = section2.querySelector(".tit_wrap_2 p");
@@ -474,15 +474,15 @@ if (section2) {
 
             changeServiceContent(index);
 
+            if (window.innerWidth > 768) {
+                return;
+            }
+
             serviceButtons.forEach((item) => {
                 item.classList.remove("is_selected");
             });
 
             button.classList.add("is_selected");
-
-            if (window.innerWidth > 768) {
-                return;
-            }
 
             const link = serviceData[index]?.link;
 
