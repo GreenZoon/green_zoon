@@ -467,6 +467,8 @@
 
 .box_li .arrow{
 
+    width: 0.75em;
+    flex: 0 0 0.75em;
     background-color: #8E8E8E;
 }
 
@@ -594,6 +596,20 @@
 .button_2:hover  .icon_2{
 
     background-color: #009944;
+
+}
+
+.button_2.is_selected {
+
+    border-color: #009944;
+    background-color: #009944;
+    color: #f2f2f2;
+
+}
+
+.button_2.is_selected .icon_2 {
+
+    background-color: #f2f2f2;
 
 }
 
@@ -1102,19 +1118,6 @@
     object-position: center;
 }
 
-/* 대상·최우수상 원본은 메인 카드에서도 항상 정사각형으로 표시한다. */
-.img_wrap_4.award_square {
-    height: auto;
-    aspect-ratio: 1 / 1;
-}
-
-.img_wrap_4.award_square img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-
 .slide_pagination_4 {
 
     position: absolute;
@@ -1357,8 +1360,8 @@
     flex-direction: column;
     width: 100%;
 
-    gap: 30px;
-        margin-top: 50px;
+    gap: 10px;
+    margin-top: 48px;
     position: relative;
 
 }
@@ -1382,10 +1385,10 @@
 
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 45px;
 
     /* 그룹이 이어지는 부분에도 동일한 간격 생성 */
-    padding-right: 24px;
+    padding-right: 45px;
 }
 
 
@@ -1396,15 +1399,15 @@
     will-change: transform;
     width: max-content;
     gap: 0;
-    padding-right: 36px;
+    padding-right: 0;
 
 }
 
 .client {
-    flex-shrink: 0;
+    flex: 0 0 150px;
 
-    width: 180px;
-    height: 100px;
+    width: 150px;
+    height: 50px;
 
     object-fit: contain;
 }
@@ -1846,7 +1849,8 @@
 
     .mobile_tit .arrow, .page_title .arrow {
    
-        width: 16px;
+        width: 0.7em;
+        flex: 0 0 0.7em;
         background-color: #555;
 
     }
@@ -1937,6 +1941,84 @@
 
     }
 
+    .mobile_all {
+
+        order: 0;
+
+    }
+
+    .button_2[data-service="factory"] {
+
+        order: 1;
+
+    }
+
+    .button_2[data-service="disinfection"] {
+
+        order: 2;
+
+    }
+
+    .button_2[data-service="tank"] {
+
+        order: 3;
+
+    }
+
+    .button_2[data-service="pigeon"] {
+
+        order: 4;
+
+    }
+
+    .button_2[data-service="wall"] {
+
+        order: 5;
+
+    }
+
+    .button_2[data-service="carpet"] {
+
+        order: 6;
+
+    }
+
+    .button_2[data-service="wax"] {
+
+        order: 7;
+
+    }
+
+    .button_2[data-service="event"] {
+
+        order: 8;
+
+    }
+
+    .button_2[data-service="ship"] {
+
+        order: 9;
+
+    }
+
+    .button_2[data-service="facility"] {
+
+        order: 10;
+
+    }
+
+    .button_2[data-service="dispatch"] {
+
+        order: 11;
+
+    }
+
+    .button_2[data-service="pond"] {
+
+        order: 12;
+
+    }
+
     .mobile_all,
     .button_2 {
 
@@ -1960,7 +2042,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         gap: 5px;
         color: #339933;
 
@@ -2002,7 +2084,7 @@
         left: 0;
 
         width: 70px;
-        height: 70px;
+        aspect-ratio: 1 / 1;
 
         border: 1px solid #f8f8f8;
         border-radius: 50%;
@@ -2017,7 +2099,7 @@
         left: 17px;
 
         width: 36px;
-        height: 36px;
+        aspect-ratio: 1 / 1;
         padding: 2px;
         z-index: 1;
 
@@ -2036,7 +2118,8 @@
 
     }
 
-    .button_2 p {
+    .button_2 p,
+    .mobile_all p {
 
         height: 18px;
 
@@ -2086,6 +2169,10 @@
     }
 
     .mobile_all_icon {
+
+        position: absolute;
+        top: 20px;
+        left: 20px;
 
         width: 30px;
         aspect-ratio: 1 / 1;
@@ -2637,13 +2724,6 @@
 
     }
 
-    .img_wrap_4.award_square {
-        width: clamp(110px, 20vw, 140px);
-        height: auto;
-        flex: 0 0 clamp(110px, 20vw, 140px);
-        aspect-ratio: 1 / 1;
-    }
-
     .tit_wrap_4 {
 
         min-width: 0;
@@ -2944,8 +3024,8 @@
 
     .client_group_7 {
 
-        gap: 12px;
-        padding-right: 12px;
+        gap: 17px;
+        padding-right: 17px;
 
     }
 
@@ -2957,8 +3037,9 @@
 
     .client {
 
-        width: 90px;
-        height: 36px;
+        width: 100px;
+        height: 33px;
+        flex: 0 0 100px;
 
     }
 

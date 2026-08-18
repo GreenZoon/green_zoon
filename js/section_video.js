@@ -121,7 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getCardMoveDistance() {
 
-        const firstCard = cards[0];
+        const firstCard = [...cards].find((card) => {
+            return window.getComputedStyle(card).display !== "none";
+        });
 
         if (!firstCard) return 0;
 

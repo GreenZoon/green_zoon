@@ -146,8 +146,9 @@
 
 .menu_arrow {
 
-    width: 16px;    
-    height: 16px;
+    width: 0.8em;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 0.8em;
     transform: rotatez(180deg);
    
 }
@@ -770,19 +771,9 @@
     .mobile_menu_grid {
 
         width: 20px;
-        height: 20px;
-
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-
-        gap: 3px;
-    }
-
-
-    .mobile_menu_grid span {
-        border: 1.5px solid #555;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 20px;
+        background-color: #555;
     }
 
 

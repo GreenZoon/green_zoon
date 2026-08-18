@@ -101,7 +101,7 @@
 
             </div>
 
-            <div class="slide_control slide_control_1">
+            <div class="slide_control slide_control_1 mobile_hide">
 
                 <div class="but_bg tablet_none">
                     
@@ -156,7 +156,10 @@
 
         <div class="tit_wrap tit_wrap_2_1 mobile_tit">
 
-            <h2 class="page_title">자주 쓰는 서비스</h2>
+            <h2 class="page_title">
+                <span class="mobile_hide">자주 쓰는 서비스</span>
+                <span class="mobile_only">자주 찾는 서비스</span>
+            </h2>
 
             <p class="section_title section_title_2">
                 (주)그린죤에서는 아래와 같은 서비스를 신청 할 수 있습니다.
@@ -168,7 +171,7 @@
 
             <input type="search"
                 aria-label="서비스 검색"
-                placeholder="필요한 청소 서비스를 검색해 보세요">
+                placeholder="검색어를 입력해 주세요">
 
             <button type="button" aria-label="검색">
                 <span class="icon search_ion" aria-hidden="true"></span>
@@ -222,42 +225,42 @@
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2 is_selected" type="button" data-service="factory">
 
                             <span class="icon factory icon_2" aria-hidden="true"></span>
                             <p>공장 청소</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="carpet">
 
                             <span class="icon carpet icon_2" aria-hidden="true"></span>
                             <p>카펫/페브릭</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="wax">
 
                             <span class="icon soap_ottle icon_2" aria-hidden="true"></span>
                             <p>왁스 코팅</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="pigeon">
 
                             <span class="icon bird_spike icon_2" aria-hidden="true"></span>
                             <p>비둘기 퇴치</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="event">
 
                             <span class="icon opera icon_2" aria-hidden="true"></span>
                             <p>행사장 청소</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="ship">
 
                             <span class="icon ship icon_2" aria-hidden="true"></span>
                             <p>선박/유람선</p>
@@ -265,7 +268,7 @@
                         </button>
 
                         
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="wall">
 
                             <span class="icon brick_wall icon_2" aria-hidden="true"></span>
                             <p>건물 외벽</p>
@@ -273,7 +276,7 @@
                         </button>
 
                         
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="facility">
 
                             <span class="icon greek icon_2" aria-hidden="true"></span>
                             <p>시설물</p>
@@ -281,28 +284,28 @@
                         </button>
 
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="dispatch">
 
                             <span class="icon cleaner icon_2" aria-hidden="true"></span>
                             <p>미화원 파견</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="tank">
 
                             <span class="icon water_tower icon_2" aria-hidden="true"></span>
                             <p>물탱크</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="pond">
 
                             <span class="icon pond icon_2" aria-hidden="true"></span>
                             <p>연못</p>
 
                         </button>
 
-                        <button class="button_2" type="button">
+                        <button class="button_2" type="button" data-service="disinfection">
 
                             <span class="icon doctor icon_2" aria-hidden="true"></span>
                             <p>소독/방역</p>
@@ -491,7 +494,7 @@
 
                 <a class="mobile_gallery_box" href="#">
                     <div class="img_wrap mobile_img">
-                        <img src="img/mainimgs/Disinfection_ing.jpg"
+                        <img src="img/mainimgs/Disinfection_Before.jpg"
                             alt="빌딩 내부를 방역하는 작업 현장">
                     </div>
                     <h3>빌딩 방역하러 다녀왔습니다~!</h3>
@@ -598,7 +601,7 @@
 
                 <!-- 1. 미화원 파견 -->
 
-                <a href="#" class="video_card">
+                <a href="#" class="video_card mobile_hide">
 
                     <div class="video_thumbnail">
 
@@ -1129,7 +1132,7 @@
 
                         <a class="box_in_wrap" href="sub_page/Community/Post.html?type=notice&amp;id=0">
 
-                            <div class="img_wrap img_wrap_4 award_square">
+                            <div class="img_wrap img_wrap_4">
                                 <img src="img/mainimgs/Community_victory_2025.jpg" alt="2025년도 전국 위생관리협회">
                             </div>
 
@@ -1165,7 +1168,7 @@
 
                         <a class="box_in_wrap" href="sub_page/Community/Post.html?type=notice&amp;id=10">
 
-                            <div class="img_wrap img_wrap_4 award_square">
+                            <div class="img_wrap img_wrap_4">
                                 <img class="focus_top" src="img/mainimgs/Community_viciory_2023.jpg" alt="2023년도 전국 위생관리협회">
                             </div>
 
@@ -1431,8 +1434,8 @@
         <div class="mobile_academy_box">
 
             <div class="img_wrap mobile_img">
-                <img src="img/sub_page/Dispatch_janitor_1.jpg"
-                    alt="청소 교육을 준비하는 미화원들">
+                <img src="img/mainimgs/Main_VD_img_Dispatch.jpg"
+                    alt="청소 도구를 준비하는 미화원">
             </div>
 
             <div class="tit_wrap">
@@ -1576,33 +1579,27 @@
 
                     <div class="client_group_7">
 
-                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
-                        <img class="client" src="img/mainimgs/client_ABC_MART.jpg" alt="ABC마트">
                         <img class="client" src="img/mainimgs/client_busan.jpg" alt="국립부산국악원">
                         <img class="client" src="img/mainimgs/client_SHINSEGAE.jpg" alt="신세계백화점">
                         <img class="client" src="img/mainimgs/client_LOTTE.jpg" alt="롯데백화점">
                         <img class="client" src="img/mainimgs/client_samsung.jpg" alt="삼성">
                         <img class="client" src="img/mainimgs/client_dvc.jpg" alt="다비치 안경">
                         <img class="client" src="img/mainimgs/client_GLASS_STORY.jpg" alt="GLASS STORY">
-                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
-                        <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
                         <img class="client" src="img/mainimgs/client_BUFS.jpg" alt="부산외국어대학교">
+                        <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
 
                     </div>
 
                     <div class="client_group_7">
 
-                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
-                        <img class="client" src="img/mainimgs/client_ABC_MART.jpg" alt="ABC마트">
                         <img class="client" src="img/mainimgs/client_busan.jpg" alt="국립부산국악원">
                         <img class="client" src="img/mainimgs/client_SHINSEGAE.jpg" alt="신세계백화점">
                         <img class="client" src="img/mainimgs/client_LOTTE.jpg" alt="롯데백화점">
                         <img class="client" src="img/mainimgs/client_samsung.jpg" alt="삼성">
                         <img class="client" src="img/mainimgs/client_dvc.jpg" alt="다비치 안경">
                         <img class="client" src="img/mainimgs/client_GLASS_STORY.jpg" alt="GLASS STORY">
-                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
-                        <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
                         <img class="client" src="img/mainimgs/client_BUFS.jpg" alt="부산외국어대학교">
+                        <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
 
                     </div>
 
@@ -1612,39 +1609,33 @@
 
 
             <!-- 아래쪽: 오른쪽에서 왼쪽으로 -->
-            <div class="clipping_mask_7 slide_left_7">
+            <div class="clipping_mask_7 slide_left_7 mobile_hide">
 
                 <div class="client_wrap">
 
                     <div class="client_group_7">
 
-                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
-                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
-                        <img class="client" src="img/mainimgs/client_GLASS_STORY.jpg" alt="GLASS STORY">
-                        <img class="client" src="img/mainimgs/client_dvc.jpg" alt="다비치 안경">
                         <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
+                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
                         <img class="client" src="img/mainimgs/client_ABC_MART.jpg" alt="ABC마트">
                         <img class="client" src="img/mainimgs/client_SHINSEGAE.jpg" alt="신세계백화점">
                         <img class="client" src="img/mainimgs/client_LOTTE.jpg" alt="롯데백화점">
+                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
                         <img class="client" src="img/mainimgs/client_busan.jpg" alt="국립부산국악원">
                         <img class="client" src="img/mainimgs/client_samsung.jpg" alt="삼성">
-                        <img class="client" src="img/mainimgs/client_BUFS.jpg" alt="부산외국어대학교">
 
                     </div>
 
                     <div class="client_group_7">
 
-                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
-                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
-                        <img class="client" src="img/mainimgs/client_GLASS_STORY.jpg" alt="GLASS STORY">
-                        <img class="client" src="img/mainimgs/client_dvc.jpg" alt="다비치 안경">
                         <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
+                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
                         <img class="client" src="img/mainimgs/client_ABC_MART.jpg" alt="ABC마트">
                         <img class="client" src="img/mainimgs/client_SHINSEGAE.jpg" alt="신세계백화점">
                         <img class="client" src="img/mainimgs/client_LOTTE.jpg" alt="롯데백화점">
+                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
                         <img class="client" src="img/mainimgs/client_busan.jpg" alt="국립부산국악원">
                         <img class="client" src="img/mainimgs/client_samsung.jpg" alt="삼성">
-                        <img class="client" src="img/mainimgs/client_BUFS.jpg" alt="부산외국어대학교">
 
                     </div>
 

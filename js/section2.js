@@ -474,15 +474,15 @@ if (section2) {
 
             changeServiceContent(index);
 
-            if (window.innerWidth > 768) {
-                return;
-            }
-
             serviceButtons.forEach((item) => {
                 item.classList.remove("is_selected");
             });
 
             button.classList.add("is_selected");
+
+            if (window.innerWidth > 768) {
+                return;
+            }
 
             const link = serviceData[index]?.link;
 
@@ -699,5 +699,9 @@ if (section2) {
 
     moveToSlide(0, false);
     changeServiceContent(0);
+
+    serviceButtons.forEach((button, index) => {
+        button.classList.toggle("is_selected", index === 0);
+    });
     
 }
