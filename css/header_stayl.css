@@ -26,14 +26,24 @@
 
 }
 
-.logo{
+.header_logo {
+    width: 150px;
+    height: 45px;
+    flex: 0 0 auto;
+    display: block;
+}
+
+.header .logo{
 
     width: 100%;
-    background-color: #009944;
-
-    display: flex;
-   max-width: 150px;
-   max-height:45px;
+    height: 100%;
+    display: block;
+    background-image: url("../img/logo.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    -webkit-mask-image: none;
+    mask-image: none;
 }
 
 /* ------로그인-------- */
@@ -436,6 +446,17 @@ input{
 
     }
 
+    .header {
+        height: 50px;
+        max-height: 50px;
+        padding: 5px 20px;
+    }
+
+    .header_logo {
+        width: 104px;
+        height: 30px;
+    }
+
 }
 
 
@@ -452,7 +473,8 @@ input{
     .header{
 
         padding: 4px 20px;
-        max-height: 48px;
+        height: 50px;
+        max-height: 50px;
 
     }
 
@@ -462,7 +484,7 @@ input{
 
     }
 
-    .header_top > a,
+    .header_logo,
     .header .logo {
 
         width: 87px;

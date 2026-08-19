@@ -1041,6 +1041,19 @@ document.addEventListener("pointerdown", function (event) {
         });
     }
 
+    function toggleHeaderSearch() {
+        const form = document.getElementById("header_search");
+
+        if (!form) return;
+
+        if (form.classList.contains("is_open")) {
+            closeHeaderSearch();
+            return;
+        }
+
+        openHeaderSearch();
+    }
+
     function bindHeaderSearch(root) {
         const area = root || document;
 
@@ -1049,7 +1062,8 @@ document.addEventListener("pointerdown", function (event) {
             button.dataset.searchBound = "true";
             button.addEventListener("click", function (event) {
                 event.preventDefault();
-                openHeaderSearch();
+                event.stopPropagation();
+                toggleHeaderSearch();
             });
         });
 
@@ -1058,6 +1072,7 @@ document.addEventListener("pointerdown", function (event) {
             button.dataset.searchBound = "true";
             button.addEventListener("click", function (event) {
                 event.preventDefault();
+                event.stopPropagation();
                 closeHeaderSearch();
             });
         });
@@ -1235,13 +1250,13 @@ document.addEventListener("pointerdown", function (event) {
         const searchOpenButton = event.target.closest(".search_open_btn");
         const searchCloseButton = event.target.closest(".search_close_btn");
 
-        if (searchOpenButton) {
+        if (searchOpenButton && searchOpenButton.dataset.searchBound !== "true") {
             event.preventDefault();
-            openHeaderSearch();
+            toggleHeaderSearch();
             return;
         }
 
-        if (searchCloseButton) {
+        if (searchCloseButton && searchCloseButton.dataset.searchBound !== "true") {
             event.preventDefault();
             closeHeaderSearch();
             return;
@@ -1287,6 +1302,7 @@ document.addEventListener("pointerdown", function (event) {
     window.GreenZoneHeaderSearch = {
         open: openHeaderSearch,
         close: closeHeaderSearch,
+        toggle: toggleHeaderSearch,
         bind: bindHeaderSearch
     };
 

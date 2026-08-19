@@ -1756,7 +1756,7 @@ aspect-ratio: 1 / 1;
         padding: 0 20px;
 
         position: sticky;
-        /* 50px 모바일 헤더 바로 아래에서 2px 겹쳐 빈틈을 없앤다. */
+        /* 50px 모바일 헤더와 2px 겹쳐 중간의 흰 틈을 없앤다. */
         top: 48px;
         z-index: 999;
 

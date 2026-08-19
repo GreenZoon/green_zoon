@@ -435,8 +435,24 @@
 }
 
 .profile_form textarea { min-height: 92px; resize: vertical; }
-.profile_form input[readonly] { background: #009944; color: #fff; }
+.profile_form input[readonly],
+.profile_form textarea[readonly] { background: #f8f8f8; color: #555; }
+.profile_form input[name="grade"] { background: #009944; color: #fff; }
 .profile_email { color: #8e8e8e; font-size: 14px; }
+
+.profile_edit {
+    min-width: 150px;
+    min-height: 44px;
+    align-self: center;
+    border: 0;
+    border-radius: 7px;
+    background: #009944;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px 24px;
+}
 
 .profile_save {
     min-height: 46px;
@@ -633,25 +649,12 @@
     gap: 24px;
 }
 
-.login_mark {
+.login_logo_placeholder {
     width: 96px;
     aspect-ratio: 1 / 1;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     align-self: center;
-    transform: rotate(45deg);
     border-radius: 12px;
-    background-color: var(--login-green);
-}
-
-.login_mark::before {
-    width: 38%;
-    height: 48%;
-    transform: rotate(-45deg);
-    background: linear-gradient(to right, #fff 0 24%, transparent 24% 38%, #fff 38% 62%, transparent 62% 76%, #fff 76% 100%);
-    content: "";
+    background-color: #e8e8e8;
 }
 
 .account_login_heading {
@@ -997,7 +1000,7 @@
         background: #fff;
     }
 
-    .login_mark { width: 80px; }
+    .login_logo_placeholder { width: 80px; }
 
     .account_login {
         width: min(100% - 40px, 420px);
@@ -1084,5 +1087,5 @@
         padding-inline: 18px;
     }
 
-    .login_mark { width: 72px; }
+    .login_logo_placeholder { width: 72px; }
 }

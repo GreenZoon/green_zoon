@@ -628,6 +628,7 @@
 
         const yearText = head.querySelector(".calendar_year");
         const monthText = head.querySelector(".calendar_month");
+        const caption = head.querySelector(".calendar_caption");
         const dateInput = head.querySelector(".calendar_date_input");
         const previous = head.querySelector('button[aria-label="이전 달"]');
         const next = head.querySelector('button[aria-label="다음 달"]');
@@ -710,6 +711,7 @@
             const lastDate = new Date(year, month + 1, 0).getDate();
             if (yearText) yearText.textContent = year + "년";
             if (monthText) monthText.textContent = (month + 1) + "월";
+            if (caption) caption.textContent = year + "년 " + (month + 1) + "월";
             calendar.setAttribute("aria-label", year + "년 " + (month + 1) + "월 작업 일정");
             body.replaceChildren();
 
