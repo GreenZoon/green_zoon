@@ -7,19 +7,12 @@
 
 .dispatch_hero img {
     width: 100%;
+    height: 400px;
     object-fit: cover;
     object-position: center 45%;
 }
 
-.section_2 .tit_wrap{
-
-    gap: 40px;
-}
-
-
-
 .service_detail {
-
     display: flex;
     flex-direction: column;
 }
@@ -27,14 +20,20 @@
 /* 소개 */
 
 .dispatch_intro {
-
     order: 1;
+    min-height: 657px;
     display: flex;
     align-items: center;
-    gap: clamp(48px, 5vw, 100px);
-
+    justify-content: space-between;
+    gap: 100px;
+    padding: 50px 150px;
 }
 
+.dispatch_intro .tit_wrap {
+    width: 42%;
+    max-width: 668px;
+    gap: 40px;
+}
 
 .dispatch_intro .tit_in_wrap {
     align-items: flex-start;
@@ -56,33 +55,28 @@
 }
 
 .dispatch_intro h2 {
-    font-size: clamp(1.625rem, 2.1vw, 2.5rem);
+    font-size: 40px;
     line-height: 1.5;
 }
 
 .dispatch_intro .dispatch_title {
-
     margin: 0;
-    font-size: clamp(1.0625rem, 1.3vw, 1.5625rem);
+    font-size: 25px;
     line-height: 1.5;
-
 }
 
 .dispatch_intro .dispatch_copy {
-
     width: 100%;
     max-width: 668px;
     color: #8e8e8e;
-    font-size: clamp(0.9375rem, 1.2vw, 1.4375rem);
+    font-size: 23px;
     line-height: 1.5;
     text-align: left;
-
 }
 
 /* 파견 지역 */
 
 .dispatch_targets {
-
     order: 2;
     min-height: 471px;
     display: flex;
@@ -90,39 +84,46 @@
     align-items: center;
     justify-content: center;
     gap: 48px;
- 
+    padding: 100px 150px;
     color: #555;
     background-color: #fff;
+}
 
+.dispatch_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
 }
 
 .dispatch_heading h2 {
     color: inherit;
- 
-    
+    font-size: 40px;
     line-height: 1.5;
 }
 
 .dispatch_heading p {
     color: inherit;
+    font-size: 25px;
     line-height: 1.5;
 }
 
 .dispatch_targets .con_wrap {
-    width: min(100%, 995px);
+    width: 100%;
+    max-width: 995px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(14px, 2.55vw, 49px);
+    gap: 49px;
 }
 
 .dispatch_targets .con {
-
     width: 12.5%;
     max-width: 125px;
     min-width: 0;
     aspect-ratio: 1 / 1;
-    flex: 0 1 auto;
+    flex: 0 1 12.5%;
     padding: 0;
     border: 0;
     background: transparent;
@@ -153,7 +154,7 @@
 
 .dispatch_circle p {
     color: inherit;
-    font-size: clamp(0.6875rem, 0.8vw, 0.9375rem);
+    font-size: 15px;
     font-weight: 600;
     line-height: 1.2;
     white-space: nowrap;
@@ -163,12 +164,13 @@
 
 .dispatch_gallery {
     order: 3;
+    min-height: 620px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: clamp(60px, 5.2vw, 100px);
-    padding: 60px var(--dispatch-side);
+    gap: 100px;
+    padding: 60px 150px;
     color: #555;
     background-color: #fff;
 }
@@ -177,7 +179,7 @@
     width: 50%;
     max-width: 800px;
     aspect-ratio: 8 / 5;
-    flex: 0 1 auto;
+    flex: 0 1 800px;
     overflow: hidden;
     border-radius: 25px;
 }
@@ -188,9 +190,16 @@
     display: block;
 }
 
+.dispatch_photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 .dispatch_gallery .tit_wrap {
     width: 35%;
-  
+    max-width: 520px;
     align-items: flex-start;
     gap: 11px;
     color: #555;
@@ -198,12 +207,12 @@
 }
 
 .dispatch_gallery h2 {
-    font-size: clamp(1.5625rem, 2.1vw, 2.5rem);
+    font-size: 40px;
     line-height: 1.5;
 }
 
 .dispatch_gallery p {
-    font-size: clamp(0.9375rem, 1.3vw, 1.5625rem);
+    font-size: 25px;
     line-height: 1.5;
 }
 
@@ -211,13 +220,22 @@
 
 .dispatch_academy {
     order: 4;
-
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 100px 150px;
     color: #f8f8f8;
     background-color: #009944;
+}
+
+.dispatch_academy > a {
+    width: 100%;
+    max-width: 1620px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: inherit;
 }
 
 .dispatch_academy_info {
@@ -225,67 +243,66 @@
     max-width: 720px;
     display: flex;
     flex-direction: column;
-    gap: 35px;
 }
 
 .dispatch_academy_info .tit_wrap {
     align-items: flex-start;
-    gap: 5px;
+    margin-bottom: 35px;
     color: inherit;
     text-align: left;
 }
 
-.dispatch_academy_title {
-    font-size: clamp(1.5625rem, 2.1vw, 2.5rem);
+.dispatch_academy h2 {
+    margin-bottom: 5px;
+    font-size: 40px;
     line-height: 1.5;
 }
 
-.dispatch_academy_copy {
-    font-size: clamp(0.875rem, 1vw, 1.1875rem);
+.dispatch_academy p {
+    font-size: 19px;
     line-height: 1.5;
 }
 
 .dispatch_academy_list {
-    display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 23px 34px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .dispatch_academy_item {
+    width: 31%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 14px;
-    font-size: clamp(0.875rem, 1vw, 1.1875rem);
+    margin-bottom: 23px;
+    font-size: 19px;
     line-height: 1.5;
 }
 
 .dispatch_academy_icon {
-    width: 60%;
-    padding: 3%;
+    width: 23%;
     aspect-ratio: 1 / 1;
-    flex: 0 0 auto;
+    flex: 0 0 23%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid currentColor;
+    margin-right: 14px;
+    border: 1px solid currentColor;
     border-radius: 50%;
 }
 
 .dispatch_academy_icon .icon {
-    width: 60%;
+    width: 52%;
     aspect-ratio: 1 / 1;
-    flex: 0 0 auto;
+    flex: 0 0 52%;
     background-color: currentColor;
 }
 
 .dispatch_training {
-    width: 100%;
+    width: 37%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
 }
 
 .dispatch_training .img_wrap {
@@ -316,6 +333,7 @@
 
 .dispatch_request {
     order: 5;
+    padding: 100px 150px;
 }
 
 .dispatch_request a {
@@ -345,27 +363,85 @@
     gap: 10px;
 }
 
-.dispatch_request_text h2{
-    font-size: clamp(1.5625rem, 2.1vw, 2.5rem);
+.dispatch_request_text h2 {
+    font-size: 40px;
     line-height: 1.5;
-    font-weight: 700;
 }
 
-.dispatch_request_text > p {
+.dispatch_request_text p {
     color: #555;
-    font-size: clamp(0.875rem, 1vw, 1.0625rem);
+    font-size: 17px;
     line-height: 1.5;
-
 }
 
-.dispatch_contacts{
-
-    width: 50%;
+.dispatch_contacts {
+    max-width: 610px;
+    margin-top: 18px;
 }
 
-.flx_li {
+/* =========================================================
+   중간 웹
+========================================================= */
 
+@media (max-width: 1024px) {
 
+    .dispatch_hero img {
+        height: 300px;
+    }
+
+    .dispatch_intro {
+        min-height: 500px;
+        gap: 40px;
+        padding: 50px 40px;
+    }
+
+    .dispatch_intro .tit_wrap {
+        gap: 24px;
+    }
+
+    .dispatch_intro h2,
+    .dispatch_heading h2,
+    .dispatch_gallery h2,
+    .dispatch_academy h2,
+    .dispatch_request_text h2 {
+        font-size: 25px;
+    }
+
+    .dispatch_intro .dispatch_title,
+    .dispatch_heading p,
+    .dispatch_gallery p {
+        font-size: 17px;
+    }
+
+    .dispatch_intro .dispatch_copy,
+    .dispatch_academy p,
+    .dispatch_request_text p {
+        font-size: 15px;
+    }
+
+    .dispatch_targets {
+        min-height: 380px;
+        padding: 70px 40px;
+    }
+
+    .dispatch_gallery {
+        min-height: 500px;
+        gap: 40px;
+        padding: 60px 40px;
+    }
+
+    .dispatch_academy {
+        min-height: 500px;
+        padding: 70px 40px;
+    }
+
+    .dispatch_academy_item {
+        font-size: 15px;
+    }
+
+    .dispatch_request {
+        padding: 70px 40px;
+    }
 }
 
 
@@ -375,6 +451,9 @@
 
 @media (max-width: 768px) {
 
+    .dispatch_hero img {
+        height: 200px;
+    }
 
     .breadcrumb {
         display: none;
@@ -384,7 +463,7 @@
         min-height: 0;
         flex-direction: column-reverse;
         gap: 16px;
-    
+        padding: 16px 20px 20px;
     }
 
     .dispatch_intro .tit_wrap {
@@ -407,29 +486,26 @@
     }
 
     .dispatch_intro h2 {
-
         display: none;
-
     }
 
     .dispatch_intro .dispatch_title {
         width: 100%;
-        font-size: clamp(1.0625rem, 4.73vw, 1.1875rem);
+        font-size: 19px;
         text-align: right;
     }
 
     .dispatch_intro .dispatch_copy {
         width: 100%;
         max-width: none;
-        font-size: clamp(0.6875rem, 2.99vw, 0.75rem);
+        font-size: 12px;
         text-align: right;
     }
 
     .dispatch_targets {
-        
         min-height: 0;
         gap: 16px;
-        padding: 12px var(--dispatch-side) 27px;
+        padding: 12px 20px 27px;
         color: #f8f8f8;
         background-color: #009944;
     }
@@ -438,10 +514,12 @@
         gap: 3px;
     }
 
+    .dispatch_heading h2 {
+        font-size: 14px;
+    }
 
     .dispatch_heading p {
-        font-weight: 400;
-     
+        font-size: 10px;
     }
 
     .dispatch_targets .con_wrap {
@@ -471,12 +549,12 @@
         position: absolute;
         bottom: -36%;
         color: #f8f8f8;
-        font-size: clamp(0.5rem, 2.49vw, 0.625rem);
+        font-size: 10px;
     }
 
     .dispatch_request {
         order: 3;
-        padding: 16px var(--dispatch-side) 0;
+        padding: 16px 20px 0;
     }
 
     .dispatch_request a {
@@ -502,11 +580,11 @@
         display: block;
     }
 
-    .dispatch_request_text strong {
-        font-size: 0.9375rem;
+    .dispatch_request_text h2 {
+        font-size: 15px;
     }
 
-    .dispatch_request_text > span {
+    .dispatch_request_text p {
         display: none;
     }
 
@@ -514,17 +592,20 @@
         order: 4;
         width: 100%;
         min-height: 0;
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px var(--dispatch-side);
+        padding: 20px;
         color: #555;
         background-color: #fff;
+    }
+
+    .dispatch_academy > a {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .dispatch_academy_info {
         width: 100%;
         max-width: none;
-        gap: 14px;
+        margin-bottom: 31px;
         padding: 16px 12px;
         border: 1px solid #009944;
         border-radius: 8px;
@@ -532,35 +613,38 @@
 
     .dispatch_academy_info .tit_wrap {
         align-items: center;
-        gap: 3px;
+        margin-bottom: 11px;
         color: #555;
         text-align: center;
     }
 
-    .dispatch_academy_title {
-        font-size: clamp(1.0625rem, 4.73vw, 1.1875rem);
+    .dispatch_academy h2 {
+        margin-bottom: 3px;
+        font-size: 14px;
     }
 
-    .dispatch_academy_copy {
-        font-size: clamp(0.5625rem, 2.49vw, 0.625rem);
+    .dispatch_academy p {
+        font-size: 10px;
     }
 
     .dispatch_academy_list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px 8px;
+        justify-content: space-between;
     }
 
     .dispatch_academy_item {
+        width: 31%;
         flex-direction: column;
-        gap: 4px;
+        margin-bottom: 9px;
         color: #8e8e8e;
-        font-size: clamp(0.5625rem, 2.49vw, 0.625rem);
+        font-size: 10px;
         text-align: center;
     }
 
     .dispatch_academy_icon {
         width: 45%;
         flex-basis: 45%;
+        margin-right: 0;
+        margin-bottom: 4px;
         color: #009944;
     }
 
@@ -569,7 +653,6 @@
         max-width: none;
         flex-direction: row;
         align-items: center;
-        gap: 18px;
         color: #555;
     }
 
@@ -577,22 +660,23 @@
         width: 42%;
         aspect-ratio: 3 / 2;
         flex: 0 0 42%;
+        margin-right: 18px;
         border-radius: 7px;
     }
 
     .dispatch_training .tit_wrap {
         display: flex;
         align-items: flex-start;
-        gap: 4px;
         text-align: left;
     }
 
     .dispatch_training h3 {
-        font-size: clamp(0.8125rem, 3.49vw, 0.875rem);
+        margin-bottom: 4px;
+        font-size: 14px;
     }
 
     .dispatch_training p {
-        font-size: clamp(0.5625rem, 2.49vw, 0.625rem);
+        font-size: 10px;
     }
 
     .dispatch_gallery {
@@ -602,7 +686,7 @@
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
-        padding: 16px var(--dispatch-side) 36px;
+        padding: 16px 20px 36px;
     }
 
     .dispatch_gallery .tit_wrap {
@@ -615,7 +699,7 @@
     }
 
     .dispatch_gallery h2 {
-        font-size: clamp(1.0625rem, 4.73vw, 1.1875rem);
+        font-size: 19px;
     }
 
     .dispatch_gallery p {
