@@ -138,10 +138,10 @@
     function renderSelector() {
         selector.innerHTML = services.map((service) => `
             <button class="service_option" type="button" data-service="${service.id}" aria-pressed="false">
-                <span class="service_option_inner">
+                <div class="service_option_inner">
                     <span class="icon ${service.iconClass}" aria-hidden="true"></span>
-                    <span>${service.name}</span>
-                </span>
+                    <p>${service.name}</p>
+                </div>
             </button>
         `).join("");
     }
@@ -153,18 +153,18 @@
 
         if (field.type === "textarea") {
             return `
-                <label class="detail_label${wide}">
-                    <span>${field.label}${field.required ? " *" : ""}</span>
-                    <textarea class="detail_textarea" name="${fieldName}" rows="4" placeholder="${escapeHtml(field.placeholder)}" ${required}></textarea>
-                </label>
+                <div class="detail_label${wide}">
+                    <label for="${fieldName}">${field.label}${field.required ? " *" : ""}</label>
+                    <textarea id="${fieldName}" class="detail_textarea" name="${fieldName}" rows="4" placeholder="${escapeHtml(field.placeholder)}" ${required}></textarea>
+                </div>
             `;
         }
 
         return `
-            <label class="detail_label${wide}">
-                <span>${field.label}${field.required ? " *" : ""}</span>
-                <input class="detail_control" type="${field.type || "text"}" name="${fieldName}" ${field.min ? `min="${field.min}"` : ""} placeholder="${escapeHtml(field.placeholder)}" ${required}>
-            </label>
+            <div class="detail_label${wide}">
+                <label for="${fieldName}">${field.label}${field.required ? " *" : ""}</label>
+                <input id="${fieldName}" class="detail_control" type="${field.type || "text"}" name="${fieldName}" ${field.min ? `min="${field.min}"` : ""} placeholder="${escapeHtml(field.placeholder)}" ${required}>
+            </div>
         `;
     }
 
@@ -191,12 +191,12 @@
                 <div class="upload_area" data-upload-service="${service.id}">
                     <div class="upload_heading">
                         <strong>현장 이미지${service.imageRequired ? " *" : " (선택)"}</strong>
-                        <span>한 칸에 한 장씩, 최대 3장까지 첨부할 수 있습니다.</span>
+                        <p>한 칸에 한 장씩, 최대 3장까지 첨부할 수 있습니다.</p>
                     </div>
                     <div class="upload_grid">
                         <label class="upload_slot">
                             <span class="upload_plus" aria-hidden="true">＋</span>
-                            <span>이미지 첨부</span>
+                            <p>이미지 첨부</p>
                             <input type="file" accept="image/*" multiple data-file-input="${service.id}">
                         </label>
                     </div>
@@ -318,8 +318,8 @@
                 <div class="summary_item">
                     <div class="summary_item_info">
                         <strong>${service.name}</strong>
-                        <span>${escapeHtml(values.join(" / ") || "상세 내용을 작성해 주세요")}</span>
-                        <span>${fileCount ? `이미지 ${fileCount}장 첨부` : "이미지 미첨부"}</span>
+                        <p>${escapeHtml(values.join(" / ") || "상세 내용을 작성해 주세요")}</p>
+                        <p>${fileCount ? `이미지 ${fileCount}장 첨부` : "이미지 미첨부"}</p>
                     </div>
                     <button type="button" class="slot_remove" data-remove-service="${id}" aria-label="${service.name} 선택 해제">×</button>
                 </div>
@@ -363,8 +363,8 @@
             return `
                 <div class="visit_slot">
                     <div class="visit_slot_info">
-                        <span>▣ ${formatted}</span>
-                        <span>◷ ${slot.time}</span>
+                        <p>${formatted}</p>
+                        <p>${slot.time}</p>
                     </div>
                     <button type="button" class="slot_remove" data-slot-index="${index}" aria-label="방문 일정 삭제">×</button>
                 </div>

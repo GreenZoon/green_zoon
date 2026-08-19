@@ -20,7 +20,7 @@
         <nav class="application_breadcrumb" aria-label="현재 위치">
             <a href="../index.html">홈</a>
             <span class="icon arrow right_arrow_2 application_breadcrumb_arrow" aria-hidden="true"></span>
-            <span>청소 작업 신청서</span>
+            <p aria-current="page">청소 작업 신청서</p>
         </nav>
 
         <form id="cleaning_application" class="application_form" novalidate>
@@ -34,22 +34,22 @@
                     <legend>신청자 정보</legend>
                     <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>작업 담당자와 연락 가능한 정보를 정확히 입력해 주세요.</p>
                     <div class="applicant_grid">
-                        <label class="application_field">
-                            <span>업체/상호/관공서명 <b>*</b></span>
-                            <input type="text" name="company" autocomplete="organization" placeholder="업체 또는 기관명을 입력해 주세요" required>
-                        </label>
-                        <label class="application_field">
-                            <span>담당자명 <b>*</b></span>
-                            <input type="text" name="manager" autocomplete="name" placeholder="담당자명을 입력해 주세요" required>
-                        </label>
-                        <label class="application_field">
-                            <span>연락처 <b>*</b></span>
-                            <input type="tel" name="phone" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)" required>
-                        </label>
-                        <label class="application_field application_field_wide">
-                            <span>청소작업 구역 주소 <b>*</b></span>
-                            <input type="text" name="address" autocomplete="street-address" placeholder="청소작업 구역 주소를 입력해 주세요 (예시: 경상남도 김해시 전하로 191)" required>
-                        </label>
+                        <div class="application_field">
+                            <label for="company">업체/상호/관공서명 <b>*</b></label>
+                            <input id="company" type="text" name="company" autocomplete="organization" placeholder="업체 또는 기관명을 입력해 주세요" required>
+                        </div>
+                        <div class="application_field">
+                            <label for="manager">담당자명 <b>*</b></label>
+                            <input id="manager" type="text" name="manager" autocomplete="name" placeholder="담당자명을 입력해 주세요" required>
+                        </div>
+                        <div class="application_field">
+                            <label for="phone">연락처 <b>*</b></label>
+                            <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)" required>
+                        </div>
+                        <div class="application_field application_field_wide">
+                            <label for="address">청소작업 구역 주소 <b>*</b></label>
+                            <input id="address" type="text" name="address" autocomplete="street-address" placeholder="청소작업 구역 주소를 입력해 주세요 (예시: 경상남도 김해시 전하로 191)" required>
+                        </div>
                     </div>
                 </fieldset>
 
@@ -62,7 +62,7 @@
                     <label class="privacy_agree">
                         <input id="privacy_agree" type="checkbox" name="privacy" aria-describedby="privacy_error" required>
                         <span class="privacy_check" aria-hidden="true"></span>
-                        <span class="privacy_label">개인정보 이용 내역 동의하기 <b>(필수)</b></span>
+                        개인정보 이용 내역 동의하기 <b>(필수)</b>
                     </label>
                     <p id="privacy_error" class="field_error privacy_error" role="alert"></p>
                 </fieldset>
@@ -88,10 +88,10 @@
                 <div id="visit_slots" class="visit_slots" aria-live="polite">
                     <p class="empty_message">선택된 방문 일정이 없습니다.</p>
                 </div>
-                <label class="application_field application_field_wide">
-                    <span>추가사항 <em>(선택)</em></span>
-                    <textarea name="additional" rows="4" placeholder="추가사항을 입력해 주세요 (예시: 주말에 바로 작업을 원합니다)"></textarea>
-                </label>
+                <div class="application_field application_field_wide">
+                    <label for="additional">추가사항 <em>(선택)</em></label>
+                    <textarea id="additional" name="additional" rows="4" placeholder="추가사항을 입력해 주세요 (예시: 주말에 바로 작업을 원합니다)"></textarea>
+                </div>
             </section>
 
             <section class="application_panel summary_panel" aria-labelledby="summary_title">
@@ -121,10 +121,10 @@
                 <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>원하시는 날짜와 시간대를 선택해 주세요.</p>
             </div>
             <div class="visit_picker">
-                <label class="application_field">
-                    <span>방문 날짜</span>
+                <div class="application_field">
+                    <label for="visit_date">방문 날짜</label>
                     <input type="date" id="visit_date">
-                </label>
+                </div>
                 <fieldset class="time_fieldset">
                     <legend>시간 선택</legend>
                     <div id="time_options" class="time_options"></div>

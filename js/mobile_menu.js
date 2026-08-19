@@ -989,6 +989,30 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     const recentSearchKey = "greenZoneRecentSearches";
     const searchEntries = [];
 
+    /* 동적으로 불러온 헤더도 같은 함수로 검색창을 연다. */
+    function openHeaderSearch() {
+        const form = document.getElementById("header_search");
+
+        if (!form) return;
+
+        form.classList.add("is_open");
+
+        document.querySelectorAll(".search_open_btn").forEach(function (button) {
+            button.setAttribute("aria-expanded", "true");
+        });
+
+        renderRecentSearches();
+        form.querySelector(".search_input")?.focus();
+    }
+
+    function closeHeaderSearch() {
+        document.getElementById("header_search")?.classList.remove("is_open");
+
+        document.querySelectorAll(".search_open_btn").forEach(function (button) {
+            button.setAttribute("aria-expanded", "false");
+        });
+    }
+
     function normalizeKeyword(value) {
         return String(value || "")
             .toLocaleLowerCase("ko")
@@ -1158,9 +1182,19 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     document.addEventListener("click", function (event) {
         const keywordButton = event.target.closest("#header_search .keyword_button");
         const mainButton = event.target.closest(".mobile_search button");
+        const searchOpenButton = event.target.closest(".search_open_btn");
+        const searchCloseButton = event.target.closest(".search_close_btn");
 
-        if (event.target.closest(".search_open_btn")) {
-            renderRecentSearches();
+        if (searchOpenButton) {
+            event.preventDefault();
+            openHeaderSearch();
+            return;
+        }
+
+        if (searchCloseButton) {
+            event.preventDefault();
+            closeHeaderSearch();
+            return;
         }
 
         if (keywordButton) {
@@ -1178,6 +1212,10 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     });
 
     document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeHeaderSearch();
+        }
+
         const input = event.target.closest('.mobile_search input[type="search"]');
         if (input && event.key === "Enter") {
             event.preventDefault();
@@ -1194,6 +1232,11 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     window.GreenZoneSearch = {
         find,
         go
+    };
+
+    window.GreenZoneHeaderSearch = {
+        open: openHeaderSearch,
+        close: closeHeaderSearch
     };
 
 })();
