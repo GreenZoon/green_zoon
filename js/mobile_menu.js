@@ -1018,3 +1018,229 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
         }
     });
 }
+
+
+/* =========================================================
+   SITE SEARCH
+   헤더와 메인 검색은 같은 검색 목록과 이동 규칙을 사용합니다.
+========================================================= */
+
+(function () {
+
+    "use strict";
+
+    if (window.GreenZoneSearch) {
+        return;
+    }
+
+    const recentSearchKey = "greenZoneRecentSearches";
+    const searchEntries = [];
+
+    function normalizeKeyword(value) {
+        return String(value || "")
+            .toLocaleLowerCase("ko")
+            .replace(/[\s\-_/.,()[\]{}]+/g, "");
+    }
+
+    function addEntry(title, href, keywords, search) {
+        searchEntries.push({
+            title,
+            href,
+            keywords: keywords || [],
+            search: search || ""
+        });
+    }
+
+    function collectMenuEntries(items, parents) {
+        items.forEach(function (item) {
+            const path = parents.concat(item.title);
+
+            if (item.href) {
+                addEntry(item.title, item.href, path);
+            }
+
+            if (item.children) {
+                collectMenuEntries(item.children, path);
+            }
+        });
+    }
+
+    collectMenuEntries(mobileMenuData, []);
+
+    addEntry("홈", "/index.html", ["메인", "메인페이지", "홈페이지"]);
+    addEntry("공장 청소", "/sub_page/Factory_cleane/Factory_man.html", ["공장청소", "공장", "기계설비"]);
+    addEntry("위생관리", "/sub_page/Factory_cleane/Factory_man.html", ["위생관리 용역업", "청소업체"]);
+    addEntry("물탱크 청소", "/sub_page/Water_tank/Water_tank.html", ["저수조 청소", "저수조"]);
+    addEntry("외벽 청소", "/sub_page/Exterior/Commercial.html", ["외벽청소", "외벽 방수", "유리창 청소"]);
+    addEntry("청소 작업 신청", "/user_page/Online_application.html", ["작업문의", "견적", "온라인견적", "방문견적", "청소신청"]);
+
+    [
+        "겨울철 실내공기유지하기",
+        "주방 청소 꿀팁 4가지, 이것만 알아도 관리가 쉬워집니다",
+        "가습기 청소",
+        "집먼지 진드기 알레르기, 원인 예방법 꼼꼼하게 알려드릴게요",
+        "먼지 방지하는 청소 방법",
+        "미세먼지 심할 때 환기, 올바른 환기 방법이 있어요!",
+        "전자레인지 냄새 제거 꿀팁, 이 방법이 가장 확실해요!",
+        "새집증후군 예방 위한 효과적인 방법 총정리!"
+    ].forEach(function (title) {
+        addEntry(title, "/sub_page/Community/Information.html", ["정보공유", "청소정보"], title);
+    });
+
+    function scoreEntry(entry, query) {
+        const keyword = normalizeKeyword(query);
+        const title = normalizeKeyword(entry.title);
+        const fields = entry.keywords.map(normalizeKeyword);
+
+        if (!keyword) return 0;
+        if (title === keyword) return 100;
+        if (title.includes(keyword)) return 80;
+        if (fields.includes(keyword)) return 70;
+        if (fields.some(function (field) { return field.includes(keyword); })) return 50;
+        if (keyword.includes(title)) return 30;
+        return 0;
+    }
+
+    function find(query) {
+        return searchEntries
+            .map(function (entry) {
+                return { entry, score: scoreEntry(entry, query) };
+            })
+            .filter(function (result) {
+                return result.score > 0;
+            })
+            .sort(function (a, b) {
+                return b.score - a.score;
+            })
+            .map(function (result) {
+                return result.entry;
+            });
+    }
+
+    function readRecentSearches() {
+        try {
+            return JSON.parse(window.localStorage.getItem(recentSearchKey) || "[]");
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function saveRecentSearch(query) {
+        const recent = readRecentSearches().filter(function (item) {
+            return normalizeKeyword(item) !== normalizeKeyword(query);
+        });
+
+        recent.unshift(query);
+        window.localStorage.setItem(recentSearchKey, JSON.stringify(recent.slice(0, 4)));
+    }
+
+    function renderRecentSearches() {
+        const list = document.querySelector("#header_search .keyword_section:first-child .keyword_list");
+        const recent = readRecentSearches();
+
+        if (!list || !recent.length) {
+            return;
+        }
+
+        list.replaceChildren();
+
+        recent.forEach(function (query) {
+            const item = document.createElement("li");
+            const button = document.createElement("button");
+            const icon = document.createElement("span");
+
+            button.type = "button";
+            button.className = "keyword_button";
+            icon.className = "icon search_ion keyword_icon";
+            icon.setAttribute("aria-hidden", "true");
+            button.append(icon, document.createTextNode(query));
+            item.appendChild(button);
+            list.appendChild(item);
+        });
+    }
+
+    function showNoResult(input, query) {
+        input.setCustomValidity("'" + query + "'에 해당하는 페이지를 찾지 못했습니다.");
+        input.reportValidity();
+    }
+
+    function go(query, input) {
+        const value = String(query || "").trim();
+        const result = find(value)[0];
+
+        if (!value) {
+            input?.focus();
+            return false;
+        }
+
+        if (!result) {
+            if (input) showNoResult(input, value);
+            return false;
+        }
+
+        saveRecentSearch(value);
+
+        const destination = new URL(
+            window.GreenZonePaths?.resolve(result.href) || result.href,
+            window.location.href
+        );
+
+        if (result.search) {
+            destination.searchParams.set("search", result.search);
+        }
+
+        window.location.href = destination.href;
+        return true;
+    }
+
+    document.addEventListener("submit", function (event) {
+        const form = event.target.closest("#header_search");
+        if (!form) return;
+
+        event.preventDefault();
+        const input = form.querySelector('input[type="search"]');
+        go(input?.value, input);
+    });
+
+    document.addEventListener("click", function (event) {
+        const keywordButton = event.target.closest("#header_search .keyword_button");
+        const mainButton = event.target.closest(".mobile_search button");
+
+        if (event.target.closest(".search_open_btn")) {
+            renderRecentSearches();
+        }
+
+        if (keywordButton) {
+            const input = document.querySelector("#header_search .search_input");
+            const query = keywordButton.textContent.trim();
+            if (input) input.value = query;
+            go(query, input);
+            return;
+        }
+
+        if (mainButton) {
+            const input = mainButton.closest(".mobile_search")?.querySelector('input[type="search"]');
+            go(input?.value, input);
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        const input = event.target.closest('.mobile_search input[type="search"]');
+        if (input && event.key === "Enter") {
+            event.preventDefault();
+            go(input.value, input);
+        }
+    });
+
+    document.addEventListener("input", function (event) {
+        if (event.target.matches('#header_search input[type="search"], .mobile_search input[type="search"]')) {
+            event.target.setCustomValidity("");
+        }
+    });
+
+    window.GreenZoneSearch = {
+        find,
+        go
+    };
+
+})();

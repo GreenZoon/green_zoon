@@ -235,10 +235,15 @@
 .information_filter a { min-width: 78px; min-height: 46px; display: flex; align-items: center; justify-content: center; border: 1px solid #8e8e8e; border-radius: 10px; color: #555; }
 .information_filter a:hover, .information_filter a[aria-current="page"] { border-color: #009944; background: #009944; color: #fff; }
 
-.information_card { width: calc((100% - 60px) / 4); display: flex; flex-direction: column; gap: 12px; }
+.information_card { width: calc((100% - 60px) / 4); display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid #f2f2f2; padding-bottom: 18px; }
 .information_card img, .information_card .empty_image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 15px; }
-.information_card h3 { overflow: hidden; font-size: 17px; line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.information_card_body { display: flex; flex-direction: column; gap: 12px; }
+.information_card_title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.information_card h3 { min-width: 0; flex: 1 1 auto; overflow: hidden; font-size: 17px; line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.information_badge { min-width: 60px; min-height: 35px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #009944; color: #fff; font-size: 13px; }
 .information_meta { display: flex; justify-content: space-between; color: #8e8e8e; font-size: 12px; }
+.information_comments { display: flex; align-items: center; gap: 5px; }
+.information_comments .icon { width: 16px; background-color: currentColor; }
 
 .faq_list { display: flex; flex-direction: column; gap: 20px; }
 .faq_list details { border-bottom: 1px solid #dbdbdb; border-radius: 15px; }
@@ -649,8 +654,15 @@
     .event_card h3 { font-size: 14px; }
     .information_filter { overflow-x: auto; }
     .information_filter a { min-width: 56px; min-height: 32px; border-radius: 5px; font-size: 12px; }
-    .information_card { width: calc((100% - 10px) / 2); }
+    [data-community-page="information"] .content_head { align-items: stretch; gap: 8px; }
+    [data-community-page="information"] .content_search { width: 100%; }
+    .information_cards { gap: 24px 20px; }
+    .information_card { width: calc((100% - 20px) / 2); gap: 8px; padding-bottom: 12px; }
+    .information_card_body { gap: 7px; }
+    .information_card_title { gap: 6px; }
     .information_card h3 { font-size: 13px; }
+    .information_badge { min-width: 40px; min-height: 24px; border-radius: 5px; font-size: 10px; }
+    .information_comments .icon { width: 13px; }
     .faq_list { gap: 10px; }
     .faq_list summary { min-height: 52px; gap: 12px; font-size: 12px; padding: 0 12px; }
     .faq_answer { align-items: stretch; flex-direction: column; gap: 24px; padding: 18px 12px 28px; }

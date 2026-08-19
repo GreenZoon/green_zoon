@@ -178,13 +178,13 @@
 
     const informationImages = [
         "img/mainimgs/Community_Information.jpg",
-        "img/sub_page/community/info/info_02.png",
-        "img/sub_page/community/info/info_03.png",
-        "img/sub_page/community/info/info_04.png",
-        "img/sub_page/community/info/info_05.png",
-        "img/sub_page/community/info/info_06.png",
-        "img/sub_page/community/info/info_07.png",
-        "img/sub_page/community/info/info_08.png"
+        "img/sub_page/community/info/info_02.webp",
+        "img/sub_page/community/info/info_03.webp",
+        "img/sub_page/community/info/info_04.webp",
+        "img/sub_page/community/info/info_05.webp",
+        "img/sub_page/community/info/info_06.webp",
+        "img/sub_page/community/info/info_07.webp",
+        "img/sub_page/community/info/info_08.webp"
     ];
 
     const reviewImages = [
@@ -410,7 +410,9 @@
                 const isMobile =
                     window.matchMedia("(max-width: 768px)").matches;
 
-                if (isMobile) {
+                if (isMobile && list.classList.contains("information_cards")) {
+                    perPage = 8;
+                } else if (isMobile) {
                     perPage = 4;
                 } else if (list.classList.contains("gallery_cards")) {
                     perPage = 12;
@@ -514,8 +516,11 @@
 
             function apply() {
                 const keyword = input.value.trim().toLocaleLowerCase("ko");
+                const category = list.dataset.activeCategory || "전체";
                 const matched = items.filter(function (item) {
-                    return !keyword || item.textContent.toLocaleLowerCase("ko").includes(keyword);
+                    const matchesKeyword = !keyword || item.textContent.toLocaleLowerCase("ko").includes(keyword);
+                    const matchesCategory = category === "전체" || item.dataset.category === category;
+                    return matchesKeyword && matchesCategory;
                 });
 
                 if (list.classList.contains("faq_list")) {
@@ -539,6 +544,12 @@
                     input.focus();
                 });
             }
+
+            const requestedKeyword = new URLSearchParams(window.location.search).get("search");
+            if (requestedKeyword && list.classList.contains("information_cards")) {
+                input.value = requestedKeyword;
+                apply();
+            }
         });
     }
 
@@ -548,7 +559,7 @@
         if (!nav || !list) return;
 
         const cards = Array.from(list.querySelectorAll(".information_card"));
-        const categoryMap = ["생활", "정리", "청소", "생활", "청소", "생활", "청소", "관리", "관리", "관리", "관리", "관리"];
+        const searchInput = document.querySelector('.content_search input[type="search"]');
 
         nav.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function (event) {
@@ -556,8 +567,11 @@
                 const category = link.textContent.trim();
                 nav.querySelectorAll("a").forEach(function (item) { item.removeAttribute("aria-current"); });
                 link.setAttribute("aria-current", "page");
-                const matched = cards.filter(function (_, index) {
-                    return category === "전체" || categoryMap[index] === category;
+                list.dataset.activeCategory = category;
+                const keyword = searchInput ? searchInput.value.trim().toLocaleLowerCase("ko") : "";
+                const matched = cards.filter(function (card) {
+                    const matchesKeyword = !keyword || card.textContent.toLocaleLowerCase("ko").includes(keyword);
+                    return matchesKeyword && (category === "전체" || card.dataset.category === category);
                 });
                 list.dispatchEvent(new CustomEvent("list-filter-change", { detail: { items: matched } }));
             });
