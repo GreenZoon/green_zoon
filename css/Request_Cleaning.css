@@ -12,16 +12,24 @@
 
 .Cleaning_box,
 .Cleaning_box_green {
+    width: auto;
 
-   
-    min-height: clamp(280px, 18vw, 340px);
+    flex: 1 1 0;
+    min-width: 0;
+
+    min-height: 340px;
+    padding: 40px 48px;
 
     display: flex;
     flex-direction: column;
+
     justify-content: space-between;
-    gap: clamp(16px, 1.5vw, 28px);
+
+    gap: 28px;
+
     border-color: #009944;
 
+    overflow: hidden;
 }
 
 /* =========================================================
@@ -90,7 +98,7 @@
     align-items: flex-end;
     justify-content: space-between;
 
-    gap: clamp(20px, 2.5vw, 40px);
+    gap: 40px;
 
 }
 
@@ -107,7 +115,7 @@
     display: flex;
     align-items: flex-end;
 
-    gap: clamp(18px, 2vw, 36px);
+    gap: 36px;
 
 }
 
@@ -127,11 +135,10 @@
 
 .Cleaning_ul li {
 
-    display: grid;
-
-    grid-template-columns: auto auto;
-
-    gap: clamp(12px, 1.2vw, 24px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 
     white-space: nowrap;
 
@@ -145,14 +152,12 @@
 
 .Cleaning_ul li p,
 .Cleaning_ul li a {
-
-    font-size: clamp(14px, 0.85vw, 16px);
+    font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.015em;
     font-weight: 500;
 
     color: inherit;
-    
 }
 
 /* =========================================================
@@ -160,19 +165,23 @@
    mask 공통 속성은 coom.css의 .icon 사용
 ========================================================= */
 
+.Cleaning_icon,
+.Cleaning_icon_green {
+    width: 150px;
+    aspect-ratio: 1 / 1;
+}
+
 /* 전화 아이콘 */
 
 .Cleaning_icon {
-    width: 30%;
     background-color: #f2f2f2;
 }
 
 /* 온라인 아이콘 */
 
 .Cleaning_icon_green {
-
     margin-left: auto;
-    width: 30%;
+
     align-self: flex-end;
 
     background-color: #009944;
@@ -212,19 +221,27 @@
         gap: 20px;
     }
 
+    .Cleaning_box,
+    .Cleaning_box_green {
+
+        min-height: 280px;
+        padding: 28px 30px;
+    }
+
     .Cleaning_box_in_wrap {
 
         width: 100%;
+
         gap: 20px;
-    
     }
 
     .Cleaning_ul_wrap {
 
         width: 100%;
+
         justify-content: space-between;
-        gap:18px;
-    
+
+        gap: 18px;
     }
 
     .Cleaning_ul li {
@@ -232,12 +249,20 @@
         gap: 12px;
     }
 
+    .Cleaning_ul li p,
+    .Cleaning_ul li a {
+        font-size: 14px;
+    }
+
     /*
         전화번호와 겹치던
         PC용 대형 상담원 아이콘 숨김
     */
 
+    .Cleaning_icon.call_center {
 
+        display: none;
+    }
 
     /*
         온라인 견적 아이콘은 공간이 충분하므로 유지
@@ -245,18 +270,10 @@
 
     .Cleaning_icon_green {
 
-        width: clamp(90px, 7vw, 120px);
+        width: 120px;
+        aspect-ratio: 1 / 1;
+
         flex: 0 0 auto;
-   
-    }
-
-}
-@media (max-width: 1200px) {
-
-    .Cleaning_icon.call_center {
-
-        display: none;
-
     }
 
 }
@@ -264,24 +281,22 @@
 
 @media (max-width: 768px) {
 
+#Request_Cleaning > section {
+        flex-direction: row;
 
-    #Request_Cleaning > section {
-
-            flex-direction: row;
-            align-items: center;
-            gap: 12px;
-            justify-content: center;
-
-        }
+        gap: 12px;
+    }
 
     /* =====================================================
        PC 전화 아이콘 OFF
        모바일 전화 아이콘 ON
     ===================================================== */
 
+    .Cleaning_icon.call_center {
+        display: none;
+    }
 
     .Cleaning_mobile_icon {
-
         display: block;
 
         width: 28px;
@@ -290,7 +305,6 @@
         flex: 0 0 auto;
 
         background-color: #f2f2f2;
-
     }
 
     /* =====================================================
@@ -299,7 +313,6 @@
 
     .Cleaning_box,
     .Cleaning_box_green {
-
         min-height: 0;
 
         padding: 12px 14px;
@@ -311,23 +324,18 @@
 
         border-width: 1px;
         border-radius: 8px;
-
     }
 
     /* 전화 견적 */
 
     .Cleaning_box_green {
-
         flex-direction: row;
-
     }
 
     /* 온라인 견적 */
 
     .Cleaning_box {
-
         flex-direction: row-reverse;
-
     }
 
     /* =====================================================
@@ -335,38 +343,30 @@
     ===================================================== */
 
     .Cleaning_tit_wrap {
-
         width: auto;
 
         align-items: center;
 
         gap: 0;
-
     }
 
     .Cleaning_tit_wrap h2 {
-
         font-size: 14px;
         line-height: 1.3;
 
         white-space: nowrap;
-
     }
 
     /* 버튼형에서는 설명 숨김 */
 
     .Cleaning_tit_wrap p {
-
         display: none;
-
     }
 
     /* 버튼형에서는 지점 전화번호 숨김 */
 
     .Cleaning_ul_wrap {
-
         display: none;
-
     }
 
     /* =====================================================
@@ -376,12 +376,10 @@
     .Cleaning_box_in_wrap {
         width: auto;
 
-
         align-items: center;
         justify-content: center;
 
         gap: 7px;
-
     }
 
     /* =====================================================
@@ -390,10 +388,10 @@
 
     .Cleaning_icon,
     .Cleaning_icon_green {
-
         width: 28px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 auto;
+        height: 28px;
+
+        flex: 0 0 28px;
 
         margin: 0;
 

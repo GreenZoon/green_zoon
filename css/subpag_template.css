@@ -169,7 +169,7 @@
 .section_2 > .img_wrap,
 .section_2 > .tit_wrap {
 
-    width: calc((100% - 40px) / 2);
+    width: 48%;
     max-width: 560px;
 }
 
@@ -371,7 +371,7 @@
 
 .con_section .box_g {
 
-    flex: 1 1 calc((100% - 42px) / 4);
+    flex: 1 1 24%;
 }
 
 .box_g {
@@ -572,10 +572,10 @@
 
 .sub_slide_img {
 
-    width: calc((100% - 40px) / 3);
+    width: 32%;
     height: 100%;
 
-    flex: 0 0 calc((100% - 40px) / 3);
+    flex: 0 0 32%;
 
     position: relative;
 
@@ -960,7 +960,8 @@
 
 .service_video_play {
 
-    width: clamp(30%, 8vw, 140px);
+    width: 30%;
+    max-width: 140px;
 
     position: absolute;
 
@@ -1002,7 +1003,7 @@
 
     order: 1;
     max-width: none;
-    gap: clamp(48px, 3vw, 100px);
+    gap: 60px;
 
 }
 
@@ -1295,15 +1296,15 @@
 
 .bridge_page .tix_section {
     order: 2;
-    display: grid;
-    grid-template-columns: repeat(2, 450px);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 28px 41px;
     padding: 50px 0;
 }
 
 .bridge_page .tix_section > h2 {
-    grid-column: 1 / -1;
+    width: 100%;
     margin-bottom: 12px;
     font-size: 2.5rem;
     text-align: center;
@@ -1392,9 +1393,9 @@
 
         display: block;
 
-        width: calc((100% - 40px) / 3);
+        width: 32%;
 
-        flex: 0 0 calc((100% - 40px) / 3);
+        flex: 0 0 32%;
     }
 
         .sub_pag_slide_wrap > .arrow{
@@ -1604,7 +1605,7 @@
 
     .service_intro .tit_wrap > p {
 
-        width: min(100%,90% );
+        width: 90%;
 
         margin-top: 0;
 
@@ -1643,7 +1644,7 @@
 
         min-height: 76px;
 
-        flex-basis: calc((100% - 12px) / 2);
+        flex-basis: 48%;
 
         padding: 10px;
 
@@ -2215,7 +2216,7 @@
 }
 
     .service_effect .box_g {
-        flex: 1 1 calc((100% - 36px) / 4);
+        flex: 1 1 24%;
     }
 
     .sub_pag_menu {
@@ -2251,10 +2252,10 @@
 
         display: block;
 
-        width: calc((100% - 14px) / 2);
+        width: 49%;
         height: 100%;
 
-        flex: 0 0 calc((100% - 14px) / 2);
+        flex: 0 0 49%;
     }
 
     .service_gallery
@@ -2265,7 +2266,7 @@
 
 .man_sled > picture,
     .man_sled img {
-        height: clamp(240px, 20.833vw, 400px);
+        height: 300px;
         aspect-ratio: auto;
     }
 
@@ -2280,9 +2281,9 @@
     .service_intro > .tit_wrap,
     .service_cleaning .service_intro > .img_wrap,
     .service_cleaning .service_intro > .tit_wrap {
-        width: calc((100% - 40px) / 2);
+        width: 48%;
         max-width: none;
-        flex: 0 1 calc((100% - 40px) / 2);
+        flex: 0 1 48%;
     }
 
     .service_intro .tit_wrap,
@@ -2313,21 +2314,21 @@
     .service_gallery .sub_pag_img_wrap > .sub_slide_img,
     .service_gallery .sub_pag_img_wrap > .sub_slide_img:nth-child(2) {
         display: block;
-        width: calc((100% - 28px) / 3);
+        width: 32%;
         height: 100%;
-        flex: 0 0 calc((100% - 28px) / 3);
+        flex: 0 0 32%;
     }
 
     .service_video > div,
     .service_video > .tit_wrap {
-        width: calc((100% - 32px) / 2);
+        width: 48%;
         max-width: none;
     }
 
     .tix_box,
     .tix_box:nth-of-type(odd) {
         flex-direction: row;
-        gap: clamp(36px, 5vw, 72px);
+        gap: 48px;
     }
 
     .tix_box:nth-of-type(even) {
@@ -2391,6 +2392,13 @@
     line-height: 1.5;
 }
 
+/* PC 서브메뉴는 항목 전체와 글자가 함께 반응합니다. */
+.sub_pag_depth:hover .sub_pag_tit,
+.sub_pag_tit:focus-visible {
+    color: #fff;
+    background-color: #009944;
+}
+
 .service_detail > * {
         order: 0;
     }
@@ -2433,8 +2441,8 @@
     }
 
     .service_ship .sub_slide_img {
-        width: calc((100% - 20px) / 2);
-        flex: 0 0 calc((100% - 20px) / 2);
+        width: 49%;
+        flex: 0 0 49%;
     }
 
     .service_ship .sub_slide_img:nth-child(2) {
@@ -2575,7 +2583,8 @@
 
     .service_intro .tit_wrap > p {
 
-        width: min(100%, 520px);
+        width: 100%;
+        max-width: 520px;
         color: #8e8e8e;
 
         font-size: 0.875rem; /* 14px */
@@ -3001,7 +3010,9 @@
     }
 
     .service_video_play {
-        width: clamp(64px, 20vw, 80px);
+        width: 20%;
+        min-width: 64px;
+        max-width: 80px;
     }
 
     .con,.con_g{
@@ -3122,7 +3133,8 @@
     }
 
     .bridge_page .service_intro .tit_wrap > p {
-        width: min(100%, 307px);
+        width: 100%;
+        max-width: 307px;
         font-size: 0.75rem;
         line-height: 1.5;
     }

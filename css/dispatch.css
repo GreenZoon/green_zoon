@@ -189,6 +189,13 @@
     display: block;
 }
 
+.dispatch_photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 .dispatch_gallery .tit_wrap {
     width: 35%;
 
@@ -223,8 +230,8 @@
 }
 
 .dispatch_academy_info {
-    width: 45%;
-    max-width: 720px;
+    width: 49%;
+    max-width: 760px;
     display: flex;
     flex-direction: column;
 }
@@ -255,37 +262,52 @@
 }
 
 .dispatch_academy_item {
-    width: 31%;
+    width: 32%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin-right: 1%;
     margin-bottom: 23px;
-    font-size: 19px;
-    line-height: 1.5;
 }
 
 .dispatch_academy_icon {
-    width: 60%;
-    padding: 3%;
+    width: 22%;
     aspect-ratio: 1 / 1;
-    flex: 0 0 auto;
+    flex: 0 0 22%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid currentColor;
-    border-radius: 50%;
+    margin-right: 6%;
 }
 
 .dispatch_academy_icon .icon {
-    width: 60%;
+    width: 100%;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
     background-color: currentColor;
 }
 
+.dispatch_academy_text {
+    width: 72%;
+    color: inherit;
+}
+
+.dispatch_academy_text h3 {
+    margin-bottom: 2px;
+    color: inherit;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.dispatch_academy_text p {
+    color: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 .dispatch_training {
     width: 37%;
     max-width: 600px;
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -311,13 +333,31 @@
 }
 
 .dispatch_training .tit_wrap {
-    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: flex-start;
+    color: #f8f8f8;
+    text-align: left;
+}
+
+.dispatch_training h3 {
+    margin-bottom: 3px;
+    color: inherit;
+    font-size: 19px;
+}
+
+.dispatch_training p {
+    color: inherit;
+    font-size: 15px;
 }
 
 /* 구직 문의 */
 
 .dispatch_request {
     order: 5;
+    padding: 100px 150px;
 }
 
 .dispatch_request a {
@@ -342,6 +382,7 @@
 }
 
 .dispatch_request_text {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -365,9 +406,10 @@
     width: 50%;
 }
 
-.flx_li {
-
-
+.dispatch_contacts li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -395,9 +437,13 @@
 
     .dispatch_intro .dispatch_copy,
     .dispatch_academy_copy,
-    .dispatch_academy_item,
+    .dispatch_academy_text h3,
     .dispatch_request_text > p {
         font-size: 15px;
+    }
+
+    .dispatch_academy_text p {
+        font-size: 12px;
     }
 
     .dispatch_targets .con_wrap {
@@ -410,6 +456,10 @@
     }
 
     .dispatch_academy {
+        padding: 70px 40px;
+    }
+
+    .dispatch_request {
         padding: 70px 40px;
     }
 }
@@ -548,7 +598,7 @@
     }
 
     .dispatch_request_text h2 {
-        font-size: 0.9375rem;
+        font-size: 15px;
     }
 
     .dispatch_request_text > p,
@@ -567,7 +617,7 @@
         background-color: #fff;
     }
 
-.dispatch_academy_info {
+    .dispatch_academy_info {
         width: 100%;
         max-width: none;
         margin-bottom: 30px;
@@ -576,43 +626,66 @@
         border-radius: 8px;
     }
 
-.dispatch_academy_info .tit_wrap {
+    .dispatch_academy_info .tit_wrap {
         align-items: center;
         margin-bottom: 14px;
         color: #555;
         text-align: center;
     }
 
-.dispatch_academy_title {
+    .dispatch_academy_title {
         margin-bottom: 3px;
         font-size: 19px;
     }
 
-.dispatch_academy_copy {
+    .dispatch_academy_copy {
         font-size: 10px;
     }
 
-.dispatch_academy_list {
+    .dispatch_academy_list {
         justify-content: space-between;
     }
 
-.dispatch_academy_item {
+    .dispatch_academy_item {
         width: 31%;
         flex-direction: column;
+        margin-right: 0;
         margin-bottom: 12px;
         color: #8e8e8e;
-        font-size: 10px;
         text-align: center;
     }
 
-.dispatch_academy_icon {
+    .dispatch_academy_icon {
         width: 45%;
         flex-basis: 45%;
+        padding: 10%;
+        margin-right: 0;
         margin-bottom: 4px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
         color: #009944;
     }
 
-.dispatch_training {
+    .dispatch_academy_icon .icon {
+        width: 100%;
+    }
+
+    .dispatch_academy_text {
+        width: 100%;
+    }
+
+    .dispatch_academy_text h3 {
+        margin: 0;
+        font-size: 10px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .dispatch_academy_text p {
+        display: none;
+    }
+
+    .dispatch_training {
         width: 100%;
         max-width: none;
         flex-direction: row;
@@ -620,7 +693,7 @@
         color: #555;
     }
 
-.dispatch_training .img_wrap {
+    .dispatch_training .img_wrap {
         width: 42%;
         aspect-ratio: 3 / 2;
         flex: 0 0 42%;
@@ -628,18 +701,20 @@
         border-radius: 7px;
     }
 
-.dispatch_training .tit_wrap {
+    .dispatch_training .tit_wrap {
+        position: static;
         display: flex;
         align-items: flex-start;
+        color: #555;
         text-align: left;
     }
 
-.dispatch_training h3 {
+    .dispatch_training h3 {
         margin-bottom: 4px;
         font-size: 14px;
     }
 
-.dispatch_training p {
+    .dispatch_training p {
         font-size: 10px;
     }
 
