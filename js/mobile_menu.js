@@ -972,6 +972,34 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     });
 }
 
+/* 일정 카드는 터치 스크롤과 마우스 드래그를 모두 지원합니다. */
+document.addEventListener("pointerdown", function (event) {
+    const track = event.target.closest(".mobile_schedule_cards");
+    if (!track) return;
+
+    const startX = event.clientX;
+    const startScroll = track.scrollLeft;
+    let moved = false;
+
+    function move(moveEvent) {
+        const distance = moveEvent.clientX - startX;
+        if (Math.abs(distance) > 5) moved = true;
+        track.scrollLeft = startScroll - distance;
+    }
+
+    function end(endEvent) {
+        document.removeEventListener("pointermove", move);
+        document.removeEventListener("pointerup", end);
+        if (moved) endEvent.target.closest("a")?.addEventListener("click", function cancel(clickEvent) {
+            clickEvent.preventDefault();
+            this.removeEventListener("click", cancel);
+        }, { once: true });
+    }
+
+    document.addEventListener("pointermove", move);
+    document.addEventListener("pointerup", end);
+});
+
 
 /* =========================================================
    SITE SEARCH
@@ -1010,6 +1038,28 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
 
         document.querySelectorAll(".search_open_btn").forEach(function (button) {
             button.setAttribute("aria-expanded", "false");
+        });
+    }
+
+    function bindHeaderSearch(root) {
+        const area = root || document;
+
+        area.querySelectorAll(".search_open_btn").forEach(function (button) {
+            if (button.dataset.searchBound === "true") return;
+            button.dataset.searchBound = "true";
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                openHeaderSearch();
+            });
+        });
+
+        area.querySelectorAll(".search_close_btn").forEach(function (button) {
+            if (button.dataset.searchBound === "true") return;
+            button.dataset.searchBound = "true";
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                closeHeaderSearch();
+            });
         });
     }
 
@@ -1236,7 +1286,18 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
 
     window.GreenZoneHeaderSearch = {
         open: openHeaderSearch,
-        close: closeHeaderSearch
+        close: closeHeaderSearch,
+        bind: bindHeaderSearch
     };
+
+    bindHeaderSearch(document);
+
+    new MutationObserver(function (records) {
+        records.forEach(function (record) {
+            record.addedNodes.forEach(function (node) {
+                if (node.nodeType === 1) bindHeaderSearch(node);
+            });
+        });
+    }).observe(document.documentElement, { childList: true, subtree: true });
 
 })();

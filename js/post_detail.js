@@ -634,7 +634,11 @@
         const body = calendar.tBodies[0];
         const todayCard = document.querySelector(".today_card");
         let viewed = new Date(2026, 2, 1);
-        let selectedDate = "2026-03-10";
+        let selectedDate = new URLSearchParams(window.location.search).get("date") || "2026-03-10";
+        const initialParts = selectedDate.split("-").map(Number);
+        if (initialParts.length === 3 && initialParts.every(Number.isFinite)) {
+            viewed = new Date(initialParts[0], initialParts[1] - 1, 1);
+        }
 
         const scheduleData = {
             "2026-03-01": "삼일절",

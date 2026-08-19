@@ -12,6 +12,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.header_top{
+
+   width: 100%;
+    display: flex;
+    justify-content: space-between;
 
 
 }
@@ -24,14 +34,6 @@
     display: flex;
    max-width: 150px;
    max-height:45px;
-}
-
-.heder_in_wrap{
-
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 /* ------로그인-------- */
@@ -76,6 +78,16 @@
 .login_li:hover .icon {
 
     background-color: #009944;
+}
+
+.mobile_header_btn:hover .icon,
+.mobile_header_btn:focus-visible .icon {
+    background-color: #009944;
+}
+
+.mobile_header_btn:focus-visible {
+    outline: 2px solid #009944;
+    outline-offset: 4px;
 }
 
 .login_li p{
@@ -424,17 +436,10 @@ input{
 
     }
 
-    .logo{
-
-        max-width: 120px;
-
-    }
-
-
 }
 
 
-@media (max-width:486px) {
+@media (max-width:515px) {
 
 .search_ion,.login,.user{
 
@@ -451,10 +456,17 @@ input{
 
     }
 
+    .header_top {
 
-    .logo{
+        align-items: center;
 
-        max-width: 100px;
+    }
+
+    .header_top > a,
+    .header .logo {
+
+        width: 87px;
+        height: 24px;
 
     }
 
@@ -471,6 +483,11 @@ input{
         border: 0;
         background: transparent;
 
+    }
+
+    .mobile_header_btn .icon {
+        width: 100%;
+        height: 100%;
     }
 
     .login_li p{

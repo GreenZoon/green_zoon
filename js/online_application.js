@@ -316,6 +316,7 @@
             const fileCount = (serviceFiles.get(id) || []).length;
             return `
                 <div class="summary_item">
+                    <span class="icon ${service.iconClass} summary_icon" aria-hidden="true"></span>
                     <div class="summary_item_info">
                         <strong>${service.name}</strong>
                         <p>${escapeHtml(values.join(" / ") || "상세 내용을 작성해 주세요")}</p>

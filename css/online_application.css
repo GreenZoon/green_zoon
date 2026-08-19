@@ -568,6 +568,20 @@
     white-space: nowrap;
 }
 
+.summary_icon {
+    width: 42px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 42px;
+    background-color: #009944;
+}
+
+@media (max-width: 768px) {
+    .summary_icon {
+        width: 12%;
+        flex-basis: 12%;
+    }
+}
+
 .empty_message {
     color: #8e8e8e;
     font-size: 15px;
