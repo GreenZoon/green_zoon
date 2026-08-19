@@ -300,10 +300,17 @@ html,
 
         color: #555;
 
-        position: relative;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-height: calc(100dvh - 50px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
         contain: inline-size;
 
-        z-index: 100;
+        z-index: 1001;
     }
 
     .main_tit{
@@ -604,14 +611,21 @@ html,
         max-width: 100%;
         padding-inline: 20px;
         overscroll-behavior-inline: contain;
-        scroll-snap-type: x proximity;
-        touch-action: pan-x;
+        scroll-snap-type: none;
+        touch-action: auto;
+        cursor: grab;
         contain: inline-size;
         isolation: isolate;
         -webkit-overflow-scrolling: touch;
 
         scrollbar-width: none;
 
+    }
+
+    .mobile_schedule_cards.is_dragging {
+        scroll-snap-type: none;
+        cursor: grabbing;
+        user-select: none;
     }
 
 
@@ -915,8 +929,9 @@ html,
     }
 
     body.menu_open {
-        max-width: 100%;
-        overflow-x: hidden;
+        width: 100%;
+        position: fixed;
+        overflow: hidden;
     }
 
 }

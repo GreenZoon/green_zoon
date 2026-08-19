@@ -750,6 +750,24 @@ function setMobileMenuActive(containerSelector, target) {
 
 }
 
+let mobileMenuScrollY = 0;
+
+function lockMobilePage() {
+    if (document.body.classList.contains("menu_open")) return;
+
+    mobileMenuScrollY = window.scrollY;
+    document.body.style.top = "-" + mobileMenuScrollY + "px";
+    document.body.classList.add("menu_open");
+}
+
+function unlockMobilePage() {
+    if (!document.body.classList.contains("menu_open")) return;
+
+    document.body.classList.remove("menu_open");
+    document.body.style.top = "";
+    window.scrollTo(0, mobileMenuScrollY);
+}
+
 
 function closeMobileMenu() {
 
@@ -764,9 +782,7 @@ function closeMobileMenu() {
             "false"
         );
 
-    document.body.classList.remove(
-        "menu_open"
-    );
+    unlockMobilePage();
 
 }
 
@@ -815,10 +831,11 @@ document.addEventListener("click", (event) => {
         const isOpen =
             mobileMenu.classList.toggle("is_open");
 
-        document.body.classList.toggle(
-            "menu_open",
-            isOpen
-        );
+        if (isOpen) {
+            lockMobilePage();
+        } else {
+            unlockMobilePage();
+        }
 
         menuButton.setAttribute(
             "aria-expanded",
@@ -972,32 +989,54 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     });
 }
 
-/* 일정 카드는 터치 스크롤과 마우스 드래그를 모두 지원합니다. */
+/* 터치는 브라우저 스크롤을 사용하고, 마우스만 포인터 캡처로 드래그합니다. */
 document.addEventListener("pointerdown", function (event) {
     const track = event.target.closest(".mobile_schedule_cards");
-    if (!track) return;
+    if (!track || event.pointerType !== "mouse" || event.button !== 0) return;
 
     const startX = event.clientX;
     const startScroll = track.scrollLeft;
+    const draggedLink = event.target.closest("a");
     let moved = false;
 
+    track.setPointerCapture(event.pointerId);
+    track.classList.add("is_dragging");
+
     function move(moveEvent) {
+        if (moveEvent.pointerId !== event.pointerId) return;
+
         const distance = moveEvent.clientX - startX;
-        if (Math.abs(distance) > 5) moved = true;
+        if (Math.abs(distance) > 4) moved = true;
+
+        if (moved) moveEvent.preventDefault();
         track.scrollLeft = startScroll - distance;
     }
 
     function end(endEvent) {
-        document.removeEventListener("pointermove", move);
-        document.removeEventListener("pointerup", end);
-        if (moved) endEvent.target.closest("a")?.addEventListener("click", function cancel(clickEvent) {
+        if (endEvent.pointerId !== event.pointerId) return;
+
+        track.removeEventListener("pointermove", move);
+        track.removeEventListener("pointerup", end);
+        track.removeEventListener("pointercancel", end);
+        track.removeEventListener("lostpointercapture", end);
+        track.classList.remove("is_dragging");
+
+        if (track.hasPointerCapture(event.pointerId)) {
+            track.releasePointerCapture(event.pointerId);
+        }
+
+        if (moved && draggedLink) {
+            draggedLink.addEventListener("click", function cancel(clickEvent) {
             clickEvent.preventDefault();
             this.removeEventListener("click", cancel);
-        }, { once: true });
+            }, { once: true });
+        }
     }
 
-    document.addEventListener("pointermove", move);
-    document.addEventListener("pointerup", end);
+    track.addEventListener("pointermove", move);
+    track.addEventListener("pointerup", end);
+    track.addEventListener("pointercancel", end);
+    track.addEventListener("lostpointercapture", end);
 });
 
 
