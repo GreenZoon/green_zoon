@@ -471,12 +471,25 @@
 
 .profile_editor {
     width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: block;
+    padding: 0;
     color: var(--login-text);
 }
 
 .profile_panel[hidden],
 .profile_editor[hidden] {
     display: none;
+}
+
+/* 공통 section의 flex와 150px 패딩이 편집 폼에 들어오지 않도록 제한 */
+.profile_editor section {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: block;
+    padding: 0;
 }
 
 .profile_back {
@@ -556,10 +569,15 @@
 }
 
 .profile_edit_form {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: block;
     margin-top: 32px;
 }
 
 .profile_privacy {
+    width: 100%;
     color: var(--login-muted);
 }
 
@@ -611,10 +629,15 @@
 }
 
 .profile_fields {
+    width: 100%;
+    min-width: 0;
     margin-top: 30px;
 }
 
 .profile_field {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     display: block;
     margin-top: 29px;
 }
@@ -806,32 +829,6 @@
         align-items: flex-start;
     }
 
-    .is_profile_edit .profile_main {
-        width: 100%;
-        padding-top: 0;
-    }
-
-    .profile_editor {
-        padding: 0 5% 72px;
-        box-sizing: border-box;
-    }
-
-    .profile_editor_avatar {
-        width: 37.5%;
-    }
-
-    .profile_edit_form {
-        margin-top: 27px;
-    }
-
-    .profile_privacy > p {
-        font-size: 10px;
-    }
-
-    .profile_submit button {
-        width: 50%;
-    }
-
     .profile_account {
         grid-template-columns: 1fr;
     }
@@ -862,6 +859,110 @@
     .login_actions button {
         width: 100%;
         flex-basis: auto;
+    }
+}
+
+/* 관리자/회원 프로필 편집 팝업 - Figma 1658:50142 */
+.profile_editor {
+    width: 90%;
+    max-width: 720px;
+    max-height: 92vh;
+    box-sizing: border-box;
+    margin: auto;
+    border: 0;
+    border-radius: 20px;
+    background: #fff;
+    padding: 28px;
+    overflow-y: auto;
+}
+
+.profile_editor:not([open]) {
+    display: none;
+}
+
+.profile_editor .profile_edit_form {
+    width: 100%;
+    margin: 0;
+}
+
+.profile_editor::backdrop {
+    background: rgba(0, 0, 0, .38);
+}
+
+.profile_editor_head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.profile_editor_head h1 {
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+.profile_editor_head p {
+    margin-top: 8px;
+    color: var(--login-muted);
+    font-size: 14px;
+}
+
+.profile_close {
+    width: 36px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+    border: 0;
+    background: transparent;
+    color: var(--login-muted);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.profile_editor .profile_fields {
+    width: 100%;
+    display: block;
+    margin-top: 18px;
+}
+
+.profile_editor .profile_field {
+    width: 100%;
+    display: block;
+    margin-top: 18px;
+}
+
+.profile_editor .profile_submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 26px;
+}
+
+.profile_grade_select select:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+body.is_profile_edit {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .profile_editor {
+        width: 94%;
+        max-height: 94vh;
+        border-radius: 16px;
+        padding: 24px 20px;
+    }
+
+    .profile_editor_head h1 {
+        font-size: 24px;
+    }
+
+    .profile_editor .profile_submit {
+        margin-top: 22px;
     }
 }
 
