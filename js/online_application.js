@@ -8,103 +8,101 @@
     }
 
     const DRAFT_KEY = "greenZoneCleaningApplicationDraft";
-    const iconRoot = "../img/icon/";
-
     const services = [
         {
             id: "factory",
             name: "공장 청소",
-            icon: "factory.svg",
+            iconClass: "factory",
             imageRequired: true,
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 기계설비 도색 및 공장 바닥 200평", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 기계설비 도색 및 공장 바닥 200평)", required: true }
             ]
         },
         {
             id: "disinfection",
             name: "소독/방역",
-            icon: "doctor.svg",
+            iconClass: "doctor",
             imageRequired: true,
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 사무실 전체 소독 및 정기 방역", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 사무실 전체 소독 및 정기 방역)", required: true }
             ]
         },
         {
             id: "water_tank",
             name: "물탱크",
-            icon: "water-tower.svg",
+            iconClass: "water_tower",
             fields: [
-                { name: "capacity", label: "물탱크 용량", placeholder: "예시) 80T", required: true },
-                { name: "count", label: "물탱크 개수", type: "number", min: 1, placeholder: "예시) 2", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "예시) 저수조 내부 청소 및 소독", wide: true }
+                { name: "capacity", label: "물탱크 용량", placeholder: "물탱크 용량을 입력해 주세요 (예시: 80T)", required: true },
+                { name: "count", label: "물탱크 개수", type: "number", min: 1, placeholder: "물탱크 개수를 입력해 주세요 (예시: 2)", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "추가 작업내용을 입력해 주세요 (예시: 저수조 내부 청소 및 소독)", wide: true }
             ]
         },
         {
             id: "pigeon",
             name: "비둘기 퇴치",
-            icon: "bird-spike.svg",
+            iconClass: "bird_spike",
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 실외기 주변 비둘기 퇴치 및 차단", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 실외기 주변 비둘기 퇴치 및 차단)", required: true }
             ]
         },
         {
             id: "facility",
             name: "시설물",
-            icon: "greek.svg",
+            iconClass: "greek",
             imageRequired: true,
             fields: [
-                { name: "kind", label: "시설물 종류", placeholder: "예시) 교각, 터널, 조형물", required: true },
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "필요한 작업을 작성해 주세요", wide: true, required: true }
+                { name: "kind", label: "시설물 종류", placeholder: "시설물 종류를 입력해 주세요 (예시: 교각, 터널, 조형물)", required: true },
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "필요한 작업내용을 입력해 주세요", wide: true, required: true }
             ]
         },
         {
             id: "carpet",
             name: "카펫/패브릭",
-            icon: "carpet.svg",
+            iconClass: "carpet",
             fields: [
-                { name: "area", label: "작업 면적", placeholder: "예시) 120평", required: true },
-                { name: "material", label: "소재/종류", placeholder: "예시) 사무실 타일 카펫", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "오염 상태나 요청사항을 작성해 주세요", wide: true }
+                { name: "area", label: "작업 면적", placeholder: "작업 면적을 입력해 주세요 (예시: 120평)", required: true },
+                { name: "material", label: "소재/종류", placeholder: "소재 또는 종류를 입력해 주세요 (예시: 사무실 타일 카펫)", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "오염 상태나 추가 요청사항을 입력해 주세요", wide: true }
             ]
         },
         {
             id: "ship",
             name: "선박/유람선",
-            icon: "ship.svg",
+            iconClass: "ship",
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 선내 카펫 및 객실 전체 청소", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 선내 카펫 및 객실 전체 청소)", required: true }
             ]
         },
         {
             id: "exterior",
             name: "건물 외벽",
-            icon: "brick-wall.svg",
+            iconClass: "brick_wall",
             imageRequired: true,
             fields: [
-                { name: "building", label: "건물 종류", placeholder: "예시) 상가, 사무실, 공장", required: true },
-                { name: "floors", label: "건물 규모", placeholder: "예시) 지상 5층", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "외벽 재질과 오염 상태를 작성해 주세요", wide: true }
+                { name: "building", label: "건물 종류", placeholder: "건물 종류를 입력해 주세요 (예시: 상가, 사무실, 공장)", required: true },
+                { name: "floors", label: "건물 규모", placeholder: "건물 규모를 입력해 주세요 (예시: 지상 5층)", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "외벽 재질과 오염 상태를 입력해 주세요", wide: true }
             ]
         },
         {
             id: "wax",
             name: "왁스 코팅",
-            icon: "soap-bottle.svg",
+            iconClass: "soap_ottle",
             imageRequired: true,
             fields: [
-                { name: "area", label: "바닥 면적", placeholder: "예시) 200평", required: true },
-                { name: "material", label: "바닥 재질", placeholder: "예시) 데코타일", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "기존 왁스 상태 등 추가사항을 작성해 주세요", wide: true }
+                { name: "area", label: "바닥 면적", placeholder: "바닥 면적을 입력해 주세요 (예시: 200평)", required: true },
+                { name: "material", label: "바닥 재질", placeholder: "바닥 재질을 입력해 주세요 (예시: 데코타일)", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "기존 왁스 상태 등 추가사항을 입력해 주세요", wide: true }
             ]
         },
         {
             id: "dispatch",
             name: "미화원 파견",
-            icon: "cleaner.svg",
+            iconClass: "cleaner",
             fields: [
-                { name: "people", label: "필요 인원", type: "number", min: 1, placeholder: "예시) 2", required: true },
-                { name: "area", label: "청소 구역", placeholder: "예시) 사무실 전체", required: true },
-                { name: "detail", label: "근무 조건/추가사항", type: "textarea", placeholder: "근무 요일과 시간 등을 작성해 주세요", wide: true }
+                { name: "people", label: "필요 인원", type: "number", min: 1, placeholder: "필요 인원을 입력해 주세요 (예시: 2명)", required: true },
+                { name: "area", label: "청소 구역", placeholder: "청소 구역을 입력해 주세요 (예시: 사무실 전체)", required: true },
+                { name: "detail", label: "근무 조건/추가사항", type: "textarea", placeholder: "근무 요일과 시간 등 추가사항을 입력해 주세요", wide: true }
             ]
         }
     ];
@@ -141,7 +139,7 @@
         selector.innerHTML = services.map((service) => `
             <button class="service_option" type="button" data-service="${service.id}" aria-pressed="false">
                 <span class="service_option_inner">
-                    <img src="${iconRoot}${service.icon}" alt="">
+                    <span class="icon ${service.iconClass}" aria-hidden="true"></span>
                     <span>${service.name}</span>
                 </span>
             </button>
@@ -181,7 +179,7 @@
         section.innerHTML = `
             <div class="detail_header">
                 <div class="detail_title_wrap">
-                    <img src="${iconRoot}${service.icon}" alt="">
+                    <span class="icon ${service.iconClass}" aria-hidden="true"></span>
                     <h2>${service.name}</h2>
                 </div>
                 <button type="button" class="detail_remove" data-remove-service="${service.id}">선택 해제</button>

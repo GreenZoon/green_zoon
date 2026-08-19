@@ -706,6 +706,18 @@
 
         if (!form) return;
         const message = form.querySelector("[data-review-message]");
+        const draftButton = form.querySelector("[data-review-draft]");
+        const imageInput = form.querySelector("[data-review-images]");
+        const imageDrop = form.querySelector("[data-review-upload]");
+
+        function getReviewDraft() {
+            const data = new FormData(form);
+            return {
+                author: String(data.get("author") || "").trim(),
+                title: String(data.get("title") || "").trim(),
+                content: String(data.get("content") || "").trim()
+            };
+        }
 
         try {
             const draft = JSON.parse(localStorage.getItem(draftKey) || "null");
@@ -721,14 +733,41 @@
             localStorage.removeItem(draftKey);
         }
 
+        draftButton?.addEventListener("click", function () {
+            localStorage.setItem(draftKey, JSON.stringify(getReviewDraft()));
+            if (message) message.textContent = "작성 중인 후기를 임시 저장했습니다. 첨부 이미지는 저장되지 않습니다.";
+        });
+
+        imageInput?.addEventListener("change", function () {
+            if (!message) return;
+            const count = imageInput.files.length;
+            message.textContent = count ? "이미지 " + count + "장을 선택했습니다." : "";
+        });
+
+        ["dragenter", "dragover"].forEach(function (type) {
+            imageDrop?.addEventListener(type, function (event) {
+                event.preventDefault();
+                imageDrop.classList.add("is_dragging");
+            });
+        });
+
+        ["dragleave", "drop"].forEach(function (type) {
+            imageDrop?.addEventListener(type, function (event) {
+                event.preventDefault();
+                imageDrop.classList.remove("is_dragging");
+            });
+        });
+
+        imageDrop?.addEventListener("drop", function (event) {
+            const files = event.dataTransfer?.files;
+            if (!files?.length || !imageInput) return;
+            imageInput.files = files;
+            imageInput.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-            const data = new FormData(form);
-            const draft = {
-                author: String(data.get("author") || "").trim(),
-                title: String(data.get("title") || "").trim(),
-                content: String(data.get("content") || "").trim()
-            };
+            const draft = getReviewDraft();
 
             if (!window.GreenZoneAuth?.isLoggedIn()) {
                 localStorage.setItem(draftKey, JSON.stringify(draft));
