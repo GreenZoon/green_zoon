@@ -1060,7 +1060,7 @@
 }
 
 .service_tunnel .service_video_title {
-    max-width: 608px;
+    max-width: 600px;
 }
 
 .service_video_mobile_word {
@@ -1076,27 +1076,6 @@
 
     overflow: hidden;
 }
-
-/* =========================================================
-   DESKTOP INTRO
-========================================================= */
-
-.service_intro > .img_wrap {
-
-    width: 650px;
-    max-width: 650px;
-
-    flex: 0 1 auto;
-}
-
-.service_intro > .tit_wrap {
-
-    width: 725px;
-    max-width: 725px;
-
-    flex: 0 1 auto;
-}
-
 
 /* =========================================================
    DESKTOP EFFECT
