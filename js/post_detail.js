@@ -629,7 +629,8 @@
         const yearText = head.querySelector(".calendar_year");
         const monthText = head.querySelector(".calendar_month");
         const caption = head.querySelector(".calendar_caption");
-        const dateInput = head.querySelector(".calendar_date_input");
+        const yearSelect = head.querySelector(".calendar_year_select");
+        const monthSelect = head.querySelector(".calendar_month_select");
         const previous = head.querySelector('button[aria-label="이전 달"]');
         const next = head.querySelector('button[aria-label="다음 달"]');
         const body = calendar.tBodies[0];
@@ -700,7 +701,6 @@
             cell.classList.add("selected");
             cell.setAttribute("aria-selected", "true");
             selectedDate = key;
-            if (dateInput) dateInput.value = key;
             updateTodayCard(key);
         }
 
@@ -711,6 +711,8 @@
             const lastDate = new Date(year, month + 1, 0).getDate();
             if (yearText) yearText.textContent = year + "년";
             if (monthText) monthText.textContent = (month + 1) + "월";
+            if (yearSelect) yearSelect.value = String(year);
+            if (monthSelect) monthSelect.value = String(month);
             if (caption) caption.textContent = year + "년 " + (month + 1) + "월";
             calendar.setAttribute("aria-label", year + "년 " + (month + 1) + "월 작업 일정");
             body.replaceChildren();
@@ -755,17 +757,23 @@
         previous?.addEventListener("click", function () { changeMonth(-1); });
         next?.addEventListener("click", function () { changeMonth(1); });
 
-        dateInput?.addEventListener("change", function () {
-            if (!dateInput.value) return;
+        function chooseMonth() {
+            const year = Number(yearSelect?.value || viewed.getFullYear());
+            const month = Number(monthSelect?.value ?? viewed.getMonth());
+            const selectedDay = Number(selectedDate.split("-")[2]) || 1;
+            const lastDay = new Date(year, month + 1, 0).getDate();
+            const day = Math.min(selectedDay, lastDay);
 
-            const parts = dateInput.value.split("-").map(Number);
-            selectedDate = dateInput.value;
-            viewed = new Date(parts[0], parts[1] - 1, 1);
+            viewed = new Date(year, month, 1);
+            selectedDate = dateKey(year, month, day);
             render();
 
             const selectedCell = body.querySelector('[data-date="' + selectedDate + '"]');
             if (selectedCell) select(selectedCell, selectedDate);
-        });
+        }
+
+        yearSelect?.addEventListener("change", chooseMonth);
+        monthSelect?.addEventListener("change", chooseMonth);
 
         render();
         updateTodayCard(selectedDate);

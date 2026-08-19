@@ -17,9 +17,30 @@
                 <button type="button" aria-label="이전 달"><span class="arrow left_arrow_2" aria-hidden="true"></span></button>
 
                 <div class="calendar_date_picker">
-                    <span class="calendar_select"><span class="calendar_year">2026년</span><span class="icon calendar_down" aria-hidden="true"></span></span>
-                    <span class="calendar_select"><span class="calendar_month">3월</span><span class="icon calendar_down" aria-hidden="true"></span></span>
-                    <input class="calendar_date_input" type="date" value="2026-03-10" aria-label="확인할 작업 날짜 선택">
+                    <label class="calendar_select">
+                        <span class="calendar_year">2026년</span>
+                        <span class="icon calendar_down" aria-hidden="true"></span>
+                        <select class="calendar_year_select" aria-label="연도 선택">
+                            <option value="2024">2024년</option>
+                            <option value="2025">2025년</option>
+                            <option value="2026" selected>2026년</option>
+                            <option value="2027">2027년</option>
+                            <option value="2028">2028년</option>
+                            <option value="2029">2029년</option>
+                            <option value="2030">2030년</option>
+                        </select>
+                    </label>
+
+                    <label class="calendar_select">
+                        <span class="calendar_month">3월</span>
+                        <span class="icon calendar_down" aria-hidden="true"></span>
+                        <select class="calendar_month_select" aria-label="월 선택">
+                            <option value="0">1월</option><option value="1">2월</option><option value="2" selected>3월</option>
+                            <option value="3">4월</option><option value="4">5월</option><option value="5">6월</option>
+                            <option value="6">7월</option><option value="7">8월</option><option value="8">9월</option>
+                            <option value="9">10월</option><option value="10">11월</option><option value="11">12월</option>
+                        </select>
+                    </label>
                 </div>
 
                 <p class="calendar_caption">2026년 3월</p>
