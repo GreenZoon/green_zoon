@@ -33,17 +33,16 @@
                 </div>
             </div>
 
-            <button type="button" id="profile_edit" class="profile_edit">프로필 편집</button>
+            <button type="button" id="profile_edit" class="profile_edit" hidden>프로필 편집</button>
 
             <form id="profile_form" class="profile_form">
                 <label><p>홈페이지 닉네임</p><input id="profile_name" name="name" type="text" placeholder="홈페이지 닉네임을 입력해 주세요" readonly></label>
-                <label><p>등급</p><input name="grade" type="text" value="관리자" readonly></label>
+                <label><p>등급</p><input id="profile_grade" name="grade" type="text" value="일반회원" readonly></label>
                 <label><p>업체/상호/관공서명</p><input name="company" type="text" placeholder="업체 또는 기관명을 입력해 주세요" readonly></label>
                 <label><p>담당자명</p><input name="manager" type="text" placeholder="담당자명을 입력해 주세요" readonly></label>
                 <label><p>연락처</p><input name="phone" type="tel" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)" readonly></label>
                 <label><p>청소작업 구역 주소</p><textarea name="address" placeholder="청소작업 구역 주소를 입력해 주세요" readonly></textarea></label>
                 <p class="profile_email">로그인 아이디 <strong id="profile_email">-</strong></p>
-                <button type="submit" class="profile_save" hidden>프로필 저장</button>
             </form>
 
             <div class="profile_actions">
@@ -52,6 +51,30 @@
             </div>
         </section>
     </main>
+
+    <!-- 관리자 계정에서만 열리는 프로필 편집 창 -->
+    <dialog id="profile_modal" class="profile_modal" aria-labelledby="profile_modal_title">
+        <form id="profile_edit_form" class="profile_edit_form" method="dialog">
+            <header class="profile_modal_head">
+                <div>
+                    <h2 id="profile_modal_title">프로필 정보 편집</h2>
+                    <p>관리자 계정 정보를 수정할 수 있습니다.</p>
+                </div>
+                <button type="button" class="profile_modal_close" data-profile-close aria-label="편집 창 닫기">×</button>
+            </header>
+
+            <label><p>홈페이지 닉네임</p><input name="name" type="text" placeholder="홈페이지 닉네임을 입력해 주세요"></label>
+            <label><p>업체/상호/관공서명</p><input name="company" type="text" placeholder="업체 또는 기관명을 입력해 주세요"></label>
+            <label><p>담당자명</p><input name="manager" type="text" placeholder="담당자명을 입력해 주세요"></label>
+            <label><p>연락처</p><input name="phone" type="tel" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)"></label>
+            <label><p>청소작업 구역 주소</p><textarea name="address" placeholder="청소작업 구역 주소를 입력해 주세요"></textarea></label>
+
+            <div class="profile_modal_actions">
+                <button type="button" class="login_secondary_button" data-profile-close>취소</button>
+                <button type="submit" class="login_primary_button">프로필 저장</button>
+            </div>
+        </form>
+    </dialog>
 
     <div id="footer"></div>
     <script src="../js/jquery-3.7.1.min.js"></script>

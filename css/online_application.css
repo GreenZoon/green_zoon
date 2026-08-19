@@ -79,13 +79,10 @@
     flex-direction: column;
 }
 
-.application_form {
-    gap: 36px;
-}
 
 .application_panel,
 .service_detail {
-    border: 1px solid #c6c6c6;
+    border-bottom: 1px solid #c6c6c6;
     border-radius: 12px;
     background: #fff;
 }
@@ -216,6 +213,12 @@
 .application_field input:invalid.is_touched,
 .application_field textarea:invalid.is_touched {
     border-color: #d94848 !important;
+}
+
+.application_form{
+
+    display: flex;
+    gap:26px;
 }
 
 .privacy_copy {
@@ -791,11 +794,6 @@ body.modal_open {
         display: none;
     }
 
-    .application_form,
-    .service_details {
-        gap: 36px;
-    }
-
     .application_panel,
     .service_detail {
         border-inline: 0;
@@ -931,12 +929,6 @@ body.modal_open {
         padding: 12px;
     }
 
-    .visit_slot_info,
-    .summary_item_info {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 4px;
-    }
 
     .summary_item_info strong,
     .summary_item_info p {

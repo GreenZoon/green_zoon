@@ -14,6 +14,7 @@
     const help = document.getElementById("login_help");
     const signupNotice = document.getElementById("signup_notice");
     const toast = document.getElementById("login_toast");
+    const adminAccounts = ["narasophiah@gmail.com"];
 
     function safeReturnUrl() {
         const value = new URLSearchParams(window.location.search).get("returnTo");
@@ -75,10 +76,12 @@
             return;
         }
 
-        const accountName = email.value.trim().split("@")[0] || "그린죤 사용자";
+        const loginEmail = email.value.trim().toLowerCase();
+        const accountName = loginEmail.split("@")[0] || "그린죤 사용자";
         window.GreenZoneAuth.login({
-            email: email.value.trim(),
+            email: loginEmail,
             name: accountName,
+            role: adminAccounts.includes(loginEmail) ? "admin" : "member",
             loggedInAt: new Date().toISOString()
         }, remember.checked);
 

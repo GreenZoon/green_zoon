@@ -300,10 +300,14 @@
 }
 
 .profile_main {
-    width: min(920px, calc(100% - 48px));
+    width: 86%;
+    max-width: none;
 }
 
 .profile_panel {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 38px;
@@ -322,6 +326,7 @@
 }
 
 .profile_heading > div {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -343,6 +348,7 @@
     color: var(--login-muted);
     font-size: 15px;
     line-height: 1.6;
+    overflow-wrap: anywhere;
 }
 
 .profile_avatar {
@@ -417,8 +423,7 @@
 }
 
 .profile_form label + label,
-.profile_email,
-.profile_save { margin-top: 18px; }
+.profile_email { margin-top: 18px; }
 
 .profile_form label p { margin-bottom: 8px; font-size: 15px; font-weight: 700; }
 
@@ -432,13 +437,14 @@
     color: #555;
     font: inherit;
     padding: 12px 14px;
+    box-sizing: border-box;
 }
 
 .profile_form textarea { min-height: 92px; resize: vertical; }
 .profile_form input[readonly],
 .profile_form textarea[readonly] { background: #f8f8f8; color: #555; }
 .profile_form input[name="grade"] { background: #009944; color: #fff; }
-.profile_email { color: #8e8e8e; font-size: 14px; }
+.profile_email { color: #8e8e8e; font-size: 14px; overflow-wrap: anywhere; }
 
 .profile_edit {
     min-width: 150px;
@@ -454,12 +460,101 @@
     padding: 10px 24px;
 }
 
-.profile_save {
-    min-height: 46px;
+.profile_modal {
+    width: 56%;
+    max-height: 86vh;
+    overflow-y: auto;
+    border: 1px solid var(--login-line);
+    border-radius: 16px;
+    background: #fff;
+    color: var(--login-text);
+    padding: 0;
+    box-shadow: 0 24px 70px rgba(0, 58, 26, .18);
+}
+
+.profile_modal::backdrop {
+    background: rgba(0, 0, 0, .38);
+}
+
+.profile_edit_form {
+    padding: 36px;
+}
+
+.profile_modal_head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.profile_modal_head h2 {
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+.profile_modal_head p {
+    margin-top: 5px;
+    color: var(--login-muted);
+    font-size: 14px;
+}
+
+.profile_modal_close {
+    flex: 0 0 auto;
     border: 0;
+    background: transparent;
+    color: var(--login-muted);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.profile_edit_form label {
+    display: block;
+    margin-top: 18px;
+}
+
+.profile_edit_form label p {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.profile_edit_form input,
+.profile_edit_form textarea {
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+    border: 1px solid var(--login-line);
     border-radius: 7px;
-    background: #009944;
-    color: #fff;
+    background: #fff;
+    color: var(--login-text);
+    font: inherit;
+    padding: 12px 14px;
+}
+
+.profile_edit_form input:focus,
+.profile_edit_form textarea:focus {
+    border-color: var(--login-green);
+    outline: 0;
+}
+
+.profile_edit_form textarea {
+    min-height: 92px;
+    resize: vertical;
+}
+
+.profile_modal_actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 28px;
+}
+
+.profile_modal_actions button {
+    min-width: 140px;
+    min-height: 46px;
+    margin-left: 12px;
+    border: 1px solid var(--login-line);
+    border-radius: 7px;
     font: inherit;
     font-weight: 700;
     cursor: pointer;
@@ -473,6 +568,10 @@
     .login_intro,
     .login_form_area {
         padding: 48px 36px;
+    }
+
+    .profile_modal {
+        width: 76%;
     }
 }
 
@@ -531,7 +630,7 @@
     }
 
     .profile_main {
-        width: min(100% - 32px, 640px);
+        width: 94%;
     }
 
     .profile_panel {
@@ -539,6 +638,18 @@
         margin-top: 22px;
         border-radius: 16px;
         padding: 28px 24px;
+    }
+
+    .profile_heading {
+        align-items: flex-start;
+    }
+
+    .profile_modal {
+        width: 92%;
+    }
+
+    .profile_edit_form {
+        padding: 26px 20px;
     }
 
     .profile_account {

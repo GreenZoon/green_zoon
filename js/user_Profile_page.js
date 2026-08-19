@@ -6,56 +6,90 @@
     }
 
     const user = window.GreenZoneAuth.getUser();
-    document.body.classList.remove("is_auth_checking");
-
-    const name = document.getElementById("profile_name");
-    const email = document.getElementById("profile_email");
+    const isAdmin = user.role === "admin"
+        || user.email?.toLowerCase() === "narasophiah@gmail.com";
     const form = document.getElementById("profile_form");
     const editButton = document.getElementById("profile_edit");
-    const saveButton = document.querySelector(".profile_save");
-    const profileKey = "greenZoneProfile";
+    const modal = document.getElementById("profile_modal");
+    const editForm = document.getElementById("profile_edit_form");
+    const profileKey = `greenZoneProfile:${user.email || "member"}`;
+    const fields = ["name", "company", "manager", "phone", "address"];
     let profile = {};
 
     try {
-        profile = JSON.parse(localStorage.getItem(profileKey) || "{}");
+        const savedProfile = localStorage.getItem(profileKey);
+        const oldAdminProfile = isAdmin ? localStorage.getItem("greenZoneProfile") : null;
+        profile = JSON.parse(savedProfile || oldAdminProfile || "{}");
     } catch (error) {
         profile = {};
     }
 
-    if (name) name.value = profile.name || user.name || "";
-    if (email) email.textContent = user.email || "-";
-
-    function setEditMode(editing) {
+    function fillProfile() {
         if (!form) return;
 
-        form.querySelectorAll("input:not([name='grade']), textarea").forEach(function (control) {
-            control.readOnly = !editing;
+        fields.forEach(function (field) {
+            const control = form.elements[field];
+
+            if (control) {
+                control.value = profile[field] || (field === "name" ? user.name || "" : "");
+            }
         });
 
-        if (saveButton) saveButton.hidden = !editing;
-        if (saveButton && editing) saveButton.textContent = "프로필 저장";
-        if (editButton) editButton.textContent = editing ? "편집 취소" : "프로필 편집";
-        form.classList.toggle("is_editing", editing);
+        const grade = document.getElementById("profile_grade");
+        const email = document.getElementById("profile_email");
+
+        if (grade) grade.value = isAdmin ? "관리자" : "일반회원";
+        if (email) email.textContent = user.email || "-";
     }
 
-    editButton?.addEventListener("click", function () {
-        setEditMode(!form?.classList.contains("is_editing"));
+    function openEditor() {
+        if (!isAdmin || !modal || !editForm) return;
+
+        fields.forEach(function (field) {
+            if (editForm.elements[field]) {
+                editForm.elements[field].value = form?.elements[field]?.value || "";
+            }
+        });
+
+        modal.showModal();
+        editForm.elements.name?.focus();
+    }
+
+    function closeEditor() {
+        if (modal?.open) modal.close();
+    }
+
+    fillProfile();
+    document.body.classList.remove("is_auth_checking");
+
+    if (editButton) {
+        editButton.hidden = !isAdmin;
+        editButton.addEventListener("click", openEditor);
+    }
+
+    document.querySelectorAll("[data-profile-close]").forEach(function (button) {
+        button.addEventListener("click", closeEditor);
     });
 
-    if (form) {
-        ["company", "manager", "phone", "address"].forEach(function (field) {
-            if (form.elements[field]) form.elements[field].value = profile[field] || "";
-        });
+    modal?.addEventListener("click", function (event) {
+        if (event.target === modal) closeEditor();
+    });
 
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            const values = Object.fromEntries(new FormData(form).entries());
-            localStorage.setItem(profileKey, JSON.stringify(values));
-            window.GreenZoneAuth.login(Object.assign({}, user, { name: values.name || user.name }), true);
-            if (saveButton) saveButton.textContent = "저장되었습니다";
-            setEditMode(false);
-        });
-    }
+    editForm?.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!isAdmin) return;
+
+        profile = Object.fromEntries(new FormData(editForm).entries());
+        localStorage.setItem(profileKey, JSON.stringify(profile));
+        window.GreenZoneAuth.login(
+            Object.assign({}, user, { name: profile.name || user.name, role: "admin" }),
+            true
+        );
+
+        fillProfile();
+        closeEditor();
+    });
 
     document.getElementById("profile_logout")?.addEventListener("click", function () {
         window.GreenZoneAuth.logout();
