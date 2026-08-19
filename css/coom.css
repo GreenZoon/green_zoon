@@ -783,9 +783,9 @@ aspect-ratio: 1 / 1;
 
 }
 
-.calendar_down {
-    -webkit-mask-image: url("../img/icon/calendar-down.svg");
-    mask-image: url("../img/icon/calendar-down.svg");
+.date_select_arrow {
+    -webkit-mask-image: url("../img/icon/date-select-arrow.svg");
+    mask-image: url("../img/icon/date-select-arrow.svg");
 }
 
 .left_arrow,.left_arrow_2 {
