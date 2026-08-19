@@ -1717,9 +1717,9 @@ aspect-ratio: 1 / 1;
     }
 
     .subpage_nav_list {
+
         width: max-content;
         min-width: 100%;
-        justify-content: center;
         gap: 12px;
     }
 
@@ -1730,6 +1730,7 @@ aspect-ratio: 1 / 1;
         flex: 0 0 auto;
         font-size: 0.875rem;
         padding-block: 8px;
+        
 
     }
 
