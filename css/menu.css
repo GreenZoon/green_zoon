@@ -653,6 +653,7 @@ html,
         background-color: #fff;
         color: #555;
         text-decoration: none;
+        -webkit-user-drag: none;
 
     }
 

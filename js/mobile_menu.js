@@ -791,6 +791,128 @@ window.closeMobileMenu =
 
 
 // =========================================================
+// MOBILE 2 WEEK SCHEDULE
+// 기준 날짜가 속한 일요일부터 14일을 표시합니다.
+// =========================================================
+
+const mobileWorkSchedule = {
+    "2026-03-08": "공장 청소",
+    "2026-03-09": "식품공장 청소",
+    "2026-03-10": "목욕탕 곰팡이 청소",
+    "2026-03-11": "김해 공장 전체 청소",
+    "2026-03-12": "새학년 맞이 대청소",
+    "2026-03-13": "공장 물탱크 청소",
+    "2026-03-14": "부산 물탱크 청소",
+    "2026-03-15": "호텔 바닥 청소",
+    "2026-03-16": "식품공장 청소",
+    "2026-03-17": "공장 청소",
+    "2026-03-18": "김해 공장 전체 청소",
+    "2026-03-19": "공장 설비 청소",
+    "2026-03-20": "외벽 청소",
+    "2026-03-21": "행사 청소"
+};
+
+const mobileVisitSchedule = {
+    "2026-03-08": "공장 청소 현장 확인",
+    "2026-03-09": "학교 청소 현장 확인",
+    "2026-03-10": "목욕탕 곰팡이 청소",
+    "2026-03-11": "목욕탕 곰팡이 청소",
+    "2026-03-12": "저수조 청소 방문",
+    "2026-03-13": "공장 기계 설비 방문",
+    "2026-03-14": "공장 입주 청소 방문",
+    "2026-03-15": "호텔 바닥 견적 방문",
+    "2026-03-16": "식품공장 견적 방문",
+    "2026-03-17": "공장 청소 현장 확인",
+    "2026-03-18": "김해 공장 방문",
+    "2026-03-19": "설비 청소 현장 확인",
+    "2026-03-20": "외벽 청소 현장 확인",
+    "2026-03-21": "행사장 청소 방문"
+};
+
+function formatScheduleDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
+function parseScheduleDate(value) {
+    const parts = String(value || "").split("-").map(Number);
+
+    if (parts.length !== 3 || parts.some(Number.isNaN)) {
+        return new Date();
+    }
+
+    return new Date(parts[0], parts[1] - 1, parts[2]);
+}
+
+function renderMobileSchedule(track, type) {
+    if (!track) return;
+
+    const referenceValue = track.dataset.referenceDate || formatScheduleDate(new Date());
+    const renderKey = `${referenceValue}-${type}`;
+
+    if (track.dataset.renderedSchedule === renderKey) return;
+
+    const referenceDate = parseScheduleDate(referenceValue);
+    const firstDate = new Date(referenceDate);
+    const schedule = type === "work" ? mobileWorkSchedule : mobileVisitSchedule;
+
+    firstDate.setDate(firstDate.getDate() - firstDate.getDay());
+    track.replaceChildren();
+
+    for (let index = 0; index < 14; index += 1) {
+        const date = new Date(firstDate);
+        date.setDate(firstDate.getDate() + index);
+
+        const dateValue = formatScheduleDate(date);
+        const card = document.createElement("a");
+        const day = document.createElement("strong");
+        const description = document.createElement("p");
+
+        card.className = "mobile_schedule_card";
+        card.draggable = false;
+        card.href = window.GreenZonePaths?.resolve(
+            `sub_page/Community/Schedule.html?date=${dateValue}`
+        ) || `/sub_page/Community/Schedule.html?date=${dateValue}`;
+        card.dataset.scheduleDate = dateValue;
+        card.setAttribute("aria-label", `${date.getMonth() + 1}월 ${date.getDate()}일 ${schedule[dateValue] || "일정 확인"}`);
+
+        day.textContent = String(date.getDate()).padStart(2, "0");
+        description.textContent = schedule[dateValue] || "일정 확인";
+
+        if (date.getDay() === 0) day.classList.add("sunday");
+        if (date.getDay() === 6) day.classList.add("saturday");
+
+        if (dateValue === referenceValue) {
+            card.classList.add("is_selected");
+            card.setAttribute("aria-current", "date");
+        } else {
+            card.classList.add("is_disabled");
+        }
+
+        card.append(day, description);
+        track.appendChild(card);
+    }
+
+    track.dataset.renderedSchedule = renderKey;
+}
+
+function prepareMobileSchedule(menu) {
+    const track = menu?.querySelector(".mobile_schedule_cards");
+    const activeTab = menu?.querySelector("[data-schedule-tab].is_active");
+    const pageDate = new URLSearchParams(window.location.search).get("date");
+
+    if (track && /^\d{4}-\d{2}-\d{2}$/.test(pageDate || "")) {
+        track.dataset.referenceDate = pageDate;
+    }
+
+    renderMobileSchedule(track, activeTab?.dataset.scheduleTab || "visit");
+}
+
+
+// =========================================================
 // CLICK
 // =========================================================
 
@@ -833,6 +955,7 @@ document.addEventListener("click", (event) => {
 
         if (isOpen) {
             lockMobilePage();
+            prepareMobileSchedule(mobileMenu);
         } else {
             unlockMobilePage();
         }
@@ -944,11 +1067,13 @@ document.addEventListener("click", (event) => {
             button.setAttribute("aria-selected", String(active));
         });
 
-        const selectedCard = document.querySelector(".mobile_schedule_card.is_selected");
+        const track = scheduleTab.closest(".mobile_schedule_area")
+            ?.querySelector(".mobile_schedule_cards");
+
+        renderMobileSchedule(track, scheduleTab.dataset.scheduleTab);
+
+        const selectedCard = track?.querySelector(".mobile_schedule_card.is_selected");
         if (selectedCard) {
-            selectedCard.querySelector("p").textContent = scheduleTab.dataset.scheduleTab === "work"
-                ? "공장 바닥 청소"
-                : "목욕탕 곰팡이 청소";
             selectedCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
         }
 
