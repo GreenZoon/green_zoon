@@ -13,7 +13,19 @@
     <main class="community">
         <div class="sub_content community_body">
             <div class="today_work"><h1 class="community_title">오늘 예정 작업</h1><div class="today_card"><strong>목욕탕 곰팡이 청소</strong><span>목욕탕에 피어난 곰팡이 제거 작업</span></div></div>
-            <div class="calendar_head"><button type="button" aria-label="이전 달"><span class="arrow left_arrow_2" aria-hidden="true"></span></button><h2>2026년&nbsp;&nbsp;3월</h2><button type="button" aria-label="다음 달"><span class="arrow right_arrow_2" aria-hidden="true"></span></button></div>
+            <div class="calendar_head">
+                <button type="button" aria-label="이전 달"><span class="arrow left_arrow_2" aria-hidden="true"></span></button>
+
+                <div class="calendar_date_picker">
+                    <span class="calendar_year">2026년</span>
+                    <span class="arrow" aria-hidden="true"></span>
+                    <span class="calendar_month">3월</span>
+                    <span class="arrow" aria-hidden="true"></span>
+                    <input class="calendar_date_input" type="date" value="2026-03-10" aria-label="확인할 작업 날짜 선택">
+                </div>
+
+                <button type="button" aria-label="다음 달"><span class="arrow right_arrow_2" aria-hidden="true"></span></button>
+            </div>
             <table class="calendar" aria-label="2026년 3월 작업 일정">
                 <thead><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr></thead>
                 <tbody>

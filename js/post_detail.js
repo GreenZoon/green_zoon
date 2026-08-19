@@ -626,27 +626,77 @@
         const head = document.querySelector(".calendar_head");
         if (!calendar || !head) return;
 
-        const title = head.querySelector("h2");
+        const yearText = head.querySelector(".calendar_year");
+        const monthText = head.querySelector(".calendar_month");
+        const dateInput = head.querySelector(".calendar_date_input");
         const previous = head.querySelector('button[aria-label="이전 달"]');
         const next = head.querySelector('button[aria-label="다음 달"]');
         const body = calendar.tBodies[0];
         const todayCard = document.querySelector(".today_card");
         let viewed = new Date(2026, 2, 1);
+        let selectedDate = "2026-03-10";
 
-        const marchJobs = ["삼일절", "공장청소", "공장 기계 세척", "물탱크 청소", "호텔 카페트 청소", "공장 바닥 청소", "새해맞이 학교 청소", "공장청소", "식품공장 청소", "목욕탕 곰팡이 청소", "김해 공장 전체 청소", "김해 새학년 맞이 대청소", "공장 물탱크 청소", "부산 물탱크 청소", "호텔 바닥 청소", "식품공장 청소", "공장청소", "김해 공장 전체 청소", "공장 설비 청소", "외벽 청소", "행사 청소", "공장청소", "본사 외벽 청소", "공장청소", "공장청소", "호텔 바닥 청소", "공장 기계 청소", "학교 청소", "공장청소", "외벽 청소", "공장청소"];
+        const scheduleData = {
+            "2026-03-01": "삼일절",
+            "2026-03-02": "공장청소",
+            "2026-03-03": "공장 기계 세척",
+            "2026-03-04": "물탱크 청소",
+            "2026-03-05": "호텔 카페트 청소",
+            "2026-03-06": "공장 바닥 청소",
+            "2026-03-07": "새해맞이 학교 청소",
+            "2026-03-08": "공장청소",
+            "2026-03-09": "식품공장 청소",
+            "2026-03-10": "목욕탕 곰팡이 청소",
+            "2026-03-11": "김해 공장 전체 청소",
+            "2026-03-12": "김해 새학년 맞이 대청소",
+            "2026-03-13": "공장 물탱크 청소",
+            "2026-03-14": "부산 물탱크 청소",
+            "2026-03-15": "호텔 바닥 청소",
+            "2026-03-16": "식품공장 청소",
+            "2026-03-17": "공장청소",
+            "2026-03-18": "김해 공장 전체 청소",
+            "2026-03-19": "공장 설비 청소",
+            "2026-03-20": "외벽 청소",
+            "2026-03-21": "행사 청소",
+            "2026-03-22": "공장청소",
+            "2026-03-23": "본사 외벽 청소",
+            "2026-03-24": "공장청소",
+            "2026-03-25": "공장청소",
+            "2026-03-26": "호텔 바닥 청소",
+            "2026-03-27": "공장 기계 청소",
+            "2026-03-28": "학교 청소",
+            "2026-03-29": "공장청소",
+            "2026-03-30": "외벽 청소",
+            "2026-03-31": "공장청소"
+        };
 
-        function jobFor(day) {
-            if (viewed.getFullYear() === 2026 && viewed.getMonth() === 2) return marchJobs[day - 1] || "";
-            return day % 3 === 0 ? "정기 청소" : "";
+        function dateKey(year, month, day) {
+            return year + "-" + String(month + 1).padStart(2, "0") + "-" + String(day).padStart(2, "0");
         }
 
-        function select(cell) {
-            body.querySelectorAll("td").forEach(function (item) { item.classList.remove("selected"); });
+        function updateTodayCard(key) {
+            if (!todayCard) return;
+
+            const parts = key.split("-").map(Number);
+            const job = scheduleData[key];
+            const title = todayCard.querySelector("strong");
+            const description = todayCard.querySelector("span");
+
+            if (title) title.textContent = job || "예정된 작업이 없습니다";
+            if (description) description.textContent = parts[1] + "월 " + parts[2] + "일 예정 작업";
+        }
+
+        function select(cell, key) {
+            body.querySelectorAll("td").forEach(function (item) {
+                item.classList.remove("selected");
+                item.removeAttribute("aria-selected");
+            });
+
             cell.classList.add("selected");
-            const job = cell.querySelector("small");
-            if (todayCard && job && job.textContent) {
-                todayCard.innerHTML = "<strong>" + job.textContent + "</strong><span>" + (viewed.getMonth() + 1) + "월 " + cell.querySelector("span").textContent + "일 예정 작업</span>";
-            }
+            cell.setAttribute("aria-selected", "true");
+            selectedDate = key;
+            if (dateInput) dateInput.value = key;
+            updateTodayCard(key);
         }
 
         function render() {
@@ -654,7 +704,8 @@
             const month = viewed.getMonth();
             const firstDay = new Date(year, month, 1).getDay();
             const lastDate = new Date(year, month + 1, 0).getDate();
-            title.textContent = year + "년  " + (month + 1) + "월";
+            if (yearText) yearText.textContent = year + "년";
+            if (monthText) monthText.textContent = (month + 1) + "월";
             calendar.setAttribute("aria-label", year + "년 " + (month + 1) + "월 작업 일정");
             body.replaceChildren();
 
@@ -664,14 +715,21 @@
                 for (let column = 0; column < 7; column += 1) {
                     const cell = document.createElement("td");
                     if ((rowIndex > 0 || column >= firstDay) && day <= lastDate) {
-                        const job = jobFor(day);
+                        const key = dateKey(year, month, day);
+                        const job = scheduleData[key] || "";
                         cell.innerHTML = "<span>" + day + "</span>" + (job ? "<small>" + job + "</small>" : "");
+                        cell.dataset.date = key;
                         cell.tabIndex = 0;
-                        cell.addEventListener("click", function () { select(cell); });
+                        cell.setAttribute("role", "button");
+                        cell.setAttribute("aria-label", key + (job ? " " + job : " 예정 작업 없음"));
+                        cell.addEventListener("click", function () { select(cell, key); });
                         cell.addEventListener("keydown", function (event) {
-                            if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(cell); }
+                            if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(cell, key); }
                         });
-                        if (year === 2026 && month === 2 && day === 10) cell.classList.add("selected");
+                        if (key === selectedDate) {
+                            cell.classList.add("selected");
+                            cell.setAttribute("aria-selected", "true");
+                        }
                         day += 1;
                     } else {
                         cell.classList.add("is-empty");
@@ -683,9 +741,28 @@
             }
         }
 
-        previous.addEventListener("click", function () { viewed.setMonth(viewed.getMonth() - 1); render(); });
-        next.addEventListener("click", function () { viewed.setMonth(viewed.getMonth() + 1); render(); });
+        function changeMonth(amount) {
+            viewed = new Date(viewed.getFullYear(), viewed.getMonth() + amount, 1);
+            render();
+        }
+
+        previous?.addEventListener("click", function () { changeMonth(-1); });
+        next?.addEventListener("click", function () { changeMonth(1); });
+
+        dateInput?.addEventListener("change", function () {
+            if (!dateInput.value) return;
+
+            const parts = dateInput.value.split("-").map(Number);
+            selectedDate = dateInput.value;
+            viewed = new Date(parts[0], parts[1] - 1, 1);
+            render();
+
+            const selectedCell = body.querySelector('[data-date="' + selectedDate + '"]');
+            if (selectedCell) select(selectedCell, selectedDate);
+        });
+
         render();
+        updateTodayCard(selectedDate);
     }
 
     function initReviewWrite() {

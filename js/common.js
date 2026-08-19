@@ -58,13 +58,13 @@ document.addEventListener("click", (event) => {
             return;
         }
 
-        const isOpen = searchForm.classList.toggle("is_open");
+        searchForm.classList.add("is_open");
 
-        openButton.setAttribute("aria-expanded", String(isOpen));
+        document.querySelectorAll(".search_open_btn").forEach((button) => {
+            button.setAttribute("aria-expanded", "true");
+        });
 
-        if (isOpen) {
-            searchForm.querySelector(".search_input")?.focus();
-        }
+        searchForm.querySelector(".search_input")?.focus();
 
         return;
     }
@@ -97,10 +97,10 @@ document.addEventListener("keydown", (event) => {
 
 function closeHeaderSearch() {
     const searchForm = document.querySelector("#header_search");
-    const openButton = document.querySelector(".search_open_btn");
-
     searchForm?.classList.remove("is_open");
-    openButton?.setAttribute("aria-expanded", "false");
+    document.querySelectorAll(".search_open_btn").forEach((button) => {
+        button.setAttribute("aria-expanded", "false");
+    });
 }
 
 const sitePath =

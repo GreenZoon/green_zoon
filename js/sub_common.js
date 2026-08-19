@@ -147,11 +147,15 @@
 
 
         document
-            .querySelector(".search_open_btn")
-            ?.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            .querySelectorAll(".search_open_btn")
+            .forEach(function (button) {
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
 
     }
 
@@ -216,25 +220,26 @@
                 }
 
 
-                const isOpen =
-                    searchForm.classList.toggle(
-                        "is_open"
-                    );
-
-
-                searchOpen.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
+                searchForm.classList.add(
+                    "is_open"
                 );
 
 
-                if (isOpen) {
+                document
+                    .querySelectorAll(".search_open_btn")
+                    .forEach(function (button) {
 
-                    searchForm
-                        .querySelector(".search_input")
-                        ?.focus();
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
 
-                }
+                    });
+
+
+                searchForm
+                    .querySelector(".search_input")
+                    ?.focus();
 
 
                 return;
