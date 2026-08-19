@@ -50,31 +50,89 @@
                 <button type="button" id="profile_logout" class="login_secondary_button">로그아웃</button>
             </div>
         </section>
-    </main>
 
-    <!-- 관리자 계정에서만 열리는 프로필 편집 창 -->
-    <dialog id="profile_modal" class="profile_modal" aria-labelledby="profile_modal_title">
-        <form id="profile_edit_form" class="profile_edit_form" method="dialog">
-            <header class="profile_modal_head">
-                <div>
-                    <h2 id="profile_modal_title">프로필 정보 편집</h2>
-                    <p>관리자 계정 정보를 수정할 수 있습니다.</p>
+        <!-- 피그마 1658:50142 관리자 프로필 편집 화면 -->
+        <section id="profile_editor" class="profile_editor" aria-labelledby="profile_editor_title" hidden>
+            <button type="button" class="profile_back" data-profile-back>
+                <span class="icon arrow left_arrow_2" aria-hidden="true"></span>
+                <p>뒤로가기</p>
+            </button>
+
+            <header class="profile_editor_head">
+                <span class="profile_editor_avatar"><span class="icon user" aria-hidden="true"></span></span>
+                <h1 id="profile_editor_title" class="blind">관리자 프로필 편집</h1>
+                <input id="profile_image_input" class="blind" type="file" accept="image/*">
+                <div class="profile_editor_buttons">
+                    <button type="button" data-profile-image>프로필 등록</button>
+                    <button type="button" data-profile-draft>프로필 임시저장</button>
                 </div>
-                <button type="button" class="profile_modal_close" data-profile-close aria-label="편집 창 닫기">×</button>
             </header>
 
-            <label><p>홈페이지 닉네임</p><input name="name" type="text" placeholder="홈페이지 닉네임을 입력해 주세요"></label>
-            <label><p>업체/상호/관공서명</p><input name="company" type="text" placeholder="업체 또는 기관명을 입력해 주세요"></label>
-            <label><p>담당자명</p><input name="manager" type="text" placeholder="담당자명을 입력해 주세요"></label>
-            <label><p>연락처</p><input name="phone" type="tel" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)"></label>
-            <label><p>청소작업 구역 주소</p><textarea name="address" placeholder="청소작업 구역 주소를 입력해 주세요"></textarea></label>
+            <form id="profile_edit_form" class="profile_edit_form">
+                <section class="profile_privacy">
+                    <h2>개인정보 수집 및 이용안내</h2>
+                    <p>본 프로필은 그린죤에서 제공하는 청소 용역 서비스 신청을 위해 신청자의 성명과 연락처를 요구합니다.</p>
+                    <p>수집된 개인정보는 작업 신청 외에는 사용되지 않으며 계약이 체결되지 않을 경우 즉시 파기됩니다.</p>
+                    <label class="profile_agree">
+                        <input type="checkbox" name="privacy" required>
+                        <span aria-hidden="true"></span>
+                        <p>개인정보 이용 내역 동의하기</p>
+                    </label>
+                </section>
 
-            <div class="profile_modal_actions">
-                <button type="button" class="login_secondary_button" data-profile-close>취소</button>
-                <button type="submit" class="login_primary_button">프로필 저장</button>
-            </div>
-        </form>
-    </dialog>
+                <section class="profile_fields">
+                    <label class="profile_field">
+                        <p>홈페이지 닉네임</p>
+                        <input name="name" type="text" placeholder="기존) 그린죤 관리자계정">
+                    </label>
+
+                    <label class="profile_field">
+                        <p>등급</p>
+                        <small>ⓘ 등급 수정은 관리자 계정을 제외하곤 불가능합니다.</small>
+                        <span class="profile_grade_select">
+                            <select name="grade" aria-label="계정 등급">
+                                <option value="관리자">관리자</option>
+                                <option value="일반회원">일반회원</option>
+                            </select>
+                            <span class="icon date_select_arrow" aria-hidden="true"></span>
+                        </span>
+                    </label>
+
+                    <div class="profile_field">
+                        <p>담당자 명</p>
+                        <small>ⓘ 신청자 혹은 담당자 성함을 기재해 주시길 바랍니다.<br>신청자와 담당자명이 다를 경우 입력란을 추가할 수 있습니다.</small>
+                        <div data-profile-list="manager">
+                            <input name="manager" type="text" placeholder="그린죤 담당자">
+                        </div>
+                        <button type="button" class="profile_add" data-add-profile="manager" aria-label="담당자 입력란 추가">＋</button>
+                    </div>
+
+                    <div class="profile_field">
+                        <p>연락처</p>
+                        <small>ⓘ 신청자 혹은 담당자 연락처를 기재해 주시길 바랍니다.<br>연락처가 여러 개일 경우 입력란을 추가할 수 있습니다.</small>
+                        <div data-profile-list="phone">
+                            <input name="phone" type="tel" placeholder="010-0000-0000">
+                        </div>
+                        <button type="button" class="profile_add is_green" data-add-profile="phone" aria-label="연락처 입력란 추가">＋</button>
+                    </div>
+
+                    <div class="profile_field">
+                        <p>청소작업 구역 주소</p>
+                        <small>ⓘ 청소 작업을 원하시는 구역을 작성해주길 바랍니다.<br>작업구역이 별도일 경우 입력란을 추가할 수 있습니다.</small>
+                        <div data-profile-list="address">
+                            <textarea name="address" placeholder="기존) 경상남도 김해시 전하로 191"></textarea>
+                        </div>
+                        <button type="button" class="profile_add" data-add-profile="address" aria-label="주소 입력란 추가">＋</button>
+                    </div>
+                </section>
+
+                <div class="profile_submit">
+                    <button type="button" class="login_secondary_button" data-profile-back>취소</button>
+                    <button type="submit" class="login_primary_button">프로필 저장</button>
+                </div>
+            </form>
+        </section>
+    </main>
 
     <div id="footer"></div>
     <script src="../js/jquery-3.7.1.min.js"></script>

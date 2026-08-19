@@ -367,6 +367,15 @@
     background-color: var(--login-green);
 }
 
+.profile_avatar {
+    background-position: center;
+    background-size: cover;
+}
+
+.profile_avatar.has_image .user {
+    display: none;
+}
+
 .profile_account {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -460,98 +469,254 @@
     padding: 10px 24px;
 }
 
-.profile_modal {
-    width: 56%;
-    max-height: 86vh;
-    overflow-y: auto;
-    border: 1px solid var(--login-line);
-    border-radius: 16px;
-    background: #fff;
+.profile_editor {
+    width: 100%;
     color: var(--login-text);
-    padding: 0;
-    box-shadow: 0 24px 70px rgba(0, 58, 26, .18);
 }
 
-.profile_modal::backdrop {
-    background: rgba(0, 0, 0, .38);
+.profile_panel[hidden],
+.profile_editor[hidden] {
+    display: none;
 }
 
-.profile_edit_form {
-    padding: 36px;
-}
-
-.profile_modal_head {
+.profile_back {
+    width: 100%;
+    min-height: 36px;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 28px;
-}
-
-.profile_modal_head h2 {
-    font-size: 26px;
-    line-height: 1.4;
-}
-
-.profile_modal_head p {
-    margin-top: 5px;
-    color: var(--login-muted);
-    font-size: 14px;
-}
-
-.profile_modal_close {
-    flex: 0 0 auto;
+    align-items: center;
     border: 0;
     background: transparent;
-    color: var(--login-muted);
-    font-size: 28px;
-    line-height: 1;
+    color: var(--login-text);
     cursor: pointer;
+    padding: 0;
 }
 
-.profile_edit_form label {
-    display: block;
-    margin-top: 18px;
+.profile_back .left_arrow_2 {
+    width: 8px;
+    margin-right: 6px;
+    background-color: currentColor;
 }
 
-.profile_edit_form label p {
-    margin-bottom: 8px;
-    font-size: 15px;
+.profile_back p {
+    font-size: 14px;
     font-weight: 700;
 }
 
-.profile_edit_form input,
-.profile_edit_form textarea {
+.profile_editor_head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.profile_editor_avatar {
+    width: 16%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    background-position: center;
+    background-size: cover;
+}
+
+.profile_editor_avatar .user {
+    width: 54%;
+    background-color: #8e8e8e;
+}
+
+.profile_editor_avatar.has_image .user {
+    display: none;
+}
+
+.profile_editor_buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.profile_editor_buttons button {
+    width: 110px;
+    min-height: 32px;
+    margin: 0 6px;
+    border: 1px solid var(--login-green);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--login-green);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile_editor_buttons button:first-child {
+    background: var(--login-green);
+    color: #fff;
+}
+
+.profile_edit_form {
+    margin-top: 32px;
+}
+
+.profile_privacy {
+    color: var(--login-muted);
+}
+
+.profile_privacy h2 {
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.profile_privacy > p {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.profile_agree {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 22px;
+    cursor: pointer;
+}
+
+.profile_agree input {
+    position: absolute;
+    opacity: 0;
+}
+
+.profile_agree > span {
+    width: 17px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--login-green);
+    border-radius: 5px;
+}
+
+.profile_agree input:checked + span::after {
+    width: 9px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: var(--login-green);
+    content: "";
+}
+
+.profile_agree p {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.profile_fields {
+    margin-top: 30px;
+}
+
+.profile_field {
+    display: block;
+    margin-top: 29px;
+}
+
+.profile_field > p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profile_field small {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--login-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.profile_field input,
+.profile_field textarea,
+.profile_field select {
     width: 100%;
     min-height: 48px;
     box-sizing: border-box;
     border: 1px solid var(--login-line);
     border-radius: 7px;
     background: #fff;
-    color: var(--login-text);
+    color: var(--login-muted);
     font: inherit;
-    padding: 12px 14px;
+    font-size: 14px;
+    padding: 12px 16px;
 }
 
-.profile_edit_form input:focus,
-.profile_edit_form textarea:focus {
+.profile_field input + input,
+.profile_field textarea + textarea {
+    margin-top: 8px;
+}
+
+.profile_field input:focus,
+.profile_field textarea:focus {
     border-color: var(--login-green);
+    color: var(--login-text);
     outline: 0;
 }
 
-.profile_edit_form textarea {
-    min-height: 92px;
+.profile_field textarea {
+    min-height: 97px;
     resize: vertical;
 }
 
-.profile_modal_actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 28px;
+.profile_grade_select {
+    position: relative;
+    display: block;
 }
 
-.profile_modal_actions button {
-    min-width: 140px;
-    min-height: 46px;
+.profile_grade_select select {
+    border-color: var(--login-green);
+    background: var(--login-green);
+    color: #fff;
+    font-weight: 700;
+    appearance: none;
+}
+
+.profile_grade_select .date_select_arrow {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 14px;
+    transform: translateY(-50%);
+    background-color: #fff;
+    pointer-events: none;
+}
+
+.profile_add {
+    width: 100%;
+    min-height: 24px;
+    margin-top: 8px;
+    border: 1px solid var(--login-line);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--login-line);
+    font: inherit;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.profile_add.is_green {
+    border-color: var(--login-green);
+    background: var(--login-green);
+    color: #fff;
+}
+
+.profile_submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 36px;
+}
+
+.profile_submit button {
+    width: 180px;
+    min-height: 48px;
     margin-left: 12px;
     border: 1px solid var(--login-line);
     border-radius: 7px;
@@ -570,9 +735,6 @@
         padding: 48px 36px;
     }
 
-    .profile_modal {
-        width: 76%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -644,12 +806,30 @@
         align-items: flex-start;
     }
 
-    .profile_modal {
-        width: 92%;
+    .is_profile_edit .profile_main {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .profile_editor {
+        padding: 0 5% 72px;
+        box-sizing: border-box;
+    }
+
+    .profile_editor_avatar {
+        width: 37.5%;
     }
 
     .profile_edit_form {
-        padding: 26px 20px;
+        margin-top: 27px;
+    }
+
+    .profile_privacy > p {
+        font-size: 10px;
+    }
+
+    .profile_submit button {
+        width: 50%;
     }
 
     .profile_account {
