@@ -66,6 +66,12 @@ footer {
     height: auto;
 }
 
+.footer_logo .logo{
+
+    width: 100%;
+    background-color: #8e8e8e;
+}
+
 
 /* =========================================================
    COMPANY

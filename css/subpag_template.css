@@ -73,13 +73,6 @@
    3. SUB PAGE MENU
 ========================================================= */
 
-.sub_pag_gnb{
-
-    min-height: 44px;
-    align-items: flex-end;
-
-}
-
 .sub_pag_menu{
 
     flex-direction: row;
@@ -339,9 +332,6 @@
 
     width: 100%;
     max-width: 1500px;
-
-    min-height: 160px;
-
     display: flex;
     flex-direction: column;
 
@@ -355,7 +345,6 @@
 
     margin-bottom: 4px;
     margin-left: 7px;
-
     font-size: 1.1875rem;
 
     color: #009944;
@@ -377,30 +366,19 @@
 .box_g {
 
     width: 100%;
-    min-width: 0;
-    min-height: 92px;
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
     gap: 14px;
-
-    padding: 16px 18px;
-
     border: 2px solid #009944;
     border-radius: 12px;
-
     background-color: #fff;
 }
 
 .con_section .box_g > .icon {
 
-    width: 36px;
-    height: 36px;
-
-    flex: 0 0 36px;
-
+    width: 100%;
     background-color: #009944;
 }
 
@@ -938,11 +916,9 @@
 
 .service_effect .effect_icon_circle {
 
-    width: 48px;
+    width: 100%;
+
     aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -950,11 +926,7 @@
 
 .service_effect .effect_icon_circle > .icon {
 
-    width: 48px;
-    aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
+    width:100%;
     background-color: #009944;
 }
 
@@ -1098,7 +1070,7 @@
 
     gap: 10px;
 
-    padding: 16px 24px;
+    padding: 16px 18px;
 
     border-width: 1px;
     border-radius: 10px;
@@ -1114,14 +1086,13 @@
 .section_3 .con {
 
     width: 125px;
-    max-width: 125px;
 
 }
 
 .service_target .con > .icon {
 
-    width: 48px;
-    max-width: 48px;
+    width: 70%;
+
 
 }
 
@@ -1450,20 +1421,11 @@
     .section_3 .con,
     .service_target .con{
 
-        width: 96px;
         max-width: 96px;
         gap: 6px;
 
     }
 
-
-    .section_g .con > .icon,
-    .section_3 .con > .icon {
-
-        width: 46px;
-        max-width: 46px;
-
-    }
 
     .section_g .con > p,
     .section_3 .con > p {
@@ -2584,7 +2546,7 @@
     .service_intro .tit_wrap > p {
 
         width: 100%;
-        max-width: 520px;
+       
         color: #8e8e8e;
 
         font-size: 0.875rem; /* 14px */
@@ -2622,10 +2584,10 @@
     }
 
     .service_target .con {
+
         padding: 7px;
         width: 13.5%;
-        max-width: 13.5%;
-        flex: 0 1 13.5%;
+
         min-width: 0;
         aspect-ratio: 1 / 1;
         position: relative;
@@ -2637,21 +2599,6 @@
         overflow: visible;
     }
 
-    .service_target .con > .icon {
-        width: 24px;
-        max-width: 24px;
-        flex: 0 0 24px;
-        aspect-ratio: 1 / 1;
-    }
-
-    .service_target .con > p {
-        font-size: 0.625rem;
-        line-height: 1.5;
-        white-space: nowrap;
-        color: #f8f8f8;
-        bottom: -3%;
-        position: absolute;
-    }
 
     /* =====================================================
        REQUEST
@@ -2668,13 +2615,6 @@
        481px~768px에서는 한 줄에 하나
        769px부터 아래 별도 쿼리에서 2열
     ===================================================== */
-
-    .service_effect {
-
-        width: 100%;
-        gap: 18px;
-
-    }
 
     .service_effect > h2 {
 
@@ -2697,28 +2637,23 @@
     .service_effect .box_g {
 
         width: 100%;
-        min-height: 84px;
         gap: 10px;
-        padding: 12px 14px;
         border: none;
 
     }
 
     .service_effect .effect_icon_circle {
-        width: 40px;
+        width:13%;
         display: flex;
         align-items: center;
         justify-content: center;
         border: 1px solid #009944;
         border-radius: 50%;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 40px;
+    
     }
 
     .service_effect .effect_icon_circle > .icon {
-        width: 24px;
-        height: 40px;
-        flex: 0 0 24px;
+        width:70%;
         aspect-ratio: 1 / 1;
     }
 
@@ -2789,8 +2724,6 @@
     .service_gallery .slide_wrap {
 
         width: 100%;
-        max-width: 680px;
-
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -3010,8 +2943,8 @@
     }
 
     .service_video_play {
+
         width: 20%;
-        min-width: 64px;
         max-width: 80px;
     }
 
@@ -3024,7 +2957,7 @@
     .con_g p {
 
         position: absolute;
-        bottom: -23%;
+        bottom: -35%;
     }
 
 
