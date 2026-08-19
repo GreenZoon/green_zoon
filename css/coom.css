@@ -1757,7 +1757,7 @@ aspect-ratio: 1 / 1;
         padding: 0 20px;
 
         position: sticky;
-        top: calc(var(--sub_back_top, 52px) - 2px);
+        top: 50px;
         z-index: 999;
 
         display: flex;
