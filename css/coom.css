@@ -740,13 +740,10 @@ aspect-ratio: 1 / 1;
     width: 100%;
     aspect-ratio: 4 / 1;
 
-
-    background-color: #858585;
-
     -webkit-mask-image: url("../img/icon/logo.svg");
     mask-image: url("../img/icon/logo.svg");
 
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     flex-shrink: 0;
 
     padding: 0;
