@@ -259,7 +259,7 @@ input{
 .search_icon{
 
     width: 16px;
-    height: 16px;
+    aspect-ratio: 1 / 1;
 
     background-color: #8E8E8E;
 }
@@ -268,7 +268,7 @@ input{
 
 
     width: 16px;
-    height: 16x;
+    aspect-ratio: 1 / 1;
     background-color: #fff;
 
 }
@@ -329,7 +329,6 @@ input{
     align-items: center;
     gap: 16px;
 
-    min-height: 45px;
     padding: 0 16px;
     border: 0;
 
@@ -351,7 +350,7 @@ input{
 
     display: block;
     width: 13px;
-    height: 13px;
+    aspect-ratio: 1 / 1;
     background-color: #8E8E8E;
 
 }
@@ -380,7 +379,7 @@ input{
     display: block;
 
     width: 100%;
-    height: 2px;
+    height: 3px;
 
     background-color: #1b1b1b;
     border-radius: 2px;
@@ -447,14 +446,17 @@ input{
     }
 
     .header {
-        height: 50px;
+        width: 100%;
+        height: 100%;
         max-height: 50px;
         padding: 5px 20px;
     }
 
     .header_logo {
-        width: 104px;
+
+        width: 100px;
         height: 30px;
+
     }
 
 }
@@ -509,7 +511,7 @@ input{
 
     .mobile_header_btn .icon {
         width: 100%;
-        height: 100%;
+         aspect-ratio: 1 / 1;
     }
 
     .login_li p{

@@ -28,10 +28,6 @@ select {
 body {
 
     width: 100%;
-    max-width: 1920px;
-
-    margin: 0 auto;
-
     color: #1d1d1d;
 
 }
@@ -43,7 +39,9 @@ h2,
 h3,
 h4,
 p {
+
     margin: 0;
+
 }
 
 /* 링크 */
@@ -56,21 +54,46 @@ a {
 
 /* 이미지 */
 
-img {
+img,video{
 
     width: 100%;
+    height: 100%;
     aspect-ratio: 3 / 2;
     display: block;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    object-position: center;
+    user-select: none;
+}
+
+.img_wrap,.video_thumbnai{
+    
+    width: 100%;
+    height: 100%;
+
+    flex: 0 0 auto;
+    display: flex;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+    
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
 
 }
 
-/* 버튼 */
+.man_sled img,.main_img_in_wrap img{
 
-button {
-
-    font: inherit;
+    aspect-ratio: 16 / 5;
 
 }
+
+.man_sled > picture {
+
+    height: auto;
+
+}
+
 
 /* =========================================================
    2. TYPOGRAPHY SYSTEM
@@ -317,7 +340,7 @@ section {
 
     color: #8e8e8e;
     background-color: transparent;
-    box-shadow: inset 0 -2px 0 transparent;
+  
 
 }
 
@@ -326,7 +349,7 @@ section {
 
     color: #fff;
     background-color: #009944;
-    box-shadow: inset 0 -2px 0 transparent;
+
 
 }
 
@@ -360,12 +383,19 @@ section {
     gap: 22px;
 }
 
+.con_wrap_in_wrap{
+
+    width: 50%;
+    display: flex;
+    gap: 27px;
+
+}
+
+
 .con,
 .con_g {
 
     width:100%;
-    max-width: 120px;
-
     aspect-ratio: 1 / 1;
 
     display: flex;
@@ -373,11 +403,10 @@ section {
     align-items: center;
     justify-content: center;
 
-    flex: 0 0 auto;
+    flex: 0 auto;
     border-radius: 999px;
-    padding: 12px;
     gap: 0px;
-
+    overflow: visible;
     text-align: center;
 }
 
@@ -401,8 +430,8 @@ section {
 
 .con > .icon {
 
-    width: 54px;
-     aspect-ratio: 1 / 1;
+    width: 100%;
+    aspect-ratio: 1 / 1;
 
     max-width: 54px;
 
@@ -446,16 +475,14 @@ section {
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
 
-
 }
-
 
 .box_wrap {
 
     width: 100%;
 
     display: flex;
-    gap: 16px;
+    gap: 1%;
 
 }
 
@@ -508,7 +535,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-  white-space: nowrap;
+    white-space: nowrap;
 
     gap: 4px;
 
@@ -545,7 +572,6 @@ section {
 
     display: flex;
     align-items: center;
-
     gap: 4px;
 
 }
@@ -604,7 +630,7 @@ section {
 .slide_dot {
 
     width: 20px;
-    height: 5px;
+    height: 4px;
     padding: 0;
 
     border: 0;
@@ -630,8 +656,8 @@ section {
 
 svg {
 
-    width: 24px;
-aspect-ratio: 1 / 1;
+    width: 3%;
+    aspect-ratio: 1 / 1;
 
     flex: 0 0 auto;
 
@@ -650,7 +676,7 @@ aspect-ratio: 1 / 1;
     align-items: center;
     justify-content: center;
 
-    padding: 4px 6px;
+    padding: 4px 5px;
 
     border-radius: 999px;
 
@@ -666,8 +692,8 @@ aspect-ratio: 1 / 1;
 
     position: relative;
 
-    width: 24px;
-aspect-ratio: 1 / 1;
+    width: 3%;
+    aspect-ratio: 1 / 1;
     padding: 0;
 
     border: 0;
@@ -680,7 +706,7 @@ aspect-ratio: 1 / 1;
 
 .icon,.icon_2,.arrow,.mobile_icon{
 
-    width: 24px;
+    width: 3%;
     aspect-ratio: 1 / 1;
 
     /* 아이콘 크기를 따로 변경하면 그 크기를 그대로 사용 */
@@ -807,6 +833,10 @@ aspect-ratio: 1 / 1;
     background-color: #f2f2f2;
     width: 16px;
 
+}
+
+.wit_arrow {
+    background-color: #f2f2f2;
 }
 
 .factory{
@@ -1533,7 +1563,7 @@ aspect-ratio: 1 / 1;
         justify-content: flex-end;
     }
 
-.breadcrumb {
+    .breadcrumb {
 
         padding: 7px 50px;
 
@@ -1547,13 +1577,13 @@ aspect-ratio: 1 / 1;
 
     .subpage_nav{
 
-           padding: 0 50px;
+        padding: 0 50px;
 
     }
 
     section {
 
-        padding: 48px 50px;
+        padding: 45px 50px;
         gap: 32px;
 
     }
@@ -1607,6 +1637,11 @@ aspect-ratio: 1 / 1;
 
     } */
 
+    .box_wrap_8_wrap {
+
+        gap: 15px;
+    }
+
 }
 
 
@@ -1638,14 +1673,13 @@ aspect-ratio: 1 / 1;
     /* 섹션 제목
        PC 25px → Tablet 19px
     */
+    h2{
 
-    h2,
-    .section_title {
-
-        font-size: 1.1875rem;    /* 19px */
+        font-size: 1.1875rem;
         line-height: 1.4;
         letter-spacing: -0.025em;
-        font-weight: 700;
+
+
     }
 
     /* 중간 화면: 1025px ~ 1500px */
@@ -1739,20 +1773,6 @@ aspect-ratio: 1 / 1;
         
     }
 
-    .subpage_nav_link:hover,
-    .subpage_nav_link:focus-visible {
-
-        color: #009944;
-        background-color: transparent;
-        box-shadow: inset 0 -2px 0 #009944;
-
-    }
-
-.icon, .icon_2, .arrow, .mobile_icon {
-
-        width: 20px;
-
-    }
 
     section {
 
@@ -1805,9 +1825,9 @@ aspect-ratio: 1 / 1;
     .sub_back::before {
 
         content: "";
-
+        aspect-ratio: 1 / 1;
         width: 12px;
-        height: 12px;
+
         flex: 0 0 auto;
 
         background-color: currentColor;
@@ -1823,9 +1843,9 @@ aspect-ratio: 1 / 1;
 
     }
 
-.breadcrumb {
+    .breadcrumb {
 
-        display: none;
+         display: none;
 
     }
 
@@ -1842,6 +1862,12 @@ aspect-ratio: 1 / 1;
 
     }
 
+    .icon, .icon_2, .arrow, .mobile_icon {
+
+        width: 20px;
+
+    }
+
     /* 페이지 대표 제목 기록용 */
 
     h1 {
@@ -1849,6 +1875,17 @@ aspect-ratio: 1 / 1;
         font-size: 2rem;         /* 32px */
         line-height: 1.2;
         letter-spacing: -0.04em;
+    }
+
+        /* 섹션 대표 제목 */
+    h2,
+    .section_title {
+
+        font-size: 1.1875rem;    /* 19px */
+        line-height: 1.5;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+
     }
 
     /* 모바일 페이지 대표 제목 */
@@ -1861,28 +1898,7 @@ aspect-ratio: 1 / 1;
 
     }
 
-    .sub_p_23 {
-
-        color: #8e8e8e;
-
-        font-size: 0.75rem; /* 12px */
-        line-height: 1.55;
-        letter-spacing: -0.04em;
-        font-weight: 500;
-    }
-
-    /* 섹션 대표 제목 */
-    h2,
-    .section_title {
-
-        font-size: 1.1875rem;    /* 19px */
-        line-height: 1.5;
-        letter-spacing: -0.04em;
-        font-weight: 700;
-
-    }
-
-    /* 중간 제목 */
+        /* 중간 제목 */
     h3,
     .sub_title {
 
@@ -1891,12 +1907,21 @@ aspect-ratio: 1 / 1;
 
     }
 
-    /* 카드 / 콘텐츠 제목 */
+        /* 카드 / 콘텐츠 제목 */
     .content_title {
 
         font-size: 0.875rem;     /* 14px */
         line-height: 1.5;
 
+    }
+
+    .sub_p_23 {
+
+        color: #8e8e8e;
+        font-size: 0.75rem; /* 12px */
+        line-height: 1.55;
+        letter-spacing: -0.04em;
+        font-weight: 500;
     }
 
     /* 일반 본문 */
@@ -1933,22 +1958,18 @@ aspect-ratio: 1 / 1;
         gap: 12px;
     }
 
-    .icon, .icon_2, .arrow, .mobile_icon {
-
-        width: 16px;
-
-    }
 
 }
 
 
 @media (max-width: 480px) {
 
-section {
+    section {
 
         padding: 10px 20px;
         gap: 24px;
 
     }
+
 
 }

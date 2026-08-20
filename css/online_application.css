@@ -38,11 +38,13 @@
 .time_fieldset,
 .time_options,
 .modal_dialog {
+
     min-width: 0;
     max-width: 100%;
 }
 
 .application_main {
+    
     width: 100%;
     max-width: 1668px;
     margin: 0 auto;
@@ -785,6 +787,7 @@ body.modal_open {
 }
 
 @media (max-width: 768px) {
+    
     .application_main {
         width: 100%;
         padding-block: 24px 100px;
