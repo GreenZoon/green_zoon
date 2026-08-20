@@ -40,14 +40,23 @@
 
 .login_shell {
     min-height: 620px;
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+    display: flex;
     overflow: hidden;
     margin-top: 32px;
     border: 1px solid var(--login-line);
     border-radius: 22px;
     background: #fff;
     box-shadow: 0 24px 70px rgba(0, 58, 26, .09);
+}
+
+.login_intro {
+    width: 45%;
+    flex: 0 1 45%;
+}
+
+.login_form_area {
+    width: 55%;
+    flex: 1 1 55%;
 }
 
 .login_intro,
@@ -377,12 +386,14 @@
 }
 
 .profile_account {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px;
 }
 
 .profile_account > div {
+    width: calc(50% - 7px);
+    flex: 0 0 calc(50% - 7px);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -988,6 +999,7 @@ body.is_profile_edit {
     justify-content: space-between;
     gap: 24px;
     margin: 0 auto;
+    border-bottom: 1px solid #eee;
 }
 
 .login_brand img {
@@ -1005,8 +1017,9 @@ body.is_profile_edit {
 .login_header_actions a {
     width: 32px;
     aspect-ratio: 1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login_header_actions .icon {
@@ -1122,8 +1135,9 @@ body.is_profile_edit {
     right: 10px;
     width: 32px;
     height: 32px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translateY(-50%);
     border: 0;
     background: transparent;
@@ -1222,12 +1236,6 @@ body.is_profile_edit {
     cursor: pointer;
 }
 
-@media (min-width: 769px) {
-    .login_simple_header {
-        border-bottom: 1px solid #eee;
-    }
-}
-
 @media (max-width: 768px) {
     .login_simple_header {
         width: calc(100% - 32px);
@@ -1236,6 +1244,16 @@ body.is_profile_edit {
 
     .login_brand {
         display: none;
+    }
+
+    .login_shell {
+        flex-direction: column;
+    }
+
+    .login_intro,
+    .login_form_area {
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     .login_header_actions {

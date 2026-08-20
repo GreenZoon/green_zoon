@@ -12,9 +12,12 @@
 
 .Cleaning_box,
 .Cleaning_box_green {
+    width: auto;
 
     flex: 1 1 0;
+    min-width: 0;
 
+    min-height: 340px;
     padding: 40px 48px;
 
     display: flex;
@@ -22,7 +25,7 @@
 
     justify-content: space-between;
 
-    gap: 3%;
+    gap: 28px;
 
     border-color: #009944;
 
@@ -105,13 +108,14 @@
 
 .Cleaning_ul_wrap {
 
-    width: 100%;
+    min-width: 0;
+
+    flex: 1;
 
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
 
-    gap: 5%;
+    gap: 36px;
 
 }
 
@@ -148,14 +152,12 @@
 
 .Cleaning_ul li p,
 .Cleaning_ul li a {
-
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.015em;
     font-weight: 500;
 
     color: inherit;
-
 }
 
 /* =========================================================
@@ -165,9 +167,8 @@
 
 .Cleaning_icon,
 .Cleaning_icon_green {
-
     width: 150px;
-
+    aspect-ratio: 1 / 1;
 }
 
 /* 전화 아이콘 */
@@ -223,6 +224,7 @@
     .Cleaning_box,
     .Cleaning_box_green {
 
+        min-height: 280px;
         padding: 28px 30px;
     }
 
@@ -233,34 +235,24 @@
         gap: 20px;
     }
 
+    .Cleaning_ul_wrap {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 18px;
+    }
+
     .Cleaning_ul li {
 
         gap: 12px;
-
     }
 
     .Cleaning_ul li p,
     .Cleaning_ul li a {
-
         font-size: 14px;
-
     }
-
-
-
-    /*
-        온라인 견적 아이콘은 공간이 충분하므로 유지
-    */
-
-    .Cleaning_icon_green {
-
-        width: 120px;
-
-    }
-
-}
-
-@media (max-width: 1200px) {
 
     /*
         전화번호와 겹치던
@@ -269,32 +261,27 @@
 
     .Cleaning_icon.call_center {
 
-        width:40px;
-        background-color: #009944
-    }
-
-
-}
-
-@media (max-width: 950px) {
-
-
-    .Cleaning_icon.call_center {
         display: none;
     }
 
-    .Cleaning_box, .Cleaning_box_green {
+    /*
+        온라인 견적 아이콘은 공간이 충분하므로 유지
+    */
 
-        padding: 24px 26px;
+    .Cleaning_icon_green {
 
+        width: 120px;
+        aspect-ratio: 1 / 1;
+
+        flex: 0 0 auto;
     }
 
 }
+
 
 @media (max-width: 768px) {
 
 #Request_Cleaning > section {
-    
         flex-direction: row;
 
         gap: 12px;
@@ -305,12 +292,16 @@
        모바일 전화 아이콘 ON
     ===================================================== */
 
-
+    .Cleaning_icon.call_center {
+        display: none;
+    }
 
     .Cleaning_mobile_icon {
         display: block;
 
         width: 28px;
+
+
         flex: 0 0 auto;
 
         background-color: #f2f2f2;

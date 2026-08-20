@@ -7,8 +7,8 @@
 footer {
     width: 100%;
 
-    padding-block: clamp(3rem, 4vw, 4.5rem);
-    padding-inline: clamp(2.5rem, 7vw, 9.375rem);
+    padding-block: 72px;
+    padding-inline: 150px;
 
     background-color: #f8f8f8;
     color: #8e8e8e;
@@ -20,24 +20,14 @@ footer {
 ========================================================= */
 
 .footer_inner {
-
     width: 100%;
-    display: grid;
 
-    grid-template-columns:
-        minmax(8rem, 0.9fr)
-        minmax(14rem, 1.35fr)
-        minmax(24rem, 2.3fr)
-        minmax(13rem, 1.15fr);
-
-    grid-template-areas:
-        "logo company subnav branch"
-        ".    sns     policy copy";
+    display: flex;
+    flex-wrap: wrap;
 
     align-items: start;
 
-    column-gap: clamp(2rem, 3.5vw, 5rem);
-    row-gap: clamp(1.75rem, 2.5vw, 2.75rem);
+    gap: 44px 4%;
 }
 
 
@@ -46,9 +36,8 @@ footer {
 ========================================================= */
 
 .footer_logo {
-    grid-area: logo;
-
-    width: clamp(8rem, 9vw, 10.5rem);
+    width: 12%;
+    flex: 0 0 12%;
 }
 
 
@@ -66,19 +55,14 @@ footer {
     height: auto;
 }
 
-.footer_logo .logo{
-
-    width: 100%;
-    background-color: #8e8e8e;
-}
-
 
 /* =========================================================
    COMPANY
 ========================================================= */
 
 .footer_company {
-    grid-area: company;
+    width: 18%;
+    flex: 0 0 18%;
 
     display: flex;
     flex-direction: column;
@@ -105,13 +89,14 @@ footer {
 ========================================================= */
 
 .footer_sub_nav {
-    grid-area: subnav;
+    width: 42%;
+    flex: 1 1 42%;
 
     display: flex;
 
     justify-content: space-between;
 
-    gap: clamp(1.5rem, 3vw, 4rem);
+    gap: 58px;
 }
 
 
@@ -169,7 +154,8 @@ footer {
 ========================================================= */
 
 .footer_branch {
-    grid-area: branch;
+    width: 16%;
+    flex: 0 0 16%;
 
     margin: 0;
     padding: 0;
@@ -191,7 +177,7 @@ footer {
     justify-content: space-between;
     align-items: center;
 
-    gap: clamp(1rem, 2vw, 2.5rem);
+    gap: 38px;
 }
 
 
@@ -212,7 +198,9 @@ footer {
 ========================================================= */
 
 .footer_sns {
-    grid-area: sns;
+    width: 18%;
+    margin-left: 16%;
+    flex: 0 0 18%;
 
     margin: 0;
     padding: 0;
@@ -220,7 +208,7 @@ footer {
     display: flex;
     align-items: center;
 
-    gap: clamp(0.55rem, 0.9vw, 1rem);
+    gap: 16px;
 
     list-style: none;
 }
@@ -232,8 +220,8 @@ footer {
 
 
 .footer_sns a {
-    width: clamp(1.4rem, 1.5vw, 1.75rem);
-    height: clamp(1.4rem, 1.5vw, 1.75rem);
+    width: 28px;
+    height: 28px;
 
     display: flex;
     align-items: center;
@@ -262,22 +250,23 @@ footer {
 ========================================================= */
 
 .footer_policy {
-    grid-area: policy;
+    width: 42%;
+    flex: 1 1 42%;
 
     display: flex;
     align-items: center;
 
-    gap: clamp(2rem, 3vw, 3.5rem);
+    gap: 56px;
 }
 
 
 .footer_policy a {
-
     font-size: 0.9375rem;      /* 15px */
     line-height: 1.5;
-    color: inherit;
-    white-space: nowrap;
 
+    color: inherit;
+
+    white-space: nowrap;
 }
 
 
@@ -286,9 +275,8 @@ footer {
 ========================================================= */
 
 .footer_copy {
-    
-    grid-area: copy;
-    width: 100%;
+    width: 16%;
+    flex: 0 0 16%;
     min-width: 0;
 
     display: flex;
@@ -328,7 +316,7 @@ footer {
 
 
 .footer_freepik .freepik {
-    width: clamp(3rem, 4vw, 4rem);
+    width: 64px;
 
     margin: 0;
 
@@ -348,18 +336,12 @@ footer {
 @media (max-width: 1500px) {
 
 footer {
-        padding-inline: clamp(2.5rem, 5vw, 5rem);
+        padding-inline: 75px;
     }
 
 
     .footer_inner {
-        grid-template-columns:
-            minmax(7rem, 0.8fr)
-            minmax(12rem, 1.25fr)
-            minmax(21rem, 2fr)
-            minmax(11rem, 1.1fr);
-
-        column-gap: clamp(1.5rem, 2.5vw, 3rem);
+        gap: 38px 3%;
     }
 
 
@@ -372,7 +354,7 @@ footer {
     .footer_sub_nav a,
     .footer_branch span,
     .footer_branch a {
-        font-size: clamp(0.9375rem, 1vw, 1.0625rem);
+        font-size: 15px;
     }
 
 }
@@ -386,28 +368,37 @@ footer {
 
 
     .footer_inner {
-        display: grid;
-
-        grid-template-columns:
-            minmax(120px, 0.8fr)
-            minmax(220px, 1.3fr)
-            minmax(180px, 1fr);
-
-        grid-template-areas:
-            "logo company branch"
-            "subnav subnav subnav"
-            "sns policy policy"
-            "copy copy copy";
-
-        column-gap: 32px;
-        row-gap: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px 4%;
 
         align-items: start;
     }
 
     .footer_logo {
-        width: 8rem;
+        width: 18%;
+        flex: 0 0 18%;
     }
+
+    .footer_company {
+        width: 36%;
+        flex: 0 0 36%;
+    }
+
+    .footer_branch {
+        width: 38%;
+        flex: 0 0 38%;
+    }
+
+
+    .footer_sub_nav {
+        width: 100%;
+        flex: 0 0 100%;
+        justify-content: flex-start;
+
+        gap: 64px;
+    }
+
 
     .footer_company p,
     .footer_sub_nav a,
@@ -426,58 +417,63 @@ footer {
         font-size: 0.75rem;
     }
 
-}
-
-
-@media (max-width: 1024px) and (min-width: 516px) {
-
 footer {
-
         padding: 40px;
-
     }
 
+
+
+
     .footer_logo {
-
-        width: 120px;
-
+        width: 18%;
     }
 
 
     .footer_company p,
     .footer_branch span,
     .footer_branch a {
-
         font-size: 14px;
+    }
 
+
+    .footer_sub_nav {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+
+        gap: 40px;
+    }
+
+    .footer_sub_nav ul {
+        width: 30%;
+        flex: 0 0 30%;
     }
 
 
     .footer_sub_nav ul {
-
         gap: 8px;
-
     }
 
 
     .footer_sub_nav a {
-
         font-size: 14px;
-
     }
 
 
     .footer_sns {
-
+        width: 18%;
+        margin-left: 22%;
+        flex: 0 0 18%;
         align-self: center;
 
         gap: 12px;
-
     }
 
 
     .footer_policy {
-
+        width: 56%;
+        flex: 1 1 56%;
         justify-content: flex-start;
         align-self: center;
 
@@ -486,15 +482,13 @@ footer {
 
 
     .footer_policy a {
-
         font-size: 13px;
-
     }
 
 
     .footer_copy {
-
         width: 100%;
+        flex: 0 0 100%;
 
         align-items: flex-end;
 
@@ -503,7 +497,6 @@ footer {
 
 
     .footer_copy p {
-
         font-size: 12px;
 
         white-space: nowrap;
@@ -524,22 +517,9 @@ footer {
     .footer_inner {
         width: 100%;
 
-        display: grid;
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        grid-template-areas:
-            "logo    logo"
-            "nav     nav"
-            "company branch"
-            "sns     branch"
-            "policy  policy"
-            "copy    copy";
-
-        column-gap: 24px;
-        row-gap: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 6%;
 
         align-items: start;
     }
@@ -550,19 +530,19 @@ footer {
     .footer_logo {
 
         width: 100px;
+        flex: 0 0 100%;
     }
 
 
     /* 모바일 메뉴 */
 
     .footer_nav {
-
-        grid-area: nav;
-
         width: 100%;
+        flex: 0 0 100%;
 
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
         gap: 6px;
     }
@@ -609,7 +589,8 @@ footer {
     /* 회사 정보 */
 
     .footer_company {
-
+        width: 47%;
+        flex: 0 0 47%;
         gap: 2px;
     }
 
@@ -624,7 +605,8 @@ footer {
     /* 지점 */
 
     .footer_branch {
-
+        width: 47%;
+        flex: 0 0 47%;
         gap: 5px;
     }
 
@@ -649,7 +631,9 @@ footer {
     /* SNS */
 
     .footer_sns {
-
+        width: 47%;
+        margin-left: 0;
+        flex: 0 0 47%;
         gap: 9px;
 
     }
@@ -658,14 +642,15 @@ footer {
     .footer_sns a {
 
         width: 16px;
-        aspect-ratio: 1 / 1;
+        height: 16px;
     }
 
 
     /* 약관 */
 
     .footer_policy {
-
+        width: 100%;
+        flex: 0 0 100%;
         gap: 40px;
 
         margin-top: 4px;
@@ -686,6 +671,7 @@ footer {
     .footer_copy {
 
         width: 100%;
+        flex: 0 0 100%;
 
         align-items: flex-end;
 
