@@ -1228,6 +1228,11 @@
 
 }
 
+.con_wrap_6_2{
+
+    display: flex;
+    gap: 5%;
+}
 
 .Graph{
 
@@ -1756,7 +1761,7 @@
     .mobile_search button {
 
         width: 16px;
-        height: 16px;
+        aspect-ratio: 1 / 1;
         padding: 0;
 
         border: 0;
@@ -1795,10 +1800,9 @@
     .button_2 {
 
         width: 70px;
-        max-width: 70px;
         height: 93px;
         aspect-ratio: auto;
-        flex: 0 0 70px;
+        flex: 0 0 auto;
 
         position: relative;
 

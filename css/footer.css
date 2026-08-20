@@ -36,25 +36,9 @@ footer {
 ========================================================= */
 
 .footer_logo {
-    width: 12%;
-    flex: 0 0 12%;
+    width:100px;
+    background-color: #8e8e8e;
 }
-
-
-.footer_logo a {
-    display: block;
-
-    width: 100%;
-}
-
-
-.footer_logo img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
 
 /* =========================================================
    COMPANY
