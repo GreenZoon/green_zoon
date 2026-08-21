@@ -31,7 +31,7 @@
 .company_tabs {
 
     width: 100%;
-    min-height: 70px;
+
     display: flex;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
@@ -42,11 +42,13 @@
 .company_menu{
 
     width: 100%;
-    min-height: 70px;
+    
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-end;
     gap: 0;
+
+    padding: 0 150px;
 
 }
 
@@ -60,7 +62,7 @@
 .company_tit {
 
     width: 100%;
-    min-height: 70px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,17 +171,18 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    max-width: 720px;
 
 }
 
 .company_intro_copy {
+
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
 .company_intro_text p {
+
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
@@ -187,7 +190,7 @@
 }
 
 .company_values {
-    flex: 0 0 500px;
+    flex: 0 0 auto;
     width: 500px;
     height: 500px;
     position: relative;
@@ -197,7 +200,7 @@
 .company_values::before {
     content: "";
     width: 330px;
-    height: 330px;
+    aspect-ratio: 1 / 1;
     position: absolute;
     top: 85px;
     left: 85px;
@@ -208,7 +211,7 @@
 .company_values li {
 
     width: 180px;
-    height: 180px;
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -240,39 +243,32 @@
 }
 
 .company_values .value_icon {
-
     -webkit-mask-image: url("../img/icon/digital-asset.svg");
     mask-image: url("../img/icon/digital-asset.svg");
-
 }
 
 .company_values li:nth-child(1) {
-
     top: 0;
     left: 160px;
 }
 
 .company_values li:nth-child(2) {
-
     bottom: 0;
     left: 0;
 }
 
 .company_values li:nth-child(3) {
-
     right: 0;
     bottom: 0;
 }
 
 .company_greeting {
-
     min-height: 757px;
     align-items: center;
     gap: 80px;
 }
 
 .company_greeting_text {
-
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -280,14 +276,12 @@
 }
 
 .company_greeting h2 {
-
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
 }
 
 .company_greeting p {
-
     max-width: 980px;
     color: #8e8e8e;
     font-size: 1.0625rem;
@@ -296,12 +290,11 @@
 }
 
 .company_portrait {
-
-    flex: 0 0 auto;
+    flex: 0 0 302px;
     width: 302px;
     height: 557px;
     align-self: center;
-
+    background-color: #f2f2f2;
 }
 
 .company_location {
@@ -320,13 +313,12 @@
 }
 
 .company_map {
-
-    flex: 1 1 auto;
+    flex: 1 1 1075px;
     width: 100%;
     height: 600px;
     overflow: hidden;
     border-radius: 12px;
-
+    background-color: #f2f2f2;
 }
 
 .company_map iframe {
@@ -337,37 +329,29 @@
 }
 
 .company_info {
-
-    flex: 0 1 auto;
+    flex: 0 1 430px;
     display: flex;
     flex-direction: column;
     gap: 48px;
-
 }
 
 .company_info > div {
-
     display: flex;
     flex-direction: column;
     gap: 24px;
-
 }
 
 .company_info h2 {
-
     margin: 0;
     color: #555;
     font-size: 1.5625rem;
     line-height: 1.5;
-
 }
 
 .company_info p {
-
     color: #8e8e8e;
     font-size: 1.0625rem;
     line-height: 1.7;
-
 }
 
 .company_map_link {
@@ -386,7 +370,6 @@
 .company_docs,
 .company_awards,
 .company_history {
-
     flex-direction: column;
     gap: 80px;
 }
@@ -395,7 +378,6 @@
 .company_awards h1,
 .company_clients h1,
 .company_clients h2 {
-
     color: #555;
     font-size: 2.5rem;
     line-height: 1.25;
@@ -408,7 +390,6 @@
 }
 
 .company_branch {
-
     flex: 1;
     padding: 35px 40px;
     display: flex;
@@ -419,76 +400,59 @@
 }
 
 .company_branch.address {
-
     color: #fff;
     background-color: #009944;
-
 }
 
 .company_branch h2 {
-
     color: inherit;
     font-size: 1.5625rem;
-
 }
 
 .company_branch > p {
-
     color: #8e8e8e;
     font-size: 0.9375rem;
 }
 
-
 .company_branch dl {
-
     display: flex;
     flex-direction: column;
     gap: 18px;
-
 }
 
 .company_branch dl div {
-
     display: flex;
     justify-content: space-between;
     gap: 20px;
-
 }
 
 .company_branch dt,
 .company_branch dd {
-
     font-size: 1rem;
     line-height: 1.6;
-
 }
 
 .company_branch.contact h2,
 .company_branch.contact dd {
-
     color: #009944;
 }
 
 .company_doc_main,
 .company_doc_grid {
-
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
 }
 
 .company_doc_main .company_doc {
-
     flex: 1 1 calc((100% - 140px) / 3);
 }
 
 .company_doc_grid .company_doc {
-
     flex: 1 1 calc((100% - 210px) / 4);
 }
 
 .company_doc {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -501,102 +465,38 @@
 .company_history_img,
 .company_history_logo,
 .company_logo {
-
     background-color: transparent;
 }
 
-.company_doc_img img,
-.company_history_logo img,
-.company_logo img,
-.company_award_img img,
-.company_history_img img {
-
-    width: 100%;
-    height: 100%;
-    display: block;
-}
 
 .company_doc_img img,
 .company_history_logo img,
 .company_logo img {
-
     object-fit: contain;
-        aspect-ratio: 4 / 1;
 }
 
 .company_award_img img,
 .company_history_img img {
-
     object-fit: cover;
 }
 
 .company_doc_img {
-
     width: min(100%, 380px);
     aspect-ratio: 3 / 4;
     border-radius: 10px;
 }
 
 .company_doc h2 {
-
     color: #555;
     font-size: 1.25rem;
     line-height: 1.4;
-
 }
 
 .company_doc p {
-
     max-width: 380px;
     color: #8e8e8e;
     font-size: 0.9375rem;
     line-height: 1.7;
-
-}
-
-.company_award_tabs {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-
-}
-
-.company_award_tabs button {
-
-    max-width: 180px;
-    padding: 10px 20px;
-    border: 1px solid #8e8e8e;
-    border-radius: 9px;
-    color: #8e8e8e;
-    background-color: #fff;
-    font: inherit;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.company_award_tabs button:hover,
-.company_award_tabs button:focus-visible {
-    border-color: #009944;
-    color: #009944;
-}
-
-.company_award_tabs button:focus-visible {
-    outline: 2px solid rgba(0, 153, 68, 0.25);
-    outline-offset: 3px;
-}
-
-.company_award_tabs button.on {
-    border-color: #009944;
-    color: #fff;
-    background-color: #009944;
-}
-
-.company_award[hidden] {
-    display: none;
 }
 
 .company_awards {
@@ -619,7 +519,7 @@
     border-radius: 18px;
 }
 
-.company_award > div:last-child {
+.company_award > .tit_wrap {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -775,15 +675,10 @@
 
 .company_logo_grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
+
+    gap: 5%;
 }
 
-.company_logo {
-    
-    flex: 1 1 calc((100% - 168px) / 7);
-  
-}
 
 .company_client_wrap {
     display: flex;
@@ -813,10 +708,17 @@
     gap: 15px;
 }
 
-.company_client_logos .company_logo {
-    min-height: 48px;
+.company_logo {
+
+    max-width: 200px;
+    min-height: 45px;
+
 }
 
+.company_logo img{
+
+        aspect-ratio: 9 / 1;
+}
 
 /* 대상·최우수상 대표 이미지는 카드와 슬라이드에서도 정사각 비율 유지 */
 .company_award_img,
@@ -827,6 +729,7 @@
 
 .company_award_img img,
 .company_history_img img {
+     aspect-ratio: 1 / 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -928,6 +831,13 @@
         gap: 5px;
         padding: 0 14px;
         font-size: 1rem;
+
+    }
+
+    .company_arrow {
+
+        width: 12px;
+        height: 8px;
 
     }
 
@@ -1343,24 +1253,6 @@
         overflow: visible;
         clip: auto;
         text-align: center;
-    }
-
-    .company_award_tabs {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-    }
-
-    .company_award_tabs button {
-        max-width: 140px;
-        padding: 8px 17px;
-        font-size: 0.75rem;
-    }
-
-    .company_award_tabs button.on {
-        border-color: #009944;
-        background-color: #009944;
-        color: #fff;
     }
 
     .company_award {
