@@ -34,12 +34,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/factory_cleane_Before.jpg",
-                    alt: "공장 청소 전"
+                    src: "img/sub_page/factory_equipment_ing_2.jpg",
+                    alt: "공장 기계 설비 청소 현장"
                 },
                 {
-                    src: "img/mainimgs/factory_cleane_After.jpg",
-                    alt: "공장 청소 완료 현장"
+                    src: "img/sub_page/factory_floor_ing_2.jpg",
+                    alt: "공장 바닥 장비 청소 현장"
                 }
             ]
         },
@@ -52,12 +52,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/cleaning_carpet_Before.jpg",
-                    alt: "카펫 패브릭 청소 전"
+                    src: "img/sub_page/cleaning_carpet_ing_2.jpg",
+                    alt: "카펫 부분 세척 작업 현장"
                 },
                 {
-                    src: "img/mainimgs/cleaning_carpet_ing.jpg",
-                    alt: "카펫 패브릭 청소 중"
+                    src: "img/sub_page/cleaning_carpet_ing_3.jpg",
+                    alt: "대형 카펫 장비 청소 현장"
                 }
             ]
         },
@@ -70,12 +70,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/wax_Before.jpg",
-                    alt: "왁스 코팅 전"
+                    src: "img/sub_page/Wax_job.jpg",
+                    alt: "도서관 바닥 왁스 작업 현장"
                 },
                 {
-                    src: "img/mainimgs/wax_ing.jpg",
-                    alt: "왁스 코팅 중"
+                    src: "img/sub_page/wax_ing_3.jpg",
+                    alt: "공연장 바닥 왁스 작업 현장"
                 }
             ]
         },
@@ -89,11 +89,11 @@ if (section2) {
             [
                 {
                     src: "img/mainimgs/bird_spike_before.jpg",
-                    alt: "비둘기 퇴치 작업 전"
+                    alt: "공장 천장 비둘기 방지 작업 전"
                 },
                 {
                     src: "img/mainimgs/bird_spike_ing.jpg",
-                    alt: "비둘기 퇴치 작업 중"
+                    alt: "공장 천장 비둘기 방지 작업 중"
                 }
             ]
         },
@@ -106,12 +106,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/cleaning_event_Before.webp",
-                    alt: "행사장 청소 전"
+                    src: "img/sub_page/Event_cleaning_ing_2.jpg",
+                    alt: "경기장 관람석 청소 현장"
                 },
                 {
-                    src: "img/mainimgs/cleaning_event_ing.webp",
-                    alt: "행사장 청소 중"
+                    src: "img/sub_page/Event_cleaning_ing_3.jpg",
+                    alt: "행사 시설 벽면 청소 현장"
                 }
             ]
         },
@@ -124,12 +124,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/ship_After.jpg",
-                    alt: "선박 유람선 청소 전"
+                    src: "img/sub_page/ship_ing_1.jpg",
+                    alt: "선박 조타실 청소 현장"
                 },
                 {
-                    src: "img/mainimgs/ship_ing.jpg",
-                    alt: "선박 유람선 청소 중"
+                    src: "img/sub_page/ship_ing_3.jpg",
+                    alt: "선박 객실 청소 현장"
                 }
             ]
         },       
@@ -142,12 +142,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/building_wall_cleaning_Before.jpg",
-                    alt: "건물 외벽 청소 전"
+                    src: "img/sub_page/building_wall_ing_1.jpg",
+                    alt: "건물 저층 외벽 세척 현장"
                 },
                 {
-                    src: "img/mainimgs/building_wall_cleaning_ing.jpg",
-                    alt: "건물 외벽 청소 중"
+                    src: "img/sub_page/wall_cleaning_ing_1.jpg",
+                    alt: "석재 외벽 세척 현장"
                 }
             ]
         },
@@ -160,12 +160,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/statue_cleaning_1.jpg",
-                    alt: "시설물 청소 전"
+                    src: "img/sub_page/Equipment_painting_ing.jpg",
+                    alt: "공장 시설물 도색 작업 현장"
                 },
                 {
-                    src: "img/mainimgs/statue_cleaning_ing_1.jpg",
-                    alt: "시설물 청소 중"
+                    src: "img/sub_page/tunnel/tunnel_video_thumbnail.jpg",
+                    alt: "터널 시설물 보수 작업 현장"
                 }
             ]
         }, 
@@ -195,12 +195,12 @@ if (section2) {
             images:
             [
                 {
-                    src: "img/mainimgs/water_tank_Before.jpg",
-                    alt: "물탱크 청소 전"
+                    src: "img/sub_page/water_tank_ing_2.jpg",
+                    alt: "저수조 내부 오염 제거 현장"
                 },
                 {
-                    src: "img/mainimgs/water_tank_ing.jpg",
-                    alt: "물탱크 청소 중"
+                    src: "img/sub_page/water_tank_ing_3.jpg",
+                    alt: "대형 저수조 세척 현장"
                 }
             ]
         },
@@ -214,12 +214,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/Pond_Before.jpg",
-                    alt: "연못 청소 전"
+                    src: "img/sub_page/Pond_ing_2.jpg",
+                    alt: "정원 연못 내부 청소 현장"
                 },
                 {
-                    src: "img/mainimgs/Pond_ing.jpg",
-                    alt: "연못 청소 중"
+                    src: "img/sub_page/Pond_ing_3.jpg",
+                    alt: "석재 연못 청소 현장"
                 }
             ]
         },
@@ -232,12 +232,12 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/Disinfection_Before.jpg",
-                    alt: "소독 방역 전"
+                    src: "img/sub_page/Disinfection_1.jpg",
+                    alt: "사무실 소독 작업 현장"
                 },
                 {
-                    src: "img/mainimgs/Disinfection_ing.jpg",
-                    alt: "소독 방역 중"
+                    src: "img/sub_page/Disinfection_4.jpg",
+                    alt: "공공시설 소독 작업 현장"
                 }
             ]
         }
