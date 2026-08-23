@@ -160,8 +160,8 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/Equipment_painting_ing.jpg",
-                    alt: "공장 시설물 도색 작업 현장"
+                    src: "img/sub_page/rust_removal_ing_2.jpg",
+                    alt: "시설물 녹 제거 작업 현장"
                 },
                 {
                     src: "img/sub_page/tunnel/tunnel_video_thumbnail.jpg",
