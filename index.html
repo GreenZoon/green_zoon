@@ -316,7 +316,7 @@
 
         <div class="box_wrap box_wrap_2">
         
-            <div class="box box_2">
+            <div class="box box_2 box_3and2">
 
                 <div class="tit_wrap tit_wrap_2">
 
@@ -340,15 +340,13 @@
 
                 <div class="img_box">
 
-                    <p class="but_bg">작업 전</p>
                     <img src="img/mainimgs/factory_cleane_Before.jpg" alt="공장청소 공장청소_전">
 
                 </div>
 
                 <div class="img_box">
 
-                    <p class="but_bg">작업 중</p>
-                    <img src="img/mainimgs/factory_cleane_ing.jpg" alt="공장청소 공장청소_중">
+                    <img src="img/mainimgs/factory_cleane_After.jpg" alt="공장청소 완료 현장">
 
                 </div>
    
@@ -1082,21 +1080,19 @@
 
     </section>
 
-     <!-- /* --------- 섹션 4--------- */ -->
-
     <section class="section_4" id="mobile_community">
 
         <div class="tit_wrap ">
 
             <h2 class="page_title">
                 <span class="mobile_hide">갤러리</span>
-                <span class="mobile_only mobile_tit ">
+                <span class="mobile_only">
                     그린죤 커뮤니티
                     <span class="arrow right_arrow" aria-hidden="true"></span>
                 </span>
             </h2>
 
-            <a href="sub_page/Community/Community_main.html" class="tit_li">
+            <a href="" class="tit_li">
 
                 <p class="section_title">사진 갤러리와 커뮤니티를 통해 최신소식을 확인하세요.</p>
                 <span class="icon icon_4 arrow_up_right"></span>
@@ -1105,7 +1101,7 @@
 
         </div>
 
-        <div class="mobile_filter mobile_only   mobile_tit " aria-label="커뮤니티 게시글 분류">
+        <div class="mobile_filter mobile_only" aria-label="커뮤니티 게시글 분류">
 
             <button type="button" class="is_active">전체</button>
             <button type="button">공지사항</button>
@@ -1116,7 +1112,7 @@
 
         </div>
         
-        <div class="slide_control slide_control_4 mobile_tit ">
+        <div class="slide_control slide_control_4">
 
             <div class="clipping_mask_4">
 
@@ -1126,9 +1122,9 @@
 
                     <div class="box box_4" data-keyword="공지사항">
 
-                        <a class="box_in_wrap" href="sub_page/Community/Post.html?type=notice&amp;id=0">
+                        <a class="box_in_wrap" href="sub_page/Gallery/Post.html?type=galleryEvent&amp;id=0">
 
-                            <div class="img_wrap img_wrap_4 ">
+                            <div class="img_wrap img_wrap_4 award_square">
                                 <img src="img/mainimgs/Community_victory_2025.jpg" alt="2025년도 전국 위생관리협회">
                             </div>
 
@@ -1375,21 +1371,17 @@
         <div class="mobile_academy_wrap">
 
             <div class="tit_wrap mobile_tit">
-
                 <h2>그린죤 아카데미</h2>
                 <p>완벽한 청소를 위한 인재를 양성/발굴 합니다</p>
-
             </div>
 
             <div class="mobile_academy_list">
 
                 <div class="mobile_academy_item">
-
                     <span class="mobile_academy_icon">
                         <span class="icon presentation "></span>
                     </span>
                     <p>창업교육</p>
-
                 </div>
 
                 <div class="mobile_academy_item">
@@ -1452,29 +1444,23 @@
     <section class="mobile_event mobile_only">
 
         <a class="tit_wrap mobile_tit" href="sub_page/Community/Event.html">
-
             <h2 class="page_title">이벤트</h2>
             <span class="arrow right_arrow" aria-hidden="true"></span>
-
         </a>
 
         <a class="mobile_event_box" href="#">
 
             <div class="img_wrap mobile_img">
-
                 <img src="img/mainimgs/Event_2.jpg" alt="돌아온 피톤치드 이벤트 안내">
-            
             </div>
 
             <div class="tit_wrap">
-              
                 <h3 class="content_title">돌아온 피톤치드 이벤트!</h3>
 
                 <div class="mobile_event_info">
                     <span>진행중</span>
                     <time datetime="2026-03-01">26.03.01 ~ 03.24</time>
                 </div>
-           
             </div>
 
         </a>
@@ -1537,7 +1523,7 @@
 
             </div>
 
-            <div class="con_wrap_6_2">
+            <div class="con_wrap_in_wrap">
 
                 <div class="con con_6">
 
@@ -1558,16 +1544,19 @@
         </div>
 
         <div class="con_wrap">
+            <div class="Graph">
 
-            <!-- 원래는 이미기자 아닌 실제 사이트내의 작업량과 연동해서 그래프로 나오게 할 생각이였습니다.
-            근데 그건 프론트엔드로 구현하기 힘들어서 대신 이미지를 첨부합니다. -->
+                <!-- 원래는 이미기자 아닌 실제 사이트내의 작업량과 연동해서 그래프로 나오게 할 생각이였습니다.
+                근데 그건 프론트엔드로 구현하기 힘들어서 대신 이미지를 첨부합니다. -->
 
-            <img class="Graph" src="img/mainimgs/Graph.jpg" alt="3월 작업량 그래프">
-    
+                <img src="img/mainimgs/Graph.jpg" alt="3월 작업량 그래프">
+        
+            </div>
         </div>
 
     </section>
 
+    
     <section class="section_7">
 
         <h2 class="page_title">주요 거래처</h2>
@@ -1624,33 +1613,25 @@
 
                     <div class="client_group_7">
 
-                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
-                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
-                        <img class="client" src="img/mainimgs/client_GLASS_STORY.jpg" alt="GLASS STORY">
-                        <img class="client" src="img/mainimgs/client_dvc.jpg" alt="다비치 안경">
-                        <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
-                        <img class="client" src="img/mainimgs/client_ABC_MART.jpg" alt="ABC마트">
-                        <img class="client" src="img/mainimgs/client_SHINSEGAE.jpg" alt="신세계백화점">
-                        <img class="client" src="img/mainimgs/client_LOTTE.jpg" alt="롯데백화점">
-                        <img class="client" src="img/mainimgs/client_busan.jpg" alt="국립부산국악원">
-                        <img class="client" src="img/mainimgs/client_samsung.jpg" alt="삼성">
-                        <img class="client" src="img/mainimgs/client_BUFS.jpg" alt="부산외국어대학교">
+                        <img class="client" src="img/certification/Korea Quarantine Association.svg" alt="한국방역협회">
+                        <img class="client" src="img/certification/Korea Hygiene Management Association.svg" alt="한국건물위생관리협회">
+                        <img class="client" src="img/certification/Korea Environmental Conservation Agency.svg" alt="한국환경보전원">
+                        <img class="client" src="img/certification/Fair Trade Commission.gif" alt="공정거래위원회">
+                        <img class="client" src="img/certification/gyeongnam.svg" alt="경상남도">
+                        <img class="client" src="img/certification/Busan_FULL COLOR.png" alt="부산광역시">
+                        <img class="client" src="img/certification/gimhae.svg" alt="김해시">
 
                     </div>
 
                     <div class="client_group_7">
 
-                        <img class="client" src="img/mainimgs/client_LIG.jpg" alt="LIG손해보험">
-                        <img class="client" src="img/mainimgs/client_NEPA.jpg" alt="NEPA">
-                        <img class="client" src="img/mainimgs/client_GLASS_STORY.jpg" alt="GLASS STORY">
-                        <img class="client" src="img/mainimgs/client_dvc.jpg" alt="다비치 안경">
-                        <img class="client" src="img/mainimgs/client_NH.jpg" alt="NH농협">
-                        <img class="client" src="img/mainimgs/client_ABC_MART.jpg" alt="ABC마트">
-                        <img class="client" src="img/mainimgs/client_SHINSEGAE.jpg" alt="신세계백화점">
-                        <img class="client" src="img/mainimgs/client_LOTTE.jpg" alt="롯데백화점">
-                        <img class="client" src="img/mainimgs/client_busan.jpg" alt="국립부산국악원">
-                        <img class="client" src="img/mainimgs/client_samsung.jpg" alt="삼성">
-                        <img class="client" src="img/mainimgs/client_BUFS.jpg" alt="부산외국어대학교">
+                        <img class="client" src="img/certification/Korea Quarantine Association.svg" alt="한국방역협회">
+                        <img class="client" src="img/certification/Korea Hygiene Management Association.svg" alt="한국건물위생관리협회">
+                        <img class="client" src="img/certification/Korea Environmental Conservation Agency.svg" alt="한국환경보전원">
+                        <img class="client" src="img/certification/Fair Trade Commission.gif" alt="공정거래위원회">
+                        <img class="client" src="img/certification/gyeongnam.svg" alt="경상남도">
+                        <img class="client" src="img/certification/Busan_FULL COLOR.png" alt="부산광역시">
+                        <img class="client" src="img/certification/gimhae.svg" alt="김해시">
 
                     </div>
 
@@ -1667,7 +1648,6 @@
         <div class="tit_wrap tit_wrap_senter">
 
             <h2 class="page_title">(주)그린죤 커뮤니티</h2>
-
             <p class="section_title">
                 고객님과 그린죤의 소통과 이야기가 있는 곳입니다.
             </p>
@@ -1807,114 +1787,6 @@
 
     <div id="Request_Cleaning"></div>
     
-    <section class="section_end">
-
-        <button type="button" class="arrow left_arrow_2"></button>
-
-        <div class="slide_wrap slide_wrap_end">
-
-            <div class="clipping_mask_end">
-
-                <div class="certification_wrap">
-                    
-                    <img class="certification"
-                        src="img/certification/Korea Quarantine Association.svg"
-                        alt="Quarantine">
-
-                    <img class="certification"
-                        src="img/certification/Korea Hygiene Management Association.svg"
-                        alt="Hygiene">
-
-                    <img class="certification"
-                        src="img/certification/Korea Environmental Conservation Agency.svg"
-                        alt="Environmental">
-
-                    <img class="certification"
-                        src="img/certification/Fair Trade Commission.gif"
-                        alt="Fair Trade Commission">
-
-                    <img class="certification"
-                        src="img/certification/gyeongnam.svg"
-                        alt="gyeongnam">
-
-                    <img class="certification"
-                        src="img/certification/Busan_FULL COLOR.png"
-                        alt="Busan">
-
-                    <img class="certification"
-                        src="img/certification/gimhae.svg"
-                        alt="gimhae">
-
-                    <!-- ------------------------ -->
-
-                    <img class="certification"
-                        src="img/certification/Korea Quarantine Association.svg"
-                        alt="Quarantine">
-
-                    <img class="certification"
-                        src="img/certification/Korea Hygiene Management Association.svg"
-                        alt="Hygiene">
-
-                    <img class="certification"
-                        src="img/certification/Korea Environmental Conservation Agency.svg"
-                        alt="Environmental">
-
-                    <img class="certification"
-                        src="img/certification/Fair Trade Commission.gif"
-                        alt="Fair Trade Commission">
-
-                    <img class="certification"
-                        src="img/certification/gyeongnam.svg"
-                        alt="gyeongnam">
-
-                    <img class="certification"
-                        src="img/certification/Busan_FULL COLOR.png"
-                        alt="Busan">
-
-                    <img class="certification"
-                        src="img/certification/gimhae.svg"
-                        alt="gimhae">
-
-                    <!-- ------------------------ -->
-
-                    <img class="certification"
-                        src="img/certification/Korea Quarantine Association.svg"
-                        alt="Quarantine">
-
-                    <img class="certification"
-                        src="img/certification/Korea Hygiene Management Association.svg"
-                        alt="Hygiene">
-
-                    <img class="certification"
-                        src="img/certification/Korea Environmental Conservation Agency.svg"
-                        alt="Environmental">
-
-                    <img class="certification"
-                        src="img/certification/Fair Trade Commission.gif"
-                        alt="Fair Trade Commission">
-
-                    <img class="certification"
-                        src="img/certification/gyeongnam.svg"
-                        alt="gyeongnam">
-
-                    <img class="certification"
-                        src="img/certification/Busan_FULL COLOR.png"
-                        alt="Busan">
-
-                    <img class="certification"
-                        src="img/certification/gimhae.svg"
-                        alt="gimhae">
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <button type="button" class="arrow right_arrow_2"></button>
-
-    </section>
-
     <!-- 모바일 통화상담 가능시간 -->
 
     <section class=" mobile_only" id="mobile_contact">
@@ -1922,10 +1794,8 @@
         <div class="mobile_contact" >
 
             <div class="mobile_contact_title">
-
                 <h2>통화상담 가능시간</h2>
                 <strong>대표번호: <a href="tel:1899-1367">1899-1367</a></strong>
-           
             </div>
 
             <ul>

@@ -5,38 +5,47 @@
 
 .wrap{
 
-    width: 100%;
     display: flex;
+    width: 100%;
 
 }
 
 .slider_view {
 
-    width: 100%;
     overflow: hidden;
+    width: 100%;
 
 }
 
 .img_wrap_1 {
 
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
-    transition: transform 0.6s ease;
-        aspect-ratio: 16 / 5;
 
+    transition: transform 0.6s ease;
 }
 
 .main_img_1 {
 
-    width: 100%;
-    height: 100%;
     position: relative;
 
-    flex: 0 0 auto;
-
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
 }
 
+.img_wrap{
+    
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+
+}
 
 .img_wrap_1:active {
 
@@ -89,15 +98,16 @@
 
 }
 
-
-
 .slide_control_1 {
 
     position: absolute;
-    right: 3%;
-    bottom: 5%;
+    right: 9%;
+    bottom: 24px;
 
     z-index: 20;
+
+    display: flex;
+    align-items: center;
     gap: 2px;
 
 }
@@ -131,13 +141,19 @@
     width: 4px;
     height: 14px;
 
-    border-radius: 4px;
+    border-radius: 2px;
     background-color: #f2f2f2;
 }
 
 .slide_toggle.is_playing::before {
 
     left: 6px;
+
+}
+
+.slide_toggle.is_playing::after {
+
+    right: 6px;
 
 }
 
@@ -192,8 +208,8 @@
 
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16 / 5;
-
+    width: 100%;
+    height: 600px;
 }
 
 .main_img_in_wrap {
@@ -280,11 +296,11 @@
 
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 24px;
     position: relative;
     padding: 30px;
+    padding-bottom:34px;
 
 }
 
@@ -305,6 +321,8 @@
 }
 
 .button_2{
+
+    flex: 0 0 118px;
     
     width: 100%;
     max-width: 110px;
@@ -336,16 +354,23 @@
 
 
 .tit_wrap_2 p{
+
    
     color: #8E8E8E;
     font-weight: 500;
 
 }
 
+.box_wrap_2{
+
+    gap: 16px;
+}
+
 .icon_2{
 
     width: 100%;
     max-width: 48px;
+    height: 46px;
     padding: 4px;
     background-color: #8E8E8E;
 
@@ -395,16 +420,16 @@
 
 }
 
+.img_box img{
 
-.img_box p{
+    width: 100%;
+    height: 100%;
 
-    position: absolute;
-    right: 4%;
-    bottom: 4%;
-    z-index: 20;
-    font-size: 14px;
-
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
+
 
 .box_li{
 
@@ -434,7 +459,7 @@
     min-width: 100%;
 
     display: flex;
-    gap: 1%;
+    gap: 13px;
     
     cursor: grab;
     user-select: none;
@@ -697,6 +722,20 @@
 
 }
 
+.video_thumbnail img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 
 /* 재생 버튼 */
 
@@ -792,7 +831,7 @@
     width: 48px;
     height: 48px;
 
-    flex: 0 0 auto;
+    flex: 0 0 48px;
 
     padding: 0;
 
@@ -811,6 +850,8 @@
 .video_arrow .arrow {
 
     width: 40px;
+    height: 40px;
+
     background-color: #8e8e8e;
 
 }
@@ -986,7 +1027,7 @@
 
 .box_4{
 
-    flex: 0 0 auto;
+    flex: 0 0 325px;
     width: 325px;
 
     display: flex;
@@ -1012,7 +1053,7 @@
 .img_wrap_4 {
 
     width: 100%;
-    max-height: 200px;
+    height: 200px;
 
     display: block;
     overflow: hidden;
@@ -1021,6 +1062,30 @@
 
 }
 
+
+
+.img_wrap_4 img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 대상·최우수상 원본은 메인 카드에서도 항상 정사각형으로 표시한다. */
+.img_wrap_4.award_square {
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.img_wrap_4.award_square img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
 
 .slide_pagination_4 {
 
@@ -1096,7 +1161,7 @@
 
 .icon_4{
 
-    width: 1%;
+    width: 14px;
     flex: initial;
 }
 
@@ -1121,7 +1186,6 @@
 
     /* 캐러셀 전체 영역 */
     .img_wrap_5 {
-
         width: 100%;
         max-width: 1100px;
         height: 420px;
@@ -1204,6 +1268,11 @@
 
 /* --------- 섹션6--------- */
 
+.section_6 .con_wrap{
+
+    width: 50%;
+
+}
 
 .con_wrap_6{
 
@@ -1213,10 +1282,11 @@
 
 }
 
+.con_wrap_in_wrap{
 
-.con_6{
+    display: flex;
+    gap: 27px;
 
-    width: 50%;
 }
 
 .con_6 h3{
@@ -1228,15 +1298,9 @@
 
 }
 
-.con_wrap_6_2{
-
-    display: flex;
-    gap: 5%;
-}
 
 .Graph{
 
-    aspect-ratio: 4/3;
     border-radius: 20px;
     overflow: hidden;
 
@@ -1356,26 +1420,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 
 }
 
 .box_8{
 
     width: 100%;
+    aspect-ratio: 6 /1.2;
+    max-width: 390px;
+    
+    height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
     
-    gap:3%;
+    gap: 5px;
+    padding: 12px 16px;
+
     border-radius: 10px;
-    border:none;
+        border: #fff 2px solid;
     color: #8E8E8E;
 
 }
 
 .box_8:hover{
 
-     box-shadow: inset 0 -2px 0 transparent;
+    border: #009944 2px solid;
     color: #009944;
 
 }
@@ -1425,84 +1497,22 @@
 
 .box_in_wrap_8 .arrow_up_right{
 
-    width: 5%;
+    width: 12px;
+    height: 12px;
     background-color:    #8E8E8E;
 
 }
 
 .icon_8{
 
-    width: 12%;
+    width: 50%;
+    max-width: 48px;
+    height: 48px;
+
     background-color:    #8E8E8E;
 
 }
 
-
-/* --------- 섹션 END--------- */
-
-
-.section_end {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 150px;
-    gap: 12px;
-    border-top: 1px solid #dbdbdb;
-
-}
-
-.slide_wrap_end{
-
-    width: 100%;
-    max-width: 1000px;
-    height: 30px;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
-    position: relative;
-
-}
-    
-.certification_wrap{
-    
-    display: flex;
-    align-items: center;
-    gap: 36px;
-
-    width: max-content;
-    height: 27px;
-
-    transition: transform 0.4s ease;
-
-}
-
-.certification {
-
-    flex-shrink: 0;
-    width: 110px;
-    height: 27px;
-
-    object-fit: contain;
-
-}
-
-.clipping_mask_end{
-
-    width:100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    height:30px;
-    overflow: hidden;
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-}
 
 .mobile_only {
 
@@ -1550,6 +1560,13 @@
         display: none;
     }
 
+    .slide_control_1 {
+
+        right: 12px;
+        bottom: 12px;
+        gap: 6px;
+    }
+
     .slide_control_1 .slide_dot {
 
         width: 12px;
@@ -1561,13 +1578,17 @@
     }
 
     .slide_wrap_2 .arrow {
-
         display: none;
     }
-    
+
+    .slide_pagination_2 {
+
+        display: flex;
+
+    }
+
     .section_3,
-    .section_5,
-    .section_end {
+    .section_5 {
 
         display: none;
 
@@ -1691,6 +1712,9 @@
   
     .page_title {
 
+        font-size: clamp(1.1875rem, calc(1rem + 0.5vw), 1.375rem);
+        line-height: 1.5;
+        letter-spacing: -0.04em;
         color: #555;
 
     }
@@ -1761,7 +1785,7 @@
     .mobile_search button {
 
         width: 16px;
-        aspect-ratio: 1 / 1;
+        height: 16px;
         padding: 0;
 
         border: 0;
@@ -1800,9 +1824,10 @@
     .button_2 {
 
         width: 70px;
+        max-width: 70px;
         height: 93px;
         aspect-ratio: auto;
-        flex: 0 0 auto;
+        flex: 0 0 70px;
 
         position: relative;
 
@@ -1879,6 +1904,8 @@
 
     .button_2 p {
 
+        height: 18px;
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1927,7 +1954,7 @@
     .mobile_all_icon {
 
         width: 70px;
-        aspect-ratio: 1 / 1;
+        height: 70px;
 
         display: grid;
         grid-template-columns: repeat(2, 10px);
@@ -1943,6 +1970,12 @@
     .mobile_all_icon span {
 
         border: 2px solid #339933;
+
+    }
+
+    .slide_pagination_2 {
+
+        gap: 7px;
 
     }
 
@@ -2341,6 +2374,14 @@
 
     }
 
+    .mobile_img img {
+
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+
+    }
 
     .mobile_gallery_box h3 {
 
@@ -2370,6 +2411,15 @@
         background-color: #009944;
 
     }
+
+    /* 영상 갤러리 */
+
+    .video_title_wrap {
+
+        padding: 0 12px;
+
+    }
+
 
     /* 커뮤니티 */
 
@@ -2446,7 +2496,7 @@
         max-width: none;
         height: clamp(110px, 15vw, 140px);
         aspect-ratio: auto;
-        flex: 0 0 auto;
+        flex: 0 0 clamp(110px, 15vw, 140px);
 
         padding: 0;
         border: 0;
@@ -2464,8 +2514,15 @@
 
         width: clamp(150px, 21vw, 200px);
         height: clamp(100px, 14vw, 133px);
-        flex: 0 0 auto;
+        flex: 0 0 clamp(150px, 21vw, 200px);
 
+    }
+
+    .img_wrap_4.award_square {
+        width: clamp(110px, 20vw, 140px);
+        height: auto;
+        flex: 0 0 clamp(110px, 20vw, 140px);
+        aspect-ratio: 1 / 1;
     }
 
     .tit_wrap_4 {
@@ -2545,6 +2602,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 31px;
 
     }
 
@@ -2567,8 +2625,8 @@
     .mobile_academy_icon .icon{
 
         width: 28px;
+        flex: 0 0 28px;
         background-color: #009944;
-
     }
 
     .mobile_academy .mobile_tit {
@@ -2597,9 +2655,9 @@
     .mobile_academy_list {
 
         display: grid;
-        grid-template-columns: repeat(3, 75px);
+        grid-template-columns: repeat(3,140px);
         gap: 9px 12px;
-        
+
     }
 
     .mobile_academy_item {
@@ -2651,11 +2709,12 @@
         gap: 18px;
 
     }
-    
-    .mobile_img {
+
+    .mobile_academy_box .mobile_img {
 
         width: 150px;
-        flex: 0 0 auto;
+        height: 100px;
+        flex: 0 0 150px;
 
         border-radius: 7px;
         overflow: hidden;
@@ -2689,6 +2748,16 @@
 
     }
 
+    .mobile_event_box .mobile_img {
+
+        width: 173px;
+        height: 115px;
+        flex: 0 0 173px;
+
+        border-radius: 7px;
+        overflow: hidden;
+
+    }
 
     .mobile_event_box > .tit_wrap {
 
@@ -2917,3 +2986,14 @@
 
 }
 
+@media (max-width: 515px){
+
+    .mobile_academy_list {
+
+        display: grid;
+        grid-template-columns: repeat(3, 75px);
+        gap: 9px 12px;
+        
+    }
+
+}

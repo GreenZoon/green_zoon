@@ -38,8 +38,8 @@ if (section2) {
                     alt: "공장 청소 전"
                 },
                 {
-                    src: "img/mainimgs/factory_cleane_ing.jpg",
-                    alt: "공장 청소 중"
+                    src: "img/mainimgs/factory_cleane_After.jpg",
+                    alt: "공장 청소 완료 현장"
                 }
             ]
         },
