@@ -434,7 +434,11 @@
     color: #009944;
 }
 
-.company_doc_main,
+.company_doc_main{
+
+    display: flex;
+}
+
 .company_doc_grid {
     display: flex;
     flex-wrap: wrap;
