@@ -1154,17 +1154,9 @@ document.addEventListener(
     }
 );
 
-/* 마우스가 있는 기기에서는 1·2뎁스를 호버로 미리 봅니다. 터치 기기는 클릭 동작을 유지합니다. */
+/* 마우스가 있는 기기에서는 2뎁스만 호버로 3뎁스를 미리 봅니다. 터치 기기는 클릭 동작을 유지합니다. */
 if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     document.addEventListener("pointerover", (event) => {
-        const depth1Button = event.target.closest("[data-mobile-depth1]");
-        if (depth1Button) {
-            const depth1Index = Number(depth1Button.dataset.mobileDepth1);
-            setMobileMenuActive("#mobile_depth_1", depth1Button);
-            renderMobileDepth2(depth1Index);
-            return;
-        }
-
         const depth2Button = event.target.closest("[data-mobile-depth2]");
         if (depth2Button) {
             const depth1Index = Number(depth2Button.dataset.parentDepth1);

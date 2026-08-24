@@ -903,10 +903,13 @@
     .mobile_depth_2 .is_active,
     .mobile_depth_3 .is_active {
         background-color: transparent;
-        font-weight: 600;
+        color: #8e8e8e;
+        font-weight: 500;
     }
 
+    .mobile_depth_2 button:focus-visible,
     .mobile_depth_2 a:focus-visible,
+    .mobile_depth_3 button:focus-visible,
     .mobile_depth_3 a:focus-visible {
         color: #009944;
         text-decoration: underline;
@@ -915,18 +918,9 @@
     }
 
     @media (hover: hover) and (pointer: fine) {
-        .mobile_menu_column button:hover,
-        .mobile_menu_column a:hover {
-            color: #009944;
-        }
-
-        .mobile_depth_1 button:hover {
-            background-color: #009944;
-            color: #fff;
-            font-weight: 600;
-        }
-
+        .mobile_depth_2 button:hover,
         .mobile_depth_2 a:hover,
+        .mobile_depth_3 button:hover,
         .mobile_depth_3 a:hover {
             color: #009944;
             text-decoration: underline;
