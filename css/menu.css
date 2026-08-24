@@ -242,7 +242,7 @@
     .main_tit {
 
         padding: 7px;
-        gap: 2px;
+        gap: 7px;
 
 
         font-size: 1.1875rem;    /* 19px */
@@ -277,14 +277,18 @@
 
 @media (max-width: 768px) {
 
-html,
+    html,
     body {
-        max-width: 100%;
+
+        width: 100%;
         overflow-x: clip;
+
     }
 
     .gnb {
+
         display: none;
+
     }
 
 
