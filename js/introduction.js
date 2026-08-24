@@ -60,6 +60,33 @@
 
     function initializeIntroductionPage() {
         loadIntroductionMenu();
+        removeEmptyCertificateCards();
+    }
+
+    function removeEmptyCertificateCards() {
+
+        const cards = document.querySelectorAll(".company_docs .company_doc");
+
+        cards.forEach(function (card) {
+
+            const image = card.querySelector("img");
+
+            if (!image) {
+                card.remove();
+                return;
+            }
+
+            image.addEventListener("error", function () {
+                card.remove();
+            }, {
+                once: true
+            });
+
+            if (image.complete && image.naturalWidth === 0) {
+                card.remove();
+            }
+
+        });
     }
 
     if (document.readyState === "loading") {
