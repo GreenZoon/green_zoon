@@ -1,29 +1,41 @@
+(function () {
 
-const slider = document.querySelector(".section_1");
+    "use strict";
 
-if (slider) {
+    const slider = document.querySelector(".section_1");
+
+    if (!slider) {
+        return;
+    }
+
     const track = slider.querySelector(".img_wrap_1");
-    const slides = slider.querySelectorAll(".main_img_1");
-    const dots = slider.querySelectorAll(".slide_dot");
-
+    const slides = Array.from(slider.querySelectorAll(".main_img_1"));
+    const dots = Array.from(slider.querySelectorAll(".slide_control_1 .slide_dot"));
     const prevButton = slider.querySelector(".left_arrow");
     const nextButton = slider.querySelector(".right_arrow");
     const toggleButton = slider.querySelector(".slide_toggle");
 
+    if (!track || slides.length === 0) {
+        return;
+    }
+
     let currentIndex = 0;
-    let isPlaying = true;
     let autoPlayTimer = null;
+    let isPlaying = true;
 
     let isDragging = false;
     let startX = 0;
-    let currentX = 0;
     let dragDistance = 0;
     let hasDragged = false;
 
-    const dragThreshold = 80;
     const autoPlayDelay = 5000;
 
-    function showSlide(index, useAnimation = true) {
+    /*
+     * 이미지는 index.html에 작성된 img만 사용합니다.
+     * JS에서는 이미지 요소나 이미지 경로를 만들지 않습니다.
+     */
+    function showSlide(index, animate) {
+
         if (index < 0) {
             currentIndex = slides.length - 1;
         } else if (index >= slides.length) {
@@ -32,298 +44,191 @@ if (slider) {
             currentIndex = index;
         }
 
-        track.style.transition = useAnimation
-            ? "transform 0.6s ease"
-            : "none";
+        track.style.transition = animate === false
+            ? "none"
+            : "transform 0.6s ease";
 
         track.style.transform =
-            `translateX(-${currentIndex * 100}%)`;
+            "translate3d(-" + currentIndex * 100 + "%, 0, 0)";
 
-        slides.forEach((slide, slideIndex) => {
-            slide.classList.toggle(
-                "is_active",
-                slideIndex === currentIndex
-            );
+        slides.forEach(function (slide, slideIndex) {
+            const isActive = slideIndex === currentIndex;
+
+            slide.classList.toggle("is_active", isActive);
+            slide.setAttribute("aria-hidden", isActive ? "false" : "true");
         });
 
-        dots.forEach((dot, dotIndex) => {
-            dot.classList.toggle(
-                "is_active",
-                dotIndex === currentIndex
-            );
+        dots.forEach(function (dot, dotIndex) {
+            const isActive = dotIndex === currentIndex;
+
+            dot.classList.toggle("is_active", isActive);
+            dot.setAttribute("aria-current", isActive ? "true" : "false");
         });
     }
 
     function nextSlide() {
-        showSlide(currentIndex + 1);
+        showSlide(currentIndex + 1, true);
     }
 
     function prevSlide() {
-        showSlide(currentIndex - 1);
-    }
-
-    function startAutoPlay() {
-        stopAutoPlay();
-
-        autoPlayTimer = setInterval(() => {
-            nextSlide();
-        }, autoPlayDelay);
+        showSlide(currentIndex - 1, true);
     }
 
     function stopAutoPlay() {
-        if (autoPlayTimer !== null) {
-            clearInterval(autoPlayTimer);
+
+        if (autoPlayTimer) {
+            window.clearInterval(autoPlayTimer);
             autoPlayTimer = null;
         }
     }
 
+    function startAutoPlay() {
+
+        stopAutoPlay();
+
+        if (!isPlaying || slides.length < 2) {
+            return;
+        }
+
+        autoPlayTimer = window.setInterval(nextSlide, autoPlayDelay);
+    }
+
+    function restartAutoPlay() {
+
+        if (isPlaying) {
+            startAutoPlay();
+        }
+    }
+
     function updateToggleButton() {
+
         if (!toggleButton) {
             return;
         }
 
-        toggleButton.classList.toggle(
-            "is_playing",
-            isPlaying
-        );
-
-        toggleButton.classList.toggle(
-            "is_paused",
-            !isPlaying
-        );
-
+        toggleButton.classList.toggle("is_playing", isPlaying);
+        toggleButton.classList.toggle("is_paused", !isPlaying);
         toggleButton.setAttribute(
             "aria-label",
-            isPlaying
-                ? "자동재생 정지"
-                : "자동재생 시작"
+            isPlaying ? "자동재생 정지" : "자동재생 시작"
         );
-    }
-
-    function getPointerX(event) {
-        if (
-            event.touches &&
-            event.touches.length > 0
-        ) {
-            return event.touches[0].clientX;
-        }
-
-        if (
-            event.changedTouches &&
-            event.changedTouches.length > 0
-        ) {
-            return event.changedTouches[0].clientX;
-        }
-
-        return event.clientX;
     }
 
     function startDrag(event) {
-        if (
-            event.target.closest(
-                ".slide_control"
-            )
-        ) {
+
+        if (event.target.closest(".slide_control_1")) {
             return;
         }
 
         isDragging = true;
         hasDragged = false;
-
-        startX = getPointerX(event);
-        currentX = startX;
+        startX = event.clientX;
         dragDistance = 0;
 
         track.style.transition = "none";
-
-        if (isPlaying) {
-            stopAutoPlay();
-        }
+        track.setPointerCapture?.(event.pointerId);
+        stopAutoPlay();
     }
 
     function moveDrag(event) {
+
         if (!isDragging) {
             return;
         }
 
-        currentX = getPointerX(event);
-        dragDistance = currentX - startX;
+        dragDistance = event.clientX - startX;
 
         if (Math.abs(dragDistance) > 5) {
             hasDragged = true;
         }
 
-        const sliderWidth = slider.clientWidth;
-        const basePosition =
-            currentIndex * sliderWidth;
+        const slideWidth = slider.clientWidth;
+        const currentPosition = currentIndex * slideWidth;
 
         track.style.transform =
-            `translateX(${-(basePosition) + dragDistance}px)`;
-
-        if (event.cancelable) {
-            event.preventDefault();
-        }
+            "translate3d(" + (-currentPosition + dragDistance) + "px, 0, 0)";
     }
 
-    function endDrag() {
+    function endDrag(event) {
+
         if (!isDragging) {
             return;
         }
 
         isDragging = false;
+        track.releasePointerCapture?.(event.pointerId);
+
+        const slideWidth = slider.clientWidth;
+        const dragThreshold = Math.min(80, slideWidth * 0.15);
 
         if (dragDistance <= -dragThreshold) {
             nextSlide();
-        } else if (
-            dragDistance >= dragThreshold
-        ) {
+        } else if (dragDistance >= dragThreshold) {
             prevSlide();
         } else {
-            showSlide(currentIndex);
-        }
-
-        if (isPlaying) {
-            startAutoPlay();
+            showSlide(currentIndex, true);
         }
 
         dragDistance = 0;
+        restartAutoPlay();
     }
 
-    nextButton?.addEventListener(
-        "click",
-        () => {
-            nextSlide();
-
-            if (isPlaying) {
-                startAutoPlay();
-            }
-        }
-    );
-
-    prevButton?.addEventListener(
-        "click",
-        () => {
-            prevSlide();
-
-            if (isPlaying) {
-                startAutoPlay();
-            }
-        }
-    );
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener(
-            "click",
-            () => {
-                showSlide(index);
-
-                if (isPlaying) {
-                    startAutoPlay();
-                }
-            }
-        );
+    nextButton?.addEventListener("click", function () {
+        nextSlide();
+        restartAutoPlay();
     });
 
-    toggleButton?.addEventListener(
-        "click",
-        () => {
-            isPlaying = !isPlaying;
+    prevButton?.addEventListener("click", function () {
+        prevSlide();
+        restartAutoPlay();
+    });
 
-            if (isPlaying) {
-                startAutoPlay();
-            } else {
-                stopAutoPlay();
-            }
+    dots.forEach(function (dot, index) {
+        dot.addEventListener("click", function () {
+            showSlide(index, true);
+            restartAutoPlay();
+        });
+    });
 
-            updateToggleButton();
+    toggleButton?.addEventListener("click", function () {
+
+        isPlaying = !isPlaying;
+
+        if (isPlaying) {
+            startAutoPlay();
+        } else {
+            stopAutoPlay();
         }
-    );
 
-    track.addEventListener(
-        "mousedown",
-        startDrag
-    );
+        updateToggleButton();
+    });
 
-    window.addEventListener(
-        "mousemove",
-        moveDrag
-    );
+    track.addEventListener("pointerdown", startDrag);
+    track.addEventListener("pointermove", moveDrag);
+    track.addEventListener("pointerup", endDrag);
+    track.addEventListener("pointercancel", endDrag);
 
-    window.addEventListener(
-        "mouseup",
-        endDrag
-    );
+    track.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+    });
 
-    track.addEventListener(
-        "mouseleave",
-        () => {
-            if (isDragging) {
-                endDrag();
-            }
+    slider.addEventListener("click", function (event) {
+
+        if (!hasDragged) {
+            return;
         }
-    );
 
-    track.addEventListener(
-        "touchstart",
-        startDrag,
-        {
-            passive: true
-        }
-    );
+        event.preventDefault();
+        event.stopPropagation();
+        hasDragged = false;
+    });
 
-    track.addEventListener(
-        "touchmove",
-        moveDrag,
-        {
-            passive: false
-        }
-    );
-
-    track.addEventListener(
-        "touchend",
-        endDrag,
-        {
-            passive: true
-        }
-    );
-
-    track.addEventListener(
-        "touchcancel",
-        endDrag,
-        {
-            passive: true
-        }
-    );
-
-    track.addEventListener(
-        "dragstart",
-        (event) => {
-            event.preventDefault();
-        }
-    );
-
-    slider.addEventListener(
-        "click",
-        (event) => {
-            if (hasDragged) {
-                event.preventDefault();
-                event.stopPropagation();
-                hasDragged = false;
-            }
-        }
-    );
-
-    window.addEventListener(
-        "resize",
-        () => {
-            showSlide(
-                currentIndex,
-                false
-            );
-        }
-    );
+    window.addEventListener("resize", function () {
+        showSlide(currentIndex, false);
+    });
 
     showSlide(0, false);
     updateToggleButton();
     startAutoPlay();
-}
+
+})();
