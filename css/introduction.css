@@ -291,7 +291,8 @@
 
 .company_portrait {
     flex: 0 0 auto;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     aspect-ratio:   1 /2;
     align-self: center;
   

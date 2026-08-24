@@ -157,7 +157,7 @@
         "img/sub_page/gallery/event/gallery_event_03.png",
         "img/sub_page/gallery/event/gallery_event_04.png",
         "img/sub_page/gallery/event/gallery_event_05.png",
-        "img/sub_page/gallery/event/gallery_event_04.png",
+        "",
         "img/sub_page/news_event.jpg",
         "", "", "", "",
         "img/sub_page/gallery/event/gallery_event_08.png",
