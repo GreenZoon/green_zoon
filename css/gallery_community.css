@@ -577,8 +577,13 @@
     .sub_category a:focus-visible { border-bottom-color: #009944; background: transparent; color: #009944; }
     .sub_content { width: 94%; }
     .content_head { align-items: flex-start; flex-direction: column; }
-    .content_head h2 { font-size: 25px; }
-    .content_search { gap: 8px; }
+    .content_head h2 { font-size: 25px; white-space: normal; }
+    .content_search {
+        width: 100%;
+        flex: 0 0 auto;
+        align-self: stretch;
+        gap: 8px;
+    }
     .content_search button, .content_search input { min-height: 34px; border-radius: 5px; font-size: 12px; }
     .content_search button { flex-basis: 56px; }
     .content_search input { padding: 0 10px; }
