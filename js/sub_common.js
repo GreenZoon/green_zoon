@@ -1372,6 +1372,13 @@
             ),
 
             loadComponent(
+                "Community_sub_menu",
+                sitePath(
+                    "components/sub_pag/Community_sub_menu.html"
+                )
+            ),
+
+            loadComponent(
                 "Request_Cleaning",
                 sitePath(
                     "components/sub_pag/Request_Cleaning.html"
@@ -1465,6 +1472,34 @@
         const currentPath =
             window.location.pathname.replace(/\/+$/, "");
 
+        let communityPage =
+            document.body.dataset.communityPage;
+
+
+        /* 게시글 상세 화면은 주소의 게시글 종류로 활성 메뉴를 정한다. */
+
+        if (
+            !communityPage &&
+            document.body.dataset.postPage === "community"
+        ) {
+
+            const postType =
+                new URLSearchParams(window.location.search)
+                    .get("type");
+
+            const communityPages = {
+                notice: "notice",
+                event: "event",
+                information: "information",
+                review: "reviews"
+            };
+
+            communityPage =
+                communityPages[postType] ||
+                "notice";
+
+        }
+
         document
             .querySelectorAll(
                 ".subpage_nav_link:not(.company_tit)"
@@ -1476,7 +1511,14 @@
                         .pathname
                         .replace(/\/+$/, "");
 
-                if (linkPath === currentPath) {
+                const isCommunityPage =
+                    communityPage &&
+                    link.dataset.communityPage === communityPage;
+
+                if (
+                    linkPath === currentPath ||
+                    isCommunityPage
+                ) {
                     link.setAttribute("aria-current", "page");
                 } else {
                     link.removeAttribute("aria-current");
