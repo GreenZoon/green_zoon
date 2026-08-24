@@ -580,13 +580,6 @@
     background-color: #009944;
 }
 
-@media (max-width: 768px) {
-    .summary_icon {
-        width: 12%;
-        flex-basis: 12%;
-    }
-}
-
 .empty_message {
     color: #8e8e8e;
     font-size: 15px;
@@ -787,6 +780,11 @@ body.modal_open {
 }
 
 @media (max-width: 768px) {
+
+    .summary_icon {
+        width: 12%;
+        flex-basis: 12%;
+    }
     
     .application_main {
         width: 100%;

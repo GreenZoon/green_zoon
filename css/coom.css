@@ -1834,8 +1834,8 @@ svg {
         padding: 0 20px;
 
         position: sticky;
-        /* 실제 모바일 헤더 높이를 JS가 기록하며 경계는 2px 겹친다. */
-        top: calc(var(--mobile-header-height, 50px) - 2px);
+        /* 실제 모바일 헤더 높이보다 2px 위에 붙인 값을 JS가 기록한다. */
+        top: var(--mobile-back-top, 48px);
         z-index: 999;
 
         display: flex;

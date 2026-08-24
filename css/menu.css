@@ -305,11 +305,11 @@
         color: #555;
 
         position: fixed;
-        top: 50px;
+        top: var(--mobile-menu-top, 50px);
         right: 0;
         bottom: 0;
         left: 0;
-        max-height: calc(100dvh - 50px);
+        max-height: var(--mobile-menu-height, 100dvh);
         overflow-y: auto;
         overscroll-behavior: contain;
         contain: inline-size;
@@ -798,9 +798,9 @@
 
 
     .mobile_menu_grid span {
-        width: calc(50% - 2px);
-        height: calc(50% - 2px);
-        flex: 0 0 calc(50% - 2px);
+        width: 40%;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 40%;
         border: 1.5px solid #555;
     }
 

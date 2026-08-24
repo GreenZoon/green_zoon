@@ -596,21 +596,19 @@
 }
 
 
-/* 기본 상태: 표시 */
+/* 큰 화면에서는 숨기고, 1599px 이하에서 슬라이드 조작 표시 */
 .slide_wrap_2 .arrow,
 .slide_pagination_2 {
-    
-    display: flex;
-   
+
+    display: none;
+
 }
 
-
-/* 큰 화면: 숨김 */
-@media (min-width: 1600px) {
+@media (max-width: 1599px) {
 
     .slide_wrap_2 .arrow,
     .slide_pagination_2 {
-        display: none;
+        display: flex;
     }
 }
 
@@ -1692,7 +1690,7 @@
     }
 
     .video_viewport {
-        width: calc(100vw - clamp(20px, 4vw, 40px));
+        width: 100%;
         overflow: hidden;
     }
 
@@ -1784,7 +1782,7 @@
   
     .page_title {
 
-        font-size: clamp(1.1875rem, calc(1rem + 0.5vw), 1.375rem);
+        font-size: 1.25rem;
         line-height: 1.5;
         letter-spacing: -0.04em;
         color: #555;
@@ -2076,7 +2074,7 @@
 
     .mobile_box_wrap {
 
-        height: clamp(172px, 24vw, 220px);
+        height: 200px;
         gap: 7px;
         margin-bottom: 14px;
 
@@ -2085,7 +2083,7 @@
     .mobile_box {
 
         width: 100%;
-        padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px);
+        padding: 12px 2.5%;
 
         border: 1px solid #339933;
         border-radius: 9px;
@@ -2096,8 +2094,8 @@
 
     .mobile_box_big {
 
-        width: calc((100% - 7px) * 0.47);
-        flex: 0 0 calc((100% - 7px) * 0.47);
+        width: 47%;
+        flex: 0 0 47%;
 
         display: flex;
         flex-direction: column;
@@ -2112,8 +2110,9 @@
 
     .mobile_box_big > .icon {
 
-        width: clamp(40px, 5vw, 52px);
-        height: clamp(40px, 5vw, 52px);
+        width: 12%;
+        height: auto;
+        aspect-ratio: 1 / 1;
         background-color: #f8f8f8;
 
     }
@@ -2125,7 +2124,7 @@
         gap: 6px;
 
         font-weight: 600;
-        font-size: clamp(1.1875rem, calc(1rem + 0.5vw), 1.375rem);
+        font-size: 1.25rem;
         letter-spacing: -0.04em;
 
     }
@@ -2151,7 +2150,7 @@
 
     .mobile_box_side .mobile_box {
 
-        height: calc((100% - 12px) / 2);
+        height: 48%;
 
         display: flex;
         flex-direction: column;
@@ -2176,7 +2175,7 @@
 
     .mobile_box_side strong {
 
-        font-size: clamp(0.875rem, calc(0.75rem + 0.3vw), 1rem);
+        font-size: 1rem;
         line-height: 1.5;
         font-weight: 600;
 
@@ -2189,7 +2188,7 @@
         justify-content: space-between;
         gap: 8px;
 
-        font-size: clamp(0.75rem, calc(0.68rem + 0.22vw), 0.875rem);
+        font-size: 0.875rem;
 
     }
 
@@ -2203,7 +2202,7 @@
 
     .mobile_box_info .icon {
 
-        width: clamp(24px, 3vw, 30px);
+        width: 10%;
         background-color: currentColor;
 
     }
@@ -2226,7 +2225,7 @@
 
     .mobile_schedule_box {
 
-        width: calc((100% - 7px) / 2);
+        width: 49%;
         height: 168px;
         aspect-ratio: 1 / 1;
 
@@ -2524,7 +2523,7 @@
         background-color: #fff;
 
         color: #8e8e8e;
-        font-size: clamp(0.875rem, calc(0.75rem + 0.3vw), 1rem);
+        font-size: 1rem;
 
     }
 
@@ -2562,9 +2561,9 @@
 
         width: 100%;
         max-width: none;
-        height: clamp(110px, 15vw, 140px);
+        height: 130px;
         aspect-ratio: auto;
-        flex: 0 0 clamp(110px, 15vw, 140px);
+        flex: 0 0 130px;
 
         padding: 0;
         border: 0;
@@ -2574,22 +2573,22 @@
     .box_4 .box_in_wrap {
 
         flex-direction: row;
-        gap: clamp(12px, 2vw, 18px);
+        gap: 2%;
 
     }
 
     .img_wrap_4 {
 
-        width: clamp(150px, 21vw, 200px);
-        height: clamp(100px, 14vw, 133px);
-        flex: 0 0 clamp(150px, 21vw, 200px);
+        width: 30%;
+        height: 100%;
+        flex: 0 0 30%;
 
     }
 
     .img_wrap_4.award_square {
-        width: clamp(110px, 20vw, 140px);
+        width: 25%;
         height: auto;
-        flex: 0 0 clamp(110px, 20vw, 140px);
+        flex: 0 0 25%;
         aspect-ratio: 1 / 1;
     }
 

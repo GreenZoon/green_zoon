@@ -217,7 +217,8 @@ input{
     align-items: center;
     justify-content: center;
 
-    width: min(1440px, calc(100% - 80px));
+    width: 94%;
+    max-width: 1440px;
 
 }
 

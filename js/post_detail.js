@@ -350,8 +350,13 @@
         let contentIndex = 0;
         document.querySelectorAll(selector).forEach(function (card) {
             if (card.dataset.customReview === "true") return;
-            if (posts[type] && posts[type][contentIndex]) {
-                card.href = postUrl(type, contentIndex);
+            if (card.dataset.customLink === "true") return;
+            const hasFixedId = card.dataset.postId !== undefined;
+            const fixedId = Number(card.dataset.postId);
+            const postId = hasFixedId && Number.isInteger(fixedId) ? fixedId : contentIndex;
+
+            if (posts[type] && posts[type][postId]) {
+                card.href = postUrl(type, postId);
             }
             contentIndex += 1;
         });
@@ -368,7 +373,7 @@
         document.querySelectorAll(".notice_list .board_row").forEach(function (row) {
             const title = row.querySelector(".board_title");
             const text = title ? title.textContent.trim() : "";
-            if (text.includes("2025년 전국 건물위생관리")) row.href = postUrl("notice", 0);
+            if (text.includes("2025년 전국 건물위생관리")) row.href = new URL("sub_page/Introduction/Awards.html", rootUrl).href;
             if (text.includes("2023년 전국 건물위생관리")) row.href = postUrl("notice", 10);
         });
 
@@ -382,7 +387,7 @@
 
         document.querySelectorAll("a.box_in_wrap, .mobile_event_box").forEach(function (card) {
             const text = card.textContent.replace(/\s+/g, " ").trim();
-            if (text.includes("2025년 전국 건물위생관리")) card.href = postUrl("notice", 0);
+            if (text.includes("2025년 전국 건물위생관리")) card.href = new URL("sub_page/Introduction/Awards.html", rootUrl).href;
             else if (text.includes("2023년 전국 건물위생관리")) card.href = postUrl("notice", 10);
             else if (text.includes("빌딩 방역")) card.href = postUrl("work", 0);
             else if (text.includes("견적금액")) card.href = new URL("sub_page/Community/FAQ.html", rootUrl).href;
@@ -901,26 +906,34 @@
             return "";
         }
 
-        const images = post.images.length ? post.images : [""];
+        const images = post.images.filter(Boolean);
+
+        if (!images.length) {
+            return "";
+        }
 
         if (post.type === "video") {
             const image = images[0];
             return '<div class="post_media post_video">' +
-                (image ? '<img src="' + asset(image) + '" alt="' + post.title + '">' : '<span class="empty_image">영상 이미지 연결</span>') +
+                '<img src="' + asset(image) + '" alt="' + post.title + '">' +
                 '<span class="gallery_play" aria-hidden="true"><span class="icon play gallery_play_icon"></span></span></div>';
         }
 
         return images.map(function (image, index) {
             return '<figure class="post_media">' +
-                (image ? '<img src="' + asset(image) + '" alt="' + post.title + ' ' + (index + 1) + '">' : '<span class="empty_image">이미지 연결</span>') +
+                '<img src="' + asset(image) + '" alt="' + post.title + ' ' + (index + 1) + '">' +
                 '<figcaption>' + post.title + (index ? " 작업 과정" : " 현장") + '</figcaption></figure>';
         }).join("");
     }
 
     function relatedMarkup(post, list) {
-        const cards = list.map(function (item) {
+        const visibleList = list.filter(function (item) {
+            return item.type === "notice" || Boolean(item.image);
+        });
+
+        const cards = visibleList.map(function (item) {
             return '<a class="post_card" href="' + postUrl(item.type, item.id) + '">' +
-                (item.image ? '<img src="' + asset(item.image) + '" alt="' + item.title + '">' : item.type === "notice" ? "" : '<span class="empty_image">이미지 연결</span>') +
+                (item.image ? '<img src="' + asset(item.image) + '" alt="' + item.title + '">' : "") +
                 '<strong>' + item.title + '</strong><time>' + item.date + '</time></a>';
         }).join("");
 

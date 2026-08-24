@@ -254,6 +254,21 @@ function syncSubBackPosition() {
             "--mobile-header-height",
             `${height}px`
         );
+
+        document.documentElement.style.setProperty(
+            "--mobile-back-top",
+            `${Math.max(height - 2, 0)}px`
+        );
+
+        document.documentElement.style.setProperty(
+            "--mobile-menu-top",
+            `${height}px`
+        );
+
+        document.documentElement.style.setProperty(
+            "--mobile-menu-height",
+            `${Math.max(window.innerHeight - height, 0)}px`
+        );
     }
 
 }
