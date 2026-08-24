@@ -382,7 +382,7 @@ footer {
     .footer_brand {
         width: 10%;
         max-width: none;
-        flex: 0 0 10%;
+      
     }
 
     .footer_logo {
@@ -392,12 +392,11 @@ footer {
 
     .footer_company {
         width: 18%;
-        flex: 0 0 18%;
+
     }
 
     .footer_branch {
-        width: 18%;
-        flex: 0 0 18%;
+                width: 24%;
     }
 
     .footer_company p,
@@ -409,7 +408,7 @@ footer {
 
     .footer_sub_nav {
         width: 42%;
-        flex: 1 1 42%;
+    
 
         display: flex;
         justify-content: space-between;
@@ -419,7 +418,7 @@ footer {
 
     .footer_sub_nav ul {
         width: 30%;
-        flex: 0 0 30%;
+    
         gap: 8px;
     }
 
