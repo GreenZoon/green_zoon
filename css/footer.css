@@ -349,6 +349,10 @@ footer {
         gap: 38px 3%;
     }
 
+    .footer_sns {
+        margin-left: 11%;
+    }
+
 
     /*
         17px 디자인을 최대한 유지하되
@@ -372,26 +376,28 @@ footer {
     }
 
     .footer_inner {
-        gap: 28px 4%;
+        gap: 28px 2%;
     }
 
     .footer_brand {
+        width: 10%;
+        max-width: none;
+        flex: 0 0 10%;
+    }
+
+    .footer_logo {
+        width: 100%;
+        max-width: 100px;
+    }
+
+    .footer_company {
         width: 18%;
         flex: 0 0 18%;
     }
 
-    .footer_logo {
-        width: 100px;
-    }
-
-    .footer_company {
-        width: 36%;
-        flex: 0 0 36%;
-    }
-
     .footer_branch {
-        width: 38%;
-        flex: 0 0 38%;
+        width: 18%;
+        flex: 0 0 18%;
     }
 
     .footer_company p,
@@ -402,13 +408,13 @@ footer {
 
 
     .footer_sub_nav {
-        width: 100%;
-        flex: 0 0 100%;
+        width: 42%;
+        flex: 1 1 42%;
 
         display: flex;
         justify-content: space-between;
 
-        gap: 40px;
+        gap: 20px;
     }
 
     .footer_sub_nav ul {
@@ -425,8 +431,8 @@ footer {
 
     .footer_sns {
         width: 18%;
-        margin-left: 22%;
-        flex: 0 0 18%;
+        margin-left: 12%;
+        flex: 0 0 auto;
         align-self: center;
 
         gap: 12px;
@@ -434,12 +440,12 @@ footer {
 
 
     .footer_policy {
-        width: 56%;
-        flex: 1 1 56%;
+        width: 34%;
+        flex: 1 1 auto;
         justify-content: flex-start;
         align-self: center;
 
-        gap: 32px;
+        gap: 24px;
     }
 
 
@@ -449,8 +455,8 @@ footer {
 
 
     .footer_copy {
-        width: 100%;
-        flex: 0 0 100%;
+        width: 28%;
+        flex: 0 0 auto;
 
         align-items: flex-end;
 
@@ -491,7 +497,8 @@ footer {
 
     .footer_brand {
         width: 100%;
-        flex: 0 0 100%;
+        max-width: none;
+        flex: 0 0 auto;
     }
 
     .footer_logo {
@@ -563,7 +570,7 @@ footer {
 
     .footer_company p {
 
-        font-size: 10px;
+        font-size: 0.75rem;
         line-height: 1.55;
     }
 
