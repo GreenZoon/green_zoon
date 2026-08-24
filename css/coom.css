@@ -52,7 +52,7 @@ a {
 
 /* 이미지 */
 
-img {
+img,video{
 
     width: 100%;
     height: 100%;
@@ -69,7 +69,37 @@ img {
 button {
 
     font: inherit;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    object-position: center;
+    user-select: none;
+}
 
+.img_wrap,.video_thumbnai{
+    
+    width: 100%;
+    height: 100%;
+
+    flex: 0 0 auto;
+    display: flex;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+    
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+
+}
+
+.man_sled img,.main_img_in_wrap img{
+
+    aspect-ratio: 16 / 5;
+
+}
+
+.man_sled > picture {
+
+    height: auto;
 }
 
 /* =========================================================
@@ -462,7 +492,7 @@ section {
     width: 100%;
 
     display: flex;
-    gap: 16px;
+    gap: 1%;
 
 }
 
@@ -638,7 +668,7 @@ section {
 svg {
 
     width: 24px;
-aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1;
 
     flex: 0 0 auto;
 
@@ -674,7 +704,7 @@ aspect-ratio: 1 / 1;
     position: relative;
 
     width: 24px;
-aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1;
     padding: 0;
 
     border: 0;
@@ -687,7 +717,7 @@ aspect-ratio: 1 / 1;
 
 .icon,.icon_2,.arrow,.mobile_icon{
 
-    width: 24px;
+    width: 3%;
     aspect-ratio: 1 / 1;
 
     /* 아이콘 크기를 따로 변경하면 그 크기를 그대로 사용 */
@@ -1585,7 +1615,7 @@ aspect-ratio: 1 / 1;
 
     section {
 
-        padding: 48px 50px;
+        padding: 45px 50px;
         gap: 32px;
 
     }
@@ -1831,7 +1861,7 @@ aspect-ratio: 1 / 1;
         content: "";
 
         width: 12px;
-        height: 12px;
+        aspect-ratio: 1 / 1;
         flex: 0 0 auto;
 
         background-color: currentColor;

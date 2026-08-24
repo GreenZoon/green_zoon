@@ -17,16 +17,6 @@
     border-radius: 15px;
 }
 
-.main_img img {
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
 .tit_in_wrap {
 
     display: flex;
@@ -169,8 +159,7 @@
 .section_2 > .img_wrap,
 .section_2 > .tit_wrap {
 
-    width: 48%;
-    max-width: 560px;
+       width: 50%;
 }
 
 .Cleaning_tit_wrap > p{
@@ -519,7 +508,7 @@
     width: 100%;
     height: auto;
 
-    aspect-ratio: 39 / 8;
+    aspect-ratio: 9 / 3;
 
     position: relative;
 
@@ -554,7 +543,7 @@
 
     flex: 0 0 auto;
 
-    gap: 2%;
+    gap:3%;
 
     cursor: grab;
 
@@ -572,10 +561,7 @@
 
 .sub_slide_img {
 
-    width: 32%;
-    height: 100%;
-
-    flex: 0 0 32%;
+    width: 33%;
 
     position: relative;
 
@@ -586,16 +572,12 @@
 
 .sub_slide_img img {
 
-    display: block;
-
-    width: 100%;
-    height: 100%;
 
     object-fit: cover;
 
     user-select: none;
-
     -webkit-user-drag: none;
+
 }
 
 .sub_pag_slide_wrap > .arrow {
@@ -725,16 +707,6 @@
     border-radius: 15px;
 }
 
-.tix_box .img_wrap img {
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
 .tix_box .tit_wrap {
 
     width: 55%;
@@ -803,25 +775,6 @@
     background-position: center;
 }
 
-.video_thumbnail > img {
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.video_thumbnail > video {
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
 
 .video_thumbnail > iframe {
 
