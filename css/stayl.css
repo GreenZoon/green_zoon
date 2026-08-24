@@ -1427,6 +1427,8 @@
 
 .box_wrap_8{
 
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1436,7 +1438,9 @@
 
 .box_8{
 
-    width: 100%;
+    width: 31%;
+    min-width: 0;
+    flex: 0 1 31%;
     aspect-ratio: 6 /1.2;
     max-width: 390px;
     
@@ -1475,6 +1479,8 @@
 }
 
 .box_in_wrap_8{
+
+    min-width: 0;
 
     display: flex;
     align-items: start;
@@ -1520,6 +1526,36 @@
     height: 48px;
 
     background-color:    #8E8E8E;
+
+}
+
+
+@media (max-width: 1200px) {
+
+    .box_wrap_8_wrap {
+        gap: 20px;
+    }
+
+    .box_wrap_8 {
+        gap: 2%;
+    }
+
+    .box_8 {
+        width: 32%;
+        flex: 0 1 32%;
+        padding: 10px 12px;
+    }
+
+    .icon_8 {
+        width: 14%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .box_in_wrap_8 p {
+        font-size: 0.75rem;
+        white-space: normal;
+    }
 
 }
 
