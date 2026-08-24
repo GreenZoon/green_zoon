@@ -372,6 +372,9 @@
 .company_clients h1,
 .company_clients h2 {
     color: #555;
+}
+
+.company_clients h2 {
     font-size: 2.5rem;
     line-height: 1.25;
     letter-spacing: -0.04em;
