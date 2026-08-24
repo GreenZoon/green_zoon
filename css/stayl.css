@@ -109,7 +109,18 @@
 
     display: flex;
     align-items: center;
-    gap: 2px;
+
+}
+
+.slide_control_1 > .but_bg {
+
+    margin-right: 2px;
+
+}
+
+.slide_control_1 > .but_bg:last-child {
+
+    margin-right: 0;
 
 }
 
@@ -1563,19 +1574,79 @@
 
     .slide_control_1 {
 
-        right: 12px;
-        bottom: 12px;
-        gap: 6px;
+        right: auto;
+        bottom: 14px;
+        left: 20px;
     }
 
-    .slide_control_1 .slide_dot {
+    .slide_control_1 .slide_pagination {
 
-        width: 12px;
-        height: 4px;
+        display: none;
     }
 
-    .slide_control_1 .slide_dot.is_active {
+    .slide_count.mobile_only {
+
+        display: flex;
+        height: 24px;
+        margin-right: 4px;
+        padding: 0 18px;
+
+        border-radius: 5px;
+
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .count_slash {
+
+        margin: 0 3px;
+    }
+
+    .slide_control_1 > .but_bg {
+
+        height: 24px;
+        background-color: rgba(29, 29, 29, 0.5);
+    }
+
+    .slide_control_1 > .but_bg:not(.slide_count) {
+
         width: 24px;
+        padding: 0;
+    }
+
+    .slide_control_1 .slide_toggle {
+
+        width: 24px;
+        height: 24px;
+    }
+
+    .slide_toggle.is_playing::before,
+    .slide_toggle.is_playing::after {
+
+        top: 7px;
+        width: 2px;
+        height: 10px;
+        border-radius: 1px;
+    }
+
+    .slide_toggle.is_playing::before {
+
+        left: 8px;
+    }
+
+    .slide_toggle.is_playing::after {
+
+        right: 8px;
+    }
+
+    .slide_toggle.is_paused::before {
+
+        top: 6px;
+        left: 9px;
+
+        border-top-width: 6px;
+        border-bottom-width: 6px;
+        border-left-width: 9px;
     }
 
     .slide_wrap_2 .arrow {
@@ -2224,7 +2295,11 @@
 
     }
 
-    .mobile_calendar h3,
+    .mobile_calendar h3{
+
+        font-weight: 700;
+        color: #555;
+    }
     .mobile_week {
 
         font-size: 0.875rem;
@@ -2410,14 +2485,6 @@
 
         width: 24px;
         background-color: #009944;
-
-    }
-
-    /* 영상 갤러리 */
-
-    .video_title_wrap {
-
-        padding: 0 12px;
 
     }
 

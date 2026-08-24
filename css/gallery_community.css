@@ -345,10 +345,9 @@
 }
 
 .post_head h1 {
+
     color: #555;
-    font-size: 40px;
-    line-height: 1.3;
-    letter-spacing: -.04em;
+  
 }
 
 .post_meta {
@@ -515,9 +514,7 @@
 }
 
 .post_arrow {
-    width: 44px;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 auto;
+
     background-color: #8e8e8e;
 }
 
@@ -572,7 +569,6 @@
     .notice_layout { gap: 40px; }
     .board_date, .board_writer, .board_view { flex-basis: 82px; }
     .calendar td { height: 110px; }
-    .post_head h1 { font-size: 32px; }
     .post_track { gap: 16px; }
     .post_card { flex-basis: calc((100% - 16px) / 2); }
 
@@ -710,7 +706,7 @@
     .calendar .selected > span { background: #009944; color: #fff; }
     .post_section > .sub_content { gap: 36px; }
     .post_head { gap: 10px; }
-    .post_head h1 { font-size: 25px; }
+    
     .post_meta { gap: 12px; font-size: 12px; }
     .post_body { gap: 32px; }
     .post_body.split { flex-direction: column; align-items: stretch; }
@@ -727,10 +723,10 @@
     .post_track { gap: 10px; }
     .post_card { flex-basis: 100%; gap: 7px; }
     .post_card strong { font-size: 14px; }
-    .post_arrow { width: 36px; }
+  
     .post_dots .slide_dot { width: 8px; }
     .post_dots .slide_dot.active { width: 24px; }
-
+     .post_copy p{    font-size: 0.9375rem;}
 }
 
 
@@ -748,5 +744,5 @@
     .board_view { display: none; }
     .review_actions { gap: 10px; }
     .post_copy { font-size: 13px; }
-
+   
 }

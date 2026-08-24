@@ -539,8 +539,7 @@
 
 .company_award h2 {
     color: #555;
-    font-size: 2rem;
-    line-height: 1.4;
+
 }
 
 .company_award p {
@@ -1198,10 +1197,6 @@
         font-size: 0.9375rem;
     }
 
-    .company_doc_grid .company_doc h2 {
-
-        font-size: 0.875rem;
-    }
 
     .company_doc_grid .company_doc {
 
@@ -1242,10 +1237,6 @@
         text-align: right;
     }
 
-    .company_award h2 {
-
-        font-size: 0.875rem;
-    }
 
     .company_award p,
     .company_award a {

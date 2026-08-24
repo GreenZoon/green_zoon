@@ -9,6 +9,8 @@ if (slider) {
     const prevButton = slider.querySelector(".left_arrow");
     const nextButton = slider.querySelector(".right_arrow");
     const toggleButton = slider.querySelector(".slide_toggle");
+    const currentCount = slider.querySelector(".count_current");
+    const totalCount = slider.querySelector(".count_total");
 
     let currentIndex = 0;
     let isPlaying = true;
@@ -52,6 +54,14 @@ if (slider) {
                 dotIndex === currentIndex
             );
         });
+
+        if (currentCount) {
+            currentCount.textContent = currentIndex + 1;
+        }
+
+        if (totalCount) {
+            totalCount.textContent = slides.length;
+        }
     }
 
     function nextSlide() {
