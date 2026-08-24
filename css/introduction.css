@@ -290,11 +290,11 @@
 }
 
 .company_portrait {
-    flex: 0 0 302px;
-    width: 302px;
-    height: 557px;
+    flex: 0 0 auto;
+    width: 300px;
+    aspect-ratio:   1 /2;
     align-self: center;
-    background-color: #f2f2f2;
+  
 }
 
 .company_location {
