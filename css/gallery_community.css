@@ -429,6 +429,16 @@
 
 }
 
+.gallery_card_image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+}
+
 
 /* 행사 사진은 인물·문구·로고가 잘리지 않도록 원본 구도를 유지한다. */
 [data-gallery-page="event"] .gallery_card_image {

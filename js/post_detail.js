@@ -153,7 +153,7 @@
         "img/sub_page/factory_equipment_ing_3.jpg",
         "img/sub_page/Pond_ing_3.jpg",
         "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg",
-        "https://i.ytimg.com/vi/i27HAUUJFOU/hqdefault.jpg",
+        "img/slide/factory_cleane_slide_2.jpg",
         "img/sub_page/factory_floor_3_1_ing.jpg"
     ];
 
