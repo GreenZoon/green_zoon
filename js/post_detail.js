@@ -27,7 +27,6 @@
         "학교 방역하러 다녀왔습니다~!",
         "(주)그린죤 카페트청소 작업",
         "비둘기 퇴치 작업 다녀왔습니다~!",
-        "식당 후드 청소 다녀왔습니다!",
         "공장 바닥 청소 작업",
         "공장 설비 청소 작업",
         "저수조 내부 청소 작업",
@@ -140,7 +139,6 @@
         "img/sub_page/Disinfection_1.jpg",
         "img/sub_page/cleaning_carpet_ing_3.jpg",
         "img/mainimgs/bird_spike_ing.jpg",
-        "img/sub_page/factory_equipment_ing_2.jpg",
         "img/sub_page/factory_floor_ing.jpg",
         "img/sub_page/factory_equipment_ing.jpg",
         "img/sub_page/water_tank_ing_2.jpg",
@@ -249,14 +247,14 @@
     posts.galleryEvent[1].date = "2023.06.13";
     posts.video[2].date = "2026.04.01";
     posts.video[2].videoUrl = "https://www.youtube.com/watch?v=0UKCmXB9Fn4";
-    posts.video[16].date = "2026.03.20";
-    posts.video[16].videoUrl = "https://www.youtube.com/watch?v=zRq8Ji7RddY";
+    posts.video[15].date = "2026.03.20";
+    posts.video[15].videoUrl = "https://www.youtube.com/watch?v=zRq8Ji7RddY";
+    posts.video[16].date = "2026.08.25";
+    posts.video[16].videoUrl = "https://www.youtube.com/watch?v=QeB5DOs5E8Y";
     posts.video[17].date = "2026.08.25";
-    posts.video[17].videoUrl = "https://www.youtube.com/watch?v=QeB5DOs5E8Y";
+    posts.video[17].videoUrl = "https://www.youtube.com/watch?v=i27HAUUJFOU";
     posts.video[18].date = "2026.08.25";
-    posts.video[18].videoUrl = "https://www.youtube.com/watch?v=i27HAUUJFOU";
-    posts.video[19].date = "2026.08.25";
-    posts.video[19].videoUrl = "https://www.youtube.com/shorts/xHZDlb5w_10";
+    posts.video[18].videoUrl = "https://www.youtube.com/shorts/xHZDlb5w_10";
 
     posts.notice.forEach(function (post) {
         post.image = "";
