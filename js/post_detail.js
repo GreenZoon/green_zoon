@@ -39,7 +39,8 @@
         "공장 라인 가동 전 정밀 세척 과정",
         "사무실 바닥 세척과 왁스 코팅 과정",
         "건물 유리창과 창틀 세척 작업",
-        "배관 주변 기름때 제거 작업"
+        "배관 주변 기름때 제거 작업",
+        "학교 연못 청소 작업 영상"
     ];
 
     const galleryEventTitles = [
@@ -148,7 +149,8 @@
         "img/sub_page/factory_line_ing_4.jpg",
         "img/sub_page/Wax_job_2.jpg",
         "img/mainimgs/building_wall_cleaning_ing.jpg",
-        "img/sub_page/factory_equipment_ing_3.jpg"
+        "img/sub_page/factory_equipment_ing_3.jpg",
+        "img/sub_page/Pond_ing_3.jpg"
     ];
 
     const galleryEventImages = [
@@ -239,6 +241,8 @@
     posts.notice[10].date = "2023.06.13";
     posts.galleryEvent[0].date = "2025.06.23";
     posts.galleryEvent[1].date = "2023.06.13";
+    posts.video[16].date = "2026.03.20";
+    posts.video[16].videoUrl = "https://www.youtube.com/watch?v=zRq8Ji7RddY";
 
     posts.notice.forEach(function (post) {
         post.image = "";
@@ -358,7 +362,10 @@
             if (posts[type] && posts[type][postId]) {
                 card.href = postUrl(type, postId);
             }
-            contentIndex += 1;
+
+            if (!hasFixedId) {
+                contentIndex += 1;
+            }
         });
     }
 
@@ -382,7 +389,14 @@
         });
 
         document.querySelectorAll(".video_card").forEach(function (card, index) {
-            card.href = postUrl("video", index % posts.video.length);
+            const fixedId = Number(card.dataset.postId);
+            const postId = Number.isInteger(fixedId) && posts.video[fixedId]
+                ? fixedId
+                : index % posts.video.length;
+
+            card.href = postUrl("video", postId);
+            card.removeAttribute("target");
+            card.removeAttribute("rel");
         });
 
         document.querySelectorAll("a.box_in_wrap, .mobile_event_box").forEach(function (card) {
@@ -914,9 +928,15 @@
 
         if (post.type === "video") {
             const image = images[0];
-            return '<div class="post_media post_video">' +
+            const media = '<div class="post_media post_video">' +
                 '<img src="' + asset(image) + '" alt="' + post.title + '">' +
                 '<span class="gallery_play" aria-hidden="true"><span class="icon play gallery_play_icon"></span></span></div>';
+
+            if (post.videoUrl) {
+                return '<a href="' + post.videoUrl + '" target="_blank" rel="noopener noreferrer" aria-label="' + post.title + ' 재생">' + media + '</a>';
+            }
+
+            return media;
         }
 
         return images.map(function (image, index) {
