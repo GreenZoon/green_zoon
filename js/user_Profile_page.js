@@ -32,12 +32,19 @@
     function fillView() {
         if (!form) return;
 
+        const nickname = savedNickname()
+            || window.GreenZoneAuth.getNickname(user)
+            || "그린죤 사용자";
+
         form.elements.name.value = savedNickname();
         form.elements.grade.value = isAdmin ? "관리자" : "일반회원";
         form.elements.company.value = profile.company || "";
         form.elements.manager.value = profile.manager || profile.managers?.[0] || "";
         form.elements.phone.value = profile.phone || profile.phones?.[0] || "";
         form.elements.address.value = profile.address || profile.addresses?.[0] || "";
+
+        const title = document.getElementById("profile_title");
+        if (title) title.textContent = nickname;
 
         const email = document.getElementById("profile_email");
         if (email) email.textContent = user.email || "-";

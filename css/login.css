@@ -778,6 +778,11 @@
     appearance: none;
 }
 
+.profile_grade_select option {
+    background: #fff;
+    color: var(--login-text);
+}
+
 .profile_grade_select .date_select_arrow {
     position: absolute;
     top: 50%;

@@ -127,7 +127,9 @@
 
     display: flex;
 
-    gap: 16px;
+    flex-direction: row;
+
+    align-items: stretch;
 
 }
 
@@ -148,6 +150,8 @@
 .content_search button {
 
     flex: 0 0 90px;
+
+    margin-right: 16px;
 
 }
 
@@ -2599,7 +2603,6 @@
         width: 100%;
         flex: 0 0 auto;
         align-self: stretch;
-        gap: 8px;
     }
 
     .content_search button, .content_search input {
@@ -2615,6 +2618,8 @@
     .content_search button {
 
         flex-basis: 56px;
+
+        margin-right: 8px;
 
     }
 
