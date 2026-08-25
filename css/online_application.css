@@ -398,6 +398,30 @@
     gap: 12px;
 }
 
+.detail_intro {
+    min-width: 0;
+}
+
+.detail_tip,
+.upload_tip p {
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.detail_tip {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 6px;
+}
+
+.detail_tip .application_note_icon,
+.upload_tip .application_note_icon {
+    flex: 0 0 auto;
+    margin-right: 6px;
+}
+
 .detail_title_wrap .icon {
     width: 34px;
     aspect-ratio: 1 / 1;
@@ -419,9 +443,14 @@
 }
 
 .detail_remove {
-    font-size: 15px;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    flex: 0 0 auto;
+    padding: 6px;
+}
+
+.detail_remove .icon {
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
 }
 
 .detail_body {
@@ -466,11 +495,6 @@
     gap: 16px;
 }
 
-.upload_heading p {
-    color: #8e8e8e;
-    font-size: 14px;
-}
-
 .upload_grid {
     display: flex;
     flex-wrap: wrap;
@@ -510,10 +534,20 @@
     opacity: 0;
 }
 
-.upload_plus {
-    font-size: 38px;
-    font-weight: 200;
-    line-height: 1;
+.upload_icon {
+    width: 54px;
+    height: 54px;
+    background-color: currentColor;
+}
+
+.upload_tip p:first-child {
+    display: flex;
+    align-items: flex-start;
+}
+
+.upload_tip p + p {
+    margin-top: 2px;
+    padding-left: 22px;
 }
 
 .image_preview img {
@@ -802,6 +836,7 @@ body.modal_open {
 
     .application_main {
         width: 100%;
+        padding-inline: 0;
         padding-block: 24px 100px;
     }
 
@@ -809,10 +844,18 @@ body.modal_open {
         display: none;
     }
 
-    .application_panel,
-    .service_detail {
+    .application_panel {
         border-inline: 0;
         border-radius: 0;
+    }
+
+    .service_details {
+        padding-inline: 20px;
+    }
+
+    .service_detail {
+        border: 1px solid #c6c6c6;
+        border-radius: 5px;
     }
 
     .application_intro,
@@ -841,11 +884,29 @@ body.modal_open {
         font-size: 21px;
     }
 
-    .application_note,
+    .application_note {
+        font-size: 10px;
+    }
+
     .privacy_copy p,
     .privacy_agree,
     .empty_message {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .application_heading .application_note {
+        font-size: 12px;
+    }
+
+    .applicant_fields > .application_note,
+    .service_fieldset > .application_note {
+        font-size: 10px;
+    }
+
+    .application_note_icon {
+        width: 10px;
+        height: 10px;
+        margin-top: 3px;
     }
 
     .visit_picker {
@@ -901,21 +962,78 @@ body.modal_open {
 
     .detail_header,
     .detail_body {
-        padding-inline: 20px;
+        padding-inline: 10px;
     }
 
     .detail_header {
-        padding-block: 20px;
+        align-items: flex-start;
+        border-bottom: 0;
+        padding-block: 12px 8px;
     }
 
     .detail_body {
-        padding-block: 20px 28px;
+        padding-block: 0 12px;
+    }
+
+    .detail_title_wrap {
+        gap: 6px;
+    }
+
+    .detail_title_wrap .icon {
+        width: 16px;
+    }
+
+    .detail_title_wrap h2,
+    .detail_label label,
+    .upload_heading strong {
+        font-size: 14px;
+    }
+
+    .detail_tip,
+    .upload_tip p {
+        font-size: 10px;
+    }
+
+    .detail_tip {
+        margin-top: 2px;
+    }
+
+    .detail_remove {
+        padding: 3px 0 3px 8px;
+    }
+
+    .detail_remove .icon {
+        width: 8px;
+        height: 8px;
+    }
+
+    .detail_fields {
+        display: block;
+    }
+
+    .detail_label {
+        margin-bottom: 12px;
+    }
+
+    .detail_control,
+    .detail_textarea {
+        border: 0;
+        background: #f8f8f8;
+        font-size: 10px;
+        padding: 7px;
+    }
+
+    .detail_control {
+        min-height: 42px;
+    }
+
+    .detail_textarea {
+        min-height: 100px;
     }
 
     .upload_heading {
         align-items: flex-start;
         flex-direction: column;
-        gap: 2px;
     }
 
     .upload_grid {
@@ -925,7 +1043,24 @@ body.modal_open {
     .upload_slot,
     .image_preview {
         width: 100%;
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 342 / 216;
+        border: 0;
+        border-radius: 17px;
+        background: #dbdbdb;
+        margin-bottom: 10px;
+    }
+
+    .upload_slot p {
+        display: none;
+    }
+
+    .upload_icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .upload_tip p + p {
+        padding-left: 16px;
     }
 
     .visit_intro {

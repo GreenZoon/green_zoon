@@ -14,8 +14,9 @@
             name: "공장 청소",
             iconClass: "factory",
             imageRequired: true,
+            tip: "바닥, 기계설비, 도색, 사무실 등 공장청소와 관련된 내용을 작성해 주세요.",
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 기계설비 도색 및 공장 바닥 200평)", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 기계설비 도색 및 공장 바닥 200평", required: true }
             ]
         },
         {
@@ -23,26 +24,29 @@
             name: "소독/방역",
             iconClass: "doctor",
             imageRequired: true,
+            tip: "소독과 방역이 필요한 공간 및 작업 범위를 작성해 주세요.",
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 사무실 전체 소독 및 정기 방역)", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 사무실 전체 소독 및 정기 방역", required: true }
             ]
         },
         {
             id: "water_tank",
             name: "물탱크",
             iconClass: "water_tower",
+            tip: "물탱크 용량과 개수 및 필요한 작업 내용을 작성해 주세요.",
             fields: [
-                { name: "capacity", label: "물탱크 용량", placeholder: "물탱크 용량을 입력해 주세요 (예시: 80T)", required: true },
-                { name: "count", label: "물탱크 개수", type: "number", min: 1, placeholder: "물탱크 개수를 입력해 주세요 (예시: 2)", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "추가 작업내용을 입력해 주세요 (예시: 저수조 내부 청소 및 소독)", wide: true }
+                { name: "capacity", label: "물탱크 용량", placeholder: "예시) 80T", required: true },
+                { name: "count", label: "물탱크 개수", type: "number", min: 1, placeholder: "예시) 2", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "예시) 저수조 내부 청소 및 소독", wide: true }
             ]
         },
         {
             id: "pigeon",
             name: "비둘기 퇴치",
             iconClass: "bird_spike",
+            tip: "비둘기 피해 위치와 필요한 퇴치 작업을 작성해 주세요.",
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 실외기 주변 비둘기 퇴치 및 차단)", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 실외기 주변 비둘기 퇴치 및 차단", required: true }
             ]
         },
         {
@@ -50,27 +54,30 @@
             name: "시설물",
             iconClass: "greek",
             imageRequired: true,
+            tip: "시설물 종류와 필요한 청소 내용을 작성해 주세요.",
             fields: [
-                { name: "kind", label: "시설물 종류", placeholder: "시설물 종류를 입력해 주세요 (예시: 교각, 터널, 조형물)", required: true },
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "필요한 작업내용을 입력해 주세요", wide: true, required: true }
+                { name: "kind", label: "시설물 종류", placeholder: "예시) 교각, 터널, 조형물", required: true },
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 시설물 외부 오염 제거", wide: true, required: true }
             ]
         },
         {
             id: "carpet",
             name: "카펫/패브릭",
             iconClass: "carpet",
+            tip: "작업 면적과 카펫 또는 패브릭 종류를 작성해 주세요.",
             fields: [
-                { name: "area", label: "작업 면적", placeholder: "작업 면적을 입력해 주세요 (예시: 120평)", required: true },
-                { name: "material", label: "소재/종류", placeholder: "소재 또는 종류를 입력해 주세요 (예시: 사무실 타일 카펫)", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "오염 상태나 추가 요청사항을 입력해 주세요", wide: true }
+                { name: "area", label: "작업 면적", placeholder: "예시) 120평", required: true },
+                { name: "material", label: "소재/종류", placeholder: "예시) 사무실 타일 카펫", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "예시) 오염 상태 및 추가 요청사항", wide: true }
             ]
         },
         {
             id: "ship",
             name: "선박/유람선",
             iconClass: "ship",
+            tip: "선박 내부에서 청소가 필요한 구역과 내용을 작성해 주세요.",
             fields: [
-                { name: "work", label: "작업내용", type: "textarea", placeholder: "작업내용을 입력해 주세요 (예시: 선내 카펫 및 객실 전체 청소)", required: true }
+                { name: "work", label: "작업내용", type: "textarea", placeholder: "예시) 선내 카펫 및 객실 전체 청소", required: true }
             ]
         },
         {
@@ -78,10 +85,11 @@
             name: "건물 외벽",
             iconClass: "brick_wall",
             imageRequired: true,
+            tip: "건물 종류와 외벽 규모 및 오염 상태를 작성해 주세요.",
             fields: [
-                { name: "building", label: "건물 종류", placeholder: "건물 종류를 입력해 주세요 (예시: 상가, 사무실, 공장)", required: true },
-                { name: "floors", label: "건물 규모", placeholder: "건물 규모를 입력해 주세요 (예시: 지상 5층)", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "외벽 재질과 오염 상태를 입력해 주세요", wide: true }
+                { name: "building", label: "건물 종류", placeholder: "예시) 상가, 사무실, 공장", required: true },
+                { name: "floors", label: "건물 규모", placeholder: "예시) 지상 5층", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "예시) 외벽 재질 및 오염 상태", wide: true }
             ]
         },
         {
@@ -89,20 +97,22 @@
             name: "왁스 코팅",
             iconClass: "soap_ottle",
             imageRequired: true,
+            tip: "바닥 면적과 재질 및 기존 왁스 상태를 작성해 주세요.",
             fields: [
-                { name: "area", label: "바닥 면적", placeholder: "바닥 면적을 입력해 주세요 (예시: 200평)", required: true },
-                { name: "material", label: "바닥 재질", placeholder: "바닥 재질을 입력해 주세요 (예시: 데코타일)", required: true },
-                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "기존 왁스 상태 등 추가사항을 입력해 주세요", wide: true }
+                { name: "area", label: "바닥 면적", placeholder: "예시) 200평", required: true },
+                { name: "material", label: "바닥 재질", placeholder: "예시) 데코타일", required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "예시) 기존 왁스 상태 및 추가사항", wide: true }
             ]
         },
         {
             id: "dispatch",
             name: "미화원 파견",
             iconClass: "cleaner",
+            tip: "필요 인원과 청소 구역 및 근무 조건을 작성해 주세요.",
             fields: [
-                { name: "people", label: "필요 인원", type: "number", min: 1, placeholder: "필요 인원을 입력해 주세요 (예시: 2명)", required: true },
-                { name: "area", label: "청소 구역", placeholder: "청소 구역을 입력해 주세요 (예시: 사무실 전체)", required: true },
-                { name: "detail", label: "근무 조건/추가사항", type: "textarea", placeholder: "근무 요일과 시간 등 추가사항을 입력해 주세요", wide: true }
+                { name: "people", label: "필요 인원", type: "number", min: 1, placeholder: "예시) 2명", required: true },
+                { name: "area", label: "청소 구역", placeholder: "예시) 사무실 전체", required: true },
+                { name: "detail", label: "근무 조건/추가사항", type: "textarea", placeholder: "예시) 평일 오전 9시부터 오후 6시", wide: true }
             ]
         }
     ];
@@ -178,11 +188,14 @@
         section.dataset.serviceDetail = service.id;
         section.innerHTML = `
             <div class="detail_header">
-                <div class="detail_title_wrap">
-                    <span class="icon ${service.iconClass}" aria-hidden="true"></span>
-                    <h2>${service.name}</h2>
+                <div class="detail_intro">
+                    <div class="detail_title_wrap">
+                        <span class="icon ${service.iconClass}" aria-hidden="true"></span>
+                        <h2>${service.name}</h2>
+                    </div>
+                    <p class="detail_tip"><span class="icon info application_note_icon" aria-hidden="true"></span>${escapeHtml(service.tip)}</p>
                 </div>
-                <button type="button" class="detail_remove" data-remove-service="${service.id}">선택 해제</button>
+                <button type="button" class="detail_remove" data-remove-service="${service.id}" aria-label="${service.name} 선택 해제"><span class="icon cancel" aria-hidden="true"></span></button>
             </div>
             <div class="detail_body">
                 <div class="detail_fields">
@@ -191,14 +204,17 @@
                 <div class="upload_area" data-upload-service="${service.id}">
                     <div class="upload_heading">
                         <strong>현장 이미지${service.imageRequired ? " *" : " (선택)"}</strong>
-                        <p>한 칸에 한 장씩, 최대 3장까지 첨부할 수 있습니다.</p>
                     </div>
                     <div class="upload_grid">
                         <label class="upload_slot">
-                            <span class="upload_plus" aria-hidden="true">＋</span>
+                            <span class="icon picture upload_icon" aria-hidden="true"></span>
                             <p>이미지 첨부</p>
                             <input type="file" accept="image/*" multiple data-file-input="${service.id}">
                         </label>
+                    </div>
+                    <div class="upload_tip">
+                        <p><span class="icon info application_note_icon" aria-hidden="true"></span>${service.imageRequired ? "가견적 및 현장 오염도를 확인하기 위해 작업구역 이미지가 반드시 필요합니다." : "가견적 및 현장 오염도를 확인하기 위해 작업구역 이미지를 첨부할 수 있습니다."}</p>
+                        <p>작업 예정인 현장의 전체, 일부, 가까이에서 촬영한 이미지 최소 3장 첨부를 권고드립니다.</p>
                     </div>
                     <p class="field_error" data-file-error="${service.id}" role="alert"></p>
                 </div>
