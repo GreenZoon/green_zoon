@@ -529,13 +529,14 @@
 
 .gallery_channel {
 
-    min-height: 520px;
+    width: 100vw;
+    min-height: 700px;
+    margin-left: calc(50% - 50vw);
+    padding: 100px 150px;
 
     align-items: center;
 
     justify-content: center;
-
-    gap: 70px;
 
     border-top: 2px solid #f8f8f8;
 
@@ -543,27 +544,52 @@
 
 .gallery_channel_title {
 
+    width: 407px;
+    flex: 0 0 407px;
+
     display: flex;
 
     align-items: center;
 
-    gap: 30px;
+    margin-right: 50px;
+
+}
+
+.channel_text {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 43px;
+
+}
+
+.channel_text p {
+
+    color: #555;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -.04em;
 
 }
 
 .gallery_channel_title h2 {
 
-    font-size: 30px;
+    color: #555;
+    font-size: 48px;
 
     line-height: 1.4;
+    letter-spacing: -.04em;
+    white-space: nowrap;
 
 }
 
 .gallery_channel_logo {
 
-    width: 96px;
-
-    aspect-ratio: 1 / 1;
+    width: 109px;
+    height: 104px;
+    flex: 0 0 109px;
 
     display: flex;
 
@@ -575,17 +601,40 @@
 
     border-radius: 50%;
 
-    color: #009944;
+    transition: transform .2s ease;
 
-    font-weight: 700;
+}
+
+.gallery_channel_logo:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.gallery_channel_logo:focus-visible {
+
+    outline: 3px solid #009944;
+    outline-offset: 5px;
+
+}
+
+.channel_logo {
+
+    width: 72px;
+    max-width: none;
+    height: 72px;
+    aspect-ratio: 1 / 1;
+    background-color: #009944;
+    -webkit-mask-image: url("../img/SVG/horizontal_logo.svg");
+    mask-image: url("../img/SVG/horizontal_logo.svg");
 
 }
 
 .gallery_channel_stack {
 
-    width: 600px;
-
-    height: 320px;
+    width: 750px;
+    flex: 0 1 750px;
+    aspect-ratio: 3 / 2;
 
     position: relative;
 
@@ -593,15 +642,7 @@
 
 .gallery_channel_stack img {
 
-    width: 78%;
-
-    height: 250px;
-
     position: absolute;
-
-    right: 0;
-
-    bottom: 0;
 
     object-fit: cover;
 
@@ -611,31 +652,40 @@
 
 .gallery_channel_stack img:nth-child(1) {
 
-    right: 12%;
-
-    bottom: 56px;
-
-    opacity: .32;
+    width: 71.78%;
+    height: 56%;
+    top: 0;
+    left: 14.11%;
+    opacity: .2;
 
 }
 
 .gallery_channel_stack img:nth-child(2) {
 
-    right: 8%;
-
-    bottom: 38px;
-
+    width: 93.67%;
+    height: 72.67%;
+    top: 12.17%;
+    left: 3.11%;
     opacity: .5;
 
 }
 
 .gallery_channel_stack img:nth-child(3) {
 
-    right: 4%;
+    width: 82.56%;
+    height: 64.33%;
+    top: 5.67%;
+    left: 8.67%;
+    opacity: .4;
 
-    bottom: 20px;
+}
 
-    opacity: .72;
+.gallery_channel_stack img:nth-child(4) {
+
+    width: 100%;
+    height: 77.5%;
+    top: 22.5%;
+    left: 0;
 
 }
 
@@ -2439,13 +2489,56 @@
 
     .gallery_channel {
 
-        gap: 32px;
+        padding-right: 40px;
+        padding-left: 40px;
+
+    }
+
+    .gallery_channel_title {
+
+        width: 38%;
+        flex-basis: 38%;
+        margin-right: 4%;
+
+    }
+
+    .channel_text {
+
+        margin-right: 20px;
+
+    }
+
+    .channel_text p {
+
+        font-size: 20px;
+
+    }
+
+    .gallery_channel_title h2 {
+
+        font-size: 32px;
+
+    }
+
+    .gallery_channel_logo {
+
+        width: 80px;
+        height: 80px;
+        flex-basis: 80px;
+
+    }
+
+    .channel_logo {
+
+        width: 54px;
+        height: 54px;
 
     }
 
     .gallery_channel_stack {
 
-        width: 50%;
+        width: 58%;
+        flex-basis: 58%;
 
     }
 
@@ -2750,19 +2843,31 @@
 
     .gallery_channel {
 
-        min-height: 360px;
+        min-height: 0;
 
         flex-direction: column;
 
-        gap: 10px;
-
-        padding: 28px 0;
+        padding: 28px 20px 40px;
 
     }
 
     .gallery_channel_title {
 
-        gap: 20px;
+        width: auto;
+        flex-basis: auto;
+        margin-right: 0;
+
+    }
+
+    .channel_text {
+
+        margin-right: 43px;
+
+    }
+
+    .channel_text p {
+
+        font-size: 14px;
 
     }
 
@@ -2774,23 +2879,25 @@
 
     .gallery_channel_logo {
 
+        width: 109px;
+        height: 104px;
+        flex-basis: 109px;
+
+    }
+
+    .channel_logo {
+
         width: 72px;
+        height: 72px;
 
     }
 
     .gallery_channel_stack {
 
         width: 100%;
-
-        height: 220px;
-
-    }
-
-    .gallery_channel_stack img {
-
-        width: 90%;
-
-        height: 170px;
+        max-width: 353px;
+        flex-basis: auto;
+        margin-top: 27px;
 
     }
 
