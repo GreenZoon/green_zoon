@@ -1556,7 +1556,6 @@
 
         .service_effect {
 
-        order: 4;
         gap: 14px;
         padding-top: 36px;
         padding-bottom: 36px;
@@ -1625,55 +1624,26 @@
     }
 
 
-    /* =====================================================
-       MOBILE ORDER
-
-       소개
-       → 대상
-       → 견적
-       → 효과
-       → 갤러리
-       → 영상
-    ===================================================== */
-
     .service_intro {
 
-    order: 1;
     gap: 14px;
 
 }
 
     .service_target {
 
-    order: 2;
     gap: 12px;
     padding: 12px 20px;
 }
 
-    .request_cleaning_pin {
-
-    order: 3;
-    display: block;
-    width: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
-}
-
-    .service_request {
-        order: 3;
-    }
-
     .service_gallery {
 
-    order: 5;
     gap: 12px;
 
 }
 
     .service_video {
 
-    order: 6;
     padding-bottom: 36px;
     background-color: #fff;
     color: #555;
@@ -2017,6 +1987,41 @@
     }
 
 @media (max-width: 768px) {
+
+    /* 문의 영역은 모바일 구간에서만 소개·대상 뒤로 이동합니다. */
+
+    .service_intro {
+        order: 1;
+    }
+
+    .service_target {
+        order: 2;
+    }
+
+    .request_cleaning_pin {
+        order: 3;
+        display: block;
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .service_request {
+        order: 3;
+    }
+
+    .service_effect {
+        order: 4;
+    }
+
+    .service_gallery {
+        order: 5;
+    }
+
+    .service_video {
+        order: 6;
+    }
 
     .page_title {
         display: none;
