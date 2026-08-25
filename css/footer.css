@@ -231,7 +231,6 @@ footer {
 
 }
 
-
 .footer_sns img {
 
     object-fit: contain;
@@ -241,11 +240,6 @@ footer {
 .footer_sns  .icon{
 
     width: 100%;
-}
-.footer_sns .youtube {
-
-    width: 100%;
-
     background-color: #8e8e8e;
 }
 
@@ -266,12 +260,12 @@ footer {
 
 
 .footer_policy a {
+
     font-size: 0.9375rem;      /* 15px */
     line-height: 1.5;
-
     color: inherit;
-
     white-space: nowrap;
+
 }
 
 
