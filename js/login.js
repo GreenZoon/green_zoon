@@ -77,10 +77,10 @@
         }
 
         const loginEmail = email.value.trim().toLowerCase();
-        const accountName = loginEmail.split("@")[0] || "그린죤 사용자";
         window.GreenZoneAuth.login({
             email: loginEmail,
-            name: accountName,
+            name: "",
+            nickname: "",
             role: adminAccounts.includes(loginEmail) ? "admin" : "member",
             loggedInAt: new Date().toISOString()
         }, remember.checked);

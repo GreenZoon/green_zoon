@@ -13,6 +13,12 @@
     const profileKey = `greenZoneProfile:${user.email || "member"}`;
     let profile = readProfile();
 
+    function savedNickname() {
+        return profile.name
+            || user.nickname
+            || "";
+    }
+
     function readProfile() {
         try {
             const saved = localStorage.getItem(profileKey);
@@ -26,7 +32,7 @@
     function fillView() {
         if (!form) return;
 
-        form.elements.name.value = profile.name || user.name || "";
+        form.elements.name.value = savedNickname();
         form.elements.grade.value = isAdmin ? "관리자" : "일반회원";
         form.elements.company.value = profile.company || "";
         form.elements.manager.value = profile.manager || profile.managers?.[0] || "";
@@ -49,7 +55,7 @@
     function fillEditor() {
         if (!editForm) return;
 
-        editForm.elements.name.value = profile.name || user.name || "";
+        editForm.elements.name.value = savedNickname();
         editForm.elements.grade.value = isAdmin ? "관리자" : "일반회원";
         editForm.elements.grade.disabled = !isAdmin;
         editForm.elements.company.value = profile.company || "";
@@ -111,7 +117,8 @@
         localStorage.setItem(profileKey, JSON.stringify(profile));
         window.GreenZoneAuth.login(
             Object.assign({}, user, {
-                name: profile.name || user.name,
+                name: profile.name,
+                nickname: profile.name,
                 role: isAdmin && values.grade === "관리자" ? "admin" : "member"
             }),
             true

@@ -96,6 +96,37 @@ window.GreenZonePaths = {
         return read(window.sessionStorage) || read(window.localStorage);
     }
 
+    function getProfile(user) {
+        if (!user) {
+            return {};
+        }
+
+        try {
+            const key = `greenZoneProfile:${user.email || "member"}`;
+            const saved = window.localStorage.getItem(key);
+            const oldAdminProfile = user.role === "admin"
+                ? window.localStorage.getItem("greenZoneProfile")
+                : null;
+
+            return JSON.parse(saved || oldAdminProfile || "{}");
+        } catch (error) {
+            console.warn("[auth] 프로필 정보를 읽지 못했습니다.", error);
+            return {};
+        }
+    }
+
+    function getNickname(user = getUser()) {
+        if (!user) {
+            return "";
+        }
+
+        const profile = getProfile(user);
+        const savedNickname = String(profile.name || "").trim();
+        const authNickname = String(user.nickname || "").trim();
+
+        return savedNickname || authNickname || "그린죤 사용자";
+    }
+
     function clear() {
         window.sessionStorage.removeItem(AUTH_KEY);
         window.localStorage.removeItem(AUTH_KEY);
@@ -137,6 +168,7 @@ window.GreenZonePaths = {
 
     function syncUI(root) {
         const user = getUser();
+        const nickname = getNickname(user);
         const profileUrl = window.GreenZonePaths?.resolve("user_page/user_Profile_page.html") || "../user_page/user_Profile_page.html";
         const currentLoginUrl = loginUrl(
             window.location.pathname.endsWith("/Login.html") ? "" : window.location.href
@@ -144,7 +176,7 @@ window.GreenZonePaths = {
 
         (root || document).querySelectorAll("[data-auth-link]").forEach(function (link) {
             link.href = user ? profileUrl : currentLoginUrl;
-            link.setAttribute("aria-label", user ? "내 정보" : "로그인");
+            link.setAttribute("aria-label", user ? `${nickname} 내 정보` : "로그인");
         });
 
         (root || document).querySelectorAll("[data-auth-icon]").forEach(function (icon) {
@@ -153,16 +185,17 @@ window.GreenZonePaths = {
         });
 
         (root || document).querySelectorAll("[data-auth-label]").forEach(function (label) {
-            label.textContent = user ? "내 정보" : "로그인";
+            label.textContent = user ? nickname : "로그인";
         });
 
         (root || document).querySelectorAll("[data-auth-user-name]").forEach(function (label) {
-            label.textContent = user ? `${user.name || "그린죤 사용자"} 계정` : "그린죤 방문자";
+            label.textContent = user ? `${nickname} 계정` : "그린죤 방문자";
         });
     }
 
     window.GreenZoneAuth = {
         getUser,
+        getNickname,
         isLoggedIn: function () { return Boolean(getUser()); },
         login,
         logout,
