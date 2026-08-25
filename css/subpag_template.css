@@ -1481,13 +1481,9 @@
 
     .section_g > p {
 
+        text-align: center;
 
-    font-size: 0.75rem;
-    line-height: 1.7;
-    text-align: center;
-
-
-}
+    }
 
     /* TARGET ICONS */
 
@@ -2052,13 +2048,6 @@
         display: inline;
     }
 
-    .service_target .con {
-      
-        max-width: 10%;
-        position: relative;
-      
-
-    }
     .con > p {
         margin: 0;
         font-size: 0.6875rem;
@@ -2123,15 +2112,6 @@
 
     }
 
-    .section_g .con,
-    .section_3 .con,
-    .service_target .con{
-
-        width: 74px;
-        gap: 6px;
-
-    }
-
 
     /* =====================================================
        TARGET
@@ -2141,30 +2121,7 @@
 
         gap: 20px;
 
-        padding: 24px 32px;
     }
-
-    .service_target .con_wrap {
-
-        gap: 12px;
-
-    }
-
-    .service_target .con {
-   
-        max-width: 13.5%;
-     
-     
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0;
-        border-radius: 50%;
-        overflow: visible;
-    }
-
-
 
     .con > p {
 
@@ -2235,6 +2192,11 @@
         border: 1px solid #009944;
         border-radius: 50%;
        
+    }
+
+    .effect_icon_circle > .icon{
+
+        width: 32px;
     }
 
     /* .effect_icon_circle > .icon {
@@ -2721,12 +2683,6 @@
     }
 
 
-    .section_g_2 {
-
-        padding-top: 32px;
-        padding-bottom: 42px;
-    }
-
     /* =====================================================
        INTRO
     ===================================================== */
@@ -3014,17 +2970,18 @@
 
     .sub_pag_tit {
 
-        font-size: 0.875rem;       /* 14px */
-        line-height: 1.5;
-        letter-spacing: -0.015em;
+        font-size: 0.75rem;      /* 12px */
+        line-height: 1.55;
+        letter-spacing: -0.04em;
         font-weight: 600;
+        padding: 8px 2px;
 
     }
 
     .sub_pag_menu {
 
         justify-content: flex-end;
-        gap: 12px;
+        gap: 0;
 
     }
 

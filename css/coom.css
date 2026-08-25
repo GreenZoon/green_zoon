@@ -1765,6 +1765,12 @@ svg {
         font-weight: 400;
     }
 
+    .con, .con_g {
+
+     max-width: 120px;
+    
+}
+
 }
 
 
@@ -1985,6 +1991,11 @@ svg {
         gap: 12px;
     }
 
+    .con, .con_g {
+
+    max-width: 80px;
+
+    }
 
 
 }
@@ -2007,7 +2018,14 @@ svg {
 
     }
 
-        .icon, .icon_2, .arrow, .mobile_icon {
+    .con, .con_g {
+
+        max-width: 60px;
+    
+    }
+
+
+    .icon, .icon_2, .arrow, .mobile_icon {
 
         width: 14px;
 

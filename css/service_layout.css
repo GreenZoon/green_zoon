@@ -87,13 +87,6 @@
 
 }
 
-.request_row > .Cleaning_box,
-.request_row > .Cleaning_box_green {
-
-    height: 350px;
-
-}
-
 @media (max-width: 1500px) {
   
     .exterior_intro {
@@ -135,11 +128,7 @@
      
     }
 
-    .request_row > .Cleaning_box,
-    .request_row > .Cleaning_box_green {
-        height: auto;
-        min-height: 260px;
-    }
+
 }
 
 @media (max-width: 768px) {

@@ -1313,7 +1313,8 @@
 
     border-radius: 20px;
     overflow: hidden;
-
+    aspect-ratio: 8 / 6;
+    
 }
 
 /* --------- 섹션7--------- */
