@@ -112,7 +112,7 @@
 .application_note {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
     color: #8e8e8e;
     font-size: 15px;
     line-height: 1.5;
@@ -121,9 +121,15 @@
 }
 
 .application_note_icon {
-    width: 15px;
-    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
     background-color: currentColor;
+}
+
+.note_text {
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .application_fieldset {
@@ -195,6 +201,14 @@
     outline: 0;
     padding: 13px 14px;
     transition: border-color .2s, box-shadow .2s;
+}
+
+.application_field input::placeholder,
+.application_field textarea::placeholder,
+.detail_control::placeholder,
+.detail_textarea::placeholder {
+    color: #8e8e8e;
+    opacity: 1;
 }
 
 .application_field textarea,

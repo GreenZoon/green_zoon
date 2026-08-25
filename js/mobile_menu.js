@@ -68,6 +68,64 @@ window.GreenZonePaths = {
 
 
 /* =========================================================
+   MOBILE BOTTOM TAB
+========================================================= */
+
+(function () {
+
+    function getCurrentTab() {
+        const rootPath = window.GreenZonePaths?.baseUrl?.pathname || "/";
+        const pagePath = window.location.pathname.startsWith(rootPath)
+            ? window.location.pathname.slice(rootPath.length)
+            : window.location.pathname.replace(/^\/+/, "");
+
+        if (!pagePath || pagePath === "index.html") return "home";
+        if (pagePath === "user_page/Online_application.html") return "request";
+        if (pagePath.startsWith("sub_page/Community/")) return "community";
+        if (pagePath.startsWith("sub_page/Gallery/") || pagePath === "Post.html") return "gallery";
+
+        return "";
+    }
+
+    function syncMobileTab(root = document) {
+        const tabs = root.matches?.(".mobile_tab")
+            ? [root]
+            : Array.from(root.querySelectorAll?.(".mobile_tab") || []);
+        const currentTab = getCurrentTab();
+
+        tabs.forEach(function (tab) {
+            tab.querySelectorAll("[data-tab]").forEach(function (link) {
+                const isActive = link.dataset.tab === currentTab;
+
+                link.classList.toggle("is_active", isActive);
+
+                if (isActive) {
+                    link.setAttribute("aria-current", "page");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+        });
+    }
+
+    window.GreenZoneMobileTab = {
+        sync: syncMobileTab
+    };
+
+    syncMobileTab(document);
+
+    new MutationObserver(function (records) {
+        records.forEach(function (record) {
+            record.addedNodes.forEach(function (node) {
+                if (node.nodeType === 1) syncMobileTab(node);
+            });
+        });
+    }).observe(document.documentElement, { childList: true, subtree: true });
+
+})();
+
+
+/* =========================================================
    AUTH STATE
    정식 서버 인증 연동 전까지 로그인 화면과 접근 제어를 한곳에서 관리
 ========================================================= */
@@ -869,11 +927,10 @@ function closeMobileMenu() {
         ?.classList.remove("is_open");
 
     document
-        .querySelector(".mobile_menu_open_btn")
-        ?.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        .querySelectorAll(".mobile_menu_open_btn")
+        .forEach(function (button) {
+            button.setAttribute("aria-expanded", "false");
+        });
 
     unlockMobilePage();
 
@@ -1053,10 +1110,11 @@ document.addEventListener("click", (event) => {
             unlockMobilePage();
         }
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
+        document
+            .querySelectorAll(".mobile_menu_open_btn")
+            .forEach(function (button) {
+                button.setAttribute("aria-expanded", String(isOpen));
+            });
 
         /*
             처음 열었을 때만

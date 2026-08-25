@@ -1,5 +1,9 @@
 /* ------메뉴------ */
 
+.mobile_tab {
+    display: none;
+}
+
 .nav{
 
     background-color: #ffff;
@@ -307,7 +311,7 @@
         position: fixed;
         top: var(--mobile-menu-top, 50px);
         right: 0;
-        bottom: 0;
+        bottom: 76px;
         left: 0;
         max-height: var(--mobile-menu-height, 100dvh);
         overflow-y: auto;
@@ -330,6 +334,81 @@
 
         display: block;
 
+    }
+
+    body {
+        padding-bottom: 76px;
+    }
+
+    .mobile_tab {
+        width: 100%;
+        height: 76px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1002;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding: 10px 12px 8px;
+        background-color: #fff;
+        box-shadow: 0 -1px 8px rgb(0 0 0 / 8%);
+    }
+
+    .mobile_tab_item {
+        min-width: 52px;
+        min-height: 54px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        border: 0;
+        background: transparent;
+        color: #8e8e8e;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .mobile_tab_item > .icon,
+    .mobile_menu_icon {
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        background-color: currentColor;
+        opacity: 1;
+    }
+
+    .mobile_tab_item.is_active {
+        color: #009944;
+    }
+
+    .mobile_tab_item:focus-visible {
+        border-radius: 4px;
+        outline: 2px solid #009944;
+        outline-offset: 2px;
+    }
+
+    .mobile_menu_icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        background-color: transparent;
+    }
+
+    .mobile_menu_icon span {
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: currentColor;
+    }
+
+    body.menu_open .mobile_tab .mobile_menu_open_btn {
+        color: #009944;
     }
 
     .mobile_schedule_area {

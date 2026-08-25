@@ -27,28 +27,28 @@
             <section class="application_panel application_intro" aria-labelledby="application_title">
                 <div class="application_heading">
                     <h1 id="application_title">청소 작업 신청서</h1>
-                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>신청서에서 기재를 요구하는 정보들은 전부 필수 기재 사항입니다.</p>
+                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span><span class="note_text">신청서에서 기재를 요구하는 정보들은 전부 필수 기재 사항입니다.</span></p>
                 </div>
 
                 <fieldset class="application_fieldset applicant_fields">
                     <legend>신청자 정보</legend>
-                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>작업 담당자와 연락 가능한 정보를 정확히 입력해 주세요.</p>
+                    <p id="applicant_tip" class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span><span class="note_text">작업 담당자와 연락 가능한 정보를 정확히 입력해 주세요.</span></p>
                     <div class="applicant_grid">
                         <div class="application_field">
                             <label for="company">업체/상호/관공서명 <b>*</b></label>
-                            <input id="company" type="text" name="company" autocomplete="organization" placeholder="업체 또는 기관명을 입력해 주세요" required>
+                            <input id="company" type="text" name="company" autocomplete="organization" placeholder="업체 또는 기관명을 입력해 주세요" aria-describedby="applicant_tip" required>
                         </div>
                         <div class="application_field">
                             <label for="manager">담당자명 <b>*</b></label>
-                            <input id="manager" type="text" name="manager" autocomplete="name" placeholder="담당자명을 입력해 주세요" required>
+                            <input id="manager" type="text" name="manager" autocomplete="name" placeholder="담당자명을 입력해 주세요" aria-describedby="applicant_tip" required>
                         </div>
                         <div class="application_field">
                             <label for="phone">연락처 <b>*</b></label>
-                            <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)" required>
+                            <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="전화번호를 입력해 주세요 (예시: 010-0000-0000)" aria-describedby="applicant_tip" required>
                         </div>
                         <div class="application_field application_field_wide">
                             <label for="address">청소작업 구역 주소 <b>*</b></label>
-                            <input id="address" type="text" name="address" autocomplete="street-address" placeholder="청소작업 구역 주소를 입력해 주세요 (예시: 경상남도 김해시 전하로 191)" required>
+                            <input id="address" type="text" name="address" autocomplete="street-address" placeholder="청소작업 구역 주소를 입력해 주세요 (예시: 경상남도 김해시 전하로 191)" aria-describedby="applicant_tip" required>
                         </div>
                     </div>
                 </fieldset>
@@ -69,7 +69,7 @@
 
                 <fieldset class="application_fieldset service_fieldset">
                     <legend>작업종류</legend>
-                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>중복 선택 가능합니다.</p>
+                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span><span class="note_text">중복 선택 가능합니다.</span></p>
                     <div id="service_selector" class="service_selector" aria-describedby="service_error"></div>
                     <p id="service_error" class="field_error" role="alert"></p>
                 </fieldset>
@@ -81,7 +81,7 @@
                 <div class="visit_intro">
                     <div>
                         <h2 id="visit_title">방문견적 신청</h2>
-                        <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>유선상담과 함께 무료 방문견적을 신청할 수 있습니다.</p>
+                        <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span><span class="note_text">유선상담과 함께 무료 방문견적을 신청할 수 있습니다.</span></p>
                     </div>
                     <button type="button" id="visit_open" class="secondary_button">날짜/시간 선택</button>
                 </div>
@@ -97,7 +97,7 @@
             <section class="application_panel summary_panel" aria-labelledby="summary_title">
                 <div class="application_heading">
                     <h2 id="summary_title">작업 신청 확인</h2>
-                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>신청서 제출 전 선택한 작업 정보를 확인해 주세요.</p>
+                    <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span><span class="note_text">신청서 제출 전 선택한 작업 정보를 확인해 주세요.</span></p>
                 </div>
                 <div id="application_summary" class="application_summary">
                     <p class="empty_message">작업종류를 선택하면 신청 내용이 표시됩니다.</p>
@@ -118,7 +118,7 @@
             <div class="modal_handle" aria-hidden="true"></div>
             <div class="modal_heading">
                 <h2 id="visit_modal_title">방문 견적 신청</h2>
-                <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span>원하시는 날짜와 시간대를 선택해 주세요.</p>
+                <p class="application_note"><span class="icon info application_note_icon" aria-hidden="true"></span><span class="note_text">원하시는 날짜와 시간대를 선택해 주세요.</span></p>
             </div>
             <div class="visit_picker">
                 <div class="application_field">
