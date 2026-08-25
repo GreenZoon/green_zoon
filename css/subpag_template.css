@@ -2009,34 +2009,6 @@
     background-color: #009944;
 }
 
-.service_detail > * {
-        order: 0;
-    }
-
-.service_cleaning .service_intro {
-        order: 1;
-    }
-
-    .service_cleaning .service_target {
-        order: 2;
-    }
-
-    .service_cleaning .service_effect {
-        order: 3;
-    }
-
-    .service_cleaning .service_gallery {
-        order: 4;
-    }
-
-    .service_cleaning .service_video {
-        order: 5;
-    }
-
-    .service_cleaning .service_request {
-        order: 6;
-    }
-
     .wax_page .wax_copy {
 
         font-size: 1rem;

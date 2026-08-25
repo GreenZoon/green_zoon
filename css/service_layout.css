@@ -1,0 +1,242 @@
+/* =========================================================
+   PAGE-SPECIFIC SERVICE LAYOUTS
+   공통 서브페이지 규칙이 개별 피그마 배치를 바꾸지 않도록 분리합니다.
+========================================================= */
+
+.intro_mo {
+    display: none;
+}
+
+.factory_layout > .service_intro,
+.exterior_layout > .service_intro {
+    order: 1;
+}
+
+.factory_layout > .service_effect {
+    order: 2;
+}
+
+.factory_layout > .service_gallery {
+    order: 3;
+}
+
+.factory_layout > .service_target {
+    order: 4;
+}
+
+.factory_layout > .service_video {
+    order: 5;
+}
+
+.factory_layout > .service_request {
+    order: 6;
+}
+
+.exterior_layout > .service_gallery {
+    order: 2;
+}
+
+.exterior_layout > .service_video {
+    order: 3;
+}
+
+.exterior_layout > .service_request {
+    order: 4;
+}
+
+.factory_intro {
+    min-height: 500px;
+    padding: 50px 150px;
+    justify-content: flex-start;
+    gap: 100px;
+}
+
+.factory_intro > .main_img {
+    width: 650px;
+    height: 400px;
+    flex: 0 1 650px;
+}
+
+.factory_intro > .tit_wrap_2 {
+    width: 725px;
+    max-width: 725px;
+    flex: 0 1 725px;
+}
+
+.exterior_intro {
+    min-height: 600px;
+    padding: 50px 150px;
+    justify-content: flex-start;
+    gap: 130px;
+}
+
+.exterior_intro > .tit_wrap_2 {
+    width: 690px;
+    max-width: 690px;
+    flex: 0 1 690px;
+}
+
+.exterior_intro > .main_img {
+    width: 800px;
+    height: 500px;
+    flex: 0 1 800px;
+}
+
+.request_row {
+    min-height: 550px;
+    padding: 100px 150px;
+    gap: 50px;
+}
+
+.request_row > .Cleaning_box,
+.request_row > .Cleaning_box_green {
+    height: 350px;
+}
+
+@media (max-width: 1500px) {
+    .factory_intro,
+    .exterior_intro {
+        padding-inline: 50px;
+        gap: 6vw;
+    }
+
+    .request_row {
+        padding-inline: 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .factory_intro,
+    .exterior_intro {
+        min-height: 0;
+        padding: 40px;
+        gap: 32px;
+    }
+
+    .factory_intro > .main_img,
+    .factory_intro > .tit_wrap_2,
+    .exterior_intro > .main_img,
+    .exterior_intro > .tit_wrap_2 {
+        width: 48%;
+        height: auto;
+        max-width: none;
+        flex: 0 1 48%;
+    }
+
+    .request_row {
+        min-height: 0;
+        padding: 48px 40px;
+    }
+
+    .request_row > .Cleaning_box,
+    .request_row > .Cleaning_box_green {
+        height: auto;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .factory_layout > .service_target {
+        order: 2;
+    }
+
+    .factory_layout > .service_request,
+    .exterior_layout > .service_request {
+        order: 3;
+    }
+
+    .factory_layout > .service_effect {
+        order: 4;
+    }
+
+    .factory_layout > .service_gallery {
+        order: 5;
+    }
+
+    .factory_layout > .service_video {
+        order: 6;
+    }
+
+    .exterior_layout > .service_gallery {
+        order: 4;
+    }
+
+    .exterior_layout > .service_video {
+        order: 5;
+    }
+
+    .factory_intro,
+    .exterior_intro {
+        padding: 0 20px 30px;
+        gap: 14px;
+    }
+
+    .factory_intro > .main_img,
+    .factory_intro > .tit_wrap_2,
+    .exterior_intro > .main_img,
+    .exterior_intro > .tit_wrap_2 {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        flex: none;
+    }
+
+    .factory_intro > .main_img,
+    .exterior_intro > .main_img {
+        aspect-ratio: 362 / 212;
+        border-radius: 10px;
+    }
+
+    .factory_intro .tit_wrap_2,
+    .exterior_intro .tit_wrap_2 {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .intro_pc {
+        display: none;
+    }
+
+    .intro_mo {
+        display: inline;
+    }
+
+    p.intro_mo {
+        display: block;
+    }
+
+    .request_row {
+        min-height: 0;
+        padding: 36px 20px;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .request_row > .Cleaning_box_green {
+        width: 114px;
+        flex: 0 0 114px;
+    }
+
+    .request_row > .Cleaning_box {
+        width: 127px;
+        flex: 0 0 127px;
+    }
+
+    .request_row > .Cleaning_box,
+    .request_row > .Cleaning_box_green {
+        height: 48px;
+        min-height: 48px;
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .factory_intro,
+    .exterior_intro {
+        padding-inline: 20px;
+    }
+
+    .request_row {
+        padding-inline: 20px;
+    }
+}
