@@ -241,6 +241,8 @@
     posts.notice[10].date = "2023.06.13";
     posts.galleryEvent[0].date = "2025.06.23";
     posts.galleryEvent[1].date = "2023.06.13";
+    posts.video[2].date = "2026.04.01";
+    posts.video[2].videoUrl = "https://www.youtube.com/watch?v=0UKCmXB9Fn4";
     posts.video[16].date = "2026.03.20";
     posts.video[16].videoUrl = "https://www.youtube.com/watch?v=zRq8Ji7RddY";
 
