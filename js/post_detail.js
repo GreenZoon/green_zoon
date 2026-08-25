@@ -24,7 +24,7 @@
     ];
 
     const videoTitles = [
-        "학교 방역하러 다녀왔습니다~!",
+        "미화원 파견 작업 영상",
         "(주)그린죤 카페트청소 작업",
         "비둘기 퇴치 작업 다녀왔습니다~!",
         "공장 바닥 청소 작업",
@@ -137,7 +137,7 @@
     ];
 
     const videoImages = [
-        "img/sub_page/Disinfection_1.jpg",
+        "img/sub_page/dispatch_gallery.jpg",
         "img/sub_page/cleaning_carpet_ing_3.jpg",
         "img/mainimgs/bird_spike_ing.jpg",
         "img/sub_page/factory_floor_ing.jpg",
