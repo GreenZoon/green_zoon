@@ -42,7 +42,8 @@
         "학교 연못 청소 작업 영상",
         "사무실 바닥 청소 및 왁스",
         "공장 청소 작업 영상",
-        "공장 바닥 청소 작업 영상"
+        "공장 바닥 청소 작업 영상",
+        "소독·방역 작업 영상"
     ];
 
     const galleryEventTitles = [
@@ -154,7 +155,8 @@
         "img/sub_page/Pond_ing_3.jpg",
         "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg",
         "img/slide/factory_cleane_slide_2.jpg",
-        "img/sub_page/factory_floor_3_1_ing.jpg"
+        "img/sub_page/factory_floor_3_1_ing.jpg",
+        "img/mainimgs/Disinfection_ing.jpg"
     ];
 
     const galleryEventImages = [
@@ -255,6 +257,8 @@
     posts.video[17].videoUrl = "https://www.youtube.com/watch?v=i27HAUUJFOU";
     posts.video[18].date = "2026.08.25";
     posts.video[18].videoUrl = "https://www.youtube.com/shorts/xHZDlb5w_10";
+    posts.video[19].date = "2026.08.26";
+    posts.video[19].videoUrl = "https://www.youtube.com/shorts/AY12rwHZauM";
 
     posts.notice.forEach(function (post) {
         post.image = "";
