@@ -1799,6 +1799,7 @@ svg {
 
     .subpage_nav_link:hover,
     .subpage_nav_link:focus-visible {
+    
         color: #009944;
         background-color: transparent;
         box-shadow: inset 0 -2px 0 #009944;
@@ -1816,12 +1817,6 @@ svg {
 
     }
 
-        .section_g {
-
-        background-color: #fff;
-
-
-    }
 
     .section_g a, .section_g a,.service_gallery_name{
 
@@ -2005,7 +2000,7 @@ svg {
 
     }
 
-section {
+    section {
 
         padding: 10px 20px;
         gap: 24px;

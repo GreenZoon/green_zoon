@@ -349,10 +349,6 @@
 
 .gallery_feature_media img, .gallery_feature_media .empty_image {
 
-    height: 400px;
-
-    object-fit: cover;
-
     border-radius: 15px;
 
 }
@@ -375,11 +371,7 @@
 
 }
 
-.gallery_feature_media.single img, .gallery_feature_media.single .empty_image {
 
-    width: min(100%, 760px);
-
-}
 
 .gallery_feature_media.single > .gallery_card_image {
 
@@ -437,13 +429,6 @@
 
 }
 
-.gallery_card_image img {
-
-    height: 100%;
-
-    object-fit: cover;
-
-}
 
 /* 행사 사진은 인물·문구·로고가 잘리지 않도록 원본 구도를 유지한다. */
 [data-gallery-page="event"] .gallery_card_image {
@@ -2343,12 +2328,6 @@
 
     }
 
-    .gallery_feature_media img, .gallery_feature_media .empty_image {
-
-        height: 340px;
-
-    }
-
     .gallery_card, .information_card {
 
         width: 32%;
@@ -2433,12 +2412,6 @@
     .gallery_feature_text {
 
         gap: 16px;
-
-    }
-
-    .gallery_feature_media img, .gallery_feature_media .empty_image {
-
-        height: 280px;
 
     }
 
@@ -2547,21 +2520,15 @@
     .sub_category a {
 
         width: auto;
-
         min-width: max-content;
-
         flex: 0 0 auto;
-
         min-height: 42px;
-
         border-bottom: 2px solid transparent;
 
         background: transparent;
 
         color: #8e8e8e;
-
         font-size: 14px;
-
         padding-block: 8px;
 
     }
@@ -2570,9 +2537,7 @@
     .sub_category a:focus-visible {
 
         border-bottom-color: #009944;
-
         background: transparent;
-
         color: #009944;
 
     }
@@ -2586,8 +2551,8 @@
     .content_head {
 
         align-items: flex-start;
-
         flex-direction: column;
+        gap: 6px;
 
     }
 
@@ -2709,7 +2674,7 @@
 
     .gallery_feature_media img, .gallery_feature_media .empty_image {
 
-        height: 210px;
+     
 
         border-radius: 8px;
 
@@ -2721,7 +2686,7 @@
 
     }
 
-    .gallery_feature_media.single img, .gallery_feature_media.single .empty_image {
+    .gallery_feature_media.single .empty_image {
 
         width: 100%;
 

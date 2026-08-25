@@ -7,7 +7,11 @@
     display: none;
 }
 
-.factory_layout > .service_intro,
+.mobile_effect {
+    display: none;
+}
+
+
 .exterior_layout > .service_intro {
     order: 1;
 }
@@ -45,87 +49,90 @@
 }
 
 .factory_intro {
-    min-height: 500px;
-    padding: 50px 150px;
+  
     justify-content: flex-start;
-    gap: 100px;
-}
-
-.factory_intro > .main_img {
-    width: 650px;
-    height: 400px;
-    flex: 0 1 650px;
+  
 }
 
 .factory_intro > .tit_wrap_2 {
-    width: 725px;
+    width: 100%;
     max-width: 725px;
-    flex: 0 1 725px;
+    flex: 0 1 auto;
 }
 
 .exterior_intro {
+
     min-height: 600px;
-    padding: 50px 150px;
+   
     justify-content: flex-start;
     gap: 130px;
 }
 
 .exterior_intro > .tit_wrap_2 {
-    width: 690px;
+    width: 100%;
     max-width: 690px;
-    flex: 0 1 690px;
+    flex: 0 1 auto;
 }
 
 .exterior_intro > .main_img {
     width: 800px;
     height: 500px;
-    flex: 0 1 800px;
+    flex: 0 1 auto;
 }
 
 .request_row {
+
     min-height: 550px;
-    padding: 100px 150px;
     gap: 50px;
+
 }
 
 .request_row > .Cleaning_box,
 .request_row > .Cleaning_box_green {
+
     height: 350px;
+
 }
 
 @media (max-width: 1500px) {
-    .factory_intro,
+  
     .exterior_intro {
+
         padding-inline: 50px;
         gap: 6vw;
     }
 
     .request_row {
+
         padding-inline: 50px;
+
     }
 }
 
 @media (max-width: 1024px) {
     .factory_intro,
     .exterior_intro {
+
         min-height: 0;
-        padding: 40px;
+       
         gap: 32px;
+
     }
 
     .factory_intro > .main_img,
     .factory_intro > .tit_wrap_2,
     .exterior_intro > .main_img,
     .exterior_intro > .tit_wrap_2 {
-        width: 48%;
+
+        width: 50%;
         height: auto;
         max-width: none;
-        flex: 0 1 48%;
+        flex: 0 1 auto;
     }
 
     .request_row {
         min-height: 0;
-        padding: 48px 40px;
+     
     }
 
     .request_row > .Cleaning_box,
@@ -136,6 +143,29 @@
 }
 
 @media (max-width: 768px) {
+    .effect_work {
+        order: 3;
+    }
+
+    .effect_quality {
+        order: 4;
+    }
+
+    .mobile_effect {
+        display: flex;
+    }
+
+    .factory_gallery .mobile_first {
+        display: block;
+        width: 100%;
+        height: 100%;
+        flex: 0 0 auto;
+    }
+
+    .factory_gallery .mobile_second {
+        display: none;
+    }
+
     .factory_layout > .service_target {
         order: 2;
     }
@@ -167,7 +197,7 @@
 
     .factory_intro,
     .exterior_intro {
-        padding: 0 20px 30px;
+    
         gap: 14px;
     }
 
@@ -207,19 +237,19 @@
 
     .request_row {
         min-height: 0;
-        padding: 36px 20px;
+    
         justify-content: center;
         gap: 28px;
     }
 
     .request_row > .Cleaning_box_green {
         width: 114px;
-        flex: 0 0 114px;
+        flex: 0 0 auto;
     }
 
     .request_row > .Cleaning_box {
         width: 127px;
-        flex: 0 0 127px;
+        flex: 0 0 auto;
     }
 
     .request_row > .Cleaning_box,
