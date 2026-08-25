@@ -968,11 +968,18 @@ body.is_profile_edit {
 }
 
 .login_logo_placeholder {
-    width: 96px;
-    aspect-ratio: 1 / 1;
+    width: 200px;
+    aspect-ratio: 40 / 11;
     align-self: center;
-    border-radius: 12px;
-    background-color: #e8e8e8;
+    background-color: var(--login-green);
+    -webkit-mask-image: url("../img/icon/logo.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-image: url("../img/icon/logo.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
 }
 
 .account_login_heading {
@@ -1425,7 +1432,7 @@ body.is_profile_edit {
     }
 
     .login_logo_placeholder {
-        width: 80px;
+        width: 170px;
     }
 
     .account_login {
@@ -1536,6 +1543,6 @@ body.is_profile_edit {
     }
 
     .login_logo_placeholder {
-        width: 72px;
+        width: 150px;
     }
 }

@@ -456,7 +456,7 @@
 
                 const clippingMask =
                     wrap.querySelector(
-                        ".sub_pag_clipping_mask"
+                        ".slide_mask"
                     );
 
 
@@ -479,7 +479,7 @@
                 const slides =
                     Array.from(
                         track.querySelectorAll(
-                            ":scope > .sub_pag_img_wrap"
+                            ":scope > .slide_group"
                         )
                     );
 
@@ -561,6 +561,13 @@
                     "is_single",
                     slides.length < 2
                 );
+
+                if (pagination) {
+                    pagination.classList.toggle(
+                        "single_paging",
+                        slides.length < 2
+                    );
+                }
 
 
                 const currentNumber =
@@ -1443,7 +1450,7 @@
             .querySelectorAll(
                 '.service_gallery a.tit_wrap[href="#"], ' +
                 '.service_gallery a.tit_wrap_g[href="#"], ' +
-                '.service_gallery a.sub_pag_img_wrap[href="#"]'
+                '.service_gallery a.slide_group[href="#"]'
             )
             .forEach(function (link) {
 
