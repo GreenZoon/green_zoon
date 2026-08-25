@@ -344,6 +344,7 @@ const mobileMenuData = [
 
             {
                 title: "기업소개",
+                href: "/sub_page/Introduction/Introduction_main.html",
 
                 children: [
                     {
@@ -363,6 +364,7 @@ const mobileMenuData = [
 
             {
                 title: "기업 정보",
+                href: "/sub_page/Introduction/Company_history.html",
 
                 children: [
                     {
@@ -378,6 +380,7 @@ const mobileMenuData = [
 
             {
                 title: "허가 및 인증서",
+                href: "/sub_page/Introduction/Certificates.html",
 
                 children: [
                     {
@@ -406,8 +409,14 @@ const mobileMenuData = [
 
             {
                 title: "공장 청소",
+                href: "/sub_page/Factory_cleane/Factory_man.html",
 
                 children: [
+
+                    {
+                        title: "공장 청소",
+                        href: "/sub_page/Factory_cleane/Factory_man.html"
+                    },
 
                     {
                         title: "기계 설비",
@@ -441,6 +450,7 @@ const mobileMenuData = [
 
             {
                 title: "카펫 청소",
+                href: "/sub_page/Cleaning/Carpet_cleaning.html",
 
                 children: [
 
@@ -466,6 +476,7 @@ const mobileMenuData = [
 
             {
                 title: "행사 청소",
+                href: "/sub_page/Event_cleane/City_event.html",
 
                 children: [
                     {
@@ -490,6 +501,7 @@ const mobileMenuData = [
 
             {
                 title: "선박",
+                href: "/sub_page/Ship/Ship.html",
 
                 children: [
                     {
@@ -510,6 +522,7 @@ const mobileMenuData = [
 
             {
                 title: "외벽",
+                href: "/sub_page/Exterior/Commercial.html",
 
                 children: [
                     {
@@ -538,6 +551,7 @@ const mobileMenuData = [
 
             {
                 title: "시설물 관리",
+                href: "/sub_page/Facility/Statue.html",
 
                 children: [
                     {
@@ -598,18 +612,6 @@ const mobileMenuData = [
             }
         ]
     },
-
-
-    /*
-        교육사업은 디자인 자리만 남겨 둔 상태입니다.
-        실제 콘텐츠가 확정되면 아래 항목을 활성화합니다.
-
-        {
-            title: "교육사업",
-            children: []
-        },
-    */
-
 
     {
         title: "갤러리",
@@ -731,27 +733,7 @@ function renderMobileDepth2(depth1Index) {
         const li =
             document.createElement("li");
 
-        /*
-            하위 3뎁스가 있는 메뉴
-        */
-        if (item.children?.length) {
-
-            const button =
-                document.createElement("button");
-
-            button.type = "button";
-            button.textContent = item.title;
-            button.dataset.mobileDepth2 = index;
-            button.dataset.parentDepth1 = depth1Index;
-
-            li.appendChild(button);
-
-        }
-
-        /*
-            바로 이동하는 메뉴
-        */
-        else {
+        if (item.href) {
 
             const link =
                 document.createElement("a");
@@ -763,7 +745,24 @@ function renderMobileDepth2(depth1Index) {
                     item.href || "#"
                 );
 
+            link.dataset.mobileDepth2 = index;
+            link.dataset.parentDepth1 = depth1Index;
+
             li.appendChild(link);
+
+        }
+
+        else {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+            button.textContent = item.title;
+            button.dataset.mobileDepth2 = index;
+            button.dataset.parentDepth1 = depth1Index;
+
+            li.appendChild(button);
 
         }
 
@@ -1187,10 +1186,31 @@ document.addEventListener(
     }
 );
 
-/* 마우스가 있는 기기에서는 2뎁스만 호버로 3뎁스를 미리 봅니다. 터치 기기는 클릭 동작을 유지합니다. */
+/* 마우스가 있는 기기에서는 호버로 다음 뎁스를 미리 봅니다. */
 if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     document.addEventListener("pointerover", (event) => {
+        const depth1Button = event.target.closest("[data-mobile-depth1]");
+
+        if (depth1Button) {
+            const depth1Index = Number(depth1Button.dataset.mobileDepth1);
+
+            setMobileMenuActive("#mobile_depth_1", depth1Button);
+            renderMobileDepth2(depth1Index);
+
+            const firstDepth2 = document.querySelector(
+                "#mobile_depth_2 [data-mobile-depth2='0']"
+            );
+
+            if (firstDepth2) {
+                setMobileMenuActive("#mobile_depth_2", firstDepth2);
+                renderMobileDepth3(depth1Index, 0);
+            }
+
+            return;
+        }
+
         const depth2Button = event.target.closest("[data-mobile-depth2]");
+
         if (depth2Button) {
             const depth1Index = Number(depth2Button.dataset.parentDepth1);
             const depth2Index = Number(depth2Button.dataset.mobileDepth2);

@@ -900,11 +900,22 @@
 
     }
 
+    .mobile_depth_1 .is_active {
+
+        background-color: #009944;
+
+        color: #fff;
+
+        font-weight: 600;
+
+    }
+
     .mobile_depth_2 .is_active,
     .mobile_depth_3 .is_active {
         background-color: transparent;
-        color: #8e8e8e;
-        font-weight: 500;
+        box-shadow: inset 0 -1px 0 #009944;
+        color: #009944;
+        font-weight: 600;
     }
 
     .mobile_depth_2 button:focus-visible,
@@ -922,10 +933,9 @@
         .mobile_depth_2 a:hover,
         .mobile_depth_3 button:hover,
         .mobile_depth_3 a:hover {
+            box-shadow: inset 0 -1px 0 #009944;
             color: #009944;
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 6px;
+            text-decoration: none;
         }
     }
 
