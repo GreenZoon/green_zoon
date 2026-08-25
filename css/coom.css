@@ -75,7 +75,9 @@ button {
     user-select: none;
 }
 
-.img_wrap,.video_thumbnai{
+.img_wrap,
+.video_thumbnai,
+.service_video{
 
     width: 100%;
     height: 100%;
@@ -85,7 +87,6 @@ button {
     cursor: grab;
     user-select: none;
     touch-action: pan-y;
-
     overflow: hidden;
     aspect-ratio: 3 / 2;
 
@@ -438,12 +439,7 @@ section {
 .con > .icon {
 
     width: 100%;
-    aspect-ratio: 1 / 1;
-
     max-width: 54px;
-
-    flex: 0 0 auto;
-
     background-color: #009944;
 }
 
@@ -482,9 +478,7 @@ section {
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
 
-
 }
-
 
 .box_wrap {
 
