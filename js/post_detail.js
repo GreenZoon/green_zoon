@@ -41,7 +41,8 @@
         "건물 유리창과 창틀 세척 작업",
         "배관 주변 기름때 제거 작업",
         "학교 연못 청소 작업 영상",
-        "사무실 바닥 청소 및 왁스"
+        "사무실 바닥 청소 및 왁스",
+        "공장 청소 작업 영상"
     ];
 
     const galleryEventTitles = [
@@ -152,7 +153,8 @@
         "img/mainimgs/building_wall_cleaning_ing.jpg",
         "img/sub_page/factory_equipment_ing_3.jpg",
         "img/sub_page/Pond_ing_3.jpg",
-        "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg"
+        "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg",
+        "https://i.ytimg.com/vi/i27HAUUJFOU/hqdefault.jpg"
     ];
 
     const galleryEventImages = [
@@ -249,6 +251,8 @@
     posts.video[16].videoUrl = "https://www.youtube.com/watch?v=zRq8Ji7RddY";
     posts.video[17].date = "2026.08.25";
     posts.video[17].videoUrl = "https://www.youtube.com/watch?v=QeB5DOs5E8Y";
+    posts.video[18].date = "2026.08.25";
+    posts.video[18].videoUrl = "https://www.youtube.com/watch?v=i27HAUUJFOU";
 
     posts.notice.forEach(function (post) {
         post.image = "";
