@@ -12,6 +12,7 @@
         {
             id: "factory",
             name: "공장 청소",
+            summaryName: "공장청소",
             iconClass: "factory",
             imageRequired: true,
             tip: "바닥, 기계설비, 도색, 사무실 등 공장청소와 관련된 내용을 작성해 주세요.",
@@ -32,6 +33,7 @@
         {
             id: "water_tank",
             name: "물탱크",
+            summaryName: "물탱크 청소",
             iconClass: "water_tower",
             tip: "물탱크 용량과 개수 및 필요한 작업 내용을 작성해 주세요.",
             fields: [
@@ -95,6 +97,7 @@
         {
             id: "wax",
             name: "왁스 코팅",
+            summaryName: "왁스바닥",
             iconClass: "soap_ottle",
             imageRequired: true,
             tip: "바닥 면적과 재질 및 기존 왁스 상태를 작성해 주세요.",
@@ -127,6 +130,7 @@
     const details = document.getElementById("service_details");
     const summary = document.getElementById("application_summary");
     const visitList = document.getElementById("visit_slots");
+    const visitConfirm = document.getElementById("visit_confirm");
     const visitModal = document.getElementById("visit_modal");
     const successModal = document.getElementById("success_modal");
     const privacyAgree = document.getElementById("privacy_agree");
@@ -313,7 +317,19 @@
             const value = element?.value.trim();
 
             if (value) {
-                values.push(`${field.label} ${value}`);
+                let summaryValue = value;
+
+                if (service.id === "water_tank" && field.name === "capacity" && !/t$/i.test(value)) {
+                    summaryValue = `${value}T`;
+                } else if (service.id === "water_tank" && field.name === "count" && !/개$/.test(value)) {
+                    summaryValue = `${value}개`;
+                } else if (service.id === "dispatch" && field.name === "people" && !/명$/.test(value)) {
+                    summaryValue = `${value}명`;
+                } else if (["wax", "carpet"].includes(service.id) && field.name === "area" && !/평$/.test(value)) {
+                    summaryValue = `${value}평`;
+                }
+
+                values.push(summaryValue);
             }
         });
 
@@ -332,13 +348,20 @@
             const fileCount = (serviceFiles.get(id) || []).length;
             return `
                 <div class="summary_item">
-                    <span class="icon ${service.iconClass} summary_icon" aria-hidden="true"></span>
                     <div class="summary_item_info">
-                        <strong>${service.name}</strong>
-                        <p>${escapeHtml(values.join(" / ") || "상세 내용을 작성해 주세요")}</p>
-                        <p>${fileCount ? `이미지 ${fileCount}장 첨부` : "이미지 미첨부"}</p>
+                        <div class="summary_service">
+                            <span class="icon ${service.iconClass} summary_icon" aria-hidden="true"></span>
+                            <strong>${service.summaryName || service.name}</strong>
+                        </div>
+                        <div class="summary_detail">
+                            <span class="icon contract summary_mark" aria-hidden="true"></span>
+                            <p>${escapeHtml(values.slice(0, 2).join("/") || "상세 내용을 작성해 주세요")}</p>
+                        </div>
+                        <div class="summary_file">
+                            ${fileCount ? '<span class="icon picture summary_mark" aria-hidden="true"></span><p>이미지 첨부 완료</p>' : ""}
+                        </div>
                     </div>
-                    <button type="button" class="slot_remove" data-remove-service="${id}" aria-label="${service.name} 선택 해제">×</button>
+                    <button type="button" class="slot_remove" data-remove-service="${id}" aria-label="${service.name} 선택 해제"><span class="icon cancel" aria-hidden="true"></span></button>
                 </div>
             `;
         }).join("");
@@ -370,20 +393,28 @@
 
     function renderVisitSlots() {
         if (!visitSlots.length) {
+            visitConfirm.hidden = true;
             visitList.innerHTML = '<p class="empty_message">선택된 방문 일정이 없습니다.</p>';
             return;
         }
 
+        visitConfirm.hidden = false;
         visitList.innerHTML = visitSlots.map((slot, index) => {
             const date = new Date(`${slot.date}T00:00:00`);
             const formatted = `${date.getMonth() + 1}/${date.getDate()}`;
             return `
                 <div class="visit_slot">
                     <div class="visit_slot_info">
-                        <p>${formatted}</p>
-                        <p>${slot.time}</p>
+                        <div class="visit_time">
+                            <span class="icon calendar visit_icon" aria-hidden="true"></span>
+                            <p>${formatted}</p>
+                        </div>
+                        <div class="visit_time">
+                            <span class="icon clock visit_icon" aria-hidden="true"></span>
+                            <p>${slot.time}</p>
+                        </div>
                     </div>
-                    <button type="button" class="slot_remove" data-slot-index="${index}" aria-label="방문 일정 삭제">×</button>
+                    <button type="button" class="slot_remove" data-slot-index="${index}" aria-label="방문 일정 삭제"><span class="icon cancel" aria-hidden="true"></span></button>
                 </div>
             `;
         }).join("");

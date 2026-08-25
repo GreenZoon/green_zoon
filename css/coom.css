@@ -975,6 +975,13 @@ svg {
 
 }
 
+.clock{
+
+    -webkit-mask-image: url("../img/icon/clock.svg");
+    mask-image: url("../img/icon/clock.svg");
+
+}
+
 /* 펜_작성 */
 
 .pen{
