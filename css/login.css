@@ -11,19 +11,24 @@
 }
 
 .login_page {
+
     color: var(--login-text);
     background: #fff;
 }
 
 .profile_page.is_auth_checking .profile_main {
+  
     visibility: hidden;
+
 }
 
 .login_main {
+  
     width: 94%;
     max-width: 1240px;
     margin: 0 auto;
     padding-block: 52px 120px;
+
 }
 
 .login_breadcrumb {
@@ -40,6 +45,7 @@
 }
 
 .login_shell {
+
     min-height: 620px;
     display: flex;
     overflow: hidden;
@@ -66,11 +72,13 @@
 .login_form,
 .login_field,
 .login_benefits {
+
     display: flex;
     flex-direction: column;
 }
 
 .login_intro {
+
     justify-content: center;
     gap: 24px;
     padding: 64px;
@@ -81,39 +89,50 @@
 }
 
 .login_intro_eyebrow {
+
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .14em;
+
 }
 
 .login_intro h1 {
+
     font-size: 48px;
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -.045em;
+
 }
 
 .login_intro > p {
+
     max-width: 460px;
     color: rgba(255, 255, 255, .86);
     font-size: 17px;
     line-height: 1.7;
     word-break: keep-all;
+
 }
 
 .login_benefits {
+
     gap: 14px;
     margin-top: 8px;
+
 }
 
 .login_benefits li {
+
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 16px;
+
 }
 
 .login_benefit_mark {
+
     width: 22px;
     aspect-ratio: 1;
     display: block;
@@ -121,16 +140,21 @@
     border-radius: 50%;
     background: #fff;
     background-clip: padding-box;
+
 }
 
 .login_form_area {
+
     justify-content: center;
     gap: 34px;
     padding: 64px 88px;
+
 }
 
 .login_heading {
+
     gap: 6px;
+
 }
 
 .login_heading > span {
@@ -968,15 +992,29 @@ body.is_profile_edit {
 }
 
 .login_logo_placeholder {
-    width: 200px;
-    aspect-ratio: 40 / 11;
+
+    width: 100%;
+    max-width: 200px;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    display: block;
+    aspect-ratio: 2 / 1;
     align-self: center;
-    background-color: var(--login-green);
-    -webkit-mask-image: url("../img/icon/logo.svg");
+
+
+    background-color: #009944;
+    -webkit-mask-image: url("../img/SVG/horizontal_logo.svg");
+    mask-image: url("../img/SVG/horizontal_logo.svg");
+
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
-    mask-image: url("../img/icon/logo.svg");
+
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
