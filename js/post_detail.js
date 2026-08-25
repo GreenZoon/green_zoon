@@ -370,6 +370,11 @@
     }
 
     function bindListLinks() {
+        document.querySelectorAll(".gallery_play_icon").forEach(function (icon) {
+            icon.classList.remove("play");
+            icon.classList.add("play_Block");
+        });
+
         linkCards(".gallery_page:not([data-post-page]) .gallery_card", document.title.includes("동영상") ? "video" : document.title.includes("행사") ? "galleryEvent" : "work");
         linkCards('[data-community-page="event"] .event_card', "event");
         linkCards(".information_card", "information");
@@ -930,7 +935,7 @@
             const image = images[0];
             const media = '<div class="post_media post_video">' +
                 '<img src="' + asset(image) + '" alt="' + post.title + '">' +
-                '<span class="gallery_play" aria-hidden="true"><span class="icon play gallery_play_icon"></span></span></div>';
+                '<span class="gallery_play" aria-hidden="true"><span class="icon play_Block gallery_play_icon"></span></span></div>';
 
             if (post.videoUrl) {
                 return '<a href="' + post.videoUrl + '" target="_blank" rel="noopener noreferrer" aria-label="' + post.title + ' 재생">' + media + '</a>';
@@ -1017,8 +1022,9 @@
             let dragDirection = null;
 
             function visibleCount() {
-                if (window.innerWidth <= 768) return 1;
-                return 2;
+                if (window.innerWidth <= 768) return 2;
+                if (window.innerWidth <= 1500) return 3;
+                return 4;
             }
 
             function drawDots() {
