@@ -432,21 +432,7 @@
                 perPage = list.closest(".notice_list") ? 6 : 5;
             } else {
                 items = Array.from(list.children);
-
-                const isMobile =
-                    window.matchMedia("(max-width: 768px)").matches;
-
-                if (isMobile && list.classList.contains("information_cards")) {
-                    perPage = 8;
-                } else if (isMobile) {
-                    perPage = 4;
-                } else if (list.classList.contains("gallery_cards")) {
-                    perPage = 12;
-                } else if (list.classList.contains("event_cards")) {
-                    perPage = 6;
-                } else {
-                    perPage = 8;
-                }
+                perPage = 8;
             }
 
             if (!items.length) return;
