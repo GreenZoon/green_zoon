@@ -23,29 +23,6 @@
         "상가 외벽 묵은 때와 빗물 자국 세척 현장"
     ];
 
-    const videoTitles = [
-        "미화원 파견 작업 영상",
-        "(주)그린죤 카페트청소 작업",
-        "비둘기 퇴치 작업 다녀왔습니다~!",
-        "공장 바닥 청소 작업",
-        "공장 설비 청소 작업",
-        "저수조 내부 청소 작업",
-        "외벽 세척 작업",
-        "바닥 왁스 코팅 작업",
-        "카펫 청소 작업",
-        "시설물 세척 작업",
-        "행사장 청소 작업",
-        "공장 라인 가동 전 정밀 세척 과정",
-        "사무실 바닥 세척과 왁스 코팅 과정",
-        "건물 유리창과 창틀 세척 작업",
-        "배관 주변 기름때 제거 작업",
-        "학교 연못 청소 작업 영상",
-        "사무실 바닥 청소 및 왁스",
-        "공장 청소 작업 영상",
-        "공장 바닥 청소 작업 영상",
-        "소독·방역 작업 영상"
-    ];
-
     const galleryEventTitles = [
         "2025년 전국 건물위생관리 기능경진대회 대상 수상",
         "2023년 전국 건물위생관리 기능경진대회 최우수상 수상",
@@ -136,29 +113,6 @@
         "img/sub_page/building_wall_ing_3.jpg"
     ];
 
-    const videoImages = [
-        "img/sub_page/dispatch_gallery.jpg",
-        "img/sub_page/cleaning_carpet_ing_3.jpg",
-        "img/mainimgs/bird_spike_ing.jpg",
-        "img/sub_page/factory_floor_ing.jpg",
-        "img/sub_page/factory_equipment_ing.jpg",
-        "img/sub_page/water_tank_ing_2.jpg",
-        "img/sub_page/building_wall_ing_1.jpg",
-        "img/sub_page/wax_ing_2.jpg",
-        "img/mainimgs/cleaning_carpet_ing.jpg",
-        "img/mainimgs/statue_cleaning_ing_1.jpg",
-        "img/mainimgs/cleaning_event_ing.webp",
-        "img/sub_page/factory_line_ing_4.jpg",
-        "img/sub_page/Wax_job_2.jpg",
-        "img/mainimgs/building_wall_cleaning_ing.jpg",
-        "img/sub_page/factory_equipment_ing_3.jpg",
-        "img/sub_page/Pond_ing_3.jpg",
-        "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg",
-        "img/slide/factory_cleane_slide_2.jpg",
-        "img/sub_page/factory_floor_3_1_ing.jpg",
-        "img/mainimgs/Disinfection_ing.jpg"
-    ];
-
     const galleryEventImages = [
         "img/sub_page/awards/award_2025_cover.jpg",
         "img/sub_page/awards/award_2023_cover.jpg",
@@ -233,9 +187,23 @@
         });
     }
 
+    const videoPosts = [
+        { id: 0, title: "미화원 파견 작업 영상", date: "2026.04.01", image: "img/sub_page/dispatch_gallery.jpg" },
+        { id: 1, title: "카펫 청소 작업", date: "2026.01.02", image: "img/sub_page/Carpet_cleaning_vdo_img.jpg" },
+        { id: 2, title: "비둘기 퇴치 작업 다녀왔습니다~!", date: "2026.04.01", image: "img/mainimgs/bird_spike_ing.jpg", videoUrl: "https://www.youtube.com/watch?v=0UKCmXB9Fn4" },
+        { id: 14, title: "기계·설비 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/factory_equipment_ing_2_2.jpg", videoUrl: "https://www.youtube.com/shorts/Ms05de4-1wU" },
+        { id: 15, title: "학교 연못 청소 작업 영상", date: "2026.03.20", image: "img/sub_page/Pond_ing_3.jpg", videoUrl: "https://www.youtube.com/watch?v=zRq8Ji7RddY" },
+        { id: 16, title: "사무실 바닥 청소 및 왁스", date: "2026.08.25", image: "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg", videoUrl: "https://www.youtube.com/watch?v=QeB5DOs5E8Y" },
+        { id: 17, title: "공장 청소 작업 영상", date: "2026.08.25", image: "img/slide/factory_cleane_slide_2.jpg", videoUrl: "https://www.youtube.com/watch?v=i27HAUUJFOU" },
+        { id: 18, title: "공장 바닥 청소 작업 영상", date: "2026.08.25", image: "img/sub_page/factory_floor_3_1_ing.jpg", videoUrl: "https://www.youtube.com/shorts/xHZDlb5w_10" },
+        { id: 19, title: "소독·방역 작업 영상", date: "2026.08.26", image: "img/mainimgs/Disinfection_ing.jpg", videoUrl: "https://www.youtube.com/shorts/AY12rwHZauM" }
+    ].map(function (post) {
+        return Object.assign({ type: "video", label: "작업 동영상", images: [post.image] }, post);
+    });
+
     const posts = {
         work: makePosts("work", workTitles, workImages, "작업 갤러리"),
-        video: makePosts("video", videoTitles, videoImages, "작업 동영상"),
+        video: videoPosts,
         galleryEvent: makePosts("galleryEvent", galleryEventTitles, galleryEventImages, "행사 사진"),
         notice: makePosts("notice", noticeTitles, noticeImages, "공지사항"),
         event: makePosts("event", communityEventTitles, communityEventImages, "이벤트"),
@@ -247,19 +215,6 @@
     posts.notice[10].date = "2023.06.13";
     posts.galleryEvent[0].date = "2025.06.23";
     posts.galleryEvent[1].date = "2023.06.13";
-    posts.video[2].date = "2026.04.01";
-    posts.video[2].videoUrl = "https://www.youtube.com/watch?v=0UKCmXB9Fn4";
-    posts.video[15].date = "2026.03.20";
-    posts.video[15].videoUrl = "https://www.youtube.com/watch?v=zRq8Ji7RddY";
-    posts.video[16].date = "2026.08.25";
-    posts.video[16].videoUrl = "https://www.youtube.com/watch?v=QeB5DOs5E8Y";
-    posts.video[17].date = "2026.08.25";
-    posts.video[17].videoUrl = "https://www.youtube.com/watch?v=i27HAUUJFOU";
-    posts.video[18].date = "2026.08.25";
-    posts.video[18].videoUrl = "https://www.youtube.com/shorts/xHZDlb5w_10";
-    posts.video[19].date = "2026.08.26";
-    posts.video[19].videoUrl = "https://www.youtube.com/shorts/AY12rwHZauM";
-
     posts.notice.forEach(function (post) {
         post.image = "";
         post.images = [];
@@ -366,21 +321,21 @@
         return new URL("sub_page/" + folder + "/Post.html?type=" + type + "&id=" + id, rootUrl).href;
     }
 
+    function findPost(type, id) {
+        return posts[type] && posts[type].find(function (post) {
+            return post.id === id;
+        });
+    }
+
     function linkCards(selector, type) {
-        let contentIndex = 0;
-        document.querySelectorAll(selector).forEach(function (card) {
+        document.querySelectorAll(selector).forEach(function (card, index) {
             if (card.dataset.customReview === "true") return;
             if (card.dataset.customLink === "true") return;
-            const hasFixedId = card.dataset.postId !== undefined;
             const fixedId = Number(card.dataset.postId);
-            const postId = hasFixedId && Number.isInteger(fixedId) ? fixedId : contentIndex;
+            const postId = Number.isInteger(fixedId) && card.dataset.postId !== undefined ? fixedId : index;
 
-            if (posts[type] && posts[type][postId]) {
+            if (findPost(type, postId)) {
                 card.href = postUrl(type, postId);
-            }
-
-            if (!hasFixedId) {
-                contentIndex += 1;
             }
         });
     }
@@ -411,9 +366,9 @@
 
         document.querySelectorAll(".video_card").forEach(function (card, index) {
             const fixedId = Number(card.dataset.postId);
-            const postId = Number.isInteger(fixedId) && posts.video[fixedId]
+            const postId = Number.isInteger(fixedId) && findPost("video", fixedId)
                 ? fixedId
-                : index % posts.video.length;
+                : posts.video[index % posts.video.length].id;
 
             card.href = postUrl("video", postId);
             card.removeAttribute("target");
@@ -673,7 +628,7 @@
             "2026-03-02": "공장청소",
             "2026-03-03": "공장 기계 세척",
             "2026-03-04": "물탱크 청소",
-            "2026-03-05": "호텔 카페트 청소",
+            "2026-03-05": "호텔 카펫 청소",
             "2026-03-06": "공장 바닥 청소",
             "2026-03-07": "새해맞이 학교 청소",
             "2026-03-08": "공장청소",
@@ -977,8 +932,8 @@
         const params = new URLSearchParams(window.location.search);
         const type = posts[params.get("type")] ? params.get("type") : document.body.dataset.postPage === "gallery" ? "work" : "notice";
         const list = posts[type];
-        const id = Math.min(Math.max(parseInt(params.get("id"), 10) || 0, 0), list.length - 1);
-        const post = list[id];
+        const requestedId = parseInt(params.get("id"), 10) || 0;
+        const post = findPost(type, requestedId) || list[0];
         const copy = copyFor(post);
         document.body.dataset.postType = type;
         document.body.dataset.postId = post.id;
