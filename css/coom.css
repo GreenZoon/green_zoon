@@ -333,6 +333,7 @@ section {
     align-items: flex-end;
 
     gap: 0;
+    padding: 0 150px;
 }
 
 .subpage_nav_link {
@@ -1597,6 +1598,7 @@ svg {
 
 .subpage_nav_list {
         justify-content: flex-end;
+        padding: 0 50px;
     }
 
 .breadcrumb {
@@ -1675,6 +1677,10 @@ svg {
 
 .tablet_none {
         display: none;
+    }
+
+    .subpage_nav_list {
+        padding: 0 40px;
     }
 
     section {
@@ -1783,8 +1789,9 @@ svg {
     .subpage_nav_list {
         width: max-content;
         min-width: 100%;
-        justify-content: center;
+        justify-content: flex-end;
         gap: 12px;
+        padding: 0 20px;
     }
 
     .subpage_nav_link {

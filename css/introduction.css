@@ -751,7 +751,7 @@
 
     .company_menu {
 
-        padding: 0 120px;
+        padding: 0 50px;
     }
 
     .company_intro {
@@ -798,7 +798,7 @@
 
     .company_menu {
 
-       padding:  0 100px;
+       padding: 0 40px;
 
     }
 
@@ -936,7 +936,7 @@
 
         width: 100%;
         gap: 12px;
-        padding:  0 40px;
+        padding: 0 20px;
         overflow: visible;
 
     }
