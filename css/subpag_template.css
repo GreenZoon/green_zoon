@@ -499,16 +499,18 @@
 
     display: flex;
     align-items: center;
-
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .sub_pag_clipping_mask {
 
     width: 100%;
+    min-width: 0;
     height: auto;
 
-    aspect-ratio: 9 / 3;
+    aspect-ratio: 39 / 8;
+
+    flex: 1 1 auto;
 
     position: relative;
 
@@ -539,11 +541,9 @@
 
     display: flex;
     align-items: stretch;
-    justify-content: center;
+    justify-content: space-between;
 
     flex: 0 0 auto;
-
-    gap:3%;
 
     cursor: grab;
 
@@ -561,7 +561,10 @@
 
 .sub_slide_img {
 
-    width: 33%;
+    width: 32%;
+    height: 100%;
+
+    flex: 0 0 32%;
 
     position: relative;
 
@@ -570,8 +573,17 @@
     border-radius: 15px;
 }
 
+.sub_slide_img:only-child {
+
+    width: 100%;
+
+    flex: 0 0 100%;
+}
+
 .sub_slide_img img {
 
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
 
@@ -583,7 +595,18 @@
 .sub_pag_slide_wrap > .arrow {
 
     width: 40px;
+
+    flex: 0 0 40px;
+
     background-color: #8e8e8e;
+}
+
+.sub_pag_slide_wrap > .left_arrow_2 {
+    margin-right: 1%;
+}
+
+.sub_pag_slide_wrap > .right_arrow_2 {
+    margin-left: 1%;
 }
 
 .sub_pag_slide_wrap > .wit_arrow {
@@ -1330,31 +1353,12 @@
         max-width: none;
     }
 
-    .service_gallery .sub_pag_clipping_mask {
-
-        width: 100%;
-
-        aspect-ratio: 39 / 8;
-    }
-
-    .service_gallery .sub_pag_img_wrap {
-
-        gap: 20px;
-    }
-
-    .service_gallery .sub_slide_img {
-
-        display: block;
-
-        width: 32%;
-
-        flex: 0 0 32%;
-    }
-
-        .sub_pag_slide_wrap > .arrow{
+    .sub_pag_slide_wrap > .arrow {
 
         width: 30px;
         height: 30px;
+
+        flex-basis: 30px;
 
     }
 
@@ -1773,89 +1777,6 @@
 
 }
 
-    /* =====================================================
-       GALLERY
-       MOBILE : 후 사진 1장
-    ===================================================== */
-
-        .img_section {
-
-        gap: 22px;
-
-    }
-
-    .img_section .tit_wrap {
-
-        width: 100%;
-        max-width: none;
-        gap: 6px;
-    }
-
-
-    .img_section .tit_wrap p {
-
-        font-size: 0.75rem;
-    }
-
-    .sub_pag_slide_wrap {
-
-        gap: 0;
-    }
-
-    .sub_pag_clipping_mask {
-
-        width: 100%;
-        height: auto;
-        aspect-ratio: 13 / 8;
-        border-radius: 12px;
-    }
-
-    .sub_pag_img_wrap {
-
-        gap: 0;
-    }
-
-    /* 전 - 숨김 */
-
-    .sub_slide_img:first-child {
-
-        display: none;
-    }
-
-    /* 중 - 숨김 */
-
-    .sub_slide_img:nth-child(2) {
-
-        display: none;
-    }
-
-    /* 후 - 대표 이미지 */
-
-    .sub_slide_img:nth-child(3) {
-
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        flex: 0 0 100%;
-
-        border-radius: 12px;
-    }
-
-    .sub_slide_img:nth-child(3) img {
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-
-    .slide_pagination {
-
-        margin-top: 10px;
-    }
-
     /* VIDEO */
 
     .section_g_2 {
@@ -2178,19 +2099,11 @@
        769px ~ 1024px : 청소 전 / 청소 후 2장
     ===================================================== */
 
-    .service_gallery
     .sub_pag_clipping_mask {
-        aspect-ratio: 39 / 8;
+        aspect-ratio: 13 / 4;
     }
 
-    .service_gallery
-    .sub_pag_img_wrap {
-        gap: 2%;
-    }
-
-    .service_gallery
     .sub_pag_img_wrap > .sub_slide_img:first-child,
-    .service_gallery
     .sub_pag_img_wrap > .sub_slide_img:last-child {
 
         display: block;
@@ -2201,7 +2114,13 @@
         flex: 0 0 49%;
     }
 
-    .service_gallery
+    .sub_pag_img_wrap > .sub_slide_img:only-child {
+
+        width: 100%;
+
+        flex: 0 0 100%;
+    }
+
     .sub_pag_img_wrap > .sub_slide_img:nth-child(2) {
 
         display: none;
@@ -2716,12 +2635,9 @@
     .service_gallery .sub_pag_slide_wrap {
 
         width: 100%;
-
-        gap: 14px;
     }
 
 
-    .service_gallery
     .sub_pag_clipping_mask {
 
         width: 100%;
@@ -2732,30 +2648,27 @@
         border-radius: 12px;
     }
 
-    .service_gallery
     .sub_pag_img_wrap {
 
         width: 100%;
         height: 100%;
 
-        gap: 0;
-
         flex: 0 0 100%;
     }
 
     /* 모바일은 각 슬라이드 묶음에서 대표 이미지 한 장만 표시 */
-    .service_gallery .sub_slide_img {
+    .sub_pag_img_wrap > .sub_slide_img,
+    .sub_pag_img_wrap > .sub_slide_img:first-child,
+    .sub_pag_img_wrap > .sub_slide_img:last-child {
         display: none;
     }
 
-    .service_gallery .sub_slide_img:nth-child(2),
-    .service_gallery .sub_slide_img:only-child {
+    .sub_pag_img_wrap > .sub_slide_img:nth-child(2),
+    .sub_pag_img_wrap > .sub_slide_img:only-child {
         display: block;
         width: 100%;
         height: 100%;
         flex: 0 0 100%;
-
-        flex: 0 0 auto;
 
         border-radius: 12px;
     }
