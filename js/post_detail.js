@@ -188,15 +188,19 @@
     }
 
     const videoPosts = [
-        { id: 0, title: "미화원 파견 작업 영상", date: "2026.04.01", image: "img/sub_page/dispatch_gallery.jpg" },
-        { id: 1, title: "카펫 청소 작업", date: "2026.01.02", image: "img/sub_page/Carpet_cleaning_vdo_img.jpg" },
+        { id: 0, title: "미화원 정기교육 영상", date: "2026.04.01", image: "img/sub_page/dispatch_gallery.jpg", videoUrl: "https://www.youtube.com/shorts/sx0b62bCz_g" },
+        { id: 1, title: "카펫 청소 작업", date: "2026.01.02", image: "img/sub_page/Carpet_cleaning_vdo_img.jpg", videoUrl: "https://www.youtube.com/shorts/vkOGynDESmk" },
         { id: 2, title: "비둘기 퇴치 작업 다녀왔습니다~!", date: "2026.04.01", image: "img/mainimgs/bird_spike_ing.jpg", videoUrl: "https://www.youtube.com/watch?v=0UKCmXB9Fn4" },
         { id: 14, title: "기계·설비 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/factory_equipment_ing_2_2.jpg", videoUrl: "https://www.youtube.com/shorts/Ms05de4-1wU" },
         { id: 15, title: "학교 연못 청소 작업 영상", date: "2026.03.20", image: "img/sub_page/Pond_ing_3.jpg", videoUrl: "https://www.youtube.com/watch?v=zRq8Ji7RddY" },
         { id: 16, title: "사무실 바닥 청소 및 왁스", date: "2026.08.25", image: "https://i.ytimg.com/vi/QeB5DOs5E8Y/hqdefault.jpg", videoUrl: "https://www.youtube.com/watch?v=QeB5DOs5E8Y" },
         { id: 17, title: "공장 청소 작업 영상", date: "2026.08.25", image: "img/slide/factory_cleane_slide_2.jpg", videoUrl: "https://www.youtube.com/watch?v=i27HAUUJFOU" },
         { id: 18, title: "공장 바닥 청소 작업 영상", date: "2026.08.25", image: "img/sub_page/factory_floor_3_1_ing.jpg", videoUrl: "https://www.youtube.com/shorts/xHZDlb5w_10" },
-        { id: 19, title: "소독·방역 작업 영상", date: "2026.08.26", image: "img/mainimgs/Disinfection_ing.jpg", videoUrl: "https://www.youtube.com/shorts/AY12rwHZauM" }
+        { id: 19, title: "소독·방역 작업 영상", date: "2026.08.26", image: "img/mainimgs/Disinfection_ing.jpg", videoUrl: "https://www.youtube.com/shorts/AY12rwHZauM" },
+        { id: 20, title: "매트·패브릭 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/Fabric_cleaning_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/aVER6UoKCNs" },
+        { id: 21, title: "대형 저수조 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/water_tank_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/1cbOF6uwlV0" },
+        { id: 22, title: "건물 외벽 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/building_wall_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/HWKBh3nwBAk" },
+        { id: 23, title: "공장 외벽 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/factory_wall_ing.jpg", videoUrl: "https://www.youtube.com/shorts/Qa2dcR8k9So" }
     ].map(function (post) {
         return Object.assign({ type: "video", label: "작업 동영상", images: [post.image] }, post);
     });
