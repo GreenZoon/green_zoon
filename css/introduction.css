@@ -20,7 +20,7 @@
 .company_tabs {
 
     width: 100%;
-   
+
     display: flex;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
@@ -31,7 +31,7 @@
 .company_menu{
 
     width: 100%;
-   
+
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
@@ -56,7 +56,7 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-   
+
     color: #8e8e8e;
     font-size: 1.1875rem;
     font-weight: 700;
@@ -281,13 +281,13 @@
 }
 
 .company_portrait {
-    
+
     flex: 0 0 auto;
     width: 100%;
     max-width: 300px;
     aspect-ratio: 1 / 2;
     align-self: center;
-   
+
 }
 
 .company_location {
@@ -998,10 +998,10 @@
     }
 
     .company_values {
-        
+
         flex-basis: 300px;
         width: 300px;
-     
+
     }
 
     .company_values::before {
@@ -1029,7 +1029,7 @@
     }
 
     .company_intro_copy {
-   
+
         gap: 7px;
     }
 
@@ -1243,7 +1243,7 @@
 
     .company_award p,
     .company_award a {
-        
+
         font-size: 0.9375rem;
         line-height: 1.7;
     }
@@ -1353,12 +1353,12 @@
 
         flex-basis: 280px;
         width: 280px;
-      
+
     }
 
     .company_values::before {
         width: 184px;
-       
+
         top: 48px;
         left: 48px;
     }
@@ -1366,7 +1366,7 @@
     .company_values li {
 
         width: 96px;
-       
+
     }
 
         p,a,

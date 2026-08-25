@@ -444,9 +444,21 @@
 }
 
 .profile_form label + label,
-.profile_email { margin-top: 18px; }
+.profile_email {
 
-.profile_form label p { margin-bottom: 8px; font-size: 15px; font-weight: 700; }
+    margin-top: 18px;
+
+}
+
+.profile_form label p {
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
 
 .profile_form input,
 .profile_form textarea {
@@ -461,11 +473,40 @@
     box-sizing: border-box;
 }
 
-.profile_form textarea { min-height: 92px; resize: vertical; }
+.profile_form textarea {
+
+    min-height: 92px;
+
+    resize: vertical;
+
+}
+
 .profile_form input[readonly],
-.profile_form textarea[readonly] { background: #f8f8f8; color: #555; }
-.profile_form input[name="grade"] { background: #009944; color: #fff; }
-.profile_email { color: #8e8e8e; font-size: 14px; overflow-wrap: anywhere; }
+.profile_form textarea[readonly] {
+
+    background: #f8f8f8;
+
+    color: #555;
+
+}
+
+.profile_form input[name="grade"] {
+
+    background: #009944;
+
+    color: #fff;
+
+}
+
+.profile_email {
+
+    color: #8e8e8e;
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+
+}
 
 .profile_edit {
     min-width: 150px;
@@ -1224,9 +1265,29 @@ body.is_profile_edit {
     background: transparent;
 }
 
-.account_social .social_naver { border-color: #2db400; color: #2db400; }
-.account_social .social_google { border-color: #8e8e8e; color: #555; }
-.account_social .social_facebook { border-color: #08f; color: #08f; }
+.account_social .social_naver {
+
+    border-color: #2db400;
+
+    color: #2db400;
+
+}
+
+.account_social .social_google {
+
+    border-color: #8e8e8e;
+
+    color: #555;
+
+}
+
+.account_social .social_facebook {
+
+    border-color: #08f;
+
+    color: #08f;
+
+}
 
 .account_signup {
     display: none;

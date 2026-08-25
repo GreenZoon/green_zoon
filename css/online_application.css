@@ -44,7 +44,7 @@
 }
 
 .application_main {
-    
+
     width: 100%;
     max-width: 1668px;
     margin: 0 auto;
@@ -785,7 +785,7 @@ body.modal_open {
         width: 12%;
         flex-basis: 12%;
     }
-    
+
     .application_main {
         width: 100%;
         padding-block: 24px 100px;

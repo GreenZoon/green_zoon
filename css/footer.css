@@ -141,7 +141,7 @@ footer {
 .footer_sub_nav .arrow {
 
     width: 0.7rem;
-    
+
     background-color: #8e8e8e;
 
     transform: rotate(-90deg);
@@ -224,7 +224,7 @@ footer {
 .footer_sns a {
 
     width: 28px;
-  
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -376,7 +376,7 @@ footer {
     .footer_brand {
         width: 10%;
         max-width: none;
-      
+
     }
 
     .footer_logo {
@@ -402,7 +402,7 @@ footer {
 
     .footer_sub_nav {
         width: 42%;
-    
+
 
         display: flex;
         justify-content: space-between;
@@ -412,7 +412,7 @@ footer {
 
     .footer_sub_nav ul {
         width: 30%;
-    
+
         gap: 8px;
     }
 

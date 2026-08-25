@@ -76,7 +76,7 @@ button {
 }
 
 .img_wrap,.video_thumbnai{
-    
+
     width: 100%;
     height: 100%;
 
@@ -85,7 +85,7 @@ button {
     cursor: grab;
     user-select: none;
     touch-action: pan-y;
-    
+
     overflow: hidden;
     aspect-ratio: 3 / 2;
 
