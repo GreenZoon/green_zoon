@@ -1256,6 +1256,7 @@ body.is_profile_edit {
 
 .account_login_buttons > button {
     width: min(100%, 362px);
+    height: 44px;
 
     flex: 1 1 0;
     border-radius: 7px;
@@ -1509,6 +1510,7 @@ body.is_profile_edit {
 
     .account_login_buttons > button {
         width: auto;
+        height: 42px;
 
         padding: 9px 24px;
         font-size: 14px;
