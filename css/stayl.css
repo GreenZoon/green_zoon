@@ -1873,8 +1873,10 @@
 
     .mobile_search input {
 
+        width: calc(100% - 28px);
         height: 100%;
-        padding: 0;
+        flex: 1 1 auto;
+        padding: 0 12px 0 0;
 
         border: 0;
         outline: 0;
@@ -1889,6 +1891,11 @@
 
         width: 16px;
         height: 16px;
+        flex: 0 0 16px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 0;
 
         border: 0;
@@ -1900,6 +1907,7 @@
 
         width: 12px;
         height: 12px;
+        display: block;
         background-color: #8e8e8e;
 
     }
