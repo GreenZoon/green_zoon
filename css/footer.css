@@ -100,7 +100,6 @@ footer {
 
 
 .footer_sub_nav ul {
-    min-width: 0;
 
     margin: 0;
     padding: 0;
@@ -276,7 +275,6 @@ footer {
 .footer_copy {
     width: 16%;
     flex: 0 0 16%;
-    min-width: 0;
 
     display: flex;
     flex-direction: column;

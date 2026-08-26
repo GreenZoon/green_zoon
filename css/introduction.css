@@ -51,7 +51,7 @@
 .company_tit {
 
     width: 100%;
-   min-height: 50px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +115,7 @@
 
 .company_drop a {
 
-    min-height: 48px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,7 +136,7 @@
 
 .company_intro {
 
-    min-height: 600px;
+
     align-items: center;
     gap: 90px;
 
@@ -253,7 +253,7 @@
 
 .company_greeting {
 
-    min-height: 757px;
+
     align-items: center;
     gap: 80px;
 }
@@ -697,7 +697,7 @@
 
 .company_logo {
     flex: 1 1 12%;
-    min-height: 76px;
+
     border: 1px solid #ddd;
 }
 
@@ -730,7 +730,7 @@
 }
 
 .company_client_logos .company_logo {
-    min-height: 48px;
+
 }
 
 
@@ -808,7 +808,7 @@
 
     .company_tit {
 
-        min-height: 50px;
+
         gap: 5px;
         padding: 0 14px;
         font-size: 1rem;
@@ -824,7 +824,7 @@
 
     .company_drop a {
 
-        min-height: 42px;
+
         font-size: 0.875rem;
 
     }
@@ -1314,7 +1314,7 @@
 
     .company_logo {
         flex-basis: 22%;
-        min-height: 36px;
+
     }
 
     .company_client_wrap {

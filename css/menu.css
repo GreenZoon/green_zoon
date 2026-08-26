@@ -357,8 +357,7 @@
     }
 
     .mobile_tab_item {
-        min-width: 52px;
-        min-height: 54px;
+
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -542,7 +541,7 @@
 
         width: 100%;
 
-        min-height: 48px;
+
 
         display: flex;
         align-items: center;
@@ -614,7 +613,6 @@
 
     .mobile_schedule_tab_btn {
 
-        min-width: 90px;
 
         padding: 14px 8px 12px;
 
@@ -721,9 +719,8 @@
 
     .mobile_schedule_card {
 
-        min-width: 105px;
         flex: 0 0 105px;
-        min-height: 110px;
+
         scroll-snap-align: start;
 
         padding: 12px 10px;
@@ -789,7 +786,7 @@
 
         width: 100%;
 
-        min-height: 52px;
+
 
         padding: 0 40px;
 
@@ -844,7 +841,7 @@
 
     .mobile_menu_head {
 
-        min-height: 50px;
+
 
         padding: 0 40px;
 
@@ -899,7 +896,6 @@
     }
 
     .mobile_menu_column {
-        min-width: 0;
 
         width: 32%;
         flex: 1 1 32%;
@@ -931,7 +927,7 @@
 
         width: 100%;
 
-        min-height: 52px;
+
 
         padding: 10px 12px;
 
@@ -1058,7 +1054,7 @@
 
     .mobile_quick_item {
 
-        min-height: 46px;
+
     }
 
 
@@ -1114,7 +1110,7 @@
     .mobile_menu_column button,
     .mobile_menu_column a {
 
-        min-height: 49px;
+
 
         padding: 9px 10px;
 

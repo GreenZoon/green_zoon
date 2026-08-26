@@ -39,7 +39,6 @@
 .time_options,
 .modal_dialog {
 
-    min-width: 0;
     max-width: 100%;
 }
 
@@ -129,13 +128,11 @@
 
 .note_text {
     flex: 1 1 auto;
-    min-width: 0;
 }
 
 .application_fieldset {
     gap: 18px;
     border: 0;
-    min-width: 0;
     padding: 0;
 }
 
@@ -159,7 +156,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-width: 0;
 }
 
 .application_field_wide {
@@ -213,7 +209,7 @@
 
 .application_field textarea,
 .detail_textarea {
-    min-height: 116px;
+
     resize: vertical;
 }
 
@@ -323,7 +319,6 @@
     align-items: center;
     justify-content: center;
     aspect-ratio: 1;
-    min-width: 0;
     border: 2px solid #c6c6c6;
     border-radius: 50%;
     background: #fff;
@@ -373,7 +368,7 @@
 }
 
 .field_error {
-    min-height: 20px;
+
     color: #d94848;
     font-size: 14px;
 }
@@ -402,7 +397,6 @@
 }
 
 .detail_intro {
-    min-width: 0;
 }
 
 .detail_tip,
@@ -629,7 +623,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 48px;
+
     border: 1px solid #009944;
     border-radius: 12px;
     color: #009944;
@@ -640,7 +634,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 48px;
+
     border: 1px solid #009944;
     border-radius: 12px;
     color: #009944;
@@ -650,7 +644,6 @@
 .visit_slot_info {
     display: flex;
     align-items: center;
-    min-width: 0;
 }
 
 .visit_time {
@@ -693,7 +686,6 @@
 
 .summary_item_info {
     width: 50%;
-    min-width: 0;
     display: flex;
     align-items: center;
 }
@@ -701,7 +693,6 @@
 .summary_service,
 .summary_detail,
 .summary_file {
-    min-width: 0;
     display: flex;
     align-items: center;
 }
@@ -777,7 +768,6 @@
 .draft_button,
 .submit_button,
 .secondary_button {
-    min-width: 150px;
     border: 1px solid transparent;
     border-radius: 7px;
     color: #fff;
@@ -791,7 +781,7 @@
 .application_actions .draft_button,
 .application_actions .submit_button {
     width: 293px;
-    min-height: 86px;
+
     font-size: 19px;
 }
 
@@ -921,7 +911,7 @@
 .success_dialog {
     align-items: center;
     justify-content: center;
-    min-height: 520px;
+
     text-align: center;
 }
 
@@ -1167,11 +1157,11 @@ body.modal_open {
     }
 
     .detail_control {
-        min-height: 42px;
+
     }
 
     .detail_textarea {
-        min-height: 100px;
+
     }
 
     .upload_heading {
@@ -1217,7 +1207,7 @@ body.modal_open {
 
     .visit_slot {
         align-items: center;
-        min-height: 30px;
+
         padding: 7px 24px;
     }
 
@@ -1243,7 +1233,7 @@ body.modal_open {
     }
 
     .summary_item {
-        min-height: 30px;
+
         padding: 7px 12px;
     }
 
@@ -1290,8 +1280,7 @@ body.modal_open {
     .application_actions .submit_button {
         flex: 0 0 132px;
         width: 132px;
-        min-width: 132px;
-        min-height: 39px;
+
         font-size: 14px;
         padding-inline: 10px;
     }
@@ -1332,7 +1321,6 @@ body.modal_open {
 
     .modal_actions button {
         flex: 1;
-        min-width: 0;
         padding-inline: 10px;
     }
 
@@ -1344,7 +1332,7 @@ body.modal_open {
     .success_dialog {
         width: 100%;
         max-width: 402px;
-        min-height: 620px;
+
         border-radius: 0;
     }
 

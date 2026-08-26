@@ -283,7 +283,7 @@
 
 .dispatch_request a {
     width: 100%;
-    min-height: 264px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -385,7 +385,7 @@
 
     .dispatch_intro {
 
-        min-height: 0;
+
         flex-direction: column-reverse;
         gap: 16px;
 
@@ -424,7 +424,7 @@
 
     .dispatch_targets {
 
-        min-height: 0;
+
         gap: 3%;
         color: #f8f8f8;
         background-color: #009944;
@@ -472,7 +472,7 @@
 
     .dispatch_request a {
         width: 130px;
-        min-height: 0;
+
         justify-content: center;
         gap: 6px;
         padding: 12px 14px;
@@ -599,7 +599,7 @@
     .dispatch_gallery {
         order: 5;
         width: 100%;
-        min-height: 0;
+
         flex-direction: column;
         align-items: stretch;
         gap: 12px;

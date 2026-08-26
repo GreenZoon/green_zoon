@@ -468,7 +468,6 @@
 .button_wrap_2{
 
     width: max-content;
-    min-width: 100%;
 
     display: flex;
     gap: 13px;
@@ -790,7 +789,7 @@
     right: 0;
     bottom: 0;
 
-    min-height: 52px;
+
 
     padding: 12px 24px;
 
@@ -1440,7 +1439,6 @@
 .box_8{
 
     width: 31%;
-    min-width: 0;
     flex: 0 1 31%;
     aspect-ratio: 6 /1.2;
     max-width: 390px;
@@ -1481,7 +1479,6 @@
 
 .box_in_wrap_8{
 
-    min-width: 0;
 
     display: flex;
     align-items: start;
@@ -1876,7 +1873,6 @@
 
     .mobile_search input {
 
-        min-width: 0;
         height: 100%;
         padding: 0;
 
@@ -2172,7 +2168,6 @@
 
     .mobile_box_side {
 
-        min-width: 0;
         flex: 1;
 
         display: flex;
@@ -2436,7 +2431,6 @@
     .mobile_gallery_viewport {
 
         width: 100%;
-        min-width: 0;
         overflow: hidden;
 
     }
@@ -2548,7 +2542,7 @@
 
     .mobile_filter button {
 
-        min-height: 35px;
+
         padding: 7px 12px;
 
         border: 1px solid #c6c6c6;
@@ -2627,7 +2621,6 @@
 
     .tit_wrap_4 {
 
-        min-width: 0;
         flex: 1;
         justify-content: space-between;
         padding: 7px 0;
@@ -2668,7 +2661,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 23px;
+
         padding: 4px 12px;
 
         border-radius: 10px;
@@ -2861,7 +2854,6 @@
 
     .mobile_event_box > .tit_wrap {
 
-        min-width: 0;
         flex: 1;
 
         display: flex;

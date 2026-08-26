@@ -28,7 +28,7 @@
 }
 
 [data-community-page="main"] .sub_visual {
-    min-height: 680px;
+
 }
 
 .sub_visual_text {
@@ -53,8 +53,7 @@
 
 .sub_category a {
     width: auto;
-    min-width: 120px;
-    min-height: 44px;
+
     color: #8e8e8e;
     line-height: 1.5;
     box-shadow: inset 0 -2px 0 transparent;
@@ -121,7 +120,6 @@
 
     width: min(100%, 760px);
 
-    min-width: 0;
 
     flex: 0 1 760px;
 
@@ -135,7 +133,7 @@
 
 .content_search button, .content_search input {
 
-    min-height: 48px;
+
 
     border: 1px solid #c6c6c6;
 
@@ -276,11 +274,10 @@
 }
 
 .gallery_feature {
+
     align-items: center;
     justify-content: space-between;
-    /* 대표 이미지와 게시글 정보가 콘텐츠 폭에 비례해 가까워진다. */
-    gap: 3%;
-    padding: 55px 0;
+    gap: 60px;
     border-bottom: 2px solid #f8f8f8;
 }
 
@@ -527,6 +524,7 @@
     max-height: 700px;
     margin-left: calc(50% - 50vw);
     padding: 100px 150px;
+    gap: 50px;
 
     align-items: center;
 
@@ -545,8 +543,6 @@
     display: flex;
 
     align-items: center;
-
-    margin-right: 50px;
 
 }
 
@@ -825,7 +821,6 @@
 
 .notice_list {
 
-    min-width: 0;
 
     flex: 1 1 auto;
 
@@ -847,7 +842,7 @@
 
 .post_page[data-post-type="notice"] .post_card {
 
-    min-height: 120px;
+
 
     justify-content: space-between;
 
@@ -949,7 +944,7 @@
 
 .board_head {
 
-    min-height: 48px;
+
 
     color: #555;
 
@@ -959,7 +954,7 @@
 
 .board_row {
 
-    min-height: 68px;
+
 
     border-bottom: 1px solid #f2f2f2;
 
@@ -969,7 +964,6 @@
 
     flex: 1 1 auto;
 
-    min-width: 0;
 
     overflow: hidden;
 
@@ -1029,9 +1023,8 @@
 
 .community_filter button, .community_filter a {
 
-    min-width: 120px;
 
-    min-height: 48px;
+
 
     display: flex;
 
@@ -1135,7 +1128,7 @@
 
 .event_status {
 
-    min-height: 35px;
+
 
     position: absolute;
 
@@ -1201,9 +1194,8 @@
 
 .information_filter a {
 
-    min-width: 78px;
 
-    min-height: 46px;
+
 
     display: flex;
 
@@ -1281,7 +1273,6 @@
 
 .information_card h3 {
 
-    min-width: 0;
 
     flex: 1 1 auto;
 
@@ -1299,9 +1290,8 @@
 
 .information_badge {
 
-    min-width: 60px;
 
-    min-height: 35px;
+
 
     flex: 0 0 auto;
 
@@ -1377,7 +1367,7 @@
 
 .faq_list summary {
 
-    min-height: 70px;
+
 
     display: flex;
 
@@ -1491,7 +1481,7 @@
 
 .review_write {
 
-    min-height: 190px;
+
 
     justify-content: space-between;
 
@@ -1529,7 +1519,7 @@
 
     max-width: 220px;
 
-    min-height: 44px;
+
 
     padding: 10px 22px;
 
@@ -1627,7 +1617,7 @@
 
     width: 100%;
 
-    min-height: 72px;
+
 
     border: 1px solid #c6c6c6;
 
@@ -1653,7 +1643,7 @@
 
 .review_textarea {
 
-    min-height: 453px;
+
 
     resize: vertical;
 
@@ -1661,7 +1651,7 @@
 
 .review_upload {
 
-    min-height: 500px;
+
 
     position: relative;
 
@@ -1753,7 +1743,7 @@
 
     width: min(421px, 100%);
 
-    min-height: 60px;
+
 
     display: flex;
 
@@ -1786,7 +1776,7 @@
 }
 
 .review_form_message {
-    min-height: 24px; color: #009944; line-height: 1.6; text-align: center; }
+ color: #009944; line-height: 1.6; text-align: center; }
 
 .today_work {
 
@@ -1804,7 +1794,7 @@
 
     width: min(470px, 100%);
 
-    min-height: 170px;
+
 
     display: flex;
 
@@ -1910,9 +1900,8 @@
 
 .calendar_date_picker {
 
-    min-width: 240px;
 
-    min-height: 40px;
+
 
     position: relative;
 
@@ -2261,7 +2250,6 @@
 }
 
 .post_view {
-    min-width: 0;
     flex: 1 1 auto;
     overflow-x: auto;
     overflow-y: hidden;
@@ -2376,13 +2364,13 @@
 
     [data-community-page="main"] .sub_visual {
 
-        min-height: 560px;
+
 
     }
 
     .gallery_feature {
 
-        gap: 3%;
+        gap: 40px;
 
     }
 
@@ -2448,11 +2436,10 @@
 
         width: auto;
 
-        min-width: 120px;
 
         flex: 0 0 auto;
 
-        min-height: 44px;
+
 
         font-size: 16px;
 
@@ -2466,8 +2453,7 @@
 
     .gallery_feature {
 
-        min-height: 0;
-        padding: 40px 0;
+
 
     }
 
@@ -2492,6 +2478,7 @@
 
         padding-right: 40px;
         padding-left: 40px;
+        gap: 4%;
 
     }
 
@@ -2499,7 +2486,7 @@
 
         width: 38%;
         flex-basis: 38%;
-        margin-right: 4%;
+        margin-right: 0;
 
     }
 
@@ -2584,7 +2571,7 @@
 
     .sub_visual {
 
-        min-height: 300px;
+
 
     }
 
@@ -2602,7 +2589,6 @@
 
         width: max-content;
 
-        min-width: 100%;
 
         justify-content: flex-end;
 
@@ -2625,9 +2611,8 @@
     .sub_category a {
 
         width: auto;
-        min-width: max-content;
         flex: 0 0 auto;
-        min-height: 42px;
+
         border-bottom: 2px solid transparent;
 
         background: transparent;
@@ -2677,7 +2662,7 @@
 
     .content_search button, .content_search input {
 
-        min-height: 34px;
+
 
         border-radius: 5px;
 
@@ -2701,7 +2686,7 @@
 
     .gallery_feature {
 
-        min-height: 0;
+
 
         flex-direction: column;
 
@@ -2848,6 +2833,7 @@
         flex-direction: column;
 
         padding: 28px 20px 40px;
+        gap: 0;
 
     }
 
@@ -3055,13 +3041,13 @@
 
     .board_head {
 
-        min-height: 40px;
+
 
     }
 
     .board_row {
 
-        min-height: 52px;
+
 
     }
 
@@ -3095,9 +3081,8 @@
 
     .community_filter button, .community_filter a {
 
-        min-width: 76px;
 
-        min-height: 34px;
+
 
         border-radius: 6px;
 
@@ -3125,7 +3110,7 @@
 
     .event_status {
 
-        min-height: 28px;
+
 
         left: 10px;
 
@@ -3153,9 +3138,8 @@
 
     .information_filter a {
 
-        min-width: 56px;
 
-        min-height: 32px;
+
 
         border-radius: 5px;
 
@@ -3213,9 +3197,8 @@
 
     .information_badge {
 
-        min-width: 40px;
 
-        min-height: 24px;
+
 
         border-radius: 5px;
 
@@ -3237,7 +3220,7 @@
 
     .faq_list summary {
 
-        min-height: 52px;
+
 
         gap: 12px;
 
@@ -3301,7 +3284,7 @@
 
     .review_control {
 
-        min-height: 72px;
+
 
         border-radius: 7px;
 
@@ -3313,13 +3296,13 @@
 
     .review_textarea {
 
-        min-height: 159px;
+
 
     }
 
     .review_upload {
 
-        min-height: 200px;
+
 
         gap: 12px;
 
@@ -3345,9 +3328,8 @@
 
     .review_form_actions button {
 
-        min-width: 0;
 
-        min-height: 42px;
+
 
         font-size: 12px;
 
@@ -3373,7 +3355,7 @@
 
         max-width: 200px;
 
-        min-height: 40px;
+
 
         padding: 9px 16px;
 
@@ -3383,7 +3365,7 @@
 
     .today_work {
 
-        min-height: 0;
+
 
         flex-direction: column;
 
@@ -3403,7 +3385,7 @@
 
         width: 100%;
 
-        min-height: 150px;
+
 
         gap: 24px;
 
@@ -3441,7 +3423,6 @@
 
     .calendar_head h2 {
 
-        min-width: 0;
 
         font-size: 19px;
 
@@ -3455,7 +3436,6 @@
 
     .calendar_date_picker {
 
-        min-width: 180px;
 
         font-size: 19px;
 
@@ -3750,7 +3730,7 @@
 
     [data-community-page="main"] .sub_visual {
 
-        min-height: 240px;
+
 
     }
 
