@@ -521,9 +521,12 @@
 .gallery_channel {
 
     width: 100vw;
-    min-height: 700px;
+    max-width: 1920px;
+    height: 100%;
+    max-height: 700px;
     margin-left: calc(50% - 50vw);
     padding: 100px 150px;
+    gap: 50px;
 
     align-items: center;
 
@@ -535,14 +538,13 @@
 
 .gallery_channel_title {
 
-    width: 407px;
-    flex: 0 0 407px;
+    width: 100%;
+    max-width: 407px;
+    flex: 0 1 407px;
 
     display: flex;
 
     align-items: center;
-
-    margin-right: 50px;
 
 }
 
@@ -578,8 +580,9 @@
 
 .gallery_channel_logo {
 
-    width: 109px;
-    height: 104px;
+    width: 100%;
+    max-width: 109px;
+    aspect-ratio: 109 / 104;
     flex: 0 0 109px;
 
     display: flex;
@@ -623,7 +626,9 @@
 
 .gallery_channel_stack {
 
-    width: 750px;
+    /* 피그마의 750×500 비율 안에서 네 장을 겹치며 화면에 맞춰 함께 줄인다. */
+    width: 100%;
+    max-width: 750px;
     flex: 0 1 750px;
     aspect-ratio: 3 / 2;
 
@@ -2484,6 +2489,7 @@
 
         padding-right: 40px;
         padding-left: 40px;
+        gap: 4%;
 
     }
 
@@ -2491,7 +2497,7 @@
 
         width: 38%;
         flex-basis: 38%;
-        margin-right: 4%;
+        margin-right: 0;
 
     }
 
@@ -2516,7 +2522,8 @@
     .gallery_channel_logo {
 
         width: 80px;
-        height: 80px;
+        max-width: 80px;
+        aspect-ratio: 1 / 1;
         flex-basis: 80px;
 
     }
@@ -2833,11 +2840,13 @@
 
     .gallery_channel {
 
-        min-height: 0;
+        height: 100%;
+        max-height: none;
 
         flex-direction: column;
 
         padding: 28px 20px 40px;
+        gap: 0;
 
     }
 
@@ -2869,8 +2878,9 @@
 
     .gallery_channel_logo {
 
-        width: 109px;
-        height: 104px;
+        width: 100%;
+        max-width: 109px;
+        aspect-ratio: 109 / 104;
         flex-basis: 109px;
 
     }
