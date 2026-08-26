@@ -54,6 +54,7 @@
 .sub_category a {
     width: auto;
     height: 44px;
+    padding: 0 16px;
 
     color: #8e8e8e;
     line-height: 1.5;
