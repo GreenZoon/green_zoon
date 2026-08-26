@@ -1564,6 +1564,9 @@ svg {
 
 }
 
+
+
+
 /* =========================================================
    11. ANIMATION
 ========================================================= */
@@ -1592,21 +1595,21 @@ svg {
 
 }
 
-
 /* 모바일 서브페이지 뒤로가기 */
 
-.sub_back {
+    .sub_back {
 
-    display: none;
+        display: none;
 
-}
-
+    }
 
 @media (max-width: 1500px) {
 
 .subpage_nav_list {
+
         justify-content: flex-end;
         padding: 0 50px;
+
     }
 
 .breadcrumb {
@@ -1667,7 +1670,7 @@ svg {
 
     width: 14px;
 
-}
+    }
 
     /* .section_title{
 
@@ -1683,8 +1686,10 @@ svg {
 
 @media (max-width: 1024px) {
 
-.tablet_none {
+    .tablet_none {
+
         display: none;
+
     }
 
     .subpage_nav_list {
@@ -1697,11 +1702,11 @@ svg {
     }
 
     .img_wrap,
-.video_thumbnai{
+    .video_thumbnai{
 
-
-    border-radius: 15px;
-}
+        border-radius: 15px;
+        
+    }
 
     /* 페이지 대표 제목
        PC 40px → Tablet 25px
@@ -1787,9 +1792,9 @@ svg {
 
     .con, .con_g {
 
-     max-width: 120px;
+        max-width: 100px;
     
-}
+    }
 
 }
 
