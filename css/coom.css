@@ -75,8 +75,13 @@ button {
     user-select: none;
 }
 
+/*
+    HTML에서 사용하는 실제 클래스명은 video_thumbnail입니다.
+    선택자 철자가 다르면 공통 크기와 overflow가 적용되지 않으므로
+    HTML 클래스와 같은 이름으로 맞춥니다.
+*/
 .img_wrap,
-.video_thumbnai{
+.video_thumbnail {
 
     width: 100%;
     height: 100%;
@@ -91,7 +96,7 @@ button {
 
 }
 
-.video_thumbnai{
+.video_thumbnail {
 
       aspect-ratio: 3 / 2;
 }
@@ -275,7 +280,11 @@ p,
     color: inherit;
 }
 
-.tit_wrap_senter {
+/*
+    중앙 타이틀은 짧은 의미 클래스인 tit_mid로 통일합니다.
+    HTML과 CSS가 같은 클래스를 사용해야 정렬 규칙이 누락되지 않습니다.
+*/
+.tit_mid {
 
     text-align: center;
 }
@@ -315,63 +324,6 @@ section {
 
 }
 
-/* =========================================================
-   SUB PAGE NAVIGATION BASE
-   계열별 높이와 반응형 차이는 전용 CSS에서 유지
-========================================================= */
-
-.subpage_nav {
-
-    width: 100%;
-    min-height: 44px;
-    display: flex;
-    align-items: flex-end;
-    overflow: visible;
-    box-shadow: inset 0 -2px 0 #f2f2f2;
-}
-
-.subpage_nav_list {
-
-    width: 100%;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    gap: 0;
-    padding: 0 150px;
-}
-
-.subpage_nav_link {
-
-    width: auto;
-    min-width: 120px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8e8e8e;
-    font-size: 1rem;
-    font-weight: 600;
-    box-shadow: inset 0 -2px 0 transparent;
-    transition: color .25s ease, box-shadow .25s ease;
-
-}
-
-.subpage_nav_link[aria-current="page"] {
-
-    color: #8e8e8e;
-    background-color: transparent;
-    box-shadow: inset 0 -2px 0 transparent;
-}
-
-.subpage_nav_link:hover,
-.subpage_nav_link:focus-visible {
-
-    color: #fff;
-    background-color: #009944;
-    box-shadow: inset 0 -2px 0 transparent;
-}
 
 /* 초록색 섹션 */
 
@@ -418,7 +370,7 @@ section {
     flex: 0 0 auto;
     border-radius: 999px;
     padding: 12px;
-    gap: 0px;
+    gap: 0;
 
     text-align: center;
 }
@@ -809,7 +761,6 @@ svg {
 
 
 }
-
 
 
 .sing{
@@ -1243,81 +1194,6 @@ svg {
 
 }
 
-.breadcrumb {
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-    padding: 7px 150px;
-
-    border: none;
-    color: #8e8e8e;
-
-    font-size: 0.9375rem;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.04em;
-
-}
-
-.breadcrumb a,
-.breadcrumb p {
-
-    color: inherit;
-
-}
-
-.breadcrumb .home {
-
-    width: 20px;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 auto;
-
-    display: block;
-    background-color: #8e8e8e;
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-}
-
-.breadcrumb .arrow {
-
-    width: 16px;
-    /* 원래라면 요소 전체를 다른 클래스로 바꿔야하지만 이미 너무 많은 html에 사용되어서 css로 수정 */
-    transform: rotate(-90deg);
-    background-color: #8e8e8e;
-
-}
-
-.breadcrumb_dot_wrap {
-
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
-}
-
-.breadcrumb_dot {
-
-    width: 4px;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 auto;
-
-    border-radius: 50%;
-    background-color: #8e8e8e;
-
-}
-
 .dot{
 
     background-color: #8e8e8e;
@@ -1565,8 +1441,6 @@ svg {
 }
 
 
-
-
 /* =========================================================
    11. ANIMATION
 ========================================================= */
@@ -1595,34 +1469,8 @@ svg {
 
 }
 
-/* 모바일 서브페이지 뒤로가기 */
-
-    .sub_back {
-
-        display: none;
-
-    }
 
 @media (max-width: 1500px) {
-
-.subpage_nav_list {
-
-        justify-content: flex-end;
-        padding: 0 50px;
-
-    }
-
-.breadcrumb {
-
-        padding: 7px 50px;
-
-    }
-
-    .breadcrumb .home {
-
-        width: 20px;
-
-    }
 
     section {
 
@@ -1692,17 +1540,13 @@ svg {
 
     }
 
-    .subpage_nav_list {
-        padding: 0 40px;
-    }
-
     section {
         padding: 40px;
         gap: 32px;
     }
 
     .img_wrap,
-    .video_thumbnai{
+    .video_thumbnail {
 
         border-radius: 15px;
         
@@ -1801,42 +1645,6 @@ svg {
 
 @media (max-width: 768px) {
 
-    .subpage_nav {
-
-        min-height: 42px;
-        overflow-x: auto;
-        overflow-y: visible;
-        scrollbar-width: none;
-    }
-
-    .subpage_nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .subpage_nav_list {
-        width: max-content;
-        min-width: 100%;
-        justify-content: flex-end;
-        gap: 12px;
-        padding: 0 20px;
-    }
-
-    .subpage_nav_link {
-        min-width: max-content;
-        min-height: 42px;
-        flex: 0 0 auto;
-        font-size: 0.875rem;
-        padding-block: 8px;
-    }
-
-    .subpage_nav_link:hover,
-    .subpage_nav_link:focus-visible {
-    
-        color: #009944;
-        background-color: transparent;
-        box-shadow: inset 0 -2px 0 #009944;
-    }
-
     .icon, .icon_2, .arrow, .mobile_icon {
 
         width: 16px;
@@ -1849,65 +1657,10 @@ svg {
 
     }
 
-    .section_g a, .section_g a,.service_gallery_name{
+    .section_g a {
 
         color: #555;
 
-
-    }
-
-    .sub_back {
-
-        width: 100%;
-        height: 36px;
-        padding: 0 20px;
-
-        position: sticky;
-        /* 실제 모바일 헤더 높이보다 2px 위에 붙인 값을 JS가 기록한다. */
-        top: var(--mobile-back-top, 48px);
-        z-index: 999;
-
-        display: flex;
-        align-items: center;
-        gap: 6px;
-
-        border: 0;
-        background: #fff;
-        color: #555;
-
-        font-size: 0.875rem;
-        font-weight: 700;
-        line-height: 1.5;
-        letter-spacing: -0.04em;
-        text-align: left;
-        cursor: pointer;
-
-    }
-
-    .sub_back::before {
-
-        content: "";
-
-        width: 12px;
-        aspect-ratio: 1 / 1;
-        flex: 0 0 auto;
-
-        background-color: currentColor;
-        -webkit-mask-image: url("../img/icon/down-arrow.svg");
-        mask-image: url("../img/icon/down-arrow.svg");
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        mask-position: center;
-        -webkit-mask-size: contain;
-        mask-size: contain;
-        transform: rotate(90deg);
-
-    }
-
-    .breadcrumb {
-
-        display: none;
 
     }
 

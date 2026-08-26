@@ -464,14 +464,12 @@
 .company_doc_img,
 .company_award_img,
 .company_history_img,
-.company_history_logo,
 .company_logo {
 
     background-color: transparent;
 }
 
 .company_doc_img img,
-.company_history_logo img,
 .company_logo img,
 .company_award_img img,
 .company_history_img img {
@@ -483,7 +481,6 @@
 }
 
 .company_doc_img img,
-.company_history_logo img,
 .company_logo img {
     object-fit: contain;
 }
@@ -566,9 +563,16 @@
     clip: rect(0, 0, 0, 0);
 }
 
-.company_history_logo {
-    width: 260px;
-    height: 210px;
+.company_his_logo {
+    /*
+        coom.css의 .logo 마스크 모양을 그대로 사용합니다.
+        100%는 부모 영역에 반응하고 max값은 로고가 과도하게 커지는 것만 막습니다.
+    */
+    width: 100%;
+    max-width: 260px;
+    height: 100%;
+    max-height: 65px;
+    background-color: #009944;
 }
 
 .company_history {
@@ -1248,9 +1252,9 @@
         line-height: 1.7;
     }
 
-    .company_history_logo {
-        width: 180px;
-        height: 130px;
+    .company_his_logo {
+        max-width: 180px;
+        max-height: 45px;
         font-size: 1.5rem;
     }
 

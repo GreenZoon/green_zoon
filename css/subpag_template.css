@@ -50,7 +50,8 @@
     display: block;
 
     width: 100%;
-    height: 400px;
+    height: 100%;
+    max-height: 400px;
 
 }
 
@@ -148,7 +149,6 @@
     gap: 40px;
 
 }
-
 
 
 .Cleaning_tit_wrap > p{
@@ -297,8 +297,6 @@
 
     width: 100%;
     max-width: 1500px;
-
-    min-height: 160px;
 
     display: flex;
     flex-direction: column;
@@ -800,7 +798,8 @@
 
 .man_sled > .service_media_slot {
     width: 100%;
-    height: 400px;
+    height: 100%;
+    max-height: 400px;
 }
 
 .main_img > .service_media_slot,
@@ -976,7 +975,7 @@
 .service_tunnel .main_img {
     width: 100%;
     max-width: 1019px;
-    aspect-ratio: 1019 / 500;
+    aspect-ratio: 2 / 1;
 }
 
 .service_tunnel .video_card {
@@ -1142,6 +1141,11 @@
 /* =========================================================
    BRIDGE PAGE
    Figma: desktop 469:7141 / mobile 785:26234
+
+   크기 원리
+   width/height 100%는 부모 안에서 유동적으로 반응하고,
+   max-width/max-height는 디자인 기준보다 커지는 것만 막습니다.
+   고정 픽셀 크기를 사용하지 않아 중간 화면에서도 비율이 유지됩니다.
 ========================================================= */
 
 .bridge_hero picture,
@@ -1154,14 +1158,14 @@
 
 .bridge_hero img {
 
-    height: 400px;
+    height: 100%;
+    max-height: 400px;
    
 }
 
 .bridge_page .service_intro {
 
     order: 1;
-    min-height: 600px;
     padding: 50px 150px;
     flex-direction: row;
     align-items: center;
@@ -1203,15 +1207,18 @@
 .bridge_page .tix_box,
 .bridge_page .tix_box:nth-of-type(even) {
 
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     flex-direction: column;
     gap: 20px;
 }
 
 .bridge_page .bridge_img {
 
-    width: 450px;
-    height: 300px;
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    max-height: 300px;
     position: relative;
     flex: none;
     overflow: hidden;
@@ -1253,9 +1260,250 @@
 }
 
 
+/* PC 서브메뉴는 항목 전체와 글자가 함께 반응합니다. */
+.sub_pag_depth:hover .sub_pag_tit,
+.sub_pag_tit:focus-visible {
+    color: #fff;
+    background-color: #009944;
+}
+
+    .wax_page .wax_copy {
+
+   
+        line-height: 1.65;
+
+    }
+
+
+/* =========================================================
+   12. SERVICE LAYOUT EXCEPTIONS
+   공장청소와 시설물 외벽청소의 피그마 배치 차이만 관리
+========================================================= */
+
+.intro_mo,
+.mobile_fx {
+    display: none;
+}
+
+.exterior_ly > .service_intro {
+    order: 1;
+}
+
+.factory_ly > .service_effect {
+    order: 2;
+}
+
+.factory_ly > .service_gallery {
+    order: 3;
+}
+
+.factory_ly > .service_target {
+    order: 4;
+}
+
+.factory_ly > .service_video {
+    order: 5;
+}
+
+.factory_ly > .service_request {
+    order: 6;
+}
+
+.exterior_ly > .service_gallery {
+    order: 2;
+}
+
+.exterior_ly > .service_video {
+    order: 3;
+}
+
+.exterior_ly > .service_request {
+    order: 4;
+}
+
+.factory_intro {
+    justify-content: flex-start;
+}
+
+.factory_intro > .tit_wrap_2 {
+    width: 100%;
+    max-width: 725px;
+    flex: 0 1 auto;
+}
+
+.exterior_intro {
+    justify-content: flex-start;
+    gap: 130px;
+}
+
+.exterior_intro > .tit_wrap_2 {
+    width: 100%;
+    max-width: 690px;
+    flex: 0 1 auto;
+}
+
+.exterior_intro > .main_img {
+    /*
+        외벽 대표 이미지는 영역을 채우되
+        데스크톱 기준 크기 이상으로만 커지지 않게 합니다.
+    */
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 500px;
+    flex: 0 1 auto;
+}
+
+.factory_ly .request_row,
+.exterior_ly .request_row {
+    align-items: stretch;
+    gap: 50px;
+}
+
+.factory_ly .Cleaning_box,
+.factory_ly .Cleaning_box_green,
+.exterior_ly .Cleaning_box,
+.exterior_ly .Cleaning_box_green {
+    align-self: stretch;
+}
+
+
+/* =========================================================
+   SUB PAGE COMMON UI
+   서브메뉴 · 경로 · 모바일 뒤로가기
+========================================================= */
+
+.subpage_nav {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: flex-end;
+    overflow: visible;
+    box-shadow: inset 0 -2px 0 #f2f2f2;
+}
+
+.subpage_nav_list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0;
+    padding: 0 150px;
+}
+
+.subpage_nav_link {
+    width: auto;
+    min-width: 120px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8e8e8e;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: inset 0 -2px 0 transparent;
+    transition: color .25s ease, box-shadow .25s ease;
+}
+
+.subpage_nav_link[aria-current="page"] {
+    color: #8e8e8e;
+    background-color: transparent;
+    box-shadow: inset 0 -2px 0 transparent;
+}
+
+.subpage_nav_link:hover,
+.subpage_nav_link:focus-visible {
+    color: #fff;
+    background-color: #009944;
+    box-shadow: inset 0 -2px 0 transparent;
+}
+
+.breadcrumb {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 150px;
+    border: none;
+    color: #8e8e8e;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+}
+
+.breadcrumb a,
+.breadcrumb p {
+    color: inherit;
+}
+
+.breadcrumb .home {
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+    display: block;
+    background-color: #8e8e8e;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.breadcrumb .arrow {
+    width: 16px;
+    transform: rotate(-90deg);
+    background-color: #8e8e8e;
+}
+
+.breadcrumb_dot_wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.breadcrumb_dot {
+    width: 4px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background-color: #8e8e8e;
+}
+
+.sub_back {
+    display: none;
+}
+
+
+/* =========================================================
+   CLEANING PAGE
+   카펫 · 패트릭 · 왁스 전용 차이
+========================================================= */
+
+.clean_page .service_target {
+    order: 2;
+    color: #555;
+    background-color: #fff;
+    text-align: center;
+}
+
+.clean_page .tit_wrap_g {
+    color: #f2f2f2;
+}
+
+.clean_page .flx_li_g {
+    margin: 0;
+}
+
+/*
+    1500px 이하
+    데스크톱 구조는 유지하고 좌우 여백과 카드 간격만 줄입니다.
+    요소 순서와 열 개수는 바꾸지 않아 PC 화면의 형태가 유지됩니다.
+*/
 @media (max-width: 1500px) {
 
-.sub_pag_menu {
+    .sub_pag_menu {
         justify-content: flex-end;
     }
 
@@ -1297,15 +1545,37 @@
 
     }
 
+    .exterior_intro {
+        padding-inline: 50px;
+        gap: 6vw;
+    }
+
+    .factory_ly .request_row,
+    .exterior_ly .request_row {
+        padding-inline: 50px;
+    }
+
+    .subpage_nav_list {
+        padding-inline: 50px;
+    }
+
+    .breadcrumb {
+        padding-inline: 50px;
+    }
+
 }
 
 
+/*
+    1024px 이하
+    이미지와 텍스트는 같은 행을 유지하되 각각 50% 안에서 유동적으로 줄어듭니다.
+    width 100%와 max값을 함께 사용한 요소는 이 구간에서도 최대 크기를 넘지 않습니다.
+*/
 @media (max-width: 1024px) {
 
-/* INTRO */
+    /* INTRO */
 
     /* TARGET */
-
 
 
     /* WORK TYPE */
@@ -1799,7 +2069,8 @@
 
 .man_sled > picture,
     .man_sled img {
-        height: 300px;
+        height: 100%;
+        max-height: 300px;
         aspect-ratio: auto;
     }
 
@@ -1891,24 +2162,41 @@
       
     }
 
-
-}
-
-
-/* PC 서브메뉴는 항목 전체와 글자가 함께 반응합니다. */
-.sub_pag_depth:hover .sub_pag_tit,
-.sub_pag_tit:focus-visible {
-    color: #fff;
-    background-color: #009944;
-}
-
-    .wax_page .wax_copy {
-
-   
-        line-height: 1.65;
-
+    .factory_intro,
+    .exterior_intro {
+        min-height: 0;
+        gap: 32px;
     }
 
+    .factory_intro > .main_img,
+    .factory_intro > .tit_wrap_2,
+    .exterior_intro > .main_img,
+    .exterior_intro > .tit_wrap_2 {
+        width: 50%;
+        height: auto;
+        max-width: none;
+        flex: 0 1 auto;
+    }
+
+    .subpage_nav_list {
+        padding-inline: 40px;
+    }
+
+    .clean_page .sub_slide_img {
+        width: 32%;
+        height: 100%;
+        flex: 0 0 32%;
+        display: block;
+    }
+
+}
+
+
+/*
+    768px 이하
+    이 구간부터만 모바일 배치로 전환합니다.
+    데스크톱에서는 이동하지 않던 문의·효과·갤러리 순서를 order로 재배치합니다.
+*/
 @media (max-width: 768px) {
 
     /* 문의 영역은 모바일 구간에서만 소개·대상 뒤로 이동합니다. */
@@ -2555,14 +2843,14 @@
 
     .bridge_hero img {
 
-        height: 200px;
+        height: 100%;
+        max-height: 200px;
         aspect-ratio: auto;
 
     }
 
     .bridge_page .service_intro {
 
-        min-height: 0;
         padding: 0 20px;
         flex-direction: column-reverse;
         gap: 7px;
@@ -2574,7 +2862,7 @@
         width: 100%;
         max-width: none;
         height: auto;
-        aspect-ratio: 362 / 211;
+        aspect-ratio: 5 / 3;
         border-radius: 12px;
 
     }
@@ -2638,8 +2926,10 @@
     }
 
     .bridge_page .bridge_img {
-        width: 150px;
-        height: 100px;
+        width: 100%;
+        max-width: 150px;
+        height: 100%;
+        max-height: 100px;
         flex: 0 0 auto;
         border-radius: 4px;
     }
@@ -2699,11 +2989,319 @@
         letter-spacing: -0.04em;
     }
 
-    
+    .effect_work {
+        order: 3;
+    }
+
+    .effect_qlt {
+        order: 4;
+    }
+
+    .mobile_fx {
+        display: flex;
+    }
+
+    .factory_gal .mobile_one {
+        display: block;
+        width: 100%;
+        height: 100%;
+        flex: 0 0 auto;
+    }
+
+    .factory_gal .mobile_two {
+        display: none;
+    }
+
+    .factory_ly > .service_target {
+        order: 2;
+    }
+
+    .factory_ly > .service_request,
+    .exterior_ly > .service_request {
+        order: 3;
+    }
+
+    .factory_ly > .service_effect {
+        order: 4;
+    }
+
+    .factory_ly > .service_gallery {
+        order: 5;
+    }
+
+    .factory_ly > .service_video {
+        order: 6;
+    }
+
+    .exterior_ly > .service_gallery {
+        order: 4;
+    }
+
+    .exterior_ly > .service_video {
+        order: 5;
+    }
+
+    .factory_intro,
+    .exterior_intro {
+        gap: 14px;
+    }
+
+    .factory_intro > .main_img,
+    .factory_intro > .tit_wrap_2,
+    .exterior_intro > .main_img,
+    .exterior_intro > .tit_wrap_2 {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        flex: none;
+    }
+
+    .factory_intro > .main_img,
+    .exterior_intro > .main_img {
+        aspect-ratio: 5 / 3;
+        border-radius: 10px;
+    }
+
+    .factory_intro .tit_wrap_2,
+    .exterior_intro .tit_wrap_2 {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .intro_pc {
+        display: none;
+    }
+
+    .intro_mo {
+        display: inline;
+    }
+
+    p.intro_mo {
+        display: block;
+    }
+
+    .factory_ly .request_row,
+    .exterior_ly .request_row {
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .factory_ly .request_row > .Cleaning_box,
+    .factory_ly .request_row > .Cleaning_box_green,
+    .exterior_ly .request_row > .Cleaning_box,
+    .exterior_ly .request_row > .Cleaning_box_green {
+        padding: 10px 12px;
+    }
+
+    .subpage_nav {
+        min-height: 42px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: none;
+    }
+
+    .subpage_nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subpage_nav_list {
+        width: max-content;
+        min-width: 100%;
+        justify-content: flex-end;
+        gap: 12px;
+        padding-inline: 20px;
+    }
+
+    .subpage_nav_link {
+        min-width: max-content;
+        min-height: 42px;
+        flex: 0 0 auto;
+        padding-block: 8px;
+        font-size: 0.875rem;
+    }
+
+    .subpage_nav_link:hover,
+    .subpage_nav_link:focus-visible {
+        color: #009944;
+        background-color: transparent;
+        box-shadow: inset 0 -2px 0 #009944;
+    }
+
+    .sub_back {
+        width: 100%;
+        height: 36px;
+        padding-inline: 20px;
+        position: sticky;
+        top: var(--mobile-back-top, 48px);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 0;
+        color: #555;
+        background-color: #fff;
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: -0.04em;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .sub_back::before {
+        content: "";
+        width: 12px;
+        aspect-ratio: 1 / 1;
+        flex: 0 0 auto;
+        background-color: currentColor;
+        -webkit-mask-image: url("../img/icon/down-arrow.svg");
+        mask-image: url("../img/icon/down-arrow.svg");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        transform: rotate(90deg);
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .clean_page .service_intro {
+        align-items: center;
+    }
+
+    .clean_page .main_img {
+        order: 1;
+        max-width: 800px;
+        margin-bottom: 20px;
+        aspect-ratio: 5 / 3;
+    }
+
+    .clean_page .tit_wrap_2 {
+        order: 2;
+        max-width: 800px;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .clean_page .service_target {
+        color: #f8f8f8;
+        background-color: #009944;
+    }
+
+    .clean_page .sub_slide_img {
+        display: none;
+    }
+
+    .clean_page .mobile_featured {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .clean_page .mobile_featured img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        object-fit: cover;
+    }
+
+    .clean_page .service_gallery {
+        color: #555;
+        background-color: #fff;
+    }
+
+    .clean_page .tit_wrap_g {
+        color: #555;
+    }
+
+    .clean_page .wit_arrow {
+        background-color: #009944;
+    }
+
+    .clean_page .slide_dot {
+        background-color: #dbdbdb;
+    }
+
+    .clean_page .slide_dot.is_active,
+    .clean_page .slide_dot.is_active_4 {
+        background-color: #009944;
+    }
+
+    .clean_page .service_gallery_name {
+        color: #8e8e8e;
+    }
+
+    .clean_page .service_gallery_status {
+        color: #f8f8f8;
+        background-color: #009944;
+    }
+
+    .clean_page .slide_before,
+    .clean_page .slide_after {
+        display: none;
+    }
+
+    .clean_page .slide_mask {
+        width: 100%;
+        min-height: 190px;
+        aspect-ratio: 13 / 8;
+    }
+
+    .clean_page .img_con_wrap,
+    .clean_page .slide_group {
+        min-height: 100%;
+    }
+
+    .clean_page .slide_group {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .clean_page .con {
+        width: 100%;
+        max-width: 13.5%;
+        min-width: 0;
+        aspect-ratio: 1 / 1;
+        flex: 0 1 auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px;
+        overflow: visible;
+    }
+
+    .clean_page .con > .icon {
+        width: 100%;
+        max-width: 24px;
+        aspect-ratio: 1 / 1;
+    }
+
+    .clean_page .con > p {
+        position: absolute;
+        color: #f8f8f8;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
 
 }
 
 
+/*
+    480px 이하
+    한 열 구조는 유지하면서 제목·본문·아이콘의 최대 크기와 내부 여백만 낮춥니다.
+    본문은 14px 아래로 내려가지 않게 해 작은 화면에서도 가독성을 확보합니다.
+*/
 @media (max-width: 480px) {
 
     .section_2 {
@@ -2759,7 +3357,12 @@
 
     }
 
-    .con p,.con_g P{
+    /*
+        HTML의 p 요소는 소문자로 작성되어 있으므로 선택자도 소문자로 통일합니다.
+        두 대상 카드의 보조문구가 같은 위치 계산을 받습니다.
+    */
+    .con p,
+    .con_g p {
 
 
         bottom: -30%;
@@ -2897,7 +3500,7 @@
 
         width: 100%;
 
-        aspect-ratio: 360 / 220;
+        aspect-ratio: 5 / 3;
 
         border-radius: 10px;
 
@@ -2964,7 +3567,7 @@
        TARGET ICON
     ===================================================== */
 
-    .con > .icon,
+    /* 같은 선택자가 두 번 적혀 있던 중복을 제거합니다. */
     .con > .icon {
 
         max-width: 38px;
@@ -3043,245 +3646,6 @@
         line-height: 1.5;
     }
 
-}
-
-/* =========================================================
-   12. SERVICE LAYOUT EXCEPTIONS
-   공장청소와 시설물 외벽청소의 피그마 배치 차이만 관리
-========================================================= */
-
-.intro_mo,
-.mobile_fx {
-    display: none;
-}
-
-.exterior_ly > .service_intro {
-    order: 1;
-}
-
-.factory_ly > .service_effect {
-    order: 2;
-}
-
-.factory_ly > .service_gallery {
-    order: 3;
-}
-
-.factory_ly > .service_target {
-    order: 4;
-}
-
-.factory_ly > .service_video {
-    order: 5;
-}
-
-.factory_ly > .service_request {
-    order: 6;
-}
-
-.exterior_ly > .service_gallery {
-    order: 2;
-}
-
-.exterior_ly > .service_video {
-    order: 3;
-}
-
-.exterior_ly > .service_request {
-    order: 4;
-}
-
-.factory_intro {
-    justify-content: flex-start;
-}
-
-.factory_intro > .tit_wrap_2 {
-    width: 100%;
-    max-width: 725px;
-    flex: 0 1 auto;
-}
-
-.exterior_intro {
-    min-height: 600px;
-    justify-content: flex-start;
-    gap: 130px;
-}
-
-.exterior_intro > .tit_wrap_2 {
-    width: 100%;
-    max-width: 690px;
-    flex: 0 1 auto;
-}
-
-.exterior_intro > .main_img {
-    width: 800px;
-    height: 500px;
-    flex: 0 1 auto;
-}
-
-.factory_ly .request_row,
-.exterior_ly .request_row {
-    min-height: 550px;
-    gap: 50px;
-}
-
-@media (max-width: 1500px) {
-    .exterior_intro {
-        padding-inline: 50px;
-        gap: 6vw;
-    }
-
-    .factory_ly .request_row,
-    .exterior_ly .request_row {
-        padding-inline: 50px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .factory_intro,
-    .exterior_intro {
-        min-height: 0;
-        gap: 32px;
-    }
-
-    .factory_intro > .main_img,
-    .factory_intro > .tit_wrap_2,
-    .exterior_intro > .main_img,
-    .exterior_intro > .tit_wrap_2 {
-        width: 50%;
-        height: auto;
-        max-width: none;
-        flex: 0 1 auto;
-    }
-
-    .factory_ly .request_row,
-    .exterior_ly .request_row {
-        min-height: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .effect_work {
-        order: 3;
-    }
-
-    .effect_qlt {
-        order: 4;
-    }
-
-    .mobile_fx {
-        display: flex;
-    }
-
-    .factory_gal .mobile_one {
-        display: block;
-        width: 100%;
-        height: 100%;
-        flex: 0 0 auto;
-    }
-
-    .factory_gal .mobile_two {
-        display: none;
-    }
-
-    .factory_ly > .service_target {
-        order: 2;
-    }
-
-    .factory_ly > .service_request,
-    .exterior_ly > .service_request {
-        order: 3;
-    }
-
-    .factory_ly > .service_effect {
-        order: 4;
-    }
-
-    .factory_ly > .service_gallery {
-        order: 5;
-    }
-
-    .factory_ly > .service_video {
-        order: 6;
-    }
-
-    .exterior_ly > .service_gallery {
-        order: 4;
-    }
-
-    .exterior_ly > .service_video {
-        order: 5;
-    }
-
-    .factory_intro,
-    .exterior_intro {
-        gap: 14px;
-    }
-
-    .factory_intro > .main_img,
-    .factory_intro > .tit_wrap_2,
-    .exterior_intro > .main_img,
-    .exterior_intro > .tit_wrap_2 {
-        width: 100%;
-        height: auto;
-        max-width: none;
-        flex: none;
-    }
-
-    .factory_intro > .main_img,
-    .exterior_intro > .main_img {
-        aspect-ratio: 5 / 3;
-        border-radius: 10px;
-    }
-
-    .factory_intro .tit_wrap_2,
-    .exterior_intro .tit_wrap_2 {
-        align-items: flex-end;
-        text-align: right;
-    }
-
-    .intro_pc {
-        display: none;
-    }
-
-    .intro_mo {
-        display: inline;
-    }
-
-    p.intro_mo {
-        display: block;
-    }
-
-    .factory_ly .request_row,
-    .exterior_ly .request_row {
-        min-height: 0;
-        justify-content: center;
-        gap: 28px;
-    }
-
-    .factory_ly .request_row > .Cleaning_box_green,
-    .exterior_ly .request_row > .Cleaning_box_green {
-        width: 114px;
-        flex: 0 0 auto;
-    }
-
-    .factory_ly .request_row > .Cleaning_box,
-    .exterior_ly .request_row > .Cleaning_box {
-        width: 127px;
-        flex: 0 0 auto;
-    }
-
-    .factory_ly .request_row > .Cleaning_box,
-    .factory_ly .request_row > .Cleaning_box_green,
-    .exterior_ly .request_row > .Cleaning_box,
-    .exterior_ly .request_row > .Cleaning_box_green {
-        height: 48px;
-        min-height: 48px;
-        padding: 10px 12px;
-    }
-}
-
-@media (max-width: 480px) {
     .factory_intro,
     .exterior_intro {
         padding-inline: 20px;
@@ -3341,9 +3705,29 @@
     .exterior_ly .request_row {
         padding-inline: 20px;
     }
+
+    .clean_page .slide_mask {
+        min-height: 180px;
+    }
+
+    .clean_page .con_wrap {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .clean_page .service_target {
+        padding: 20px;
+    }
+
 }
 
+
+/*
+    360px 이하
+    배치는 더 이상 바꾸지 않고 긴 문장이 넘치지 않도록 텍스트 크기만 한 단계 조정합니다.
+*/
 @media (max-width: 360px) {
+
     .factory_intro .intro_title,
     .exterior_intro .intro_title {
         font-size: 1.0625rem;
@@ -3359,4 +3743,5 @@
     .exterior_ly .service_gallery_description {
         font-size: 0.875rem;
     }
+
 }

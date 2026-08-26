@@ -391,19 +391,15 @@
 }
 
 .gallery_cards {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 28px 20px;
-
 }
 
 .gallery_card {
-
-    width: 24%;
-
+    width: 100%;
+    max-width: 100%;
     display: flex;
 
     flex-direction: column;
@@ -2383,10 +2379,13 @@
 
     }
 
-    .gallery_card, .information_card {
+    /* 카드마다 폭을 계산하지 않고 열 수만 바꿔, 오른쪽 빈 공간이 생기지 않게 한다. */
+    .gallery_cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
+    .information_card {
         width: 32%;
-
     }
 
     .post_section > .sub_content {
@@ -2470,10 +2469,9 @@
 
     }
 
-    .gallery_card {
-
-        width: 31%;
-
+    /* 중간 화면에서는 두 열이 목록의 전체 너비를 균등하게 나눠 가진다. */
+    .gallery_cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .information_card {
@@ -2805,17 +2803,14 @@
     }
 
     .gallery_cards {
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px 10px;
-
     }
 
     .gallery_card {
-
-        width: 49%;
-
+        width: 100%;
+        max-width: 100%;
         gap: 8px;
-
     }
 
     .gallery_card h3 {
