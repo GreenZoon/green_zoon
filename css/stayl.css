@@ -2604,6 +2604,7 @@
     .box_4 .box_in_wrap {
 
         flex-direction: row;
+        align-items: center;
         gap: 2%;
 
     }
@@ -2618,10 +2619,14 @@
     }
 
     .img_wrap_4.award_square {
-        width: 25%;
+        width: 30%;
         height: auto;
-        flex: 0 0 25%;
-        aspect-ratio: 1 / 1;
+        flex: 0 0 30%;
+        aspect-ratio: 3 / 2;
+    }
+
+    .img_wrap_4.award_square img {
+        aspect-ratio: 3 / 2;
     }
 
     .tit_wrap_4 {
