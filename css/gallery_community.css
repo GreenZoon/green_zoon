@@ -2664,7 +2664,9 @@
 
     .content_search button, .content_search input {
 
+        padding-top: 9px;
 
+        padding-bottom: 9px;
 
         border-radius: 5px;
 
@@ -2682,7 +2684,9 @@
 
     .content_search input {
 
-        padding: 0 10px;
+        padding-right: 10px;
+
+        padding-left: 10px;
 
     }
 

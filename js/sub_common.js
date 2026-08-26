@@ -1445,30 +1445,61 @@
         const videoGallery =
             sitePath("sub_page/Gallery/Video_gallery.html");
 
+        const workPost =
+            sitePath("sub_page/Gallery/Post.html") + "?type=work&id=";
+
+        const serviceWorkPost = [
+            [/\/Disinfection\//, 0],
+            [/\/Cleaning\/Fabric_cleaning\.html$/, 1],
+            [/\/Cleaning\/Carpet_cleaning\.html$/, 3],
+            [/\/Cleaning\/Wax_coating\.html$/, 5],
+            [/\/Bird\//, 4],
+            [/\/Exterior\//, 6],
+            [/\/Water_tank\/Pond\.html$/, 9],
+            [/\/Water_tank\/Water_tank\.html$/, 13],
+            [/\/Factory_cleane\/Factory_floor\.html$/, 7],
+            [/\/Factory_cleane\/(Factory_equipment_cleane|Factory_line|Equipment_painting)\.html$/, 12],
+            [/\/Factory_cleane\/Factory_man\.html$/, 7],
+            [/\/Facility\/Tunnel\.html$/, 6],
+            [/\/Facility\/(Rust_removal|Statue)\.html$/, 12],
+            [/\/Event_cleane\//, 11],
+            [/\/Ship\//, 7]
+        ];
+
+        const serviceMatch = serviceWorkPost.find(function (entry) {
+            return entry[0].test(window.location.pathname);
+        });
+
+        const workDestination = serviceMatch
+            ? workPost + serviceMatch[1]
+            : workGallery;
 
         document
             .querySelectorAll(
-                '.service_gallery a.tit_wrap[href="#"], ' +
-                '.service_gallery a.tit_wrap_g[href="#"], ' +
-                '.service_gallery a.slide_group[href="#"]'
+                ".service_gallery a"
             )
             .forEach(function (link) {
 
-                link.href = workGallery;
+                link.href = workDestination;
 
             });
 
-
         document
-            .querySelectorAll(
-                '.service_video a.service_video_title[href="#"], ' +
-                '.service_video a.video_card_a[href="#"]'
-            )
-            .forEach(function (link) {
+            .querySelectorAll(".service_video")
+            .forEach(function (section) {
+                const linkedPost = section.querySelector('a[href*="Post.html?type=video"]');
+                const destination = linkedPost ? linkedPost.href : videoGallery;
 
-                link.href = videoGallery;
-                link.removeAttribute("aria-disabled");
+                section.querySelectorAll("a").forEach(function (link) {
+                    link.href = destination;
+                    link.removeAttribute("aria-disabled");
+                    link.removeAttribute("tabindex");
+                });
 
+                if (!linkedPost) {
+                    const cardLink = section.querySelector(".video_card_a");
+                    if (cardLink) cardLink.classList.add("video_card_a--gallery-only");
+                }
             });
 
     }

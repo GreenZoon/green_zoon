@@ -1082,6 +1082,12 @@
     display: block;
 }
 
+.video_card_a--gallery-only .video_thumbnail {
+
+    display: none;
+
+}
+
 .video_thumbnail {
 
     width: 100%;
