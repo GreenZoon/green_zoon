@@ -87,9 +87,15 @@ button {
     user-select: none;
     touch-action: pan-y;
     overflow: hidden;
-    aspect-ratio: 3 / 2;
+    border-radius: 20px;
 
 }
+
+.video_thumbnai{
+
+      aspect-ratio: 3 / 2;
+}
+
 
 .man_sled img,.main_img_in_wrap img{
 
@@ -1689,6 +1695,13 @@ svg {
         padding: 40px;
         gap: 32px;
     }
+
+    .img_wrap,
+.video_thumbnai{
+
+
+    border-radius: 15px;
+}
 
     /* 페이지 대표 제목
        PC 40px → Tablet 25px
