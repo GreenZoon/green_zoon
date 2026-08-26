@@ -141,11 +141,11 @@
     }
 
     .service_target .con {
-        width: 13.5%;
+        width: 100%;
         max-width: 13.5%;
         min-width: 0;
         aspect-ratio: 1 / 1;
-        flex: 0 1 13.5%;
+        flex: 0 1 auto;
         position: relative;
         display: flex;
         align-items: center;
@@ -155,15 +155,14 @@
     }
 
     .con > .icon {
-        width: 24px;
+        width: 100%;
         max-width: 24px;
         aspect-ratio: 1 / 1;
-        flex: 0 0 24px;
+      
     }
 
     .con > p {
         position: absolute;
-        bottom: -3%;
         color: #f8f8f8;
         font-size: 0.625rem;
         line-height: 1.5;
@@ -180,4 +179,9 @@
         flex-wrap: nowrap;
         justify-content: space-between;
     }
+
+        .service_target {
+
+            padding: 20px;
+        }
 }

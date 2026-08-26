@@ -1802,6 +1802,7 @@ svg {
 @media (max-width: 768px) {
 
     .subpage_nav {
+
         min-height: 42px;
         overflow-x: auto;
         overflow-y: visible;
@@ -1847,7 +1848,6 @@ svg {
         padding: 40px;
 
     }
-
 
     .section_g a, .section_g a,.service_gallery_name{
 
@@ -2016,9 +2016,15 @@ svg {
         gap: 12px;
     }
 
+        .con_wrap{
+
+        gap: 2%;
+    }
+
     .con, .con_g {
 
-    max-width: 80px;
+        padding: 8px;
+        max-width: 80px;
 
     }
 
@@ -2042,10 +2048,12 @@ svg {
         gap: 24px;
 
     }
+    
+
 
     .con, .con_g {
 
-        max-width: 60px;
+        max-width: 48px;
     
     }
 
