@@ -15,7 +15,7 @@
 
     width: 100%;
     max-width: 720px;
-    height: 100%;
+    height: auto;
     max-height: 360px;
     flex: 1 1 0;
 
@@ -31,6 +31,12 @@
     border-color: #009944;
 
     overflow: hidden;
+}
+
+.request_row {
+
+    align-items: stretch;
+
 }
 
 /* =========================================================
