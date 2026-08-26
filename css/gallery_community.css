@@ -27,10 +27,6 @@
     background-image: url("../img/slide/main_slide_Community.jpeg");
 }
 
-[data-community-page="main"] .sub_visual {
-
-}
-
 .sub_visual_text {
     width: 100%;
     display: flex;
@@ -2368,12 +2364,6 @@
 
     }
 
-    [data-community-page="main"] .sub_visual {
-
-
-
-    }
-
     .gallery_feature {
 
         gap: 40px;
@@ -2454,12 +2444,6 @@
     .sub_content {
 
         width: 92%;
-
-    }
-
-    .gallery_feature {
-
-
 
     }
 
@@ -2573,13 +2557,7 @@
 
 }
 
-    [data-community-page="main"]
 
-    .sub_visual {
-
-
-
-    }
 
 
     .sub_visual_text {
@@ -3326,12 +3304,6 @@
 
     }
 
-    .review_textarea {
-
-
-
-    }
-
     .review_upload {
 
 
@@ -3759,12 +3731,6 @@
     height: 155px;
 
 }
-
-    [data-community-page="main"] .sub_visual {
-
-
-
-    }
 
     .sub_visual_text p {
 
