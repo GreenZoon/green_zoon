@@ -526,7 +526,8 @@
 
     .mobile_header_btn {
 
-        width: 16px;
+        width: 24px;
+        height: 24px;
         aspect-ratio: 1 / 1;
         padding: 0;
 
@@ -541,7 +542,8 @@
 
     .mobile_header_btn .icon {
         width: 100%;
-         aspect-ratio: 1 / 1;
+        height: 100%;
+        aspect-ratio: 1 / 1;
     }
 
     .login_li p{

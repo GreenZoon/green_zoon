@@ -1740,8 +1740,8 @@
 
     .video_thumbnail {
         width: 200px;
-        height: 135px;
-        aspect-ratio: auto;
+        height: auto;
+        aspect-ratio: 40 / 27;
         border-radius: 10px;
     }
 
@@ -2139,8 +2139,9 @@
 
     .mobile_box_big > .icon {
 
-        width: 12%;
-        height: auto;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
         aspect-ratio: 1 / 1;
         background-color: #f8f8f8;
 
@@ -2230,7 +2231,9 @@
 
     .mobile_box_info .icon {
 
-        width: 10%;
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
         background-color: currentColor;
 
     }
@@ -2469,7 +2472,8 @@
     .mobile_gallery .mobile_img {
 
         width: 230px;
-        height: 150px;
+        height: auto;
+        aspect-ratio: 23 / 15;
 
         border-radius: 10px;
         overflow: hidden;
@@ -2607,8 +2611,9 @@
     .img_wrap_4 {
 
         width: 30%;
-        height: 100%;
+        height: auto;
         flex: 0 0 30%;
+        aspect-ratio: 3 / 2;
 
     }
 
@@ -2806,8 +2811,9 @@
     .mobile_academy_box .mobile_img {
 
         width: 150px;
-        height: 100px;
+        height: auto;
         flex: 0 0 150px;
+        aspect-ratio: 3 / 2;
 
         border-radius: 7px;
         overflow: hidden;
@@ -2844,8 +2850,9 @@
     .mobile_event_box .mobile_img {
 
         width: 173px;
-        height: 115px;
+        height: auto;
         flex: 0 0 173px;
+        aspect-ratio: 173 / 115;
 
         border-radius: 7px;
         overflow: hidden;
