@@ -431,13 +431,9 @@
 }
 
 
-/* 행사 사진은 인물·문구·로고가 잘리지 않도록 원본 구도를 유지한다. */
-[data-gallery-page="event"] .gallery_card_image {
-    background: transparent;
-}
-
+/* 목록 이미지는 원본 비율이 달라도 피그마의 동일한 카드 프레임을 채운다. */
 [data-gallery-page="event"] .gallery_card_image img {
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* 행사 대표 이미지는 공통 대표 영역 안에서 원본 구도를 유지한다. */
@@ -2378,9 +2374,9 @@
 
     }
 
-    /* 카드마다 폭을 계산하지 않고 열 수만 바꿔, 오른쪽 빈 공간이 생기지 않게 한다. */
+    /* 피그마 데스크톱은 작업·영상·행사 목록 모두 같은 폭의 4열이다. */
     .gallery_cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .information_card {
@@ -2813,6 +2809,19 @@
         width: 100%;
         max-width: 100%;
         gap: 8px;
+    }
+
+    /* 세 갤러리의 모바일 카드 이미지는 피그마의 가로형 프레임으로 통일한다. */
+    .gallery_card_image {
+        aspect-ratio: 17 / 10;
+    }
+
+    [data-gallery-page="video"] .gallery_feature_media.single > .gallery_card_image {
+        aspect-ratio: 353 / 200;
+    }
+
+    [data-gallery-page="event"] .gallery_feature_media.single > .gallery_card_image {
+        aspect-ratio: 1 / 1;
     }
 
     .gallery_card h3 {
