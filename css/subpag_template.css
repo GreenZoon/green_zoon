@@ -435,15 +435,16 @@
 
     flex-direction: row;
     align-items: flex-end;
+    gap: 12px;
 
 }
 
 .sub_pag_depth {
 
-    width: auto;
+    width: 150px;
     height: 44px;
 
-    flex: 0 0 auto;
+    flex: 0 0 150px;
 
     display: flex;
     flex-direction: column;
@@ -478,6 +479,8 @@
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: -0.04em;
+    white-space: nowrap;
+    padding: 0 12px;
 
     /* font-size: 1.1875rem;    19px
     line-height: 1.4;
@@ -2618,15 +2621,23 @@
 
     .sub_pag_gnb {
 
-
         overflow-x: auto;
+        overflow-y: hidden;
         scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-inline: contain;
+        touch-action: pan-x;
+        cursor: grab;
+    }
+
+    .sub_pag_gnb::-webkit-scrollbar {
+        display: none;
     }
 
     .sub_pag_menu {
 
         width: max-content;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: stretch;
         gap: 12px;
         padding: 0 20px;
@@ -2647,8 +2658,7 @@
     .sub_pag_tit {
 
         font-size: 0.875rem;
-        padding-block: 8px;
-        padding: 8px 4px;
+        padding: 8px 12px;
         font-weight: 600;
         line-height: 1.5;
         letter-spacing: -0.015em;
