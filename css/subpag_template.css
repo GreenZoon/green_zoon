@@ -24,6 +24,307 @@
     border-radius: 15px;
 }
 
+/* =========================================================
+   WAX PAGE BALANCE
+   Figma 469:5168의 비율을 기준으로 하되, 고정 크기 대신 100%와 max값으로 줄어든다.
+========================================================= */
+
+.wax_page .service_intro {
+    justify-content: space-between;
+    padding: 100px 150px;
+    gap: 80px;
+}
+
+.wax_page .service_intro > .tit_wrap {
+    width: 100%;
+    max-width: 673px;
+    flex: 1 1 0;
+}
+
+.wax_page .service_intro > .main_img {
+    width: 100%;
+    max-width: 800px;
+    flex: 1 1 0;
+    aspect-ratio: 8 / 5;
+}
+
+.wax_page .page_title {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.wax_page .intro_title {
+    font-size: 1.5625rem;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.wax_page .intro_copy {
+    margin-top: 22px;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    letter-spacing: -0.025em;
+}
+
+.wax_page .service_target {
+    padding: 72px 150px;
+    gap: 24px;
+}
+
+.wax_page .service_target > h2 {
+    font-size: 1.5625rem;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+}
+
+.wax_page .service_target .con_wrap {
+    width: 100%;
+    max-width: 1080px;
+    justify-content: center;
+}
+
+.wax_page .service_target .con {
+    width: 100%;
+    max-width: 125px;
+    aspect-ratio: 1 / 1;
+    flex: 1 1 0;
+}
+
+.wax_page .service_target_description {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    letter-spacing: -0.025em;
+}
+
+.wax_page .tix_section {
+    align-items: center;
+    padding: 100px 150px;
+    gap: 70px;
+}
+
+.wax_page .tix_section > h2 {
+    max-width: 1432px;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    text-align: center;
+}
+
+.wax_page .tix_box {
+    width: 100%;
+    max-width: 1282px;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.wax_page .tix_box .img_wrap {
+    width: 100%;
+    max-width: 500px;
+    flex: 1 1 0;
+    aspect-ratio: 5 / 3;
+}
+
+.wax_page .tix_box .tit_wrap {
+    width: 100%;
+    max-width: 680px;
+    flex: 1 1 0;
+    gap: 12px;
+}
+
+.wax_page .tix_box h3 {
+    font-size: 1.1875rem;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+}
+
+.wax_page .tix_box p {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    letter-spacing: -0.025em;
+}
+
+.wax_page .service_gallery {
+    padding: 60px 100px;
+}
+
+.wax_page .service_gallery .slide_wrap {
+    width: 100%;
+    max-width: 1620px;
+}
+
+.wax_page .service_gallery h2 {
+    font-size: 1.5625rem;
+    line-height: 1.5;
+}
+
+.wax_page .service_gallery_description {
+    font-size: 1.0625rem;
+    line-height: 1.5;
+}
+
+.wax_page .service_video {
+    padding: 60px 150px;
+    gap: 100px;
+}
+
+.wax_page .service_video > .video_card {
+    width: 100%;
+    max-width: 800px;
+}
+
+.wax_page .service_video > .tit_wrap {
+    width: 100%;
+    max-width: 720px;
+}
+
+.wax_page .service_video h2 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.wax_page .service_video .service_target_description {
+    font-size: 1.5625rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 1500px) {
+    /* 화면이 줄면 구조는 유지하고 바깥 여백과 요소 사이 거리만 함께 줄인다. */
+    .wax_page .service_intro,
+    .wax_page .tix_section,
+    .wax_page .service_video {
+        padding-inline: 50px;
+        gap: 50px;
+    }
+
+    .wax_page .service_target {
+        padding-inline: 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* 769~1024px에서도 PC의 좌우 배치를 유지하고, 양쪽을 같은 비율로 줄인다. */
+    .wax_page .service_intro,
+    .wax_page .tix_section,
+    .wax_page .service_video {
+        padding: 48px 40px;
+        gap: 32px;
+    }
+
+    .wax_page .service_target {
+        padding: 48px 40px;
+    }
+
+    .wax_page .page_title,
+    .wax_page .tix_section > h2,
+    .wax_page .service_video h2 {
+        font-size: 2rem;
+    }
+
+    .wax_page .intro_title,
+    .wax_page .service_target > h2,
+    .wax_page .service_gallery h2 {
+        font-size: 1.4375rem;
+    }
+
+    .wax_page .tix_box,
+    .wax_page .tix_box:nth-of-type(even) {
+        gap: 32px;
+    }
+
+    .wax_page .tix_box .img_wrap,
+    .wax_page .tix_box .tit_wrap {
+        width: 50%;
+    }
+
+    .wax_page .service_video .service_target_description {
+        font-size: 1.0625rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 모바일은 한 열로 전환하고, 본문은 최소 15px 이상으로 유지해 가독성을 확보한다. */
+    .wax_page .service_intro,
+    .wax_page .service_video {
+        flex-direction: column;
+        padding: 36px 20px;
+        gap: 24px;
+    }
+
+    .wax_page .service_intro > .main_img {
+        order: 1;
+        max-width: none;
+    }
+
+    .wax_page .service_intro > .tit_wrap {
+        order: 2;
+        max-width: none;
+    }
+
+    .wax_page .page_title,
+    .wax_page .tix_section > h2,
+    .wax_page .service_video h2 {
+        font-size: 1.5625rem;
+    }
+
+    .wax_page .intro_title,
+    .wax_page .service_target > h2,
+    .wax_page .service_gallery h2 {
+        font-size: 1.1875rem;
+    }
+
+    .wax_page .intro_copy,
+    .wax_page .service_target_description,
+    .wax_page .tix_box p,
+    .wax_page .service_gallery_description,
+    .wax_page .service_video .service_target_description {
+        font-size: 0.9375rem;
+        line-height: 1.65;
+    }
+
+    .wax_page .service_target {
+        padding: 36px 20px;
+        gap: 18px;
+    }
+
+    .wax_page .service_target .con {
+        max-width: 92px;
+    }
+
+    .wax_page .tix_section {
+        padding: 42px 20px;
+        gap: 36px;
+    }
+
+    .wax_page .tix_box,
+    .wax_page .tix_box:nth-of-type(even) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .wax_page .tix_box .img_wrap,
+    .wax_page .tix_box .tit_wrap {
+        width: 100%;
+        max-width: none;
+    }
+
+    .wax_page .tix_box h3 {
+        font-size: 1.0625rem;
+    }
+
+    .wax_page .service_gallery {
+        padding: 42px 20px;
+    }
+
+    .wax_page .service_video > .video_card,
+    .wax_page .service_video > .tit_wrap {
+        max-width: none;
+    }
+}
+
 .tit_in_wrap {
 
     display: flex;
