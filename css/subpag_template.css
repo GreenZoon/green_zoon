@@ -4205,6 +4205,9 @@
 .event_cleaning_page .service_gallery .service_gallery_status { color: #f2f2f2; }
 .event_cleaning_page .service_gallery .tit_wrap .arrow,
 .event_cleaning_page .service_gallery .slide_frame > .arrow { background-color: #f2f2f2; }
+.event_cleaning_page .service_gallery .slide_dot { background-color: rgb(255 255 255 / 40%); }
+.event_cleaning_page .service_gallery .slide_dot.is_active,
+.event_cleaning_page .service_gallery .slide_dot.is_active_4 { background-color: #f8f8f8; }
 .event_cleaning_page .service_gallery .slide_group > .sub_slide_img,
 .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:first-child,
 .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:nth-child(2),
@@ -4218,6 +4221,13 @@
 .event_cleaning_page .service_video .service_video_title,
 .event_cleaning_page .service_video .service_video_title p { color: #f2f2f2; }
 .event_cleaning_page .service_video .service_video_title .arrow_up_right { background-color: #f2f2f2; }
+.event_cleaning_page .video_pending {
+    width: 100%;
+    padding: 72px 5%;
+    color: #f2f2f2;
+    text-align: center;
+}
+.event_cleaning_page .video_pending p { color: #f2f2f2; }
 .event_cleaning_page .service_request { order: 5; }
 
 @media (max-width: 1500px) {
@@ -4254,6 +4264,9 @@
     .event_cleaning_page .service_gallery .service_gallery_status { color: #8e8e8e; }
     .event_cleaning_page .service_gallery .tit_wrap .arrow,
     .event_cleaning_page .service_gallery .slide_frame > .arrow { background-color: #8e8e8e; }
+    .event_cleaning_page .service_gallery .slide_dot { background-color: #c6c6c6; }
+    .event_cleaning_page .service_gallery .slide_dot.is_active,
+    .event_cleaning_page .service_gallery .slide_dot.is_active_4 { background-color: #009944; }
     .event_cleaning_page .service_gallery .slide_group > .sub_slide_img,
     .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:first-child,
     .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:last-child { display: none; }
@@ -4264,6 +4277,8 @@
         flex: 0 0 100%;
     }
     .event_cleaning_page .service_video { order: 6; padding: 20px; color: #555; background-color: #fff; }
+    .event_cleaning_page .video_pending { padding: 28px 0; color: #555; }
+    .event_cleaning_page .video_pending p { color: #555; }
     .event_cleaning_page .service_video .service_video_title,
     .event_cleaning_page .service_video .service_video_title p { color: #555; }
     .event_cleaning_page .service_video .service_video_title .arrow_up_right { background-color: #8e8e8e; }
