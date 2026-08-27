@@ -690,9 +690,8 @@
 }
 
 .company_logo {
-    flex: 1 1 12%;
-    min-height: 75px;
-   
+    flex: 0 0 12%;
+    height: 60px;
 }
 
 .company_client_wrap {
@@ -724,7 +723,7 @@
 }
 
 .company_client_logos .company_logo {
-    min-height: 48px;
+    height: 48px;
 }
 
 
@@ -1322,9 +1321,8 @@
     }
 
     .company_logo {
-
-        flex-basis: 22%;
-        min-height: 36px;
+        flex-basis: 16%;
+        height: 44px;
     }
 
     .company_client_wrap {
@@ -1345,8 +1343,15 @@
     }
 
     .company_client_logos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        display: none;
+    .company_client_logos .company_logo {
+        flex: 0 0 20%;
+        height: 42px;
     }
 
 }
@@ -1411,8 +1416,13 @@
     }
 
     .company_logo {
+        flex-basis: 18%;
+        height: 40px;
+    }
 
-        flex-basis: 28%;
+    .company_client_logos .company_logo {
+        flex-basis: 27%;
+        height: 40px;
     }
 
 }
