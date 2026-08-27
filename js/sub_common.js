@@ -1462,7 +1462,7 @@
             [/\/Factory_cleane\/Factory_man\.html$/, 7],
             [/\/Facility\/Tunnel\.html$/, 6],
             [/\/Facility\/(Rust_removal|Statue)\.html$/, 12],
-            [/\/Event_cleane\//, 11],
+            [/\/Event_cleane\/Stadium\.html$/, 11],
             [/\/Ship\//, 7]
         ];
 
