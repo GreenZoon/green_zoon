@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
        카드 크기 설정
 
        모바일 : 200px (768px 이하)
-       중간 화면     : 2개 (1025px ~ 1500px)
-       PC            : 3개 (1501px 이상)
+       태블릿        : 2개 (769px ~ 1024px)
+       PC            : 3개 (1025px 이상)
     --------------------------------- */
 
     function setCardWidth() {
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             viewport.clientWidth;
 
         const visibleCardCount =
-            window.innerWidth <= 1500
+            window.innerWidth <= 1024
                 ? 2
                 : 3;
 
