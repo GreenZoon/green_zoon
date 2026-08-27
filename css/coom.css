@@ -762,6 +762,38 @@ svg {
 
 }
 
+.horizontal_log{
+
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 2 / 1;
+
+    background-color: #009944;
+    -webkit-mask-image: url("../img/SVG/horizontal_logo.svg");
+    mask-image: url("../img/SVG/horizontal_logo.svg");
+
+        flex: 0 0 auto;
+    flex-shrink: 0;
+
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    display: block;
+
+    /* mask 아이콘 공통 설정 */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    transition: transform 0.25s ease;
+
+}
+
 
 .sing{
 
