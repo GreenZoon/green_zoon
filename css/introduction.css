@@ -686,12 +686,18 @@
 .company_logo_grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 28px;
 }
 
 .company_logo {
-    flex: 0 0 12%;
-    height: 60px;
+    max-width: 200px;
+}
+
+.company_logo_grid .company_logo {
+  
+   max-width: 150px;
+  
 }
 
 .company_client_wrap {
@@ -709,21 +715,27 @@
 }
 
 .company_client_list li {
-    flex: 0 0 20%;
+    
+    width: 20%;
+    min-width: 110px;
     color: #555;
     font-size: 0.9375rem;
     line-height: 1.5;
 }
 
 .company_client_logos {
-    flex: 0 0 150px;
+
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
     gap: 15px;
 }
 
 .company_client_logos .company_logo {
-    height: 48px;
+
+    width: 150px;
+   
+
 }
 
 
@@ -880,13 +892,6 @@
         flex-basis: 28%;
     }
 
-    .company_logo {
-        flex-basis: 20%;
-    }
-
-    .company_client_list li {
-        flex-basis: 28%;
-    }
 
     .company_branch {
         padding: 19px 27px;
@@ -1315,13 +1320,10 @@
         letter-spacing: -0.04em;
     }
 
-    .company_logo_grid {
 
-        gap: 10px;
-    }
-
-    .company_logo {
-        flex-basis: 16%;
+    .company_logo_grid .company_logo {
+      
+        width: 100px;
         height: 44px;
     }
 
@@ -1337,9 +1339,8 @@
 
     .company_client_list li {
 
-        flex-basis: 45%;
         font-size: 0.875rem;
-        text-align: center;
+       
     }
 
     .company_client_logos {
@@ -1347,11 +1348,14 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        align-self: auto;
+        width: 100%;
     }
 
     .company_client_logos .company_logo {
-        flex: 0 0 20%;
-        height: 42px;
+       
+        width: 140px;
+      
     }
 
 }
@@ -1415,13 +1419,15 @@
 
     }
 
-    .company_logo {
-        flex-basis: 18%;
+    .company_logo_grid .company_logo {
+        flex-basis: 90px;
+        width: 90px;
         height: 40px;
     }
 
     .company_client_logos .company_logo {
-        flex-basis: 27%;
+        flex-basis: 120px;
+        width: 120px;
         height: 40px;
     }
 
