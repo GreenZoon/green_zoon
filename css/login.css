@@ -1123,14 +1123,14 @@ body.is_profile_edit {
     aspect-ratio: 1 / 1;
     display: block;
     background-color: #8b8b8b;
-    -webkit-mask: url("../img/icon/eye.svg") center / contain no-repeat;
-    mask: url("../img/icon/eye.svg") center / contain no-repeat;
+    -webkit-mask: url("../img/icon/hide.svg") center / contain no-repeat;
+    mask: url("../img/icon/hide.svg") center / contain no-repeat;
 }
 
 .password_toggle.is_visible .password_eye {
     background-color: var(--login-green);
-    -webkit-mask-image: url("../img/icon/hide.svg");
-    mask-image: url("../img/icon/hide.svg");
+    -webkit-mask-image: url("../img/icon/eye.svg");
+    mask-image: url("../img/icon/eye.svg");
 }
 
 .account_login_options {
