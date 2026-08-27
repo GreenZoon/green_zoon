@@ -238,22 +238,43 @@
     color: var(--login-muted);
     font-size: 14px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .remember_login input {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
     margin: 0;
-    accent-color: var(--login-green);
+    border: 1px solid var(--login-muted);
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.remember_login input:checked {
+    border-color: var(--login-green);
+    background-color: var(--login-green);
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+.remember_login input:focus-visible {
+    outline: 2px solid rgba(0, 153, 68, .28);
+    outline-offset: 2px;
 }
 
 .login_text_action {
+    width: auto;
+    max-width: none;
+    flex: 0 0 auto;
+    padding: 2px 0;
     border: 0;
     background: transparent;
     color: var(--login-muted);
     font: inherit;
     font-size: 14px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .login_text_action:hover,
@@ -1093,6 +1114,8 @@ body.is_profile_edit {
     border: 0;
     background: transparent;
     cursor: pointer;
+    padding: 0;
+    z-index: 1;
 }
 
 .password_eye {
@@ -1106,6 +1129,8 @@ body.is_profile_edit {
 
 .password_toggle.is_visible .password_eye {
     background-color: var(--login-green);
+    -webkit-mask-image: url("../img/icon/hide.svg");
+    mask-image: url("../img/icon/hide.svg");
 }
 
 .account_login_options {

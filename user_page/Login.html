@@ -26,7 +26,7 @@
                     <span>비밀번호를 입력해 주세요</span>
                     <span class="account_password_input">
                         <input type="password" id="login_password" name="password" autocomplete="current-password" placeholder="비밀번호" minlength="4" required>
-                        <button type="button" class="password_toggle" data-password-toggle aria-label="비밀번호 표시">
+                        <button type="button" class="password_toggle" data-password-toggle aria-label="비밀번호 표시" aria-pressed="false">
                             <span class="password_eye" aria-hidden="true"></span>
                         </button>
                     </span>
@@ -35,7 +35,7 @@
 
                 <div class="account_login_options">
                     <label class="remember_login"><input type="checkbox" name="remember"><span>로그인 상태 유지</span></label>
-                    <button type="button" class="login_text_action" data-login-help>아이디·비밀번호 찾기</button>
+                    <button type="button" class="login_text_action" data-login-help aria-controls="login_help" aria-expanded="false">아이디/ 비밀번호 찾기</button>
                 </div>
 
                 <div id="login_help" class="login_inline_notice" hidden>가입 정보 확인은 대표번호 <a href="tel:18991367">1899-1367</a>로 문의해 주세요.</div>

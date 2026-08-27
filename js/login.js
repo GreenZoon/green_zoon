@@ -93,6 +93,7 @@
 
     document.querySelector("[data-login-help]")?.addEventListener("click", function () {
         help.hidden = !help.hidden;
+        this.setAttribute("aria-expanded", String(!help.hidden));
     });
 
     document.querySelectorAll("[data-signup]").forEach(function (button) {
@@ -106,6 +107,7 @@
         password.type = visible ? "password" : "text";
         this.classList.toggle("is_visible", !visible);
         this.setAttribute("aria-label", visible ? "비밀번호 표시" : "비밀번호 숨기기");
+        this.setAttribute("aria-pressed", String(!visible));
     });
 
     document.querySelector("[data-guest]")?.addEventListener("click", function () {
