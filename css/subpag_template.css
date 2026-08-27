@@ -25,233 +25,6 @@
 }
 
 /* =========================================================
-   BIRD CONTROL PAGE
-   Figma desktop 1658:43415 / mobile 1658:43471
-   공통 서브페이지 규칙은 유지하고 비둘기 페이지의 구조만 맞춥니다.
-========================================================= */
-
-.bird_page .service_intro { order: 1; }
-.bird_page .service_target { order: 2; }
-.bird_page .service_gallery { order: 3; }
-.bird_page .service_video { order: 4; }
-.bird_page .service_request { order: 5; }
-
-.bird_page .bird_mobile_request {
-    display: none;
-}
-
-.bird_page .bird_target_title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
-}
-
-.bird_page .bird_target_title > p {
-    color: #555;
-    font-size: 1.5625rem;
-    line-height: 1.5;
-    letter-spacing: -0.04em;
-}
-
-.bird_page .service_intro {
-    justify-content: space-between;
-    padding: 80px 8%;
-}
-
-.bird_page .service_intro > .tit_wrap {
-    width: 36%;
-}
-
-.bird_page .service_intro > .main_img {
-    width: 48%;
-    aspect-ratio: 8 / 5;
-}
-
-.bird_page .service_intro .page_title {
-    font-size: 2.5rem;
-    line-height: 1.5;
-}
-
-.bird_page .service_intro .intro_title {
-    font-size: 1.5625rem;
-    line-height: 1.5;
-}
-
-.bird_page .service_intro .intro_copy {
-    margin-top: 34px;
-    font-size: 1.4375rem;
-    line-height: 1.9;
-}
-
-.bird_page .service_target {
-    padding: 80px 8%;
-    gap: 28px;
-}
-
-.bird_page .service_target .con_wrap {
-    justify-content: center;
-}
-
-.bird_page .service_gallery {
-    padding: 70px 8%;
-}
-
-.bird_page .service_gallery .slide_mask {
-    aspect-ratio: 24 / 5;
-}
-
-.bird_page .service_video {
-    padding: 60px 8%;
-}
-
-@media (max-width: 768px) {
-    .bird_page .service_intro {
-        flex-direction: column-reverse;
-        align-items: stretch;
-        gap: 16px;
-        padding: 0 20px;
-    }
-
-    .bird_page .service_intro > .tit_wrap,
-    .bird_page .service_intro > .main_img {
-        width: 100%;
-    }
-
-    .bird_page .service_intro > .main_img {
-        aspect-ratio: 362 / 211;
-        border-radius: 12px;
-    }
-
-    .bird_page .service_intro .tit_wrap,
-    .bird_page .service_intro .tit_in_wrap {
-        align-items: flex-end;
-        text-align: right;
-    }
-
-    .bird_page .service_intro .page_title {
-        display: none;
-    }
-
-    .bird_page .service_intro .intro_title {
-        font-size: 1.1875rem;
-        line-height: 1.5;
-    }
-
-    .bird_page .service_intro .intro_copy {
-        margin-top: 4px;
-        font-size: 0.9375rem;
-        line-height: 1.6;
-        text-align: right;
-    }
-
-    .bird_page .service_target {
-        padding: 12px 20px 0;
-        gap: 16px;
-        color: #f8f8f8;
-        background-color: #009944;
-    }
-
-    .bird_page .bird_target_title {
-        gap: 3px;
-    }
-
-    .bird_page .bird_target_title > h2 {
-        font-size: 1.1875rem;
-        line-height: 1.5;
-    }
-
-    .bird_page .bird_target_title > p {
-        color: inherit;
-        font-size: 0.75rem;
-        line-height: 1.5;
-    }
-
-    .bird_page .service_target .con_wrap {
-        width: 100%;
-        justify-content: space-between;
-        gap: 8px;
-    }
-
-    .bird_page .service_target .con {
-        width: 48px;
-        flex: 0 0 48px;
-    }
-
-    .bird_page .service_target .con .icon {
-        background-color: #009944;
-    }
-
-    .bird_page .service_target_description {
-        display: none;
-    }
-
-    .bird_page .bird_mobile_request {
-        width: calc(100% + 40px);
-        display: flex;
-        gap: 14px;
-        margin-left: -20px;
-        padding: 0 20px;
-        background-color: #fff;
-    }
-
-    .bird_page .bird_request_button {
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 9px;
-        flex: 1 1 0;
-        border: 1px solid #009944;
-        border-radius: 8px;
-        color: #009944;
-        font-size: 0.9375rem;
-        font-weight: 700;
-    }
-
-    .bird_page .bird_request_phone {
-        color: #fff;
-        background-color: #009944;
-    }
-
-    .bird_page .bird_request_button .icon {
-        width: 24px;
-        background-color: currentColor;
-    }
-
-    .bird_page .service_gallery {
-        padding: 20px;
-        gap: 9px;
-        color: #555;
-        background-color: #fff;
-        text-align: left;
-    }
-
-    .bird_page .service_gallery .tit_wrap_g {
-        align-items: flex-start;
-        color: #555;
-    }
-
-    .bird_page .service_gallery .slide_mask {
-        aspect-ratio: 362 / 226;
-    }
-
-    .bird_page .service_gallery_meta {
-        display: flex;
-    }
-
-    .bird_page .service_video {
-        padding: 20px;
-        gap: 9px;
-    }
-
-    .bird_page .service_request {
-        display: none;
-    }
-}
-
-/* =========================================================
    WAX PAGE BALANCE
    Figma 469:5168의 비율을 기준으로 하되, 고정 크기 대신 100%와 max값으로 줄어든다.
 ========================================================= */
@@ -4339,4 +4112,78 @@
         font-size: 0.875rem;
     }
 
+}
+
+/* 비둘기 페이지는 공통 미디어쿼리 뒤에서 최종 적용 */
+.bird_page .service_intro { order: 1; padding: 80px 8%; }
+.bird_page .service_target { order: 2; padding: 80px 8%; color: #555; background-color: #fff; }
+.bird_page .service_gallery { order: 3; padding: 70px 8%; color: #f2f2f2; background-color: #009944; }
+.bird_page .service_video { order: 4; }
+.bird_page .service_request { order: 5; }
+.bird_page .service_intro > .tit_wrap { width: 42%; }
+.bird_page .service_intro > .main_img { width: 48%; aspect-ratio: 8 / 5; }
+.bird_page .bird_target_title { order: 1; }
+.bird_page .bird_target_title > h2 { order: 1; }
+.bird_page .bird_target_title > p { order: 2; }
+.bird_page .service_target .con_wrap { order: 2; }
+.bird_page .service_target_description { display: none; }
+.bird_page .bird_mobile_request { order: 3; }
+.bird_page .service_gallery .slide_mask { aspect-ratio: 24 / 5; }
+.bird_page .service_gallery .slide_group > .sub_slide_img,
+.bird_page .service_gallery .slide_group > .sub_slide_img:first-child,
+.bird_page .service_gallery .slide_group > .sub_slide_img:nth-child(2),
+.bird_page .service_gallery .slide_group > .sub_slide_img:last-child {
+    display: block;
+    width: 32%;
+    height: 100%;
+    flex: 0 0 32%;
+}
+
+@media (max-width: 1500px) {
+    .bird_page .service_intro { padding: 60px 5%; }
+    .bird_page .service_target,
+    .bird_page .service_gallery,
+    .bird_page .service_video { padding-right: 5%; padding-left: 5%; }
+}
+
+@media (max-width: 768px) {
+    .bird_page .service_intro { flex-direction: column-reverse; padding: 0 20px; }
+    .bird_page .service_intro > .tit_wrap,
+    .bird_page .service_intro > .main_img { width: 100%; }
+    .bird_page .service_target {
+        flex-direction: column;
+        padding: 12px 20px 0;
+        color: #f8f8f8;
+        background-color: #009944;
+    }
+    .bird_page .service_target .con_wrap {
+        order: 2;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .bird_page .service_target .con {
+        width: 48px;
+        height: auto;
+        display: flex;
+        flex: 0 0 48px;
+        flex-direction: column;
+        aspect-ratio: auto;
+    }
+    .bird_page .service_target .con > p {
+        position: static;
+        margin-top: 3px;
+        color: #f8f8f8;
+    }
+    .bird_page .service_gallery { padding: 20px; color: #555; background-color: #fff; }
+    .bird_page .service_gallery .slide_mask { aspect-ratio: 362 / 226; }
+    .bird_page .service_gallery .slide_group > .sub_slide_img,
+    .bird_page .service_gallery .slide_group > .sub_slide_img:first-child,
+    .bird_page .service_gallery .slide_group > .sub_slide_img:last-child { display: none; }
+    .bird_page .service_gallery .slide_group > .sub_slide_img:nth-child(2) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
+    }
+    .bird_page .service_video { padding: 20px; }
 }
