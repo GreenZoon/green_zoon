@@ -92,7 +92,7 @@
 
 .company_drop {
 
-    width: 150%;
+    width: 100%;
     display: none;
     position: absolute;
     top: 100%;
@@ -737,10 +737,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.company_client_logos .company_logo {
-
 }
 
 
