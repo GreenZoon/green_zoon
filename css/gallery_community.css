@@ -79,7 +79,7 @@
     max-width: 1620px;
     display: flex;
     flex-direction: column;
-   
+    color: #555;
 }
 
 .content_head {
@@ -283,6 +283,7 @@
 
 .gallery_feature_text {
 
+    flex: 1 1 44%;
 
     display: flex;
 
@@ -373,9 +374,14 @@
     padding: 20px 0 100px;
 }
 
+[data-gallery-page="work"] .gallery_feature_text {
+    width: 41.05%;
+    flex: 0 0 auto;
+}
 
 [data-gallery-page="work"] .gallery_feature_media {
-    flex: 0 0 49.07%;
+    width: 49.07%;
+    flex: 0 0 auto;
     aspect-ratio: 795 / 400;
 }
 
@@ -396,22 +402,11 @@
     width: 40.4%;
 }
 
-
-
-.gallery_feature_media.single > .gallery_card_image {
-
-    width: min(100%, 760px);
-
-    aspect-ratio: 760 / 400;
-
-}
-
 .gallery_list {
 
     flex-direction: column;
 
     gap: 32px;
-
 
 }
 
@@ -2722,7 +2717,8 @@
 
     [data-gallery-page="work"] .gallery_feature_text,
     [data-gallery-page="work"] .gallery_feature_media {
-        flex-basis: auto;
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     [data-gallery-page="work"] .gallery_feature_media {
