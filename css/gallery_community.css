@@ -402,11 +402,22 @@
     width: 40.4%;
 }
 
+
+
+.gallery_feature_media.single > .gallery_card_image {
+
+    width: min(100%, 760px);
+
+    aspect-ratio: 760 / 400;
+
+}
+
 .gallery_list {
 
     flex-direction: column;
 
     gap: 32px;
+
 
 }
 
@@ -1017,13 +1028,6 @@
 
 }
 
-.board_head::before {
-
-    content: "";
-
-    flex: 0 0 60px;
-
-}
 
 .board_date, .board_writer, .board_view {
 
@@ -1076,7 +1080,7 @@
 
 }
 
-.event_cards, .information_cards {
+.event_cards {
 
     display: flex;
 
@@ -1084,6 +1088,13 @@
 
     gap: 28px 20px;
 
+}
+
+.information_cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 20px;
 }
 
 .event_cards[data-empty]::after {
@@ -1217,10 +1228,7 @@
 }
 
 .information_filter a {
-
-
-
-
+    flex: 0 0 auto;
     display: flex;
 
     align-items: center;
@@ -1230,6 +1238,8 @@
     border: 1px solid #8e8e8e;
 
     border-radius: 10px;
+
+    padding: 5px 12px;
 
     color: #555;
 
@@ -1247,7 +1257,7 @@
 
 .information_card {
 
-    width: 24%;
+    width: 100%;
 
     display: flex;
 
@@ -1315,9 +1325,10 @@
 .information_badge {
 
 
+    width: 100%;
+    max-width: 40px;
 
-
-    flex: 0 0 auto;
+    padding: 5px;
 
     display: flex;
 
@@ -2203,7 +2214,7 @@
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 
 [data-post-type="galleryEvent"] .post_media img {
@@ -2397,8 +2408,8 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .information_card {
-        width: 32%;
+    .information_cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .post_section > .sub_content {
@@ -2480,9 +2491,8 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .information_card {
-
-        width: 49%;
+    .information_cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
     }
 
@@ -3140,7 +3150,7 @@
 
     }
 
-    .event_cards, .information_cards {
+    .event_cards {
 
         gap: 22px 10px;
 
@@ -3187,11 +3197,9 @@
     }
 
     .information_filter a {
-
-
-
-
         border-radius: 5px;
+
+        padding: 4px 8px;
 
         font-size: 12px;
 
@@ -3213,13 +3221,14 @@
 
     .information_cards {
 
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px 20px;
 
     }
 
     .information_card {
 
-        width: 49%;
+        width: 100%;
 
         gap: 8px;
 

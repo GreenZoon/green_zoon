@@ -68,7 +68,11 @@ img,video{
 
 button {
 
-    font: inherit;
+    width: 100%;
+    max-width: 150px;
+    padding:8px 24px;
+    font-size: 1.0625rem; 
+    font-weight: 500;
     object-fit: cover;
     -webkit-user-drag: none;
     object-position: center;
