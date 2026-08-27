@@ -1081,13 +1081,10 @@
 }
 
 .event_cards {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px 20px;
-
 }
 
 .information_cards {
@@ -1112,8 +1109,7 @@
 }
 
 .event_card {
-
-    width: 32%;
+    width: 100%;
 
     display: flex;
 
@@ -1851,9 +1847,11 @@
 
 .today_card strong {
 
-    font-size: 20px;
 
+    font-size: larger;
+    font-weight: 700;
     line-height: 1.5;
+
 
 }
 
@@ -1890,6 +1888,8 @@
 .calendar_head button {
 
     width: 34px;
+
+    padding: 0;
 
     aspect-ratio: 1 / 1;
 
@@ -2412,6 +2412,10 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .event_cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .post_section > .sub_content {
 
         gap: 60px;
@@ -2494,6 +2498,10 @@
     .information_cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
+    }
+
+    .event_cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .gallery_channel {
@@ -3157,8 +3165,7 @@
     }
 
     .event_card {
-
-        width: 49%;
+        width: 100%;
 
     }
 

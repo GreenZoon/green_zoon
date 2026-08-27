@@ -1054,12 +1054,73 @@ function prepareMobileSchedule(menu) {
     const activeTab = menu?.querySelector("[data-schedule-tab].is_active");
     const pageDate = new URLSearchParams(window.location.search).get("date");
 
-    if (track && /^\d{4}-\d{2}-\d{2}$/.test(pageDate || "")) {
-        track.dataset.referenceDate = pageDate;
+    if (track) {
+        track.dataset.referenceDate = /^\d{4}-\d{2}-\d{2}$/.test(pageDate || "")
+            ? pageDate
+            : formatScheduleDate(new Date());
     }
 
     renderMobileSchedule(track, activeTab?.dataset.scheduleTab || "visit");
 }
+
+function syncMainMobileCalendar() {
+    const calendar = document.querySelector(".mobile_calendar");
+    const title = calendar?.querySelector("h3");
+    const dayWrap = calendar?.querySelector(".mobile_day_wrap");
+
+    if (!calendar || !dayWrap) return;
+
+    const currentDate = new Date();
+    const firstDate = new Date(currentDate);
+    firstDate.setDate(currentDate.getDate() - currentDate.getDay());
+
+    if (title) {
+        title.textContent = currentDate.getFullYear() + "년 " + (currentDate.getMonth() + 1) + "월";
+    }
+
+    dayWrap.replaceChildren();
+
+    for (let index = 0; index < 7; index += 1) {
+        const date = new Date(firstDate);
+        const dateValue = formatScheduleDate(date);
+        const day = document.createElement("time");
+
+        date.setDate(firstDate.getDate() + index);
+        day.className = "mobile_day";
+        day.dateTime = formatScheduleDate(date);
+        day.textContent = String(date.getDate());
+
+        if (formatScheduleDate(date) === formatScheduleDate(currentDate)) {
+            day.classList.add("is_active");
+            day.setAttribute("aria-current", "date");
+        }
+
+        if (mobileWorkSchedule[formatScheduleDate(date)]) {
+            day.appendChild(document.createElement("span"));
+        }
+
+        dayWrap.appendChild(day);
+    }
+}
+
+syncMainMobileCalendar();
+
+function scheduleLiveDateRefresh() {
+    const now = new Date();
+    const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const delay = nextDay.getTime() - now.getTime() + 1000;
+
+    window.setTimeout(function () {
+        syncMainMobileCalendar();
+
+        const openMenu = document.querySelector("#mobile_menu.is_open");
+        if (openMenu) prepareMobileSchedule(openMenu);
+
+        scheduleLiveDateRefresh();
+    }, delay);
+}
+
+scheduleLiveDateRefresh();
 
 
 // =========================================================

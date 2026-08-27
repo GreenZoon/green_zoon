@@ -643,12 +643,26 @@
         const next = head.querySelector('button[aria-label="다음 달"]');
         const body = calendar.tBodies[0];
         const todayCard = document.querySelector(".today_card");
-        let viewed = new Date(2026, 2, 1);
-        let selectedDate = new URLSearchParams(window.location.search).get("date") || "2026-03-10";
-        const initialParts = selectedDate.split("-").map(Number);
-        if (initialParts.length === 3 && initialParts.every(Number.isFinite)) {
-            viewed = new Date(initialParts[0], initialParts[1] - 1, 1);
+        const currentDate = new Date();
+        const requestedDate = new URLSearchParams(window.location.search).get("date");
+        let selectedDate = dateKey(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            currentDate.getDate()
+        );
+
+        if (/^\d{4}-\d{2}-\d{2}$/.test(requestedDate || "")) {
+            const requestedParts = requestedDate.split("-").map(Number);
+            const parsedDate = new Date(requestedParts[0], requestedParts[1] - 1, requestedParts[2]);
+            const isValidDate = parsedDate.getFullYear() === requestedParts[0]
+                && parsedDate.getMonth() === requestedParts[1] - 1
+                && parsedDate.getDate() === requestedParts[2];
+
+            if (isValidDate) selectedDate = requestedDate;
         }
+
+        const initialParts = selectedDate.split("-").map(Number);
+        let viewed = new Date(initialParts[0], initialParts[1] - 1, 1);
 
         const scheduleData = {
             "2026-03-01": "삼일절",
@@ -719,6 +733,12 @@
             const lastDate = new Date(year, month + 1, 0).getDate();
             if (yearText) yearText.textContent = year + "년";
             if (monthText) monthText.textContent = (month + 1) + "월";
+            if (yearSelect && !yearSelect.querySelector('option[value="' + year + '"]')) {
+                const option = document.createElement("option");
+                option.value = String(year);
+                option.textContent = year + "년";
+                yearSelect.appendChild(option);
+            }
             if (yearSelect) yearSelect.value = String(year);
             if (monthSelect) monthSelect.value = String(month);
             if (caption) caption.textContent = year + "년 " + (month + 1) + "월";
@@ -785,6 +805,28 @@
 
         render();
         updateTodayCard(selectedDate);
+
+        if (!requestedDate) {
+            const refreshAtNextDay = function () {
+                const now = new Date();
+                const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+
+                window.setTimeout(function () {
+                    const liveDate = new Date();
+                    selectedDate = dateKey(
+                        liveDate.getFullYear(),
+                        liveDate.getMonth(),
+                        liveDate.getDate()
+                    );
+                    viewed = new Date(liveDate.getFullYear(), liveDate.getMonth(), 1);
+                    render();
+                    updateTodayCard(selectedDate);
+                    refreshAtNextDay();
+                }, nextDay.getTime() - now.getTime() + 1000);
+            };
+
+            refreshAtNextDay();
+        }
     }
 
     function initReviewWrite() {
