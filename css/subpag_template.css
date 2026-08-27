@@ -4187,3 +4187,84 @@
     }
     .bird_page .service_video { padding: 20px; }
 }
+
+/* 행사 청소 4개 페이지: 피그마의 공통 섹션 순서와 색상만 페이지 범위 안에서 적용 */
+.event_cleaning_page .service_intro { order: 1; padding: 96px 8%; }
+.event_cleaning_page .service_intro > .tit_wrap { width: 42%; }
+.event_cleaning_page .service_intro > .main_img { width: 48%; aspect-ratio: 8 / 5; }
+.event_cleaning_page .service_target { order: 2; padding: 72px 8%; color: #555; background-color: #fff; }
+.event_cleaning_page .service_target > h2 { order: 1; }
+.event_cleaning_page .service_target > p { order: 2; }
+.event_cleaning_page .service_target > .con_wrap { order: 3; }
+.event_cleaning_page .service_gallery { order: 3; padding: 70px 5%; color: #f2f2f2; background-color: #009944; }
+.event_cleaning_page .service_gallery .slide_wrap { width: 90%; }
+.event_cleaning_page .service_gallery .slide_mask { aspect-ratio: 24 / 5; }
+.event_cleaning_page .service_gallery .tit_wrap,
+.event_cleaning_page .service_gallery .tit_wrap p,
+.event_cleaning_page .service_gallery .service_gallery_name,
+.event_cleaning_page .service_gallery .service_gallery_status { color: #f2f2f2; }
+.event_cleaning_page .service_gallery .tit_wrap .arrow,
+.event_cleaning_page .service_gallery .slide_frame > .arrow { background-color: #f2f2f2; }
+.event_cleaning_page .service_gallery .slide_group > .sub_slide_img,
+.event_cleaning_page .service_gallery .slide_group > .sub_slide_img:first-child,
+.event_cleaning_page .service_gallery .slide_group > .sub_slide_img:nth-child(2),
+.event_cleaning_page .service_gallery .slide_group > .sub_slide_img:last-child {
+    display: block;
+    width: 32%;
+    height: 100%;
+    flex: 0 0 32%;
+}
+.event_cleaning_page .service_video { order: 4; color: #f2f2f2; background-color: #009944; }
+.event_cleaning_page .service_video .service_video_title,
+.event_cleaning_page .service_video .service_video_title p { color: #f2f2f2; }
+.event_cleaning_page .service_video .service_video_title .arrow_up_right { background-color: #f2f2f2; }
+.event_cleaning_page .service_request { order: 5; }
+
+@media (max-width: 1500px) {
+    .event_cleaning_page .service_intro { padding: 60px 5%; }
+    .event_cleaning_page .service_target,
+    .event_cleaning_page .service_gallery,
+    .event_cleaning_page .service_video { padding-right: 5%; padding-left: 5%; }
+}
+
+@media (max-width: 768px) {
+    .event_cleaning_page .service_intro { flex-direction: column-reverse; padding: 0 20px 16px; }
+    .event_cleaning_page .service_intro > .tit_wrap,
+    .event_cleaning_page .service_intro > .main_img { width: 100%; }
+    .event_cleaning_page .service_target { padding: 16px 20px 0; color: #f8f8f8; background-color: #009944; }
+    .event_cleaning_page .service_target > h2,
+    .event_cleaning_page .service_target > p,
+    .event_cleaning_page .service_target .con > p { color: #f8f8f8; }
+    .event_cleaning_page .service_target .con_wrap { width: 100%; justify-content: space-between; }
+    .event_cleaning_page .service_target .con {
+        width: 48px;
+        height: auto;
+        display: flex;
+        flex: 0 0 48px;
+        flex-direction: column;
+        aspect-ratio: auto;
+    }
+    .event_cleaning_page .service_target .con > p { position: static; margin-top: 3px; }
+    .event_cleaning_page .service_gallery { order: 5; padding: 20px; color: #555; background-color: #fff; }
+    .event_cleaning_page .service_gallery .slide_wrap { width: 100%; }
+    .event_cleaning_page .service_gallery .slide_mask { aspect-ratio: 362 / 226; }
+    .event_cleaning_page .service_gallery .tit_wrap,
+    .event_cleaning_page .service_gallery .tit_wrap p,
+    .event_cleaning_page .service_gallery .service_gallery_name { color: #555; }
+    .event_cleaning_page .service_gallery .service_gallery_status { color: #8e8e8e; }
+    .event_cleaning_page .service_gallery .tit_wrap .arrow,
+    .event_cleaning_page .service_gallery .slide_frame > .arrow { background-color: #8e8e8e; }
+    .event_cleaning_page .service_gallery .slide_group > .sub_slide_img,
+    .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:first-child,
+    .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:last-child { display: none; }
+    .event_cleaning_page .service_gallery .slide_group > .sub_slide_img:nth-child(2) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
+    }
+    .event_cleaning_page .service_video { order: 6; padding: 20px; color: #555; background-color: #fff; }
+    .event_cleaning_page .service_video .service_video_title,
+    .event_cleaning_page .service_video .service_video_title p { color: #555; }
+    .event_cleaning_page .service_video .service_video_title .arrow_up_right { background-color: #8e8e8e; }
+}
