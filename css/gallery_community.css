@@ -79,7 +79,7 @@
     max-width: 1620px;
     display: flex;
     flex-direction: column;
-    color: #555;
+   
 }
 
 .content_head {
@@ -283,7 +283,6 @@
 
 .gallery_feature_text {
 
-    flex: 1 1 44%;
 
     display: flex;
 
@@ -367,6 +366,34 @@
 
     width: 42%;
 
+}
+
+/* 작업 갤러리 상단은 피그마 데스크톱 프레임(1620×400)의 비율을 따른다. */
+[data-gallery-page="work"] .gallery_feature {
+    padding: 20px 0 100px;
+}
+
+
+[data-gallery-page="work"] .gallery_feature_media {
+    flex: 0 0 49.07%;
+    aspect-ratio: 795 / 400;
+}
+
+[data-gallery-page="work"] .gallery_feature_media img {
+    height: 100%;
+    object-fit: cover;
+}
+
+[data-gallery-page="work"] .gallery_feature_media.three img:nth-child(1) {
+    width: 22.9%;
+}
+
+[data-gallery-page="work"] .gallery_feature_media.three img:nth-child(2) {
+    width: 33.7%;
+}
+
+[data-gallery-page="work"] .gallery_feature_media.three img:nth-child(3) {
+    width: 40.4%;
 }
 
 
@@ -2687,6 +2714,23 @@
 
         padding: 24px 0 36px;
 
+    }
+
+    [data-gallery-page="work"] .gallery_feature {
+        padding: 24px 0 36px;
+    }
+
+    [data-gallery-page="work"] .gallery_feature_text,
+    [data-gallery-page="work"] .gallery_feature_media {
+        flex-basis: auto;
+    }
+
+    [data-gallery-page="work"] .gallery_feature_media {
+        aspect-ratio: auto;
+    }
+
+    [data-gallery-page="work"] .gallery_feature_media img {
+        height: auto;
     }
 
     .gallery_feature_text {

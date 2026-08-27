@@ -2620,6 +2620,7 @@
     .img_wrap_4 {
 
         width: 30%;
+        max-width: 180px;
         height: auto;
         flex: 0 0 30%;
         aspect-ratio: 3 / 2;
