@@ -1349,7 +1349,7 @@
 
     flex-direction: column;
 
-    gap: 20px;
+    gap: 24px;
 
 }
 
@@ -1369,7 +1369,7 @@
 
 .faq_list summary {
 
-
+    height: 91px;
 
     display: flex;
 
@@ -3224,7 +3224,7 @@
 
     .faq_list {
 
-        gap: 10px;
+        gap: 24px;
 
     }
 
@@ -3236,7 +3236,8 @@
 
         font-size: 12px;
 
-        padding: 0 12px;
+        height: auto;
+        padding: 10px 12px;
 
     }
 
