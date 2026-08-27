@@ -312,13 +312,14 @@
 
 .service_option {
 
-        width: 100%;
-    max-width: 100px;
+    width: 100px;
+    max-width: none;
     flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
+    padding: 0;
     border: 2px solid #c6c6c6;
     border-radius: 50%;
     background: #fff;
@@ -956,12 +957,6 @@ body.modal_open {
     overflow: hidden;
 }
 
-@media (max-width: 1200px) {
-    .service_option {
-        flex-basis: 18%;
-    }
-}
-
 @media (max-width: 768px) {
 
     .application_main {
@@ -1081,6 +1076,7 @@ body.modal_open {
     }
 
     .service_option {
+        width: 94px;
         flex: 0 0 94px;
         scroll-snap-align: start;
     }
