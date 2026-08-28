@@ -725,11 +725,6 @@
 
     display: flex;
 
-}
-
-/* 공지사항 section은 하나의 세로 흐름이며, 내부 notice_layout만 두 열로 배치한다. */
-.community_page[data-community-page="notice"] .community_body {
-
     flex-direction: column;
 
 }
@@ -3008,8 +3003,6 @@
     .community_body {
 
         gap: 30px;
-
-        padding: 20px 0 60px;
 
     }
 
