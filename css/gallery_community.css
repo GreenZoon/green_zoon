@@ -18,7 +18,7 @@
 .gallery_page .sub_visual {
     background-image:
         linear-gradient(rgba(29, 29, 29, .08), rgba(29, 29, 29, .08)),
-        url("../img/sub_page/gallery/gallery_visual.jpg");
+        url("../img/slide/gallery_visual.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -657,8 +657,8 @@
     height: 72px;
     aspect-ratio: 1 / 1;
     background-color: #009944;
-    -webkit-mask-image: url("../img/SVG/horizontal_logo.svg");
-    mask-image: url("../img/SVG/horizontal_logo.svg");
+    -webkit-mask-image: url("../img/company/horizontal_logo.svg");
+    mask-image: url("../img/company/horizontal_logo.svg");
 
 }
 

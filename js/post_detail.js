@@ -93,22 +93,22 @@
     ];
 
     const workImages = [
-        "img/sub_page/Disinfection_3.jpg",
-        "img/sub_page/cleaning_carpet_ing_3.jpg",
-        "img/sub_page/factory_floor_ing_3.jpg",
-        "img/mainimgs/cleaning_carpet_ing.jpg",
-        "img/mainimgs/bird_spike_ing.jpg",
-        "img/sub_page/Wax_job_4.jpg",
-        "img/sub_page/wall_cleaning.jpg",
-        "img/mainimgs/factory_cleane_ing.jpg",
-        "img/sub_page/building_wall_ing_1.jpg",
-        "img/mainimgs/Pond_ing.jpg",
-        "img/sub_page/factory_floor_2_1_After.jpg",
-        "img/sub_page/Stadium_cleaning_img.jpg",
-        "img/sub_page/factory_equipment_ing_2.jpg",
-        "img/sub_page/water_tank_ing_3.jpg",
-        "img/mainimgs/cleaning_carpet_ing.jpg",
-        "img/sub_page/building_wall_ing_3.jpg"
+        "img/Work_imags/Disinfection/Disinfection_3.jpg",
+        "img/Work_imags/Carpet/cleaning_carpet_ing_3.jpg",
+        "img/Work_imags/factory_floor/main_factory_floor.jpg",
+        "img/Work_imags/Carpet/cleaning_carpet_ing.jpg",
+        "img/Work_imags/bird_spike/bird_spike_ing.jpg",
+        "img/Work_imags/wax/Wax_job_4.jpg",
+        "img/Work_imags/wall/wall_cleaning.jpg",
+        "img/Work_imags/factory_Cleaning/main_factory_cleane_ing.jpg",
+        "img/Work_imags/wall/building_wall_ing_1.jpg",
+        "img/Work_imags/Pond/Pond_ing.jpg",
+        "img/Work_imags/factory_floor/factory_floor_After_2.jpg",
+        "img/Work_imags/Stadium/Stadium_cleaning_ing_3.jpg",
+        "img/Work_imags/factory_equipment/main_factory_equipment.jpg",
+        "img/Work_imags/water_tank/water_tank_ing_3.jpg",
+        "img/Work_imags/Carpet/cleaning_carpet_ing.jpg",
+        "img/Work_imags/wall/building_wall_ing_3.jpg"
     ];
 
     const workCopy = [
@@ -131,57 +131,57 @@
     ];
 
     const galleryEventImages = [
-        "img/sub_page/awards/award_2025_cover.jpg",
-        "img/sub_page/awards/award_2023_cover.jpg",
-        "img/sub_page/gallery/event/gallery_event_03.png",
-        "img/sub_page/gallery/event/gallery_event_04.png",
-        "img/sub_page/gallery/event/gallery_event_05.png",
+        "img/awards/award_2025_cover.jpg",
+        "img/awards/award_2023_cover.jpg",
+        "img/gallery/gallery_event_03.png",
+        "img/gallery/gallery_event_04.png",
+        "img/gallery/gallery_event_05.png",
         "",
-        "img/sub_page/news_event.jpg",
-        "img/SVG/horizontal_logo.svg",
-        "img/SVG/horizontal_logo.svg",
-        "img/SVG/horizontal_logo.svg",
-        "img/SVG/horizontal_logo.svg",
-        "img/sub_page/gallery/event/gallery_event_08.png",
-        "img/sub_page/gallery/event/archive/event_partner_meeting_2017.jpg",
-        "img/sub_page/gallery/event/archive/event_company_dinner_2017.jpg",
-        "img/sub_page/gallery/event/archive/event_partner_meeting_2017_02.jpg"
+        "img/info/news_event.jpg",
+        "img/company/horizontal_logo.svg",
+        "img/company/horizontal_logo.svg",
+        "img/company/horizontal_logo.svg",
+        "img/company/horizontal_logo.svg",
+        "img/gallery/gallery_event_08.png",
+        "",
+        "",
+        ""
     ];
 
     /* 공지·입찰 게시글에는 현장과 무관한 이미지를 연결하지 않는다. */
     const noticeImages = [];
 
     const communityEventImages = [
-        "img/mainimgs/Event_2.jpg",
-        "img/mainimgs/Event_1.jpg",
-        "img/mainimgs/Event_3.jpg",
-        "img/sub_page/community/event/event_office_cleaning.jpg",
-        "img/sub_page/community/event/event_factory_cleaning.jpg",
-        "img/sub_page/community/event/event_fabric_cleaning.jpg"
+        "img/info/Event_2.jpg",
+        "img/info/Event_1.jpg",
+        "img/info/Event_3.jpg",
+        "img/info/event_office_cleaning.jpg",
+        "img/info/event_factory_cleaning.jpg",
+        "img/info/event_fabric_cleaning.jpg"
     ];
 
     const informationImages = [
-        "img/mainimgs/Community_Information.jpg",
-        "img/sub_page/community/info/info_02.webp",
-        "img/sub_page/community/info/info_03.webp",
-        "img/sub_page/community/info/info_04.webp",
-        "img/sub_page/community/info/info_05.webp",
-        "img/sub_page/community/info/info_06.webp",
-        "img/sub_page/community/info/info_07.webp",
-        "img/sub_page/community/info/info_08.webp"
+        "img/info/Community_Information.jpg",
+        "img/info/info_02.webp",
+        "img/info/info_03.webp",
+        "img/info/info_04.webp",
+        "img/info/info_05.webp",
+        "img/info/info_06.webp",
+        "img/info/info_07.webp",
+        "img/info/info_08.webp"
     ];
 
     const reviewImages = [
-        "img/sub_page/rust_removal_ing.jpg",
-        "img/mainimgs/bird_spike_ing.jpg",
-        "img/sub_page/factory_floor_ing.jpg",
-        "img/sub_page/factory_floor_After.jpg",
-        "img/sub_page/Dispatch_janitor_1.jpg",
-        "img/sub_page/wax_After_2.jpg",
-        "img/sub_page/cleaning_carpet_After_2.jpg",
-        "img/sub_page/factory_floor_2_1_After.jpg",
-        "img/sub_page/building_wall_After_3.jpg",
-        "img/mainimgs/cleaning_event_ing.webp"
+        "img/Work_imags/rust/rust_removal_ing.jpg",
+        "img/Work_imags/bird_spike/bird_spike_ing.jpg",
+        "img/Work_imags/factory_floor/factory_floor_ing_2.jpg",
+        "img/Work_imags/factory_floor/factory_floor_After.jpg",
+        "img/dispatch_gallery/Dispatch_janitor_1.jpg",
+        "img/Work_imags/wax/wax_After_2.jpg",
+        "img/Work_imags/Carpet/cleaning_carpet_After_2.jpg",
+        "img/Work_imags/factory_floor/factory_floor_After_2.jpg",
+        "img/Work_imags/wall/building_wall_After_3.jpg",
+        "img/Work_imags/Stadium/main_Stadium_cleaning.webp"
     ];
 
     const dates = [
@@ -210,19 +210,19 @@
     }
 
     const videoPosts = [
-        { id: 0, title: "미화원 정기교육 영상", date: "2026.04.01", image: "img/sub_page/dispatch_gallery.jpg", videoUrl: "https://www.youtube.com/shorts/sx0b62bCz_g" },
-        { id: 1, title: "카펫 청소 작업", date: "2026.01.02", image: "img/sub_page/Carpet_cleaning_vdo_img.jpg", videoUrl: "https://www.youtube.com/shorts/vkOGynDESmk" },
-        { id: 2, title: "비둘기 퇴치 작업 다녀왔습니다~!", date: "2026.04.01", image: "img/mainimgs/bird_spike_ing.jpg", videoUrl: "https://www.youtube.com/watch?v=0UKCmXB9Fn4" },
-        { id: 14, title: "기계·설비 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/factory_equipment_ing_2_2.jpg", videoUrl: "https://www.youtube.com/shorts/Ms05de4-1wU" },
-        { id: 15, title: "학교 연못 청소 작업 영상", date: "2026.03.20", image: "img/sub_page/Pond_ing_3.jpg", videoUrl: "https://www.youtube.com/watch?v=zRq8Ji7RddY" },
-        { id: 16, title: "사무실 바닥 청소 및 왁스", date: "2026.08.25", image: "img/sub_page/Wax_job_3.jpg", videoUrl: "https://www.youtube.com/watch?v=QeB5DOs5E8Y" },
+        { id: 0, title: "미화원 정기교육 영상", date: "2026.04.01", image: "img/dispatch_gallery/dispatch_gallery.jpg", videoUrl: "https://www.youtube.com/shorts/sx0b62bCz_g" },
+        { id: 1, title: "카펫 청소 작업", date: "2026.01.02", image: "img/Work_imags/Carpet/Carpet_cleaning_vdo_img.jpg", videoUrl: "https://www.youtube.com/shorts/vkOGynDESmk" },
+        { id: 2, title: "비둘기 퇴치 작업 다녀왔습니다~!", date: "2026.04.01", image: "img/Work_imags/bird_spike/bird_spike_ing.jpg", videoUrl: "https://www.youtube.com/watch?v=0UKCmXB9Fn4" },
+        { id: 14, title: "기계·설비 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/factory_equipment/factory_equipment_ing_2.jpg", videoUrl: "https://www.youtube.com/shorts/Ms05de4-1wU" },
+        { id: 15, title: "학교 연못 청소 작업 영상", date: "2026.03.20", image: "img/Work_imags/Pond/Pond_ing_3.jpg", videoUrl: "https://www.youtube.com/watch?v=zRq8Ji7RddY" },
+        { id: 16, title: "사무실 바닥 청소 및 왁스", date: "2026.08.25", image: "img/Work_imags/wax/Wax_job_3.jpg", videoUrl: "https://www.youtube.com/watch?v=QeB5DOs5E8Y" },
         { id: 17, title: "공장 청소 작업 영상", date: "2026.08.25", image: "img/slide/factory_cleane_slide_2.jpg", videoUrl: "https://www.youtube.com/watch?v=i27HAUUJFOU" },
-        { id: 18, title: "공장 바닥 청소 작업 영상", date: "2026.08.25", image: "img/sub_page/factory_floor_3_1_ing.jpg", videoUrl: "https://www.youtube.com/shorts/xHZDlb5w_10" },
-        { id: 19, title: "소독·방역 작업 영상", date: "2026.08.26", image: "img/mainimgs/Disinfection_ing.jpg", videoUrl: "https://www.youtube.com/shorts/AY12rwHZauM" },
-        { id: 20, title: "매트·패브릭 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/Fabric_cleaning_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/aVER6UoKCNs" },
-        { id: 21, title: "대형 저수조 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/water_tank_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/1cbOF6uwlV0" },
-        { id: 22, title: "건물 외벽 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/building_wall_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/HWKBh3nwBAk" },
-        { id: 23, title: "공장 외벽 청소 작업 영상", date: "2026.08.26", image: "img/sub_page/factory_wall_ing.jpg", videoUrl: "https://www.youtube.com/shorts/Qa2dcR8k9So" }
+        { id: 18, title: "공장 바닥 청소 작업 영상", date: "2026.08.25", image: "img/Work_imags/factory_floor/factory_floor_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/xHZDlb5w_10" },
+        { id: 19, title: "소독·방역 작업 영상", date: "2026.08.26", image: "img/Work_imags/Disinfection/Disinfection_ing.jpg", videoUrl: "https://www.youtube.com/shorts/AY12rwHZauM" },
+        { id: 20, title: "매트·패브릭 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/Fabric/Fabric_cleaning_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/aVER6UoKCNs" },
+        { id: 21, title: "대형 저수조 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/water_tank/water_tank_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/1cbOF6uwlV0" },
+        { id: 22, title: "건물 외벽 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/wall/building_wall_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/HWKBh3nwBAk" },
+        { id: 23, title: "공장 외벽 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/wall/main_factory_wall.jpg", videoUrl: "https://www.youtube.com/shorts/Qa2dcR8k9So" }
     ].map(function (post) {
         return Object.assign({ type: "video", label: "작업 동영상", images: [post.image] }, post);
     });
@@ -254,18 +254,18 @@
     });
 
     posts.galleryEvent[1].images = [
-        "img/sub_page/awards/award_2023_cover.jpg",
-        "img/sub_page/awards/award_2023_venue.jpg",
-        "img/sub_page/awards/award_2023_competition.jpg",
-        "img/sub_page/awards/award_2023_presentation.jpg",
-        "img/sub_page/awards/award_2023_winners.jpg",
-        "img/sub_page/awards/award_2023_certificates.jpg"
+        "img/awards/award_2023_cover.jpg",
+        "img/awards/award_2023_venue.jpg",
+        "img/awards/award_2023_competition.jpg",
+        "img/awards/award_2023_presentation.jpg",
+        "img/awards/award_2023_winners.jpg",
+        "img/awards/award_2023_certificates.jpg"
     ];
 
     posts.work[0].images = [
-        "img/sub_page/Disinfection_3.jpg",
-        "img/sub_page/Disinfection_4.jpg",
-        "img/sub_page/Disinfection_5.jpg"
+        "img/Work_imags/Disinfection/Disinfection_3.jpg",
+        "img/Work_imags/Disinfection/Disinfection_4.jpg",
+        "img/Work_imags/Disinfection/Disinfection_5.jpg"
     ];
 
     const informationCopy = [

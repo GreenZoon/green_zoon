@@ -773,8 +773,8 @@ svg {
     aspect-ratio: 2 / 1;
 
     background-color: #009944;
-    -webkit-mask-image: url("../img/SVG/horizontal_logo.svg");
-    mask-image: url("../img/SVG/horizontal_logo.svg");
+    -webkit-mask-image: url("../img/company/horizontal_logo.svg");
+    mask-image: url("../img/company/horizontal_logo.svg");
 
         flex: 0 0 auto;
     flex-shrink: 0;
@@ -806,8 +806,8 @@ svg {
     aspect-ratio: 4 / 1;
 
     background-color: #1d1d1d;
-    -webkit-mask-image: url("../img/SVG/sign.svg");
-    mask-image: url("../img/SVG/sign.svg");
+    -webkit-mask-image: url("../img/company/sign.svg");
+    mask-image: url("../img/company/sign.svg");
 
         flex: 0 0 auto;
     flex-shrink: 0;

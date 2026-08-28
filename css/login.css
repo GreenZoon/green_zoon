@@ -1023,8 +1023,8 @@ body.is_profile_edit {
 
 
     background-color: #009944;
-    -webkit-mask-image: url("../img/SVG/horizontal_logo.svg");
-    mask-image: url("../img/SVG/horizontal_logo.svg");
+    -webkit-mask-image: url("../img/company/horizontal_logo.svg");
+    mask-image: url("../img/company/horizontal_logo.svg");
 
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;

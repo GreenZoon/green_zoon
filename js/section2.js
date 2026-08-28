@@ -34,11 +34,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/factory_equipment_ing_2.jpg",
+                    src: "img/Work_imags/factory_equipment/main_factory_equipment.jpg",
                     alt: "공장 기계 설비 청소 현장"
                 },
                 {
-                    src: "img/sub_page/factory_floor_ing_2.jpg",
+                    src: "img/Work_imags/factory_floor/factory_floor_ing.jpg",
                     alt: "공장 바닥 장비 청소 현장"
                 }
             ]
@@ -52,11 +52,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/cleaning_carpet_ing_2.jpg",
+                    src: "img/Work_imags/Carpet/cleaning_carpet_ing_2.jpg",
                     alt: "카펫 부분 세척 작업 현장"
                 },
                 {
-                    src: "img/sub_page/cleaning_carpet_ing_3.jpg",
+                    src: "img/Work_imags/Carpet/cleaning_carpet_ing_3.jpg",
                     alt: "대형 카펫 장비 청소 현장"
                 }
             ]
@@ -70,11 +70,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/Wax_job.jpg",
+                    src: "img/Work_imags/wax/Wax_job.jpg",
                     alt: "도서관 바닥 왁스 작업 현장"
                 },
                 {
-                    src: "img/sub_page/wax_ing_3.jpg",
+                    src: "img/Work_imags/wax/wax_ing_3.jpg",
                     alt: "공연장 바닥 왁스 작업 현장"
                 }
             ]
@@ -88,11 +88,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/bird_spike_before.jpg",
+                    src: "img/Work_imags/bird_spike/bird_spike_before.jpg",
                     alt: "공장 천장 비둘기 방지 작업 전"
                 },
                 {
-                    src: "img/mainimgs/bird_spike_ing.jpg",
+                    src: "img/Work_imags/bird_spike/bird_spike_ing.jpg",
                     alt: "공장 천장 비둘기 방지 작업 중"
                 }
             ]
@@ -106,11 +106,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/Event_cleaning_ing_2.jpg",
+                    src: "img/Work_imags/Stadium/Stadium_cleaning_ing.jpg",
                     alt: "경기장 관람석 청소 현장"
                 },
                 {
-                    src: "img/sub_page/Event_cleaning_ing_3.jpg",
+                    src: "img/Work_imags/Event_cleaning/Event_cleaning_ing_3.jpg",
                     alt: "행사 시설 벽면 청소 현장"
                 }
             ]
@@ -124,11 +124,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/ship_ing_1.jpg",
+                    src: "img/Work_imags/ship/ship_ing_1.jpg",
                     alt: "선박 조타실 청소 현장"
                 },
                 {
-                    src: "img/sub_page/ship_ing_3.jpg",
+                    src: "img/Work_imags/ship/ship_ing_3.jpg",
                     alt: "선박 객실 청소 현장"
                 }
             ]
@@ -142,11 +142,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/building_wall_ing_1.jpg",
+                    src: "img/Work_imags/wall/building_wall_ing_1.jpg",
                     alt: "건물 저층 외벽 세척 현장"
                 },
                 {
-                    src: "img/sub_page/wall_cleaning_ing_1.jpg",
+                    src: "img/Work_imags/wall/main_wall_cleaning.jpg",
                     alt: "석재 외벽 세척 현장"
                 }
             ]
@@ -160,11 +160,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/rust_removal_ing_2.jpg",
+                    src: "img/Work_imags/rust/rust_removal_ing_2.jpg",
                     alt: "시설물 녹 제거 작업 현장"
                 },
                 {
-                    src: "img/sub_page/tunnel/tunnel_video_thumbnail.jpg",
+                    src: "img/Work_imags/rust/rust_video_thumbnail.jpg",
                     alt: "터널 시설물 보수 작업 현장"
                 }
             ]
@@ -178,11 +178,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/mainimgs/dispatch_sanitation_Before.jpg",
+                    src: "img/Work_imags/Stadium/Stadium_cleaning_video.jpg",
                     alt: "미화원 파견 작업 전"
                 },
                 {
-                    src: "img/mainimgs/dispatch_sanitation_ing.jpg",
+                    src: "img/Work_imags/Stadium/main_Stadium_cleaning.jpg",
                     alt: "미화원 파견 작업 중"
                 }
             ]
@@ -195,11 +195,11 @@ if (section2) {
             images:
             [
                 {
-                    src: "img/sub_page/water_tank_ing_2.jpg",
+                    src: "img/Work_imags/water_tank/water_tank_ing_2.jpg",
                     alt: "저수조 내부 오염 제거 현장"
                 },
                 {
-                    src: "img/sub_page/water_tank_ing_3.jpg",
+                    src: "img/Work_imags/water_tank/water_tank_ing_3.jpg",
                     alt: "대형 저수조 세척 현장"
                 }
             ]
@@ -214,11 +214,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/Pond_ing_2.jpg",
+                    src: "img/Work_imags/Pond/Pond_ing_2.jpg",
                     alt: "정원 연못 내부 청소 현장"
                 },
                 {
-                    src: "img/sub_page/Pond_ing_3.jpg",
+                    src: "img/Work_imags/Pond/Pond_ing_3.jpg",
                     alt: "석재 연못 청소 현장"
                 }
             ]
@@ -232,11 +232,11 @@ if (section2) {
             
             [
                 {
-                    src: "img/sub_page/Disinfection_1.jpg",
+                    src: "img/Work_imags/Disinfection/Disinfection_1.jpg",
                     alt: "사무실 소독 작업 현장"
                 },
                 {
-                    src: "img/sub_page/Disinfection_4.jpg",
+                    src: "img/Work_imags/Disinfection/Disinfection_4.jpg",
                     alt: "공공시설 소독 작업 현장"
                 }
             ]
