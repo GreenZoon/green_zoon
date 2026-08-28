@@ -35,7 +35,8 @@
 
 .request_row {
 
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
 
 }
 

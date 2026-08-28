@@ -987,10 +987,7 @@
 .clipping_mask_4 {
 
     width: 100%;
-    max-width: 1350px;
     height: 100%;
-
-    margin: 0 auto;
     overflow: hidden;
 
 }
