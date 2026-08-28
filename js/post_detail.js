@@ -36,11 +36,9 @@
         "그린죤 워크샵",
         "한국자활연수원 교육 다녀왔습니다.",
         "2016 세계건물관리연맹 동경대회",
-        "그린죤 행사 소식",
-        "현장 안전관리 교육에 참여했습니다.",
-        "청소 장비 실무교육 현장",
-        "그린죤 임직원 정기 간담회",
-        "지역 환경정화 활동에 함께했습니다."
+        "그린죤 협력사 정기모임",
+        "즐거운 그린죤 회식 ♡",
+        "그린죤 협력사 정기모임"
     ];
 
     const noticeTitles = [
@@ -140,9 +138,14 @@
         "img/sub_page/gallery/event/gallery_event_05.png",
         "",
         "img/sub_page/news_event.jpg",
-        "", "", "", "",
+        "img/SVG/horizontal_logo.svg",
+        "img/SVG/horizontal_logo.svg",
+        "img/SVG/horizontal_logo.svg",
+        "img/SVG/horizontal_logo.svg",
         "img/sub_page/gallery/event/gallery_event_08.png",
-        "", "", "", "", ""
+        "img/sub_page/gallery/event/archive/event_partner_meeting_2017.jpg",
+        "img/sub_page/gallery/event/archive/event_company_dinner_2017.jpg",
+        "img/sub_page/gallery/event/archive/event_partner_meeting_2017_02.jpg"
     ];
 
     /* 공지·입찰 게시글에는 현장과 무관한 이미지를 연결하지 않는다. */
@@ -238,6 +241,13 @@
     posts.notice[10].date = "2023.06.13";
     posts.galleryEvent[0].date = "2025.06.23";
     posts.galleryEvent[1].date = "2023.06.13";
+    [
+        "2025.06.23", "2023.06.13", "2022.11.18", "2022.09.30", "2022.09.30",
+        "2022.06.03", "2022.05.27", "2018.06.04", "2018.05.28", "2018.04.11",
+        "2017.09.22", "2016.06.28", "2017.05.29", "2017.03.02", "2017.03.02"
+    ].forEach(function (date, index) {
+        if (posts.galleryEvent[index]) posts.galleryEvent[index].date = date;
+    });
     posts.notice.forEach(function (post) {
         post.image = "";
         post.images = [];
@@ -428,7 +438,7 @@
                 perPage = list.closest(".notice_list") ? 6 : 5;
             } else {
                 items = Array.from(list.children);
-                perPage = 8;
+                perPage = list.classList.contains("gallery_cards") && window.innerWidth >= 1920 ? 10 : 8;
             }
 
             if (!items.length) return;

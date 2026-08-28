@@ -428,6 +428,13 @@
     gap: 28px 20px;
 }
 
+/* 넓은 화면에서는 같은 카드 프레임을 5열로 배치해 한 화면의 정보량을 높인다. */
+@media (width >= 1920px) {
+    .gallery_cards {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 .gallery_card {
     width: 100%;
     max-width: 100%;
