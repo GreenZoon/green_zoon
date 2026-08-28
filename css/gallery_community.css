@@ -740,7 +740,16 @@
 
     display: flex;
 
-    flex-wrap: wrap;
+
+    flex-direction: column;
+
+}
+
+.notice_head, .notice_content {
+
+    width: 100%;
+
+    display: flex;
 
     align-items: flex-start;
 
@@ -748,21 +757,28 @@
 
 }
 
-.notice_layout > h1 {
+.notice_head > h1,
+.notice_head > .content_search,
+.notice_content > .notice_feature,
+.notice_content > .notice_list {
 
-    width: 37%;
+    flex: 0 0 auto;
 
-    order: 1;
+    width: 100%;
+
+}
+
+.notice_head > h1 {
+
+    max-width: 37%;
 
     margin-bottom: 12px;
 
 }
 
-.notice_layout > .content_search {
+.notice_head > .content_search {
 
-    width: 58.6%;
-
-    order: 2;
+    max-width: 58.6%;
 
     margin-bottom: 12px;
 
@@ -770,11 +786,7 @@
 
 .notice_feature {
 
-    width: 42%;
-
     position: relative;
-
-    flex: 0 0 auto;
 
     overflow: hidden;
 
@@ -782,11 +794,9 @@
 
 }
 
-.notice_layout > .notice_feature {
+.notice_content > .notice_feature {
 
-    width: 37%;
-
-    order: 3;
+    max-width: 37%;
 
     aspect-ratio: 3 / 2;
 
@@ -854,9 +864,6 @@
 
 .notice_list {
 
-
-    flex: 1 1 auto;
-
     display: flex;
 
     flex-direction: column;
@@ -865,11 +872,9 @@
 
 }
 
-.notice_layout > .notice_list {
+.notice_content > .notice_list {
 
-    width: 58.6%;
-
-    order: 4;
+    max-width: 58.6%;
 
 }
 
@@ -3016,9 +3021,15 @@
 
     }
 
-    .notice_layout > h1 {
+    .notice_head, .notice_content {
 
-        width: 100%;
+        display: contents;
+
+    }
+
+    .notice_head > h1 {
+
+        max-width: 100%;
 
         order: 1;
 
@@ -3026,9 +3037,9 @@
 
     }
 
-    .notice_layout > .notice_feature {
+    .notice_content > .notice_feature {
 
-        width: 100%;
+        max-width: 100%;
 
         order: 2;
 
@@ -3036,17 +3047,17 @@
 
     }
 
-    .notice_layout > .content_search {
+    .notice_head > .content_search {
 
-        width: 100%;
+        max-width: 100%;
 
         order: 3;
 
     }
 
-    .notice_layout > .notice_list {
+    .notice_content > .notice_list {
 
-        width: 100%;
+        max-width: 100%;
 
         order: 4;
 
@@ -3525,8 +3536,6 @@
     .calendar_head {
 
         position: relative;
-
-        flex-wrap: wrap;
 
         justify-content: space-between;
 
