@@ -81,11 +81,13 @@
 }
 
 .sub_content {
-    width: 85%;
-    max-width: 1620px;
+
+    width: 100%;
+    
+    border-bottom: 2px solid #f8f8f8;
     display: flex;
     flex-direction: column;
-    color: #555;
+  
 }
 
 .content_head {
@@ -284,13 +286,12 @@
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    border-bottom: 2px solid #f8f8f8;
+    
 }
 
 .gallery_feature_text {
 
-    flex: 1 1 44%;
-
+    width: 100%;
     display: flex;
 
     flex-direction: column;
@@ -341,7 +342,7 @@
 
 .gallery_feature_media {
 
-    flex: 1 1 52%;
+    width: 100%;
 
     display: flex;
     
@@ -376,14 +377,7 @@
 }
 
 /* 작업 갤러리 상단은 피그마 데스크톱 프레임(1620×400)의 비율을 따른다. */
-[data-gallery-page="work"] .gallery_feature {
-    padding: 20px 0 100px;
-}
 
-[data-gallery-page="work"] .gallery_feature_text {
-    width: 41.05%;
-    flex: 0 0 auto;
-}
 
 [data-gallery-page="work"] .gallery_feature_media {
     width: 49.07%;
@@ -2175,12 +2169,6 @@
 
 }
 
-.post_head h1 {
-
-    color: #555;
-
-}
-
 .post_meta {
 
     display: flex;
@@ -2381,6 +2369,7 @@
 .post_card strong {
     overflow: hidden;
     margin-top: 10px;
+    font-weight: 700;
     line-height: 1.5;
     text-overflow: ellipsis;
     white-space: nowrap;
