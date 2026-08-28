@@ -727,19 +727,44 @@
 
 }
 
+/* 공지사항 section은 하나의 세로 흐름이며, 내부 notice_layout만 두 열로 배치한다. */
+.community_page[data-community-page="notice"] .community_body {
+
+    flex-direction: column;
+
+}
+
+.notice_layout {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+}
+
 .notice_layout > h1 {
 
-    width: 42%;
+    width: 37%;
 
     order: 1;
+
+    margin-bottom: 12px;
 
 }
 
 .notice_layout > .content_search {
 
-    width: 54%;
+    width: 58.6%;
 
     order: 2;
+
+    margin-bottom: 12px;
 
 }
 
@@ -759,9 +784,11 @@
 
 .notice_layout > .notice_feature {
 
-    width: 42%;
+    width: 37%;
 
     order: 3;
+
+    aspect-ratio: 3 / 2;
 
 }
 
@@ -769,7 +796,7 @@
 
     width: 100%;
 
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
 
     object-fit: cover;
 
@@ -838,9 +865,9 @@
 
 }
 
-.notice_layout .notice_list {
+.notice_layout > .notice_list {
 
-    width: 54%;
+    width: 58.6%;
 
     order: 4;
 
@@ -3005,6 +3032,8 @@
 
         order: 2;
 
+        aspect-ratio: auto;
+
     }
 
     .notice_layout > .content_search {
@@ -3015,7 +3044,7 @@
 
     }
 
-    .notice_layout .notice_list {
+    .notice_layout > .notice_list {
 
         width: 100%;
 
@@ -3026,6 +3055,12 @@
     .notice_feature {
 
         width: 100%;
+
+    }
+
+    .notice_feature img {
+
+        aspect-ratio: 4 / 3;
 
     }
 
