@@ -44,6 +44,7 @@
 .company_menu > li {
 
     width: 20%;
+      max-width: 150px;
     position: relative;
     min-width: 95px
 
@@ -52,6 +53,7 @@
 .company_tit {
 
     width: 100%;
+  
    min-height: 50px;
     display: flex;
     align-items: center;
@@ -172,7 +174,7 @@
 }
 
 .company_values {
-    
+
     flex: 0 0 auto;
     width: 500px;
     aspect-ratio: 1 / 1;

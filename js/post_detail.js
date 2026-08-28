@@ -1008,8 +1008,19 @@
         document.body.dataset.postId = post.id;
 
         document.title = "그린죤 - " + post.title;
+        const communityPaths = {
+            notice: "Notice.html",
+            event: "Event.html",
+            information: "Information.html",
+            review: "Reviews.html"
+        };
+        const categoryPath = document.querySelector("[data-post-category]");
+        if (categoryPath) {
+            categoryPath.textContent = post.label;
+            categoryPath.href = communityPaths[type] || "Notice.html";
+        }
         const path = document.querySelector("[data-post-path]");
-        if (path) path.textContent = post.label;
+        if (path) path.textContent = post.title;
 
         document.querySelectorAll(".sub_category a").forEach(function (link) {
             if (link.textContent.trim() === post.label) link.setAttribute("aria-current", "page");
