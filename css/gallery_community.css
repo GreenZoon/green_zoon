@@ -74,11 +74,6 @@
     box-shadow: inset 0 -2px 0 transparent;
 }
 
-.sub_category {
-
-    padding: 0 150px;
-
-}
 
 .sub_content {
 
@@ -86,7 +81,6 @@
     
     border-bottom: 2px solid #f8f8f8;
     display: flex;
-    flex-direction: column;
   
 }
 
@@ -727,37 +721,9 @@
    COMMUNITY
 ========================================================= */
 
-.community {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-}
-
 .community_body {
 
     display: flex;
-
-    flex-direction: column;
-
-    gap: 52px;
-
-    padding: 24px 0 100px;
-
-}
-
-.notice_layout {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    align-items: flex-start;
-
-    gap: 18px 4%;
 
 }
 
