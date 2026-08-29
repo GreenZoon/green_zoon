@@ -237,6 +237,10 @@
         review: makePosts("review", reviewTitles, reviewImages, "이용후기")
     };
 
+    posts.review.forEach(function (post) {
+        post.author = "이용자";
+    });
+
     posts.notice[0].date = "2025.06.23";
     posts.notice[10].date = "2023.06.13";
     posts.galleryEvent[0].date = "2025.06.23";
@@ -1044,10 +1048,8 @@
         const reviewReply = post.type === "review" ? '<div class="post_reply"><h2>관리자 답글</h2><p>고객님, 소중한 후기 감사합니다. 앞으로도 현장 상태에 맞는 작업과 꼼꼼한 마무리로 만족하실 수 있도록 최선을 다하겠습니다.</p></div>' : "";
         const related = list.filter(function (item) { return item.id !== post.id; }).slice(0, 6);
 
-        const split = ["notice", "event", "information"].includes(type) ? " split" : "";
-
-        target.innerHTML = '<header class="post_head"><h1>' + post.title + '</h1><div class="post_meta"><span>' + post.label + '</span><time>' + post.date + '</time><span>작성자 관리자</span></div></header>' +
-            '<div class="post_body' + split + '">' + mediaMarkup(post) + copyMarkup + '</div>' + reviewReply + relatedMarkup(post, related);
+        target.innerHTML = '<header class="post_head"><h1>' + post.title + '</h1><div class="post_meta"><span>' + post.label + '</span><time>' + post.date + '</time><span>작성자 ' + (post.author || "관리자") + '</span></div></header>' +
+            '<div class="post_body">' + mediaMarkup(post) + copyMarkup + '</div>' + reviewReply + relatedMarkup(post, related);
 
         initPostSlider();
     }

@@ -2146,15 +2146,10 @@
 
 }
 
-.post_section {
-
-    justify-content: center;
-
-}
-
-.post_section > .sub_content {
-
+.post_content {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 70px;
 
@@ -2188,25 +2183,6 @@
 
 }
 
-.post_body.split {
-
-    flex-direction: row;
-    align-items: flex-start;
-
-}
-
-.post_body.split .post_media {
-
-    flex: 0 0 44%;
-
-}
-
-.post_body.split .post_copy {
-
-    flex: 1 1 auto;
-
-}
-
 .post_body > a {
 
     width: 100%;
@@ -2216,7 +2192,8 @@
 
 .post_media {
 
-    width: min(100%, 920px);
+    width: 100%;
+    max-width: 920px;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -2266,7 +2243,8 @@
 
 .post_copy {
 
-    width: min(100%, 920px);
+    width: 100%;
+    max-width: 920px;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -2293,7 +2271,8 @@
 
 .post_related {
 
-    width: min(100%, 1320px);
+    width: 100%;
+    max-width: 1320px;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -2346,7 +2325,8 @@
 }
 
 .post_card {
-    flex: 0 0 24%;
+    width: 24%;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     margin-right: 1.333%;
@@ -2460,7 +2440,7 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .post_section > .sub_content {
+    .post_content {
 
         gap: 60px;
 
@@ -2468,7 +2448,7 @@
 
     .post_card {
 
-        flex-basis: 32%;
+        width: 32%;
 
         margin-right: 2%;
 
@@ -3682,7 +3662,7 @@
 
     }
 
-    .post_section > .sub_content {
+    .post_content {
 
         gap: 36px;
 
@@ -3706,20 +3686,6 @@
     .post_body {
 
         gap: 32px;
-
-    }
-
-    .post_body.split {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-    }
-
-    .post_body.split .post_media {
-
-        flex-basis: auto;
 
     }
 
@@ -3789,7 +3755,7 @@
 
     .post_card {
 
-        flex-basis: 49%;
+        width: 49%;
 
         margin-right: 2%;
 
