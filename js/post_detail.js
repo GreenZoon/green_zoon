@@ -237,8 +237,10 @@
         review: makePosts("review", reviewTitles, reviewImages, "이용후기")
     };
 
-    posts.review.forEach(function (post) {
-        post.author = "이용자";
+    const reviewAuthors = ["익명45", "초록빗자루", "바닥요정27", "익명103", "새벽물걸레", "반짝바닥88", "카펫구름", "공장고양이", "유리창21", "행사정리왕"];
+
+    posts.review.forEach(function (post, index) {
+        post.author = reviewAuthors[index] || "익명";
     });
 
     posts.notice[0].date = "2025.06.23";
