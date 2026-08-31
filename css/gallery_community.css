@@ -1278,6 +1278,17 @@
 
 }
 
+.information_card img {
+
+    border-radius: 0;
+
+}
+
+.information_card .empty_image {
+
+    border-radius: 15px;
+
+}
 
 .information_card_body {
 
@@ -2225,6 +2236,7 @@
 [data-post-type="information"] .post_media img {
 
     aspect-ratio: 1 / 1;
+    border-radius: 0;
 
 }
 
