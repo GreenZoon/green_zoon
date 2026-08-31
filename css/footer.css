@@ -258,7 +258,7 @@ footer {
 }
 
 
-.footer_policy a {
+.footer_policy p {
 
     font-size: 0.9375rem;      /* 15px */
     line-height: 1.5;
@@ -440,7 +440,7 @@ footer {
     }
 
 
-    .footer_policy a {
+    .footer_policy p {
         font-size: 13px;
     }
 
@@ -621,7 +621,7 @@ footer {
     }
 
 
-    .footer_policy a {
+    .footer_policy p {
 
         font-size: 0.75rem;      /* 12px */
         line-height: 1.55;
