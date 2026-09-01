@@ -3503,9 +3503,11 @@
     }
 
     .sub_back {
-        width: 100%;
-        max-width: none;
+        width: 100vw;
+        max-width: 100vw;
         height: 36px;
+        box-sizing: border-box;
+        flex: 0 0 auto;
         padding-inline: 20px;
         position: sticky;
         top: var(--mobile-back-top, 48px);
