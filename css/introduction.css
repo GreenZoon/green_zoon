@@ -286,10 +286,11 @@
 }
 
 .company_signature {
+
     display: block;
-    width: 120px;
-    height: auto;
-    margin-top: -20px;
+    max-width: 120px;
+    aspect-ratio: 2 / 1;
+  
 }
 
 .company_portrait {
