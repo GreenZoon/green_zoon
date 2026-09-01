@@ -3504,6 +3504,7 @@
 
     .sub_back {
         width: 100%;
+        max-width: none;
         height: 36px;
         padding-inline: 20px;
         position: sticky;

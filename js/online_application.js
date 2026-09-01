@@ -43,6 +43,18 @@
             ]
         },
         {
+            id: "pond",
+            name: "연못 청소",
+            iconClass: "pond",
+            tip: "연못의 개수와 각 연못의 용량을 정확히 작성해 주세요.",
+            fields: [
+                { name: "count", label: "연못 개수", type: "number", min: 1, placeholder: "예시) 2", required: true },
+                { name: "capacity", label: "연못 용량", type: "number", min: 0.1, step: "any", placeholder: "예시) 5000", required: true },
+                { name: "unit", label: "용량 단위", type: "select", options: ["리터", "톤"], required: true },
+                { name: "detail", label: "추가 작업내용", type: "textarea", placeholder: "예시) 녹조, 수초 및 바닥 침전물 제거", wide: true }
+            ]
+        },
+        {
             id: "pigeon",
             name: "비둘기 퇴치",
             iconClass: "bird_spike",
@@ -174,10 +186,22 @@
             `;
         }
 
+        if (field.type === "select") {
+            return `
+                <div class="detail_label${wide}">
+                    <label for="${fieldName}">${field.label}${field.required ? " *" : ""}</label>
+                    <select id="${fieldName}" class="detail_control" name="${fieldName}" ${required}>
+                        <option value="">단위를 선택해 주세요</option>
+                        ${field.options.map((option) => `<option value="${escapeHtml(option)}">${escapeHtml(option)}</option>`).join("")}
+                    </select>
+                </div>
+            `;
+        }
+
         return `
             <div class="detail_label${wide}">
                 <label for="${fieldName}">${field.label}${field.required ? " *" : ""}</label>
-                <input id="${fieldName}" class="detail_control" type="${field.type || "text"}" name="${fieldName}" ${field.min ? `min="${field.min}"` : ""} placeholder="${escapeHtml(field.placeholder)}" ${required}>
+                <input id="${fieldName}" class="detail_control" type="${field.type || "text"}" name="${fieldName}" ${field.min ? `min="${field.min}"` : ""} ${field.step ? `step="${field.step}"` : ""} placeholder="${escapeHtml(field.placeholder)}" ${required}>
             </div>
         `;
     }
@@ -310,6 +334,18 @@
     }
 
     function collectServiceValues(service) {
+        if (service.id === "pond") {
+            const count = form.elements.pond_count?.value.trim();
+            const capacity = form.elements.pond_capacity?.value.trim();
+            const unit = form.elements.pond_unit?.value;
+            const detail = form.elements.pond_detail?.value.trim();
+            return [
+                count ? `${count}개` : "",
+                capacity && unit ? `${capacity}${unit}` : "",
+                detail || ""
+            ].filter(Boolean);
+        }
+
         const values = [];
 
         service.fields.forEach((field) => {

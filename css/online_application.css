@@ -199,6 +199,10 @@
     transition: border-color .2s, box-shadow .2s;
 }
 
+select.detail_control {
+    appearance: auto;
+}
+
 .application_field input::placeholder,
 .application_field textarea::placeholder,
 .detail_control::placeholder,
