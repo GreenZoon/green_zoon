@@ -1224,7 +1224,9 @@
 }
 
 .information_filter a {
-    flex: 0 0 auto;
+    width: 90px;
+    height: 40px;
+    flex: 0 0 90px;
     display: flex;
 
     align-items: center;
@@ -1235,9 +1237,20 @@
 
     border-radius: 10px;
 
-    padding: 5px 12px;
+    padding: 0;
 
     color: #555;
+    font-size: 15px;
+    white-space: nowrap;
+
+}
+
+[data-community-page="information"] .content_search button {
+
+    width: 90px;
+    height: 40px;
+    font-size: 15px;
+    white-space: nowrap;
 
 }
 
@@ -3247,14 +3260,18 @@
 
     .information_filter {
 
-        overflow-x: auto;
+        flex: 0 0 auto;
+        overflow: visible;
 
     }
 
     .information_filter a {
+        width: 56px;
+        height: 36px;
+        flex: 0 0 56px;
         border-radius: 5px;
 
-        padding: 4px 8px;
+        padding: 0;
 
         font-size: 12px;
 
@@ -3262,15 +3279,29 @@
 
     [data-community-page="information"] .content_head {
 
-        align-items: stretch;
+        flex-direction: row;
+        align-items: center;
 
         gap: 8px;
+        overflow-x: auto;
 
     }
 
     [data-community-page="information"] .content_search {
 
-        width: 100%;
+        width: auto;
+        min-width: 180px;
+        flex: 1 0 180px;
+
+    }
+
+    [data-community-page="information"] .content_search button {
+
+        width: 56px;
+        height: 36px;
+        flex: 0 0 56px;
+        font-size: 12px;
+        white-space: nowrap;
 
     }
 
@@ -3713,6 +3744,12 @@
 
     }
 
+    [data-post-type="information"] .post_media img {
+
+        border-radius: 0;
+
+    }
+
     .post_media figcaption {
 
         font-size: 12px;
@@ -3814,6 +3851,58 @@
 
 
 @media (max-width: 480px) {
+
+    [data-community-page="information"] .content_head {
+
+        gap: 6px;
+
+    }
+
+    .information_filter {
+
+        gap: 4px;
+
+    }
+
+    .information_filter a {
+
+        width: 42px;
+        height: 32px;
+        flex: 0 0 42px;
+        font-size: 10px;
+
+    }
+
+    [data-community-page="information"] .content_search {
+
+        min-width: 120px;
+        height: 32px;
+        flex: 1 0 120px;
+
+    }
+
+    [data-community-page="information"] .content_search button {
+
+        width: 42px;
+        height: 32px;
+        flex: 0 0 42px;
+        margin-right: 4px;
+        font-size: 10px;
+
+    }
+
+    [data-community-page="information"] .content_search input {
+
+        min-width: 70px;
+        font-size: 10px;
+
+    }
+
+    [data-post-type="information"] .post_media img {
+
+        border-radius: 0;
+
+    }
 
 .sub_visual {
 
