@@ -526,6 +526,10 @@
     gap: 80px;
 }
 
+.company_award:last-child {
+    flex-direction: row;
+}
+
 .company_award_img {
     flex: 1;
     width: 100%;
@@ -1216,7 +1220,8 @@
         text-align: center;
     }
 
-    .company_award {
+    .company_award,
+    .company_award:last-child {
 
         display: flex;
         flex-direction: column;

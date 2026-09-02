@@ -81,6 +81,7 @@
     
     border-bottom: 2px solid #f8f8f8;
     display: flex;
+    flex-direction: column;
   
 }
 
