@@ -477,7 +477,6 @@
 .company_doc_img,
 .company_award_img,
 .company_history_img,
-.company_history_logo,
 .company_logo {
 
     background-color: transparent;
@@ -485,7 +484,6 @@
 
 
 .company_doc_img img,
-.company_history_logo img,
 .company_logo img {
     object-fit: contain;
 }
@@ -567,11 +565,6 @@
     width: 1px;
     height: 1px;
     clip: rect(0, 0, 0, 0);
-}
-
-.company_history_logo {
-    width: 250px;
-    height: 200px;
 }
 
 .company_history {
@@ -1253,13 +1246,6 @@
 
         font-size: 0.9375rem;
         line-height: 1.7;
-    }
-
-    .company_history_logo {
-
-        width: 180px;
-        height: 130px;
-        font-size: 1.5rem;
     }
 
     .company_timeline {

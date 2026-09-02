@@ -222,7 +222,6 @@ h2,
 ------------------------- */
 
 h3,
-.sub_title,
 .content_title {
 
     font-size: 1.1875rem;       /* 19px */
@@ -237,7 +236,7 @@ h3,
 ------------------------- */
 
 p,
-.body_text,.tit_wrap_2 p {
+.tit_wrap_2 p {
 
     font-size: 1.0625rem;       /* 17px */
     line-height: 1.6;
@@ -251,26 +250,6 @@ p,
 /* -------------------------
    보조 문구
 ------------------------- */
-
-.info_text {
-
-    font-size: 0.9375rem;       /* 15px */
-    line-height: 1.5;
-    letter-spacing: -0.015em;
-    font-weight: 400;
-}
-
-/* -------------------------
-   작은 정보 / 푸터 등
-------------------------- */
-
-.small_text {
-
-    font-size: 0.75rem;         /* 12px */
-    line-height: 1.5;
-    letter-spacing: -0.01em;
-    font-weight: 400;
-}
 
 /* 기존 타이틀 wrapper */
 
@@ -358,8 +337,7 @@ section {
     gap: 22px;
 }
 
-.con,
-.con_g {
+.con {
 
     width:100%;
     max-width: 120px;
@@ -388,15 +366,6 @@ section {
 
 }
 
-.con_g{
-
-
-    display: flex;
-    background-color: #f2f2f2;
-
-
-}
-
 .con > .icon {
 
     width: 100%;
@@ -404,8 +373,7 @@ section {
     background-color: #009944;
 }
 
-.con > p,
-.con_g > p {
+.con > p {
 
     font-size: 0.8125rem;
     line-height: 1.2;
@@ -416,7 +384,6 @@ section {
 }
 
 .icon_g,
-.icon_w,
 .storage {
 
     flex-shrink: 0;
@@ -425,11 +392,6 @@ section {
 .icon_g {
 
     background-color: #009944;
-}
-
-.icon_w {
-
-    background-color: #f2f2f2;
 }
 
 .arrow_up_right{
@@ -467,20 +429,9 @@ section {
     aspect-ratio: 2 / 3;
 }
 
-.box_2and2 {
-
-    aspect-ratio: 1 / 1;
-}
-
 /* =========================================================
    5. FLEX UTILITIES
 ========================================================= */
-
-.flex {
-
-    display: flex;
-
-}
 
 .align_center{
 
@@ -545,41 +496,9 @@ section {
    6. IMAGE POSITION UTILITIES
 ========================================================= */
 
-.focus_left {
-
-    object-position: left center;
-
-}
-
-.focus_right {
-
-    object-position: right center;
-}
-
 .focus_top {
 
     object-position: center top;
-}
-
-.focus_bottom {
-
-    object-position: center bottom;
-}
-
-.focus_center {
-
-    object-position: center center;
-}
-
-/* =========================================================
-   7. MASK / COVER
-========================================================= */
-
-.cover {
-
-    mask-image: linear-gradient(#1d1d1d50);
-    -webkit-mask-image: linear-gradient(#1d1d1d50);
-
 }
 
 /* =========================================================
@@ -799,37 +718,6 @@ svg {
 }
 
 
-.sing{
-
-    width: 100%;
-    max-width: 200px;
-    aspect-ratio: 4 / 1;
-
-    background-color: #1d1d1d;
-    -webkit-mask-image: url("../img/company/sign.svg");
-    mask-image: url("../img/company/sign.svg");
-
-        flex: 0 0 auto;
-    flex-shrink: 0;
-
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-    display: block;
-
-    /* mask 아이콘 공통 설정 */
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-
-}
-
 .mobile_icon{
 
     width: 16px;
@@ -1047,14 +935,6 @@ svg {
 
 }
 
-/* 회사 블럭*/
-.company_back{
-
-    -webkit-mask-image: url("../img/icon/company_blak.svg");
-    mask-image: url("../img/icon/company_blak.svg");
-
-}
-
 /* 아파트 */
 .company{
 
@@ -1084,14 +964,6 @@ svg {
 
     -webkit-mask-image: url("../img/icon/extractor.svg");
     mask-image: url("../img/icon/extractor.svg");
-
-}
-
-/* 위생 시설 */
-.cleaner {
-
-    -webkit-mask-image: url("../img/icon/cleaner.svg");
-    mask-image: url("../img/icon/cleaner.svg");
 
 }
 
@@ -1213,15 +1085,6 @@ svg {
 
 }
 
-/* 후드 */
-.extracto{
-
-    -webkit-mask-image: url("../img/icon/extractor.svg");
-    mask-image: url("../img/icon/extractor.svg");
-
-}
-
-
 /* 집 */
 .home{
 
@@ -1310,20 +1173,6 @@ svg {
 
    -webkit-mask-image: url("../img/icon/developing.svg");
     mask-image: url("../img/icon/developing.svg");
-
-}
-
-.Pier_surface{
-
-    -webkit-mask-image: url("../img/icon/Ensure-repairability-durability.svg");
-    mask-image: url("../img/icon/Ensure-repairability-durability.svg");
-
-}
-
-.Ensure-repair{
-
-    -webkit-mask-image: url("../img/icon/Ensure-repairability-durability.svg");
-    mask-image: url("../img/icon/Ensure-repairability-durability.svg");
 
 }
 
@@ -1458,13 +1307,6 @@ svg {
        -webkit-mask-image: url("../img/icon/meeting.svg");
     mask-image: url("../img/icon/meeting.svg");
 
-
-}
-
-.education{
-
-           -webkit-mask-image: url("../img/icon/education.svg");
-    mask-image: url("../img/icon/education.svg");
 
 }
 
@@ -1628,7 +1470,6 @@ svg {
     */
 
     h3,
-    .sub_title,
     .content_title {
 
         font-size: 1.0625rem;    /* 17px */
@@ -1643,8 +1484,7 @@ svg {
        PC 17px → Tablet 15px
     */
 
-    p,
-    .body_text {
+    p {
 
         font-size: 0.9375rem;    /* 15px */
         line-height: 1.5;
@@ -1653,24 +1493,7 @@ svg {
 
     }
 
-    .info_text {
-
-        font-size: 0.9375rem;    /* 15px */
-        line-height: 1.5;
-        letter-spacing: -0.015em;
-        font-weight: 400;
-
-    }
-
-    .small_text {
-
-        font-size: 0.75rem;      /* 12px */
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-        font-weight: 400;
-    }
-
-    .con, .con_g {
+    .con {
 
         max-width: 100px;
     
@@ -1755,8 +1578,7 @@ svg {
     }
 
     /* 중간 제목 */
-    h3,
-    .sub_title {
+    h3 {
 
         font-size: 1.0625rem;    /* 17px */
         line-height: 1.5;
@@ -1772,32 +1594,13 @@ svg {
     }
 
     /* 일반 본문 */
-    p,
-    .body_text {
+    p {
 
         font-size: 0.75rem;      /* 12px */
         line-height: 1.55;
         letter-spacing: -0.04em;
         font-weight: 500;
 
-    }
-
-    /* 추가 정보 */
-    .info_text {
-
-        font-size: 0.75rem;      /* 12px */
-        line-height: 1.5;
-
-    }
-
-    .small_text {
-
-        font-size: 0.75rem;      /* 12px */
-    }
-
-    .but_bg_none {
-
-        display: none;
     }
 
     .box_wrap {
@@ -1810,7 +1613,7 @@ svg {
         gap: 2%;
     }
 
-    .con, .con_g {
+    .con {
 
         padding: 8px;
         max-width: 80px;
@@ -1840,7 +1643,7 @@ svg {
     
 
 
-    .con, .con_g {
+    .con {
 
         max-width: 48px;
     

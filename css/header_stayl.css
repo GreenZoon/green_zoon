@@ -221,11 +221,6 @@
 
 }
 
-.search_ladel{
-
-    padding: 7px 12px;
-}
-
 .search_title {
 
     color: #fff;
@@ -250,14 +245,6 @@
 
     width: 52px;
     height: 48px;
-}
-
-.search_icon{
-
-    width: 16px;
-    aspect-ratio: 1 / 1;
-
-    background-color: #8E8E8E;
 }
 
 .search_cancel{

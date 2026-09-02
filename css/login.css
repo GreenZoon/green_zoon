@@ -1261,11 +1261,6 @@ body.is_profile_edit {
     margin-top: -14px;
 }
 
-.login_error,
-.login_message {
-
-}
-
 .login_error:empty,
 .login_message:empty {
     display: none;

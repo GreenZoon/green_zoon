@@ -592,12 +592,6 @@
 
 }
 
-.section_g_p {
-
-    padding: 50px 150px;
-
-}
-
 .section_g h2,
 .section_g_2 h2 {
 
@@ -1138,16 +1132,6 @@
     background-position: center;
 }
 
-.video_thumbnail > img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-}
-
 
 .video_thumbnail > iframe {
 
@@ -1188,10 +1172,6 @@
     color: #adadad;
 }
 
-.media_notice {
-    z-index: 1;
-}
-
 .man_sled > .service_media_slot {
     width: 100%;
     height: 100%;
@@ -1202,26 +1182,6 @@
 .img_wrap > .service_media_slot {
     width: 100%;
     height: 100%;
-}
-
-.video_card_a .play_icon {
-
-    background-color: #1d1d1d50;
-}
-
-.play_bg {
-
-    width: 100%;
-    max-width: 100px;
-
-    aspect-ratio: 1 / 1;
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
 }
 
 .play_but {
@@ -1438,33 +1398,6 @@
     aspect-ratio: 16 / 9;
 
     overflow: hidden;
-}
-
-
-/* =========================================================
-   TEXT DOT
-========================================================= */
-
-.text_dot {
-
-    display: inline;
-
-    width: auto;
-
-}
-
-.text_dot::after {
-
-    content: "·";
-
-    display: inline;
-
-    margin-left: 5px;
-
-    color: currentColor;
-
-    font-size: 1em;
-    font-weight: 700;
 }
 
 
@@ -3113,30 +3046,6 @@
         border-radius: 12px;
     }
 
-    /* 영상 준비 중인 페이지만 낮게 표시 */
-
-    .video_card--disabled .video_thumbnail {
-
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 12px;
-
-        color: #8e8e8e;
-        background-color: #f2f2f2;
-
-        font-size: 0.9375rem;
-        line-height: 1.5;
-    }
-
-    .video_card--disabled .video_caption {
-
-        display: none;
-    }
-
     .slide_frame > .arrow {
 
         display: none;
@@ -3148,13 +3057,12 @@
         max-width: 80px;
     }
 
-    .con,.con_g{
+    .con {
 
         position: relative;
     }
 
-    .con p,
-    .con_g p {
+    .con p {
 
         position: absolute;
         bottom: -23%;
@@ -3610,12 +3518,8 @@
     }
 
     .clean_page .mobile_featured img {
-        width: 100%;
-        height: 100%;
-        display: block;
         visibility: visible;
         opacity: 1;
-        object-fit: cover;
     }
 
     .clean_page .service_gallery {
@@ -3759,8 +3663,7 @@
         HTML의 p 요소는 소문자로 작성되어 있으므로 선택자도 소문자로 통일합니다.
         두 대상 카드의 보조문구가 같은 위치 계산을 받습니다.
     */
-    .con p,
-    .con_g p {
+    .con p {
 
 
         bottom: -30%;

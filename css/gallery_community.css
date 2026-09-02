@@ -379,11 +379,6 @@
     aspect-ratio: 795 / 400;
 }
 
-[data-gallery-page="work"] .gallery_feature_media img {
-    height: 100%;
-    object-fit: cover;
-}
-
 [data-gallery-page="work"] .gallery_feature_media.three img:nth-child(1) {
     width: 22.9%;
 }
@@ -454,18 +449,6 @@
 
     border-radius: 10px;
 
-}
-
-.gallery_card_image img {
-
-    object-position: center;
-
-}
-
-
-/* 목록 이미지는 원본 비율이 달라도 피그마의 동일한 카드 프레임을 채운다. */
-[data-gallery-page="event"] .gallery_card_image img {
-    object-fit: cover;
 }
 
 /* 행사 대표 이미지는 공통 대표 영역 안에서 원본 구도를 유지한다. */
@@ -672,8 +655,6 @@
 
     position: absolute;
 
-    object-fit: cover;
-
     border-radius: 15px;
 
 }
@@ -798,12 +779,7 @@
 }
 
 .notice_feature img {
-
-    width: 100%;
-
     aspect-ratio: 3 / 2;
-
-    object-fit: cover;
 
 }
 
@@ -3398,12 +3374,6 @@
         gap: 16px;
 
         font-size: 13px;
-
-    }
-
-    .faq_answer img {
-
-        width: 100%;
 
     }
 

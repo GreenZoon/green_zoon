@@ -261,11 +261,7 @@
 
     posts.galleryEvent[1].images = [
         "img/awards/award_2023_cover.jpg",
-        "img/awards/award_2023_venue.jpg",
-        "img/awards/award_2023_competition.jpg",
-        "img/awards/award_2023_presentation.jpg",
-        "img/awards/award_2023_winners.jpg",
-        "img/awards/award_2023_certificates.jpg"
+        "img/awards/award_2023_venue.jpg"
     ];
 
     posts.work[0].images = [
