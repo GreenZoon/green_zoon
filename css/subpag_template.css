@@ -865,6 +865,32 @@
     will-change: transform;
 }
 
+/*
+    슬라이드의 표시 위치는 CSS가 담당한다.
+    JS는 현재 순서를 나타내는 클래스만 변경하며 이미지 경로는 건드리지 않는다.
+*/
+
+.img_con_wrap.slide_index_0 {
+    transform: translateX(0);
+}
+
+.img_con_wrap.slide_index_1 {
+    transform: translateX(-100%);
+}
+
+.img_con_wrap.slide_index_2 {
+    transform: translateX(-200%);
+}
+
+.img_con_wrap.slide_index_3 {
+    transform: translateX(-300%);
+}
+
+.img_con_wrap.is_instant,
+.img_con_wrap.is_dragging {
+    transition: none;
+}
+
 .slide_group {
 
     width: 100%;

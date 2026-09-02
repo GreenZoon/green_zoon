@@ -655,14 +655,45 @@
                     }
 
 
-                    track.style.transition =
-                        useAnimation
-                            ? "transform 0.5s ease"
-                            : "none";
+                    /*
+                        이미지 경로와 표시 이미지는 HTML에 고정한다.
+                        JS는 현재 슬라이드 상태만 전달하고,
+                        실제 화면 이동은 CSS 클래스가 담당한다.
+                    */
 
+                    track.style.removeProperty(
+                        "transform"
+                    );
 
-                    track.style.transform =
-                        `translateX(-${currentIndex * 100}%)`;
+                    track.classList.remove(
+                        "slide_index_0",
+                        "slide_index_1",
+                        "slide_index_2",
+                        "slide_index_3"
+                    );
+
+                    track.classList.toggle(
+                        "is_instant",
+                        !useAnimation
+                    );
+
+                    track.classList.add(
+                        `slide_index_${currentIndex}`
+                    );
+
+                    if (!useAnimation) {
+
+                        window.requestAnimationFrame(
+                            function () {
+
+                                track.classList.remove(
+                                    "is_instant"
+                                );
+
+                            }
+                        );
+
+                    }
 
 
                     dots.forEach(
@@ -983,8 +1014,9 @@
                     dragDistance = 0;
 
 
-                    track.style.transition =
-                        "none";
+                    track.classList.add(
+                        "is_dragging"
+                    );
 
 
                     wrap.style.cursor =
@@ -1121,6 +1153,11 @@
 
 
                     isDragging = false;
+
+
+                    track.classList.remove(
+                        "is_dragging"
+                    );
 
 
                     wrap.style.cursor =
