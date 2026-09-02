@@ -1248,6 +1248,16 @@ document.addEventListener("click", (event) => {
 
         if (hoverCapableMenu.matches) return;
 
+        if (
+            depth2Button.matches("a[href]") &&
+            depth2Button.href
+        ) {
+            event.preventDefault();
+            closeMobileMenu();
+            window.location.assign(depth2Button.href);
+            return;
+        }
+
         const depth1Index =
             Number(
                 depth2Button.dataset.parentDepth1

@@ -1519,10 +1519,20 @@
 
     order: 2;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    gap: 28px 41px;
+    gap: 28px;
     padding: 50px 0;
+}
+
+.bridge_page .bridge_method_wrap {
+
+    width: 100%;
+    max-width: 941px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 41px;
 }
 
 .bridge_page .bridge_title {
@@ -3215,6 +3225,14 @@
         order: 5;
         display: flex;
         padding: 0 20px 36px;
+        gap: 7px;
+
+    }
+
+    .bridge_page .bridge_method_wrap {
+
+        max-width: none;
+        flex-direction: column;
         gap: 7px;
 
     }
