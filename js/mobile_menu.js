@@ -502,24 +502,24 @@ const mobileMenuData = [
 
             {
                 title: "왁스 작업",
-                href: "/sub_page/Cleaning/Wax_coating.html"
+                href: "/sub_page/Wax/Wax_coating.html"
             },
 
 
             {
                 title: "카펫 청소",
-                href: "/sub_page/Cleaning/Carpet_cleaning.html",
+                href: "/sub_page/Carpet_Fabric/Carpet_cleaning.html",
 
                 children: [
 
                     {
                         title: "카펫 청소",
-                        href: "/sub_page/Cleaning/Carpet_cleaning.html"
+                        href: "/sub_page/Carpet_Fabric/Carpet_cleaning.html"
                     },
 
                     {
                         title: "페트릭",
-                        href: "/sub_page/Cleaning/Fabric_cleaning.html"
+                        href: "/sub_page/Carpet_Fabric/Fabric_cleaning.html"
                     }
 
                 ]

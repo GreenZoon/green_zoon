@@ -45,7 +45,7 @@ if (section2) {
         },
         {
             title: "카펫·패브릭 청소",
-            link: "/sub_page/Cleaning/Carpet_cleaning.html",
+            link: "/sub_page/Carpet_Fabric/Carpet_cleaning.html",
             description:
                 "카펫과 패브릭의 오염을 제거하여 깨끗하고 쾌적한 환경을 조성합니다.",
             images:
@@ -63,7 +63,7 @@ if (section2) {
         },
         {
             title: "왁스 코팅",
-            link: "/sub_page/Cleaning/Wax_coating.html",
+            link: "/sub_page/Wax/Wax_coating.html",
             description:
                 " 바닥 표면을 보호하고 광택을 유지하는 왁스 코팅 작업을 제공합니다.",
             images:
