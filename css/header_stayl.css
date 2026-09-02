@@ -511,10 +511,15 @@
 
     }
 
+        .mobile_header_menu {
+
+            gap: 8px;
+        }
+
     .mobile_header_btn {
 
         width: 24px;
-        height: 24px;
+      
         aspect-ratio: 1 / 1;
         padding: 0;
 
@@ -525,12 +530,6 @@
         border: 0;
         background: transparent;
 
-    }
-
-    .mobile_header_btn .icon {
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 1 / 1;
     }
 
     .login_li p{
