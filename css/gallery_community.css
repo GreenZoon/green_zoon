@@ -2360,6 +2360,7 @@
 
 .post_arrow {
     flex: 0 0 auto;
+        max-width: 30px;
     margin-top: 6%;
     background-color: #8e8e8e;
 }
