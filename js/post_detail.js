@@ -221,7 +221,7 @@
         { id: 19, title: "소독·방역 작업 영상", date: "2026.08.26", image: "img/Work_imags/Disinfection/Disinfection_ing.jpg", videoUrl: "https://www.youtube.com/shorts/AY12rwHZauM" },
         { id: 20, title: "매트·패브릭 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/Fabric/Fabric_cleaning_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/aVER6UoKCNs" },
         { id: 21, title: "대형 저수조 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/water_tank/water_tank_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/1cbOF6uwlV0" },
-        { id: 22, title: "건물 외벽 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/wall/building_wall_ing_3.jpg", videoUrl: "https://www.youtube.com/shorts/HWKBh3nwBAk" },
+        { id: 22, title: "옹벽 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/wall/wall_cleaning.jpg", videoUrl: "https://www.youtube.com/shorts/HWKBh3nwBAk" },
         { id: 23, title: "공장 외벽 청소 작업 영상", date: "2026.08.26", image: "img/Work_imags/wall/main_factory_wall.jpg", videoUrl: "https://www.youtube.com/shorts/Qa2dcR8k9So" }
     ].map(function (post) {
         return Object.assign({ type: "video", label: "작업 동영상", images: [post.image] }, post);
