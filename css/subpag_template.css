@@ -937,6 +937,20 @@
     object-position: center bottom;
 }
 
+/* 동상 갤러리는 한 묶음뿐이므로 슬라이더 동작 없이 정적으로 표시합니다. */
+.statue_page .static_gallery {
+    width: 100%;
+    aspect-ratio: 39 / 8;
+}
+
+.statue_page .static_gallery_group {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
 .slide_frame > .arrow {
 
     width: 40px;
@@ -1514,10 +1528,14 @@
 }
 
 .bridge_page .main_img {
-  
+    position: relative;
     max-width: 800px;
     max-height: 500px;
     border-radius: 20px;
+}
+
+.bridge_page .bridge_intro_notice {
+    display: none;
 }
 
 .bridge_page .tix_section {
@@ -1528,6 +1546,8 @@
     justify-content: center;
     gap: 28px;
     padding: 50px 0;
+    color: #f8f8f8;
+    background-color: #009944;
 }
 
 .bridge_page .bridge_method_wrap {
@@ -1546,6 +1566,7 @@
     margin-bottom: 12px;
     font-size: 2.5rem;
     text-align: center;
+    color: inherit;
 }
 
 .bridge_page .tix_box,
@@ -1589,7 +1610,7 @@
 
 .bridge_page .bridge_text {
 
-    color: #555;
+    color: inherit;
     font-size: 1.0625rem;
 }
 
@@ -1601,6 +1622,39 @@
 .bridge_page .service_request {
 
     order: 4;
+}
+
+@media (max-width: 768px) {
+
+    /* 모바일 피그마에서는 교각 작업 방법 영역이 흰 배경의 목록입니다. */
+    .bridge_page .tix_section {
+        color: #555;
+        background-color: #fff;
+    }
+
+    .bridge_page .bridge_intro_notice {
+        display: block;
+        position: absolute;
+        right: 14px;
+        bottom: 8px;
+        color: #8e8e8e;
+        font-size: 0.625rem;
+        line-height: 1.5;
+    }
+
+    /* 정적 갤러리는 모바일에서 작업 중 사진 한 장만 보여줍니다. */
+    .statue_page .static_gallery {
+        aspect-ratio: 362 / 226;
+    }
+
+    .statue_page .static_gallery_group > .sub_slide_img {
+        display: none;
+    }
+
+    .statue_page .static_gallery_group > .mobile_featured {
+        display: block;
+        width: 100%;
+    }
 }
 
 
