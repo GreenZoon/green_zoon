@@ -15,32 +15,6 @@
     overflow-x: clip;
 }
 
-.application_main,
-.application_form,
-.application_panel,
-.application_fieldset,
-.applicant_grid,
-.service_selector,
-.service_detail,
-.detail_header,
-.detail_body,
-.detail_fields,
-.application_field,
-.detail_label,
-.upload_grid,
-.upload_area,
-.visit_panel,
-.summary_panel,
-.visit_intro,
-.visit_slot,
-.summary_item,
-.visit_picker,
-.time_fieldset,
-.time_options,
-.modal_dialog {
-
-    max-width: 100%;
-}
 
 .application_main {
 

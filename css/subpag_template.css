@@ -423,22 +423,6 @@
    3. SUB PAGE MENU
 ========================================================= */
 
-.sub_pag_gnb{
-
-    height: 44px;
-
-    align-items: flex-end;
-
-}
-
-.sub_pag_menu{
-
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 12px;
-
-}
-
 .sub_pag_depth {
 
     width: 150px;
@@ -468,31 +452,6 @@
 
 }
 
-.sub_pag_tit {
-
-    width: 100%;
-    height: 44px;
-
-
-    color: inherit;
-    font-size: 1.1875rem;
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: -0.04em;
-    white-space: nowrap;
-    padding: 0 20px;
-
-    /* font-size: 1.1875rem;    19px
-    line-height: 1.4;
-    letter-spacing: -0.025em;
-    font-weight:600;
-
-    white-space: nowrap;
-    text-align: center;
-
-    max-height: 37px; */
-}
-
 .sub_pag_depth:hover {
 
     color: #fff;
@@ -507,9 +466,10 @@
    25px → 19px → 17px
 ========================================================= */
 
-.section_2 {
+.service_intro {
 
     width: 100%;
+    order: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -532,7 +492,7 @@
 }
 
 
-.section_2 .tit_wrap {
+.service_intro .tit_wrap {
 
     display: flex;
     flex-direction: column;
@@ -577,9 +537,10 @@
     text-align: center;
 }
 
-.section_g_2 {
+.service_video {
 
     width: 100%;
+    order: 5;
 
     display: flex;
     align-items: center;
@@ -593,14 +554,14 @@
 }
 
 .section_g h2,
-.section_g_2 h2 {
+.service_video h2 {
 
     color: inherit;
 
 }
 
 .section_g .tit_wrap,
-.section_g_2 .tit_wrap {
+.service_video .tit_wrap {
 
     width: 50%;
 
@@ -617,12 +578,12 @@
     max-width: 700px;
 }
 
-.section_g_2 .tit_wrap {
+.service_video .tit_wrap {
 
     max-width: 520px;
 }
 
-.section_g_2 > div {
+.service_video > div {
 
     width: 50%;
     max-width: 600px;
@@ -632,9 +593,10 @@
    7. TARGET SECTION
 ========================================================= */
 
-.section_3 {
+.service_target {
 
     width: 100%;
+    order: 4;
 
     display: flex;
     flex-direction: column;
@@ -646,7 +608,7 @@
     color: #555;
 }
 
-.section_3 h2 {
+.service_target h2 {
 
     color: inherit;
 }
@@ -656,10 +618,11 @@
    9. CLEANING EFFECT
 ========================================================= */
 
-.con_section {
+.service_effect {
 
     width: 100%;
-    max-width: 1500px;
+    max-width: none;
+    order: 2;
 
     display: flex;
     flex-direction: column;
@@ -670,7 +633,7 @@
 
 }
 
-.con_section > h2 {
+.service_effect > h2 {
 
     margin-bottom: 4px;
     margin-left: 7px;
@@ -680,7 +643,7 @@
     color: #009944;
 }
 
-.con_section .box_wrap {
+.service_effect .box_wrap {
 
     width: 100%;
 
@@ -688,7 +651,7 @@
     gap: 14px;
 }
 
-.con_section .box_g {
+.service_effect .box_g {
 
     flex: 1 1 24%;
 }
@@ -763,9 +726,10 @@
    10. IMAGE GALLERY
 ========================================================= */
 
-.img_section {
+.service_gallery {
 
     width: 100%;
+    order: 3;
 
     display: flex;
     flex-direction: column;
@@ -777,7 +741,7 @@
 
 }
 
-.img_section .tit_wrap {
+.service_gallery .tit_wrap {
 
     width: 50%;
     max-width: 700px;
@@ -1282,7 +1246,7 @@
     background-color: rgba(248, 248, 248, 0.5);
 }
 
-.service_detail {
+.service_cleaning {
 
     width: 100%;
 
@@ -1300,37 +1264,6 @@
    → 영상
    → 견적
 ========================================================= */
-
-.service_intro {
-
-    order: 1;
- 
-  
-}
-
-.service_effect {
-
-    order: 2;
-    max-width: none;
-
-}
-
-.service_gallery {
-
-    order: 3;
-
-}
-
-.service_target {
-
-    order: 4;
- 
-
-}
-
-.service_video {
-    order: 5;
-}
 
 .service_request {
     order: 6;
@@ -1363,10 +1296,6 @@
 
 .service_tunnel .service_video_title {
     max-width: 600px;
-}
-
-.video_word {
-    display: none;
 }
 
 .request_cleaning_pin {
@@ -1614,7 +1543,7 @@
     font-size: 1.0625rem;
 }
 
-.bridge_page .con_section {
+.bridge_page .service_effect {
 
     order: 3;
 }
@@ -1659,8 +1588,8 @@
 
 
 /* PC 서브메뉴는 항목 전체와 글자가 함께 반응합니다. */
-.sub_pag_depth:hover .sub_pag_tit,
-.sub_pag_tit:focus-visible {
+.sub_pag_depth:hover .subpage_nav_link,
+.subpage_nav_link:focus-visible {
     color: #fff;
     background-color: #009944;
 }
@@ -1804,6 +1733,9 @@
     color: #8e8e8e;
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
     box-shadow: inset 0 -2px 0 transparent;
     transition: color .25s ease, box-shadow .25s ease;
 }
@@ -1906,11 +1838,11 @@
 */
 @media (max-width: 1500px) {
 
-    .sub_pag_menu {
+    .subpage_nav_list {
         justify-content: flex-end;
     }
 
-    .sub_pag_menu::after {
+    .subpage_nav_list::after {
         display: none;
     }
 
@@ -1941,7 +1873,7 @@
 
     }
 
-    .sub_pag_tit {
+    .subpage_nav_link {
 
         letter-spacing: -0.04em;
         font-weight: 600;
@@ -2013,18 +1945,18 @@
 
     /* SUB MENU */
 
-    .sub_pag_gnb::-webkit-scrollbar {
+    .subpage_nav::-webkit-scrollbar {
 
         display: none;
     }
 
-    .sub_pag_menu {
+    .subpage_nav_list {
         justify-content: flex-end;
         gap: 0;
 
     }
 
-    .sub_pag_menu::after {
+    .subpage_nav_list::after {
         display: none;
     }
 
@@ -2033,7 +1965,7 @@
         width: auto;
     }
 
-    .sub_pag_tit {
+    .subpage_nav_link {
 
         padding: 12px;
           font-size: 1.0625rem;    /* 17px */
@@ -2043,28 +1975,28 @@
 
     /* INTRO */
 
-    .section_2 {
+    .service_intro {
 
 
         align-items: stretch;
         gap: 22px;
     }
 
-    .section_2 > .img_wrap,
-    .section_2 > .tit_wrap {
+    .service_intro > .img_wrap,
+    .service_intro > .tit_wrap {
 
         width: 100%;
         max-width: none;
     }
 
-    .section_2 .tit_wrap {
+    .service_intro .tit_wrap {
 
     align-items: flex-start;
     text-align: left;
 
 }
 
-    .section_2 .tit_in_wrap {
+    .service_intro .tit_in_wrap {
 
         width: 100%;
         font-size: 0.6875rem;
@@ -2073,7 +2005,7 @@
 }
     /* CLEANING EFFECT */
 
-    .con_section {
+    .service_effect {
 
 
     padding-top: 40px;
@@ -2081,20 +2013,20 @@
     gap: 18px;
 }
 
-    .con_section > h2 {
+    .service_effect > h2 {
 
     margin-left: 0;
     margin-bottom: 0;
 }
 
-    .con_section .box_wrap {
+    .service_effect .box_wrap {
 
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-    .con_section .box_g {
+    .service_effect .box_g {
 
 
 
@@ -2107,7 +2039,7 @@
 
     /* TARGET */
 
-    .section_3 {
+    .service_target {
 
         gap: 1rem;
 
@@ -2118,13 +2050,13 @@
         text-align: center;
     }
 
-    .section_3 h2 {
+    .service_target h2 {
 
         order: 1;
       
     }
 
-    .section_3 > p {
+    .service_target > p {
 
         order: 2;
 
@@ -2135,7 +2067,7 @@
     
     }
 
-    .section_3 .con_wrap {
+    .service_target .con_wrap {
 
         order: 3;
     }
@@ -2215,26 +2147,26 @@
 
     /* VIDEO */
 
-        .section_g_2 {
+        .service_video {
 
         gap: 24px;
 
     }
 
-    .section_g_2 > div,
-    .section_g_2 .tit_wrap {
+    .service_video > div,
+    .service_video .tit_wrap {
 
         width: 100%;
         max-width: none;
     }
 
-    .section_g_2 .video_thumbnail {
+    .service_video .video_thumbnail {
 
         border-radius: 14px;
 
     }
 
-    .section_g_2 .tit_wrap {
+    .service_video .tit_wrap {
 
         align-items: flex-start;
         text-align: left;
@@ -2648,7 +2580,7 @@
         flex-direction: column;
     }
 
-    .sub_pag_gnb {
+    .subpage_nav {
 
         overflow-x: auto;
         overflow-y: hidden;
@@ -2659,11 +2591,11 @@
         cursor: grab;
     }
 
-    .sub_pag_gnb::-webkit-scrollbar {
+    .subpage_nav::-webkit-scrollbar {
         display: none;
     }
 
-    .sub_pag_menu {
+    .subpage_nav_list {
 
         width: max-content;
         justify-content: flex-start;
@@ -2672,7 +2604,7 @@
         padding: 0 20px;
     }
 
-    .sub_pag_menu::after {
+    .subpage_nav_list::after {
         display: none;
     }
 
@@ -2684,7 +2616,7 @@
         box-shadow: inset 0 -2px 0 transparent;
     }
 
-    .sub_pag_tit {
+    .subpage_nav_link {
 
         font-size: 0.875rem;
         padding: 8px 14px;
@@ -2730,12 +2662,6 @@
     .service_tunnel .video_thumbnail {
 
         aspect-ratio: 8 / 5;
-
-    }
-
-    .service_tunnel .video_word {
-
-        display: inline;
 
     }
 
@@ -3273,7 +3199,7 @@
 
     }
 
-    .bridge_page .con_section {
+    .bridge_page .service_effect {
 
         order: 4;
 
@@ -3683,7 +3609,7 @@
 */
 @media (max-width: 480px) {
 
-    .section_2 {
+    .service_intro {
 
         gap: 0;
 
@@ -3928,7 +3854,7 @@
        GENERIC CLEANING EFFECT
     ===================================================== */
 
-    .con_section .box_g {
+    .service_effect .box_g {
 
         padding: 8px;
 
@@ -3988,7 +3914,7 @@
         font-size: 0.6875rem; /* 11px */
     }
 
-    .sub_pag_tit {
+    .subpage_nav_link {
 
         font-size: 0.75rem;      /* 12px */
         line-height: 1.55;
@@ -3998,7 +3924,7 @@
 
     }
 
-    .sub_pag_menu {
+    .subpage_nav_list {
 
         justify-content: flex-start;
         gap: 8px;

@@ -1310,9 +1310,8 @@
     flex-shrink: 0;
 
     width: 180px;
-    height: 100px;
-
     object-fit: contain;
+    
 }
 
     /* 위쪽: 왼쪽에서 오른쪽 */
@@ -1363,7 +1362,7 @@
 .box_8{
 
     width: 31%;
-    flex: 0 1 31%;
+    flex: 0 1 auto;
     aspect-ratio: 6 /1.2;
     max-width: 390px;
 
