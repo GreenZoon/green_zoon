@@ -15,17 +15,6 @@
     overflow-x: clip;
 }
 
-
-.application_main {
-
-    width: 100%;
-    max-width: 1668px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-block: 54px 120px;
-}
-
 .application_breadcrumb {
     display: flex;
     align-items: center;
@@ -71,12 +60,10 @@
     gap: 4px;
 }
 
-.application_heading h1,
-.application_heading h2,
-.application_fieldset > legend,
-.modal_heading h2 {
+h2,
+.application_fieldset > legend{
     color: #555;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: -0.04em;
@@ -84,24 +71,18 @@
 
 .application_note {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 6px;
     color: #8e8e8e;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.5;
     letter-spacing: -0.025em;
     word-break: keep-all;
 }
 
 .application_note_icon {
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
     background-color: currentColor;
-}
-
-.note_text {
-    flex: 1 1 auto;
+        width: 16px;
 }
 
 .application_fieldset {
@@ -140,7 +121,7 @@
 .time_fieldset > legend,
 .upload_heading strong {
     color: #555;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
 }
@@ -219,7 +200,7 @@ select.detail_control {
 }
 
 .privacy_copy p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.65;
 }
 
@@ -285,7 +266,7 @@ select.detail_control {
 .service_selector {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .service_option {
@@ -552,9 +533,6 @@ select.detail_control {
     padding: 36px 24px;
 }
 
-.summary_panel .application_note {
-    font-size: 10px;
-}
 
 .visit_intro {
     display: flex;
@@ -563,10 +541,6 @@ select.detail_control {
     gap: 24px;
 }
 
-.visit_intro h2,
-.summary_panel h2 {
-    font-size: 25px;
-}
 
 .visit_confirm h3 {
     color: #555;
@@ -584,8 +558,6 @@ select.detail_control {
 
 .application_summary {
     display: flex;
-    flex-direction: column;
-    margin-top: 9px;
 }
 
 .summary_item + .summary_item {
@@ -751,16 +723,6 @@ select.detail_control {
     padding: 12px 24px;
 }
 
-.application_actions .draft_button,
-.application_actions .submit_button {
-    width: 293px;
-
-    font-size: 19px;
-}
-
-.application_actions .draft_button {
-    margin-right: 82px;
-}
 
 .draft_button {
     background: #8e8e8e;
@@ -929,12 +891,20 @@ body.modal_open {
     overflow: hidden;
 }
 
+@media (max-width: 1500px) {
+
+    .draft_button, .submit_button, .secondary_button{
+
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .application_main {
         width: 100%;
         padding-inline: 0;
-        padding-block: 24px 100px;
+     
     }
 
     .application_breadcrumb {
@@ -984,30 +954,13 @@ body.modal_open {
         font-size: 21px;
     }
 
-    .application_note {
-        font-size: 10px;
-    }
-
     .privacy_copy p,
-    .privacy_agree,
-    .empty_message {
+    .privacy_agree {
         font-size: 12px;
+        line-height: 1.45;
+}
     }
 
-    .application_heading .application_note {
-        font-size: 12px;
-    }
-
-    .applicant_fields > .application_note,
-    .service_fieldset > .application_note {
-        font-size: 10px;
-    }
-
-    .application_note_icon {
-        width: 10px;
-        height: 10px;
-        margin-top: 3px;
-    }
 
     .visit_picker {
         flex-direction: column;
@@ -1040,16 +993,13 @@ body.modal_open {
 
     .service_selector {
         display: flex;
-        gap: 12px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-block: 2px 10px;
         scrollbar-width: thin;
     }
 
     .service_option {
         width: 94px;
-        flex: 0 0 94px;
         scroll-snap-align: start;
     }
 
@@ -1163,6 +1113,9 @@ body.modal_open {
 
     .visit_intro .secondary_button {
         width: 100%;
+                max-width: none;
+    
+
     }
 
     .visit_slot {
@@ -1175,21 +1128,8 @@ body.modal_open {
         font-size: 19px;
     }
 
-    .visit_confirm .application_note,
-    .visit_time p {
-        font-size: 10px;
-    }
-
     .summary_panel h2 {
         font-size: 19px;
-    }
-
-    .summary_panel .application_note {
-        font-size: 10px;
-    }
-
-    .summary_item + .summary_item {
-        margin-top: 10px;
     }
 
     .summary_item {
@@ -1231,18 +1171,12 @@ body.modal_open {
         flex-basis: 16px;
     }
 
-    .application_actions {
-        justify-content: space-between;
-        padding-inline: 50px;
-    }
-
     .application_actions .draft_button,
     .application_actions .submit_button {
-        flex: 0 0 132px;
-        width: 132px;
 
-        font-size: 14px;
+        width: 132px;
         padding-inline: 10px;
+
     }
 
     .application_actions .draft_button {
@@ -1308,4 +1242,27 @@ body.modal_open {
     .application_toast.is_visible {
         transform: translateY(0);
     }
+
+@media (max-width: 480px) {
+
+        .applicant_fields > .application_note, .service_fieldset > .application_note {
+        font-size: 12px;
+        
+    }
+        
+    .service_option {
+
+        width: 80px;
+    }
+
+        .service_option p {
+
+        font-size: 12px;
+        }
+    .application_field input, .application_field textarea, .detail_control, .detail_textarea {
+        font-size: 14px;
+    }
+
+
+
 }
